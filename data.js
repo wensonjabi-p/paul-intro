@@ -60,12 +60,12 @@ const DATA = {
       links: ['multiling', 'hangzhou', 'bridge'] },
 
     /* ---------------- PLACE : 나를 바꾼 장소 ---------------- */
-    { id: 'pakistan', label: '파키스탄', type: 'place', era: '1997–1998', status: 'ask',
-      story: '열네 살, 이슬라마바드의 브리티시 인터내셔널 스쿨에서 두 학기를 보냈다. 영어를 처음 제2언어로 배운 곳. — 이 이야기의 진짜 알맹이는 아직 비어 있다. Paul에게 곧 물어볼 예정.',
-      links: ['stranger', 'boundary', 'multiling'] },
-    { id: 'png', label: '파푸아뉴기니', type: 'place', era: '2009–2010', status: 'ask',
-      story: '포트모르즈비의 제재소에서 목재를 팔았다. 인프라가 거의 없는 곳에서 비즈니스를 한다는 것. — 여기서 생각이 크게 바뀌었다고 했다. 그 이야기를 곧 들을 것이다.',
-      links: ['timber', 'noni', 'survival', 'stranger'] },
+    { id: 'pakistan', label: '파키스탄', type: 'place', era: '1997–1998', status: 'told',
+      story: '아버지가 해군 장교로 파키스탄에 파견되면서, 열네 살의 나는 이슬라마바드에서 살게 됐다. 처음 마주한 충격은 이슬람이라는 종교가 사람들의 삶을 통째로 빚어내는 방식이었다. 가치관이 송두리째 흔들릴 만큼 거대한 변화 앞에서도 사람은 결국 그 안에서 적응한다는 것 — 그리고 그 적응 속에서 피어난 수많은 생각이 삶의 방식 자체를 바꿔놓는다는 것을, 그 나이에 처음 몸으로 알았다.',
+      links: ['stranger', 'boundary', 'adapt', 'islam'] },
+    { id: 'png', label: '파푸아뉴기니', type: 'place', era: '2009–2010', status: 'told',
+      story: '포트모르즈비에서 마주한 삶은 파키스탄보다 더 극단적이었다. 일터 곁에서 죽음은 멀지 않았고, 말라리아는 너무 흔했다. 그곳에서 내가 상식이라 믿어온 것들이 실은 내가 자란 한 세계의 규칙일 뿐이었다는 걸 처음 알았다. 편안했던 적 없는 이 땅이, 내 상식의 경계를 다시 그렸다.',
+      links: ['timber', 'survival', 'stranger', 'commonsense'] },
     { id: 'vienna', label: '비엔나', type: 'place', era: '2005–2007', status: 'seed',
       story: '스물몇 살에 비엔나 공항의 지사를 혼자 세웠다. 낯선 도시에서 회사 하나를 처음부터 만드는 일. 유럽의 한복판에서 나는 이방인이었고, 그게 오히려 무기가 됐다.',
       links: ['logi', 'stranger', 'boundary'] },
@@ -104,6 +104,15 @@ const DATA = {
     { id: 'drift', label: '표류', type: 'associative', status: 'seed',
       story: '직선으로 산 적이 없다. 물류에서 창업으로, 목재에서 자전거로, 궤도는 늘 휘어졌다. 표류처럼 보였지만 지나고 보니 하나의 지도였다.',
       links: ['nomad', 'tokyo', 'drift'] },
+    { id: 'adapt', label: '적응', type: 'associative', status: 'told',
+      story: '가치관이 흔들릴 만큼 거대한 변화 앞에서도 사람은 그 안에서 적응한다. 열네 살의 파키스탄에서 배운 것. 적응은 굴복이 아니라, 낡은 세계가 무너진 자리에서 새로운 생각이 피어나는 과정이었다.',
+      links: ['pakistan', 'boundary', 'survival'] },
+    { id: 'commonsense', label: '상식', type: 'associative', status: 'told',
+      story: '내가 상식이라 부르던 것들은 대개 내가 자란 한 세계의 규칙일 뿐이었다. 파푸아뉴기니가 그 경계를 무너뜨린 뒤로, 나는 어떤 것도 당연하게 여기지 않는 사람이 됐다.',
+      links: ['png', 'stranger', 'survival'] },
+    { id: 'islam', label: '이슬람', type: 'associative', status: 'ask',
+      story: '이슬라마바드에서 처음 마주한, 종교가 한 사회의 삶을 통째로 빚어내는 방식. 열네 살의 눈에 그것은 가장 낯설고 강렬한 첫 장면이었다. — 이 이야기는 Paul과 더 깊이 나눌 예정이다.',
+      links: ['pakistan', 'stranger', 'boundary'] },
 
     /* ---------------- WILDCARD : 엉뚱하지만 이야기가 있는 ---------------- */
     { id: 'salt', label: '소금', type: 'wildcard', status: 'seed',
@@ -155,13 +164,15 @@ const DATA = {
       tags: ['drift', 'nomad'], daysAgo: 4 },
     { id: 'th6', text: '가장 낯선 곳에서 생각이 가장 크게 바뀌었다. 파키스탄과 파푸아뉴기니 — 편안했던 적 없는 곳들이 나를 만들었다.',
       tags: ['pakistan', 'png', 'stranger'], daysAgo: 5 },
+    { id: 'th7', text: '파키스탄에서는 거대한 변화 속에서도 사람이 적응한다는 걸 배웠고, 파푸아뉴기니에서는 내 상식이 얼마나 좁은 세계의 규칙이었는지를 배웠다. 낯섦은 늘 스승이었다.',
+      tags: ['adapt', 'commonsense', 'pakistan', 'png'], daysAgo: 0 },
   ],
 
   /* 넛지 루프 — Claude가 아직 Paul에게 묻고 싶은 것들.
      대화하며 하나씩 채우고, 채워지면 여기서 지운다. */
   openQuestions: [
-    { node: 'pakistan', q: '열네 살에 이슬라마바드에서 산다는 건 어땠어요? 가장 낯설었던 첫 순간이 뭐였나요?' },
-    { node: 'png', q: '파푸아뉴기니에서 생각이 크게 바뀌었다고 했죠. 무엇이, 어떻게 바뀌었나요?' },
+    { node: 'islam', q: '이슬람이 사람들의 삶을 빚어내던 그 방식 — 열네 살의 눈에 구체적으로 어떤 장면이 남아 있나요?' },
+    { node: 'png', q: '파푸아뉴기니가 당신의 상식을 다시 그렸다고 했죠. 그 시절의 하루하루는 어떤 모습이었나요?' },
     { node: 'vienna', q: '혼자 비엔나 지사를 세울 때 가장 무서웠던 순간은 언제였나요?' },
     { node: 'tokyo', q: '서른둘에 다시 학생이 되기로 결심한 그 순간엔 무슨 생각을 했나요?' },
   ],
