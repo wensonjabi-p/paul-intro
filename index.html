@@ -291,6 +291,7 @@
     nodes: D.nodes,
     thoughts: [...saved.thoughts, ...baseThoughts],
     selected: [],
+    activeCombo: null,
   };
   const nodeById = id => state.nodes.find(n => n.id === id);
   const labelOf = id => (nodeById(id) || {}).label || id;
@@ -325,8 +326,17 @@
         vx: (Math.random() - 0.5) * t.drift,
         vy: (Math.random() - 0.5) * t.drift,
         w: 0,
+        freshMul: n.fresh ? 1.55 : 1,
       };
     });
+  }
+
+  function scatter(p) {
+    const t = TYPE[p.type] || TYPE.core;
+    p.x = 60 + Math.random() * (W - 120);
+    p.y = 44 + Math.random() * (H - 88);
+    p.vx = (Math.random() - 0.5) * t.drift;
+    p.vy = (Math.random() - 0.5) * t.drift;
   }
 
   function resize() {
@@ -359,7 +369,9 @@
       const t = TYPE[p.type] || TYPE.core;
       const isSel = state.selected.includes(p.id);
       const isHov = hovered === p.id;
-      const fs = t.size * (isSel ? 1.25 : 1);
+      const comboW = isSel && state.activeCombo && state.activeCombo.weights[p.id];
+      const selMul = isSel ? (comboW || 1.25) : 1;
+      const fs = t.size * selMul * p.freshMul;
       ctx.font = (isSel ? '700 ' : '400 ') + fs + 'px Pretendard, "Malgun Gothic", sans-serif';
       ctx.textAlign = 'center';
       p.w = ctx.measureText(p.label).width;
@@ -385,6 +397,7 @@
 
   function stepLoop() {
     particles.forEach(p => {
+      p.freshMul += (1 - p.freshMul) * 0.003;
       if (state.selected.includes(p.id)) return;
       p.x += p.vx; p.y += p.vy;
       const hw = p.w / 2 + 14;
@@ -426,20 +439,62 @@
     renderSynthesis();
   }
 
-  document.getElementById('sky-reset').addEventListener('click', () => { state.selected = []; renderSynthesis(); });
+  document.getElementById('sky-reset').addEventListener('click', () => {
+    state.selected = [];
+    state.activeCombo = null;
+    particles.forEach(p => {
+      scatter(p);
+      p.freshMul = 1 + (p.freshMul - 1) * 0.4;
+    });
+    renderSynthesis();
+  });
 
   const TYPE_LABEL = { core: '나', place: '나를 바꾼 장소', associative: '관심어', wildcard: '엉뚱한 갈고리' };
+
+  function findCombo(ids) {
+    const set = [...ids].sort().join('|');
+    return (D.combos || []).find(c => [...c.ids].sort().join('|') === set) || null;
+  }
 
   function renderSynthesis() {
     const el = document.getElementById('synthesis');
     document.getElementById('sky-hint').style.opacity = state.selected.length ? '0' : '1';
 
     if (!state.selected.length) {
+      state.activeCombo = null;
       el.innerHTML = '<div class="synth-empty">아직 선택된 단어가 없습니다. 위 성좌에서 궁금한 단어를 하나 골라보세요 — 이야기가 열립니다.</div>';
       return;
     }
-    if (state.selected.length === 1) { el.innerHTML = renderSingle(nodeById(state.selected[0])); bindChips(el); return; }
-    el.innerHTML = renderCombo(); bindChips(el);
+    if (state.selected.length === 1) {
+      state.activeCombo = null;
+      el.innerHTML = renderSingle(nodeById(state.selected[0])); bindChips(el); return;
+    }
+    const combo = findCombo(state.selected);
+    state.activeCombo = combo;
+    el.innerHTML = combo ? renderComboStory(combo) : renderComboFallback();
+    bindChips(el);
+  }
+
+  function renderComboStory(combo) {
+    const sel = combo.ids.map(nodeById).filter(Boolean);
+    let h = '<div class="story-single">';
+    h += '<div><span class="badge t-place">엮인 이야기</span></div>';
+    h += '<div class="headword">' + combo.title + '</div>';
+    h += '<div class="prose">' + combo.story + '</div>';
+    h += '<div class="related-row"><span class="lbl">이 이야기를 이루는 단어</span>' +
+      sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
+    h += '</div>';
+
+    const ids = combo.ids;
+    const shared = state.thoughts
+      .map(t => ({ t, s: t.tags.filter(tag => ids.includes(tag)).length }))
+      .filter(o => o.s > 0)
+      .sort((a, b) => b.s - a.s || b.t.addedAt - a.t.addedAt).slice(0, 3);
+    if (shared.length) {
+      h += '<div class="synth-thoughts"><h4>이 이야기에 걸린 생각</h4>' +
+        shared.map(o => thoughtCard(o.t)).join('') + '</div>';
+    }
+    return h;
   }
 
   function renderSingle(n) {
@@ -463,11 +518,11 @@
     return h;
   }
 
-  function renderCombo() {
+  function renderComboFallback() {
     const sel = state.selected.map(nodeById).filter(Boolean);
     const title = sel.map(n => n.label).join('<span class="x">×</span>');
     let h = '<div class="synth-title">' + title + '</div>';
-    h += '<div class="synth-lede">이 단어들이 한 사람 안에서 만나는 지점입니다.</div>';
+    h += '<div class="synth-lede">이 단어들이 한 사람 안에서 만나는 지점입니다. 아직 하나로 엮인 이야기는 없지만, 각자의 조각은 이렇습니다.</div>';
     h += '<div class="synth-grid">' + sel.map(n =>
       '<div class="story-card t-' + n.type + '"><div class="cap">' + TYPE_LABEL[n.type] +
       (n.era ? ' · ' + n.era : '') + '</div><div class="hw">' + n.label +
@@ -477,7 +532,7 @@
     const shared = state.thoughts
       .map(t => ({ t, s: t.tags.filter(tag => ids.includes(tag)).length }))
       .filter(o => o.s > 0)
-      .sort((a, b) => b.s - a.s || b.t.addedAt - a.t.addedAt).slice(0, 4);
+      .sort((a, b) => b.s - a.s || b.t.addedAt - a.t.addedAt).slice(0, 3);
     if (shared.length) {
       h += '<div class="synth-thoughts"><h4>이 조합에 걸린 생각</h4>' +
         shared.map(o => thoughtCard(o.t)).join('') + '</div>';
@@ -504,7 +559,7 @@
 
   function renderFeed() {
     document.getElementById('feed-list').innerHTML =
-      [...state.thoughts].sort((a, b) => b.addedAt - a.addedAt).slice(0, 6).map(thoughtCard).join('');
+      [...state.thoughts].sort((a, b) => b.addedAt - a.addedAt).slice(0, 3).map(thoughtCard).join('');
   }
 
   document.getElementById('add-btn').addEventListener('click', () => {
