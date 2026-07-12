@@ -12,12 +12,12 @@
     --muted: #8a879c;
     --faint: #4a4860;
     --accent: #d4a24e;
-    --accent-soft: rgba(212, 162, 78, 0.14);
+    --accent-dim: rgba(212, 162, 78, 0.5);
+    --place: #e8c37a;
     --line: rgba(237, 235, 230, 0.09);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -27,469 +27,203 @@
     line-height: 1.7;
     overflow-x: hidden;
   }
-
   ::selection { background: var(--accent); color: var(--bg); }
 
   /* ---------- HERO ---------- */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-
+  .hero { min-height: 100vh; display: flex; flex-direction: column; position: relative; }
   .hero-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 28px 5vw;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px 5vw; font-size: 13px; letter-spacing: 0.12em; color: var(--muted);
   }
-
   .hero-top .brand { color: var(--ink); font-weight: 600; letter-spacing: 0.18em; }
-
-  .hero-head {
-    padding: 4vh 5vw 0;
-    max-width: 1100px;
-  }
-
+  .hero-head { padding: 4vh 5vw 0; max-width: 1100px; }
   .hero-head .eyebrow {
-    font-size: 13px;
-    letter-spacing: 0.25em;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 18px;
+    font-size: 13px; letter-spacing: 0.25em; color: var(--accent);
+    text-transform: uppercase; margin-bottom: 18px;
   }
-
   .hero-head h1 {
-    font-size: clamp(34px, 6.2vw, 76px);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-size: clamp(34px, 6.2vw, 76px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
   }
-
   .hero-head h1 .dim { color: var(--faint); }
-
   .hero-head .sub {
-    margin-top: 22px;
-    font-size: clamp(14px, 1.6vw, 17px);
-    color: var(--muted);
-    max-width: 560px;
+    margin-top: 22px; font-size: clamp(14px, 1.6vw, 17px); color: var(--muted); max-width: 600px;
   }
-
   .hero-head .sub b { color: var(--ink); font-weight: 600; }
-
   .identity-line {
-    margin-top: 16px;
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    color: var(--faint);
-    text-transform: uppercase;
+    margin-top: 16px; font-size: 12px; letter-spacing: 0.22em; color: var(--faint); text-transform: uppercase;
   }
+
+  /* ---------- LEGEND ---------- */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 16px; padding: 20px 5vw 0; font-size: 12px; color: var(--muted);
+  }
+  .legend .item { display: flex; align-items: center; gap: 7px; letter-spacing: 0.04em; }
+  .legend .swatch { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .sw-core { background: var(--accent); }
+  .sw-place { background: var(--place); box-shadow: 0 0 0 3px rgba(232,195,122,0.22); }
+  .sw-assoc { background: rgba(237,235,230,0.5); }
+  .sw-wild { background: rgba(237,235,230,0.28); }
 
   /* ---------- CONSTELLATION ---------- */
-  .constellation-wrap {
-    position: relative;
-    margin-top: 3vh;
-    flex: 1;
-  }
-
-  #sky {
-    display: block;
-    width: 100%;
-    height: 52vh;
-    min-height: 380px;
-    cursor: pointer;
-  }
-
+  .constellation-wrap { position: relative; margin-top: 2vh; flex: 1; }
+  #sky { display: block; width: 100%; height: 54vh; min-height: 400px; cursor: default; }
   .sky-hint {
-    position: absolute;
-    top: 14px;
-    left: 5vw;
-    font-size: 12.5px;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    pointer-events: none;
-    transition: opacity 0.6s;
+    position: absolute; top: 14px; left: 5vw; font-size: 12.5px; color: var(--muted);
+    letter-spacing: 0.08em; pointer-events: none; transition: opacity 0.6s;
   }
-
   .sky-hint .k { color: var(--accent); }
-
   .sky-reset {
-    position: absolute;
-    top: 10px;
-    right: 5vw;
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    letter-spacing: 0.08em;
-    transition: all 0.25s;
+    position: absolute; top: 10px; right: 5vw; background: none; border: 1px solid var(--line);
+    color: var(--muted); font-size: 12px; padding: 6px 14px; border-radius: 20px; cursor: pointer;
+    letter-spacing: 0.08em; transition: all 0.25s;
   }
-
   .sky-reset:hover { border-color: var(--accent); color: var(--accent); }
 
   /* ---------- SYNTHESIS ---------- */
-  .synthesis {
-    padding: 0 5vw 10vh;
-    max-width: 1100px;
-  }
+  .synthesis { padding: 0 5vw 8vh; max-width: 1100px; }
+  .synth-empty { color: var(--faint); font-size: 14px; border-top: 1px solid var(--line); padding-top: 28px; }
 
-  .synth-empty {
-    color: var(--faint);
-    font-size: 14px;
-    border-top: 1px solid var(--line);
-    padding-top: 28px;
+  .story-single { border-top: 1px solid var(--line); padding-top: 30px; }
+  .story-single .badge {
+    display: inline-block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 14px; margin-bottom: 16px;
   }
+  .badge.t-core { background: rgba(212,162,78,0.15); color: var(--accent); }
+  .badge.t-place { background: rgba(232,195,122,0.16); color: var(--place); }
+  .badge.t-associative { background: rgba(237,235,230,0.08); color: var(--muted); }
+  .badge.t-wildcard { background: rgba(237,235,230,0.06); color: var(--muted); }
+  .story-single .era { font-size: 13px; color: var(--faint); letter-spacing: 0.06em; margin-left: 12px; }
+  .story-single .headword {
+    font-size: clamp(30px, 5vw, 52px); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em;
+  }
+  .story-single .prose {
+    margin-top: 20px; font-size: clamp(16px, 2vw, 20px); line-height: 1.85; color: var(--ink); max-width: 720px;
+  }
+  .ask-ribbon {
+    margin-top: 22px; display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(212,162,78,0.1); border: 1px solid var(--accent-dim); border-radius: 8px;
+    padding: 12px 18px; font-size: 13.5px; color: var(--accent); max-width: 640px; line-height: 1.6;
+  }
+  .related-row { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .related-row .lbl { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); margin-right: 6px; }
+  .chip {
+    font-size: 13px; color: var(--muted); border: 1px solid var(--line); padding: 5px 13px;
+    border-radius: 16px; cursor: pointer; transition: all 0.25s; letter-spacing: 0.03em;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); }
 
   .synth-title {
-    font-size: clamp(22px, 3.2vw, 34px);
-    font-weight: 700;
-    line-height: 1.3;
-    border-top: 1px solid var(--line);
-    padding-top: 28px;
+    font-size: clamp(22px, 3.2vw, 34px); font-weight: 700; line-height: 1.3;
+    border-top: 1px solid var(--line); padding-top: 30px;
   }
-
   .synth-title .x { color: var(--accent); font-weight: 400; padding: 0 6px; }
-
-  .synth-lede { margin-top: 10px; color: var(--muted); font-size: 14.5px; max-width: 640px; }
-
+  .synth-lede { margin-top: 12px; color: var(--muted); font-size: 14.5px; max-width: 680px; }
   .synth-grid {
-    margin-top: 34px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 14px;
+    margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px;
   }
-
-  .synth-chapter {
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 20px 22px;
-    background: var(--bg-soft);
+  .story-card {
+    border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; background: var(--bg-soft);
     transition: border-color 0.25s;
   }
+  .story-card:hover { border-color: var(--accent-dim); }
+  .story-card .cap { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+  .story-card.t-core .cap { color: var(--accent); }
+  .story-card.t-place .cap { color: var(--place); }
+  .story-card.t-associative .cap, .story-card.t-wildcard .cap { color: var(--muted); }
+  .story-card .hw { font-size: 17px; font-weight: 600; }
+  .story-card .tx { font-size: 13.5px; color: var(--muted); margin-top: 10px; line-height: 1.7; }
 
-  .synth-chapter:hover { border-color: rgba(212,162,78,0.45); }
-
-  .synth-chapter .num {
-    font-size: 13px;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-    font-weight: 600;
-  }
-
-  .synth-chapter .t { font-size: 16px; font-weight: 600; margin-top: 8px; }
-  .synth-chapter .meta { font-size: 12px; color: var(--muted); margin-top: 3px; letter-spacing: 0.05em; }
-  .synth-chapter .d { font-size: 13.5px; color: var(--muted); margin-top: 10px; line-height: 1.65; }
-
-  .synth-thoughts { margin-top: 30px; }
-
+  .synth-thoughts { margin-top: 34px; }
   .synth-thoughts h4 {
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--faint);
-    margin-bottom: 14px;
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); margin-bottom: 16px;
   }
-
-  .thought-card {
-    border-left: 2px solid var(--accent);
-    padding: 4px 0 4px 20px;
-    margin-bottom: 20px;
-  }
-
+  .thought-card { border-left: 2px solid var(--accent); padding: 4px 0 4px 20px; margin-bottom: 20px; }
   .thought-card .txt { font-size: 15px; line-height: 1.75; color: var(--ink); max-width: 720px; }
   .thought-card .meta { font-size: 12px; color: var(--faint); margin-top: 8px; letter-spacing: 0.05em; }
-  .thought-card .meta .tag { color: var(--muted); }
 
-  /* ---------- ATLAS ---------- */
-  .atlas {
-    padding: 14vh 5vw;
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .atlas-head { margin-bottom: 10vh; }
-
-  .atlas-head .eyebrow {
-    font-size: 13px;
-    letter-spacing: 0.25em;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .atlas-head h2 {
-    font-size: clamp(28px, 4.5vw, 54px);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-  }
-
-  .atlas-head p { margin-top: 16px; color: var(--muted); max-width: 540px; font-size: 15px; }
-
-  .journey {
-    position: relative;
-    padding-left: 48px;
-  }
-
-  .journey-line {
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: var(--line);
-  }
-
-  .journey-line .fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background: var(--accent);
-    transition: height 0.15s linear;
-  }
-
-  .chapter {
-    position: relative;
-    padding: 0 0 11vh;
-    opacity: 0;
-    transform: translateY(36px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .chapter.visible { opacity: 1; transform: translateY(0); }
-
-  .chapter .dot {
-    position: absolute;
-    left: -43px;
-    top: 14px;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 2px solid var(--faint);
-    transition: all 0.5s;
-  }
-
-  .chapter.visible .dot { border-color: var(--accent); background: var(--accent); }
-
-  .chapter .num {
-    font-size: clamp(44px, 6vw, 72px);
-    font-weight: 700;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--faint);
-    line-height: 1;
-    letter-spacing: 0.02em;
-  }
-
-  .chapter.visible .num { -webkit-text-stroke: 1px var(--accent); }
-
-  .chapter .place {
-    margin-top: 14px;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    color: var(--accent);
-    text-transform: uppercase;
-  }
-
-  .chapter h3 {
-    margin-top: 8px;
-    font-size: clamp(20px, 2.8vw, 30px);
-    font-weight: 700;
-    line-height: 1.35;
-  }
-
-  .chapter .body {
-    margin-top: 12px;
-    color: var(--muted);
-    font-size: 15px;
-    max-width: 620px;
-    line-height: 1.8;
-  }
-
-  .chapter .tags { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
-
-  .chapter .tags span {
-    font-size: 12px;
-    color: var(--muted);
-    border: 1px solid var(--line);
-    padding: 4px 12px;
-    border-radius: 16px;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    transition: all 0.25s;
-  }
-
-  .chapter .tags span:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* ---------- THOUGHTS FEED + ADD ---------- */
-  .feed {
-    padding: 10vh 5vw 12vh;
-    max-width: 1100px;
-    margin: 0 auto;
-    border-top: 1px solid var(--line);
-  }
-
+  /* ---------- FEED + ADD ---------- */
+  .feed { padding: 10vh 5vw 12vh; max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--line); }
   .feed .eyebrow {
-    font-size: 13px;
-    letter-spacing: 0.25em;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 16px;
+    font-size: 13px; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 16px;
   }
-
   .feed h2 { font-size: clamp(26px, 4vw, 44px); font-weight: 700; }
-  .feed .lede { margin-top: 14px; color: var(--muted); max-width: 560px; font-size: 15px; }
-
+  .feed .lede { margin-top: 14px; color: var(--muted); max-width: 620px; font-size: 15px; }
   .feed-list { margin-top: 6vh; }
 
   .add-box {
-    margin-top: 7vh;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 30px;
-    background: var(--bg-soft);
-    max-width: 720px;
+    margin-top: 7vh; border: 1px solid var(--line); border-radius: 12px; padding: 30px;
+    background: var(--bg-soft); max-width: 720px;
   }
-
   .add-box h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
-  .add-box .hint { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
-
+  .add-box .hint { font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
   .add-box label {
-    display: block;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin: 16px 0 6px;
-    text-transform: uppercase;
+    display: block; font-size: 12px; letter-spacing: 0.1em; color: var(--muted);
+    margin: 16px 0 6px; text-transform: uppercase;
   }
-
-  .add-box textarea, .add-box input, .add-box select {
-    width: 100%;
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    color: var(--ink);
-    font-family: inherit;
-    font-size: 14px;
-    padding: 12px 14px;
-    transition: border-color 0.25s;
+  .add-box textarea, .add-box input {
+    width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+    color: var(--ink); font-family: inherit; font-size: 14px; padding: 12px 14px; transition: border-color 0.25s;
   }
-
   .add-box textarea { min-height: 90px; resize: vertical; }
-  .add-box textarea:focus, .add-box input:focus, .add-box select:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
-
-  .add-box .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
+  .add-box textarea:focus, .add-box input:focus { outline: none; border-color: var(--accent); }
   .add-box .btns { margin-top: 24px; display: flex; gap: 10px; }
-
   .btn-gold {
-    background: var(--accent);
-    color: var(--bg);
-    border: none;
-    font-weight: 700;
-    font-size: 14px;
-    padding: 12px 26px;
-    border-radius: 8px;
-    cursor: pointer;
-    letter-spacing: 0.04em;
-    transition: opacity 0.25s;
+    background: var(--accent); color: var(--bg); border: none; font-weight: 700; font-size: 14px;
+    padding: 12px 26px; border-radius: 8px; cursor: pointer; letter-spacing: 0.04em; transition: opacity 0.25s;
   }
-
   .btn-gold:hover { opacity: 0.85; }
-
   .btn-ghost {
-    background: none;
-    color: var(--muted);
-    border: 1px solid var(--line);
-    font-size: 14px;
-    padding: 12px 22px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.25s;
+    background: none; color: var(--muted); border: 1px solid var(--line); font-size: 14px;
+    padding: 12px 22px; border-radius: 8px; cursor: pointer; transition: all 0.25s;
   }
-
   .btn-ghost:hover { color: var(--ink); border-color: var(--muted); }
 
   /* ---------- FOOTER ---------- */
   .footer {
-    border-top: 1px solid var(--line);
-    padding: 10vh 5vw;
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
+    border-top: 1px solid var(--line); padding: 10vh 5vw; max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
   }
-
   .footer h2 { font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; line-height: 1.3; }
   .footer .contact { margin-top: 20px; font-size: 15px; color: var(--muted); }
   .footer .contact a { color: var(--accent); text-decoration: none; }
   .footer .contact a:hover { text-decoration: underline; }
-
   .placeholder {
-    border: 1px dashed var(--faint);
-    border-radius: 12px;
-    min-height: 240px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--faint);
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-align: center;
-    padding: 20px;
+    border: 1px dashed var(--faint); border-radius: 12px; min-height: 240px; display: flex;
+    align-items: center; justify-content: center; color: var(--faint); font-size: 13px;
+    letter-spacing: 0.1em; text-align: center; padding: 20px;
   }
-
-  .credit {
-    padding: 30px 5vw 40px;
-    font-size: 12px;
-    color: var(--faint);
-    letter-spacing: 0.1em;
-    text-align: center;
-  }
+  .credit { padding: 30px 5vw 40px; font-size: 12px; color: var(--faint); letter-spacing: 0.1em; text-align: center; }
 
   @media (max-width: 720px) {
     .footer { grid-template-columns: 1fr; }
-    .add-box .row { grid-template-columns: 1fr; }
-    #sky { height: 46vh; }
-    .journey { padding-left: 34px; }
-    .chapter .dot { left: -29px; }
-    .journey-line { left: 5px; }
+    #sky { height: 60vh; }
   }
 </style>
 </head>
 <body>
 
-<!-- ============ HERO + CONSTELLATION ============ -->
 <section class="hero">
   <div class="hero-top">
-    <div class="brand">PAUL BHANG</div>
-    <div>HANGZHOU · SEOUL</div>
+    <div class="brand" id="p-brand"></div>
+    <div id="p-places"></div>
   </div>
 
   <div class="hero-head">
-    <div class="eyebrow">15 years · 5 continents · 4 languages</div>
-    <h1>단어를 고르면,<br><span class="dim">내가 보입니다.</span></h1>
-    <p class="sub">머릿속을 떠다니는 단어들입니다. <b>두세 개를 골라 연결해 보세요</b> — 그 조합에 해당하는 실제 여정과 최근의 생각이 나타납니다.</p>
-    <div class="identity-line">Linguist · Trader · Maker · Educator · Storyteller · Explorer</div>
+    <div class="eyebrow" id="p-tagline"></div>
+    <h1 id="p-hero"></h1>
+    <p class="sub" id="p-sub"></p>
+    <div class="identity-line" id="p-faces"></div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="swatch sw-core"></span>나</span>
+    <span class="item"><span class="swatch sw-place"></span>나를 바꾼 장소</span>
+    <span class="item"><span class="swatch sw-assoc"></span>관심어</span>
+    <span class="item"><span class="swatch sw-wild"></span>엉뚱한 갈고리</span>
   </div>
 
   <div class="constellation-wrap">
-    <div class="sky-hint" id="sky-hint">단어를 클릭하세요 <span class="k">(최대 3개)</span></div>
+    <div class="sky-hint" id="sky-hint">단어를 클릭하세요 <span class="k">(하나면 이야기, 두셋이면 그 조합)</span></div>
     <button class="sky-reset" id="sky-reset">초기화</button>
     <canvas id="sky"></canvas>
   </div>
@@ -497,45 +231,19 @@
   <div class="synthesis" id="synthesis"></div>
 </section>
 
-<!-- ============ ATLAS ============ -->
-<section class="atlas">
-  <div class="atlas-head">
-    <div class="eyebrow">The Atlas</div>
-    <h2>하나의 이력서가 아니라,<br>여덟 번의 삶.</h2>
-    <p>진해에서 비엔나로, 포트모르즈비에서 도쿄로. 직선이 아니라 궤도에 가까운 여정이었습니다.</p>
-  </div>
-
-  <div class="journey" id="journey">
-    <div class="journey-line"><div class="fill" id="journey-fill"></div></div>
-  </div>
-</section>
-
-<!-- ============ THOUGHTS FEED ============ -->
 <section class="feed">
   <div class="eyebrow">Living Document</div>
   <h2>최근의 생각들</h2>
-  <p class="lede">이 페이지는 완성본이 아닙니다. 생각이 생길 때마다 단어와 함께 추가되고, 성좌는 조금씩 커집니다.</p>
-
+  <p class="lede" id="feed-lede"></p>
   <div class="feed-list" id="feed-list"></div>
 
   <div class="add-box">
-    <h4>새로운 생각 · 단어 추가</h4>
-    <div class="hint">추가한 생각은 태그된 단어를 골랐을 때 방문자에게 보입니다. 브라우저에 저장됩니다.</div>
-    <div class="row">
-      <div>
-        <label>타입</label>
-        <select id="add-type">
-          <option value="thought">생각 추가</option>
-          <option value="keyword">단어 추가 (성좌에 띄우기)</option>
-        </select>
-      </div>
-      <div>
-        <label>관련 단어 (쉼표 구분)</label>
-        <input type="text" id="add-tags" placeholder="예: 언어 교육, 호기심" />
-      </div>
-    </div>
-    <label>내용</label>
-    <textarea id="add-content" placeholder="생각을 자유롭게 적어주세요…"></textarea>
+    <h4>새로운 생각 추가</h4>
+    <div class="hint">떠오른 생각을 적고, 관련 단어를 붙이면 성좌에서 그 단어를 골랐을 때 나타납니다. 브라우저에 저장됩니다.<br>더 깊은 이야기는 Claude와 대화하면 성좌 자체가 자랍니다.</div>
+    <label>관련 단어 (쉼표 구분 — 예: 이방인, 파키스탄)</label>
+    <input type="text" id="add-tags" placeholder="이방인, 파키스탄" />
+    <label>생각</label>
+    <textarea id="add-content" placeholder="지금 떠오른 생각을 자유롭게…"></textarea>
     <div class="btns">
       <button class="btn-gold" id="add-btn">추가하기</button>
       <button class="btn-ghost" id="clear-form-btn">지우기</button>
@@ -543,195 +251,79 @@
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <section class="footer">
   <div>
     <h2>다음 챕터를<br>함께 쓸 사람을 찾습니다.</h2>
-    <div class="contact">
-      <a href="mailto:bikeryhz@hotmail.com">bikeryhz@hotmail.com</a><br>
-      Hangzhou, China · Yongin, Korea
-    </div>
+    <div class="contact" id="p-contact"></div>
   </div>
   <div class="placeholder">[PLACEHOLDER: 프로필 사진 또는<br>여정 지도 일러스트]</div>
 </section>
 
-<div class="credit">PAUL BHANG · THOUGHT CONSTELLATION · 2026</div>
+<div class="credit" id="p-credit"></div>
 
+<script src="data.js"></script>
 <script>
 (function () {
-  /* ================= DATA ================= */
-  const KEYWORDS = [
-    { id: 'interpretation', label: '통역·번역', group: 'skill' },
-    { id: 'multilingual', label: '다국어', group: 'skill' },
-    { id: 'sales', label: 'B2B 영업', group: 'skill' },
-    { id: 'project_mgmt', label: '프로젝트 관리', group: 'skill' },
-    { id: 'subtitling', label: '영상·자막', group: 'skill' },
-    { id: 'bike', label: '자전거', group: 'skill' },
-    { id: 'logistics', label: '물류', group: 'skill' },
-    { id: 'teaching', label: '언어 교육', group: 'skill' },
-    { id: 'trade', label: '국제무역', group: 'domain' },
-    { id: 'startup', label: '창업', group: 'domain' },
-    { id: 'automotive', label: '자동차', group: 'domain' },
-    { id: 'content', label: '콘텐츠', group: 'domain' },
-    { id: 'hospitality', label: '게스트하우스', group: 'domain' },
-    { id: 'ecommerce', label: '이커머스', group: 'domain' },
-    { id: 'adaptability', label: '적응력', group: 'value' },
-    { id: 'learning', label: '평생학습', group: 'value' },
-    { id: 'global', label: '글로벌', group: 'value' },
-    { id: 'craftsmanship', label: '장인정신', group: 'value' },
-    { id: 'bridge', label: '문화의 다리', group: 'value' },
-    { id: 'curiosity', label: '호기심', group: 'value' },
-    { id: 'cross_cultural', label: '교차문화', group: 'value' },
-  ];
+  const D = window.DATA;
+  const P = D.profile;
 
-  const CHAPTERS = [
-    {
-      num: '01', years: '2003 – 2005', place: '진해, 대한민국',
-      title: '해군에서 배운 언어의 무게',
-      body: '해군사관학교 영어 조교. 미 해군 교환 교관 옆에서 사관생도들을 가르치고, 군·정부 행사에서 통역을 맡았습니다. 언어가 단순한 기술이 아니라 책임이라는 걸 처음 배운 시절.',
-      tags: ['interpretation', 'teaching', 'multilingual'],
-    },
-    {
-      num: '02', years: '2005 – 2007', place: '서울 → 비엔나',
-      title: '물류의 세계, 100개의 파트너',
-      body: 'Daehan Express에서 항공·해상 수출입을 다루다 비엔나 공항의 지사(Euronet Cargo) 셋업을 맡았습니다. 100개가 넘는 파트너사와의 커뮤니케이션 — 신뢰가 곧 인프라라는 것을 배웠습니다.',
-      tags: ['logistics', 'trade', 'global', 'sales'],
-    },
-    {
-      num: '03', years: '2007 – 2009', place: '서울',
-      title: '첫 창업 — 히말라야에서 온 소금',
-      body: '파키스탄산 히말라야 암염을 수입하는 RS Business를 직접 세우고, 동시에 BM Trading에서 미국·독일산 주스 원액을 롯데·한국야쿠르트에 공급했습니다. 두 회사, 하나의 몸.',
-      tags: ['startup', 'trade', 'ecommerce', 'sales'],
-    },
-    {
-      num: '04', years: '2009 – 2010', place: '포트모르즈비, 파푸아뉴기니',
-      title: '남태평양의 목재',
-      body: 'Pako Holdings 제재소에서 현지 시장에 목재를 팔고, 노니·커피·흑단·고철까지 투자 아이템을 조사했습니다. 인프라가 없는 곳에서 비즈니스를 한다는 것 — 적응력의 진짜 시험대.',
-      tags: ['trade', 'adaptability', 'global'],
-    },
-    {
-      num: '05', years: '2010 – 2013', place: '상하이 · 쑤저우',
-      title: '수출에서 자동차까지',
-      body: 'Ahjun에서 Oakley·Forever21·Mango 향 매장 집기를 유럽·중동에 수출하고, 이후 Yangfeng KSS에서 베이징현대 프로젝트의 프로그램 매니저로. 한·중 비즈니스 문화 사이의 통역자가 진짜 직함이었습니다.',
-      tags: ['sales', 'project_mgmt', 'cross_cultural', 'automotive', 'interpretation'],
-    },
-    {
-      num: '06', years: '2014 – 2016', place: '도쿄 · 사이타마',
-      title: '손으로 만드는 시간',
-      body: '서른둘에 Tokyo College of Cycle Design에 입학해 2년간 자전거 설계·조립·정비를 배우고 BMI 프로 정비 자격을 땄습니다. 졸업 후엔 Eisan Bike에서 E-bike를 조립했습니다. 디지털이 아닌, 물리적인 이해.',
-      tags: ['bike', 'craftsmanship', 'learning', 'curiosity'],
-    },
-    {
-      num: '07', years: '2017 – 2023', place: '항저우',
-      title: '게스트하우스, 그리고 자막',
-      body: 'Bikery Guest House를 열어 이벤트·마케팅·자전거 정비까지 혼자 다 했고, 동시에 6년간 한↔영 번역·자막 프리랜서로 일했습니다(Aegisub, Vrew, FCPX). 작은 비즈니스는 전체를 보는 훈련이었습니다.',
-      tags: ['hospitality', 'startup', 'subtitling', 'content', 'adaptability'],
-    },
-    {
-      num: '08', years: '2021 – 현재', place: '항저우',
-      title: '가르치는 사람',
-      body: '항저우사범대학교 한국어 전임강사. 일하면서 UoPeople에서 교육학 석사(M.A. in Education)를 마쳤습니다. 언어를 가르친다는 건 문화로 들어가는 문을 열어주는 일 — 지금의 챕터입니다.',
-      tags: ['teaching', 'multilingual', 'bridge', 'learning'],
-    },
-  ];
+  document.getElementById('p-brand').textContent = P.name.toUpperCase();
+  document.getElementById('p-places').textContent = P.places;
+  document.getElementById('p-tagline').textContent = P.tagline;
+  document.getElementById('p-hero').innerHTML = P.hero1 + '<br><span class="dim">' + P.hero2 + '</span>';
+  document.getElementById('p-sub').innerHTML = P.heroSub;
+  document.getElementById('p-faces').textContent = P.faces;
+  document.getElementById('p-contact').innerHTML =
+    '<a href="mailto:' + P.email + '">' + P.email + '</a><br>' + P.location;
+  document.getElementById('p-credit').textContent = P.name.toUpperCase() + ' · THOUGHT CONSTELLATION · 2026';
+  document.getElementById('feed-lede').textContent =
+    '이 페이지는 완성본이 아닙니다. 생각이 생길 때마다, 대화할 때마다 성좌는 조금씩 커집니다.';
 
-  const SEED_THOUGHTS = [
-    {
-      id: 't1',
-      text: '15년간 5개 대륙에서 일하며 배운 가장 큰 교훈: 언어와 문화는 기술 스펙만큼 중요하다. 계약 성사의 절반은 신뢰와 이해에서 나온다.',
-      tags: ['multilingual', 'cross_cultural', 'global'],
-      addedAt: Date.now() - 0,
-    },
-    {
-      id: 't2',
-      text: '자전거 정비 자격(BMI)을 따며 느낀 것 — 손으로 만들고 고치는 일의 가치. 디지털 세상에서도 "물리적 이해"가 사고의 바닥을 만든다.',
-      tags: ['bike', 'craftsmanship'],
-      addedAt: Date.now() - 86400000,
-    },
-    {
-      id: 't3',
-      text: '암염 수입과 주스 원액 영업을 동시에 하던 시절: 작은 사업이라도 공급-수요-물류의 전체 사이클을 이해하면, 어떤 산업이든 다시 읽을 수 있게 된다.',
-      tags: ['startup', 'trade', 'logistics'],
-      addedAt: Date.now() - 172800000,
-    },
-    {
-      id: 't4',
-      text: '한국어를 가르치며 깨달은 것 — 언어 교육은 문법이 아니라 문화 진출의 첫 관문이다. 소프트파워는 교실에서 시작된다.',
-      tags: ['teaching', 'multilingual', 'bridge'],
-      addedAt: Date.now() - 259200000,
-    },
-    {
-      id: 't5',
-      text: '100개가 넘는 파트너사를 관리하며: 신뢰와 투명성이 네트워크의 유일한 통화(通貨)다. 한 번의 실수가 전체를 흔든다.',
-      tags: ['logistics', 'project_mgmt', 'cross_cultural'],
-      addedAt: Date.now() - 345600000,
-    },
-    {
-      id: 't6',
-      text: '베이징현대 프로젝트에서 배운 것 — 기술 문제의 절반은 사실 문화 문제였다. 중재할 수 있는 사람이 프로젝트를 살린다.',
-      tags: ['project_mgmt', 'automotive', 'cross_cultural', 'interpretation'],
-      addedAt: Date.now() - 432000000,
-    },
-    {
-      id: 't7',
-      text: '자막 일을 6년 하면서: 번역은 언어의 문제가 아니라 타이밍, 리듬, 문화적 함축의 문제였다. 대부분의 일이 그렇다.',
-      tags: ['subtitling', 'content', 'learning'],
-      addedAt: Date.now() - 518400000,
-    },
-    {
-      id: 't8',
-      text: '게스트하우스 시절 이벤트·마케팅·정비를 혼자 다 했다. "멀티태스킹"처럼 보였지만 사실은 "비즈니스 전체를 보는 눈"을 얻는 과정이었다.',
-      tags: ['hospitality', 'startup', 'adaptability'],
-      addedAt: Date.now() - 604800000,
-    },
-  ];
-
-  /* ================= STATE ================= */
-  const LS_KEY = 'paul-intro-user-data-v1';
+  const LS_KEY = 'paul-intro-user-v2';
   const saved = (() => {
-    try { return JSON.parse(localStorage.getItem(LS_KEY)) || { thoughts: [], keywords: [] }; }
-    catch (e) { return { thoughts: [], keywords: [] }; }
+    try { return JSON.parse(localStorage.getItem(LS_KEY)) || { thoughts: [] }; }
+    catch (e) { return { thoughts: [] }; }
   })();
 
+  const NOW = Date.now();
+  const baseThoughts = D.thoughts.map(t => ({ id: t.id, text: t.text, tags: t.tags, addedAt: NOW - t.daysAgo * 86400000 }));
   const state = {
-    keywords: [...KEYWORDS, ...saved.keywords],
-    thoughts: [...saved.thoughts, ...SEED_THOUGHTS],
+    nodes: D.nodes,
+    thoughts: [...saved.thoughts, ...baseThoughts],
     selected: [],
   };
+  const nodeById = id => state.nodes.find(n => n.id === id);
+  const labelOf = id => (nodeById(id) || {}).label || id;
 
   function persist() {
-    localStorage.setItem(LS_KEY, JSON.stringify({
-      thoughts: state.thoughts.filter(t => t.user),
-      keywords: state.keywords.filter(k => k.user),
-    }));
+    localStorage.setItem(LS_KEY, JSON.stringify({ thoughts: state.thoughts.filter(t => t.user) }));
   }
 
-  const labelOf = id => (state.keywords.find(k => k.id === id) || {}).label || id;
-
-  /* ================= CONSTELLATION CANVAS ================= */
   const canvas = document.getElementById('sky');
   const ctx = canvas.getContext('2d');
   let W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 2);
   let particles = [];
   let hovered = null;
 
-  function sizeFor(group) {
-    return group === 'skill' ? 16 : group === 'domain' ? 15 : 14;
-  }
+  const TYPE = {
+    core:        { size: 16, alpha: 0.72, color: '212,162,78',  drift: 0.05 },
+    place:       { size: 18, alpha: 0.95, color: '232,195,122', drift: 0.035 },
+    associative: { size: 14, alpha: 0.5,  color: '237,235,230', drift: 0.07 },
+    wildcard:    { size: 12, alpha: 0.3,  color: '237,235,230', drift: 0.11 },
+  };
 
   function initParticles() {
-    particles = state.keywords.map((kw, i) => {
-      const existing = particles.find(p => p.id === kw.id);
-      if (existing) return existing;
+    const prev = particles;
+    particles = state.nodes.map(n => {
+      const ex = prev.find(p => p.id === n.id);
+      if (ex) return ex;
+      const t = TYPE[n.type] || TYPE.core;
       return {
-        id: kw.id,
-        label: kw.label,
-        group: kw.group,
+        id: n.id, label: n.label, type: n.type,
         x: 60 + Math.random() * (W - 120),
-        y: 40 + Math.random() * (H - 80),
-        vx: (Math.random() - 0.5) * 0.07,
-        vy: (Math.random() - 0.5) * 0.07,
-        size: sizeFor(kw.group),
+        y: 44 + Math.random() * (H - 88),
+        vx: (Math.random() - 0.5) * t.drift,
+        vy: (Math.random() - 0.5) * t.drift,
         w: 0,
       };
     });
@@ -740,80 +332,73 @@
   function resize() {
     const rect = canvas.getBoundingClientRect();
     W = rect.width; H = rect.height;
-    canvas.width = W * DPR;
-    canvas.height = H * DPR;
+    canvas.width = W * DPR; canvas.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     if (!particles.length) initParticles();
     particles.forEach(p => {
-      p.x = Math.min(Math.max(p.x, 40), W - 40);
-      p.y = Math.min(Math.max(p.y, 24), H - 16);
+      p.x = Math.min(Math.max(p.x, 44), W - 44);
+      p.y = Math.min(Math.max(p.y, 28), H - 18);
     });
   }
 
   function draw() {
     ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = 'rgba(237,235,230,0.05)';
+    for (let i = 0; i < 46; i++) ctx.fillRect((i * 97.3) % W, (i * 53.7) % H, 1.1, 1.1);
 
-    // faint background stars
-    ctx.fillStyle = 'rgba(237,235,230,0.06)';
-    for (let i = 0; i < 40; i++) {
-      const sx = (i * 97.3) % W;
-      const sy = (i * 53.7) % H;
-      ctx.fillRect(sx, sy, 1.2, 1.2);
-    }
-
-    // connection lines between selected
     const sel = particles.filter(p => state.selected.includes(p.id));
     if (sel.length > 1) {
-      ctx.strokeStyle = 'rgba(212,162,78,0.55)';
-      ctx.lineWidth = 1;
-      for (let i = 0; i < sel.length; i++) {
+      ctx.strokeStyle = 'rgba(212,162,78,0.55)'; ctx.lineWidth = 1;
+      for (let i = 0; i < sel.length; i++)
         for (let j = i + 1; j < sel.length; j++) {
-          ctx.beginPath();
-          ctx.moveTo(sel[i].x, sel[i].y);
-          ctx.lineTo(sel[j].x, sel[j].y);
-          ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(sel[i].x, sel[i].y); ctx.lineTo(sel[j].x, sel[j].y); ctx.stroke();
         }
-      }
     }
 
-    // words
     particles.forEach(p => {
+      const t = TYPE[p.type] || TYPE.core;
       const isSel = state.selected.includes(p.id);
       const isHov = hovered === p.id;
-      const fs = p.size * (isSel ? 1.2 : 1);
+      const fs = t.size * (isSel ? 1.25 : 1);
       ctx.font = (isSel ? '700 ' : '400 ') + fs + 'px Pretendard, "Malgun Gothic", sans-serif';
+      ctx.textAlign = 'center';
       p.w = ctx.measureText(p.label).width;
 
-      if (isSel) {
-        ctx.fillStyle = '#d4a24e';
+      if (p.type === 'place') {
         ctx.beginPath();
-        ctx.arc(p.x, p.y + fs * 0.75, 3, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y - fs * 0.35, 2.4, 0, Math.PI * 2);
+        ctx.fillStyle = isSel ? '#e8c37a' : 'rgba(232,195,122,0.7)';
         ctx.fill();
-      } else {
-        ctx.fillStyle = isHov ? 'rgba(237,235,230,0.95)' : 'rgba(237,235,230,0.5)';
       }
-      ctx.textAlign = 'center';
+
+      let a = isSel ? 1 : (isHov ? Math.min(t.alpha + 0.4, 1) : t.alpha);
+      ctx.fillStyle = isSel ? '#d4a24e' : 'rgba(' + t.color + ',' + a + ')';
       ctx.fillText(p.label, p.x, p.y);
+
+      if (isSel) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y + fs * 0.55, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#d4a24e'; ctx.fill();
+      }
     });
   }
 
-  function tick() {
+  function stepLoop() {
     particles.forEach(p => {
-      if (state.selected.includes(p.id)) return; // selected words freeze
-      p.x += p.vx;
-      p.y += p.vy;
-      const hw = p.w / 2 + 12;
+      if (state.selected.includes(p.id)) return;
+      p.x += p.vx; p.y += p.vy;
+      const hw = p.w / 2 + 14;
       if (p.x < hw || p.x > W - hw) p.vx *= -1;
-      if (p.y < 30 || p.y > H - 14) p.vy *= -1;
+      if (p.y < 32 || p.y > H - 16) p.vy *= -1;
     });
     draw();
-    requestAnimationFrame(tick);
+    requestAnimationFrame(stepLoop);
   }
 
   function hitTest(mx, my) {
     for (const p of particles) {
-      const hw = Math.max(p.w / 2 + 10, 30);
-      if (mx > p.x - hw && mx < p.x + hw && my > p.y - 20 && my < p.y + 10) return p;
+      const hw = Math.max(p.w / 2 + 10, 28);
+      if (mx > p.x - hw && mx < p.x + hw && my > p.y - 20 && my < p.y + 12) return p;
     }
     return null;
   }
@@ -827,184 +412,123 @@
 
   let downPos = null;
   canvas.addEventListener('pointerdown', e => { downPos = { x: e.clientX, y: e.clientY }; });
-
   canvas.addEventListener('click', e => {
     if (downPos && Math.hypot(e.clientX - downPos.x, e.clientY - downPos.y) > 6) return;
     const r = canvas.getBoundingClientRect();
     const p = hitTest(e.clientX - r.left, e.clientY - r.top);
-    if (!p) return;
-    toggleSelect(p.id);
+    if (p) toggleSelect(p.id);
   });
 
   function toggleSelect(id) {
     const i = state.selected.indexOf(id);
     if (i >= 0) state.selected.splice(i, 1);
-    else {
-      if (state.selected.length >= 3) state.selected.shift();
-      state.selected.push(id);
-    }
+    else { if (state.selected.length >= 3) state.selected.shift(); state.selected.push(id); }
     renderSynthesis();
   }
 
-  document.getElementById('sky-reset').addEventListener('click', () => {
-    state.selected = [];
-    renderSynthesis();
-  });
+  document.getElementById('sky-reset').addEventListener('click', () => { state.selected = []; renderSynthesis(); });
 
-  /* ================= SYNTHESIS ================= */
+  const TYPE_LABEL = { core: '나', place: '나를 바꾼 장소', associative: '관심어', wildcard: '엉뚱한 갈고리' };
+
   function renderSynthesis() {
     const el = document.getElementById('synthesis');
-    const hint = document.getElementById('sky-hint');
-    hint.style.opacity = state.selected.length ? '0' : '1';
+    document.getElementById('sky-hint').style.opacity = state.selected.length ? '0' : '1';
 
     if (!state.selected.length) {
-      el.innerHTML = '<div class="synth-empty">아직 선택된 단어가 없습니다. 위의 성좌에서 궁금한 단어를 골라보세요.</div>';
+      el.innerHTML = '<div class="synth-empty">아직 선택된 단어가 없습니다. 위 성좌에서 궁금한 단어를 하나 골라보세요 — 이야기가 열립니다.</div>';
       return;
     }
+    if (state.selected.length === 1) { el.innerHTML = renderSingle(nodeById(state.selected[0])); bindChips(el); return; }
+    el.innerHTML = renderCombo(); bindChips(el);
+  }
 
-    const labels = state.selected.map(labelOf);
-    const title = labels.join('<span class="x">×</span>');
-
-    const chapters = CHAPTERS
-      .map(c => ({ c, score: c.tags.filter(t => state.selected.includes(t)).length }))
-      .filter(o => o.score > 0)
-      .sort((a, b) => b.score - a.score);
-
-    const thoughts = state.thoughts
-      .map(t => ({ t, score: t.tags.filter(tag => state.selected.includes(tag)).length }))
-      .filter(o => o.score > 0)
-      .sort((a, b) => b.score - a.score || b.t.addedAt - a.t.addedAt)
-      .slice(0, 4);
-
-    let html = `<div class="synth-title">${title}</div>`;
-    html += `<div class="synth-lede">이 조합이 실제로 만났던 순간들입니다 — 이력에서 ${chapters.length}개 챕터, 최근 생각 ${thoughts.length}건.</div>`;
-
-    if (chapters.length) {
-      html += '<div class="synth-grid">' + chapters.map(({ c }) => `
-        <div class="synth-chapter">
-          <div class="num">${c.num}</div>
-          <div class="t">${c.title}</div>
-          <div class="meta">${c.place} · ${c.years}</div>
-          <div class="d">${c.body}</div>
-        </div>`).join('') + '</div>';
+  function renderSingle(n) {
+    if (!n) return '';
+    let h = '<div class="story-single">';
+    h += '<div><span class="badge t-' + n.type + '">' + TYPE_LABEL[n.type] + '</span>';
+    if (n.era) h += '<span class="era">' + n.era + '</span>';
+    h += '</div>';
+    h += '<div class="headword">' + n.label + '</div>';
+    h += '<div class="prose">' + n.story + '</div>';
+    if (n.status === 'ask') {
+      const oq = D.openQuestions.find(q => q.node === n.id);
+      h += '<div class="ask-ribbon">✦ 이 이야기는 아직 Paul에게 듣는 중입니다' + (oq ? ' — “' + oq.q + '”' : '') + '</div>';
     }
-
-    if (thoughts.length) {
-      html += '<div class="synth-thoughts"><h4>이 조합에 대한 최근 생각</h4>' +
-        thoughts.map(({ t }) => thoughtCard(t)).join('') + '</div>';
+    const links = (n.links || []).filter(nodeById);
+    if (links.length) {
+      h += '<div class="related-row"><span class="lbl">이어지는 단어</span>' +
+        links.map(id => '<span class="chip" data-id="' + id + '">' + labelOf(id) + '</span>').join('') + '</div>';
     }
+    h += '</div>';
+    return h;
+  }
 
-    if (!chapters.length && !thoughts.length) {
-      html += '<div class="synth-lede" style="margin-top:24px">이 조합은 아직 만난 적이 없네요 — 어쩌면 다음 챕터의 소재일지도.</div>';
+  function renderCombo() {
+    const sel = state.selected.map(nodeById).filter(Boolean);
+    const title = sel.map(n => n.label).join('<span class="x">×</span>');
+    let h = '<div class="synth-title">' + title + '</div>';
+    h += '<div class="synth-lede">이 단어들이 한 사람 안에서 만나는 지점입니다.</div>';
+    h += '<div class="synth-grid">' + sel.map(n =>
+      '<div class="story-card t-' + n.type + '"><div class="cap">' + TYPE_LABEL[n.type] +
+      (n.era ? ' · ' + n.era : '') + '</div><div class="hw">' + n.label +
+      '</div><div class="tx">' + n.story + '</div></div>').join('') + '</div>';
+
+    const ids = state.selected;
+    const shared = state.thoughts
+      .map(t => ({ t, s: t.tags.filter(tag => ids.includes(tag)).length }))
+      .filter(o => o.s > 0)
+      .sort((a, b) => b.s - a.s || b.t.addedAt - a.t.addedAt).slice(0, 4);
+    if (shared.length) {
+      h += '<div class="synth-thoughts"><h4>이 조합에 걸린 생각</h4>' +
+        shared.map(o => thoughtCard(o.t)).join('') + '</div>';
     }
+    return h;
+  }
 
-    el.innerHTML = html;
+  function bindChips(el) {
+    el.querySelectorAll('.chip').forEach(c =>
+      c.addEventListener('click', () => toggleSelect(c.dataset.id)));
   }
 
   function thoughtCard(t) {
-    return `<div class="thought-card">
-      <div class="txt">${t.text}</div>
-      <div class="meta">${formatDate(t.addedAt)} · <span class="tag">${t.tags.map(labelOf).join(' · ')}</span></div>
-    </div>`;
+    return '<div class="thought-card"><div class="txt">' + t.text +
+      '</div><div class="meta">' + formatDate(t.addedAt) + ' · ' +
+      t.tags.map(labelOf).join(' · ') + '</div></div>';
   }
-
   function formatDate(ts) {
-    const d = Math.floor((Date.now() - ts) / 86400000);
-    if (d <= 0) return '오늘';
-    if (d === 1) return '어제';
-    if (d < 7) return d + '일 전';
-    if (d < 30) return Math.floor(d / 7) + '주 전';
+    const d = Math.floor((NOW - ts) / 86400000);
+    if (d <= 0) return '오늘'; if (d === 1) return '어제';
+    if (d < 7) return d + '일 전'; if (d < 30) return Math.floor(d / 7) + '주 전';
     return Math.floor(d / 30) + '개월 전';
   }
 
-  /* ================= ATLAS ================= */
-  function renderAtlas() {
-    const journey = document.getElementById('journey');
-    journey.querySelectorAll('.chapter').forEach(n => n.remove());
-    CHAPTERS.forEach(c => {
-      const div = document.createElement('div');
-      div.className = 'chapter';
-      div.innerHTML = `
-        <div class="dot"></div>
-        <div class="num">${c.num}</div>
-        <div class="place">${c.place} — ${c.years}</div>
-        <h3>${c.title}</h3>
-        <div class="body">${c.body}</div>
-        <div class="tags">${c.tags.map(t => `<span data-kw="${t}">${labelOf(t)}</span>`).join('')}</div>`;
-      journey.appendChild(div);
-    });
-
-    journey.querySelectorAll('.tags span').forEach(sp => {
-      sp.addEventListener('click', () => {
-        const id = sp.dataset.kw;
-        if (!state.selected.includes(id)) toggleSelect(id);
-        else renderSynthesis();
-        document.getElementById('sky').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      });
-    });
-
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
-    }, { threshold: 0.25 });
-    journey.querySelectorAll('.chapter').forEach(ch => io.observe(ch));
-  }
-
-  window.addEventListener('scroll', () => {
-    const journey = document.getElementById('journey');
-    const rect = journey.getBoundingClientRect();
-    const vh = window.innerHeight;
-    const progress = Math.min(Math.max((vh * 0.7 - rect.top) / rect.height, 0), 1);
-    document.getElementById('journey-fill').style.height = (progress * 100) + '%';
-  }, { passive: true });
-
-  /* ================= FEED + ADD ================= */
   function renderFeed() {
-    const list = document.getElementById('feed-list');
-    const sorted = [...state.thoughts].sort((a, b) => b.addedAt - a.addedAt).slice(0, 6);
-    list.innerHTML = sorted.map(thoughtCard).join('');
+    document.getElementById('feed-list').innerHTML =
+      [...state.thoughts].sort((a, b) => b.addedAt - a.addedAt).slice(0, 6).map(thoughtCard).join('');
   }
 
   document.getElementById('add-btn').addEventListener('click', () => {
-    const type = document.getElementById('add-type').value;
     const content = document.getElementById('add-content').value.trim();
     const tagsRaw = document.getElementById('add-tags').value.trim();
-    if (!content) { alert('내용을 입력해주세요.'); return; }
-
-    if (type === 'thought') {
-      const tags = tagsRaw.split(',').map(s => s.trim()).filter(Boolean)
-        .map(lbl => {
-          const found = state.keywords.find(k => k.label === lbl || k.id === lbl);
-          return found ? found.id : null;
-        }).filter(Boolean);
-      state.thoughts.unshift({ id: 't' + Date.now(), text: content, tags, addedAt: Date.now(), user: true });
-    } else {
-      const id = 'kw' + Date.now();
-      state.keywords.push({ id, label: content, group: 'value', user: true });
-      initParticles();
-    }
-
+    if (!content) { alert('생각을 입력해주세요.'); return; }
+    const tags = tagsRaw.split(',').map(s => s.trim()).filter(Boolean).map(lbl => {
+      const f = state.nodes.find(n => n.label === lbl || n.id === lbl); return f ? f.id : null;
+    }).filter(Boolean);
+    state.thoughts.unshift({ id: 't' + NOW + Math.floor(state.thoughts.length), text: content, tags, addedAt: Date.now(), user: true });
     persist();
     document.getElementById('add-content').value = '';
     document.getElementById('add-tags').value = '';
-    renderFeed();
-    renderSynthesis();
+    renderFeed(); renderSynthesis();
   });
-
   document.getElementById('clear-form-btn').addEventListener('click', () => {
     document.getElementById('add-content').value = '';
     document.getElementById('add-tags').value = '';
   });
 
-  /* ================= INIT ================= */
-  window.__pb = { state, toggleSelect, getParticles: () => particles };
+  window.__pb = { state, toggleSelect, nodeById };
 
   window.addEventListener('resize', resize);
-  resize();
-  initParticles();
-  renderSynthesis();
-  renderAtlas();
-  renderFeed();
-  tick();
+  resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop();
 })();
 </script>
 </body>
