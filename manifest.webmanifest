@@ -1,0 +1,16 @@
+{
+  "name": "Paul 인터뷰 노트",
+  "short_name": "인터뷰",
+  "description": "이동 중에 생각을 모으는 앱. 답변은 자동 저장되고, 버튼 하나로 정리해 보냅니다.",
+  "start_url": "./interview.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050419",
+  "theme_color": "#050419",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
