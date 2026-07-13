@@ -20,43 +20,106 @@
   html, body { background: var(--bg); }
   body {
     color: var(--ink); font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
-    line-height: 1.65; padding: env(safe-area-inset-top) 0 0; -webkit-font-smoothing: antialiased;
+    line-height: 1.6; padding: env(safe-area-inset-top) 0 0; -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 640px; margin: 0 auto; padding: 22px 18px 160px; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 22px 18px 170px; }
 
-  header { padding: 8px 0 22px; border-bottom: 1px solid var(--line); margin-bottom: 22px; }
+  header { padding: 8px 0 20px; border-bottom: 1px solid var(--line); margin-bottom: 20px; }
   .brand { font-size: 12px; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; }
   h1 { font-size: 26px; font-weight: 700; margin-top: 8px; letter-spacing: -0.01em; }
-  .lede { color: var(--muted); font-size: 13.5px; margin-top: 10px; }
+  .lede { color: var(--muted); font-size: 13px; margin-top: 10px; }
   .progress { margin-top: 16px; display: flex; align-items: center; gap: 10px; }
   .bar { flex: 1; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
   .bar > i { display: block; height: 100%; width: 0%; background: var(--accent); transition: width 0.4s; }
   .pcount { font-size: 12px; color: var(--muted); white-space: nowrap; }
 
-  .tier { margin: 28px 0 12px; display: flex; align-items: center; gap: 8px; }
+  .tier { margin: 26px 0 10px; display: flex; align-items: center; gap: 8px; }
   .tier .dot { width: 9px; height: 9px; border-radius: 50%; }
   .tier.light .dot { background: var(--green); }
   .tier.deep .dot { background: var(--blue); }
   .tier.fact .dot { background: var(--gray); }
+  .tier.later .dot { background: var(--faint); }
   .tier h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); }
 
   .card {
     background: var(--bg-soft); border: 1px solid var(--line); border-radius: 14px;
-    padding: 16px 16px 14px; margin-bottom: 12px; transition: border-color 0.25s;
+    padding: 15px 15px 13px; margin-bottom: 12px; transition: border-color 0.25s, opacity 0.25s;
   }
   .card.done { border-color: rgba(212,162,78,0.4); }
-  .q { font-size: 15.5px; font-weight: 500; line-height: 1.55; }
-  .q .num { color: var(--accent); font-weight: 700; margin-right: 6px; }
+  .card.later { opacity: 0.55; }
+
+  .qrow { display: flex; gap: 10px; align-items: flex-start; }
+  .q { flex: 1; font-size: 15px; font-weight: 500; line-height: 1.5; }
+  .q .num { color: var(--accent); font-weight: 700; margin-right: 5px; }
+  .qmenu { display: flex; gap: 2px; flex-shrink: 0; }
+  .icobtn {
+    background: none; border: none; color: var(--faint); font-size: 15px; padding: 4px 6px;
+    cursor: pointer; border-radius: 7px; line-height: 1; transition: color 0.2s, background 0.2s;
+  }
+  .icobtn:hover, .icobtn:active { color: var(--ink); background: rgba(237,235,230,0.06); }
+
+  .modes { display: flex; gap: 6px; margin-top: 12px; }
+  .mode {
+    flex: 1; background: var(--bg); border: 1px solid var(--line); color: var(--muted);
+    font-family: inherit; font-size: 12px; padding: 7px 4px; border-radius: 8px; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 5px;
+  }
+  .mode.on { border-color: var(--accent); color: var(--accent); background: rgba(212,162,78,0.08); }
+  .mode:disabled { opacity: 0.35; cursor: default; }
+
+  .ans { margin-top: 10px; }
   textarea {
-    width: 100%; margin-top: 12px; background: var(--bg); border: 1px solid var(--line);
-    border-radius: 10px; color: var(--ink); font-family: inherit; font-size: 15px; line-height: 1.6;
-    padding: 12px; min-height: 52px; resize: none; overflow: hidden; transition: border-color 0.2s;
+    width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
+    color: var(--ink); font-family: inherit; font-size: 15px; line-height: 1.6; padding: 12px;
+    min-height: 52px; resize: none; overflow: hidden; transition: border-color 0.2s;
   }
   textarea:focus { outline: none; border-color: var(--accent); }
-  .cardfoot { margin-top: 8px; display: flex; justify-content: space-between; align-items: center; min-height: 16px; }
+  .mic {
+    margin-top: 8px; background: none; border: 1px solid var(--line); color: var(--muted);
+    font-family: inherit; font-size: 13px; padding: 9px 14px; border-radius: 9px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 7px; transition: all 0.2s;
+  }
+  .mic.rec { border-color: var(--accent); color: var(--accent); }
+  .mic .pulse { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .mic.rec .pulse { animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .choice {
+    background: var(--bg); border: 1px solid var(--line); color: var(--ink); font-family: inherit;
+    font-size: 13.5px; padding: 12px 10px; border-radius: 10px; cursor: pointer; text-align: center;
+    line-height: 1.4; transition: all 0.2s;
+  }
+  .choice:active { transform: scale(0.98); }
+  .choice.sel { border-color: var(--accent); background: rgba(212,162,78,0.12); color: var(--accent); font-weight: 600; }
+
+  .cardfoot { margin-top: 9px; display: flex; justify-content: space-between; align-items: center; min-height: 16px; }
   .tag { font-size: 11px; color: var(--faint); letter-spacing: 0.03em; }
   .saved { font-size: 11px; color: var(--accent); opacity: 0; transition: opacity 0.3s; }
   .saved.show { opacity: 1; }
+
+  .addzone { margin-top: 24px; }
+  .addbtn {
+    width: 100%; background: none; border: 1px dashed var(--faint); color: var(--muted);
+    font-family: inherit; font-size: 14px; padding: 15px; border-radius: 12px; cursor: pointer; transition: all 0.2s;
+  }
+  .addbtn:hover, .addbtn:active { border-color: var(--accent); color: var(--accent); }
+  .addpanel { display: none; margin-top: 10px; gap: 8px; flex-direction: column; }
+  .addpanel.open { display: flex; }
+  .addpanel .row { display: flex; gap: 8px; }
+  .addpanel button.act {
+    flex: 1; background: var(--bg-soft); border: 1px solid var(--line); color: var(--ink);
+    font-family: inherit; font-size: 13.5px; padding: 12px; border-radius: 10px; cursor: pointer; transition: all 0.2s;
+  }
+  .addpanel button.act:hover { border-color: var(--accent); color: var(--accent); }
+  .addpanel textarea { min-height: 44px; }
+  .addpanel .mini { display: flex; gap: 8px; }
+  .addpanel .mini button {
+    background: var(--accent); color: var(--bg); border: none; font-family: inherit; font-weight: 700;
+    font-size: 13px; padding: 0 16px; border-radius: 10px; cursor: pointer;
+  }
+  .restore { text-align: center; margin-top: 14px; }
+  .restore button { background: none; border: none; color: var(--faint); font-size: 12px; cursor: pointer; text-decoration: underline; font-family: inherit; }
 
   .dock {
     position: fixed; left: 0; right: 0; bottom: 0; background: #070620;
@@ -65,8 +128,7 @@
   .dock .inner { max-width: 640px; margin: 0 auto; display: flex; gap: 10px; align-items: center; }
   .send {
     flex: 1; background: var(--accent); color: var(--bg); border: none; border-radius: 12px;
-    font-family: inherit; font-size: 15px; font-weight: 700; padding: 15px; cursor: pointer;
-    letter-spacing: 0.02em; transition: opacity 0.2s;
+    font-family: inherit; font-size: 15px; font-weight: 700; padding: 15px; cursor: pointer; transition: opacity 0.2s;
   }
   .send:disabled { opacity: 0.4; }
   .send:active { opacity: 0.8; }
@@ -78,13 +140,6 @@
     border-radius: 24px; opacity: 0; pointer-events: none; transition: all 0.35s; z-index: 20; max-width: 88vw; text-align: center;
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-  .install-hint {
-    background: rgba(212,162,78,0.09); border: 1px solid rgba(212,162,78,0.35); border-radius: 12px;
-    padding: 13px 15px; font-size: 12.5px; color: var(--accent); line-height: 1.6; margin-bottom: 22px; position: relative;
-  }
-  .install-hint b { font-weight: 700; }
-  .install-hint .x { position: absolute; top: 8px; right: 10px; color: var(--faint); font-size: 18px; cursor: pointer; padding: 4px; }
 </style>
 </head>
 <body>
@@ -92,16 +147,28 @@
   <header>
     <div class="brand">Thought Constellation</div>
     <h1>인터뷰 노트</h1>
-    <div class="lede">이동 중에 편하게 답을 모으세요. 자동 저장돼요. 다 되면 아래 버튼으로 정리해서 Claude에게 보냅니다.</div>
+    <div class="lede">이동 중에 편하게 답을 모으세요. 자동 저장돼요. 답변 방식은 질문마다 골라도 됩니다.</div>
     <div class="progress"><div class="bar"><i id="bar"></i></div><div class="pcount" id="pcount">0 / 0</div></div>
   </header>
 
-  <div class="install-hint" id="installHint" style="display:none">
-    <span class="x" id="hintX">×</span>
-    <b>홈 화면에 추가</b>하면 앱처럼 열려요 — 공유/메뉴 버튼 → “홈 화면에 추가”.
-  </div>
-
   <div id="list"></div>
+
+  <div class="addzone">
+    <button class="addbtn" id="addBtn">＋ 질문 추가</button>
+    <div class="addpanel" id="addPanel">
+      <div class="row">
+        <button class="act" id="randBtn">🎲 추천 질문 받기</button>
+        <button class="act" id="ownBtn">✍️ 직접 쓰기</button>
+      </div>
+      <div class="mini" id="ownForm" style="display:none">
+        <textarea id="ownText" placeholder="나에게 던지고 싶은 질문을 적어보세요…"></textarea>
+        <button id="ownAdd">추가</button>
+      </div>
+    </div>
+    <div class="restore" id="restoreWrap" style="display:none">
+      <button id="restoreBtn"></button>
+    </div>
+  </div>
 </div>
 
 <div class="dock"><div class="inner">
@@ -114,123 +181,262 @@
 <script src="interview-questions.js"></script>
 <script>
 (function () {
-  const DATA = window.INTERVIEW || { questions: [], updated: '' };
-  const Q = DATA.questions;
-  const LS = id => 'paul-iv-' + id;
+  const DATA = window.INTERVIEW || { questions: [], pool: [], updated: '' };
   const TIERS = [
     { key: 'light', label: '가볍게 — 짧게 답해도 좋아요' },
     { key: 'deep',  label: '더 깊이 — 시간 있을 때' },
     { key: 'fact',  label: '사실·맥락 — 한 줄이면 충분' },
   ];
+  const TIER_KEYS = TIERS.map(t => t.key);
+
+  // ---- storage helpers (private-mode safe) ----
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+    del(k) { try { localStorage.removeItem(k); } catch (e) {} },
+  };
+  const kA = id => 'iv-a-' + id, kM = id => 'iv-m-' + id, kS = id => 'iv-s-' + id;
+
+  function addedList() { try { return JSON.parse(store.get('iv-added')) || []; } catch (e) { return []; } }
+  function saveAdded(a) { store.set('iv-added', JSON.stringify(a)); }
+
+  function allQuestions() { return DATA.questions.concat(addedList()); }
+  function qById(id) { return allQuestions().find(q => q.id === id); }
+  function statusOf(id) { return store.get(kS(id)) || 'active'; }
+  function modeOf(q) {
+    const m = store.get(kM(q.id));
+    if (m) return m;
+    return 'text';
+  }
 
   const list = document.getElementById('list');
   const bar = document.getElementById('bar');
   const pcount = document.getElementById('pcount');
   const sendBtn = document.getElementById('sendBtn');
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-  function grow(ta) { ta.style.height = 'auto'; ta.style.height = (ta.scrollHeight) + 'px'; }
+  function grow(ta) { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; }
+  function toast(msg) {
+    const el = document.getElementById('toast');
+    el.textContent = msg; el.classList.add('show');
+    clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('show'), 2600);
+  }
 
-  TIERS.forEach(tier => {
-    const qs = Q.filter(q => q.tier === tier.key);
-    if (!qs.length) return;
-    const h = document.createElement('div');
-    h.className = 'tier ' + tier.key;
-    h.innerHTML = '<span class="dot"></span><h2>' + tier.label + '</h2>';
-    list.appendChild(h);
+  function render() {
+    list.innerHTML = '';
+    const qs = allQuestions();
+    const active = qs.filter(q => statusOf(q.id) === 'active');
+    const later = qs.filter(q => statusOf(q.id) === 'later');
+    let n = 0;
 
-    qs.forEach(q => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.id = 'card-' + q.id;
-      const n = q.id.replace('q', '');
-      card.innerHTML =
-        '<div class="q"><span class="num">Q' + n + '.</span>' + q.q + '</div>' +
-        '<textarea id="ta-' + q.id + '" placeholder="여기에 편하게… (음성입력 OK)"></textarea>' +
-        '<div class="cardfoot"><span class="tag">' + q.node + '</span><span class="saved" id="sv-' + q.id + '">저장됨 ✓</span></div>';
-      list.appendChild(card);
-
-      const ta = card.querySelector('textarea');
-      ta.value = localStorage.getItem(LS(q.id)) || '';
-      requestAnimationFrame(() => grow(ta));
-      if (ta.value.trim()) card.classList.add('done');
-
-      let t;
-      ta.addEventListener('input', () => {
-        grow(ta);
-        localStorage.setItem(LS(q.id), ta.value);
-        card.classList.toggle('done', !!ta.value.trim());
-        const sv = document.getElementById('sv-' + q.id);
-        sv.classList.add('show');
-        clearTimeout(t); t = setTimeout(() => sv.classList.remove('show'), 1200);
-        refresh();
-      });
+    TIERS.forEach(tier => {
+      const group = active.filter(q => q.tier === tier.key);
+      if (!group.length) return;
+      const h = document.createElement('div');
+      h.className = 'tier ' + tier.key;
+      h.innerHTML = '<span class="dot"></span><h2>' + tier.label + '</h2>';
+      list.appendChild(h);
+      group.forEach(q => list.appendChild(card(q, ++n)));
     });
-  });
 
-  function answered() { return Q.filter(q => (localStorage.getItem(LS(q.id)) || '').trim()); }
+    if (later.length) {
+      const h = document.createElement('div');
+      h.className = 'tier later';
+      h.innerHTML = '<span class="dot"></span><h2>나중에 답할 질문</h2>';
+      list.appendChild(h);
+      later.forEach(q => list.appendChild(card(q, ++n)));
+    }
+
+    // restore removed
+    const removed = qs.filter(q => statusOf(q.id) === 'removed').length;
+    const rw = document.getElementById('restoreWrap');
+    if (removed) {
+      rw.style.display = 'block';
+      document.getElementById('restoreBtn').textContent = '삭제한 질문 ' + removed + '개 복구';
+    } else rw.style.display = 'none';
+
+    refresh();
+  }
+
+  function card(q, num) {
+    const el = document.createElement('div');
+    el.className = 'card';
+    const st = statusOf(q.id);
+    if (st === 'later') el.className += ' later';
+    const ans = store.get(kA(q.id)) || '';
+    if (ans.trim()) el.className += ' done';
+    let mode = modeOf(q);
+    if (mode === 'choice' && !(q.choices && q.choices.length)) mode = 'text';
+
+    el.innerHTML =
+      '<div class="qrow"><div class="q"><span class="num">Q' + num + '.</span>' + q.q + '</div>' +
+      '<div class="qmenu">' +
+        '<button class="icobtn" data-act="later" title="나중에">' + (st === 'later' ? '↩' : '⏰') + '</button>' +
+        '<button class="icobtn" data-act="remove" title="삭제">🗑</button>' +
+      '</div></div>' +
+      '<div class="modes">' +
+        '<button class="mode" data-m="text">✍️ 채팅</button>' +
+        '<button class="mode" data-m="voice">🎤 음성</button>' +
+        '<button class="mode" data-m="choice"' + (q.choices && q.choices.length ? '' : ' disabled') + '>☰ 선택</button>' +
+      '</div>' +
+      '<div class="ans"></div>' +
+      '<div class="cardfoot"><span class="tag">' + q.node + '</span><span class="saved">저장됨 ✓</span></div>';
+
+    const modesEl = el.querySelectorAll('.mode');
+    modesEl.forEach(b => b.classList.toggle('on', b.dataset.m === mode));
+    const ansBox = el.querySelector('.ans');
+    const savedEl = el.querySelector('.saved');
+
+    function showSaved() { savedEl.classList.add('show'); clearTimeout(savedEl._t); savedEl._t = setTimeout(() => savedEl.classList.remove('show'), 1200); }
+    function markDone() { el.classList.toggle('done', !!(store.get(kA(q.id)) || '').trim()); refresh(); }
+
+    function buildAns(m) {
+      ansBox.innerHTML = '';
+      if (m === 'choice' && q.choices && q.choices.length) {
+        const wrap = document.createElement('div'); wrap.className = 'choices';
+        const cur = store.get(kA(q.id)) || '';
+        q.choices.forEach(ch => {
+          const b = document.createElement('button'); b.className = 'choice'; b.textContent = ch;
+          if (cur === ch) b.classList.add('sel');
+          b.addEventListener('click', () => {
+            if (/직접/.test(ch)) { setMode('text'); document.querySelector('#list'); return; }
+            store.set(kA(q.id), ch);
+            wrap.querySelectorAll('.choice').forEach(c => c.classList.toggle('sel', c.textContent === ch));
+            showSaved(); markDone();
+          });
+          wrap.appendChild(b);
+        });
+        ansBox.appendChild(wrap);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.placeholder = '여기에 편하게…';
+        ta.value = store.get(kA(q.id)) || '';
+        ansBox.appendChild(ta);
+        requestAnimationFrame(() => grow(ta));
+        ta.addEventListener('input', () => { grow(ta); store.set(kA(q.id), ta.value); showSaved(); markDone(); });
+
+        if (m === 'voice') {
+          const mic = document.createElement('button'); mic.className = 'mic';
+          mic.innerHTML = '<span class="pulse"></span><span class="lbl">말하기</span>';
+          ansBox.appendChild(mic);
+          if (SR) {
+            let rec = null, listening = false;
+            mic.addEventListener('click', () => {
+              if (listening) { rec && rec.stop(); return; }
+              rec = new SR(); rec.lang = 'ko-KR'; rec.interimResults = true; rec.continuous = true;
+              let base = ta.value ? ta.value + ' ' : '';
+              rec.onresult = e => {
+                let s = '';
+                for (let i = e.resultIndex; i < e.results.length; i++) s += e.results[i][0].transcript;
+                ta.value = base + s; grow(ta); store.set(kA(q.id), ta.value); markDone();
+              };
+              rec.onend = () => { listening = false; mic.classList.remove('rec'); mic.querySelector('.lbl').textContent = '말하기'; showSaved(); };
+              rec.onerror = () => { listening = false; mic.classList.remove('rec'); mic.querySelector('.lbl').textContent = '말하기'; };
+              rec.start(); listening = true; mic.classList.add('rec'); mic.querySelector('.lbl').textContent = '듣는 중… (탭하면 멈춤)';
+            });
+          } else {
+            mic.addEventListener('click', () => { ta.focus(); toast('키보드의 🎤 마이크를 눌러 말하세요'); });
+          }
+        }
+      }
+    }
+
+    function setMode(m) {
+      store.set(kM(q.id), m);
+      modesEl.forEach(b => b.classList.toggle('on', b.dataset.m === m));
+      buildAns(m);
+    }
+
+    modesEl.forEach(b => b.addEventListener('click', () => { if (!b.disabled) setMode(b.dataset.m); }));
+    el.querySelectorAll('.icobtn').forEach(b => b.addEventListener('click', () => {
+      const act = b.dataset.act;
+      if (act === 'remove') { store.set(kS(q.id), 'removed'); render(); toast('질문을 삭제했어요'); }
+      else { store.set(kS(q.id), st === 'later' ? 'active' : 'later'); render(); }
+    }));
+
+    buildAns(mode);
+    return el;
+  }
+
+  function answered() { return allQuestions().filter(q => statusOf(q.id) !== 'removed' && (store.get(kA(q.id)) || '').trim()); }
   function refresh() {
+    const total = allQuestions().filter(q => statusOf(q.id) !== 'removed').length;
     const a = answered().length;
-    bar.style.width = Q.length ? (a / Q.length * 100) + '%' : '0%';
-    pcount.textContent = a + ' / ' + Q.length;
+    bar.style.width = total ? (a / total * 100) + '%' : '0%';
+    pcount.textContent = a + ' / ' + total;
     sendBtn.disabled = a === 0;
     sendBtn.textContent = a ? ('답변 보내기 (' + a + ')') : '답변 보내기';
   }
-  refresh();
 
   function digest() {
-    const a = answered();
     let s = '[Paul 인터뷰 답변 · ' + (DATA.updated || '') + ']\n\n';
-    a.forEach(q => {
-      const n = q.id.replace('q', '');
-      s += 'Q' + n + ' [' + q.node + '] ' + q.q + '\n답: ' + (localStorage.getItem(LS(q.id)) || '').trim() + '\n\n';
+    answered().forEach((q, i) => {
+      const m = modeOf(q);
+      const via = m === 'choice' ? ' (선택)' : (m === 'voice' ? ' (음성)' : '');
+      s += (i + 1) + '. [' + q.node + '] ' + q.q + '\n답' + via + ': ' + (store.get(kA(q.id)) || '').trim() + '\n\n';
     });
     return s.trim();
   }
 
-  function toast(msg) {
-    const el = document.getElementById('toast');
-    el.textContent = msg; el.classList.add('show');
-    setTimeout(() => el.classList.remove('show'), 2600);
-  }
+  // ---- add question ----
+  document.getElementById('addBtn').addEventListener('click', () => {
+    document.getElementById('addPanel').classList.toggle('open');
+  });
+  document.getElementById('randBtn').addEventListener('click', () => {
+    const usedQ = allQuestions().map(q => q.q);
+    const cands = (DATA.pool || []).filter(p => !usedQ.includes(p.q));
+    if (!cands.length) { toast('추천 질문을 다 추가했어요'); return; }
+    const pick = cands[Math.floor(seededRand() * cands.length)];
+    const a = addedList();
+    a.push({ id: 'add-' + (a.length + 1) + '-' + pick.node, q: pick.q, tier: pick.tier, node: pick.node, choices: pick.choices || null });
+    saveAdded(a); render();
+    document.getElementById('addPanel').classList.remove('open');
+    toast('질문을 추가했어요');
+  });
+  document.getElementById('ownBtn').addEventListener('click', () => {
+    const f = document.getElementById('ownForm');
+    f.style.display = f.style.display === 'none' ? 'flex' : 'none';
+  });
+  document.getElementById('ownAdd').addEventListener('click', () => {
+    const t = document.getElementById('ownText').value.trim();
+    if (!t) return;
+    const a = addedList();
+    a.push({ id: 'own-' + (a.length + 1), q: t, tier: 'fact', node: 'custom', choices: null });
+    saveAdded(a);
+    document.getElementById('ownText').value = '';
+    document.getElementById('ownForm').style.display = 'none';
+    document.getElementById('addPanel').classList.remove('open');
+    render(); toast('내 질문을 추가했어요');
+  });
 
+  document.getElementById('restoreBtn').addEventListener('click', () => {
+    allQuestions().forEach(q => { if (statusOf(q.id) === 'removed') store.del(kS(q.id)); });
+    render(); toast('삭제한 질문을 복구했어요');
+  });
+
+  // ---- send ----
   sendBtn.addEventListener('click', async () => {
     const text = digest();
-    if (navigator.share) {
-      try { await navigator.share({ title: 'Paul 인터뷰 답변', text }); return; } catch (e) {}
-    }
-    try {
-      await navigator.clipboard.writeText(text);
-      toast('복사됐어요 — Claude 대화에 붙여넣으세요');
-    } catch (e) {
-      const ta = document.createElement('textarea');
-      ta.value = text; document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); toast('복사됐어요 — 붙여넣으세요'); }
-      catch (e2) { toast('복사 실패 — 길게 눌러 복사하세요'); }
+    if (navigator.share) { try { await navigator.share({ title: 'Paul 인터뷰 답변', text }); return; } catch (e) {} }
+    try { await navigator.clipboard.writeText(text); toast('복사됐어요 — Claude 대화에 붙여넣으세요'); }
+    catch (e) {
+      const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast('복사됐어요 — 붙여넣으세요'); } catch (e2) { toast('길게 눌러 복사하세요'); }
       document.body.removeChild(ta);
     }
   });
 
   document.getElementById('resetBtn').addEventListener('click', () => {
-    if (!confirm('입력한 답변을 모두 지울까요?')) return;
-    Q.forEach(q => localStorage.removeItem(LS(q.id)));
-    document.querySelectorAll('textarea').forEach(ta => { ta.value = ''; grow(ta); });
-    document.querySelectorAll('.card').forEach(c => c.classList.remove('done'));
-    refresh();
+    if (!confirm('입력한 답변을 모두 지울까요? (질문은 그대로 남습니다)')) return;
+    allQuestions().forEach(q => store.del(kA(q.id)));
+    render();
   });
 
-  // install hint (only if not already standalone)
-  const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-  if (!standalone && !localStorage.getItem('paul-iv-hint-x')) {
-    document.getElementById('installHint').style.display = 'block';
-  }
-  document.getElementById('hintX').addEventListener('click', () => {
-    document.getElementById('installHint').style.display = 'none';
-    localStorage.setItem('paul-iv-hint-x', '1');
-  });
+  // deterministic-ish rand without Date/Math.random ban issues (Math.random OK in browser)
+  function seededRand() { return Math.random(); }
 
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
-  }
+  render();
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 })();
 </script>
 </body>
