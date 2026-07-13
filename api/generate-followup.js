@@ -73,7 +73,7 @@ module.exports = async (req, res) => {
     }
     res.status(200).json({ followup: { q, node: tag || node || 'ai', tier: tier || 'deep', choices } });
   } catch (e) {
-    console.error('generate-followup: exception', e.message);
+    console.error('generate-followup: exception', e.message, e.cause ? JSON.stringify({ name: e.cause.name, message: e.cause.message, code: e.cause.code }) : 'no-cause');
     res.status(200).json({ followup: null });
   }
 };
