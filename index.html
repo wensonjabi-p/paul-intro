@@ -251,6 +251,11 @@
   </div>
 </section>
 
+<!-- Canva 경력 타임라인 섹션 -->
+<section class="canva-timeline-section" style="padding: 60px 5vw; background: linear-gradient(135deg, rgba(212,162,78,0.05) 0%, rgba(232,195,122,0.02) 100%);">
+  <div id="canva-timeline-container"></div>
+</section>
+
 <section class="footer">
   <div>
     <h2>다음 챕터를<br>함께 쓸 사람을 찾습니다.</h2>
@@ -263,6 +268,7 @@
 <div style="text-align:center; padding:0 5vw 40px;"><a href="interview.html" style="color:var(--faint); font-size:11px; letter-spacing:0.14em; text-decoration:none;">✦ 인터뷰 노트 (Paul 전용)</a></div>
 
 <script src="data.js"></script>
+<script src="canva-timeline.js"></script>
 <script>
 (function () {
   const D = window.DATA;
@@ -474,9 +480,50 @@
     }
     const combo = findCombo(state.selected);
     state.activeCombo = combo;
-    el.innerHTML = combo ? renderComboStory(combo) : renderComboFallback();
+    if (combo) {
+      el.innerHTML = renderComboStory(combo);
+      bindChips(el);
+      attachPhoto(el, state.selected.slice());
+    } else {
+      renderComboSynthesis(el, state.selected.slice());
+    }
+  }
+
+  async function renderComboSynthesis(el, ids) {
+    const sel = ids.map(nodeById).filter(Boolean);
+    const title = sel.map(n => n.label).join('<span class="x">×</span>');
+    el.innerHTML = '<div class="synth-title">' + title + '</div>' +
+      '<div class="prose" style="margin-top:20px; color:var(--muted);">✦ 이 단어들이 어떻게 만나는지 엮고 있어요…</div>';
+
+    let paragraph = null;
+    try {
+      const r = await fetch('/api/synthesize-combo', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nodes: sel.map(n => ({ id: n.id, label: n.label, type: n.type, story: n.story })) }),
+      });
+      const d = await r.json();
+      paragraph = d.synthesis;
+    } catch (e) { /* 조용히 폴백으로 */ }
+
+    if (JSON.stringify(state.selected) !== JSON.stringify(ids)) return; // 그 사이 선택이 바뀌었으면 버림
+    if (!paragraph) paragraph = fallbackSynthesis(ids, sel);
+
+    el.innerHTML = '<div class="synth-title">' + title + '</div>' +
+      '<div class="prose" style="margin-top:20px;">' + paragraph + '</div>' +
+      '<div class="related-row"><span class="lbl">이 글을 이루는 단어</span>' +
+      sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
     bindChips(el);
-    attachPhoto(el, state.selected.slice());
+    attachPhoto(el, ids);
+  }
+
+  function fallbackSynthesis(ids, sel) {
+    const best = state.thoughts
+      .map(t => ({ t, s: t.tags.filter(tag => ids.includes(tag)).length }))
+      .filter(o => o.s >= 2)
+      .sort((a, b) => b.s - a.s || b.t.addedAt - a.t.addedAt)[0];
+    if (best) return best.t.text;
+    const frags = sel.map(n => (n.story.match(/^.*?[.!?…]/) || [n.story])[0].trim());
+    return frags.join(' ');
   }
 
   async function attachPhoto(el, ids) {
@@ -505,16 +552,6 @@
     h += '<div class="related-row"><span class="lbl">이 이야기를 이루는 단어</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
     h += '</div>';
-
-    const ids = combo.ids;
-    const shared = state.thoughts
-      .map(t => ({ t, s: t.tags.filter(tag => ids.includes(tag)).length }))
-      .filter(o => o.s > 0)
-      .sort((a, b) => b.s - a.s || b.t.addedAt - a.t.addedAt).slice(0, 3);
-    if (shared.length) {
-      h += '<div class="synth-thoughts"><h4>이 이야기에 걸린 생각</h4>' +
-        shared.map(o => thoughtCard(o.t)).join('') + '</div>';
-    }
     return h;
   }
 
@@ -536,28 +573,6 @@
         links.map(id => '<span class="chip" data-id="' + id + '">' + labelOf(id) + '</span>').join('') + '</div>';
     }
     h += '</div>';
-    return h;
-  }
-
-  function renderComboFallback() {
-    const sel = state.selected.map(nodeById).filter(Boolean);
-    const title = sel.map(n => n.label).join('<span class="x">×</span>');
-    let h = '<div class="synth-title">' + title + '</div>';
-    h += '<div class="synth-lede">이 단어들이 한 사람 안에서 만나는 지점입니다. 아직 하나로 엮인 이야기는 없지만, 각자의 조각은 이렇습니다.</div>';
-    h += '<div class="synth-grid">' + sel.map(n =>
-      '<div class="story-card t-' + n.type + '"><div class="cap">' + TYPE_LABEL[n.type] +
-      (n.era ? ' · ' + n.era : '') + '</div><div class="hw">' + n.label +
-      '</div><div class="tx">' + n.story + '</div></div>').join('') + '</div>';
-
-    const ids = state.selected;
-    const shared = state.thoughts
-      .map(t => ({ t, s: t.tags.filter(tag => ids.includes(tag)).length }))
-      .filter(o => o.s > 0)
-      .sort((a, b) => b.s - a.s || b.t.addedAt - a.t.addedAt).slice(0, 3);
-    if (shared.length) {
-      h += '<div class="synth-thoughts"><h4>이 조합에 걸린 생각</h4>' +
-        shared.map(o => thoughtCard(o.t)).join('') + '</div>';
-    }
     return h;
   }
 
@@ -605,6 +620,11 @@
 
   window.addEventListener('resize', resize);
   resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop();
+
+  // Canva 경력 타임라인 초기화
+  if (typeof renderTimelineUI === 'function') {
+    document.getElementById('canva-timeline-container').innerHTML = renderTimelineUI();
+  }
 })();
 </script>
 </body>
