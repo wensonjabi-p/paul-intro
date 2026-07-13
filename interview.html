@@ -113,6 +113,38 @@
     border-radius: 22px; opacity: 0; pointer-events: none; transition: all 0.3s; z-index: 20;
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* voice interview mode */
+  #voiceMode {
+    display: none; position: fixed; inset: 0; background: var(--bg); z-index: 50;
+    flex-direction: column; padding: 20px 20px calc(20px + env(safe-area-inset-bottom));
+  }
+  #voiceMode.open { display: flex; }
+  .vm-top { display: flex; justify-content: space-between; align-items: center; }
+  .vm-mute, .vm-exit {
+    background: var(--bg-soft); border: 1px solid var(--line); color: var(--muted); font-family: inherit;
+    font-size: 13px; padding: 8px 14px; border-radius: 16px; cursor: pointer;
+  }
+  .vm-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; padding: 20px 0; }
+  .vm-question { font-size: 22px; font-weight: 700; line-height: 1.5; max-width: 500px; }
+  .vm-status { font-size: 13px; color: var(--accent); min-height: 18px; }
+  .vm-transcript { font-size: 16px; color: var(--ink); min-height: 60px; max-width: 480px; line-height: 1.6; }
+  .vm-mic {
+    width: 84px; height: 84px; border-radius: 50%; background: var(--accent); color: var(--bg);
+    border: none; font-size: 30px; cursor: pointer; transition: transform 0.15s;
+  }
+  .vm-mic.listening { animation: vmpulse 1.4s infinite; }
+  @keyframes vmpulse { 0%,100%{ box-shadow: 0 0 0 0 rgba(212,162,78,0.45); } 50%{ box-shadow: 0 0 0 18px rgba(212,162,78,0); } }
+  .vm-foot { display: flex; gap: 10px; }
+  .vm-skip {
+    background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
+    font-size: 13.5px; padding: 14px; border-radius: 10px; cursor: pointer; flex: 1;
+  }
+  .vm-next {
+    background: var(--accent); color: var(--bg); border: none; font-family: inherit; font-weight: 700;
+    font-size: 14.5px; padding: 14px; border-radius: 10px; cursor: pointer; flex: 2;
+  }
+  .vm-next:disabled { opacity: 0.4; }
 </style>
 </head>
 <body>
@@ -144,6 +176,10 @@
   </section>
 
   <section class="block">
+    <button class="btn-gold" id="vmOpenBtn" style="width:100%; margin-top:0; display:flex; align-items:center; justify-content:center; gap:8px;">🎙️ 음성 인터뷰로 쭉 진행하기</button>
+  </section>
+
+  <section class="block">
     <div class="queuebar">
       <span id="queueInfo"></span>
       <button class="pausebtn" id="pauseBtn"></button>
@@ -152,6 +188,26 @@
     <button class="later-toggle" id="laterToggle" style="display:none"></button>
     <div class="later-list" id="laterList" style="display:none"></div>
   </section>
+</div>
+
+<div id="voiceMode">
+  <div class="vm-top">
+    <div class="brand">음성 인터뷰</div>
+    <div style="display:flex; gap:8px;">
+      <button class="vm-mute" id="vmMute" title="소리 끄기/켜기">🔊</button>
+      <button class="vm-exit" id="vmExit">종료</button>
+    </div>
+  </div>
+  <div class="vm-body">
+    <div class="vm-question" id="vmQuestion"></div>
+    <div class="vm-status" id="vmStatus"></div>
+    <div class="vm-transcript" id="vmTranscript"></div>
+    <button class="vm-mic" id="vmMicBtn">🎤</button>
+  </div>
+  <div class="vm-foot">
+    <button class="vm-skip" id="vmSkip">건너뛰기</button>
+    <button class="vm-next" id="vmNext">완료 → 다음</button>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -281,16 +337,19 @@
     }
 
     generating--;
+    let nextId = null;
     if (followUpQs.length) {
       addDyn(followUpQs);
       queue = followUpQs.map(x => x.id).concat(queue);
+      nextId = followUpQs[0].id;
     } else {
       const relatedId = pullRelated(q.node);
-      if (relatedId) queue = [relatedId, ...queue];
+      if (relatedId) { queue = [relatedId, ...queue]; nextId = relatedId; }
     }
     persist();
     refill();
     render();
+    return nextId;
   }
 
   function resolveSlot(id, opts) {
@@ -554,6 +613,107 @@
       toast('기록했어요');
     } catch (e) { toast(e.message); }
     capSave.textContent = '기록하기'; refreshCapBtn();
+  });
+
+  /* ---------- 음성 인터뷰 모드: TTS로 질문을 읽고, 음성인식으로 계속 받는다 ---------- */
+  const vmEl = document.getElementById('voiceMode');
+  const vmQuestionEl = document.getElementById('vmQuestion');
+  const vmStatusEl = document.getElementById('vmStatus');
+  const vmTranscriptEl = document.getElementById('vmTranscript');
+  const vmMicBtn = document.getElementById('vmMicBtn');
+  const vmNextBtn = document.getElementById('vmNext');
+  const TTS = 'speechSynthesis' in window;
+
+  let vmActive = false, vmRec = null, vmListening = false, vmCurrentId = null, vmMuted = LS.get('iv-vm-muted') === '1';
+  document.getElementById('vmMute').textContent = vmMuted ? '🔇' : '🔊';
+
+  function vmSpeak(text, onEnd) {
+    if (!TTS || vmMuted) { onEnd && onEnd(); return; }
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ko-KR'; u.rate = 1.0;
+    u.onend = () => onEnd && onEnd();
+    u.onerror = () => onEnd && onEnd();
+    speechSynthesis.speak(u);
+  }
+
+  function vmListen() {
+    if (!SR) { vmStatusEl.textContent = '이 브라우저는 음성인식을 지원하지 않아요. 아래 완료를 눌러 진행하세요.'; return; }
+    vmRec = new SR(); vmRec.lang = 'ko-KR'; vmRec.interimResults = true; vmRec.continuous = true;
+    let base = '';
+    vmRec.onresult = e => {
+      let s = ''; for (let i = e.resultIndex; i < e.results.length; i++) s += e.results[i][0].transcript;
+      vmTranscriptEl.textContent = (base + s).trim();
+      vmNextBtn.disabled = !vmTranscriptEl.textContent.trim();
+    };
+    vmRec.onend = () => { vmListening = false; vmMicBtn.classList.remove('listening'); };
+    vmRec.onerror = () => { vmListening = false; vmMicBtn.classList.remove('listening'); };
+    vmRec.start(); vmListening = true; vmMicBtn.classList.add('listening');
+    vmStatusEl.textContent = '듣고 있어요 — 편하게 답하고 완료를 눌러주세요';
+  }
+
+  function vmShowCurrent() {
+    refill();
+    vmCurrentId = slots[0] || null;
+    const q = vmCurrentId ? qById(vmCurrentId) : null;
+    vmTranscriptEl.textContent = '';
+    vmNextBtn.disabled = true;
+    if (vmRec) { try { vmRec.stop(); } catch (e) {} }
+    if (!q) {
+      vmQuestionEl.textContent = paused ? '질문을 멈췄어요.' : '질문이 바닥났어요 — 대단해요!';
+      vmStatusEl.textContent = '';
+      return;
+    }
+    vmQuestionEl.textContent = q.q;
+    vmStatusEl.textContent = '읽어주고 있어요…';
+    vmSpeak(q.q, () => { if (vmActive) vmListen(); });
+  }
+
+  function vmOpen() {
+    vmActive = true;
+    vmEl.classList.add('open');
+    vmShowCurrent();
+  }
+  function vmClose() {
+    vmActive = false;
+    if (vmRec) { try { vmRec.stop(); } catch (e) {} }
+    speechSynthesis && speechSynthesis.cancel();
+    vmEl.classList.remove('open');
+    render();
+  }
+
+  document.getElementById('vmOpenBtn').addEventListener('click', vmOpen);
+  document.getElementById('vmExit').addEventListener('click', vmClose);
+  document.getElementById('vmMute').addEventListener('click', () => {
+    vmMuted = !vmMuted; LS.set('iv-vm-muted', vmMuted ? '1' : '0');
+    document.getElementById('vmMute').textContent = vmMuted ? '🔇' : '🔊';
+    if (vmMuted) speechSynthesis && speechSynthesis.cancel();
+  });
+  vmMicBtn.addEventListener('click', () => {
+    if (vmListening) { vmRec && vmRec.stop(); } else { vmListen(); }
+  });
+  document.getElementById('vmSkip').addEventListener('click', () => {
+    if (!vmCurrentId) return;
+    if (vmRec) { try { vmRec.stop(); } catch (e) {} }
+    resolveSlot(vmCurrentId, {});
+    if (vmActive) vmShowCurrent();
+  });
+  vmNextBtn.addEventListener('click', async () => {
+    const val = vmTranscriptEl.textContent.trim();
+    if (!val || !vmCurrentId) return;
+    if (vmRec) { try { vmRec.stop(); } catch (e) {} }
+    vmNextBtn.disabled = true;
+    vmStatusEl.textContent = '다음 질문을 준비하고 있어요…';
+    const q = qById(vmCurrentId);
+    const nextId = await completeQuestion(q, 'voice', val, []);
+    if (!vmActive) return;
+    vmCurrentId = nextId || slots[0] || null;
+    const nq = vmCurrentId ? qById(vmCurrentId) : null;
+    vmTranscriptEl.textContent = '';
+    if (!nq) { vmShowCurrent(); return; }
+    vmQuestionEl.textContent = nq.q;
+    vmStatusEl.textContent = '읽어주고 있어요…';
+    vmSpeak(nq.q, () => { if (vmActive) vmListen(); });
   });
 
   render();
