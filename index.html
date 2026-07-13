@@ -468,12 +468,32 @@
     }
     if (state.selected.length === 1) {
       state.activeCombo = null;
-      el.innerHTML = renderSingle(nodeById(state.selected[0])); bindChips(el); return;
+      el.innerHTML = renderSingle(nodeById(state.selected[0])); bindChips(el);
+      attachPhoto(el, state.selected.slice());
+      return;
     }
     const combo = findCombo(state.selected);
     state.activeCombo = combo;
     el.innerHTML = combo ? renderComboStory(combo) : renderComboFallback();
     bindChips(el);
+    attachPhoto(el, state.selected.slice());
+  }
+
+  async function attachPhoto(el, ids) {
+    try {
+      const r = await fetch('/api/photos-random?tags=' + encodeURIComponent(ids.join(',')));
+      const d = await r.json();
+      if (!d.photo) return;
+      if (JSON.stringify(state.selected) !== JSON.stringify(ids)) return; // selection changed while fetching
+      const holder = el.querySelector('.story-single, .synth-title');
+      if (!holder) return;
+      const fig = document.createElement('div');
+      fig.style.cssText = 'margin-top:26px;';
+      fig.innerHTML = '<img src="' + d.photo.url + '" style="width:100%;border-radius:12px;display:block;" />' +
+        (d.photo.caption ? '<div style="margin-top:10px;font-size:13px;color:var(--muted);">' + d.photo.caption + '</div>' : '');
+      const anchor = el.querySelector('.related-row, .synth-thoughts, .synth-lede');
+      if (anchor) anchor.insertAdjacentElement('beforebegin', fig); else el.appendChild(fig);
+    } catch (e) { /* 사진 서비스 준비 전이면 조용히 무시 */ }
   }
 
   function renderComboStory(combo) {

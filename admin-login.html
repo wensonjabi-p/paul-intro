@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paul 관리자 로그인</title>
+<meta name="theme-color" content="#050419">
+<style>
+  :root { --bg: #050419; --bg-soft: #0b0a26; --ink: #edebe6; --muted: #8a879c; --line: rgba(237,235,230,0.09); --accent: #d4a24e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Pretendard', -apple-system, sans-serif;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px;
+  }
+  .box { width: 100%; max-width: 340px; }
+  .brand { font-size: 12px; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; text-align: center; margin-bottom: 10px; }
+  h1 { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 26px; }
+  input {
+    width: 100%; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 10px;
+    color: var(--ink); font-family: inherit; font-size: 16px; padding: 14px; margin-bottom: 12px;
+  }
+  input:focus { outline: none; border-color: var(--accent); }
+  button {
+    width: 100%; background: var(--accent); color: var(--bg); border: none; border-radius: 10px;
+    font-family: inherit; font-weight: 700; font-size: 15px; padding: 14px; cursor: pointer;
+  }
+  .err { color: #e2a0a0; font-size: 13px; margin-top: 10px; text-align: center; min-height: 16px; }
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="brand">Thought Constellation</div>
+  <h1>관리자 로그인</h1>
+  <input type="password" id="pw" placeholder="비밀번호" autofocus />
+  <button id="go">들어가기</button>
+  <div class="err" id="err"></div>
+</div>
+<script>
+  const pw = document.getElementById('pw');
+  const err = document.getElementById('err');
+  async function submit() {
+    err.textContent = '';
+    const r = await fetch('/api/admin-login', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw.value }),
+    });
+    if (r.ok) { location.href = '/admin.html'; }
+    else { const d = await r.json().catch(() => ({})); err.textContent = d.error || '로그인에 실패했어요.'; }
+  }
+  document.getElementById('go').addEventListener('click', submit);
+  pw.addEventListener('keydown', e => { if (e.key === 'Enter') submit(); });
+</script>
+</body>
+</html>
