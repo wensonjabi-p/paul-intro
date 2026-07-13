@@ -145,8 +145,13 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="brand">Thought Constellation</div>
-    <h1>인터뷰 노트</h1>
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
+      <div>
+        <div class="brand">Thought Constellation</div>
+        <h1>인터뷰 노트</h1>
+      </div>
+      <a href="admin.html" style="flex-shrink:0; margin-top:2px; background:var(--bg-soft); border:1px solid var(--line); color:var(--muted); font-size:12px; padding:8px 14px; border-radius:20px; text-decoration:none; white-space:nowrap;">관리자 →</a>
+    </div>
     <div class="lede">이동 중에 편하게 답을 모으세요. 답변마다 자동저장되고, "저장하기"를 누르면 서버에 보관하고 새 질문을 채워줘요.</div>
     <div class="progress"><div class="bar"><i id="bar"></i></div><div class="pcount" id="pcount">0 / 0</div></div>
   </header>
