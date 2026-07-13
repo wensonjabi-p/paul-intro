@@ -133,8 +133,9 @@
     <div class="card">
       <label>생각</label>
       <textarea id="capText" rows="3" placeholder="지금 떠오른 생각…"></textarea>
+      <button class="mic" id="capMic" type="button"><span class="pulse"></span><span class="lbl">말하기</span></button>
       <label>사진 (선택)</label>
-      <input type="file" id="capFile" accept="image/*" capture="environment" />
+      <input type="file" id="capFile" accept="image/*" />
       <img class="thumb" id="capThumb" />
       <label>관련 단어 (쉼표로, 예: 자전거, 자유)</label>
       <input type="text" id="capTags" placeholder="자전거, 자유" />
@@ -182,13 +183,32 @@
   function addDyn(qs) { const d = dynPool(); qs.forEach(q => d.push(q)); saveArr('iv-dyn', d); }
   function qById(id) { return DATA.questions.find(q => q.id === id) || dynPool().find(q => q.id === id); }
 
-  function freshPoolQuestion() {
+  function freshPoolQuestion(preferTokens) {
     const used = new Set([...DATA.questions.map(q => q.q), ...dynPool().map(q => q.q)]);
-    const cand = (DATA.pool || []).find(p => !used.has(p.q));
+    const avail = (DATA.pool || []).filter(p => !used.has(p.q));
+    let cand = null;
+    if (preferTokens && preferTokens.length) {
+      cand = avail.find(p => nodeTokens(p.node).some(t => preferTokens.includes(t)));
+    }
+    if (!cand) cand = avail[0];
     if (!cand) return null;
     const q = Object.assign({}, cand, { id: 'pool-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) });
     addDyn([q]);
     return q;
+  }
+
+  function nodeTokens(nodeStr) { return (nodeStr || '').split('·').map(s => s.trim()).filter(Boolean); }
+
+  /* 방금 완료한 질문과 태그가 겹치는 질문을 큐에서 찾아 맨 앞으로 당긴다 — 없으면 여분 풀에서 태그 매칭으로 하나 만든다. */
+  function pullRelated(nodeStr) {
+    const tokens = nodeTokens(nodeStr);
+    if (!tokens.length) return null;
+    for (let i = 0; i < queue.length; i++) {
+      const q = qById(queue[i]);
+      if (q && nodeTokens(q.node).some(t => tokens.includes(t))) return queue.splice(i, 1)[0];
+    }
+    const p = freshPoolQuestion(tokens);
+    return p ? p.id : null;
   }
 
   /* ---------- state: slots (max 3 shown) + masterQueue (ids waiting) + later (deferred) ---------- */
@@ -228,6 +248,9 @@
     if (opts.followUpQs && opts.followUpQs.length) {
       addDyn(opts.followUpQs);
       queue = opts.followUpQs.map(q => q.id).concat(queue); // priority: front of queue
+    } else if (opts.completedNode) {
+      const relatedId = pullRelated(opts.completedNode);
+      if (relatedId) queue = [relatedId, ...queue];
     }
     if (opts.toLater) later.unshift(id);
     persist();
@@ -385,7 +408,7 @@
           if (fus) fus.forEach(fu => followUpQs.push(Object.assign({}, fu, { id: 'fu-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) })));
         });
       }
-      resolveSlot(q.id, { followUpQs });
+      resolveSlot(q.id, { followUpQs, completedNode: q.node });
     });
 
     buildAns(mode);
@@ -444,6 +467,26 @@
   const capSave = document.getElementById('capSave');
   function refreshCapBtn() { capSave.disabled = !capText.value.trim(); }
   capText.addEventListener('input', refreshCapBtn);
+
+  const capMic = document.getElementById('capMic');
+  if (SR) {
+    let capRec = null, capListening = false;
+    capMic.addEventListener('click', () => {
+      if (capListening) { capRec && capRec.stop(); return; }
+      capRec = new SR(); capRec.lang = 'ko-KR'; capRec.interimResults = true; capRec.continuous = true;
+      const base = capText.value ? capText.value + ' ' : '';
+      capRec.onresult = e => {
+        let s = ''; for (let i = e.resultIndex; i < e.results.length; i++) s += e.results[i][0].transcript;
+        capText.value = base + s; grow(capText); refreshCapBtn();
+      };
+      capRec.onend = () => { capListening = false; capMic.classList.remove('rec'); capMic.querySelector('.lbl').textContent = '말하기'; };
+      capRec.onerror = () => { capListening = false; capMic.classList.remove('rec'); capMic.querySelector('.lbl').textContent = '말하기'; };
+      capRec.start(); capListening = true; capMic.classList.add('rec'); capMic.querySelector('.lbl').textContent = '듣는 중… (탭하면 멈춤)';
+    });
+  } else {
+    capMic.addEventListener('click', () => { capText.focus(); toast('키보드의 🎤 마이크를 눌러 말하세요'); });
+  }
+
   document.getElementById('capFile').addEventListener('change', async e => {
     const f = e.target.files[0]; if (!f) return;
     capDataUrl = await resizeImage(f, 1600, 0.82);

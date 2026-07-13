@@ -103,7 +103,7 @@
       <label>생각</label>
       <textarea id="capText" rows="3" placeholder="지금 떠오른 생각…"></textarea>
       <label>사진 (선택)</label>
-      <input type="file" id="capFile" accept="image/*" capture="environment" />
+      <input type="file" id="capFile" accept="image/*" />
       <img class="thumb" id="capThumb" />
       <label>관련 단어 (쉼표로, 예: 자전거, 자유)</label>
       <input type="text" id="capTags" placeholder="자전거, 자유" />
@@ -320,8 +320,18 @@
     d.batches.forEach(b => {
       const box = document.createElement('div');
       box.className = 'batch';
-      box.innerHTML = '<div class="when">' + new Date(b.savedAt).toLocaleString('ko-KR') + '</div>' +
+      box.innerHTML =
+        '<div style="display:flex; justify-content:space-between; align-items:center;">' +
+        '<div class="when">' + new Date(b.savedAt).toLocaleString('ko-KR') + '</div>' +
+        '<button data-act="del" style="background:none;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:11px;padding:5px 10px;border-radius:6px;cursor:pointer;">삭제</button>' +
+        '</div>' +
         b.items.map(it => '<div class="qa"><div class="qq">[' + it.node + '] ' + it.question + '</div><div class="aa">' + it.answer + '</div></div>').join('');
+      box.querySelector('[data-act="del"]').addEventListener('click', async () => {
+        if (!confirm('이 답변을 삭제할까요?')) return;
+        await fetch('/api/interview-list', { method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ savedAt: b.savedAt }) });
+        loadInterview();
+      });
       el.appendChild(box);
     });
   }
