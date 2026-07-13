@@ -1,9 +1,12 @@
-/* 관리자 전용 — 빠른 기록(생각+사진 선택) 만들기/목록/발행토글/삭제. */
+/* 빠른 기록(생각+사진 선택). 만들기(POST)는 인터뷰 앱에서 로그인 없이 쓸 수 있게 열어둠(개인용, 스팸 위험 낮음).
+   조회·수정·삭제(GET/PATCH/DELETE)는 관리자 전용. */
 const { put } = require('@vercel/blob');
 const { isValidSession, kvListAll, kvReplaceAll, kvPushJSON } = require('./_lib');
 
 module.exports = async (req, res) => {
-  if (!isValidSession(req.headers.cookie)) return res.status(401).json({ error: '로그인이 필요해요.' });
+  if (req.method !== 'POST' && !isValidSession(req.headers.cookie)) {
+    return res.status(401).json({ error: '로그인이 필요해요.' });
+  }
 
   if (req.method === 'GET') {
     const all = await kvListAll('thoughts:captured');
