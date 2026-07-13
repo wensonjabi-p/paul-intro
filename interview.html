@@ -145,9 +145,18 @@
     font-size: 14.5px; padding: 14px; border-radius: 10px; cursor: pointer; flex: 2;
   }
   .vm-next:disabled { opacity: 0.4; }
+
+  /* offline banner */
+  #offlineBar {
+    display: none; position: sticky; top: 0; z-index: 40; background: #3a2a10; color: #e8c37a;
+    font-size: 12.5px; font-weight: 600; text-align: center; padding: 9px 14px; letter-spacing: 0.02em;
+  }
+  #offlineBar.show { display: block; }
+  #offlineBar .n { background: rgba(232,195,122,0.18); border-radius: 10px; padding: 1px 8px; margin-left: 6px; }
 </style>
 </head>
 <body>
+<div id="offlineBar">📡 오프라인 — 답변은 계속 저장되고, 연결되면 자동으로 동기화돼요<span class="n" id="pendingN" style="display:none"></span></div>
 <div class="wrap">
   <header>
     <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
@@ -223,6 +232,19 @@
     el.textContent = msg; el.classList.add('show');
     clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('show'), 2400);
   }
+
+  /* ---------- 연결 상태 표시 ---------- */
+  let isOnline = navigator.onLine;
+  function setOnlineState(ok) {
+    if (ok === isOnline) { updatePendingBadgeSafe(); return; }
+    isOnline = ok;
+    document.getElementById('offlineBar').classList.toggle('show', !ok);
+    updatePendingBadgeSafe();
+    if (ok) flushPending();
+  }
+  function updatePendingBadgeSafe() { if (typeof updatePendingBadge === 'function') updatePendingBadge(); }
+  window.addEventListener('online', () => setOnlineState(true));
+  window.addEventListener('offline', () => setOnlineState(false));
 
   const LS = {
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -371,12 +393,54 @@
   /* ---------- history + server sync ---------- */
   function historyList() { return loadArr('iv-history'); }
   function pushHistory(items) { const h = historyList(); items.forEach(i => h.push(i)); saveArr('iv-history', h); }
+  /* ---------- 오프라인 대비: 서버 저장 실패한 것들은 큐에 쌓아뒀다가 연결되면 자동 재전송 ---------- */
+  function pendingList() { return loadArr('iv-pending'); }
+  function savePending(p) { saveArr('iv-pending', p); updatePendingBadge(); }
+
+  function updatePendingBadge() {
+    const n = pendingList().length;
+    const el = document.getElementById('pendingN');
+    if (!el) return;
+    if (n > 0) { el.textContent = n + '개 대기'; el.style.display = 'inline'; }
+    else el.style.display = 'none';
+  }
+
   async function syncToServer(items) {
     try {
       const r = await fetch('/api/interview-save', { method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ savedAt: Date.now(), items }) });
-      return r.ok;
-    } catch (e) { return false; }
+      if (!r.ok) throw new Error('bad status');
+      setOnlineState(true);
+      return true;
+    } catch (e) {
+      setOnlineState(false);
+      const p = pendingList();
+      p.push({ type: 'interview', savedAt: Date.now(), items });
+      savePending(p);
+      return false;
+    }
+  }
+
+  async function flushPending() {
+    const p = pendingList();
+    if (!p.length) return;
+    const remain = [];
+    for (const entry of p) {
+      try {
+        let r;
+        if (entry.type === 'thought') {
+          r = await fetch('/api/thoughts', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: entry.text, dataUrl: entry.dataUrl, tags: entry.tags }) });
+        } else {
+          r = await fetch('/api/interview-save', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ savedAt: entry.savedAt, items: entry.items }) });
+        }
+        if (!r.ok) throw new Error('bad status');
+      } catch (e) { remain.push(entry); }
+    }
+    savePending(remain);
+    setOnlineState(true);
+    if (remain.length < p.length) toast('밀려있던 기록 ' + (p.length - remain.length) + '개 동기화했어요');
   }
 
   /* ---------- render ---------- */
@@ -602,16 +666,22 @@
     const text = capText.value.trim(); if (!text) return;
     const tags = document.getElementById('capTags').value.split(',').map(s => s.trim()).filter(Boolean);
     capSave.disabled = true; capSave.textContent = '기록 중…';
+    const payload = { text, dataUrl: capDataUrl, tags };
     try {
       const r = await fetch('/api/thoughts', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text, dataUrl: capDataUrl, tags }) });
+        body: JSON.stringify(payload) });
       if (!r.ok) throw new Error((await r.json()).error || '실패');
-      capText.value = ''; document.getElementById('capTags').value = '';
-      document.getElementById('capFile').value = '';
-      document.getElementById('capThumb').style.display = 'none';
-      capDataUrl = null;
+      setOnlineState(true);
       toast('기록했어요');
-    } catch (e) { toast(e.message); }
+    } catch (e) {
+      setOnlineState(false);
+      const p = pendingList(); p.push(Object.assign({ type: 'thought' }, payload)); savePending(p);
+      toast('오프라인 — 연결되면 자동으로 저장돼요');
+    }
+    capText.value = ''; document.getElementById('capTags').value = '';
+    document.getElementById('capFile').value = '';
+    document.getElementById('capThumb').style.display = 'none';
+    capDataUrl = null;
     capSave.textContent = '기록하기'; refreshCapBtn();
   });
 
@@ -717,6 +787,9 @@
   });
 
   render();
+  document.getElementById('offlineBar').classList.toggle('show', !navigator.onLine);
+  updatePendingBadge();
+  if (navigator.onLine) flushPending();
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 })();
 </script>

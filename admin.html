@@ -78,9 +78,16 @@
     border-radius: 22px; opacity: 0; pointer-events: none; transition: all 0.3s; z-index: 20;
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  #offlineBar {
+    display: none; position: sticky; top: 0; z-index: 40; background: #3a2a10; color: #e8c37a;
+    font-size: 12.5px; font-weight: 600; text-align: center; padding: 9px 14px; letter-spacing: 0.02em;
+  }
+  #offlineBar.show { display: block; }
 </style>
 </head>
 <body>
+<div id="offlineBar">📡 오프라인 — 마지막으로 받아온 데이터를 보여주고 있어요. 새 작업은 연결 후 가능해요</div>
 <div class="wrap">
   <header>
     <div><div class="brand">Thought Constellation</div><h1>관리자</h1></div>
@@ -154,6 +161,11 @@
     clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('show'), 2400);
   }
 
+  function setOnlineBar(ok) { document.getElementById('offlineBar').classList.toggle('show', !ok); }
+  window.addEventListener('online', () => { setOnlineBar(true); toast('연결됐어요'); });
+  window.addEventListener('offline', () => setOnlineBar(false));
+  setOnlineBar(navigator.onLine);
+
   function resizeImage(file, maxDim, quality) {
     return new Promise((resolve, reject) => {
       const img = new Image();
@@ -215,7 +227,11 @@
       document.getElementById('capThumb').style.display = 'none';
       capDataUrl = null;
       toast('기록했어요');
-    } catch (e) { toast(e.message); }
+      setOnlineBar(true);
+    } catch (e) {
+      if (e instanceof TypeError) { setOnlineBar(false); toast('오프라인이에요 — 인터뷰 앱에서 기록하면 자동으로 재전송돼요'); }
+      else toast(e.message);
+    }
     btn.disabled = false; btn.textContent = '기록하기';
   });
 
@@ -243,16 +259,28 @@
       document.getElementById('pThumb').style.display = 'none';
       pDataUrl = null;
       toast('업로드했어요');
+      setOnlineBar(true);
       loadPhotos();
-    } catch (e) { toast(e.message); }
+    } catch (e) {
+      if (e instanceof TypeError) { setOnlineBar(false); toast('오프라인이에요 — 연결 후 다시 업로드해주세요'); }
+      else toast(e.message);
+    }
     btn.disabled = false; btn.textContent = '업로드';
   });
 
   async function loadPhotos() {
     const grid = document.getElementById('pGrid');
     grid.innerHTML = '<div class="empty">불러오는 중…</div>';
-    const r = await fetch('/api/photos-manage');
-    const d = await r.json();
+    let d;
+    try {
+      const r = await fetch('/api/photos-manage');
+      d = await r.json();
+      setOnlineBar(true);
+    } catch (e) {
+      setOnlineBar(false);
+      grid.innerHTML = '<div class="empty">오프라인이라 새로 불러올 수 없어요. 연결 후 다시 시도해주세요.</div>';
+      return;
+    }
     if (!d.photos || !d.photos.length) { grid.innerHTML = '<div class="empty">아직 사진이 없어요.</div>'; return; }
     grid.innerHTML = '';
     d.photos.forEach(p => {
@@ -265,15 +293,19 @@
         '<div class="row"><button data-act="pub">' + (p.published === false ? '공개하기' : '비공개') + '</button>' +
         '<button data-act="del">삭제</button></div></div>';
       el.querySelector('[data-act="pub"]').addEventListener('click', async () => {
-        await fetch('/api/photos-manage', { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: p.id, published: p.published === false }) });
-        loadPhotos();
+        try {
+          await fetch('/api/photos-manage', { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: p.id, published: p.published === false }) });
+          loadPhotos();
+        } catch (e) { toast('오프라인 — 연결 후 다시 시도해주세요'); }
       });
       el.querySelector('[data-act="del"]').addEventListener('click', async () => {
         if (!confirm('이 사진을 삭제할까요?')) return;
-        await fetch('/api/photos-manage', { method: 'DELETE', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: p.id }) });
-        loadPhotos();
+        try {
+          await fetch('/api/photos-manage', { method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: p.id }) });
+          loadPhotos();
+        } catch (e) { toast('오프라인 — 연결 후 다시 시도해주세요'); }
       });
       grid.appendChild(el);
     });
@@ -282,8 +314,16 @@
   async function loadThoughts() {
     const list = document.getElementById('tList');
     list.innerHTML = '<div class="empty">불러오는 중…</div>';
-    const r = await fetch('/api/thoughts');
-    const d = await r.json();
+    let d;
+    try {
+      const r = await fetch('/api/thoughts');
+      d = await r.json();
+      setOnlineBar(true);
+    } catch (e) {
+      setOnlineBar(false);
+      list.innerHTML = '<div class="empty">오프라인이라 새로 불러올 수 없어요. 연결 후 다시 시도해주세요.</div>';
+      return;
+    }
     if (!d.thoughts || !d.thoughts.length) { list.innerHTML = '<div class="empty">아직 기록이 없어요.</div>'; return; }
     list.innerHTML = '';
     d.thoughts.forEach(t => {
@@ -296,15 +336,19 @@
         '<div class="row"><button data-act="pub">' + (t.published === false ? '공개하기' : '비공개') + '</button>' +
         '<button data-act="del">삭제</button></div>';
       el.querySelector('[data-act="pub"]').addEventListener('click', async () => {
-        await fetch('/api/thoughts', { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: t.id, published: t.published === false }) });
-        loadThoughts();
+        try {
+          await fetch('/api/thoughts', { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: t.id, published: t.published === false }) });
+          loadThoughts();
+        } catch (e) { toast('오프라인 — 연결 후 다시 시도해주세요'); }
       });
       el.querySelector('[data-act="del"]').addEventListener('click', async () => {
         if (!confirm('이 기록을 삭제할까요?')) return;
-        await fetch('/api/thoughts', { method: 'DELETE', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: t.id }) });
-        loadThoughts();
+        try {
+          await fetch('/api/thoughts', { method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: t.id }) });
+          loadThoughts();
+        } catch (e) { toast('오프라인 — 연결 후 다시 시도해주세요'); }
       });
       list.appendChild(el);
     });
@@ -313,8 +357,16 @@
   async function loadInterview() {
     const el = document.getElementById('ivList');
     el.innerHTML = '<div class="empty">불러오는 중…</div>';
-    const r = await fetch('/api/interview-list');
-    const d = await r.json();
+    let d;
+    try {
+      const r = await fetch('/api/interview-list');
+      d = await r.json();
+      setOnlineBar(true);
+    } catch (e) {
+      setOnlineBar(false);
+      el.innerHTML = '<div class="empty">오프라인이라 새로 불러올 수 없어요. 연결 후 다시 시도해주세요.</div>';
+      return;
+    }
     if (!d.batches || !d.batches.length) { el.innerHTML = '<div class="empty">아직 저장된 답변이 없어요.</div>'; return; }
     el.innerHTML = '';
     d.batches.forEach(b => {
@@ -328,15 +380,18 @@
         b.items.map(it => '<div class="qa"><div class="qq">[' + it.node + '] ' + it.question + '</div><div class="aa">' + it.answer + '</div></div>').join('');
       box.querySelector('[data-act="del"]').addEventListener('click', async () => {
         if (!confirm('이 답변을 삭제할까요?')) return;
-        await fetch('/api/interview-list', { method: 'DELETE', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ savedAt: b.savedAt }) });
-        loadInterview();
+        try {
+          await fetch('/api/interview-list', { method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ savedAt: b.savedAt }) });
+          loadInterview();
+        } catch (e) { toast('오프라인 — 연결 후 다시 시도해주세요'); }
       });
       el.appendChild(box);
     });
   }
 
   loadPhotos();
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 })();
 </script>
 </body>
