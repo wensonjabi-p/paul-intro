@@ -55,14 +55,25 @@ module.exports = async (req, res) => {
         tool_choice: { type: 'tool', name: 'submit_followup' },
       }),
     });
-    if (!r.ok) return res.status(200).json({ followup: null });
+    if (!r.ok) {
+      const errBody = await r.text().catch(() => '');
+      console.error('generate-followup: anthropic api not ok', r.status, errBody.slice(0, 500));
+      return res.status(200).json({ followup: null });
+    }
     const data = await r.json();
     const block = (data.content || []).find(c => c.type === 'tool_use' && c.name === 'submit_followup');
-    if (!block || !block.input) return res.status(200).json({ followup: null });
+    if (!block || !block.input) {
+      console.error('generate-followup: no tool_use block', JSON.stringify(data).slice(0, 500));
+      return res.status(200).json({ followup: null });
+    }
     const { question: q, tag, tier, choices } = block.input;
-    if (!q || !Array.isArray(choices) || choices.length !== 4) return res.status(200).json({ followup: null });
+    if (!q || !Array.isArray(choices) || choices.length !== 4) {
+      console.error('generate-followup: invalid block.input', JSON.stringify(block.input).slice(0, 500));
+      return res.status(200).json({ followup: null });
+    }
     res.status(200).json({ followup: { q, node: tag || node || 'ai', tier: tier || 'deep', choices } });
   } catch (e) {
+    console.error('generate-followup: exception', e.message);
     res.status(200).json({ followup: null });
   }
 };
