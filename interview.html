@@ -242,6 +242,57 @@
   }
   refill();
 
+  let generating = 0;
+
+  async function tryGenerateFollowUp(q, answerText) {
+    try {
+      const r = await fetch('/api/generate-followup', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: q.q, answer: answerText, node: q.node }),
+      });
+      if (!r.ok) return null;
+      const d = await r.json();
+      if (!d.followup) return null;
+      return Object.assign({}, d.followup, { id: 'ai-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) });
+    } catch (e) { return null; }
+  }
+
+  async function completeQuestion(q, mode, val, selectedChoicesSnapshot) {
+    const item = { node: q.node, question: q.q, answer: val, mode };
+    pushHistory([item]);
+    syncToServer([item]).then(ok => toast(ok ? '저장했어요' : '휴대폰에 저장됨(서버 연동 대기)'));
+
+    slots = slots.filter(x => x !== q.id);
+    persist();
+    generating++;
+    render();
+
+    let followUpQs = [];
+    if (mode === 'choice' && q.followUps) {
+      selectedChoicesSnapshot.forEach(ch => {
+        const fus = q.followUps[ch];
+        if (fus) fus.forEach(fu => followUpQs.push(Object.assign({}, fu, { id: 'fu-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) })));
+      });
+    }
+
+    if (!followUpQs.length) {
+      const ai = await tryGenerateFollowUp(q, val);
+      if (ai) followUpQs = [ai];
+    }
+
+    generating--;
+    if (followUpQs.length) {
+      addDyn(followUpQs);
+      queue = followUpQs.map(x => x.id).concat(queue);
+    } else {
+      const relatedId = pullRelated(q.node);
+      if (relatedId) queue = [relatedId, ...queue];
+    }
+    persist();
+    refill();
+    render();
+  }
+
   function resolveSlot(id, opts) {
     opts = opts || {};
     slots = slots.filter(x => x !== id);
@@ -289,7 +340,7 @@
   function renderSlots() {
     const el = document.getElementById('slots');
     el.innerHTML = '';
-    if (!slots.length) {
+    if (!slots.length && !generating) {
       el.innerHTML = '<div class="empty-slot">' + (paused ? '질문을 멈췄어요. 다시 받으려면 위 버튼을 눌러주세요.' : '질문이 바닥났어요 — 대단해요!') + '</div>';
       return;
     }
@@ -298,6 +349,12 @@
       if (!q) return;
       el.appendChild(questionCard(q, idx + 1));
     });
+    if (slots.length < MAXSLOTS && generating > 0) {
+      const ghost = document.createElement('div');
+      ghost.className = 'qcard'; ghost.style.opacity = '0.55';
+      ghost.innerHTML = '<div class="qtext">✦ 답변을 바탕으로 다음 질문을 만들고 있어요…</div>';
+      el.appendChild(ghost);
+    }
   }
 
   const TIER_LABEL = { light: '가볍게', deep: '더 깊이', fact: '사실·맥락' };
@@ -397,18 +454,8 @@
     doneBtn.addEventListener('click', () => {
       const val = (LS.get(kA(q.id)) || '').trim();
       if (!val) return;
-      const item = { node: q.node, question: q.q, answer: val, mode };
-      pushHistory([item]);
-      syncToServer([item]).then(ok => toast(ok ? '저장했어요' : '휴대폰에 저장됨(서버 연동 대기)'));
-
-      let followUpQs = [];
-      if (mode === 'choice' && q.followUps) {
-        selectedChoices.forEach(ch => {
-          const fus = q.followUps[ch];
-          if (fus) fus.forEach(fu => followUpQs.push(Object.assign({}, fu, { id: 'fu-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) })));
-        });
-      }
-      resolveSlot(q.id, { followUpQs, completedNode: q.node });
+      doneBtn.disabled = true;
+      completeQuestion(q, mode, val, selectedChoices.slice());
     });
 
     buildAns(mode);
