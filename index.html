@@ -220,6 +220,7 @@
         <button data-lang="en" class="lang-btn">EN</button>
         <button data-lang="zh" class="lang-btn">中</button>
       </div>
+      <a href="interview.html" id="p-app-back" style="display:none; color:var(--faint); font-size:11px; letter-spacing:0.06em; text-decoration:none; border:1px solid var(--line); padding:4px 10px; border-radius:12px;">← 앱으로</a>
     </div>
   </div>
 
@@ -774,6 +775,11 @@
   });
 
   window.__pb = { state, toggleSelect, nodeById, setLanguage };
+
+  // 설치된 폰 앱(standalone)으로 열었을 때만 "앱으로 돌아가기" 링크 노출 — 일반 방문자에게는 안 보임
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    document.getElementById('p-app-back').style.display = 'inline-block';
+  }
 
   window.addEventListener('resize', resize);
   renderStaticText();

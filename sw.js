@@ -1,5 +1,5 @@
 /* 오프라인 캐시 — 인터뷰 앱과 관리자 페이지를 비행기 모드에서도 열 수 있게. */
-const CACHE = 'paul-interview-v9';
+const CACHE = 'paul-interview-v10';
 const ASSETS = [
   './interview.html',
   './interview-questions.js',
@@ -9,6 +9,11 @@ const ASSETS = [
   './icon-180.png',
   './admin.html',
   './admin-login.html',
+  './index.html',
+  './data.js',
+  './data.en.js',
+  './data.zh.js',
+  './canva-timeline.js',
 ];
 
 /* 관리자 GET 엔드포인트 — 네트워크 우선, 실패하면 마지막으로 받아둔 데이터를 보여준다(오프라인 열람용). */
