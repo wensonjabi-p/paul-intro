@@ -3,7 +3,7 @@
    Paul이 나중에 RESEND_API_KEY를 설정하면 다음 메시지부터 자동으로 이메일이 간다. */
 const { kvPushJSON } = require('./_lib');
 
-const TO_EMAIL = 'bikeryhz@hotmail.com';
+const TO_EMAIL = 'wensonjabi@gmail.com';
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ error: 'method' });
