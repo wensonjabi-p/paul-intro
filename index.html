@@ -74,7 +74,7 @@
 
   /* ---------- CONSTELLATION ---------- */
   .constellation-wrap { position: relative; margin-top: 2vh; flex: 1; }
-  #sky { display: block; width: 100%; height: 54vh; min-height: 400px; cursor: default; }
+  #sky { display: block; width: 100%; height: 54vh; min-height: 400px; cursor: default; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
   .sky-hint {
     position: absolute; top: 14px; left: 5vw; font-size: 12.5px; color: var(--muted);
     letter-spacing: 0.08em; pointer-events: none; transition: opacity 0.6s;
@@ -158,23 +158,23 @@
   .feed .lede { margin-top: 14px; color: var(--muted); max-width: 620px; font-size: 15px; }
   .feed-list { margin-top: 6vh; }
 
-  .add-box {
+  .form-box {
     margin-top: 7vh; border: 1px solid var(--line); border-radius: 12px; padding: 30px;
     background: var(--bg-soft); max-width: 720px;
   }
-  .add-box h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
-  .add-box .hint { font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
-  .add-box label {
+  .form-box h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .form-box .hint { font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+  .form-box label {
     display: block; font-size: 12px; letter-spacing: 0.1em; color: var(--muted);
     margin: 16px 0 6px; text-transform: uppercase;
   }
-  .add-box textarea, .add-box input {
+  .form-box textarea, .form-box input {
     width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
     color: var(--ink); font-family: inherit; font-size: 14px; padding: 12px 14px; transition: border-color 0.25s;
   }
-  .add-box textarea { min-height: 90px; resize: vertical; }
-  .add-box textarea:focus, .add-box input:focus { outline: none; border-color: var(--accent); }
-  .add-box .btns { margin-top: 24px; display: flex; gap: 10px; }
+  .form-box textarea { min-height: 90px; resize: vertical; }
+  .form-box textarea:focus, .form-box input:focus { outline: none; border-color: var(--accent); }
+  .form-box .btns { margin-top: 24px; display: flex; gap: 10px; }
   .btn-gold {
     background: var(--accent); color: var(--bg); border: none; font-weight: 700; font-size: 14px;
     padding: 12px 26px; border-radius: 8px; cursor: pointer; letter-spacing: 0.04em; transition: opacity 0.25s;
@@ -252,30 +252,25 @@
   <h2 id="p-feed-h2"></h2>
   <p class="lede" id="feed-lede"></p>
   <div class="feed-list" id="feed-list"></div>
-
-  <div class="add-box">
-    <h4 id="p-addbox-h4"></h4>
-    <div class="hint" id="p-addbox-hint"></div>
-    <label id="p-addbox-taglabel"></label>
-    <input type="text" id="add-tags" />
-    <label id="p-addbox-thoughtlabel"></label>
-    <textarea id="add-content"></textarea>
-    <div class="btns">
-      <button class="btn-gold" id="add-btn"></button>
-      <button class="btn-ghost" id="clear-form-btn"></button>
-    </div>
-  </div>
-</section>
-
-<!-- Canva 경력 타임라인 섹션 -->
-<section class="canva-timeline-section" style="padding: 60px 5vw; background: linear-gradient(135deg, rgba(212,162,78,0.05) 0%, rgba(232,195,122,0.02) 100%);">
-  <div id="canva-timeline-container"></div>
 </section>
 
 <section class="footer">
-  <div>
+  <div style="max-width:480px;">
     <h2 id="p-footer-h2"></h2>
-    <div class="contact" id="p-contact"></div>
+    <p class="lede" id="p-footer-lede" style="margin-top:14px;"></p>
+    <div id="p-footer-location" style="margin-top:10px; font-size:12px; letter-spacing:0.08em; color:var(--faint);"></div>
+    <form id="contact-form" class="form-box" style="margin-top:28px; max-width:100%;">
+      <label id="p-contact-namelabel"></label>
+      <input type="text" id="contact-name" />
+      <label id="p-contact-contactlabel"></label>
+      <input type="text" id="contact-contact" />
+      <label id="p-contact-msglabel"></label>
+      <textarea id="contact-message" rows="4"></textarea>
+      <div class="btns">
+        <button type="submit" class="btn-gold" id="contact-send"></button>
+      </div>
+      <div id="contact-status" style="margin-top:10px; font-size:13px; min-height:18px;"></div>
+    </form>
   </div>
   <div class="placeholder" id="p-footer-placeholder"></div>
 </section>
@@ -286,7 +281,6 @@
 <script src="data.js"></script>
 <script src="data.en.js"></script>
 <script src="data.zh.js"></script>
-<script src="canva-timeline.js"></script>
 <script>
 (function () {
   const UI = {
@@ -303,7 +297,16 @@
       addboxThoughtLabel: '생각',
       addContentPlaceholder: '지금 떠오른 생각을 자유롭게…',
       addBtn: '추가하기', clearBtn: '지우기',
-      footerH2: '다음 챕터를<br>함께 쓸 사람을 찾습니다.',
+      footerH2: '관심이 있거나,<br>궁금한 게 있다면.',
+      footerLede: '실제로 연락하고 싶으시면 아래에 메시지를 남겨주세요 — 저에게 바로 전달됩니다.',
+      contactNameLabel: '이름 (선택)',
+      contactContactLabel: '연락처 (이메일 등, 선택)',
+      contactMsgLabel: '메시지',
+      contactSendBtn: '보내기',
+      contactSending: '보내는 중…',
+      contactSuccess: '메시지를 보냈어요. 곧 답 드릴게요!',
+      contactError: '전송에 실패했어요. 잠시 후 다시 시도해주세요.',
+      contactEmptyMsg: '메시지를 입력해주세요.',
       footerPlaceholder: '[PLACEHOLDER: 프로필 사진 또는<br>여정 지도 일러스트]',
       interviewLink: '✦ 인터뷰 노트 (Paul 전용)',
       emptyState: '아직 선택된 단어가 없습니다. 위 성좌에서 궁금한 단어를 하나 골라보세요 — 이야기가 열립니다.',
@@ -330,7 +333,16 @@
       addboxThoughtLabel: 'Thought',
       addContentPlaceholder: 'Write whatever comes to mind…',
       addBtn: 'Add', clearBtn: 'Clear',
-      footerH2: 'Looking for someone<br>to write the next chapter with.',
+      footerH2: 'Interested?<br>Or just curious.',
+      footerLede: 'If you\'d like to actually get in touch, leave a message below — it comes straight to me.',
+      contactNameLabel: 'Name (optional)',
+      contactContactLabel: 'Contact (email, etc. — optional)',
+      contactMsgLabel: 'Message',
+      contactSendBtn: 'Send',
+      contactSending: 'Sending…',
+      contactSuccess: "Message sent. I'll get back to you soon!",
+      contactError: 'Something went wrong. Please try again in a moment.',
+      contactEmptyMsg: 'Please write a message first.',
       footerPlaceholder: '[PLACEHOLDER: Profile photo or<br>journey-map illustration]',
       interviewLink: '✦ Interview Notes (Paul only)',
       emptyState: 'No word selected yet. Pick a word you\'re curious about in the constellation above — a story will open.',
@@ -359,7 +371,16 @@
       addboxThoughtLabel: '想法',
       addContentPlaceholder: '自由地写下此刻浮现的想法…',
       addBtn: '添加', clearBtn: '清空',
-      footerH2: '正在寻找能一起<br>书写下一章的人。',
+      footerH2: '感兴趣，<br>或想问点什么？',
+      footerLede: '如果想直接联系我，请在下面留言——会直接发送给我。',
+      contactNameLabel: '姓名（可选）',
+      contactContactLabel: '联系方式（邮箱等，可选）',
+      contactMsgLabel: '留言',
+      contactSendBtn: '发送',
+      contactSending: '发送中…',
+      contactSuccess: '消息已发送，我会尽快回复！',
+      contactError: '发送失败，请稍后重试。',
+      contactEmptyMsg: '请先写下留言。',
       footerPlaceholder: '[PLACEHOLDER: 个人照片或<br>旅程地图插画]',
       interviewLink: '✦ 采访笔记（仅 Paul 使用）',
       emptyState: '还没有选择任何词。在上面的星座中选一个你好奇的词——故事就会展开。',
@@ -383,7 +404,6 @@
   })();
   let D = DATASETS[LANG];
   let P = D.profile;
-  window.DATA = D; // canva-timeline.js reads window.DATA directly
 
   function renderStaticText() {
     const u = UI[LANG];
@@ -393,8 +413,6 @@
     document.getElementById('p-hero').innerHTML = P.hero1 + '<br><span class="dim">' + P.hero2 + '</span>';
     document.getElementById('p-sub').innerHTML = P.heroSub;
     document.getElementById('p-faces').textContent = P.faces;
-    document.getElementById('p-contact').innerHTML =
-      '<a href="mailto:' + P.email + '">' + P.email + '</a><br>' + P.location;
     document.getElementById('p-credit').textContent = P.name.toUpperCase() + ' · THOUGHT CONSTELLATION · 2026';
     document.getElementById('feed-lede').textContent = u.feedLede;
 
@@ -405,15 +423,13 @@
     document.getElementById('sky-hint').innerHTML = u.skyHint + ' <span class="k">' + u.skyHintK + '</span>';
     document.getElementById('sky-reset').textContent = u.skyReset;
     document.getElementById('p-feed-h2').textContent = u.feedH2;
-    document.getElementById('p-addbox-h4').textContent = u.addboxH4;
-    document.getElementById('p-addbox-hint').innerHTML = u.addboxHint;
-    document.getElementById('p-addbox-taglabel').textContent = u.addboxTagLabel;
-    document.getElementById('add-tags').placeholder = u.addTagsPlaceholder;
-    document.getElementById('p-addbox-thoughtlabel').textContent = u.addboxThoughtLabel;
-    document.getElementById('add-content').placeholder = u.addContentPlaceholder;
-    document.getElementById('add-btn').textContent = u.addBtn;
-    document.getElementById('clear-form-btn').textContent = u.clearBtn;
     document.getElementById('p-footer-h2').innerHTML = u.footerH2;
+    document.getElementById('p-footer-lede').textContent = u.footerLede;
+    document.getElementById('p-footer-location').textContent = P.location;
+    document.getElementById('p-contact-namelabel').textContent = u.contactNameLabel;
+    document.getElementById('p-contact-contactlabel').textContent = u.contactContactLabel;
+    document.getElementById('p-contact-msglabel').textContent = u.contactMsgLabel;
+    document.getElementById('contact-send').textContent = u.contactSendBtn;
     document.getElementById('p-footer-placeholder').innerHTML = u.footerPlaceholder;
     document.getElementById('p-interview-link').textContent = u.interviewLink;
 
@@ -448,7 +464,6 @@
     LANG = lang;
     D = DATASETS[LANG];
     P = D.profile;
-    window.DATA = D;
     try { localStorage.setItem(LANG_KEY, LANG); } catch (e) {}
     state.nodes = D.nodes;
     state.thoughts = [...saved.thoughts, ...buildBaseThoughts()];
@@ -456,9 +471,6 @@
     initParticles();
     renderSynthesis();
     renderFeed();
-    if (typeof renderTimelineUI === 'function') {
-      document.getElementById('canva-timeline-container').innerHTML = renderTimelineUI(LANG);
-    }
   }
 
   document.getElementById('lang-toggle').addEventListener('click', e => {
@@ -576,8 +588,8 @@
 
   function hitTest(mx, my) {
     for (const p of particles) {
-      const hw = Math.max(p.w / 2 + 10, 28);
-      if (mx > p.x - hw && mx < p.x + hw && my > p.y - 20 && my < p.y + 12) return p;
+      const hw = Math.max(p.w / 2 + 16, 34);
+      if (mx > p.x - hw && mx < p.x + hw && my > p.y - 28 && my < p.y + 20) return p;
     }
     return null;
   }
@@ -592,7 +604,7 @@
   let downPos = null;
   canvas.addEventListener('pointerdown', e => { downPos = { x: e.clientX, y: e.clientY }; });
   canvas.addEventListener('click', e => {
-    if (downPos && Math.hypot(e.clientX - downPos.x, e.clientY - downPos.y) > 6) return;
+    if (downPos && Math.hypot(e.clientX - downPos.x, e.clientY - downPos.y) > 12) return;
     const r = canvas.getBoundingClientRect();
     const p = hitTest(e.clientX - r.left, e.clientY - r.top);
     if (p) toggleSelect(p.id);
@@ -756,22 +768,39 @@
       [...state.thoughts].sort((a, b) => b.addedAt - a.addedAt).slice(0, 3).map(thoughtCard).join('');
   }
 
-  document.getElementById('add-btn').addEventListener('click', () => {
-    const content = document.getElementById('add-content').value.trim();
-    const tagsRaw = document.getElementById('add-tags').value.trim();
-    if (!content) { alert(UI[LANG].alertEmptyThought); return; }
-    const tags = tagsRaw.split(',').map(s => s.trim()).filter(Boolean).map(lbl => {
-      const f = state.nodes.find(n => n.label === lbl || n.id === lbl); return f ? f.id : null;
-    }).filter(Boolean);
-    state.thoughts.unshift({ id: 't' + NOW + Math.floor(state.thoughts.length), text: content, tags, addedAt: Date.now(), user: true });
-    persist();
-    document.getElementById('add-content').value = '';
-    document.getElementById('add-tags').value = '';
-    renderFeed(); renderSynthesis();
-  });
-  document.getElementById('clear-form-btn').addEventListener('click', () => {
-    document.getElementById('add-content').value = '';
-    document.getElementById('add-tags').value = '';
+  document.getElementById('contact-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const u = UI[LANG];
+    const name = document.getElementById('contact-name').value.trim();
+    const contact = document.getElementById('contact-contact').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+    const statusEl = document.getElementById('contact-status');
+    const sendBtn = document.getElementById('contact-send');
+    if (!message) { statusEl.textContent = u.contactEmptyMsg; statusEl.style.color = '#e2a0a0'; return; }
+    sendBtn.disabled = true;
+    statusEl.style.color = 'var(--muted)';
+    statusEl.textContent = u.contactSending;
+    try {
+      const r = await fetch('/api/contact-send', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, contact, message }),
+      });
+      const d = await r.json().catch(() => ({}));
+      if (r.ok && d.ok) {
+        statusEl.textContent = u.contactSuccess;
+        statusEl.style.color = 'var(--accent)';
+        document.getElementById('contact-form').reset();
+      } else {
+        statusEl.textContent = u.contactError;
+        statusEl.style.color = '#e2a0a0';
+      }
+    } catch (err) {
+      statusEl.textContent = u.contactError;
+      statusEl.style.color = '#e2a0a0';
+    } finally {
+      sendBtn.disabled = false;
+      sendBtn.textContent = u.contactSendBtn;
+    }
   });
 
   window.__pb = { state, toggleSelect, nodeById, setLanguage };
@@ -784,11 +813,6 @@
   window.addEventListener('resize', resize);
   renderStaticText();
   resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop();
-
-  // Canva 경력 타임라인 초기화
-  if (typeof renderTimelineUI === 'function') {
-    document.getElementById('canva-timeline-container').innerHTML = renderTimelineUI(LANG);
-  }
 })();
 </script>
 </body>

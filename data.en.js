@@ -11,7 +11,7 @@ const DATA_EN = {
     heroSub: 'These are the words drifting through my mind. <b>Pick two or three and connect them</b> — the combination surfaces a real story from my life, and a recent thought. Some words may look distant from me, but click one and there\'s a story.',
     faces: 'LINGUIST · TRADER · MAKER · EDUCATOR · STORYTELLER · EXPLORER',
     email: 'bikeryhz@hotmail.com',
-    location: 'Hangzhou, China · Yongin, Korea',
+    location: 'Hangzhou, China · Incheon, Korea',
   },
 
   nodes: [

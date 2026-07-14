@@ -29,7 +29,7 @@ const DATA = {
     heroSub: '머릿속을 떠다니는 단어들입니다. <b>두세 개를 골라 연결해 보세요</b> — 그 조합이 지나온 실제 이야기와 최근의 생각이 나타납니다. 어떤 단어는 나와 멀어 보여도, 클릭하면 이야기가 있습니다.',
     faces: 'LINGUIST · TRADER · MAKER · EDUCATOR · STORYTELLER · EXPLORER',
     email: 'bikeryhz@hotmail.com',
-    location: 'Hangzhou, China · Yongin, Korea',
+    location: 'Hangzhou, China · Incheon, Korea',
   },
 
   nodes: [
