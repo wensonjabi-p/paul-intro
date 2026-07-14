@@ -8,7 +8,7 @@ const DATA_EN = {
     places: 'HANGZHOU · SEOUL',
     hero1: 'Choose a word,',
     hero2: 'and you\'ll see me.',
-    heroSub: 'These are the words drifting through my mind. <b>Pick two or three and connect them</b> — the combination surfaces a real story from my life, and a recent thought. Some words may look distant from me, but click one and there\'s a story.',
+    heroSub: 'The words drifting through my head. <b>Choose, and connect.</b>',
     faces: 'LINGUIST · TRADER · MAKER · EDUCATOR · STORYTELLER · EXPLORER',
     email: 'bikeryhz@hotmail.com',
     location: 'Hangzhou, China · Incheon, Korea',
