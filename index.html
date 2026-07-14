@@ -81,11 +81,11 @@
   }
   .sky-hint .k { color: var(--accent); }
   .sky-reset {
-    position: absolute; top: 10px; right: 5vw; background: none; border: 1px solid var(--line);
-    color: var(--muted); font-size: 12px; padding: 6px 14px; border-radius: 20px; cursor: pointer;
-    letter-spacing: 0.08em; transition: all 0.25s;
+    position: absolute; top: 8px; right: 5vw; background: rgba(212,162,78,0.08); border: 1px solid var(--accent-dim);
+    color: var(--accent); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px; cursor: pointer;
+    letter-spacing: 0.04em; transition: all 0.25s;
   }
-  .sky-reset:hover { border-color: var(--accent); color: var(--accent); }
+  .sky-reset:hover { background: rgba(212,162,78,0.18); border-color: var(--accent); }
 
   /* ---------- SYNTHESIS ---------- */
   .synthesis { padding: 0 5vw 8vh; max-width: 1100px; }
@@ -107,6 +107,12 @@
   .story-single .prose {
     margin-top: 20px; font-size: clamp(16px, 2vw, 20px); line-height: 1.85; color: var(--ink); max-width: 720px;
   }
+  .fact-bar { margin-top: 18px; max-width: 420px; }
+  .fact-bar-label { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .fact-bar-pct { color: var(--accent); font-weight: 600; }
+  .fact-bar-track { height: 6px; border-radius: 3px; background: rgba(237,235,230,0.08); overflow: hidden; }
+  .fact-bar-fill { height: 100%; background: linear-gradient(90deg, var(--place), var(--accent)); border-radius: 3px; }
+  .fact-bar-note { font-size: 11px; color: var(--faint); margin-top: 6px; line-height: 1.5; }
   .ask-ribbon {
     margin-top: 22px; display: inline-flex; align-items: center; gap: 10px;
     background: rgba(212,162,78,0.1); border: 1px solid var(--accent-dim); border-radius: 8px;
@@ -287,7 +293,7 @@
     ko: {
       legend: { core: '나', place: '나를 바꾼 장소', associative: '관심어', wildcard: '엉뚱한 갈고리' },
       skyHint: '단어를 클릭하세요', skyHintK: '(하나면 이야기, 두셋이면 그 조합)',
-      skyReset: '초기화',
+      skyReset: '↻ 다른 단어 보기',
       feedH2: '최근의 생각들',
       feedLede: '이 페이지는 완성본이 아닙니다. 생각이 생길 때마다, 대화할 때마다 성좌는 조금씩 커집니다.',
       addboxH4: '새로운 생각 추가',
@@ -316,6 +322,7 @@
       relatedComboWordsSynth: '이 글을 이루는 단어',
       comboLoading: '✦ 이 단어들이 어떻게 만나는지 엮고 있어요…',
       badgeComboStory: '엮인 이야기',
+      factBarLabel: '사실 기반', factBarNote: 'Paul이 직접 들려준 이야기일수록 높고, 이력서 사실을 바탕으로 제가 추론해 쓴 부분일수록 낮습니다 — 대략적인 값이에요.',
       dateToday: '오늘', dateYesterday: '어제',
       dateDaysAgo: n => n + '일 전', dateWeeksAgo: n => n + '주 전', dateMonthsAgo: n => n + '개월 전',
       alertEmptyThought: '생각을 입력해주세요.',
@@ -323,7 +330,7 @@
     en: {
       legend: { core: 'Me', place: 'Places That Changed Me', associative: 'Related Words', wildcard: 'Odd Hooks' },
       skyHint: 'Click a word', skyHintK: '(one for a story, two or three for a combination)',
-      skyReset: 'Reset',
+      skyReset: '↻ Show other words',
       feedH2: 'Recent Thoughts',
       feedLede: "This page is never finished. Every time a thought forms, every time we talk, the constellation grows a little.",
       addboxH4: 'Add a New Thought',
@@ -352,6 +359,7 @@
       relatedComboWordsSynth: 'Words that make up this piece',
       comboLoading: '✦ Weaving these words together…',
       badgeComboStory: 'Woven Story',
+      factBarLabel: 'Fact-based', factBarNote: "Higher when Paul told this story himself; lower where I inferred it from résumé facts — a rough estimate.",
       dateToday: 'Today', dateYesterday: 'Yesterday',
       dateDaysAgo: n => n + (n === 1 ? ' day ago' : ' days ago'),
       dateWeeksAgo: n => n + (n === 1 ? ' week ago' : ' weeks ago'),
@@ -361,7 +369,7 @@
     zh: {
       legend: { core: '我', place: '改变我的地方', associative: '关联词', wildcard: '奇怪的钩子' },
       skyHint: '点击一个词', skyHintK: '（一个是故事，两三个是组合）',
-      skyReset: '重置',
+      skyReset: '↻ 换一批词',
       feedH2: '最近的想法',
       feedLede: '这个页面永远不是完成品。每当有新的想法，每次交谈，这片星座都会悄悄长大一点。',
       addboxH4: '添加新想法',
@@ -390,6 +398,7 @@
       relatedComboWordsSynth: '组成这段文字的词',
       comboLoading: '✦ 正在把这些词编织在一起…',
       badgeComboStory: '交织的故事',
+      factBarLabel: '基于事实', factBarNote: 'Paul 亲口讲述的部分越高，我根据简历事实推断写出的部分越低——这是一个大致的估算。',
       dateToday: '今天', dateYesterday: '昨天',
       dateDaysAgo: n => n + '天前', dateWeeksAgo: n => n + '周前', dateMonthsAgo: n => n + '个月前',
       alertEmptyThought: '请先写下想法。',
@@ -446,12 +455,25 @@
   function buildBaseThoughts() {
     return D.thoughts.map(t => ({ id: t.id, text: t.text, tags: t.tags, addedAt: NOW - t.daysAgo * 86400000 }));
   }
+  const VISIBLE_COUNT = 13; // 한 번에 보이는 단어 수 (10~15 사이)
+  function pickVisibleSubset(count, keepIds) {
+    const pool = state.nodes.map(n => n.id).filter(id => !keepIds.includes(id));
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+    const need = Math.max(0, count - keepIds.length);
+    return [...keepIds, ...pool.slice(0, need)];
+  }
+
   const state = {
     nodes: D.nodes,
     thoughts: [...saved.thoughts, ...buildBaseThoughts()],
     selected: [],
+    visibleIds: [],
     activeCombo: null,
   };
+  state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, []);
   const nodeById = id => state.nodes.find(n => n.id === id);
   const labelOf = id => (nodeById(id) || {}).label || id;
 
@@ -493,7 +515,8 @@
 
   function initParticles() {
     const prev = particles;
-    particles = state.nodes.map(n => {
+    const visible = state.visibleIds.map(nodeById).filter(Boolean);
+    particles = visible.map(n => {
       const ex = prev.find(p => p.id === n.id);
       if (ex) { ex.label = n.label; ex.type = n.type; return ex; }
       const t = TYPE[n.type] || TYPE.core;
@@ -612,15 +635,25 @@
 
   function toggleSelect(id) {
     const i = state.selected.indexOf(id);
-    if (i >= 0) state.selected.splice(i, 1);
-    else { if (state.selected.length >= 3) state.selected.shift(); state.selected.push(id); }
+    if (i >= 0) {
+      state.selected.splice(i, 1);
+    } else {
+      if (state.selected.length >= 3) state.selected.shift();
+      state.selected.push(id);
+      if (!state.visibleIds.includes(id)) {
+        state.visibleIds.push(id);
+        initParticles();
+      }
+    }
     renderSynthesis();
   }
 
   document.getElementById('sky-reset').addEventListener('click', () => {
-    state.selected = [];
-    state.activeCombo = null;
+    const keep = state.selected.slice();
+    state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, keep);
+    initParticles();
     particles.forEach(p => {
+      if (keep.includes(p.id)) return;
       scatter(p);
       p.freshMul = 1 + (p.freshMul - 1) * 0.4;
     });
@@ -675,9 +708,14 @@
     } catch (e) { /* 조용히 폴백으로 */ }
 
     if (JSON.stringify(state.selected) !== JSON.stringify(ids)) return; // 그 사이 선택이 바뀌었으면 버림
+    const usedAI = !!paragraph;
     if (!paragraph) paragraph = fallbackSynthesis(ids, sel);
+    const avgScore = sel.reduce((s, n) => s + factScoreOf(n), 0) / (sel.length || 1);
+    // AI 합성은 각 단어의 사실 조각을 새로 엮어 쓴 글이라 원본보다 살짝 낮게, 폴백(문장 이어붙이기)은 원문 그대로라 원래 점수 유지.
+    const shownScore = usedAI ? avgScore * 0.85 : avgScore;
 
     el.innerHTML = '<div class="synth-title">' + title + '</div>' +
+      factBarHtml(shownScore) +
       '<div class="prose" style="margin-top:20px;">' + paragraph + '</div>' +
       '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsSynth + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
@@ -712,11 +750,25 @@
     } catch (e) { /* 사진 서비스 준비 전이면 조용히 무시 */ }
   }
 
+  const STATUS_FACT_SCORE = { told: 92, seed: 40, ask: 0 };
+  function factScoreOf(n) { return STATUS_FACT_SCORE[n.status] != null ? STATUS_FACT_SCORE[n.status] : 40; }
+  function factBarHtml(score) {
+    const u = UI[LANG];
+    const pct = Math.round(score);
+    return '<div class="fact-bar">' +
+      '<div class="fact-bar-label"><span>' + u.factBarLabel + '</span><span class="fact-bar-pct">' + pct + '%</span></div>' +
+      '<div class="fact-bar-track"><div class="fact-bar-fill" style="width:' + pct + '%"></div></div>' +
+      '<div class="fact-bar-note">' + u.factBarNote + '</div>' +
+      '</div>';
+  }
+
   function renderComboStory(combo) {
     const sel = combo.ids.map(nodeById).filter(Boolean);
+    const avgScore = sel.reduce((s, n) => s + factScoreOf(n), 0) / (sel.length || 1);
     let h = '<div class="story-single">';
     h += '<div><span class="badge t-place">' + UI[LANG].badgeComboStory + '</span></div>';
     h += '<div class="headword">' + combo.title + '</div>';
+    h += factBarHtml(avgScore);
     h += '<div class="prose">' + combo.story + '</div>';
     h += '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsCurated + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
@@ -731,6 +783,7 @@
     if (n.era) h += '<span class="era">' + n.era + '</span>';
     h += '</div>';
     h += '<div class="headword">' + n.label + '</div>';
+    h += factBarHtml(factScoreOf(n));
     h += '<div class="prose">' + n.story + '</div>';
     if (n.status === 'ask') {
       const oq = D.openQuestions.find(q => q.node === n.id);
