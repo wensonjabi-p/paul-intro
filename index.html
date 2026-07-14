@@ -36,6 +36,14 @@
     padding: 28px 5vw; font-size: 13px; letter-spacing: 0.12em; color: var(--muted);
   }
   .hero-top .brand { color: var(--ink); font-weight: 600; letter-spacing: 0.18em; }
+  .lang-toggle { display: flex; gap: 4px; }
+  .lang-btn {
+    background: none; border: 1px solid var(--line); color: var(--muted);
+    font-family: inherit; font-size: 11px; letter-spacing: 0.08em; padding: 4px 10px;
+    border-radius: 12px; cursor: pointer; transition: all 0.2s;
+  }
+  .lang-btn:hover { border-color: var(--accent-dim); color: var(--ink); }
+  .lang-btn.active { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
   .hero-head { padding: 4vh 5vw 0; max-width: 1100px; }
   .hero-head .eyebrow {
     font-size: 13px; letter-spacing: 0.25em; color: var(--accent);
@@ -205,7 +213,14 @@
 <section class="hero">
   <div class="hero-top">
     <div class="brand" id="p-brand"></div>
-    <div id="p-places"></div>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <div id="p-places"></div>
+      <div class="lang-toggle" id="lang-toggle">
+        <button data-lang="ko" class="lang-btn">KO</button>
+        <button data-lang="en" class="lang-btn">EN</button>
+        <button data-lang="zh" class="lang-btn">中</button>
+      </div>
+    </div>
   </div>
 
   <div class="hero-head">
@@ -216,15 +231,15 @@
   </div>
 
   <div class="legend">
-    <span class="item"><span class="swatch sw-core"></span>나</span>
-    <span class="item"><span class="swatch sw-place"></span>나를 바꾼 장소</span>
-    <span class="item"><span class="swatch sw-assoc"></span>관심어</span>
-    <span class="item"><span class="swatch sw-wild"></span>엉뚱한 갈고리</span>
+    <span class="item"><span class="swatch sw-core"></span><span id="p-leg-core"></span></span>
+    <span class="item"><span class="swatch sw-place"></span><span id="p-leg-place"></span></span>
+    <span class="item"><span class="swatch sw-assoc"></span><span id="p-leg-assoc"></span></span>
+    <span class="item"><span class="swatch sw-wild"></span><span id="p-leg-wild"></span></span>
   </div>
 
   <div class="constellation-wrap">
-    <div class="sky-hint" id="sky-hint">단어를 클릭하세요 <span class="k">(하나면 이야기, 두셋이면 그 조합)</span></div>
-    <button class="sky-reset" id="sky-reset">초기화</button>
+    <div class="sky-hint" id="sky-hint"></div>
+    <button class="sky-reset" id="sky-reset"></button>
     <canvas id="sky"></canvas>
   </div>
 
@@ -233,20 +248,20 @@
 
 <section class="feed">
   <div class="eyebrow">Living Document</div>
-  <h2>최근의 생각들</h2>
+  <h2 id="p-feed-h2"></h2>
   <p class="lede" id="feed-lede"></p>
   <div class="feed-list" id="feed-list"></div>
 
   <div class="add-box">
-    <h4>새로운 생각 추가</h4>
-    <div class="hint">떠오른 생각을 적고, 관련 단어를 붙이면 성좌에서 그 단어를 골랐을 때 나타납니다. 브라우저에 저장됩니다.<br>더 깊은 이야기는 Claude와 대화하면 성좌 자체가 자랍니다.</div>
-    <label>관련 단어 (쉼표 구분 — 예: 이방인, 파키스탄)</label>
-    <input type="text" id="add-tags" placeholder="이방인, 파키스탄" />
-    <label>생각</label>
-    <textarea id="add-content" placeholder="지금 떠오른 생각을 자유롭게…"></textarea>
+    <h4 id="p-addbox-h4"></h4>
+    <div class="hint" id="p-addbox-hint"></div>
+    <label id="p-addbox-taglabel"></label>
+    <input type="text" id="add-tags" />
+    <label id="p-addbox-thoughtlabel"></label>
+    <textarea id="add-content"></textarea>
     <div class="btns">
-      <button class="btn-gold" id="add-btn">추가하기</button>
-      <button class="btn-ghost" id="clear-form-btn">지우기</button>
+      <button class="btn-gold" id="add-btn"></button>
+      <button class="btn-ghost" id="clear-form-btn"></button>
     </div>
   </div>
 </section>
@@ -258,33 +273,151 @@
 
 <section class="footer">
   <div>
-    <h2>다음 챕터를<br>함께 쓸 사람을 찾습니다.</h2>
+    <h2 id="p-footer-h2"></h2>
     <div class="contact" id="p-contact"></div>
   </div>
-  <div class="placeholder">[PLACEHOLDER: 프로필 사진 또는<br>여정 지도 일러스트]</div>
+  <div class="placeholder" id="p-footer-placeholder"></div>
 </section>
 
 <div class="credit" id="p-credit"></div>
-<div style="text-align:center; padding:0 5vw 40px;"><a href="interview.html" style="color:var(--faint); font-size:11px; letter-spacing:0.14em; text-decoration:none;">✦ 인터뷰 노트 (Paul 전용)</a></div>
+<div style="text-align:center; padding:0 5vw 40px;"><a href="interview.html" style="color:var(--faint); font-size:11px; letter-spacing:0.14em; text-decoration:none;" id="p-interview-link"></a></div>
 
 <script src="data.js"></script>
+<script src="data.en.js"></script>
+<script src="data.zh.js"></script>
 <script src="canva-timeline.js"></script>
 <script>
 (function () {
-  const D = window.DATA;
-  const P = D.profile;
+  const UI = {
+    ko: {
+      legend: { core: '나', place: '나를 바꾼 장소', associative: '관심어', wildcard: '엉뚱한 갈고리' },
+      skyHint: '단어를 클릭하세요', skyHintK: '(하나면 이야기, 두셋이면 그 조합)',
+      skyReset: '초기화',
+      feedH2: '최근의 생각들',
+      feedLede: '이 페이지는 완성본이 아닙니다. 생각이 생길 때마다, 대화할 때마다 성좌는 조금씩 커집니다.',
+      addboxH4: '새로운 생각 추가',
+      addboxHint: '떠오른 생각을 적고, 관련 단어를 붙이면 성좌에서 그 단어를 골랐을 때 나타납니다. 브라우저에 저장됩니다.<br>더 깊은 이야기는 Claude와 대화하면 성좌 자체가 자랍니다.',
+      addboxTagLabel: '관련 단어 (쉼표 구분 — 예: 이방인, 파키스탄)',
+      addTagsPlaceholder: '이방인, 파키스탄',
+      addboxThoughtLabel: '생각',
+      addContentPlaceholder: '지금 떠오른 생각을 자유롭게…',
+      addBtn: '추가하기', clearBtn: '지우기',
+      footerH2: '다음 챕터를<br>함께 쓸 사람을 찾습니다.',
+      footerPlaceholder: '[PLACEHOLDER: 프로필 사진 또는<br>여정 지도 일러스트]',
+      interviewLink: '✦ 인터뷰 노트 (Paul 전용)',
+      emptyState: '아직 선택된 단어가 없습니다. 위 성좌에서 궁금한 단어를 하나 골라보세요 — 이야기가 열립니다.',
+      askRibbonPrefix: '✦ 이 이야기는 아직 Paul에게 듣는 중입니다',
+      relatedLinked: '이어지는 단어',
+      relatedComboWordsCurated: '이 이야기를 이루는 단어',
+      relatedComboWordsSynth: '이 글을 이루는 단어',
+      comboLoading: '✦ 이 단어들이 어떻게 만나는지 엮고 있어요…',
+      badgeComboStory: '엮인 이야기',
+      dateToday: '오늘', dateYesterday: '어제',
+      dateDaysAgo: n => n + '일 전', dateWeeksAgo: n => n + '주 전', dateMonthsAgo: n => n + '개월 전',
+      alertEmptyThought: '생각을 입력해주세요.',
+    },
+    en: {
+      legend: { core: 'Me', place: 'Places That Changed Me', associative: 'Related Words', wildcard: 'Odd Hooks' },
+      skyHint: 'Click a word', skyHintK: '(one for a story, two or three for a combination)',
+      skyReset: 'Reset',
+      feedH2: 'Recent Thoughts',
+      feedLede: "This page is never finished. Every time a thought forms, every time we talk, the constellation grows a little.",
+      addboxH4: 'Add a New Thought',
+      addboxHint: 'Write down a thought and attach related words — it\'ll appear when that word is chosen in the constellation. Saved in your browser.<br>Talk with Claude for a deeper story, and the constellation itself grows.',
+      addboxTagLabel: 'Related words (comma-separated — e.g. Outsider, Pakistan)',
+      addTagsPlaceholder: 'Outsider, Pakistan',
+      addboxThoughtLabel: 'Thought',
+      addContentPlaceholder: 'Write whatever comes to mind…',
+      addBtn: 'Add', clearBtn: 'Clear',
+      footerH2: 'Looking for someone<br>to write the next chapter with.',
+      footerPlaceholder: '[PLACEHOLDER: Profile photo or<br>journey-map illustration]',
+      interviewLink: '✦ Interview Notes (Paul only)',
+      emptyState: 'No word selected yet. Pick a word you\'re curious about in the constellation above — a story will open.',
+      askRibbonPrefix: '✦ This story is still being told by Paul',
+      relatedLinked: 'Related words',
+      relatedComboWordsCurated: 'Words that make up this story',
+      relatedComboWordsSynth: 'Words that make up this piece',
+      comboLoading: '✦ Weaving these words together…',
+      badgeComboStory: 'Woven Story',
+      dateToday: 'Today', dateYesterday: 'Yesterday',
+      dateDaysAgo: n => n + (n === 1 ? ' day ago' : ' days ago'),
+      dateWeeksAgo: n => n + (n === 1 ? ' week ago' : ' weeks ago'),
+      dateMonthsAgo: n => n + (n === 1 ? ' month ago' : ' months ago'),
+      alertEmptyThought: 'Please write a thought first.',
+    },
+    zh: {
+      legend: { core: '我', place: '改变我的地方', associative: '关联词', wildcard: '奇怪的钩子' },
+      skyHint: '点击一个词', skyHintK: '（一个是故事，两三个是组合）',
+      skyReset: '重置',
+      feedH2: '最近的想法',
+      feedLede: '这个页面永远不是完成品。每当有新的想法，每次交谈，这片星座都会悄悄长大一点。',
+      addboxH4: '添加新想法',
+      addboxHint: '写下浮现的想法，附上相关的词——在星座中选到那个词时就会出现。保存在浏览器中。<br>和 Claude 深入聊聊，星座本身也会成长。',
+      addboxTagLabel: '相关词（逗号分隔——例如：异乡人, 巴基斯坦）',
+      addTagsPlaceholder: '异乡人, 巴基斯坦',
+      addboxThoughtLabel: '想法',
+      addContentPlaceholder: '自由地写下此刻浮现的想法…',
+      addBtn: '添加', clearBtn: '清空',
+      footerH2: '正在寻找能一起<br>书写下一章的人。',
+      footerPlaceholder: '[PLACEHOLDER: 个人照片或<br>旅程地图插画]',
+      interviewLink: '✦ 采访笔记（仅 Paul 使用）',
+      emptyState: '还没有选择任何词。在上面的星座中选一个你好奇的词——故事就会展开。',
+      askRibbonPrefix: '✦ 这个故事还在等 Paul 讲述',
+      relatedLinked: '相关的词',
+      relatedComboWordsCurated: '组成这个故事的词',
+      relatedComboWordsSynth: '组成这段文字的词',
+      comboLoading: '✦ 正在把这些词编织在一起…',
+      badgeComboStory: '交织的故事',
+      dateToday: '今天', dateYesterday: '昨天',
+      dateDaysAgo: n => n + '天前', dateWeeksAgo: n => n + '周前', dateMonthsAgo: n => n + '个月前',
+      alertEmptyThought: '请先写下想法。',
+    },
+  };
 
-  document.getElementById('p-brand').textContent = P.name.toUpperCase();
-  document.getElementById('p-places').textContent = P.places;
-  document.getElementById('p-tagline').textContent = P.tagline;
-  document.getElementById('p-hero').innerHTML = P.hero1 + '<br><span class="dim">' + P.hero2 + '</span>';
-  document.getElementById('p-sub').innerHTML = P.heroSub;
-  document.getElementById('p-faces').textContent = P.faces;
-  document.getElementById('p-contact').innerHTML =
-    '<a href="mailto:' + P.email + '">' + P.email + '</a><br>' + P.location;
-  document.getElementById('p-credit').textContent = P.name.toUpperCase() + ' · THOUGHT CONSTELLATION · 2026';
-  document.getElementById('feed-lede').textContent =
-    '이 페이지는 완성본이 아닙니다. 생각이 생길 때마다, 대화할 때마다 성좌는 조금씩 커집니다.';
+  const DATASETS = { ko: window.DATA, en: window.DATA_EN, zh: window.DATA_ZH };
+  const LANG_KEY = 'paul-intro-lang';
+  let LANG = (() => {
+    try { return DATASETS[localStorage.getItem(LANG_KEY)] ? localStorage.getItem(LANG_KEY) : 'ko'; }
+    catch (e) { return 'ko'; }
+  })();
+  let D = DATASETS[LANG];
+  let P = D.profile;
+  window.DATA = D; // canva-timeline.js reads window.DATA directly
+
+  function renderStaticText() {
+    const u = UI[LANG];
+    document.getElementById('p-brand').textContent = P.name.toUpperCase();
+    document.getElementById('p-places').textContent = P.places;
+    document.getElementById('p-tagline').textContent = P.tagline;
+    document.getElementById('p-hero').innerHTML = P.hero1 + '<br><span class="dim">' + P.hero2 + '</span>';
+    document.getElementById('p-sub').innerHTML = P.heroSub;
+    document.getElementById('p-faces').textContent = P.faces;
+    document.getElementById('p-contact').innerHTML =
+      '<a href="mailto:' + P.email + '">' + P.email + '</a><br>' + P.location;
+    document.getElementById('p-credit').textContent = P.name.toUpperCase() + ' · THOUGHT CONSTELLATION · 2026';
+    document.getElementById('feed-lede').textContent = u.feedLede;
+
+    document.getElementById('p-leg-core').textContent = u.legend.core;
+    document.getElementById('p-leg-place').textContent = u.legend.place;
+    document.getElementById('p-leg-assoc').textContent = u.legend.associative;
+    document.getElementById('p-leg-wild').textContent = u.legend.wildcard;
+    document.getElementById('sky-hint').innerHTML = u.skyHint + ' <span class="k">' + u.skyHintK + '</span>';
+    document.getElementById('sky-reset').textContent = u.skyReset;
+    document.getElementById('p-feed-h2').textContent = u.feedH2;
+    document.getElementById('p-addbox-h4').textContent = u.addboxH4;
+    document.getElementById('p-addbox-hint').innerHTML = u.addboxHint;
+    document.getElementById('p-addbox-taglabel').textContent = u.addboxTagLabel;
+    document.getElementById('add-tags').placeholder = u.addTagsPlaceholder;
+    document.getElementById('p-addbox-thoughtlabel').textContent = u.addboxThoughtLabel;
+    document.getElementById('add-content').placeholder = u.addContentPlaceholder;
+    document.getElementById('add-btn').textContent = u.addBtn;
+    document.getElementById('clear-form-btn').textContent = u.clearBtn;
+    document.getElementById('p-footer-h2').innerHTML = u.footerH2;
+    document.getElementById('p-footer-placeholder').innerHTML = u.footerPlaceholder;
+    document.getElementById('p-interview-link').textContent = u.interviewLink;
+
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === LANG));
+  }
 
   const LS_KEY = 'paul-intro-user-v2';
   const saved = (() => {
@@ -293,10 +426,12 @@
   })();
 
   const NOW = Date.now();
-  const baseThoughts = D.thoughts.map(t => ({ id: t.id, text: t.text, tags: t.tags, addedAt: NOW - t.daysAgo * 86400000 }));
+  function buildBaseThoughts() {
+    return D.thoughts.map(t => ({ id: t.id, text: t.text, tags: t.tags, addedAt: NOW - t.daysAgo * 86400000 }));
+  }
   const state = {
     nodes: D.nodes,
-    thoughts: [...saved.thoughts, ...baseThoughts],
+    thoughts: [...saved.thoughts, ...buildBaseThoughts()],
     selected: [],
     activeCombo: null,
   };
@@ -306,6 +441,29 @@
   function persist() {
     localStorage.setItem(LS_KEY, JSON.stringify({ thoughts: state.thoughts.filter(t => t.user) }));
   }
+
+  function setLanguage(lang) {
+    if (!DATASETS[lang] || lang === LANG) return;
+    LANG = lang;
+    D = DATASETS[LANG];
+    P = D.profile;
+    window.DATA = D;
+    try { localStorage.setItem(LANG_KEY, LANG); } catch (e) {}
+    state.nodes = D.nodes;
+    state.thoughts = [...saved.thoughts, ...buildBaseThoughts()];
+    renderStaticText();
+    initParticles();
+    renderSynthesis();
+    renderFeed();
+    if (typeof renderTimelineUI === 'function') {
+      document.getElementById('canva-timeline-container').innerHTML = renderTimelineUI(LANG);
+    }
+  }
+
+  document.getElementById('lang-toggle').addEventListener('click', e => {
+    const btn = e.target.closest('.lang-btn');
+    if (btn) setLanguage(btn.dataset.lang);
+  });
 
   const canvas = document.getElementById('sky');
   const ctx = canvas.getContext('2d');
@@ -324,7 +482,7 @@
     const prev = particles;
     particles = state.nodes.map(n => {
       const ex = prev.find(p => p.id === n.id);
-      if (ex) return ex;
+      if (ex) { ex.label = n.label; ex.type = n.type; return ex; }
       const t = TYPE[n.type] || TYPE.core;
       return {
         id: n.id, label: n.label, type: n.type,
@@ -456,8 +614,6 @@
     renderSynthesis();
   });
 
-  const TYPE_LABEL = { core: '나', place: '나를 바꾼 장소', associative: '관심어', wildcard: '엉뚱한 갈고리' };
-
   function findCombo(ids) {
     const set = [...ids].sort().join('|');
     return (D.combos || []).find(c => [...c.ids].sort().join('|') === set) || null;
@@ -469,7 +625,7 @@
 
     if (!state.selected.length) {
       state.activeCombo = null;
-      el.innerHTML = '<div class="synth-empty">아직 선택된 단어가 없습니다. 위 성좌에서 궁금한 단어를 하나 골라보세요 — 이야기가 열립니다.</div>';
+      el.innerHTML = '<div class="synth-empty">' + UI[LANG].emptyState + '</div>';
       return;
     }
     if (state.selected.length === 1) {
@@ -493,13 +649,13 @@
     const sel = ids.map(nodeById).filter(Boolean);
     const title = sel.map(n => n.label).join('<span class="x">×</span>');
     el.innerHTML = '<div class="synth-title">' + title + '</div>' +
-      '<div class="prose" style="margin-top:20px; color:var(--muted);">✦ 이 단어들이 어떻게 만나는지 엮고 있어요…</div>';
+      '<div class="prose" style="margin-top:20px; color:var(--muted);">' + UI[LANG].comboLoading + '</div>';
 
     let paragraph = null;
     try {
       const r = await fetch('/api/synthesize-combo', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nodes: sel.map(n => ({ id: n.id, label: n.label, type: n.type, story: n.story })) }),
+        body: JSON.stringify({ lang: LANG, nodes: sel.map(n => ({ id: n.id, label: n.label, type: n.type, story: n.story })) }),
       });
       const d = await r.json();
       paragraph = d.synthesis;
@@ -510,7 +666,7 @@
 
     el.innerHTML = '<div class="synth-title">' + title + '</div>' +
       '<div class="prose" style="margin-top:20px;">' + paragraph + '</div>' +
-      '<div class="related-row"><span class="lbl">이 글을 이루는 단어</span>' +
+      '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsSynth + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
     bindChips(el);
     attachPhoto(el, ids);
@@ -522,7 +678,7 @@
       .filter(o => o.s >= 2)
       .sort((a, b) => b.s - a.s || b.t.addedAt - a.t.addedAt)[0];
     if (best) return best.t.text;
-    const frags = sel.map(n => (n.story.match(/^.*?[.!?…]/) || [n.story])[0].trim());
+    const frags = sel.map(n => (n.story.match(/^.*?[.!?…。！？]/) || [n.story])[0].trim());
     return frags.join(' ');
   }
 
@@ -546,10 +702,10 @@
   function renderComboStory(combo) {
     const sel = combo.ids.map(nodeById).filter(Boolean);
     let h = '<div class="story-single">';
-    h += '<div><span class="badge t-place">엮인 이야기</span></div>';
+    h += '<div><span class="badge t-place">' + UI[LANG].badgeComboStory + '</span></div>';
     h += '<div class="headword">' + combo.title + '</div>';
     h += '<div class="prose">' + combo.story + '</div>';
-    h += '<div class="related-row"><span class="lbl">이 이야기를 이루는 단어</span>' +
+    h += '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsCurated + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
     h += '</div>';
     return h;
@@ -558,18 +714,18 @@
   function renderSingle(n) {
     if (!n) return '';
     let h = '<div class="story-single">';
-    h += '<div><span class="badge t-' + n.type + '">' + TYPE_LABEL[n.type] + '</span>';
+    h += '<div><span class="badge t-' + n.type + '">' + UI[LANG].legend[n.type] + '</span>';
     if (n.era) h += '<span class="era">' + n.era + '</span>';
     h += '</div>';
     h += '<div class="headword">' + n.label + '</div>';
     h += '<div class="prose">' + n.story + '</div>';
     if (n.status === 'ask') {
       const oq = D.openQuestions.find(q => q.node === n.id);
-      h += '<div class="ask-ribbon">✦ 이 이야기는 아직 Paul에게 듣는 중입니다' + (oq ? ' — “' + oq.q + '”' : '') + '</div>';
+      h += '<div class="ask-ribbon">' + UI[LANG].askRibbonPrefix + (oq ? ' — "' + oq.q + '"' : '') + '</div>';
     }
     const links = (n.links || []).filter(nodeById);
     if (links.length) {
-      h += '<div class="related-row"><span class="lbl">이어지는 단어</span>' +
+      h += '<div class="related-row"><span class="lbl">' + UI[LANG].relatedLinked + '</span>' +
         links.map(id => '<span class="chip" data-id="' + id + '">' + labelOf(id) + '</span>').join('') + '</div>';
     }
     h += '</div>';
@@ -587,10 +743,11 @@
       t.tags.map(labelOf).join(' · ') + '</div></div>';
   }
   function formatDate(ts) {
+    const u = UI[LANG];
     const d = Math.floor((NOW - ts) / 86400000);
-    if (d <= 0) return '오늘'; if (d === 1) return '어제';
-    if (d < 7) return d + '일 전'; if (d < 30) return Math.floor(d / 7) + '주 전';
-    return Math.floor(d / 30) + '개월 전';
+    if (d <= 0) return u.dateToday; if (d === 1) return u.dateYesterday;
+    if (d < 7) return u.dateDaysAgo(d); if (d < 30) return u.dateWeeksAgo(Math.floor(d / 7));
+    return u.dateMonthsAgo(Math.floor(d / 30));
   }
 
   function renderFeed() {
@@ -601,7 +758,7 @@
   document.getElementById('add-btn').addEventListener('click', () => {
     const content = document.getElementById('add-content').value.trim();
     const tagsRaw = document.getElementById('add-tags').value.trim();
-    if (!content) { alert('생각을 입력해주세요.'); return; }
+    if (!content) { alert(UI[LANG].alertEmptyThought); return; }
     const tags = tagsRaw.split(',').map(s => s.trim()).filter(Boolean).map(lbl => {
       const f = state.nodes.find(n => n.label === lbl || n.id === lbl); return f ? f.id : null;
     }).filter(Boolean);
@@ -616,14 +773,15 @@
     document.getElementById('add-tags').value = '';
   });
 
-  window.__pb = { state, toggleSelect, nodeById };
+  window.__pb = { state, toggleSelect, nodeById, setLanguage };
 
   window.addEventListener('resize', resize);
+  renderStaticText();
   resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop();
 
   // Canva 경력 타임라인 초기화
   if (typeof renderTimelineUI === 'function') {
-    document.getElementById('canva-timeline-container').innerHTML = renderTimelineUI();
+    document.getElementById('canva-timeline-container').innerHTML = renderTimelineUI(LANG);
   }
 })();
 </script>
