@@ -4,17 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paul Bhang — 생각의 성좌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #050419;
-    --bg-soft: #0b0a26;
-    --ink: #edebe6;
-    --muted: #8a879c;
-    --faint: #4a4860;
-    --accent: #d4a24e;
-    --accent-dim: rgba(212, 162, 78, 0.5);
-    --place: #e8c37a;
-    --line: rgba(237, 235, 230, 0.09);
+    --bg: #201f1d;
+    --bg-soft: #2b2926;
+    --ink: #e8e5dd;
+    --muted: #8a8880;
+    --faint: #5c5952;
+    --accent: #c9a45c;
+    --accent-dim: rgba(201, 164, 92, 0.5);
+    --place: #cdbe9e;
+    --line: rgba(232, 229, 221, 0.09);
+    --font-display: 'Archivo Black', 'Pretendard', -apple-system, sans-serif;
+    --font-mono: 'Space Mono', 'Courier New', monospace;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,6 +33,8 @@
     overflow-x: hidden;
   }
   ::selection { background: var(--accent); color: var(--bg); }
+
+  #bgTexture { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -1; }
 
   /* ---------- HERO ---------- */
   .hero { min-height: 100vh; display: flex; flex-direction: column; position: relative; }
@@ -50,7 +57,7 @@
     text-transform: uppercase; margin-bottom: 18px;
   }
   .hero-head h1 {
-    font-size: clamp(34px, 6.2vw, 76px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
+    font-family: var(--font-display); font-size: clamp(34px, 6.2vw, 76px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
   }
   .hero-head h1 .dim { color: var(--faint); }
   .hero-head .sub {
@@ -68,7 +75,7 @@
   .legend .item { display: flex; align-items: center; gap: 7px; letter-spacing: 0.04em; }
   .legend .swatch { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
   .sw-core { background: var(--accent); }
-  .sw-place { background: var(--place); box-shadow: 0 0 0 3px rgba(232,195,122,0.22); }
+  .sw-place { background: var(--place); box-shadow: 0 0 0 3px rgba(205,190,158,0.22); }
   .sw-assoc { background: rgba(237,235,230,0.5); }
   .sw-wild { background: rgba(237,235,230,0.28); }
 
@@ -81,11 +88,11 @@
   }
   .sky-hint .k { color: var(--accent); }
   .sky-reset {
-    position: absolute; top: 8px; right: 5vw; background: rgba(212,162,78,0.08); border: 1px solid var(--accent-dim);
+    position: absolute; top: 8px; right: 5vw; background: rgba(201,164,92,0.08); border: 1px solid var(--accent-dim);
     color: var(--accent); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px; cursor: pointer;
     letter-spacing: 0.04em; transition: all 0.25s;
   }
-  .sky-reset:hover { background: rgba(212,162,78,0.18); border-color: var(--accent); }
+  .sky-reset:hover { background: rgba(201,164,92,0.18); border-color: var(--accent); }
 
   /* ---------- SYNTHESIS ---------- */
   .synthesis { padding: 0 5vw 8vh; max-width: 1100px; }
@@ -93,16 +100,16 @@
 
   .story-single { border-top: 1px solid var(--line); padding-top: 30px; }
   .story-single .badge {
-    display: inline-block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-    padding: 4px 12px; border-radius: 14px; margin-bottom: 16px;
+    display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 3px; margin-bottom: 16px;
   }
-  .badge.t-core { background: rgba(212,162,78,0.15); color: var(--accent); }
-  .badge.t-place { background: rgba(232,195,122,0.16); color: var(--place); }
+  .badge.t-core { background: rgba(201,164,92,0.15); color: var(--accent); }
+  .badge.t-place { background: rgba(205,190,158,0.16); color: var(--place); }
   .badge.t-associative { background: rgba(237,235,230,0.08); color: var(--muted); }
   .badge.t-wildcard { background: rgba(237,235,230,0.06); color: var(--muted); }
-  .story-single .era { font-size: 13px; color: var(--faint); letter-spacing: 0.06em; margin-left: 12px; }
+  .story-single .era { font-family: var(--font-mono); font-size: 13px; color: var(--faint); letter-spacing: 0.02em; margin-left: 12px; }
   .story-single .headword {
-    font-size: clamp(30px, 5vw, 52px); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em;
+    font-family: var(--font-display); font-size: clamp(30px, 5vw, 52px); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em;
   }
   .story-single .prose {
     margin-top: 20px; font-size: clamp(16px, 2vw, 20px); line-height: 1.85; color: var(--ink); max-width: 720px;
@@ -115,7 +122,7 @@
   .fact-bar-note { font-size: 11px; color: var(--faint); margin-top: 6px; line-height: 1.5; }
   .ask-ribbon {
     margin-top: 22px; display: inline-flex; align-items: center; gap: 10px;
-    background: rgba(212,162,78,0.1); border: 1px solid var(--accent-dim); border-radius: 8px;
+    background: rgba(201,164,92,0.1); border: 1px solid var(--accent-dim); border-radius: 8px;
     padding: 12px 18px; font-size: 13.5px; color: var(--accent); max-width: 640px; line-height: 1.6;
   }
   .related-row { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
@@ -127,7 +134,7 @@
   .chip:hover { border-color: var(--accent); color: var(--accent); }
 
   .synth-title {
-    font-size: clamp(22px, 3.2vw, 34px); font-weight: 700; line-height: 1.3;
+    font-family: var(--font-display); font-size: clamp(22px, 3.2vw, 34px); font-weight: 700; line-height: 1.3;
     border-top: 1px solid var(--line); padding-top: 30px;
   }
   .synth-title .x { color: var(--accent); font-weight: 400; padding: 0 6px; }
@@ -153,14 +160,14 @@
   }
   .thought-card { border-left: 2px solid var(--accent); padding: 4px 0 4px 20px; margin-bottom: 20px; }
   .thought-card .txt { font-size: 15px; line-height: 1.75; color: var(--ink); max-width: 720px; }
-  .thought-card .meta { font-size: 12px; color: var(--faint); margin-top: 8px; letter-spacing: 0.05em; }
+  .thought-card .meta { font-family: var(--font-mono); font-size: 12px; color: var(--faint); margin-top: 8px; letter-spacing: 0.02em; }
 
   /* ---------- FEED + ADD ---------- */
   .feed { padding: 10vh 5vw 12vh; max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--line); }
   .feed .eyebrow {
     font-size: 13px; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 16px;
   }
-  .feed h2 { font-size: clamp(26px, 4vw, 44px); font-weight: 700; }
+  .feed h2 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 44px); font-weight: 700; }
   .feed .lede { margin-top: 14px; color: var(--muted); max-width: 620px; font-size: 15px; }
   .feed-list { margin-top: 6vh; }
 
@@ -197,7 +204,7 @@
     border-top: 1px solid var(--line); padding: 10vh 5vw; max-width: 1100px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
   }
-  .footer h2 { font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; line-height: 1.3; }
+  .footer h2 { font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; line-height: 1.3; }
   .footer .contact { margin-top: 20px; font-size: 15px; color: var(--muted); }
   .footer .contact a { color: var(--accent); text-decoration: none; }
   .footer .contact a:hover { text-decoration: underline; }
@@ -215,6 +222,71 @@
 </style>
 </head>
 <body>
+
+<canvas id="bgTexture"></canvas>
+<script>
+(function () {
+  // 콘크리트 질감 + 촘촘한 격자 빛 — 한 번만 그리는 정적 배경 (매 프레임 다시 그리지 않음, 리사이즈에만 반응)
+  var canvas = document.getElementById('bgTexture');
+  var ctx = canvas.getContext('2d');
+  var resizeTimer;
+
+  function draw() {
+    var DPR = Math.min(window.devicePixelRatio || 1, 2);
+    var W = window.innerWidth, H = window.innerHeight;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    var base = ctx.createLinearGradient(0, 0, W, H);
+    base.addColorStop(0, '#26241f');
+    base.addColorStop(0.55, '#302e29');
+    base.addColorStop(1, '#201f1c');
+    ctx.fillStyle = base;
+    ctx.fillRect(0, 0, W, H);
+
+    var i, x, y, a;
+    for (i = 0; i < (W * H) / 900; i++) {
+      x = Math.random() * W; y = Math.random() * H; a = Math.random() * 0.045;
+      ctx.fillStyle = Math.random() > 0.5 ? 'rgba(255,255,255,' + a + ')' : 'rgba(0,0,0,' + (a * 1.3) + ')';
+      ctx.fillRect(x, y, 1.1, 1.1);
+    }
+
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    var cell = 22, pad = cell * 3, gx, gy;
+    for (gx = -pad; gx < W + pad; gx += cell) {
+      for (gy = -pad; gy < H + pad; gy += cell) {
+        if (Math.random() > 0.68) {
+          a = (0.04 + Math.random() * 0.07);
+          ctx.fillStyle = 'rgba(232,218,196,' + a + ')';
+          ctx.fillRect(gx, gy, cell * 0.6, cell * 0.6);
+        }
+      }
+    }
+    ctx.restore();
+
+    [[W * 0.14, H * 0.22, W * 0.32], [W * 0.85, H * 0.68, W * 0.4], [W * 0.5, H * 1.05, W * 0.5]].forEach(function (s) {
+      var glow = ctx.createRadialGradient(s[0], s[1], 0, s[0], s[1], s[2]);
+      glow.addColorStop(0, 'rgba(232,218,196,0.09)');
+      glow.addColorStop(1, 'rgba(232,218,196,0)');
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, W, H);
+    });
+
+    var vg = ctx.createRadialGradient(W * 0.5, H * 0.35, W * 0.2, W * 0.5, H * 0.5, W * 0.85);
+    vg.addColorStop(0, 'rgba(0,0,0,0)');
+    vg.addColorStop(1, 'rgba(0,0,0,0.3)');
+    ctx.fillStyle = vg;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(draw, 200);
+  });
+  draw();
+})();
+</script>
 
 <section class="hero">
   <div class="hero-top">
@@ -507,8 +579,8 @@
   let hovered = null;
 
   const TYPE = {
-    core:        { size: 16, alpha: 0.72, color: '212,162,78',  drift: 0.05 },
-    place:       { size: 18, alpha: 0.95, color: '232,195,122', drift: 0.035 },
+    core:        { size: 16, alpha: 0.72, color: '201,164,92',  drift: 0.05 },
+    place:       { size: 18, alpha: 0.95, color: '205,190,158', drift: 0.035 },
     associative: { size: 14, alpha: 0.5,  color: '237,235,230', drift: 0.07 },
     wildcard:    { size: 12, alpha: 0.3,  color: '237,235,230', drift: 0.11 },
   };
@@ -559,7 +631,7 @@
 
     const sel = particles.filter(p => state.selected.includes(p.id));
     if (sel.length > 1) {
-      ctx.strokeStyle = 'rgba(212,162,78,0.55)'; ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(201,164,92,0.55)'; ctx.lineWidth = 1;
       for (let i = 0; i < sel.length; i++)
         for (let j = i + 1; j < sel.length; j++) {
           ctx.beginPath(); ctx.moveTo(sel[i].x, sel[i].y); ctx.lineTo(sel[j].x, sel[j].y); ctx.stroke();
@@ -580,18 +652,18 @@
       if (p.type === 'place') {
         ctx.beginPath();
         ctx.arc(p.x, p.y - fs * 0.35, 2.4, 0, Math.PI * 2);
-        ctx.fillStyle = isSel ? '#e8c37a' : 'rgba(232,195,122,0.7)';
+        ctx.fillStyle = isSel ? '#cdbe9e' : 'rgba(205,190,158,0.7)';
         ctx.fill();
       }
 
       let a = isSel ? 1 : (isHov ? Math.min(t.alpha + 0.4, 1) : t.alpha);
-      ctx.fillStyle = isSel ? '#d4a24e' : 'rgba(' + t.color + ',' + a + ')';
+      ctx.fillStyle = isSel ? '#c9a45c' : 'rgba(' + t.color + ',' + a + ')';
       ctx.fillText(p.label, p.x, p.y);
 
       if (isSel) {
         ctx.beginPath();
         ctx.arc(p.x, p.y + fs * 0.55, 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = '#d4a24e'; ctx.fill();
+        ctx.fillStyle = '#c9a45c'; ctx.fill();
       }
     });
   }
