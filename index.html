@@ -82,15 +82,18 @@
   .sw-wild { background: rgba(237,235,230,0.28); }
 
   /* ---------- CONSTELLATION ---------- */
-  .constellation-wrap { position: relative; margin-top: 2vh; flex: 1; }
+  .sky-toolbar {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+    gap: 10px 16px; padding: 3vh 5vw 0; margin-top: 2vh;
+  }
+  .constellation-wrap { position: relative; flex: 1; }
   #sky { display: block; width: 100%; height: 54vh; min-height: 400px; cursor: default; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
   .sky-hint {
-    position: absolute; top: 14px; left: 5vw; font-size: 12.5px; color: var(--muted);
+    font-size: 12.5px; color: var(--muted);
     letter-spacing: 0.08em; pointer-events: none; transition: opacity 0.6s;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
   }
   .sky-hint .k { color: var(--accent); }
-  .sky-btns { position: absolute; top: 8px; right: 5vw; display: flex; gap: 8px; z-index: 2; }
+  .sky-btns { display: flex; gap: 8px; flex-shrink: 0; }
   .sky-btn {
     font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px; cursor: pointer;
     letter-spacing: 0.04em; transition: all 0.25s; font-family: inherit;
@@ -346,12 +349,14 @@
     <span class="item"><span class="swatch sw-wild"></span><span id="p-leg-wild"></span></span>
   </div>
 
-  <div class="constellation-wrap">
+  <div class="sky-toolbar">
     <div class="sky-hint" id="sky-hint"></div>
     <div class="sky-btns">
       <button class="sky-btn sky-btn-ghost" id="sky-deselect" style="display:none;"></button>
       <button class="sky-btn sky-btn-gold" id="sky-reset"></button>
     </div>
+  </div>
+  <div class="constellation-wrap">
     <canvas id="sky"></canvas>
   </div>
 
@@ -630,10 +635,10 @@
   let hovered = null;
 
   const TYPE = {
-    core:        { size: 16, alpha: 0.72, color: '201,164,92',  drift: 0.05 },
-    place:       { size: 18, alpha: 0.95, color: '205,190,158', drift: 0.035 },
-    associative: { size: 14, alpha: 0.5,  color: '237,235,230', drift: 0.07 },
-    wildcard:    { size: 12, alpha: 0.3,  color: '237,235,230', drift: 0.11 },
+    core:        { size: 19, alpha: 0.88, color: '224,187,117', drift: 0.05 },
+    place:       { size: 21, alpha: 1,    color: '224,211,180', drift: 0.035 },
+    associative: { size: 17, alpha: 0.72, color: '237,235,230', drift: 0.07 },
+    wildcard:    { size: 15, alpha: 0.55, color: '237,235,230', drift: 0.11 },
   };
 
   function initParticles() {
@@ -708,8 +713,11 @@
       }
 
       let a = isSel ? 1 : (isHov ? Math.min(t.alpha + 0.4, 1) : t.alpha);
+      ctx.shadowColor = 'rgba(0,0,0,0.65)';
+      ctx.shadowBlur = 6;
       ctx.fillStyle = isSel ? '#c9a45c' : 'rgba(' + t.color + ',' + a + ')';
       ctx.fillText(p.label, p.x, p.y);
+      ctx.shadowBlur = 0;
 
       if (isSel) {
         ctx.beginPath();
