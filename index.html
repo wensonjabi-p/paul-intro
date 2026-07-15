@@ -12,8 +12,8 @@
     --bg: #201f1d;
     --bg-soft: #2b2926;
     --ink: #e8e5dd;
-    --muted: #8a8880;
-    --faint: #5c5952;
+    --muted: #b0aca1;
+    --faint: #7c786d;
     --accent: #c9a45c;
     --accent-dim: rgba(201, 164, 92, 0.5);
     --place: #cdbe9e;
@@ -58,10 +58,12 @@
   }
   .hero-head h1 {
     font-family: var(--font-display); font-size: clamp(34px, 6.2vw, 76px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
+    text-shadow: 0 3px 26px rgba(0,0,0,0.55);
   }
   .hero-head h1 .dim { color: var(--faint); }
   .hero-head .sub {
     margin-top: 22px; font-size: clamp(14px, 1.6vw, 17px); color: var(--muted); max-width: 600px;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.4);
   }
   .hero-head .sub b { color: var(--ink); font-weight: 600; }
   .identity-line {
@@ -85,14 +87,22 @@
   .sky-hint {
     position: absolute; top: 14px; left: 5vw; font-size: 12.5px; color: var(--muted);
     letter-spacing: 0.08em; pointer-events: none; transition: opacity 0.6s;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
   }
   .sky-hint .k { color: var(--accent); }
-  .sky-reset {
-    position: absolute; top: 8px; right: 5vw; background: rgba(201,164,92,0.08); border: 1px solid var(--accent-dim);
-    color: var(--accent); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px; cursor: pointer;
-    letter-spacing: 0.04em; transition: all 0.25s;
+  .sky-btns { position: absolute; top: 8px; right: 5vw; display: flex; gap: 8px; z-index: 2; }
+  .sky-btn {
+    font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px; cursor: pointer;
+    letter-spacing: 0.04em; transition: all 0.25s; font-family: inherit;
   }
-  .sky-reset:hover { background: rgba(201,164,92,0.18); border-color: var(--accent); }
+  .sky-btn-gold {
+    background: rgba(201,164,92,0.1); border: 1px solid var(--accent-dim); color: var(--accent);
+  }
+  .sky-btn-gold:hover { background: rgba(201,164,92,0.2); border-color: var(--accent); }
+  .sky-btn-ghost {
+    background: rgba(232,229,221,0.05); border: 1px solid var(--line); color: var(--ink);
+  }
+  .sky-btn-ghost:hover { background: rgba(232,229,221,0.1); border-color: var(--muted); }
 
   /* ---------- SYNTHESIS ---------- */
   .synthesis { padding: 0 5vw 8vh; max-width: 1100px; }
@@ -110,6 +120,7 @@
   .story-single .era { font-family: var(--font-mono); font-size: 13px; color: var(--faint); letter-spacing: 0.02em; margin-left: 12px; }
   .story-single .headword {
     font-family: var(--font-display); font-size: clamp(30px, 5vw, 52px); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
   }
   .story-single .prose {
     margin-top: 20px; font-size: clamp(16px, 2vw, 20px); line-height: 1.85; color: var(--ink); max-width: 720px;
@@ -135,7 +146,7 @@
 
   .synth-title {
     font-family: var(--font-display); font-size: clamp(22px, 3.2vw, 34px); font-weight: 700; line-height: 1.3;
-    border-top: 1px solid var(--line); padding-top: 30px;
+    border-top: 1px solid var(--line); padding-top: 30px; text-shadow: 0 2px 20px rgba(0,0,0,0.5);
   }
   .synth-title .x { color: var(--accent); font-weight: 400; padding: 0 6px; }
   .synth-lede { margin-top: 12px; color: var(--muted); font-size: 14.5px; max-width: 680px; }
@@ -202,21 +213,40 @@
   /* ---------- FOOTER ---------- */
   .footer {
     border-top: 1px solid var(--line); padding: 10vh 5vw; max-width: 1100px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
   }
-  .footer h2 { font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; line-height: 1.3; }
+  .footer h2 { font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; line-height: 1.3; text-shadow: 0 2px 18px rgba(0,0,0,0.4); }
   .footer .contact { margin-top: 20px; font-size: 15px; color: var(--muted); }
   .footer .contact a { color: var(--accent); text-decoration: none; }
   .footer .contact a:hover { text-decoration: underline; }
-  .placeholder {
-    border: 1px dashed var(--faint); border-radius: 12px; min-height: 240px; display: flex;
-    align-items: center; justify-content: center; color: var(--faint); font-size: 13px;
-    letter-spacing: 0.1em; text-align: center; padding: 20px;
+  .credit { padding: 30px 5vw 10px; font-size: 12px; color: var(--faint); letter-spacing: 0.1em; text-align: center; }
+
+  /* ---------- SHARE ---------- */
+  .share-section { max-width: 1100px; margin: 0 auto; padding: 4vh 5vw 6vh; text-align: center; position: relative; }
+  .share-btn {
+    background: none; border: 1px solid var(--line); color: var(--ink); font-family: inherit;
+    font-size: 13px; font-weight: 600; padding: 10px 24px; border-radius: 20px; cursor: pointer;
+    letter-spacing: 0.04em; transition: all 0.2s;
   }
-  .credit { padding: 30px 5vw 40px; font-size: 12px; color: var(--faint); letter-spacing: 0.1em; text-align: center; }
+  .share-btn:hover { border-color: var(--accent-dim); color: var(--accent); }
+  .share-menu {
+    position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translateX(-50%);
+    background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 8px;
+    display: flex; flex-direction: column; gap: 2px; min-width: 200px; box-shadow: 0 12px 40px rgba(0,0,0,0.4); z-index: 5;
+  }
+  .share-opt {
+    display: flex; align-items: center; gap: 10px; background: none; border: none; color: var(--ink);
+    font-family: inherit; font-size: 13.5px; padding: 10px 12px; border-radius: 8px; cursor: pointer; text-align: left; width: 100%;
+  }
+  .share-opt:hover { background: rgba(232,229,221,0.06); }
+  .share-opt .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  #share-qr {
+    position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translateX(-50%);
+    background: #f2ede1; border-radius: 12px; padding: 18px; box-shadow: 0 12px 40px rgba(0,0,0,0.4); z-index: 5;
+  }
+  #share-qr img { display: block; width: 160px; height: 160px; }
+  #share-qr .qr-cap { margin-top: 10px; font-size: 11.5px; color: #4a473f; text-align: center; }
 
   @media (max-width: 720px) {
-    .footer { grid-template-columns: 1fr; }
     #sky { height: 60vh; }
   }
 </style>
@@ -318,7 +348,10 @@
 
   <div class="constellation-wrap">
     <div class="sky-hint" id="sky-hint"></div>
-    <button class="sky-reset" id="sky-reset"></button>
+    <div class="sky-btns">
+      <button class="sky-btn sky-btn-ghost" id="sky-deselect" style="display:none;"></button>
+      <button class="sky-btn sky-btn-gold" id="sky-reset"></button>
+    </div>
     <canvas id="sky"></canvas>
   </div>
 
@@ -332,11 +365,10 @@
   <div class="feed-list" id="feed-list"></div>
 </section>
 
-<section class="footer">
+<section class="footer footer-single">
   <div style="max-width:480px;">
     <h2 id="p-footer-h2"></h2>
-    <p class="lede" id="p-footer-lede" style="margin-top:14px;"></p>
-    <div id="p-footer-location" style="margin-top:10px; font-size:12px; letter-spacing:0.08em; color:var(--faint);"></div>
+    <div id="p-footer-location" style="margin-top:14px; font-size:12px; letter-spacing:0.08em; color:var(--faint);"></div>
     <form id="contact-form" class="form-box" style="margin-top:28px; max-width:100%;">
       <label id="p-contact-namelabel"></label>
       <input type="text" id="contact-name" />
@@ -350,7 +382,16 @@
       <div id="contact-status" style="margin-top:10px; font-size:13px; min-height:18px;"></div>
     </form>
   </div>
-  <div class="placeholder" id="p-footer-placeholder"></div>
+</section>
+
+<section class="share-section">
+  <button class="share-btn" id="share-btn"></button>
+  <div class="share-menu" id="share-menu" style="display:none;">
+    <button class="share-opt" id="share-kakao"><span class="dot" style="background:#fee500;"></span><span id="share-kakao-label"></span></button>
+    <button class="share-opt" id="share-wechat"><span class="dot" style="background:#07c160;"></span><span id="share-wechat-label"></span></button>
+    <button class="share-opt" id="share-copy"><span class="dot" style="background:var(--accent);"></span><span id="share-copy-label"></span></button>
+  </div>
+  <div id="share-qr" style="display:none;"></div>
 </section>
 
 <div class="credit" id="p-credit"></div>
@@ -366,6 +407,7 @@
       legend: { core: '나', place: '나를 바꾼 장소', associative: '관심어', wildcard: '엉뚱한 갈고리' },
       skyHint: '단어를 클릭하세요', skyHintK: '(하나면 이야기, 두셋이면 그 조합)',
       skyReset: '↻ 다른 단어 보기',
+      skyDeselect: '✕ 선택 취소',
       feedH2: '최근의 생각들',
       feedLede: '이 페이지는 완성본이 아닙니다. 생각이 생길 때마다, 대화할 때마다 성좌는 조금씩 커집니다.',
       addboxH4: '새로운 생각 추가',
@@ -376,7 +418,6 @@
       addContentPlaceholder: '지금 떠오른 생각을 자유롭게…',
       addBtn: '추가하기', clearBtn: '지우기',
       footerH2: '관심이 있거나,<br>궁금한 게 있다면.',
-      footerLede: '실제로 연락하고 싶으시면 아래에 메시지를 남겨주세요 — 저에게 바로 전달됩니다.',
       contactNameLabel: '이름 (선택)',
       contactContactLabel: '연락처 (이메일 등, 선택)',
       contactMsgLabel: '메시지',
@@ -385,8 +426,10 @@
       contactSuccess: '메시지를 보냈어요. 곧 답 드릴게요!',
       contactError: '전송에 실패했어요. 잠시 후 다시 시도해주세요.',
       contactEmptyMsg: '메시지를 입력해주세요.',
-      footerPlaceholder: '[PLACEHOLDER: 프로필 사진 또는<br>여정 지도 일러스트]',
       interviewLink: '✦ 인터뷰 노트 (Paul 전용)',
+      shareBtn: '공유하기', shareKakao: '카카오톡', shareWechat: '위챗', shareCopy: '주소 복사',
+      shareCopied: '링크가 복사됐어요!', shareKakaoToast: '링크가 복사됐어요 — 카카오톡에서 붙여넣어 공유하세요.',
+      shareQrCaption: '위챗에서 스캔해서 공유하세요',
       emptyState: '아직 선택된 단어가 없습니다. 위 성좌에서 궁금한 단어를 하나 골라보세요 — 이야기가 열립니다.',
       askRibbonPrefix: '✦ 이 이야기는 아직 Paul에게 듣는 중입니다',
       relatedLinked: '이어지는 단어',
@@ -403,6 +446,7 @@
       legend: { core: 'Me', place: 'Places That Changed Me', associative: 'Related Words', wildcard: 'Odd Hooks' },
       skyHint: 'Click a word', skyHintK: '(one for a story, two or three for a combination)',
       skyReset: '↻ Show other words',
+      skyDeselect: '✕ Clear selection',
       feedH2: 'Recent Thoughts',
       feedLede: "This page is never finished. Every time a thought forms, every time we talk, the constellation grows a little.",
       addboxH4: 'Add a New Thought',
@@ -413,7 +457,6 @@
       addContentPlaceholder: 'Write whatever comes to mind…',
       addBtn: 'Add', clearBtn: 'Clear',
       footerH2: 'Interested?<br>Or just curious.',
-      footerLede: 'If you\'d like to actually get in touch, leave a message below — it comes straight to me.',
       contactNameLabel: 'Name (optional)',
       contactContactLabel: 'Contact (email, etc. — optional)',
       contactMsgLabel: 'Message',
@@ -422,8 +465,10 @@
       contactSuccess: "Message sent. I'll get back to you soon!",
       contactError: 'Something went wrong. Please try again in a moment.',
       contactEmptyMsg: 'Please write a message first.',
-      footerPlaceholder: '[PLACEHOLDER: Profile photo or<br>journey-map illustration]',
       interviewLink: '✦ Interview Notes (Paul only)',
+      shareBtn: 'Share', shareKakao: 'KakaoTalk', shareWechat: 'WeChat', shareCopy: 'Copy link',
+      shareCopied: 'Link copied!', shareKakaoToast: 'Link copied — paste it into KakaoTalk to share.',
+      shareQrCaption: 'Scan with WeChat to share',
       emptyState: 'No word selected yet. Pick a word you\'re curious about in the constellation above — a story will open.',
       askRibbonPrefix: '✦ This story is still being told by Paul',
       relatedLinked: 'Related words',
@@ -442,6 +487,7 @@
       legend: { core: '我', place: '改变我的地方', associative: '关联词', wildcard: '奇怪的钩子' },
       skyHint: '点击一个词', skyHintK: '（一个是故事，两三个是组合）',
       skyReset: '↻ 换一批词',
+      skyDeselect: '✕ 取消选择',
       feedH2: '最近的想法',
       feedLede: '这个页面永远不是完成品。每当有新的想法，每次交谈，这片星座都会悄悄长大一点。',
       addboxH4: '添加新想法',
@@ -452,7 +498,6 @@
       addContentPlaceholder: '自由地写下此刻浮现的想法…',
       addBtn: '添加', clearBtn: '清空',
       footerH2: '感兴趣，<br>或想问点什么？',
-      footerLede: '如果想直接联系我，请在下面留言——会直接发送给我。',
       contactNameLabel: '姓名（可选）',
       contactContactLabel: '联系方式（邮箱等，可选）',
       contactMsgLabel: '留言',
@@ -461,8 +506,10 @@
       contactSuccess: '消息已发送，我会尽快回复！',
       contactError: '发送失败，请稍后重试。',
       contactEmptyMsg: '请先写下留言。',
-      footerPlaceholder: '[PLACEHOLDER: 个人照片或<br>旅程地图插画]',
       interviewLink: '✦ 采访笔记（仅 Paul 使用）',
+      shareBtn: '分享', shareKakao: 'KakaoTalk', shareWechat: '微信', shareCopy: '复制链接',
+      shareCopied: '链接已复制！', shareKakaoToast: '链接已复制——请在 KakaoTalk 中粘贴分享。',
+      shareQrCaption: '用微信扫码分享',
       emptyState: '还没有选择任何词。在上面的星座中选一个你好奇的词——故事就会展开。',
       askRibbonPrefix: '✦ 这个故事还在等 Paul 讲述',
       relatedLinked: '相关的词',
@@ -503,16 +550,20 @@
     document.getElementById('p-leg-wild').textContent = u.legend.wildcard;
     document.getElementById('sky-hint').innerHTML = u.skyHint + ' <span class="k">' + u.skyHintK + '</span>';
     document.getElementById('sky-reset').textContent = u.skyReset;
+    document.getElementById('sky-deselect').textContent = u.skyDeselect;
     document.getElementById('p-feed-h2').textContent = u.feedH2;
     document.getElementById('p-footer-h2').innerHTML = u.footerH2;
-    document.getElementById('p-footer-lede').textContent = u.footerLede;
     document.getElementById('p-footer-location').textContent = P.location;
     document.getElementById('p-contact-namelabel').textContent = u.contactNameLabel;
     document.getElementById('p-contact-contactlabel').textContent = u.contactContactLabel;
     document.getElementById('p-contact-msglabel').textContent = u.contactMsgLabel;
     document.getElementById('contact-send').textContent = u.contactSendBtn;
-    document.getElementById('p-footer-placeholder').innerHTML = u.footerPlaceholder;
     document.getElementById('p-interview-link').textContent = u.interviewLink;
+
+    document.getElementById('share-btn').textContent = u.shareBtn;
+    document.getElementById('share-kakao-label').textContent = u.shareKakao;
+    document.getElementById('share-wechat-label').textContent = u.shareWechat;
+    document.getElementById('share-copy-label').textContent = u.shareCopy;
 
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === LANG));
   }
@@ -732,6 +783,12 @@
     renderSynthesis();
   });
 
+  document.getElementById('sky-deselect').addEventListener('click', () => {
+    state.selected = [];
+    state.activeCombo = null;
+    renderSynthesis();
+  });
+
   function findCombo(ids) {
     const set = [...ids].sort().join('|');
     return (D.combos || []).find(c => [...c.ids].sort().join('|') === set) || null;
@@ -740,6 +797,7 @@
   function renderSynthesis() {
     const el = document.getElementById('synthesis');
     document.getElementById('sky-hint').style.opacity = state.selected.length ? '0' : '1';
+    document.getElementById('sky-deselect').style.display = state.selected.length ? 'inline-block' : 'none';
 
     if (!state.selected.length) {
       state.activeCombo = null;
@@ -926,6 +984,49 @@
       sendBtn.disabled = false;
       sendBtn.textContent = u.contactSendBtn;
     }
+  });
+
+  // ---- 공유하기 ----
+  const shareBtn = document.getElementById('share-btn');
+  const shareMenu = document.getElementById('share-menu');
+  const shareQr = document.getElementById('share-qr');
+
+  function closeShareUI() {
+    shareMenu.style.display = 'none';
+    shareQr.style.display = 'none';
+  }
+
+  shareBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const opening = shareMenu.style.display === 'none';
+    closeShareUI();
+    if (opening) shareMenu.style.display = 'flex';
+  });
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.share-section')) closeShareUI();
+  });
+
+  document.getElementById('share-copy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(location.href); } catch (e) {}
+    const prev = shareBtn.textContent;
+    shareBtn.textContent = UI[LANG].shareCopied;
+    setTimeout(() => { shareBtn.textContent = UI[LANG].shareBtn; }, 1800);
+    closeShareUI();
+  });
+
+  document.getElementById('share-kakao').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(location.href); } catch (e) {}
+    closeShareUI();
+    alert(UI[LANG].shareKakaoToast);
+  });
+
+  document.getElementById('share-wechat').addEventListener('click', () => {
+    shareMenu.style.display = 'none';
+    shareQr.innerHTML =
+      '<img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(location.href) + '" alt="QR" />' +
+      '<div class="qr-cap">' + UI[LANG].shareQrCaption + '</div>';
+    shareQr.style.display = 'block';
   });
 
   window.__pb = { state, toggleSelect, nodeById, setLanguage };
