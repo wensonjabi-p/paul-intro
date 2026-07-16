@@ -158,6 +158,9 @@
     '이 느낌, 그냥 담아둘까요 아니면 조금 더 풀어볼까요?',
   ];
   const STOP_PHRASES = ['그만할', '그만 할', '그만하고 싶', '여기까지', '오늘은 이만', '오늘은 여기까지', '끝낼', '종료할', '다음에 할게', '나중에 할게'];
+  const SKIP_PHRASES = ['다른 질문', '다른거 물어', '다른 거 물어', '패스할', '스킵', '건너뛸', '건너뛰어', '그냥 넘어가', '그냥 다음'];
+  const META_YES = /올리|업로드|보내|전송|이어서|계속|맞아|좋아|그래|^응[.,!]?$|^네[.,!]?$/;
+  const META_NO = /아직|나중에|새로운|새로\s?(이야기|얘기)|다른\s?(이야기|얘기)|말고|괜찮|안\s?할래/;
   const FRESH_RETURN_MS = 30 * 60 * 1000;
 
   function toast(msg) {
@@ -273,6 +276,16 @@
   let thread = loadArr('iv-thread');
   let pendingChoiceSelections = [];
   let awaitingTopicHint = false;
+
+  /* 마지막 메시지가 아직 답 안 한 continue-prompt/upload-prompt면, 다음에 자유롭게 타이핑한 답을
+     엉뚱한 인터뷰 질문의 답으로 잘못 채워넣지 않고 이 프롬프트에 대한 답으로 해석한다. */
+  let pendingMeta = null;
+  (function restorePendingMeta() {
+    const last = thread[thread.length - 1];
+    if (last && !last.resolved && (last.kind === 'continue-prompt' || last.kind === 'upload-prompt')) {
+      pendingMeta = { id: last.id, type: last.kind === 'continue-prompt' ? 'continue' : 'upload' };
+    }
+  })();
 
   // migrate from the old 3-slot card model if present
   const oldSlots = loadArr('iv-slots');
@@ -450,8 +463,13 @@
     msg.resolved = true; persistThread(); renderThread();
   }
 
+  function clearPendingMeta(msgId) {
+    if (pendingMeta && pendingMeta.id === msgId) pendingMeta = null;
+  }
+
   async function resolveUpload(msg, doSend) {
     msg.resolved = true; persistThread(); renderThread();
+    clearPendingMeta(msg.id);
     if (doSend) {
       const items = sessionList();
       const ok = await syncToServer(items);
@@ -465,6 +483,7 @@
 
   function resolveContinue(msg, doContinue) {
     msg.resolved = true; persistThread(); renderThread();
+    clearPendingMeta(msg.id);
     if (!doContinue) {
       if (current) { later.unshift(current); current = null; persist(); }
       askTopic();
@@ -480,7 +499,9 @@
       appendMessage({ id: 'stopnote-' + Date.now(), role: 'ai', kind: 'system', text: '오늘은 아직 정리할 이야기가 없어요. 언제든 다시 이야기해요.' });
     } else {
       const topics = [...new Set(items.map(i => i.node))].slice(0, 4).join(', ');
-      appendMessage({ id: 'wrap-' + Date.now(), role: 'ai', kind: 'upload-prompt', text: '오늘은 ' + topics + ' 이야기를 나눴어요 (' + items.length + '개). 정리해서 보내드릴까요?', chainContinue: false });
+      const id = 'wrap-' + Date.now();
+      appendMessage({ id, role: 'ai', kind: 'upload-prompt', text: '오늘은 ' + topics + ' 이야기를 나눴어요 (' + items.length + '개). 정리해서 보내드릴까요?', chainContinue: false });
+      pendingMeta = { id, type: 'upload' };
     }
   }
 
@@ -488,7 +509,9 @@
     const items = sessionList();
     if (items.length) {
       const topics = [...new Set(items.map(i => i.node))].slice(0, 4).join(', ');
-      appendMessage({ id: 'greet-upload-' + Date.now(), role: 'ai', kind: 'upload-prompt', text: '지난번엔 ' + topics + ' 이야기를 나눴었네요 (' + items.length + '개). 정리해서 올릴까요?', chainContinue: true });
+      const id = 'greet-upload-' + Date.now();
+      appendMessage({ id, role: 'ai', kind: 'upload-prompt', text: '지난번엔 ' + topics + ' 이야기를 나눴었네요 (' + items.length + '개). 정리해서 올릴까요?', chainContinue: true });
+      pendingMeta = { id, type: 'upload' };
     } else {
       askContinueOrNew();
     }
@@ -497,7 +520,9 @@
     if (!current) { askTopic(); return; }
     const q = qById(current);
     const label = q ? ('"' + q.q + '"') : '저번 이야기';
-    appendMessage({ id: 'greet-continue-' + Date.now(), role: 'ai', kind: 'continue-prompt', text: label + '에 이어서 할까요, 새로운 이야기로 해볼까요?' });
+    const id = 'greet-continue-' + Date.now();
+    appendMessage({ id, role: 'ai', kind: 'continue-prompt', text: label + '에 이어서 할까요, 새로운 이야기로 해볼까요?' });
+    pendingMeta = { id, type: 'continue' };
   }
   function askTopic() {
     appendMessage({ id: 'greet-topic-' + Date.now(), role: 'ai', kind: 'system', text: '오늘은 어떤 이야기를 하고 싶으세요? 편하게 답해주세요 — 아니면 그냥 다음 질문으로 넘어가도 좋아요.' });
@@ -765,6 +790,7 @@
   }
 
   function isStopIntent(text) { return STOP_PHRASES.some(p => text.includes(p)); }
+  function isSkipIntent(text) { return SKIP_PHRASES.some(p => text.includes(p)); }
 
   async function sendComposer() {
     const val = composerInput.value.trim();
@@ -775,6 +801,29 @@
 
     if (isStopIntent(val)) {
       await handleStopIntent(val, wasVoice);
+      sendMsgBtn.disabled = false;
+      return;
+    }
+
+    if (pendingMeta) {
+      const meta = pendingMeta;
+      const metaMsg = thread.find(m => m.id === meta.id);
+      appendMessage({ id: 'metareply-' + Date.now(), role: 'user', kind: 'answer', text: val, voice: wasVoice });
+      const positive = META_YES.test(val) && !META_NO.test(val);
+      if (metaMsg) {
+        if (meta.type === 'upload') await resolveUpload(metaMsg, positive);
+        else resolveContinue(metaMsg, positive);
+      } else {
+        pendingMeta = null;
+      }
+      sendMsgBtn.disabled = false;
+      return;
+    }
+
+    if (current && isSkipIntent(val)) {
+      appendMessage({ id: 'skipreply-' + Date.now(), role: 'user', kind: 'answer', text: val, voice: wasVoice });
+      appendMessage({ id: 'skipnote-' + Date.now(), role: 'ai', kind: 'system', text: '네, 다른 질문으로 넘어갈게요.' });
+      skipCurrent();
       sendMsgBtn.disabled = false;
       return;
     }
