@@ -339,8 +339,10 @@
     d.thoughts.forEach(t => {
       const el = document.createElement('div');
       el.className = 'titem';
+      const isTri = t.text && typeof t.text === 'object';
+      const shownText = isTri ? (t.text.ko || t.text.en || t.text.zh || '') : (t.text || '');
       el.innerHTML =
-        '<div class="tx">' + t.text + '</div>' +
+        '<div class="tx">' + shownText + (isTri ? ' <span style="color:var(--faint); font-size:11px;">🌐 3개 언어</span>' : '') + '</div>' +
         (t.photoUrl ? '<img src="' + t.photoUrl + '" />' : '') +
         '<div class="meta">' + new Date(t.createdAt).toLocaleString('ko-KR') + ' · ' + (t.tags || []).join(' · ') + (t.published === false ? ' · 비공개' : '') + '</div>' +
         '<div class="row"><button data-act="pub">' + (t.published === false ? '공개하기' : '비공개') + '</button>' +
@@ -456,16 +458,28 @@
       });
       if (r.status === 401) { toast('로그인이 풀렸어요 — 다시 로그인해주세요'); pubBtn.disabled = false; pubBtn.textContent = '✦ 사이트에 올리기'; return; }
       const d = await r.json();
-      polished = d.polished || { text: it.answer, tags: it.node ? [it.node] : [] };
+      const raw = it.answer || '';
+      polished = d.polished || { text: { ko: raw, en: raw, zh: raw }, tags: it.node ? [it.node] : [] };
     } catch (e) {
       toast('오프라인 — 연결 후 다시 시도해주세요'); pubBtn.disabled = false; pubBtn.textContent = '✦ 사이트에 올리기'; return;
     }
 
     const editor = document.createElement('div');
     editor.style.cssText = 'margin-top:8px; display:flex; flex-direction:column; gap:6px;';
-    const ta = document.createElement('textarea');
-    ta.value = polished.text || '';
-    ta.style.cssText = 'width:100%; min-height:70px; background:var(--bg); border:1px solid var(--line); border-radius:8px; color:var(--ink); font-family:inherit; font-size:14px; padding:10px; resize:vertical; box-sizing:border-box;';
+    const langs = [['ko', '한국어'], ['en', 'English'], ['zh', '中文']];
+    const tas = {};
+    langs.forEach(([code, label]) => {
+      const wrap = document.createElement('div');
+      const cap = document.createElement('div');
+      cap.textContent = label;
+      cap.style.cssText = 'font-size:10.5px; color:var(--faint); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:3px;';
+      const ta = document.createElement('textarea');
+      ta.value = (polished.text && polished.text[code]) || '';
+      ta.style.cssText = 'width:100%; min-height:56px; background:var(--bg); border:1px solid var(--line); border-radius:8px; color:var(--ink); font-family:inherit; font-size:13px; padding:9px; resize:vertical; box-sizing:border-box;';
+      wrap.appendChild(cap); wrap.appendChild(ta);
+      editor.appendChild(wrap);
+      tas[code] = ta;
+    });
     const tagsIn = document.createElement('input');
     tagsIn.value = (polished.tags || []).join(', ');
     tagsIn.placeholder = '관련 키워드 (쉼표 구분 — 성좌에 반영)';
@@ -476,7 +490,7 @@
     const cancelBtn = document.createElement('button'); cancelBtn.textContent = '취소';
     cancelBtn.style.cssText = 'background:none;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:12px;padding:7px 14px;border-radius:6px;cursor:pointer;';
     btnRow.appendChild(okBtn); btnRow.appendChild(cancelBtn);
-    editor.appendChild(ta); editor.appendChild(tagsIn); editor.appendChild(btnRow);
+    editor.appendChild(tagsIn); editor.appendChild(btnRow);
     row.style.display = 'none';
     qa.appendChild(editor);
 
@@ -484,8 +498,8 @@
       editor.remove(); row.style.display = ''; pubBtn.disabled = false; pubBtn.textContent = '✦ 사이트에 올리기';
     });
     okBtn.addEventListener('click', async () => {
-      const text = ta.value.trim();
-      if (!text) { toast('내용이 비어 있어요'); return; }
+      const text = { ko: tas.ko.value.trim(), en: tas.en.value.trim(), zh: tas.zh.value.trim() };
+      if (!text.ko && !text.en && !text.zh) { toast('내용이 비어 있어요'); return; }
       const tags = tagsIn.value.split(',').map(s => s.trim()).filter(Boolean);
       okBtn.disabled = true; okBtn.textContent = '올리는 중…';
       try {

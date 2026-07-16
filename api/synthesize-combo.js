@@ -1,6 +1,7 @@
 /* 성좌에서 큐레이션 안 된 조합(2개 이상 단어)을 골랐을 때, 그 단어들을 하나의 흐르는 1인칭 글로 실시간 합성.
    ANTHROPIC_API_KEY 없거나 호출 실패 시 조용히 {synthesis:null} 반환 —
    클라이언트가 기존 생각(thoughts) 매칭 또는 문장 이어붙이기 폴백으로 넘어간다. */
+const { stripModelArtifacts } = require('./_lib');
 
 const SYSTEM = `당신은 Paul Bhang이라는 사람의 인생 이야기를 그의 목소리로 다시 쓰는 대필 작가입니다.
 그는 한국인으로, 15년 넘게 5개 대륙을 오가며 살았습니다.
@@ -52,7 +53,7 @@ module.exports = async (req, res) => {
       },
       body: JSON.stringify({
         model: 'claude-sonnet-5',
-        max_tokens: 500,
+        max_tokens: 700,
         system: SYSTEM,
         messages: [{ role: 'user', content: userMsg.slice(0, 4000) }],
         tools: [TOOL],
@@ -64,7 +65,7 @@ module.exports = async (req, res) => {
     const block = (data.content || []).find(c => c.type === 'tool_use' && c.name === 'submit_synthesis');
     const paragraph = block && block.input && block.input.paragraph;
     if (!paragraph) return res.status(200).json({ synthesis: null });
-    res.status(200).json({ synthesis: paragraph });
+    res.status(200).json({ synthesis: stripModelArtifacts(paragraph) });
   } catch (e) {
     res.status(200).json({ synthesis: null });
   }

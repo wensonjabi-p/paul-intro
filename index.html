@@ -657,6 +657,13 @@
   state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, []);
   const nodeById = id => state.nodes.find(n => n.id === id);
   const labelOf = id => (nodeById(id) || {}).label || id;
+  // 생각의 text는 예전 항목처럼 단순 문자열이거나, 새로 다듬어진 항목처럼 {ko,en,zh}일 수 있다 —
+  // 현재 사이트 언어에 맞는 버전을 고른다.
+  function thoughtText(t) {
+    const v = t && t.text;
+    if (v && typeof v === 'object') return v[LANG] || v.ko || v.en || v.zh || '';
+    return v || '';
+  }
 
   function persist() {
     localStorage.setItem(LS_KEY, JSON.stringify({ thoughts: state.thoughts.filter(t => t.user) }));
@@ -846,7 +853,9 @@
   }
 
   document.getElementById('sky-reset').addEventListener('click', () => {
-    const keep = state.selected.slice();
+    // 선택된 단어는 항상 유지하고, 최근 인터뷰에서 나온 키워드도 몇 개는 계속 섞어 보여준다 —
+    // 안 그러면 처음 한 번만 반영되고 그다음 "다른 단어 보기"부터는 다시 완전 무작위로 돌아가 버린다.
+    const keep = [...new Set([...state.selected, ...recentTagIds(15, 4)])];
     state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, keep);
     initParticles();
     particles.forEach(p => {
@@ -935,7 +944,7 @@
       .map(t => ({ t, s: t.tags.filter(tag => ids.includes(tag)).length }))
       .filter(o => o.s >= 2)
       .sort((a, b) => b.s - a.s || b.t.addedAt - a.t.addedAt)[0];
-    if (best) return best.t.text;
+    if (best) return thoughtText(best.t);
     const frags = sel.map(n => (n.story.match(/^.*?[.!?…。！？]/) || [n.story])[0].trim());
     return frags.join(' ');
   }
@@ -1017,7 +1026,7 @@
   }
 
   function thoughtCard(t) {
-    return '<div class="thought-card"><div class="txt">' + t.text +
+    return '<div class="thought-card"><div class="txt">' + thoughtText(t) +
       '</div><div class="meta">' + formatDate(t.addedAt) + ' · ' +
       t.tags.map(labelOf).join(' · ') + '</div></div>';
   }
@@ -1053,15 +1062,21 @@
     } catch (e) { /* 서버 준비 전이면 조용히 기본 콘텐츠만 보여줌 */ }
   }
 
-  // 최근 발행된 생각에 달린 태그 중 성좌 노드로 존재하는 것을, 아직 아무것도 안 골랐을 때 우선 노출시킨다.
+  // 최근 발행된 생각들의 태그 중 성좌 노드로 존재하는 것들 — 최신순, 중복 없이.
+  function recentTagIds(sourceLimit, maxTags) {
+    const out = [];
+    remoteThoughts.slice(0, sourceLimit).forEach(t => (t.tags || []).forEach(tag => {
+      if (nodeById(tag) && !out.includes(tag)) out.push(tag);
+    }));
+    return out.slice(0, maxTags);
+  }
+
+  // 최근 발행된 생각에 달린 태그를, 아직 아무것도 안 골랐을 때 우선 노출시킨다.
   function surfaceRecentTags() {
     if (state.selected.length) return;
-    const recentTags = [];
-    remoteThoughts.slice(0, 6).forEach(t => (t.tags || []).forEach(tag => {
-      if (nodeById(tag) && !recentTags.includes(tag)) recentTags.push(tag);
-    }));
+    const recentTags = recentTagIds(15, 6);
     if (!recentTags.length) return;
-    state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, recentTags.slice(0, 5));
+    state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, recentTags);
     initParticles();
   }
 

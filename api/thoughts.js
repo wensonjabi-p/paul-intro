@@ -23,7 +23,13 @@ module.exports = async (req, res) => {
 
   if (req.method === 'POST') {
     const { text, dataUrl, tags } = body || {};
-    if (!text || !text.trim()) return res.status(400).json({ error: '내용이 비어있어요.' });
+    // text는 빠른 기록처럼 단일 문자열이거나, 다듬어진 3개 언어 {ko,en,zh}일 수 있다.
+    const isTrilingual = text && typeof text === 'object';
+    const emptyText = isTrilingual ? !(text.ko || text.en || text.zh) : !text || !String(text).trim();
+    if (emptyText) return res.status(400).json({ error: '내용이 비어있어요.' });
+    const normalizedText = isTrilingual
+      ? { ko: text.ko || text.en || text.zh || '', en: text.en || text.ko || '', zh: text.zh || text.ko || '' }
+      : String(text).trim();
     let photoUrl = null;
     if (dataUrl && /^data:image\//.test(dataUrl)) {
       const m = dataUrl.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.+)$/);
@@ -37,7 +43,7 @@ module.exports = async (req, res) => {
     }
     const record = {
       id: 'th-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
-      text: text.trim(), photoUrl, tags: Array.isArray(tags) ? tags : [],
+      text: normalizedText, photoUrl, tags: Array.isArray(tags) ? tags : [],
       createdAt: Date.now(), published: true,
     };
     await kvPushJSON('thoughts:captured', record);
@@ -51,6 +57,9 @@ module.exports = async (req, res) => {
     if (idx === -1) return res.status(404).json({ error: 'not found' });
     if (typeof published === 'boolean') all[idx].published = published;
     if (typeof text === 'string') all[idx].text = text;
+    else if (text && typeof text === 'object') {
+      all[idx].text = { ko: text.ko || text.en || text.zh || '', en: text.en || text.ko || '', zh: text.zh || text.ko || '' };
+    }
     if (Array.isArray(tags)) all[idx].tags = tags;
     await kvReplaceAll('thoughts:captured', all);
     return res.status(200).json({ ok: true, thought: all[idx] });

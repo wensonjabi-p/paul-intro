@@ -93,4 +93,11 @@ function isValidSession(cookieHeader) {
   } catch (e) { return false; }
 }
 
-module.exports = { kv, kvPushJSON, kvListAll, kvReplaceAll, COOKIE_NAME, makeSessionCookie, clearSessionCookie, isValidSession };
+// 모델이 도구 호출 문자열 안에 자기 스캐폴딩(예: </paragraph>, </invoke> 같은 태그)을 실수로
+// 흘려 넣는 경우가 드물게 있다 — 특히 긴 자유 서술을 시킬 때. 사용자에게 보여주기 전에 걷어낸다.
+function stripModelArtifacts(s) {
+  if (typeof s !== 'string') return s;
+  return s.replace(/<\/?[a-zA-Z_][a-zA-Z0-9_]*\s*\/?>/g, '').replace(/\s+/g, ' ').trim();
+}
+
+module.exports = { kv, kvPushJSON, kvListAll, kvReplaceAll, COOKIE_NAME, makeSessionCookie, clearSessionCookie, isValidSession, stripModelArtifacts };
