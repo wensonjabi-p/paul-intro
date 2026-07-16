@@ -998,6 +998,7 @@
   const shareBtn = document.getElementById('share-btn');
   const shareMenu = document.getElementById('share-menu');
   const shareQr = document.getElementById('share-qr');
+  const SHARE_URL = 'https://www.wensonjabi.com/'; // 어느 도메인으로 들어왔든, 공유는 항상 이 주소로 (중국에서도 열리는 도메인)
 
   function closeShareUI() {
     shareMenu.style.display = 'none';
@@ -1016,7 +1017,7 @@
   });
 
   document.getElementById('share-copy').addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(location.href); } catch (e) {}
+    try { await navigator.clipboard.writeText(SHARE_URL); } catch (e) {}
     const prev = shareBtn.textContent;
     shareBtn.textContent = UI[LANG].shareCopied;
     setTimeout(() => { shareBtn.textContent = UI[LANG].shareBtn; }, 1800);
@@ -1024,7 +1025,7 @@
   });
 
   document.getElementById('share-kakao').addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(location.href); } catch (e) {}
+    try { await navigator.clipboard.writeText(SHARE_URL); } catch (e) {}
     closeShareUI();
     alert(UI[LANG].shareKakaoToast);
   });
@@ -1032,7 +1033,7 @@
   document.getElementById('share-wechat').addEventListener('click', () => {
     shareMenu.style.display = 'none';
     shareQr.innerHTML =
-      '<img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(location.href) + '" alt="QR" />' +
+      '<img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(SHARE_URL) + '" alt="QR" />' +
       '<div class="qr-cap">' + UI[LANG].shareQrCaption + '</div>';
     shareQr.style.display = 'block';
   });
