@@ -1,5 +1,5 @@
 /* 오프라인 캐시 — 인터뷰 앱과 관리자 페이지를 비행기 모드에서도 열 수 있게. */
-const CACHE = 'paul-interview-v30';
+const CACHE = 'paul-interview-v31';
 const ASSETS = [
   './interview.html',
   './interview-questions.js',
