@@ -275,6 +275,11 @@
     try {
       const r = await fetch('/api/photos-manage');
       d = await r.json();
+      if (!r.ok) {
+        if (r.status === 401) { grid.innerHTML = '<div class="empty">로그인이 풀렸어요 — <a href="/admin-login.html" style="color:var(--accent);">다시 로그인</a>해주세요.</div>'; return; }
+        grid.innerHTML = '<div class="empty">불러오지 못했어요: ' + (d.error || r.status) + '</div>';
+        return;
+      }
       setOnlineBar(true);
     } catch (e) {
       setOnlineBar(false);
@@ -318,6 +323,11 @@
     try {
       const r = await fetch('/api/thoughts');
       d = await r.json();
+      if (!r.ok) {
+        if (r.status === 401) { list.innerHTML = '<div class="empty">로그인이 풀렸어요 — <a href="/admin-login.html" style="color:var(--accent);">다시 로그인</a>해주세요.</div>'; return; }
+        list.innerHTML = '<div class="empty">불러오지 못했어요: ' + (d.error || r.status) + '</div>';
+        return;
+      }
       setOnlineBar(true);
     } catch (e) {
       setOnlineBar(false);
@@ -361,6 +371,11 @@
     try {
       const r = await fetch('/api/interview-list');
       d = await r.json();
+      if (!r.ok) {
+        if (r.status === 401) { el.innerHTML = '<div class="empty">로그인이 풀렸어요 — <a href="/admin-login.html" style="color:var(--accent);">다시 로그인</a>해주세요.</div>'; return; }
+        el.innerHTML = '<div class="empty">불러오지 못했어요: ' + (d.error || r.status) + '</div>';
+        return;
+      }
       setOnlineBar(true);
     } catch (e) {
       setOnlineBar(false);
