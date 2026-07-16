@@ -12,8 +12,11 @@
 <meta name="apple-mobile-web-app-title" content="인터뷰">
 <style>
   :root {
-    --bg: #050419; --bg-soft: #0b0a26; --ink: #edebe6; --muted: #8a879c;
-    --faint: #4a4860; --accent: #d4a24e; --line: rgba(237,235,230,0.09);
+    --bg: #050419; --ink: #edebe6; --accent: #d4a24e;
+    --bg-soft: color-mix(in srgb, var(--ink) 8%, var(--bg));
+    --muted: color-mix(in srgb, var(--ink) 55%, var(--bg));
+    --faint: color-mix(in srgb, var(--ink) 32%, var(--bg));
+    --line: color-mix(in srgb, var(--ink) 9%, transparent);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html, body { background: var(--bg); height: 100%; overflow: hidden; }
@@ -60,22 +63,29 @@
   .later-item .lt { color: var(--muted); flex: 1; }
   .later-item button { background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit; font-size: 10.5px; padding: 5px 9px; border-radius: 7px; cursor: pointer; white-space: nowrap; }
 
-  .composer { flex-shrink: 0; display: flex; align-items: flex-end; gap: 8px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: var(--bg); }
+  .composer { flex-shrink: 0; display: flex; align-items: flex-end; gap: 10px; padding: 14px 14px calc(14px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: var(--bg); }
   .composer textarea {
-    flex: 1; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 18px; color: var(--ink);
-    font-family: inherit; font-size: 14.5px; padding: 9px 14px; resize: none; max-height: 110px; overflow-y: auto;
+    flex: 1; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 20px; color: var(--ink);
+    font-family: inherit; font-size: 15.5px; padding: 13px 17px; resize: none; min-height: 48px; max-height: 140px; overflow-y: auto;
   }
   .composer textarea:focus { outline: none; border-color: var(--accent); }
   .round-btn {
-    flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg-soft);
-    color: var(--muted); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg-soft);
+    color: var(--muted); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
   }
   .round-btn.mic.rec { border-color: var(--accent); color: var(--accent); animation: pulse 1s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.55} }
   .round-btn.send { background: var(--accent); color: var(--bg); border: none; }
 
+  .theme-panel { flex-shrink: 0; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--bg-soft); display: flex; flex-direction: column; gap: 10px; }
+  .theme-swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+  .theme-swatch { border-radius: 12px; padding: 8px 12px; font-family: inherit; font-size: 11.5px; cursor: pointer; }
+  .theme-custom { display: flex; align-items: center; gap: 14px; font-size: 12px; color: var(--muted); }
+  .theme-custom label { display: flex; align-items: center; gap: 6px; }
+  .theme-custom input[type=color] { width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 8px; background: none; padding: 0; cursor: pointer; }
+
   .toast {
-    position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%) translateY(10px);
+    position: fixed; left: 50%; bottom: 100px; transform: translateX(-50%) translateY(10px);
     background: var(--ink); color: var(--bg); font-size: 13px; font-weight: 600; padding: 11px 18px;
     border-radius: 22px; opacity: 0; pointer-events: none; transition: all 0.3s; z-index: 20;
   }
@@ -102,9 +112,21 @@
     </div>
     <div class="status-row">
       <span id="queueInfo"></span>
-      <button class="chip ghost" id="pauseBtn"></button>
+      <div style="display:flex; gap:6px;">
+        <button class="chip ghost" id="themeBtn" title="배경·글자색">🎨</button>
+        <button class="chip ghost" id="pauseBtn"></button>
+      </div>
     </div>
   </header>
+
+  <div class="theme-panel" id="themePanel" style="display:none">
+    <div class="theme-swatches" id="themeSwatches"></div>
+    <div class="theme-custom">
+      <label>배경 <input type="color" id="bgPicker"></label>
+      <label>글자 <input type="color" id="inkPicker"></label>
+      <button class="chip ghost" id="themeReset">기본값으로</button>
+    </div>
+  </div>
 
   <div class="thread" id="thread"></div>
 
@@ -115,7 +137,7 @@
 
   <div class="composer">
     <button class="round-btn" id="photoBtn" title="사진 첨부">📷</button>
-    <textarea id="composerInput" rows="1" placeholder="편하게 답해보세요…"></textarea>
+    <textarea id="composerInput" rows="2" placeholder="편하게 답해보세요…"></textarea>
     <button class="round-btn mic" id="micBtn" title="음성으로 말하기">🎤</button>
     <button class="round-btn send" id="sendMsgBtn" style="display:none" title="보내기">➤</button>
     <input type="file" id="photoFile" accept="image/*" style="display:none" />
@@ -167,6 +189,24 @@
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
+
+  /* ---------- 배경·글자색 테마 (눈이 편한 색으로 직접 고를 수 있게) ---------- */
+  const DEFAULT_THEME = { bg: '#050419', ink: '#edebe6' };
+  const THEMES = [
+    { name: '다크', bg: '#050419', ink: '#edebe6' },
+    { name: '세피아', bg: '#1a1512', ink: '#e8dcc8' },
+    { name: '블랙', bg: '#000000', ink: '#e4e4e4' },
+    { name: '그레이', bg: '#1c1c1e', ink: '#d6d6db' },
+    { name: '라이트', bg: '#f5f0e6', ink: '#2a2620' },
+  ];
+  function applyTheme(bg, ink) {
+    document.documentElement.style.setProperty('--bg', bg);
+    document.documentElement.style.setProperty('--ink', ink);
+  }
+  function loadTheme() { try { return JSON.parse(LS.get('iv-theme')); } catch (e) { return null; } }
+  function saveTheme(bg, ink) { LS.set('iv-theme', JSON.stringify({ bg, ink })); }
+  const savedTheme = loadTheme();
+  if (savedTheme) applyTheme(savedTheme.bg, savedTheme.ink);
 
   /* ---------- dynamic question pool (followups + pool rotations, persisted) ---------- */
   function dynPool() { return loadArr('iv-dyn'); }
@@ -618,6 +658,40 @@
       list.appendChild(row);
     });
   }
+
+  /* ---------- 테마 패널 ---------- */
+  const themePanel = document.getElementById('themePanel');
+  const bgPicker = document.getElementById('bgPicker');
+  const inkPicker = document.getElementById('inkPicker');
+  bgPicker.value = savedTheme ? savedTheme.bg : DEFAULT_THEME.bg;
+  inkPicker.value = savedTheme ? savedTheme.ink : DEFAULT_THEME.ink;
+
+  const themeSwatchesEl = document.getElementById('themeSwatches');
+  THEMES.forEach(t => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'theme-swatch';
+    b.style.background = t.bg; b.style.color = t.ink; b.style.border = '1px solid ' + t.ink;
+    b.textContent = t.name;
+    b.addEventListener('click', () => {
+      applyTheme(t.bg, t.ink); saveTheme(t.bg, t.ink);
+      bgPicker.value = t.bg; inkPicker.value = t.ink;
+    });
+    themeSwatchesEl.appendChild(b);
+  });
+
+  function onCustomThemeChange() {
+    applyTheme(bgPicker.value, inkPicker.value);
+    saveTheme(bgPicker.value, inkPicker.value);
+  }
+  bgPicker.addEventListener('input', onCustomThemeChange);
+  inkPicker.addEventListener('input', onCustomThemeChange);
+  document.getElementById('themeReset').addEventListener('click', () => {
+    applyTheme(DEFAULT_THEME.bg, DEFAULT_THEME.ink);
+    saveTheme(DEFAULT_THEME.bg, DEFAULT_THEME.ink);
+    bgPicker.value = DEFAULT_THEME.bg; inkPicker.value = DEFAULT_THEME.ink;
+  });
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    themePanel.style.display = themePanel.style.display === 'none' ? 'flex' : 'none';
+  });
 
   document.getElementById('pauseBtn').addEventListener('click', () => {
     paused = !paused; LS.set('iv-paused', paused ? '1' : '0');
