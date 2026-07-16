@@ -41,6 +41,7 @@
   .hero-top {
     display: flex; justify-content: space-between; align-items: center;
     padding: 28px 5vw; font-size: 13px; letter-spacing: 0.12em; color: var(--muted);
+    max-width: 1100px; margin: 0 auto;
   }
   .hero-top .brand { color: var(--ink); font-weight: 600; letter-spacing: 0.18em; }
   .lang-toggle { display: flex; gap: 4px; }
@@ -51,7 +52,7 @@
   }
   .lang-btn:hover { border-color: var(--accent-dim); color: var(--ink); }
   .lang-btn.active { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
-  .hero-head { padding: 4vh 5vw 0; max-width: 1100px; }
+  .hero-head { padding: 4vh 5vw 0; max-width: 1100px; margin: 0 auto; }
   .hero-head .eyebrow {
     font-size: 13px; letter-spacing: 0.25em; color: var(--accent);
     text-transform: uppercase; margin-bottom: 18px;
@@ -73,6 +74,7 @@
   /* ---------- LEGEND ---------- */
   .legend {
     display: flex; flex-wrap: wrap; gap: 16px; padding: 20px 5vw 0; font-size: 12px; color: var(--muted);
+    max-width: 1100px; margin: 0 auto;
   }
   .legend .item { display: flex; align-items: center; gap: 7px; letter-spacing: 0.04em; }
   .legend .swatch { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
@@ -108,7 +110,7 @@
   .sky-btn-ghost:hover { background: rgba(232,229,221,0.1); border-color: var(--muted); }
 
   /* ---------- SYNTHESIS ---------- */
-  .synthesis { padding: 0 5vw 8vh; max-width: 1100px; }
+  .synthesis { padding: 0 5vw 8vh; max-width: 1100px; margin: 0 auto; }
   .synth-empty { color: var(--faint); font-size: 14px; border-top: 1px solid var(--line); padding-top: 28px; }
 
   .story-single { border-top: 1px solid var(--line); padding-top: 30px; }
@@ -702,16 +704,20 @@
         }
     }
 
+    // 넓은 화면일수록 단어를 비례해서 키움(모바일 크기를 기준선으로, 최대 1.6배까지)
+    const sizeScale = Math.min(1.6, Math.max(1, W / 800));
+
     particles.forEach(p => {
       const t = TYPE[p.type] || TYPE.core;
       const isSel = state.selected.includes(p.id);
       const isHov = hovered === p.id;
       const comboW = isSel && state.activeCombo && state.activeCombo.weights[p.id];
       const selMul = isSel ? (comboW || 1.25) : 1;
-      const fs = t.size * selMul * p.freshMul;
+      const fs = t.size * selMul * p.freshMul * sizeScale;
       ctx.font = (isSel ? '700 ' : '400 ') + fs + 'px Pretendard, "Malgun Gothic", sans-serif';
       ctx.textAlign = 'center';
       p.w = ctx.measureText(p.label).width;
+      p.fs = fs;
 
       if (p.type === 'place') {
         ctx.beginPath();
@@ -751,7 +757,8 @@
   function hitTest(mx, my) {
     for (const p of particles) {
       const hw = Math.max(p.w / 2 + 16, 34);
-      if (mx > p.x - hw && mx < p.x + hw && my > p.y - 28 && my < p.y + 20) return p;
+      const hv = Math.max((p.fs || 16) * 0.9, 28);
+      if (mx > p.x - hw && mx < p.x + hw && my > p.y - hv - 8 && my < p.y + hv * 0.6) return p;
     }
     return null;
   }
