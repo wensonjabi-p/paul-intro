@@ -464,7 +464,7 @@
     msg.resolved = true; persistThread(); renderThread();
   }
 
-  function renderMsg(msg, isLast) {
+  function renderMsg(msg) {
     if (msg.kind === 'system') {
       const s = document.createElement('div'); s.className = 'divider'; s.textContent = msg.text; return s;
     }
@@ -492,42 +492,40 @@
       wrap.appendChild(t);
     }
 
-    if (isLast) {
-      if (msg.kind === 'question' && msg.qid === current) {
-        if (msg.choices && msg.choices.length) {
-          const row = document.createElement('div'); row.className = 'msg-chips';
-          msg.choices.forEach(ch => {
-            const c = document.createElement('button'); c.type = 'button';
-            c.className = 'chip' + (pendingChoiceSelections.includes(ch) ? ' sel' : ''); c.textContent = ch;
-            c.addEventListener('click', () => toggleChoiceChip(ch));
-            row.appendChild(c);
-          });
-          wrap.appendChild(row);
-        }
-        const actions = document.createElement('div'); actions.className = 'msg-chips';
-        const laterBtn = document.createElement('button'); laterBtn.type = 'button'; laterBtn.className = 'chip ghost'; laterBtn.textContent = '⏰ 나중에';
-        laterBtn.addEventListener('click', laterCurrent);
-        const skipBtn = document.createElement('button'); skipBtn.type = 'button'; skipBtn.className = 'chip ghost'; skipBtn.textContent = '🗑 건너뛰기';
-        skipBtn.addEventListener('click', skipCurrent);
-        actions.appendChild(laterBtn); actions.appendChild(skipBtn);
-        wrap.appendChild(actions);
-      } else if (msg.kind === 'confirm' && !msg.resolved) {
+    if (msg.kind === 'question' && msg.qid === current) {
+      if (msg.choices && msg.choices.length) {
         const row = document.createElement('div'); row.className = 'msg-chips';
-        const yes = document.createElement('button'); yes.type = 'button'; yes.className = 'chip primary'; yes.textContent = '맞아요';
-        yes.addEventListener('click', () => { msg.resolved = true; persistThread(); renderThread(); });
-        const no = document.createElement('button'); no.type = 'button'; no.className = 'chip ghost'; no.textContent = '다르게 말할게요';
-        no.addEventListener('click', () => { msg.resolved = true; persistThread(); renderThread(); composerInput.focus(); });
-        row.appendChild(yes); row.appendChild(no);
-        wrap.appendChild(row);
-      } else if (msg.kind === 'react' && !msg.resolved) {
-        const row = document.createElement('div'); row.className = 'msg-chips';
-        const quick = document.createElement('button'); quick.type = 'button'; quick.className = 'chip primary'; quick.textContent = '그냥 기록';
-        quick.addEventListener('click', () => resolveCapture(msg, 'quick'));
-        const story = document.createElement('button'); story.type = 'button'; story.className = 'chip ghost'; story.textContent = '이야기로';
-        story.addEventListener('click', () => resolveCapture(msg, 'story'));
-        row.appendChild(quick); row.appendChild(story);
+        msg.choices.forEach(ch => {
+          const c = document.createElement('button'); c.type = 'button';
+          c.className = 'chip' + (pendingChoiceSelections.includes(ch) ? ' sel' : ''); c.textContent = ch;
+          c.addEventListener('click', () => toggleChoiceChip(ch));
+          row.appendChild(c);
+        });
         wrap.appendChild(row);
       }
+      const actions = document.createElement('div'); actions.className = 'msg-chips';
+      const laterBtn = document.createElement('button'); laterBtn.type = 'button'; laterBtn.className = 'chip ghost'; laterBtn.textContent = '⏰ 나중에';
+      laterBtn.addEventListener('click', laterCurrent);
+      const skipBtn = document.createElement('button'); skipBtn.type = 'button'; skipBtn.className = 'chip ghost'; skipBtn.textContent = '🗑 건너뛰기';
+      skipBtn.addEventListener('click', skipCurrent);
+      actions.appendChild(laterBtn); actions.appendChild(skipBtn);
+      wrap.appendChild(actions);
+    } else if (msg.kind === 'confirm' && !msg.resolved) {
+      const row = document.createElement('div'); row.className = 'msg-chips';
+      const yes = document.createElement('button'); yes.type = 'button'; yes.className = 'chip primary'; yes.textContent = '맞아요';
+      yes.addEventListener('click', () => { msg.resolved = true; persistThread(); renderThread(); });
+      const no = document.createElement('button'); no.type = 'button'; no.className = 'chip ghost'; no.textContent = '다르게 말할게요';
+      no.addEventListener('click', () => { msg.resolved = true; persistThread(); renderThread(); composerInput.focus(); });
+      row.appendChild(yes); row.appendChild(no);
+      wrap.appendChild(row);
+    } else if (msg.kind === 'react' && !msg.resolved) {
+      const row = document.createElement('div'); row.className = 'msg-chips';
+      const quick = document.createElement('button'); quick.type = 'button'; quick.className = 'chip primary'; quick.textContent = '그냥 기록';
+      quick.addEventListener('click', () => resolveCapture(msg, 'quick'));
+      const story = document.createElement('button'); story.type = 'button'; story.className = 'chip ghost'; story.textContent = '이야기로';
+      story.addEventListener('click', () => resolveCapture(msg, 'story'));
+      row.appendChild(quick); row.appendChild(story);
+      wrap.appendChild(row);
     }
     return wrap;
   }
@@ -542,14 +540,14 @@
       return;
     }
     let lastDay = null;
-    thread.forEach((msg, idx) => {
+    thread.forEach((msg) => {
       const dayKey = new Date(msg.ts).toDateString();
       if (dayKey !== lastDay) {
         lastDay = dayKey;
         const d = document.createElement('div'); d.className = 'divider'; d.textContent = formatDivider(msg.ts);
         el.appendChild(d);
       }
-      el.appendChild(renderMsg(msg, idx === thread.length - 1));
+      el.appendChild(renderMsg(msg));
     });
   }
 
