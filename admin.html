@@ -408,19 +408,41 @@
     });
   }
 
-  // 인터뷰 답변 한 개 → "사이트에 올리기" 버튼이 달린 블록. 다듬기→확인/수정→발행.
+  // 인터뷰 답변 한 개. 요즘 저장된 건 자동으로 다듬어져 이미 공개 피드에 올라가 있음(autoPublished) —
+  // 그럴 땐 상태 표시 + 원탭 비공개 전환만 보여준다. 이 기능 이전에 쌓인 백로그는 수동 "올리기" 버튼 유지.
   function buildQA(it) {
     const qa = document.createElement('div');
     qa.className = 'qa';
     const qq = document.createElement('div'); qq.className = 'qq'; qq.textContent = '[' + (it.node || '') + '] ' + (it.question || '');
     const aa = document.createElement('div'); aa.className = 'aa'; aa.textContent = it.answer || '';
-    const row = document.createElement('div'); row.style.cssText = 'margin-top:8px;';
-    const pubBtn = document.createElement('button');
-    pubBtn.textContent = '✦ 사이트에 올리기';
-    pubBtn.style.cssText = 'background:none;border:1px solid var(--accent);color:var(--accent);font-family:inherit;font-size:11px;padding:5px 10px;border-radius:6px;cursor:pointer;';
-    row.appendChild(pubBtn);
+    const row = document.createElement('div'); row.style.cssText = 'margin-top:8px; display:flex; align-items:center; gap:8px;';
     qa.appendChild(qq); qa.appendChild(aa); qa.appendChild(row);
-    pubBtn.addEventListener('click', () => startPublish(it, qa, pubBtn, row));
+
+    if (it.autoPublished && it.thoughtId) {
+      const badge = document.createElement('span');
+      badge.textContent = '✓ 자동으로 사이트에 올라갔어요';
+      badge.style.cssText = 'color:var(--accent); font-size:11px;';
+      const hideBtn = document.createElement('button');
+      hideBtn.textContent = '비공개로 전환';
+      hideBtn.style.cssText = 'background:none;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:11px;padding:5px 10px;border-radius:6px;cursor:pointer;';
+      hideBtn.addEventListener('click', async () => {
+        hideBtn.disabled = true;
+        try {
+          const r = await fetch('/api/thoughts', { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: it.thoughtId, published: false }) });
+          if (!r.ok) throw new Error('bad status');
+          badge.textContent = '🔒 비공개로 돌렸어요 — 사이트에서 안 보여요';
+          hideBtn.remove();
+        } catch (e) { toast('오프라인 — 연결 후 다시 시도해주세요'); hideBtn.disabled = false; }
+      });
+      row.appendChild(badge); row.appendChild(hideBtn);
+    } else {
+      const pubBtn = document.createElement('button');
+      pubBtn.textContent = '✦ 사이트에 올리기';
+      pubBtn.style.cssText = 'background:none;border:1px solid var(--accent);color:var(--accent);font-family:inherit;font-size:11px;padding:5px 10px;border-radius:6px;cursor:pointer;';
+      row.appendChild(pubBtn);
+      pubBtn.addEventListener('click', () => startPublish(it, qa, pubBtn, row));
+    }
     return qa;
   }
 
