@@ -16,125 +16,84 @@
     --faint: #4a4860; --accent: #d4a24e; --line: rgba(237,235,230,0.09);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html, body { background: var(--bg); }
+  html, body { background: var(--bg); height: 100%; overflow: hidden; }
   body {
     color: var(--ink); font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
-    line-height: 1.6; padding-bottom: 40px; -webkit-font-smoothing: antialiased;
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 640px; margin: 0 auto; padding: 22px 18px 40px; }
 
-  header { padding: 8px 0 20px; border-bottom: 1px solid var(--line); margin-bottom: 22px; }
-  .brand { font-size: 12px; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; }
-  h1 { font-size: 24px; font-weight: 700; margin-top: 6px; letter-spacing: -0.01em; }
-  .lede { color: var(--muted); font-size: 12.5px; margin-top: 8px; }
+  .app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; max-width: 640px; margin: 0 auto; }
 
-  section.block { margin-bottom: 28px; }
-  .block h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-  .block h2 .n { color: var(--accent); }
+  header { flex-shrink: 0; padding: 14px 16px 10px; border-bottom: 1px solid var(--line); }
+  .header-row { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-size: 12px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; font-weight: 600; }
+  .header-links { display: flex; gap: 8px; }
+  .header-links a { color: var(--muted); font-size: 11.5px; text-decoration: none; padding: 5px 10px; border-radius: 12px; background: var(--bg-soft); border: 1px solid var(--line); }
+  .status-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 11.5px; color: var(--muted); }
 
-  .card { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 12px; }
-  label { display: block; font-size: 11px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; margin: 12px 0 6px; }
-  label:first-of-type { margin-top: 0; }
-  textarea, input[type=text], input[type=file] {
-    width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 9px; color: var(--ink);
-    font-family: inherit; font-size: 15px; padding: 11px; resize: none;
+  .chip {
+    background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
+    font-size: 12px; padding: 6px 12px; border-radius: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;
   }
-  textarea:focus, input:focus { outline: none; border-color: var(--accent); }
-  input[type=file] { font-size: 13px; color: var(--muted); padding: 9px; }
-  .thumb { width: 100%; max-height: 160px; object-fit: cover; border-radius: 9px; margin-top: 10px; display: none; }
-  .btn-gold {
-    background: var(--accent); color: var(--bg); border: none; border-radius: 9px; font-family: inherit;
-    font-weight: 700; font-size: 14px; padding: 12px 18px; cursor: pointer; margin-top: 14px;
-  }
-  .btn-gold:disabled { opacity: 0.4; }
+  .chip.ghost:active { background: rgba(237,235,230,0.06); }
+  .chip.sel { border-color: var(--accent); color: var(--accent); background: rgba(212,162,78,0.1); }
+  .chip.primary { border-color: var(--accent); color: var(--accent); background: rgba(212,162,78,0.1); font-weight: 600; }
 
-  /* question cards */
-  .qcard { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 12px; }
-  .qtop { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
-  .qtag { font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
-  .qmenu { display: flex; gap: 2px; flex-shrink: 0; }
-  .icobtn {
-    background: none; border: none; color: var(--faint); font-size: 15px; padding: 4px 6px;
-    cursor: pointer; border-radius: 7px; line-height: 1;
-  }
-  .icobtn:active { background: rgba(237,235,230,0.08); }
-  .qtext { font-size: 15px; font-weight: 500; line-height: 1.5; margin-top: 4px; }
+  .thread { flex: 1; overflow-y: auto; padding: 14px 16px 10px; display: flex; flex-direction: column; gap: 10px; -webkit-overflow-scrolling: touch; }
+  .empty-hint { align-self: center; color: var(--faint); font-size: 12.5px; text-align: center; margin: 30px 20px; line-height: 1.6; }
+  .divider { align-self: center; font-size: 10.5px; color: var(--faint); letter-spacing: 0.03em; margin: 4px 0; }
 
-  .modes { display: flex; gap: 6px; margin-top: 12px; }
-  .mode {
-    flex: 1; background: var(--bg); border: 1px solid var(--line); color: var(--muted); font-family: inherit;
-    font-size: 12px; padding: 7px 4px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px;
-  }
-  .mode.on { border-color: var(--accent); color: var(--accent); background: rgba(212,162,78,0.08); }
-  .mode:disabled { opacity: 0.35; }
+  .msg { max-width: 82%; padding: 10px 13px; border-radius: 16px; font-size: 14px; line-height: 1.55; word-break: break-word; }
+  .msg.ai { align-self: flex-start; background: var(--bg-soft); border-bottom-left-radius: 5px; }
+  .msg.user { align-self: flex-end; background: rgba(212,162,78,0.14); border: 1px solid rgba(212,162,78,0.4); border-bottom-right-radius: 5px; }
+  .msg.confirm { border-left: 2px solid var(--accent); }
+  .msg-tag { font-size: 10px; color: var(--faint); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 4px; }
+  .msg-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+  .voice-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; font-size: 11px; color: var(--muted); }
+  .wave { display: flex; align-items: flex-end; gap: 2px; height: 12px; }
+  .wave span { width: 2px; background: var(--accent); display: block; }
+  .photo-thumb { width: 150px; max-height: 110px; object-fit: cover; border-radius: 10px; margin-bottom: 6px; display: block; }
 
-  .ans { margin-top: 10px; }
-  .mic {
-    margin-top: 8px; background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
-    font-size: 13px; padding: 9px 14px; border-radius: 9px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px;
-  }
-  .mic.rec { border-color: var(--accent); color: var(--accent); }
-  .mic .pulse { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
-  .mic.rec .pulse { animation: pulse 1s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-  .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .choice {
-    background: var(--bg); border: 1px solid var(--line); color: var(--ink); font-family: inherit;
-    font-size: 13.5px; padding: 12px 10px; border-radius: 10px; cursor: pointer; text-align: center; line-height: 1.4;
-  }
-  .choice.sel { border-color: var(--accent); background: rgba(212,162,78,0.12); color: var(--accent); font-weight: 600; }
-  .choicehint { font-size: 11px; color: var(--faint); margin-top: 8px; }
-
-  .qfoot { display: flex; gap: 8px; margin-top: 12px; }
-  .done-btn {
-    flex: 1; background: var(--accent); color: var(--bg); border: none; border-radius: 9px; font-family: inherit;
-    font-weight: 700; font-size: 13.5px; padding: 11px; cursor: pointer;
-  }
-  .done-btn:disabled { opacity: 0.35; }
-
-  .empty-slot { border: 1px dashed var(--faint); border-radius: 14px; padding: 20px; text-align: center; color: var(--faint); font-size: 13px; margin-bottom: 12px; }
-
-  .queuebar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; font-size: 12px; color: var(--muted); }
-  .pausebtn { background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit; font-size: 12px; padding: 7px 13px; border-radius: 16px; cursor: pointer; }
-  .pausebtn.on { border-color: var(--accent); color: var(--accent); }
-
-  .later-toggle { background: none; border: none; color: var(--faint); font-size: 12px; text-decoration: underline; cursor: pointer; font-family: inherit; padding: 6px 0; }
-  .later-list { margin-top: 8px; }
-  .later-item { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .later-wrap { flex-shrink: 0; padding: 0 16px; }
+  .later-toggle { background: none; border: none; color: var(--faint); font-size: 11.5px; text-decoration: underline; cursor: pointer; font-family: inherit; padding: 6px 0; }
+  .later-item { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 12.5px; }
   .later-item .lt { color: var(--muted); flex: 1; }
-  .later-item button { background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit; font-size: 11px; padding: 6px 10px; border-radius: 7px; cursor: pointer; white-space: nowrap; }
+  .later-item button { background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit; font-size: 10.5px; padding: 5px 9px; border-radius: 7px; cursor: pointer; white-space: nowrap; }
 
-  .adminlink { flex-shrink: 0; margin-top: 2px; background: var(--bg-soft); border: 1px solid var(--line); color: var(--muted); font-size: 12px; padding: 8px 14px; border-radius: 20px; text-decoration: none; white-space: nowrap; }
+  .session-pill { flex-shrink: 0; margin: 0 16px 8px; display: none; align-items: center; justify-content: space-between; gap: 10px; background: var(--bg-soft); border: 1px solid rgba(212,162,78,0.4); border-radius: 14px; padding: 9px 13px; font-size: 12px; color: var(--muted); }
+  .session-pill button { background: var(--accent); color: var(--bg); border: none; border-radius: 12px; font-family: inherit; font-weight: 700; font-size: 11.5px; padding: 7px 13px; cursor: pointer; }
+
+  .composer { flex-shrink: 0; display: flex; align-items: flex-end; gap: 8px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: var(--bg); }
+  .composer textarea {
+    flex: 1; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 18px; color: var(--ink);
+    font-family: inherit; font-size: 14.5px; padding: 9px 14px; resize: none; max-height: 110px; overflow-y: auto;
+  }
+  .composer textarea:focus { outline: none; border-color: var(--accent); }
+  .round-btn {
+    flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg-soft);
+    color: var(--muted); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
+  .round-btn.mic.rec { border-color: var(--accent); color: var(--accent); animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.55} }
+  .round-btn.send { background: var(--accent); color: var(--bg); border: none; }
 
   .toast {
-    position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(10px);
+    position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%) translateY(10px);
     background: var(--ink); color: var(--bg); font-size: 13px; font-weight: 600; padding: 11px 18px;
     border-radius: 22px; opacity: 0; pointer-events: none; transition: all 0.3s; z-index: 20;
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  /* fullscreen overlays (voice interview + review) */
   .overlay {
     display: none; position: fixed; inset: 0; background: var(--bg); z-index: 50;
     flex-direction: column; padding: 20px 20px calc(20px + env(safe-area-inset-bottom));
   }
   .overlay.open { display: flex; }
   .vm-top { display: flex; justify-content: space-between; align-items: center; }
-  .vm-mute, .vm-exit {
+  .vm-exit {
     background: var(--bg-soft); border: 1px solid var(--line); color: var(--muted); font-family: inherit;
     font-size: 13px; padding: 8px 14px; border-radius: 16px; cursor: pointer;
   }
-  .vm-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; padding: 20px 0; }
-  .vm-question { font-size: 22px; font-weight: 700; line-height: 1.5; max-width: 500px; }
-  .vm-status { font-size: 13px; color: var(--accent); min-height: 18px; }
-  .vm-transcript { font-size: 16px; color: var(--ink); min-height: 60px; max-width: 480px; line-height: 1.6; }
-  .vm-mic {
-    width: 84px; height: 84px; border-radius: 50%; background: var(--accent); color: var(--bg);
-    border: none; font-size: 30px; cursor: pointer; transition: transform 0.15s;
-  }
-  .vm-mic.listening { animation: vmpulse 1.4s infinite; }
-  @keyframes vmpulse { 0%,100%{ box-shadow: 0 0 0 0 rgba(212,162,78,0.45); } 50%{ box-shadow: 0 0 0 18px rgba(212,162,78,0); } }
   .vm-foot { display: flex; gap: 10px; }
   .vm-skip {
     background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
@@ -151,84 +110,51 @@
   .review-q { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
   .review-a { font-size: 15px; line-height: 1.6; white-space: pre-wrap; }
   .review-x { margin-top: 8px; background: none; border: 1px solid var(--line); color: var(--faint); font-family: inherit; font-size: 11.5px; padding: 5px 10px; border-radius: 7px; cursor: pointer; }
+  .empty-slot { border: 1px dashed var(--faint); border-radius: 14px; padding: 20px; text-align: center; color: var(--faint); font-size: 13px; }
 
-  /* offline banner */
   #offlineBar {
-    display: none; position: sticky; top: 0; z-index: 40; background: #3a2a10; color: #e8c37a;
-    font-size: 12.5px; font-weight: 600; text-align: center; padding: 9px 14px; letter-spacing: 0.02em;
+    display: none; flex-shrink: 0; background: #3a2a10; color: #e8c37a;
+    font-size: 12px; font-weight: 600; text-align: center; padding: 8px 14px; letter-spacing: 0.02em;
   }
   #offlineBar.show { display: block; }
   #offlineBar .n { background: rgba(232,195,122,0.18); border-radius: 10px; padding: 1px 8px; margin-left: 6px; }
 </style>
 </head>
 <body>
-<div id="offlineBar">📡 오프라인 — 답변은 계속 저장되고, 연결되면 자동으로 동기화돼요<span class="n" id="pendingN" style="display:none"></span></div>
-<div class="wrap">
+<div class="app">
+  <div id="offlineBar">📡 오프라인 — 답변은 계속 저장되고, 연결되면 자동으로 동기화돼요<span class="n" id="pendingN" style="display:none"></span></div>
   <header>
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
-      <div>
-        <div class="brand">Thought Constellation</div>
-        <h1>인터뷰 노트</h1>
-      </div>
-      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
-        <a href="index.html" class="adminlink">공개 페이지 →</a>
-        <a href="admin.html" class="adminlink">관리자 →</a>
+    <div class="header-row">
+      <div class="brand">Thought Constellation</div>
+      <div class="header-links">
+        <a href="index.html">공개 페이지</a>
+        <a href="admin.html">관리자</a>
       </div>
     </div>
-    <div class="lede">기록은 여기서 바로. 질문은 3개씩 흐르고, 답하면 다음 질문이 이어집니다.</div>
+    <div class="status-row">
+      <span id="queueInfo"></span>
+      <button class="chip ghost" id="pauseBtn"></button>
+    </div>
   </header>
 
-  <section class="block">
-    <h2>지금 생각 + 사진</h2>
-    <div class="card">
-      <label>생각</label>
-      <textarea id="capText" rows="3" placeholder="지금 떠오른 생각…"></textarea>
-      <button class="mic" id="capMic" type="button"><span class="pulse"></span><span class="lbl">말하기</span></button>
-      <label>사진 (선택)</label>
-      <input type="file" id="capFile" accept="image/*" />
-      <img class="thumb" id="capThumb" />
-      <label>관련 단어 (쉼표로, 예: 자전거, 자유)</label>
-      <input type="text" id="capTags" placeholder="자전거, 자유" />
-      <button class="btn-gold" id="capSave" disabled>기록하기</button>
-    </div>
-  </section>
+  <div class="thread" id="thread"></div>
 
-  <section class="block">
-    <button class="btn-gold" id="vmOpenBtn" style="width:100%; margin-top:0; display:flex; align-items:center; justify-content:center; gap:8px;">🎙️ 음성 인터뷰로 쭉 진행하기</button>
-  </section>
-
-  <section class="block">
-    <div class="queuebar" id="sessionBar" style="display:none">
-      <span id="sessionInfo"></span>
-      <button class="pausebtn" id="sendBtn" style="border-color:var(--accent); color:var(--accent);">최종 보내기</button>
-    </div>
-    <div class="queuebar">
-      <span id="queueInfo"></span>
-      <button class="pausebtn" id="pauseBtn"></button>
-    </div>
-    <div id="slots"></div>
+  <div class="later-wrap">
     <button class="later-toggle" id="laterToggle" style="display:none"></button>
-    <div class="later-list" id="laterList" style="display:none"></div>
-  </section>
-</div>
+    <div id="laterList" style="display:none"></div>
+  </div>
 
-<div id="voiceMode" class="overlay">
-  <div class="vm-top">
-    <div class="brand">음성 인터뷰</div>
-    <div style="display:flex; gap:8px;">
-      <button class="vm-mute" id="vmMute" title="소리 끄기/켜기">🔊</button>
-      <button class="vm-exit" id="vmExit">종료</button>
-    </div>
+  <div class="session-pill" id="sessionBar">
+    <span id="sessionInfo"></span>
+    <button id="sendBtn">최종 보내기</button>
   </div>
-  <div class="vm-body">
-    <div class="vm-question" id="vmQuestion"></div>
-    <div class="vm-status" id="vmStatus"></div>
-    <div class="vm-transcript" id="vmTranscript"></div>
-    <button class="vm-mic" id="vmMicBtn">🎤</button>
-  </div>
-  <div class="vm-foot">
-    <button class="vm-skip" id="vmSkip">건너뛰기</button>
-    <button class="vm-next" id="vmNext">완료 → 다음</button>
+
+  <div class="composer">
+    <button class="round-btn" id="photoBtn" title="사진 첨부">📷</button>
+    <textarea id="composerInput" rows="1" placeholder="편하게 답해보세요…"></textarea>
+    <button class="round-btn mic" id="micBtn" title="음성으로 말하기">🎤</button>
+    <button class="round-btn send" id="sendMsgBtn" style="display:none" title="보내기">➤</button>
+    <input type="file" id="photoFile" accept="image/*" style="display:none" />
   </div>
 </div>
 
@@ -251,6 +177,12 @@
 (function () {
   const DATA = window.INTERVIEW || { questions: [], pool: [], updated: '' };
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const TIER_LABEL = { light: '가볍게', deep: '더 깊이', fact: '사실·맥락' };
+  const REACT_LINES = [
+    '좋은 순간이네요. 그냥 기록해둘까요, 짧게 이야기로 남겨볼까요?',
+    '기록해두면 나중에 좋은 조각이 될 것 같아요. 어떻게 남길까요?',
+    '이 느낌, 그냥 담아둘까요 아니면 조금 더 풀어볼까요?',
+  ];
 
   function toast(msg) {
     const el = document.getElementById('toast');
@@ -278,8 +210,9 @@
   };
   function loadArr(k) { try { return JSON.parse(LS.get(k)) || []; } catch (e) { return []; } }
   function saveArr(k, a) { LS.set(k, JSON.stringify(a)); }
-
-  const kA = id => 'iv-a-' + id, kM = id => 'iv-m-' + id;
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
 
   /* ---------- dynamic question pool (followups + pool rotations, persisted) ---------- */
   function dynPool() { return loadArr('iv-dyn'); }
@@ -302,7 +235,6 @@
 
   function nodeTokens(nodeStr) { return (nodeStr || '').split('·').map(s => s.trim()).filter(Boolean); }
 
-  /* 방금 완료한 질문과 태그가 겹치는 질문을 큐에서 찾아 맨 앞으로 당긴다 — 없으면 여분 풀에서 태그 매칭으로 하나 만든다. */
   function pullRelated(nodeStr) {
     const tokens = nodeTokens(nodeStr);
     if (!tokens.length) return null;
@@ -314,111 +246,49 @@
     return p ? p.id : null;
   }
 
-  /* ---------- state: slots (max 3 shown) + masterQueue (ids waiting) + later (deferred) ---------- */
-  const MAXSLOTS = 3;
-  let slots = loadArr('iv-slots');
+  /* ---------- state ---------- */
+  let current = LS.get('iv-current') || null;
   let queue = loadArr('iv-queue');
-  let later = loadArr('iv-later'); // array of ids
+  let later = loadArr('iv-later');
   let paused = LS.get('iv-paused') === '1';
+  let thread = loadArr('iv-thread');
+  let pendingChoiceSelections = [];
 
-  function persist() { saveArr('iv-slots', slots); saveArr('iv-queue', queue); saveArr('iv-later', later); }
+  // migrate from the old 3-slot card model if present
+  const oldSlots = loadArr('iv-slots');
+  if (!current && oldSlots.length) {
+    current = oldSlots[0];
+    queue = oldSlots.slice(1).concat(queue);
+    LS.del('iv-slots');
+  }
 
-  // first-run init
-  if (!slots.length && !queue.length && !LS.get('iv-init')) {
+  function persist() { saveArr('iv-queue', queue); saveArr('iv-later', later); LS.set('iv-current', current || ''); }
+  function persistThread() {
+    if (thread.length > 300) thread = thread.slice(-200);
+    saveArr('iv-thread', thread);
+  }
+
+  // first-run seed
+  if (!current && !queue.length && !LS.get('iv-init')) {
     queue = DATA.questions.map(q => q.id);
-    slots = queue.splice(0, MAXSLOTS);
+    current = queue.shift() || null;
     LS.set('iv-init', '1');
     persist();
   }
 
-  function refill() {
-    while (slots.length < MAXSLOTS && !paused) {
+  function pickNext() {
+    if (paused) return null;
+    for (let guard = 0; guard < 50; guard++) {
       let nextId = queue.shift();
       if (!nextId) {
         const p = freshPoolQuestion();
-        if (!p) break;
+        if (!p) return null;
         nextId = p.id;
       }
-      if (qById(nextId)) slots.push(nextId);
+      if (qById(nextId)) return nextId;
     }
-    persist();
+    return null;
   }
-  refill();
-
-  let generating = 0;
-
-  async function tryGenerateFollowUp(q, answerText) {
-    try {
-      const r = await fetch('/api/generate-followup', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: q.q, answer: answerText, node: q.node }),
-      });
-      if (!r.ok) return null;
-      const d = await r.json();
-      if (!d.followup) return null;
-      return Object.assign({}, d.followup, { id: 'ai-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) });
-    } catch (e) { return null; }
-  }
-
-  async function completeQuestion(q, mode, val, selectedChoicesSnapshot) {
-    const item = { node: q.node, question: q.q, answer: val, mode };
-    pushHistory([item]);
-    addToSession(item);
-    toast('답변을 담았어요 · 다 하시면 최종 보내기를 눌러주세요');
-
-    slots = slots.filter(x => x !== q.id);
-    persist();
-    generating++;
-    render();
-
-    let followUpQs = [];
-    if (mode === 'choice' && q.followUps) {
-      selectedChoicesSnapshot.forEach(ch => {
-        const fus = q.followUps[ch];
-        if (fus) fus.forEach(fu => followUpQs.push(Object.assign({}, fu, { id: 'fu-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) })));
-      });
-    }
-
-    if (!followUpQs.length) {
-      const ai = await tryGenerateFollowUp(q, val);
-      if (ai) followUpQs = [ai];
-    }
-
-    generating--;
-    let nextId = null;
-    if (followUpQs.length) {
-      addDyn(followUpQs);
-      queue = followUpQs.map(x => x.id).concat(queue);
-      nextId = followUpQs[0].id;
-    } else {
-      const relatedId = pullRelated(q.node);
-      if (relatedId) { queue = [relatedId, ...queue]; nextId = relatedId; }
-    }
-    persist();
-    refill();
-    render();
-    return nextId;
-  }
-
-  function resolveSlot(id, opts) {
-    opts = opts || {};
-    slots = slots.filter(x => x !== id);
-    if (opts.followUpQs && opts.followUpQs.length) {
-      addDyn(opts.followUpQs);
-      queue = opts.followUpQs.map(q => q.id).concat(queue); // priority: front of queue
-    } else if (opts.completedNode) {
-      const relatedId = pullRelated(opts.completedNode);
-      if (relatedId) queue = [relatedId, ...queue];
-    }
-    if (opts.toLater) later.unshift(id);
-    persist();
-    refill();
-    render();
-  }
-
-  /* ---------- history + server sync ---------- */
-  function historyList() { return loadArr('iv-history'); }
-  function pushHistory(items) { const h = historyList(); items.forEach(i => h.push(i)); saveArr('iv-history', h); }
 
   /* ---------- 하루 세션: 완료한 답변은 즉시 전송하지 않고 여기 모아뒀다가, "최종 보내기"에서 한 번에 검토 후 전송 ---------- */
   function sessionList() { return loadArr('iv-session'); }
@@ -429,9 +299,6 @@
     if (!items.length) { bar.style.display = 'none'; return; }
     bar.style.display = 'flex';
     document.getElementById('sessionInfo').textContent = '오늘 답변 ' + items.length + '개 준비됨';
-  }
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
   function renderReview() {
     const items = sessionList();
@@ -461,10 +328,9 @@
   function openReview() { renderReview(); document.getElementById('reviewMode').classList.add('open'); }
   function closeReview() { document.getElementById('reviewMode').classList.remove('open'); }
 
-  /* ---------- 오프라인 대비: 서버 저장 실패한 것들은 큐에 쌓아뒀다가 연결되면 자동 재전송 ---------- */
+  /* ---------- 오프라인 대비 ---------- */
   function pendingList() { return loadArr('iv-pending'); }
   function savePending(p) { saveArr('iv-pending', p); updatePendingBadge(); }
-
   function updatePendingBadge() {
     const n = pendingList().length;
     const el = document.getElementById('pendingN');
@@ -511,147 +377,203 @@
     if (remain.length < p.length) toast('밀려있던 기록 ' + (p.length - remain.length) + '개 동기화했어요');
   }
 
-  /* ---------- render ---------- */
-  function grow(ta) { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; }
-
-  function render() {
-    renderSessionBar();
-    renderQueueBar();
-    renderSlots();
-    renderLater();
+  /* ---------- AI 후속 질문 ---------- */
+  async function tryGenerateFollowUp(q, answerText) {
+    try {
+      const r = await fetch('/api/generate-followup', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: q.q, answer: answerText, node: q.node }),
+      });
+      if (!r.ok) return null;
+      const d = await r.json();
+      if (!d.followup) return null;
+      return Object.assign({}, d.followup, { id: 'ai-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) });
+    } catch (e) { return null; }
   }
 
-  function renderQueueBar() {
-    const remaining = queue.length + (DATA.pool || []).length; // rough, non-exact but reassuring
-    document.getElementById('queueInfo').textContent = paused ? '질문 받기를 멈췄어요' : ('다음 질문 대기 중 · ' + queue.length + '개');
-    const pb = document.getElementById('pauseBtn');
-    pb.textContent = paused ? '다시 질문 받기' : '질문 그만 받기';
-    pb.classList.toggle('on', paused);
+  /* ---------- 스레드 ---------- */
+  function grow(ta) { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 110) + 'px'; }
+  function scrollThreadToBottom() {
+    const el = document.getElementById('thread');
+    requestAnimationFrame(() => { el.scrollTop = el.scrollHeight; });
+  }
+  function appendMessage(msg) {
+    msg.ts = msg.ts || Date.now();
+    thread.push(msg);
+    persistThread();
+    renderThread();
+    scrollThreadToBottom();
+  }
+  function appendMessageIfNew(msg) {
+    const last = thread[thread.length - 1];
+    if (last && last.id === msg.id) return;
+    appendMessage(msg);
+  }
+  function removeGhost() {
+    const last = thread[thread.length - 1];
+    if (last && last.kind === 'ghost') { thread.pop(); persistThread(); renderThread(); }
+  }
+  function formatDivider(ts) {
+    const d = new Date(ts), now = new Date();
+    if (d.toDateString() === now.toDateString()) {
+      return '오늘 ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+    }
+    return (d.getMonth() + 1) + '월 ' + d.getDate() + '일';
   }
 
-  function renderSlots() {
-    const el = document.getElementById('slots');
+  function toggleChoiceChip(ch) {
+    const i = pendingChoiceSelections.indexOf(ch);
+    if (i >= 0) pendingChoiceSelections.splice(i, 1); else pendingChoiceSelections.push(ch);
+    composerInput.value = pendingChoiceSelections.join(', ');
+    grow(composerInput); updateComposerButtons();
+    renderThread();
+  }
+
+  function laterCurrent() {
+    if (!current) return;
+    later.unshift(current);
+    current = null; pendingChoiceSelections = [];
+    persist();
+    ensureCurrent();
+  }
+  function skipCurrent() {
+    if (!current) return;
+    current = null; pendingChoiceSelections = [];
+    persist();
+    ensureCurrent();
+  }
+
+  async function resolveCapture(msg, mode) {
+    const { text, photo } = msg.captureRef;
+    if (mode === 'quick') {
+      const payload = { text: text || '(사진)', dataUrl: photo, tags: [] };
+      try {
+        const r = await fetch('/api/thoughts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        if (!r.ok) throw new Error('bad status');
+        setOnlineState(true);
+        toast('기록했어요');
+      } catch (e) {
+        setOnlineState(false);
+        const p = pendingList(); p.push(Object.assign({ type: 'thought' }, payload)); savePending(p);
+        toast('오프라인 — 연결되면 자동으로 저장돼요');
+      }
+    } else {
+      addToSession({ node: 'capture', question: '(사진과 함께 남긴 생각)', answer: text || '(사진)', mode: photo ? 'photo' : 'text' });
+      toast('오늘 인터뷰에 담았어요');
+    }
+    msg.resolved = true; persistThread(); renderThread();
+  }
+
+  function renderMsg(msg, isLast) {
+    if (msg.kind === 'system') {
+      const s = document.createElement('div'); s.className = 'divider'; s.textContent = msg.text; return s;
+    }
+    const wrap = document.createElement('div');
+    wrap.className = 'msg ' + (msg.role === 'ai' ? 'ai' : 'user') + (msg.kind === 'confirm' ? ' confirm' : '');
+    if (msg.kind === 'ghost') wrap.style.opacity = '0.55';
+
+    if (msg.tierLabel) {
+      const tag = document.createElement('div'); tag.className = 'msg-tag';
+      tag.textContent = msg.tierLabel + (msg.node ? ' · ' + msg.node : '');
+      wrap.appendChild(tag);
+    }
+    if (msg.kind === 'answer' && msg.voice) {
+      const vm = document.createElement('div'); vm.className = 'voice-meta';
+      const bars = Array.from({ length: 5 }).map(() => '<span style="height:' + (4 + Math.round(Math.random() * 8)) + 'px"></span>').join('');
+      vm.innerHTML = '🎤 <span class="wave">' + bars + '</span>';
+      wrap.appendChild(vm);
+    }
+    if (msg.photo) {
+      const img = document.createElement('img'); img.className = 'photo-thumb'; img.src = msg.photo;
+      wrap.appendChild(img);
+    }
+    if (msg.text) {
+      const t = document.createElement('div'); t.textContent = msg.text; t.style.whiteSpace = 'pre-wrap';
+      wrap.appendChild(t);
+    }
+
+    if (isLast) {
+      if (msg.kind === 'question' && msg.qid === current) {
+        if (msg.choices && msg.choices.length) {
+          const row = document.createElement('div'); row.className = 'msg-chips';
+          msg.choices.forEach(ch => {
+            const c = document.createElement('button'); c.type = 'button';
+            c.className = 'chip' + (pendingChoiceSelections.includes(ch) ? ' sel' : ''); c.textContent = ch;
+            c.addEventListener('click', () => toggleChoiceChip(ch));
+            row.appendChild(c);
+          });
+          wrap.appendChild(row);
+        }
+        const actions = document.createElement('div'); actions.className = 'msg-chips';
+        const laterBtn = document.createElement('button'); laterBtn.type = 'button'; laterBtn.className = 'chip ghost'; laterBtn.textContent = '⏰ 나중에';
+        laterBtn.addEventListener('click', laterCurrent);
+        const skipBtn = document.createElement('button'); skipBtn.type = 'button'; skipBtn.className = 'chip ghost'; skipBtn.textContent = '🗑 건너뛰기';
+        skipBtn.addEventListener('click', skipCurrent);
+        actions.appendChild(laterBtn); actions.appendChild(skipBtn);
+        wrap.appendChild(actions);
+      } else if (msg.kind === 'confirm' && !msg.resolved) {
+        const row = document.createElement('div'); row.className = 'msg-chips';
+        const yes = document.createElement('button'); yes.type = 'button'; yes.className = 'chip primary'; yes.textContent = '맞아요';
+        yes.addEventListener('click', () => { msg.resolved = true; persistThread(); renderThread(); });
+        const no = document.createElement('button'); no.type = 'button'; no.className = 'chip ghost'; no.textContent = '다르게 말할게요';
+        no.addEventListener('click', () => { msg.resolved = true; persistThread(); renderThread(); composerInput.focus(); });
+        row.appendChild(yes); row.appendChild(no);
+        wrap.appendChild(row);
+      } else if (msg.kind === 'react' && !msg.resolved) {
+        const row = document.createElement('div'); row.className = 'msg-chips';
+        const quick = document.createElement('button'); quick.type = 'button'; quick.className = 'chip primary'; quick.textContent = '그냥 기록';
+        quick.addEventListener('click', () => resolveCapture(msg, 'quick'));
+        const story = document.createElement('button'); story.type = 'button'; story.className = 'chip ghost'; story.textContent = '이야기로';
+        story.addEventListener('click', () => resolveCapture(msg, 'story'));
+        row.appendChild(quick); row.appendChild(story);
+        wrap.appendChild(row);
+      }
+    }
+    return wrap;
+  }
+
+  function renderThread() {
+    const el = document.getElementById('thread');
     el.innerHTML = '';
-    if (!slots.length && !generating) {
-      el.innerHTML = '<div class="empty-slot">' + (paused ? '질문을 멈췄어요. 다시 받으려면 위 버튼을 눌러주세요.' : '질문이 바닥났어요 — 대단해요!') + '</div>';
+    if (!thread.length) {
+      const hint = document.createElement('div'); hint.className = 'empty-hint';
+      hint.textContent = '인터뷰를 시작해볼까요? 아래에 답을 적거나, 마이크·카메라를 눌러보세요.';
+      el.appendChild(hint);
       return;
     }
-    slots.forEach((id, idx) => {
-      const q = qById(id);
-      if (!q) return;
-      el.appendChild(questionCard(q, idx + 1));
+    let lastDay = null;
+    thread.forEach((msg, idx) => {
+      const dayKey = new Date(msg.ts).toDateString();
+      if (dayKey !== lastDay) {
+        lastDay = dayKey;
+        const d = document.createElement('div'); d.className = 'divider'; d.textContent = formatDivider(msg.ts);
+        el.appendChild(d);
+      }
+      el.appendChild(renderMsg(msg, idx === thread.length - 1));
     });
-    if (slots.length < MAXSLOTS && generating > 0) {
-      const ghost = document.createElement('div');
-      ghost.className = 'qcard'; ghost.style.opacity = '0.55';
-      ghost.innerHTML = '<div class="qtext">✦ 답변을 바탕으로 다음 질문을 만들고 있어요…</div>';
-      el.appendChild(ghost);
-    }
   }
 
-  const TIER_LABEL = { light: '가볍게', deep: '더 깊이', fact: '사실·맥락' };
+  function renderStatusBar() {
+    document.getElementById('queueInfo').textContent = paused ? '질문 받기를 멈췄어요' : ('다음 질문 대기 중 · ' + queue.length + '개');
+    const pb = document.getElementById('pauseBtn');
+    pb.textContent = paused ? '▶ 다시 받기' : '⏸ 잠시 멈추기';
+    pb.classList.toggle('sel', paused);
+  }
 
-  function questionCard(q, num) {
-    const card = document.createElement('div');
-    card.className = 'qcard';
-    let mode = LS.get(kM(q.id)) || (q.choices && q.choices.length ? 'choice' : 'text');
-
-    card.innerHTML =
-      '<div class="qtop"><div class="qtag">' + (TIER_LABEL[q.tier] || '') + ' · ' + q.node + '</div>' +
-      '<div class="qmenu"><button class="icobtn" data-act="later" title="나중에">⏰</button>' +
-      '<button class="icobtn" data-act="skip" title="삭제">🗑</button></div></div>' +
-      '<div class="qtext">' + q.q + '</div>' +
-      '<div class="modes">' +
-        '<button class="mode" data-m="choice"' + (q.choices && q.choices.length ? '' : ' disabled') + '>☰ 선택</button>' +
-        '<button class="mode" data-m="text">✍️ 채팅</button>' +
-        '<button class="mode" data-m="voice">🎤 음성</button>' +
-      '</div>' +
-      '<div class="ans"></div>' +
-      '<div class="qfoot"><button class="done-btn" disabled>완료</button></div>';
-
-    const modesEl = card.querySelectorAll('.mode');
-    const ansBox = card.querySelector('.ans');
-    const doneBtn = card.querySelector('.done-btn');
-    let selectedChoices = (LS.get(kA(q.id)) || '').split(', ').filter(s => q.choices && q.choices.includes(s));
-
-    function updateDoneState() {
-      const val = (LS.get(kA(q.id)) || '').trim();
-      doneBtn.disabled = !val;
-    }
-
-    function buildAns(m) {
-      ansBox.innerHTML = '';
-      modesEl.forEach(b => b.classList.toggle('on', b.dataset.m === m));
-
-      if (m === 'choice' && q.choices && q.choices.length) {
-        const grid = document.createElement('div'); grid.className = 'choices';
-        q.choices.forEach(ch => {
-          const b = document.createElement('button'); b.className = 'choice'; b.textContent = ch;
-          if (selectedChoices.includes(ch)) b.classList.add('sel');
-          b.addEventListener('click', () => {
-            const i = selectedChoices.indexOf(ch);
-            if (i >= 0) selectedChoices.splice(i, 1); else selectedChoices.push(ch);
-            b.classList.toggle('sel');
-            LS.set(kA(q.id), selectedChoices.join(', '));
-            updateDoneState();
-          });
-          grid.appendChild(b);
-        });
-        ansBox.appendChild(grid);
-        const hint = document.createElement('div'); hint.className = 'choicehint';
-        hint.textContent = '여러 개 골라도 돼요. 다 고르면 완료를 누르세요.';
-        ansBox.appendChild(hint);
-      } else {
-        const ta = document.createElement('textarea'); ta.rows = 3;
-        ta.placeholder = '여기에 편하게…';
-        ta.value = m === 'choice' ? '' : (LS.get(kA(q.id)) || '');
-        ansBox.appendChild(ta);
-        requestAnimationFrame(() => grow(ta));
-        ta.addEventListener('input', () => { grow(ta); LS.set(kA(q.id), ta.value); updateDoneState(); });
-
-        if (m === 'voice') {
-          const mic = document.createElement('button'); mic.className = 'mic';
-          mic.innerHTML = '<span class="pulse"></span><span class="lbl">말하기</span>';
-          ansBox.appendChild(mic);
-          if (SR) {
-            let rec = null, listening = false;
-            mic.addEventListener('click', () => {
-              if (listening) { rec && rec.stop(); return; }
-              rec = new SR(); rec.lang = 'ko-KR'; rec.interimResults = true; rec.continuous = true;
-              const base = ta.value ? ta.value + ' ' : '';
-              rec.onresult = e => {
-                let s = ''; for (let i = e.resultIndex; i < e.results.length; i++) s += e.results[i][0].transcript;
-                ta.value = base + s; grow(ta); LS.set(kA(q.id), ta.value); updateDoneState();
-              };
-              rec.onend = () => { listening = false; mic.classList.remove('rec'); mic.querySelector('.lbl').textContent = '말하기'; };
-              rec.onerror = () => { listening = false; mic.classList.remove('rec'); mic.querySelector('.lbl').textContent = '말하기'; };
-              rec.start(); listening = true; mic.classList.add('rec'); mic.querySelector('.lbl').textContent = '듣는 중… (탭하면 멈춤)';
-            });
-          } else {
-            mic.addEventListener('click', () => { ta.focus(); toast('키보드의 🎤 마이크를 눌러 말하세요'); });
-          }
-        }
+  function ensureCurrent() {
+    if (!current && !paused) current = pickNext();
+    persist();
+    if (current) {
+      const q = qById(current);
+      if (q) {
+        appendMessageIfNew({ id: 'q-' + q.id, role: 'ai', kind: 'question', text: q.q, qid: q.id, node: q.node, choices: q.choices || null, tierLabel: TIER_LABEL[q.tier] || '' });
       }
-      updateDoneState();
+    } else if (paused) {
+      appendMessageIfNew({ id: 'paused-note', role: 'ai', kind: 'system', text: '질문을 멈췄어요. 사진이나 생각은 언제든 남겨도 좋아요.' });
+    } else {
+      appendMessageIfNew({ id: 'empty-note', role: 'ai', kind: 'system', text: '질문이 바닥났어요 — 대단해요! 언제든 사진이나 생각을 남겨도 좋아요.' });
     }
-
-    modesEl.forEach(b => b.addEventListener('click', () => {
-      if (b.disabled) return;
-      mode = b.dataset.m; LS.set(kM(q.id), mode); buildAns(mode);
-    }));
-
-    card.querySelector('[data-act="later"]').addEventListener('click', () => resolveSlot(q.id, { toLater: true }));
-    card.querySelector('[data-act="skip"]').addEventListener('click', () => resolveSlot(q.id, {}));
-
-    doneBtn.addEventListener('click', () => {
-      const val = (LS.get(kA(q.id)) || '').trim();
-      if (!val) return;
-      doneBtn.disabled = true;
-      completeQuestion(q, mode, val, selectedChoices.slice());
-    });
-
-    buildAns(mode);
-    return card;
+    renderStatusBar();
   }
 
   function renderLater() {
@@ -667,11 +589,12 @@
     later.forEach(id => {
       const q = qById(id); if (!q) return;
       const row = document.createElement('div'); row.className = 'later-item';
-      row.innerHTML = '<span class="lt">' + q.q + '</span><button>다시 꺼내기</button>';
+      row.innerHTML = '<span class="lt">' + escapeHtml(q.q) + '</span><button>다시 꺼내기</button>';
       row.querySelector('button').addEventListener('click', () => {
         later = later.filter(x => x !== id);
         queue.unshift(id);
-        persist(); refill(); render();
+        persist();
+        if (!current) ensureCurrent(); else renderLater();
       });
       list.appendChild(row);
     });
@@ -679,10 +602,23 @@
 
   document.getElementById('pauseBtn').addEventListener('click', () => {
     paused = !paused; LS.set('iv-paused', paused ? '1' : '0');
-    refill(); render();
+    ensureCurrent();
   });
 
-  /* ---------- quick capture ---------- */
+  /* ---------- composer ---------- */
+  const composerInput = document.getElementById('composerInput');
+  const sendMsgBtn = document.getElementById('sendMsgBtn');
+  const micBtn = document.getElementById('micBtn');
+  const photoBtn = document.getElementById('photoBtn');
+  const photoFile = document.getElementById('photoFile');
+
+  function updateComposerButtons() {
+    const has = composerInput.value.trim().length > 0;
+    sendMsgBtn.style.display = has ? 'flex' : 'none';
+    micBtn.style.display = has ? 'none' : 'flex';
+  }
+  composerInput.addEventListener('input', () => { grow(composerInput); updateComposerButtons(); });
+
   function resizeImage(file, maxDim, quality) {
     return new Promise((resolve, reject) => {
       const img = new Image(); const reader = new FileReader();
@@ -701,159 +637,84 @@
     });
   }
 
-  let capDataUrl = null;
-  const capText = document.getElementById('capText');
-  const capSave = document.getElementById('capSave');
-  function refreshCapBtn() { capSave.disabled = !capText.value.trim(); }
-  capText.addEventListener('input', refreshCapBtn);
+  photoBtn.addEventListener('click', () => photoFile.click());
+  photoFile.addEventListener('change', async e => {
+    const f = e.target.files[0]; if (!f) return;
+    photoFile.value = '';
+    let dataUrl;
+    try { dataUrl = await resizeImage(f, 1600, 0.82); } catch (err) { toast('사진을 불러오지 못했어요'); return; }
+    const caption = composerInput.value.trim();
+    composerInput.value = ''; grow(composerInput); updateComposerButtons();
+    appendMessage({ id: 'photo-' + Date.now(), role: 'user', kind: 'capture', text: caption, photo: dataUrl });
+    appendMessage({ id: 'react-' + Date.now(), role: 'ai', kind: 'react', text: REACT_LINES[Math.floor(Math.random() * REACT_LINES.length)], captureRef: { text: caption, photo: dataUrl } });
+  });
 
-  const capMic = document.getElementById('capMic');
   if (SR) {
-    let capRec = null, capListening = false;
-    capMic.addEventListener('click', () => {
-      if (capListening) { capRec && capRec.stop(); return; }
-      capRec = new SR(); capRec.lang = 'ko-KR'; capRec.interimResults = true; capRec.continuous = true;
-      const base = capText.value ? capText.value + ' ' : '';
-      capRec.onresult = e => {
+    let rec = null, listening = false;
+    micBtn.addEventListener('click', () => {
+      if (listening) { rec && rec.stop(); return; }
+      rec = new SR(); rec.lang = 'ko-KR'; rec.interimResults = true; rec.continuous = true;
+      const base = composerInput.value ? composerInput.value + ' ' : '';
+      rec.onresult = e => {
         let s = ''; for (let i = e.resultIndex; i < e.results.length; i++) s += e.results[i][0].transcript;
-        capText.value = base + s; grow(capText); refreshCapBtn();
+        composerInput.value = base + s; grow(composerInput);
       };
-      capRec.onend = () => { capListening = false; capMic.classList.remove('rec'); capMic.querySelector('.lbl').textContent = '말하기'; };
-      capRec.onerror = () => { capListening = false; capMic.classList.remove('rec'); capMic.querySelector('.lbl').textContent = '말하기'; };
-      capRec.start(); capListening = true; capMic.classList.add('rec'); capMic.querySelector('.lbl').textContent = '듣는 중… (탭하면 멈춤)';
+      rec.onend = () => { listening = false; micBtn.classList.remove('rec'); updateComposerButtons(); };
+      rec.onerror = () => { listening = false; micBtn.classList.remove('rec'); updateComposerButtons(); };
+      rec.start(); listening = true; micBtn.classList.add('rec');
     });
   } else {
-    capMic.addEventListener('click', () => { capText.focus(); toast('키보드의 🎤 마이크를 눌러 말하세요'); });
+    micBtn.addEventListener('click', () => { composerInput.focus(); toast('키보드의 🎤 마이크를 눌러 말하세요'); });
   }
 
-  document.getElementById('capFile').addEventListener('change', async e => {
-    const f = e.target.files[0]; if (!f) return;
-    capDataUrl = await resizeImage(f, 1600, 0.82);
-    const t = document.getElementById('capThumb'); t.src = capDataUrl; t.style.display = 'block';
-  });
-  capSave.addEventListener('click', async () => {
-    const text = capText.value.trim(); if (!text) return;
-    const tags = document.getElementById('capTags').value.split(',').map(s => s.trim()).filter(Boolean);
-    capSave.disabled = true; capSave.textContent = '기록 중…';
-    const payload = { text, dataUrl: capDataUrl, tags };
-    try {
-      const r = await fetch('/api/thoughts', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload) });
-      if (!r.ok) throw new Error((await r.json()).error || '실패');
-      setOnlineState(true);
-      toast('기록했어요');
-    } catch (e) {
-      setOnlineState(false);
-      const p = pendingList(); p.push(Object.assign({ type: 'thought' }, payload)); savePending(p);
-      toast('오프라인 — 연결되면 자동으로 저장돼요');
+  async function sendComposer() {
+    const val = composerInput.value.trim();
+    if (!val || sendMsgBtn.disabled) return;
+    const wasVoice = micBtn.classList.contains('rec');
+    sendMsgBtn.disabled = true;
+
+    const q = current ? qById(current) : null;
+    const usedChoices = pendingChoiceSelections.slice();
+    pendingChoiceSelections = [];
+
+    appendMessage({ id: 'a-' + Date.now() + '-' + Math.random().toString(36).slice(2, 5), role: 'user', kind: 'answer', text: val, voice: wasVoice });
+    composerInput.value = ''; grow(composerInput); updateComposerButtons();
+
+    if (q) {
+      addToSession({ node: q.node, question: q.q, answer: val, mode: usedChoices.length ? 'choice' : (wasVoice ? 'voice' : 'text') });
+      current = null; persist();
+      appendMessage({ id: 'ghost-' + Date.now(), role: 'ai', kind: 'ghost', text: '✦ 다음 질문을 만들고 있어요…' });
+
+      let followUpQs = [];
+      if (usedChoices.length && q.followUps) {
+        usedChoices.forEach(ch => {
+          const fus = q.followUps[ch];
+          if (fus) fus.forEach(fu => followUpQs.push(Object.assign({}, fu, { id: 'fu-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) })));
+        });
+      }
+      let confirmText = null;
+      if (!followUpQs.length) {
+        const ai = await tryGenerateFollowUp(q, val);
+        if (ai) { followUpQs = [ai]; confirmText = ai.confirm; }
+      }
+      removeGhost();
+      if (confirmText) appendMessage({ id: 'c-' + Date.now(), role: 'ai', kind: 'confirm', text: confirmText });
+
+      if (followUpQs.length) {
+        addDyn(followUpQs);
+        queue = followUpQs.map(x => x.id).concat(queue);
+        current = followUpQs[0].id;
+      } else {
+        current = pullRelated(q.node);
+      }
+      persist();
+      ensureCurrent();
+    } else {
+      appendMessage({ id: 'react-' + Date.now(), role: 'ai', kind: 'react', text: REACT_LINES[Math.floor(Math.random() * REACT_LINES.length)], captureRef: { text: val, photo: null } });
     }
-    capText.value = ''; document.getElementById('capTags').value = '';
-    document.getElementById('capFile').value = '';
-    document.getElementById('capThumb').style.display = 'none';
-    capDataUrl = null;
-    capSave.textContent = '기록하기'; refreshCapBtn();
-  });
-
-  /* ---------- 음성 인터뷰 모드: TTS로 질문을 읽고, 음성인식으로 계속 받는다 ---------- */
-  const vmEl = document.getElementById('voiceMode');
-  const vmQuestionEl = document.getElementById('vmQuestion');
-  const vmStatusEl = document.getElementById('vmStatus');
-  const vmTranscriptEl = document.getElementById('vmTranscript');
-  const vmMicBtn = document.getElementById('vmMicBtn');
-  const vmNextBtn = document.getElementById('vmNext');
-  const TTS = 'speechSynthesis' in window;
-
-  let vmActive = false, vmRec = null, vmListening = false, vmCurrentId = null, vmMuted = LS.get('iv-vm-muted') === '1';
-  document.getElementById('vmMute').textContent = vmMuted ? '🔇' : '🔊';
-
-  function vmSpeak(text, onEnd) {
-    if (!TTS || vmMuted) { onEnd && onEnd(); return; }
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'ko-KR'; u.rate = 1.0;
-    u.onend = () => onEnd && onEnd();
-    u.onerror = () => onEnd && onEnd();
-    speechSynthesis.speak(u);
+    sendMsgBtn.disabled = false;
   }
-
-  function vmListen() {
-    if (!SR) { vmStatusEl.textContent = '이 브라우저는 음성인식을 지원하지 않아요. 아래 완료를 눌러 진행하세요.'; return; }
-    vmRec = new SR(); vmRec.lang = 'ko-KR'; vmRec.interimResults = true; vmRec.continuous = true;
-    let base = '';
-    vmRec.onresult = e => {
-      let s = ''; for (let i = e.resultIndex; i < e.results.length; i++) s += e.results[i][0].transcript;
-      vmTranscriptEl.textContent = (base + s).trim();
-      vmNextBtn.disabled = !vmTranscriptEl.textContent.trim();
-    };
-    vmRec.onend = () => { vmListening = false; vmMicBtn.classList.remove('listening'); };
-    vmRec.onerror = () => { vmListening = false; vmMicBtn.classList.remove('listening'); };
-    vmRec.start(); vmListening = true; vmMicBtn.classList.add('listening');
-    vmStatusEl.textContent = '듣고 있어요 — 편하게 답하고 완료를 눌러주세요';
-  }
-
-  function vmShowCurrent() {
-    refill();
-    vmCurrentId = slots[0] || null;
-    const q = vmCurrentId ? qById(vmCurrentId) : null;
-    vmTranscriptEl.textContent = '';
-    vmNextBtn.disabled = true;
-    if (vmRec) { try { vmRec.stop(); } catch (e) {} }
-    if (!q) {
-      vmQuestionEl.textContent = paused ? '질문을 멈췄어요.' : '질문이 바닥났어요 — 대단해요!';
-      vmStatusEl.textContent = '';
-      return;
-    }
-    vmQuestionEl.textContent = q.q;
-    vmStatusEl.textContent = '읽어주고 있어요…';
-    vmSpeak(q.q, () => { if (vmActive) vmListen(); });
-  }
-
-  function vmOpen() {
-    vmActive = true;
-    vmEl.classList.add('open');
-    vmShowCurrent();
-  }
-  function vmClose() {
-    vmActive = false;
-    if (vmRec) { try { vmRec.stop(); } catch (e) {} }
-    speechSynthesis && speechSynthesis.cancel();
-    vmEl.classList.remove('open');
-    render();
-  }
-
-  document.getElementById('vmOpenBtn').addEventListener('click', vmOpen);
-  document.getElementById('vmExit').addEventListener('click', vmClose);
-  document.getElementById('vmMute').addEventListener('click', () => {
-    vmMuted = !vmMuted; LS.set('iv-vm-muted', vmMuted ? '1' : '0');
-    document.getElementById('vmMute').textContent = vmMuted ? '🔇' : '🔊';
-    if (vmMuted) speechSynthesis && speechSynthesis.cancel();
-  });
-  vmMicBtn.addEventListener('click', () => {
-    if (vmListening) { vmRec && vmRec.stop(); } else { vmListen(); }
-  });
-  document.getElementById('vmSkip').addEventListener('click', () => {
-    if (!vmCurrentId) return;
-    if (vmRec) { try { vmRec.stop(); } catch (e) {} }
-    resolveSlot(vmCurrentId, {});
-    if (vmActive) vmShowCurrent();
-  });
-  vmNextBtn.addEventListener('click', async () => {
-    const val = vmTranscriptEl.textContent.trim();
-    if (!val || !vmCurrentId) return;
-    if (vmRec) { try { vmRec.stop(); } catch (e) {} }
-    vmNextBtn.disabled = true;
-    vmStatusEl.textContent = '다음 질문을 준비하고 있어요…';
-    const q = qById(vmCurrentId);
-    const nextId = await completeQuestion(q, 'voice', val, []);
-    if (!vmActive) return;
-    vmCurrentId = nextId || slots[0] || null;
-    const nq = vmCurrentId ? qById(vmCurrentId) : null;
-    vmTranscriptEl.textContent = '';
-    if (!nq) { vmShowCurrent(); return; }
-    vmQuestionEl.textContent = nq.q;
-    vmStatusEl.textContent = '읽어주고 있어요…';
-    vmSpeak(nq.q, () => { if (vmActive) vmListen(); });
-  });
+  sendMsgBtn.addEventListener('click', sendComposer);
 
   document.getElementById('sendBtn').addEventListener('click', openReview);
   document.getElementById('reviewClose').addEventListener('click', closeReview);
@@ -871,7 +732,10 @@
     toast(ok ? ('오늘 인터뷰 ' + items.length + '개 전송했어요') : '오프라인 — 연결되면 자동으로 전송돼요');
   });
 
-  render();
+  renderThread();
+  ensureCurrent();
+  renderSessionBar();
+  renderLater();
   document.getElementById('offlineBar').classList.toggle('show', !navigator.onLine);
   updatePendingBadge();
   if (navigator.onLine) flushPending();
