@@ -668,9 +668,16 @@
     p.vy = (Math.random() - 0.5) * t.drift;
   }
 
+  let prevW = 0, prevH = 0;
   function resize() {
     const rect = canvas.getBoundingClientRect();
-    W = rect.width; H = rect.height;
+    const newW = rect.width, newH = rect.height;
+    // 화면 폭이 바뀌면(모바일↔데스크톱 등) 기존 단어 위치를 새 캔버스 크기에 맞춰 비율대로 다시 펼침 — 안 그러면 좁은 화면 때 위치가 넓은 화면에서 한쪽에 뭉쳐 보임
+    if (prevW && prevH && particles.length && (prevW !== newW || prevH !== newH)) {
+      const rx = newW / prevW, ry = newH / prevH;
+      particles.forEach(p => { p.x *= rx; p.y *= ry; });
+    }
+    W = newW; H = newH;
     canvas.width = W * DPR; canvas.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     if (!particles.length) initParticles();
@@ -678,6 +685,7 @@
       p.x = Math.min(Math.max(p.x, 44), W - 44);
       p.y = Math.min(Math.max(p.y, 28), H - 18);
     });
+    prevW = W; prevH = H;
   }
 
   function draw() {
