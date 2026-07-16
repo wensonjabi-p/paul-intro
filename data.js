@@ -1,5 +1,5 @@
 /* =========================================================================
-   Paul Bhang — Thought Constellation : DATA (single source of truth)
+   Paul Bhang — Fragments of Thought : DATA (single source of truth)
    -------------------------------------------------------------------------
    이 파일 하나만 고치면 사이트가 자랍니다. HTML/엔진은 건드릴 필요 없음.
 
@@ -30,6 +30,7 @@ const DATA = {
     faces: 'LINGUIST · TRADER · MAKER · EDUCATOR · STORYTELLER · EXPLORER',
     email: 'bikeryhz@hotmail.com',
     location: 'Hangzhou, China · Incheon, Korea',
+    contentAsOf: '2026.07.17',
   },
 
   nodes: [

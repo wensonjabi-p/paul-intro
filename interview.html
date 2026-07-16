@@ -104,7 +104,7 @@
   <div id="offlineBar">📡 오프라인 — 답변은 계속 저장되고, 연결되면 자동으로 동기화돼요<span class="n" id="pendingN" style="display:none"></span></div>
   <header>
     <div class="header-row">
-      <div class="brand">Thought Constellation</div>
+      <div class="brand">Fragments of Thought</div>
       <div class="header-links">
         <a href="index.html">공개 페이지</a>
         <a href="admin.html">관리자</a>
@@ -198,7 +198,7 @@
   const THEMES = [
     { name: '다크', bg: '#050419', ink: '#edebe6' },
     { name: '세피아', bg: '#1a1512', ink: '#e8dcc8' },
-    { name: '블랙', bg: '#000000', ink: '#e4e4e4' },
+    { name: '화이트', bg: '#ffffff', ink: '#1a1a1a' },
     { name: '그레이', bg: '#1c1c1e', ink: '#d6d6db' },
     { name: '라이트', bg: '#f5f0e6', ink: '#2a2620' },
   ];
@@ -633,9 +633,10 @@
   }
 
   function renderStatusBar() {
-    document.getElementById('queueInfo').textContent = paused ? '질문 받기를 멈췄어요' : ('다음 질문 대기 중 · ' + queue.length + '개');
+    document.getElementById('queueInfo').textContent = paused ? '새 질문 안 받는 중 · 자유롭게 기록만' : ('다음 질문 대기 중 · ' + queue.length + '개');
     const pb = document.getElementById('pauseBtn');
-    pb.textContent = paused ? '▶ 다시 받기' : '⏸ 잠시 멈추기';
+    pb.textContent = paused ? '▶ 질문 다시 받기' : '⏸ 질문 그만 받기';
+    pb.title = paused ? '눌러서 새 질문을 다시 받기 시작해요' : '눌러서 새 질문 받기를 멈춰요 — 사진·메모는 계속 남길 수 있어요';
     pb.classList.toggle('sel', paused);
   }
 

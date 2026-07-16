@@ -12,6 +12,7 @@ const DATA_ZH = {
     faces: '语言者 · 贸易人 · 匠人 · 教育者 · 讲故事的人 · 探索者',
     email: 'bikeryhz@hotmail.com',
     location: '中国杭州 · 韩国仁川',
+    contentAsOf: '2026.07.17',
   },
 
   nodes: [

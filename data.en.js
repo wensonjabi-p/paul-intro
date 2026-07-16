@@ -12,6 +12,7 @@ const DATA_EN = {
     faces: 'LINGUIST · TRADER · MAKER · EDUCATOR · STORYTELLER · EXPLORER',
     email: 'bikeryhz@hotmail.com',
     location: 'Hangzhou, China · Incheon, Korea',
+    contentAsOf: '2026.07.17',
   },
 
   nodes: [

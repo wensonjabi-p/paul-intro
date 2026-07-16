@@ -1,4 +1,4 @@
-# Paul Bhang — Thought Constellation
+# Paul Bhang — Fragments of Thought
 
 인터랙티브 자기소개 페이지. 머릿속 단어들을 성좌처럼 띄우고, 방문자가 단어를 골라 조합하면
 실제 커리어 여정(The Atlas, 8 chapters)과 최근의 생각이 합성되어 나타납니다.

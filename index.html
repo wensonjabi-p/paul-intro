@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paul Bhang — 생각의 성좌</title>
+<title>Paul Bhang — 생각의 파편들</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #201f1d;
@@ -148,6 +148,36 @@
     border-radius: 16px; cursor: pointer; transition: all 0.25s; letter-spacing: 0.03em;
   }
   .chip:hover { border-color: var(--accent); color: var(--accent); }
+
+  .card-make-btn {
+    margin-top: 22px; background: none; border: 1px solid var(--accent-dim); color: var(--accent);
+    font-family: inherit; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 20px;
+    cursor: pointer; letter-spacing: 0.03em; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .card-make-btn:hover { background: rgba(201,164,92,0.1); }
+  .card-maker {
+    margin-top: 26px; border-top: 1px solid var(--line); padding-top: 26px;
+  }
+  .card-maker .cm-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .card-maker .cm-title { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); }
+  .card-maker .cm-close {
+    background: none; border: none; color: var(--faint); font-size: 13px; cursor: pointer; padding: 4px 8px;
+  }
+  .card-maker .cm-close:hover { color: var(--ink); }
+  .cm-status { color: var(--muted); font-size: 14px; padding: 20px 0; }
+  .cm-row { display: flex; gap: 18px; overflow-x: auto; padding-bottom: 10px; }
+  .cm-card { flex: 0 0 auto; text-align: center; }
+  .cm-card canvas {
+    width: 220px; height: auto; border-radius: 10px; border: 1px solid var(--line); display: block;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.35);
+  }
+  .cm-card .cm-lang { margin-top: 10px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+  .cm-card .cm-btns { margin-top: 8px; display: flex; gap: 6px; justify-content: center; }
+  .cm-card .cm-btns button {
+    background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
+    font-size: 11.5px; padding: 6px 11px; border-radius: 14px; cursor: pointer; transition: all 0.2s;
+  }
+  .cm-card .cm-btns button:hover { border-color: var(--accent-dim); color: var(--accent); }
 
   .synth-title {
     font-family: var(--font-display); font-size: clamp(22px, 3.2vw, 34px); font-weight: 700; line-height: 1.3;
@@ -363,6 +393,7 @@
   </div>
 
   <div class="synthesis" id="synthesis"></div>
+  <div class="card-maker" id="card-maker" style="display:none;"></div>
 </section>
 
 <section class="feed">
@@ -448,6 +479,11 @@
       dateToday: '오늘', dateYesterday: '어제',
       dateDaysAgo: n => n + '일 전', dateWeeksAgo: n => n + '주 전', dateMonthsAgo: n => n + '개월 전',
       alertEmptyThought: '생각을 입력해주세요.',
+      cardMakeBtn: '🪪 카드로 만들기', cardMakerTitle: '한국어 · English · 中文 3장 생성', cardClose: '닫기',
+      cardGenerating: '카드를 엮고 있어요…', cardGenError: '카드를 만들지 못했어요. 잠시 후 다시 시도해주세요.',
+      cardDownload: '다운로드', cardShare: '공유', cardShared: '공유됨',
+      cardAsOf: '기록 기준', cardMadeOn: '카드 생성', cardQrCaption: '스캔해서 사이트 방문',
+      cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
     },
     en: {
       legend: { core: 'Me', place: 'Places That Changed Me', associative: 'Related Words', wildcard: 'Odd Hooks' },
@@ -489,6 +525,11 @@
       dateWeeksAgo: n => n + (n === 1 ? ' week ago' : ' weeks ago'),
       dateMonthsAgo: n => n + (n === 1 ? ' month ago' : ' months ago'),
       alertEmptyThought: 'Please write a thought first.',
+      cardMakeBtn: '🪪 Make a card', cardMakerTitle: '3 cards — 한국어 · English · 中文', cardClose: 'Close',
+      cardGenerating: 'Weaving your cards…', cardGenError: "Couldn't make the cards. Please try again in a moment.",
+      cardDownload: 'Download', cardShare: 'Share', cardShared: 'Shared',
+      cardAsOf: 'As of', cardMadeOn: 'Card made', cardQrCaption: 'Scan to visit',
+      cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
     },
     zh: {
       legend: { core: '我', place: '改变我的地方', associative: '关联词', wildcard: '奇怪的钩子' },
@@ -528,6 +569,11 @@
       dateToday: '今天', dateYesterday: '昨天',
       dateDaysAgo: n => n + '天前', dateWeeksAgo: n => n + '周前', dateMonthsAgo: n => n + '个月前',
       alertEmptyThought: '请先写下想法。',
+      cardMakeBtn: '🪪 制作卡片', cardMakerTitle: '生成三张卡片 · 한국어 · English · 中文', cardClose: '关闭',
+      cardGenerating: '正在制作卡片…', cardGenError: '卡片制作失败，请稍后重试。',
+      cardDownload: '下载', cardShare: '分享', cardShared: '已分享',
+      cardAsOf: '内容截至', cardMadeOn: '卡片制作于', cardQrCaption: '扫码访问网站',
+      cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
     },
   };
 
@@ -548,7 +594,7 @@
     document.getElementById('p-hero').innerHTML = P.hero1 + '<br><span class="dim">' + P.hero2 + '</span>';
     document.getElementById('p-sub').innerHTML = P.heroSub;
     document.getElementById('p-faces').textContent = P.faces;
-    document.getElementById('p-credit').textContent = P.name.toUpperCase() + ' · THOUGHT CONSTELLATION · 2026';
+    document.getElementById('p-credit').textContent = P.name.toUpperCase() + ' · FRAGMENTS OF THOUGHT · 2026';
     document.getElementById('feed-lede').textContent = u.feedLede;
 
     document.getElementById('p-leg-core').textContent = u.legend.core;
@@ -821,6 +867,7 @@
     const el = document.getElementById('synthesis');
     document.getElementById('sky-hint').style.opacity = state.selected.length ? '0' : '1';
     document.getElementById('sky-deselect').style.display = state.selected.length ? 'inline-block' : 'none';
+    closeCardMaker();
 
     if (!state.selected.length) {
       state.activeCombo = null;
@@ -863,6 +910,7 @@
     if (JSON.stringify(state.selected) !== JSON.stringify(ids)) return; // 그 사이 선택이 바뀌었으면 버림
     const usedAI = !!paragraph;
     if (!paragraph) paragraph = fallbackSynthesis(ids, sel);
+    else state.activeSynthText = { ids: ids.slice(), lang: LANG, text: paragraph };
     const avgScore = sel.reduce((s, n) => s + factScoreOf(n), 0) / (sel.length || 1);
     // AI 합성은 각 단어의 사실 조각을 새로 엮어 쓴 글이라 원본보다 살짝 낮게, 폴백(문장 이어붙이기)은 원문 그대로라 원래 점수 유지.
     const shownScore = usedAI ? avgScore * 0.85 : avgScore;
@@ -871,7 +919,8 @@
       factBarHtml(shownScore) +
       '<div class="prose" style="margin-top:20px;">' + paragraph + '</div>' +
       '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsSynth + '</span>' +
-      sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
+      sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>' +
+      cardMakeBtnHtml();
     bindChips(el);
     attachPhoto(el, ids);
   }
@@ -925,8 +974,13 @@
     h += '<div class="prose">' + combo.story + '</div>';
     h += '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsCurated + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
+    h += cardMakeBtnHtml();
     h += '</div>';
     return h;
+  }
+
+  function cardMakeBtnHtml() {
+    return '<button class="card-make-btn" id="card-make-btn" type="button">' + UI[LANG].cardMakeBtn + '</button>';
   }
 
   function renderSingle(n) {
@@ -947,6 +1001,7 @@
       h += '<div class="related-row"><span class="lbl">' + UI[LANG].relatedLinked + '</span>' +
         links.map(id => '<span class="chip" data-id="' + id + '">' + labelOf(id) + '</span>').join('') + '</div>';
     }
+    h += cardMakeBtnHtml();
     h += '</div>';
     return h;
   }
@@ -1051,6 +1106,279 @@
       '<img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(SHARE_URL) + '" alt="QR" />' +
       '<div class="qr-cap">' + UI[LANG].shareQrCaption + '</div>';
     shareQr.style.display = 'block';
+  });
+
+  // ---- 카드 만들기 ----
+  let cmToken = 0;
+
+  function closeCardMaker() {
+    cmToken++;
+    const panel = document.getElementById('card-maker');
+    panel.style.display = 'none';
+    panel.innerHTML = '';
+  }
+
+  function findComboIn(ids, dataset) {
+    const set = [...ids].sort().join('|');
+    return ((dataset && dataset.combos) || []).find(c => [...c.ids].sort().join('|') === set) || null;
+  }
+
+  async function getTrilingualCardText(ids) {
+    const langs = ['ko', 'en', 'zh'];
+    if (ids.length === 1) {
+      const id = ids[0];
+      const out = {};
+      langs.forEach(l => {
+        const n = ((DATASETS[l] && DATASETS[l].nodes) || []).find(x => x.id === id);
+        out[l] = { title: n ? n.label : id, story: n ? n.story : '', era: n ? (n.era || '') : '' };
+      });
+      return out;
+    }
+    const curated = findComboIn(ids, DATASETS.ko);
+    if (curated) {
+      const out = {};
+      langs.forEach(l => {
+        const c = findComboIn(ids, DATASETS[l]) || curated;
+        out[l] = { title: c.title, story: c.story, era: '' };
+      });
+      return out;
+    }
+    const cached = state.activeSynthText;
+    const results = await Promise.all(langs.map(async l => {
+      const nodes = ids.map(id => ((DATASETS[l] && DATASETS[l].nodes) || []).find(x => x.id === id)).filter(Boolean);
+      const title = nodes.map(n => n.label).join(' · ');
+      if (l === LANG && cached && cached.lang === LANG && JSON.stringify(cached.ids) === JSON.stringify(ids)) {
+        return { title, story: cached.text, era: '' };
+      }
+      try {
+        const r = await fetch('/api/synthesize-combo', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ lang: l, nodes: nodes.map(n => ({ id: n.id, label: n.label, type: n.type, story: n.story })) }),
+        });
+        const d = await r.json();
+        return { title, story: d.synthesis || nodes.map(n => n.story).join(' '), era: '' };
+      } catch (e) {
+        return { title, story: nodes.map(n => n.story).join(' '), era: '' };
+      }
+    }));
+    return { ko: results[0], en: results[1], zh: results[2] };
+  }
+
+  function wrapText(ctx, text, maxWidth) {
+    const lines = [];
+    text.split('\n').forEach(para => {
+      let line = '';
+      for (const ch of para) {
+        const test = line + ch;
+        if (ctx.measureText(test).width > maxWidth && line) {
+          lines.push(line);
+          line = ch;
+        } else {
+          line = test;
+        }
+      }
+      lines.push(line);
+    });
+    return lines;
+  }
+
+  function loadImage(src) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => resolve(img);
+      img.onerror = reject;
+      img.src = src;
+    });
+  }
+
+  async function drawCard(lang, content) {
+    const u = UI[lang] || UI.ko;
+    const W = 1080, H = 1920, marginX = 96;
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+
+    const bg = ctx.createLinearGradient(0, 0, W, H);
+    bg.addColorStop(0, '#26241f'); bg.addColorStop(0.55, '#302e29'); bg.addColorStop(1, '#1c1b19');
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+
+    for (let i = 0; i < 2400; i++) {
+      const x = Math.random() * W, y = Math.random() * H, a = Math.random() * 0.05;
+      ctx.fillStyle = Math.random() > 0.5 ? 'rgba(255,255,255,' + a + ')' : 'rgba(0,0,0,' + (a * 1.3) + ')';
+      ctx.fillRect(x, y, 1.6, 1.6);
+    }
+    const vg = ctx.createRadialGradient(W * 0.5, H * 0.4, W * 0.25, W * 0.5, H * 0.5, W * 0.95);
+    vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.4)');
+    ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
+
+    ctx.textBaseline = 'alphabetic';
+    let y = 150;
+
+    ctx.fillStyle = '#c9a45c';
+    ctx.font = '600 26px "Space Mono", monospace';
+    ctx.fillText('FRAGMENTS OF THOUGHT', marginX, y);
+    if (content.era) {
+      ctx.fillStyle = 'rgba(232,229,221,0.55)';
+      ctx.font = '400 24px "Space Mono", monospace';
+      const eraW = ctx.measureText(content.era).width;
+      ctx.fillText(content.era, W - marginX - eraW, y);
+    }
+
+    y += 70;
+    ctx.strokeStyle = 'rgba(232,229,221,0.15)'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(marginX, y); ctx.lineTo(W - marginX, y); ctx.stroke();
+
+    y += 78;
+    ctx.fillStyle = '#e8e5dd';
+    ctx.font = '700 62px "Archivo Black", sans-serif';
+    wrapText(ctx, content.title, W - marginX * 2).slice(0, 3).forEach(l => { ctx.fillText(l, marginX, y); y += 72; });
+
+    y += 36;
+    let fontSize = 40, storyLines;
+    const maxStoryHeight = H - y - 380;
+    do {
+      ctx.font = '400 ' + fontSize + 'px "Space Mono", monospace';
+      storyLines = wrapText(ctx, content.story, W - marginX * 2);
+      if (storyLines.length * (fontSize * 1.65) <= maxStoryHeight || fontSize <= 24) break;
+      fontSize -= 2;
+    } while (true);
+    const lineHeight = fontSize * 1.65;
+    ctx.fillStyle = '#d8d4c9';
+    storyLines.forEach(l => { ctx.fillText(l, marginX, y); y += lineHeight; });
+
+    const footerY = H - 260;
+    ctx.strokeStyle = 'rgba(232,229,221,0.15)';
+    ctx.beginPath(); ctx.moveTo(marginX, footerY); ctx.lineTo(W - marginX, footerY); ctx.stroke();
+
+    ctx.fillStyle = 'rgba(232,229,221,0.55)';
+    ctx.font = '400 22px "Space Mono", monospace';
+    ctx.fillText(u.cardAsOf + ' ' + content.asOfDate, marginX, footerY + 46);
+    ctx.fillText(u.cardMadeOn + ' ' + content.madeDate, marginX, footerY + 80);
+
+    ctx.fillStyle = '#c9a45c';
+    ctx.font = '700 56px "Caveat", cursive';
+    ctx.fillText('Paul Bhang', marginX, footerY + 162);
+
+    ctx.fillStyle = 'rgba(232,229,221,0.7)';
+    ctx.font = '400 24px "Space Mono", monospace';
+    ctx.fillText('wensonjabi.com', marginX, footerY + 202);
+
+    if (lang === 'zh' && content.qrImg) {
+      const qrSize = 150;
+      ctx.drawImage(content.qrImg, W - marginX - qrSize, footerY + 20, qrSize, qrSize);
+      ctx.fillStyle = 'rgba(232,229,221,0.55)';
+      ctx.font = '400 18px "Space Mono", monospace';
+      const capW = ctx.measureText(u.cardQrCaption).width;
+      ctx.fillText(u.cardQrCaption, W - marginX - Math.max(capW, qrSize) / 2 - Math.min(capW, qrSize) / 2, footerY + 195);
+    }
+
+    return canvas;
+  }
+
+  function downloadCanvas(canvas, lang) {
+    try {
+      const url = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = url; a.download = 'fragments-of-thought-' + lang + '.png';
+      document.body.appendChild(a); a.click(); a.remove();
+    } catch (e) { alert(UI[LANG].cardGenError); }
+  }
+
+  function canvasToBlob(canvas) {
+    return new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+  }
+
+  async function shareCanvas(canvas, lang, btn) {
+    try {
+      const blob = await canvasToBlob(canvas);
+      if (!blob) throw new Error('no-blob');
+      const file = new File([blob], 'fragments-of-thought-' + lang + '.png', { type: 'image/png' });
+      if (navigator.canShare && !navigator.canShare({ files: [file] })) {
+        downloadCanvas(canvas, lang);
+        return;
+      }
+      await navigator.share({ files: [file], title: 'Fragments of Thought', url: SHARE_URL });
+      const prev = btn.textContent;
+      btn.textContent = UI[LANG].cardShared;
+      setTimeout(() => { btn.textContent = prev; }, 1600);
+    } catch (e) {
+      if (e && e.name !== 'AbortError') downloadCanvas(canvas, lang);
+    }
+  }
+
+  async function openCardMaker(ids) {
+    if (!ids.length) return;
+    const panel = document.getElementById('card-maker');
+    const myToken = ++cmToken;
+    panel.style.display = 'block';
+    panel.innerHTML = '<div class="cm-status">' + UI[LANG].cardGenerating + '</div>';
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    try {
+      const content = await getTrilingualCardText(ids);
+      if (myToken !== cmToken) return;
+
+      const today = new Date();
+      const dateStr = today.getFullYear() + '.' + String(today.getMonth() + 1).padStart(2, '0') + '.' + String(today.getDate()).padStart(2, '0');
+      const asOfDate = (D.profile && D.profile.contentAsOf) || dateStr;
+
+      try {
+        await Promise.all([
+          document.fonts.load('700 62px "Archivo Black"'),
+          document.fonts.load('400 40px "Space Mono"'),
+          document.fonts.load('700 56px "Caveat"'),
+        ]);
+      } catch (e) {}
+
+      let qrImg = null;
+      try { qrImg = await loadImage('https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(SHARE_URL)); } catch (e) {}
+      if (myToken !== cmToken) return;
+
+      const langs = ['ko', 'en', 'zh'];
+      const canvases = {};
+      for (const l of langs) {
+        canvases[l] = await drawCard(l, Object.assign({}, content[l], { asOfDate, madeDate: dateStr, qrImg: l === 'zh' ? qrImg : null }));
+      }
+      if (myToken !== cmToken) return;
+
+      panel.innerHTML =
+        '<div class="cm-head"><span class="cm-title">' + UI[LANG].cardMakerTitle + '</span>' +
+        '<button class="cm-close" type="button" id="cm-close-btn">✕ ' + UI[LANG].cardClose + '</button></div>' +
+        '<div class="cm-row" id="cm-row"></div>';
+      const row = document.getElementById('cm-row');
+      langs.forEach(l => {
+        const wrap = document.createElement('div');
+        wrap.className = 'cm-card';
+        wrap.appendChild(canvases[l]);
+        const langLabel = document.createElement('div');
+        langLabel.className = 'cm-lang';
+        langLabel.textContent = UI[LANG].cardLangLabel[l];
+        wrap.appendChild(langLabel);
+        const btns = document.createElement('div');
+        btns.className = 'cm-btns';
+        const dlBtn = document.createElement('button');
+        dlBtn.type = 'button'; dlBtn.textContent = UI[LANG].cardDownload;
+        dlBtn.addEventListener('click', () => downloadCanvas(canvases[l], l));
+        btns.appendChild(dlBtn);
+        if (navigator.share) {
+          const shBtn = document.createElement('button');
+          shBtn.type = 'button'; shBtn.textContent = UI[LANG].cardShare;
+          shBtn.addEventListener('click', () => shareCanvas(canvases[l], l, shBtn));
+          btns.appendChild(shBtn);
+        }
+        wrap.appendChild(btns);
+        row.appendChild(wrap);
+      });
+      document.getElementById('cm-close-btn').addEventListener('click', closeCardMaker);
+    } catch (e) {
+      if (myToken !== cmToken) return;
+      panel.innerHTML = '<div class="cm-status">' + UI[LANG].cardGenError + '</div>';
+    }
+  }
+
+  document.getElementById('synthesis').addEventListener('click', e => {
+    if (e.target.closest('#card-make-btn')) openCardMaker(state.selected.slice());
   });
 
   window.__pb = { state, toggleSelect, nodeById, setLanguage };
