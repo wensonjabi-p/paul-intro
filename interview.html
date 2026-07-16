@@ -114,12 +114,12 @@
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  /* voice interview mode */
-  #voiceMode {
+  /* fullscreen overlays (voice interview + review) */
+  .overlay {
     display: none; position: fixed; inset: 0; background: var(--bg); z-index: 50;
     flex-direction: column; padding: 20px 20px calc(20px + env(safe-area-inset-bottom));
   }
-  #voiceMode.open { display: flex; }
+  .overlay.open { display: flex; }
   .vm-top { display: flex; justify-content: space-between; align-items: center; }
   .vm-mute, .vm-exit {
     background: var(--bg-soft); border: 1px solid var(--line); color: var(--muted); font-family: inherit;
@@ -145,6 +145,12 @@
     font-size: 14.5px; padding: 14px; border-radius: 10px; cursor: pointer; flex: 2;
   }
   .vm-next:disabled { opacity: 0.4; }
+
+  .review-list { flex: 1; overflow-y: auto; padding: 6px 0 10px; }
+  .review-item { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  .review-q { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  .review-a { font-size: 15px; line-height: 1.6; white-space: pre-wrap; }
+  .review-x { margin-top: 8px; background: none; border: 1px solid var(--line); color: var(--faint); font-family: inherit; font-size: 11.5px; padding: 5px 10px; border-radius: 7px; cursor: pointer; }
 
   /* offline banner */
   #offlineBar {
@@ -192,6 +198,10 @@
   </section>
 
   <section class="block">
+    <div class="queuebar" id="sessionBar" style="display:none">
+      <span id="sessionInfo"></span>
+      <button class="pausebtn" id="sendBtn" style="border-color:var(--accent); color:var(--accent);">최종 보내기</button>
+    </div>
     <div class="queuebar">
       <span id="queueInfo"></span>
       <button class="pausebtn" id="pauseBtn"></button>
@@ -202,7 +212,7 @@
   </section>
 </div>
 
-<div id="voiceMode">
+<div id="voiceMode" class="overlay">
   <div class="vm-top">
     <div class="brand">음성 인터뷰</div>
     <div style="display:flex; gap:8px;">
@@ -219,6 +229,18 @@
   <div class="vm-foot">
     <button class="vm-skip" id="vmSkip">건너뛰기</button>
     <button class="vm-next" id="vmNext">완료 → 다음</button>
+  </div>
+</div>
+
+<div id="reviewMode" class="overlay">
+  <div class="vm-top">
+    <div class="brand" id="reviewTitle">오늘의 인터뷰 정리</div>
+    <button class="vm-exit" id="reviewClose">닫기</button>
+  </div>
+  <div class="review-list" id="reviewList"></div>
+  <div class="vm-foot">
+    <button class="vm-skip" id="reviewBack">돌아가서 계속 답하기</button>
+    <button class="vm-next" id="reviewSend">이상 없음 · 전송</button>
   </div>
 </div>
 
@@ -341,7 +363,8 @@
   async function completeQuestion(q, mode, val, selectedChoicesSnapshot) {
     const item = { node: q.node, question: q.q, answer: val, mode };
     pushHistory([item]);
-    syncToServer([item]).then(ok => toast(ok ? '저장했어요' : '휴대폰에 저장됨(서버 연동 대기)'));
+    addToSession(item);
+    toast('답변을 담았어요 · 다 하시면 최종 보내기를 눌러주세요');
 
     slots = slots.filter(x => x !== q.id);
     persist();
@@ -396,6 +419,48 @@
   /* ---------- history + server sync ---------- */
   function historyList() { return loadArr('iv-history'); }
   function pushHistory(items) { const h = historyList(); items.forEach(i => h.push(i)); saveArr('iv-history', h); }
+
+  /* ---------- 하루 세션: 완료한 답변은 즉시 전송하지 않고 여기 모아뒀다가, "최종 보내기"에서 한 번에 검토 후 전송 ---------- */
+  function sessionList() { return loadArr('iv-session'); }
+  function addToSession(item) { const s = sessionList(); s.push(item); saveArr('iv-session', s); renderSessionBar(); }
+  function renderSessionBar() {
+    const items = sessionList();
+    const bar = document.getElementById('sessionBar');
+    if (!items.length) { bar.style.display = 'none'; return; }
+    bar.style.display = 'flex';
+    document.getElementById('sessionInfo').textContent = '오늘 답변 ' + items.length + '개 준비됨';
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+  function renderReview() {
+    const items = sessionList();
+    document.getElementById('reviewTitle').textContent = '오늘의 인터뷰 정리 · ' + items.length + '개';
+    const list = document.getElementById('reviewList');
+    list.innerHTML = '';
+    if (!items.length) {
+      list.innerHTML = '<div class="empty-slot">아직 답한 질문이 없어요.</div>';
+      return;
+    }
+    items.forEach((it, i) => {
+      const row = document.createElement('div'); row.className = 'review-item';
+      row.innerHTML = '<div class="review-q">' + escapeHtml(it.node) + '</div>' +
+        '<div style="font-size:13.5px; color:var(--ink); font-weight:600; margin-bottom:6px;">' + escapeHtml(it.question) + '</div>' +
+        '<div class="review-a">' + escapeHtml(it.answer) + '</div>' +
+        '<button class="review-x" data-i="' + i + '">✕ 이 답변 빼기</button>';
+      row.querySelector('.review-x').addEventListener('click', () => {
+        const cur = sessionList();
+        cur.splice(i, 1);
+        saveArr('iv-session', cur);
+        renderReview();
+        renderSessionBar();
+      });
+      list.appendChild(row);
+    });
+  }
+  function openReview() { renderReview(); document.getElementById('reviewMode').classList.add('open'); }
+  function closeReview() { document.getElementById('reviewMode').classList.remove('open'); }
+
   /* ---------- 오프라인 대비: 서버 저장 실패한 것들은 큐에 쌓아뒀다가 연결되면 자동 재전송 ---------- */
   function pendingList() { return loadArr('iv-pending'); }
   function savePending(p) { saveArr('iv-pending', p); updatePendingBadge(); }
@@ -450,6 +515,7 @@
   function grow(ta) { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; }
 
   function render() {
+    renderSessionBar();
     renderQueueBar();
     renderSlots();
     renderLater();
@@ -787,6 +853,22 @@
     vmQuestionEl.textContent = nq.q;
     vmStatusEl.textContent = '읽어주고 있어요…';
     vmSpeak(nq.q, () => { if (vmActive) vmListen(); });
+  });
+
+  document.getElementById('sendBtn').addEventListener('click', openReview);
+  document.getElementById('reviewClose').addEventListener('click', closeReview);
+  document.getElementById('reviewBack').addEventListener('click', closeReview);
+  document.getElementById('reviewSend').addEventListener('click', async () => {
+    const items = sessionList();
+    if (!items.length) return;
+    const btn = document.getElementById('reviewSend');
+    btn.disabled = true; btn.textContent = '보내는 중…';
+    const ok = await syncToServer(items);
+    saveArr('iv-session', []);
+    btn.disabled = false; btn.textContent = '이상 없음 · 전송';
+    closeReview();
+    renderSessionBar();
+    toast(ok ? ('오늘 인터뷰 ' + items.length + '개 전송했어요') : '오프라인 — 연결되면 자동으로 전송돼요');
   });
 
   render();
