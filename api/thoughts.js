@@ -4,13 +4,18 @@ const { put } = require('@vercel/blob');
 const { isValidSession, kvListAll, kvReplaceAll, kvPushJSON } = require('./_lib');
 
 module.exports = async (req, res) => {
-  if (req.method !== 'POST' && !isValidSession(req.headers.cookie)) {
+  const admin = isValidSession(req.headers.cookie);
+
+  // GET은 공개 — 단, 비로그인 방문자에게는 발행(published)된 항목만 보여준다.
+  // POST(빠른 기록)도 로그인 없이 열려 있음. 그 외(PATCH/DELETE)는 관리자 전용.
+  if (req.method !== 'GET' && req.method !== 'POST' && !admin) {
     return res.status(401).json({ error: '로그인이 필요해요.' });
   }
 
   if (req.method === 'GET') {
     const all = await kvListAll('thoughts:captured');
-    return res.status(200).json({ thoughts: all.sort((a, b) => b.createdAt - a.createdAt) });
+    const visible = admin ? all : all.filter(t => t.published !== false);
+    return res.status(200).json({ thoughts: visible.sort((a, b) => b.createdAt - a.createdAt) });
   }
 
   let body = req.body;

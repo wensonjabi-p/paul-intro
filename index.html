@@ -631,6 +631,11 @@
   function buildBaseThoughts() {
     return D.thoughts.map(t => ({ id: t.id, text: t.text, tags: t.tags, addedAt: NOW - t.daysAgo * 86400000 }));
   }
+  // 서버에서 라이브로 받아오는 발행된 생각들 — 인터뷰/기록에서 올라온 최신 콘텐츠. data.js를 손대지 않아도 여기서 갱신됨.
+  let remoteThoughts = [];
+  function composeThoughts() {
+    return [...remoteThoughts, ...saved.thoughts, ...buildBaseThoughts()];
+  }
   const VISIBLE_COUNT = 13; // 한 번에 보이는 단어 수 (10~15 사이)
   function pickVisibleSubset(count, keepIds) {
     const pool = state.nodes.map(n => n.id).filter(id => !keepIds.includes(id));
@@ -644,7 +649,7 @@
 
   const state = {
     nodes: D.nodes,
-    thoughts: [...saved.thoughts, ...buildBaseThoughts()],
+    thoughts: composeThoughts(),
     selected: [],
     visibleIds: [],
     activeCombo: null,
@@ -664,7 +669,7 @@
     P = D.profile;
     try { localStorage.setItem(LANG_KEY, LANG); } catch (e) {}
     state.nodes = D.nodes;
-    state.thoughts = [...saved.thoughts, ...buildBaseThoughts()];
+    state.thoughts = composeThoughts();
     renderStaticText();
     initParticles();
     renderSynthesis();
@@ -1025,8 +1030,39 @@
   }
 
   function renderFeed() {
-    document.getElementById('feed-list').innerHTML =
-      [...state.thoughts].sort((a, b) => b.addedAt - a.addedAt).slice(0, 3).map(thoughtCard).join('');
+    // 서버에서 발행된 최신 생각을 먼저(최신순), 그 다음 로컬/기본 생각으로 채운다 — 최근 인터뷰 내용이 항상 앞에 오도록.
+    const remote = [...remoteThoughts].sort((a, b) => b.addedAt - a.addedAt);
+    const rest = [...saved.thoughts, ...buildBaseThoughts()].sort((a, b) => b.addedAt - a.addedAt);
+    const feed = [...remote, ...rest].slice(0, 3);
+    document.getElementById('feed-list').innerHTML = feed.map(thoughtCard).join('');
+  }
+
+  async function fetchRemoteThoughts() {
+    try {
+      const r = await fetch('/api/thoughts');
+      if (!r.ok) return;
+      const d = await r.json();
+      if (!Array.isArray(d.thoughts) || !d.thoughts.length) return;
+      remoteThoughts = d.thoughts.map(t => ({
+        id: t.id, text: t.text, tags: Array.isArray(t.tags) ? t.tags : [],
+        addedAt: t.createdAt || Date.now(), remote: true,
+      }));
+      state.thoughts = composeThoughts();
+      surfaceRecentTags();
+      renderFeed();
+    } catch (e) { /* 서버 준비 전이면 조용히 기본 콘텐츠만 보여줌 */ }
+  }
+
+  // 최근 발행된 생각에 달린 태그 중 성좌 노드로 존재하는 것을, 아직 아무것도 안 골랐을 때 우선 노출시킨다.
+  function surfaceRecentTags() {
+    if (state.selected.length) return;
+    const recentTags = [];
+    remoteThoughts.slice(0, 6).forEach(t => (t.tags || []).forEach(tag => {
+      if (nodeById(tag) && !recentTags.includes(tag)) recentTags.push(tag);
+    }));
+    if (!recentTags.length) return;
+    state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, recentTags.slice(0, 5));
+    initParticles();
   }
 
   document.getElementById('contact-form').addEventListener('submit', async e => {
@@ -1391,6 +1427,7 @@
   window.addEventListener('resize', resize);
   renderStaticText();
   resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop();
+  fetchRemoteThoughts();
 })();
 </script>
 </body>

@@ -387,13 +387,13 @@
     d.batches.forEach(b => {
       const box = document.createElement('div');
       box.className = 'batch';
-      box.innerHTML =
-        '<div style="display:flex; justify-content:space-between; align-items:center;">' +
-        '<div class="when">' + new Date(b.savedAt).toLocaleString('ko-KR') + '</div>' +
-        '<button data-act="del" style="background:none;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:11px;padding:5px 10px;border-radius:6px;cursor:pointer;">삭제</button>' +
-        '</div>' +
-        b.items.map(it => '<div class="qa"><div class="qq">[' + it.node + '] ' + it.question + '</div><div class="aa">' + it.answer + '</div></div>').join('');
-      box.querySelector('[data-act="del"]').addEventListener('click', async () => {
+      const head = document.createElement('div');
+      head.style.cssText = 'display:flex; justify-content:space-between; align-items:center;';
+      const when = document.createElement('div'); when.className = 'when'; when.textContent = new Date(b.savedAt).toLocaleString('ko-KR');
+      const delBtn = document.createElement('button');
+      delBtn.textContent = '삭제';
+      delBtn.style.cssText = 'background:none;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:11px;padding:5px 10px;border-radius:6px;cursor:pointer;';
+      delBtn.addEventListener('click', async () => {
         if (!confirm('이 답변을 삭제할까요?')) return;
         try {
           await fetch('/api/interview-list', { method: 'DELETE', headers: { 'Content-Type': 'application/json' },
@@ -401,7 +401,88 @@
           loadInterview();
         } catch (e) { toast('오프라인 — 연결 후 다시 시도해주세요'); }
       });
+      head.appendChild(when); head.appendChild(delBtn);
+      box.appendChild(head);
+      b.items.forEach(it => box.appendChild(buildQA(it)));
       el.appendChild(box);
+    });
+  }
+
+  // 인터뷰 답변 한 개 → "사이트에 올리기" 버튼이 달린 블록. 다듬기→확인/수정→발행.
+  function buildQA(it) {
+    const qa = document.createElement('div');
+    qa.className = 'qa';
+    const qq = document.createElement('div'); qq.className = 'qq'; qq.textContent = '[' + (it.node || '') + '] ' + (it.question || '');
+    const aa = document.createElement('div'); aa.className = 'aa'; aa.textContent = it.answer || '';
+    const row = document.createElement('div'); row.style.cssText = 'margin-top:8px;';
+    const pubBtn = document.createElement('button');
+    pubBtn.textContent = '✦ 사이트에 올리기';
+    pubBtn.style.cssText = 'background:none;border:1px solid var(--accent);color:var(--accent);font-family:inherit;font-size:11px;padding:5px 10px;border-radius:6px;cursor:pointer;';
+    row.appendChild(pubBtn);
+    qa.appendChild(qq); qa.appendChild(aa); qa.appendChild(row);
+    pubBtn.addEventListener('click', () => startPublish(it, qa, pubBtn, row));
+    return qa;
+  }
+
+  async function startPublish(it, qa, pubBtn, row) {
+    pubBtn.disabled = true; pubBtn.textContent = '다듬는 중…';
+    let polished;
+    try {
+      const r = await fetch('/api/polish-thought', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: it.question, answer: it.answer, node: it.node }),
+      });
+      if (r.status === 401) { toast('로그인이 풀렸어요 — 다시 로그인해주세요'); pubBtn.disabled = false; pubBtn.textContent = '✦ 사이트에 올리기'; return; }
+      const d = await r.json();
+      polished = d.polished || { text: it.answer, tags: it.node ? [it.node] : [] };
+    } catch (e) {
+      toast('오프라인 — 연결 후 다시 시도해주세요'); pubBtn.disabled = false; pubBtn.textContent = '✦ 사이트에 올리기'; return;
+    }
+
+    const editor = document.createElement('div');
+    editor.style.cssText = 'margin-top:8px; display:flex; flex-direction:column; gap:6px;';
+    const ta = document.createElement('textarea');
+    ta.value = polished.text || '';
+    ta.style.cssText = 'width:100%; min-height:70px; background:var(--bg); border:1px solid var(--line); border-radius:8px; color:var(--ink); font-family:inherit; font-size:14px; padding:10px; resize:vertical; box-sizing:border-box;';
+    const tagsIn = document.createElement('input');
+    tagsIn.value = (polished.tags || []).join(', ');
+    tagsIn.placeholder = '관련 키워드 (쉼표 구분 — 성좌에 반영)';
+    tagsIn.style.cssText = 'width:100%; background:var(--bg); border:1px solid var(--line); border-radius:8px; color:var(--ink); font-family:inherit; font-size:13px; padding:9px 10px; box-sizing:border-box;';
+    const btnRow = document.createElement('div'); btnRow.style.cssText = 'display:flex; gap:6px;';
+    const okBtn = document.createElement('button'); okBtn.textContent = '올리기';
+    okBtn.style.cssText = 'background:var(--accent);color:#1a1712;border:none;font-family:inherit;font-weight:700;font-size:12px;padding:7px 16px;border-radius:6px;cursor:pointer;';
+    const cancelBtn = document.createElement('button'); cancelBtn.textContent = '취소';
+    cancelBtn.style.cssText = 'background:none;border:1px solid var(--line);color:var(--muted);font-family:inherit;font-size:12px;padding:7px 14px;border-radius:6px;cursor:pointer;';
+    btnRow.appendChild(okBtn); btnRow.appendChild(cancelBtn);
+    editor.appendChild(ta); editor.appendChild(tagsIn); editor.appendChild(btnRow);
+    row.style.display = 'none';
+    qa.appendChild(editor);
+
+    cancelBtn.addEventListener('click', () => {
+      editor.remove(); row.style.display = ''; pubBtn.disabled = false; pubBtn.textContent = '✦ 사이트에 올리기';
+    });
+    okBtn.addEventListener('click', async () => {
+      const text = ta.value.trim();
+      if (!text) { toast('내용이 비어 있어요'); return; }
+      const tags = tagsIn.value.split(',').map(s => s.trim()).filter(Boolean);
+      okBtn.disabled = true; okBtn.textContent = '올리는 중…';
+      try {
+        const r = await fetch('/api/thoughts', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text, tags }),
+        });
+        const d = await r.json().catch(() => ({}));
+        if (r.ok && d.ok) {
+          editor.remove();
+          row.innerHTML = '';
+          const done = document.createElement('span');
+          done.textContent = '✓ 사이트에 올렸어요 — 공개 페이지 "최근의 생각들"에 바로 보여요';
+          done.style.cssText = 'color:var(--accent); font-size:12px;';
+          row.appendChild(done); row.style.display = '';
+        } else {
+          toast('발행 실패: ' + (d.error || r.status)); okBtn.disabled = false; okBtn.textContent = '올리기';
+        }
+      } catch (e) { toast('오프라인 — 연결 후 다시 시도해주세요'); okBtn.disabled = false; okBtn.textContent = '올리기'; }
     });
   }
 
