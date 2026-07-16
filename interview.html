@@ -709,6 +709,12 @@
     sendMsgBtn.style.display = composerInput.value.trim().length > 0 ? 'flex' : 'none';
   }
   composerInput.addEventListener('input', () => { grow(composerInput); updateComposerButtons(); });
+  composerInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
+      e.preventDefault();
+      sendComposer();
+    }
+  });
 
   function resizeImage(file, maxDim, quality) {
     return new Promise((resolve, reject) => {
