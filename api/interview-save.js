@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
       await kvPushJSON('thoughts:captured', {
         id: thoughtId, text: result.polished.text, photoUrl: null,
         tags: result.polished.tags || [], tagLabels: result.polished.tagLabels || {},
-        createdAt: Date.now(), published: true,
+        createdAt: Date.now(), published: true, source: 'interview',
       });
       return Object.assign({}, it, { autoPublished: true, thoughtId });
     } catch (e) {

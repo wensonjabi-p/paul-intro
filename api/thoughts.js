@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
   if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = {}; } }
 
   if (req.method === 'POST') {
-    const { text, dataUrl, tags, tagLabels } = body || {};
+    const { text, dataUrl, tags, tagLabels, source } = body || {};
     // text는 빠른 기록처럼 단일 문자열이거나, 다듬어진 3개 언어 {ko,en,zh}일 수 있다.
     const isTrilingual = text && typeof text === 'object';
     const emptyText = isTrilingual ? !(text.ko || text.en || text.zh) : !text || !String(text).trim();
@@ -46,6 +46,9 @@ module.exports = async (req, res) => {
       text: normalizedText, photoUrl, tags: Array.isArray(tags) ? tags : [],
       tagLabels: (tagLabels && typeof tagLabels === 'object') ? tagLabels : {},
       createdAt: Date.now(), published: true,
+      // 'interview' — AI가 다듬고 라벨까지 붙인 인터뷰 답변만. 빠른 기록(자유 태그)은 표시 안 함 —
+      // 성좌에 자동으로 새 클릭 가능한 단어로 편입되는 건 이 표시가 있는 것만(공개페이지에서 판단).
+      source: source === 'interview' ? 'interview' : undefined,
     };
     await kvPushJSON('thoughts:captured', record);
     return res.status(200).json({ ok: true, thought: record });

@@ -505,7 +505,7 @@
       try {
         const r = await fetch('/api/thoughts', {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ text, tags, tagLabels: polished.tagLabels || {} }),
+          body: JSON.stringify({ text, tags, tagLabels: polished.tagLabels || {}, source: 'interview' }),
         });
         const d = await r.json().catch(() => ({}));
         if (r.ok && d.ok) {
