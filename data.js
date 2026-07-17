@@ -233,6 +233,18 @@ const DATA = {
     { id: 'plogging', label: '플로깅', type: 'wildcard', status: 'seed', fresh: true,
       story: '달리거나 걸으면서 쓰레기를 줍는 일. 몸과 길이 같이 깨끗해지는 감각. 혼자도 하고, 사람을 모아 하기도 한다.',
       links: ['ecoventure', 'trash', 'hangzhou'] },
+    { id: 'wine', label: '와인', type: 'wildcard', status: 'told', fresh: true,
+      story: '프라하에서 가방을 도둑맞은 뒤, 유럽의 겨울은 매섭게 추웠다. 하루는 가장 싼 테이블 와인 한 병과 케밥을 이불 속에서 먹는 것으로 저물었다. 한국이었다면 부담스러웠을 사치가, 추위 속에서는 사소한 행복이 됐다.',
+      links: ['prague', 'winter', 'vienna'] },
+    { id: 'backpack', label: '백팩', type: 'wildcard', status: 'told', fresh: true,
+      story: '비엔나 시절 주말이면 백팩 하나만 메고 금요일 퇴근길에 바로 버스나 기차에 올랐다. 자고 일어나면 다른 나라에 도착해 있는 그 감각이 매번 경이로웠다.',
+      links: ['travel', 'vienna', 'nomad', 'freedom'] },
+    { id: 'container', label: '컨테이너', type: 'wildcard', status: 'told', fresh: true,
+      story: '포트모르즈비 목재 공장 부지 안, 한국에서 기계를 실어온 무역 컨테이너를 개조해 집으로 살았다. 밤이 되면 전기가 끊기고, 아주 길고 깜깜한 밤이 이어졌다.',
+      links: ['png', 'survival', 'timber'] },
+    { id: 'honorific', label: '존댓말', type: 'associative', status: 'told', fresh: true,
+      story: '영어를 쓸 때 가장 자연스러운 내가 나오는 이유 중 하나는 존댓말이 없기 때문이다. 한국어는 내가 가르치는 언어인데도 구사할 때 가장 조심스럽다 — 뉘앙스와 존댓말이 겹치는 자리에서, 말 한마디가 관계를 바꿀 수 있다는 걸 안다.',
+      links: ['multiling', 'english', 'nuance', 'teaching'] },
   ],
 
   /* 시간이 흐르는 생각들 — 특정 노드에 걸려 있음 */

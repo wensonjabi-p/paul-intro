@@ -211,6 +211,18 @@ const DATA_EN = {
     { id: 'plogging', label: 'Plogging', type: 'wildcard', status: 'seed', fresh: true,
       story: "Running or walking while picking up trash. The feeling of body and path getting cleaner together. Alone, or gathering people to do it.",
       links: ['ecoventure', 'trash', 'hangzhou'] },
+    { id: 'wine', label: 'Wine', type: 'wildcard', status: 'told', fresh: true,
+      story: "After my bag was stolen in Prague, a European winter was brutal. Most days ended with the cheapest table wine and a kebab, eaten in bed under a blanket. A luxury I couldn't have justified in Korea became a small happiness in the cold.",
+      links: ['prague', 'winter', 'vienna'] },
+    { id: 'backpack', label: 'Backpack', type: 'wildcard', status: 'told', fresh: true,
+      story: "In Vienna, I'd shoulder a single backpack on Friday after work and jump straight on a bus or train. Waking up in another country felt like a marvel every time.",
+      links: ['travel', 'vienna', 'nomad', 'freedom'] },
+    { id: 'container', label: 'Container', type: 'wildcard', status: 'told', fresh: true,
+      story: "Inside the timber mill compound in Port Moresby, I lived in a house converted from a trade container that had shipped machinery from Korea. At night the power cut out, and very long, pitch-black nights followed.",
+      links: ['png', 'survival', 'timber'] },
+    { id: 'honorific', label: 'Honorific', type: 'associative', status: 'told', fresh: true,
+      story: "One reason the most natural me comes out in English is that there are no honorifics. Korean is the language I teach, yet I speak it most carefully — where nuance and honorifics overlap, a single phrase can shift a relationship.",
+      links: ['multiling', 'english', 'nuance', 'teaching'] },
   ],
 
   thoughts: [

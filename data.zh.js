@@ -211,6 +211,18 @@ const DATA_ZH = {
     { id: 'plogging', label: '捡跑', type: 'wildcard', status: 'seed', fresh: true,
       story: '边跑边走边捡垃圾。身体和路一起变干净的感觉。可以一个人做，也可以把人聚起来一起做。',
       links: ['ecoventure', 'trash', 'hangzhou'] },
+    { id: 'wine', label: '酒', type: 'wildcard', status: 'told', fresh: true,
+      story: '在布拉格行李被偷之后，欧洲的冬天格外凛冽。一天往往以最便宜的餐酒和烤肉卷、裹在被子里吃完收场。在韩国会觉得奢侈的东西，在寒冷里成了小小的幸福。',
+      links: ['prague', 'winter', 'vienna'] },
+    { id: 'backpack', label: '背包', type: 'wildcard', status: 'told', fresh: true,
+      story: '在维也纳时，周五下班就背起背包跳上巴士或火车。一觉醒来到了另一个国家——每次都觉得像奇迹。',
+      links: ['travel', 'vienna', 'nomad', 'freedom'] },
+    { id: 'container', label: '货柜', type: 'wildcard', status: 'told', fresh: true,
+      story: '在莫尔兹比港的木材厂区内，我住在由从韩国运来机器的贸易货柜改造成的房子里。入夜后断电，漫长漆黑的夜随之而来。',
+      links: ['png', 'survival', 'timber'] },
+    { id: 'honorific', label: '敬语', type: 'associative', status: 'told', fresh: true,
+      story: '说英语时最自然的我会出现，原因之一是没有敬语。韩语是我教的语言，却是我说得最谨慎的语言——在语感与敬语重叠之处，一句话就能改变关系。',
+      links: ['multiling', 'english', 'nuance', 'teaching'] },
   ],
 
   thoughts: [
