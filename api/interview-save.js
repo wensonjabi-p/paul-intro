@@ -20,7 +20,8 @@ module.exports = async (req, res) => {
       const thoughtId = 'th-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
       await kvPushJSON('thoughts:captured', {
         id: thoughtId, text: result.polished.text, photoUrl: null,
-        tags: result.polished.tags || [], createdAt: Date.now(), published: true,
+        tags: result.polished.tags || [], tagLabels: result.polished.tagLabels || {},
+        createdAt: Date.now(), published: true,
       });
       return Object.assign({}, it, { autoPublished: true, thoughtId });
     } catch (e) {

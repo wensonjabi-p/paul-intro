@@ -665,6 +665,40 @@
     return v || '';
   }
 
+  // 새로 발행된 생각들 중 기존 성좌 노드에 없는 태그는, 그 자체로 클릭 가능한 단어(엉뚱한 갈고리 부류)로
+  // 성좌에 편입시킨다 — 안 그러면 새 인터뷰 내용의 키워드가 "최근의 생각들" 피드에만 보이고
+  // 성좌에는 영원히 안 나타나게 된다.
+  let dynamicByLang = { ko: [], en: [], zh: [] };
+  function buildDynamicNodes() {
+    const byTag = {};
+    remoteThoughts.forEach(t => {
+      (t.tags || []).forEach(tag => {
+        if (!tag || (DATASETS.ko.nodes || []).some(n => n.id === tag)) return; // 이미 curated 노드로 존재
+        if (!byTag[tag]) byTag[tag] = { labels: null, storiesByLang: { ko: [], en: [], zh: [] } };
+        const entry = byTag[tag];
+        if (!entry.labels && t.tagLabels && t.tagLabels[tag]) entry.labels = t.tagLabels[tag];
+        const rawText = t.text;
+        ['ko', 'en', 'zh'].forEach(l => {
+          const txt = (rawText && typeof rawText === 'object') ? rawText[l] : (l === 'ko' ? rawText : null);
+          if (txt && entry.storiesByLang[l].length < 3) entry.storiesByLang[l].push(txt);
+        });
+      });
+    });
+    const out = { ko: [], en: [], zh: [] };
+    Object.keys(byTag).forEach(tag => {
+      const entry = byTag[tag];
+      ['ko', 'en', 'zh'].forEach(l => {
+        const label = (entry.labels && entry.labels[l]) || tag;
+        const story = entry.storiesByLang[l].join(' ') || entry.storiesByLang.ko.join(' ') || tag;
+        out[l].push({ id: tag, label, type: 'wildcard', status: 'told', fresh: true, story, links: [] });
+      });
+    });
+    dynamicByLang = out;
+  }
+  function nodesFor(lang) {
+    return ((DATASETS[lang] && DATASETS[lang].nodes) || []).concat(dynamicByLang[lang] || []);
+  }
+
   function persist() {
     localStorage.setItem(LS_KEY, JSON.stringify({ thoughts: state.thoughts.filter(t => t.user) }));
   }
@@ -675,7 +709,7 @@
     D = DATASETS[LANG];
     P = D.profile;
     try { localStorage.setItem(LANG_KEY, LANG); } catch (e) {}
-    state.nodes = D.nodes;
+    state.nodes = nodesFor(LANG);
     state.thoughts = composeThoughts();
     renderStaticText();
     initParticles();
@@ -1054,8 +1088,11 @@
       if (!Array.isArray(d.thoughts) || !d.thoughts.length) return;
       remoteThoughts = d.thoughts.map(t => ({
         id: t.id, text: t.text, tags: Array.isArray(t.tags) ? t.tags : [],
+        tagLabels: (t.tagLabels && typeof t.tagLabels === 'object') ? t.tagLabels : {},
         addedAt: t.createdAt || Date.now(), remote: true,
       }));
+      buildDynamicNodes();
+      state.nodes = nodesFor(LANG);
       state.thoughts = composeThoughts();
       surfaceRecentTags();
       renderFeed();
@@ -1180,7 +1217,7 @@
       const id = ids[0];
       const out = {};
       langs.forEach(l => {
-        const n = ((DATASETS[l] && DATASETS[l].nodes) || []).find(x => x.id === id);
+        const n = nodesFor(l).find(x => x.id === id);
         out[l] = { title: n ? n.label : id, story: n ? n.story : '', era: n ? (n.era || '') : '' };
       });
       return out;
@@ -1196,7 +1233,7 @@
     }
     const cached = state.activeSynthText;
     const results = await Promise.all(langs.map(async l => {
-      const nodes = ids.map(id => ((DATASETS[l] && DATASETS[l].nodes) || []).find(x => x.id === id)).filter(Boolean);
+      const nodes = ids.map(id => nodesFor(l).find(x => x.id === id)).filter(Boolean);
       const title = nodes.map(n => n.label).join(' · ');
       if (l === LANG && cached && cached.lang === LANG && JSON.stringify(cached.ids) === JSON.stringify(ids)) {
         return { title, story: cached.text, era: '' };

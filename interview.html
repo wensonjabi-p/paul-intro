@@ -376,8 +376,11 @@
     if (remain.length < p.length) toast('밀려있던 기록 ' + (p.length - remain.length) + '개 동기화했어요');
   }
 
-  /* ---------- AI 후속 질문 ---------- */
-  async function tryGenerateFollowUp(q, answerText) {
+  /* ---------- AI 의도 판단 + 후속 질문 ----------
+     범용 문장("그거 말고 다른 얘기", "지금까지 정리해줘", "잠깐만", 잡담 등)이 엉뚱한 질문의 답으로
+     잘못 저장되지 않도록, 먼저 이 메시지가 진짜 답변인지 다른 의도인지 판단한 뒤(answer가 아니면
+     저장하지 않음), 답변일 때만 그 자리에서 후속 질문까지 같이 받아온다 — 왕복 한 번으로 처리. */
+  async function classifyReply(q, answerText) {
     try {
       const r = await fetch('/api/generate-followup', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -385,8 +388,12 @@
       });
       if (!r.ok) return null;
       const d = await r.json();
-      if (!d.followup) return null;
-      return Object.assign({}, d.followup, { id: 'ai-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) });
+      if (!d.intent) return null;
+      if (d.intent === 'answer') {
+        if (!d.followup) return null;
+        return { intent: 'answer', followup: Object.assign({}, d.followup, { id: 'ai-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) }) };
+      }
+      return { intent: d.intent, reply: d.reply || null, topicHint: d.topicHint || null };
     } catch (e) { return null; }
   }
 
@@ -492,8 +499,7 @@
     }
   }
 
-  async function handleStopIntent(val, wasVoice) {
-    appendMessage({ id: 'stop-' + Date.now() + '-' + Math.random().toString(36).slice(2, 5), role: 'user', kind: 'answer', text: val, voice: wasVoice });
+  function offerWrapUp() {
     const items = sessionList();
     if (!items.length) {
       appendMessage({ id: 'stopnote-' + Date.now(), role: 'ai', kind: 'system', text: '오늘은 아직 정리할 이야기가 없어요. 언제든 다시 이야기해요.' });
@@ -503,6 +509,21 @@
       appendMessage({ id, role: 'ai', kind: 'upload-prompt', text: '오늘은 ' + topics + ' 이야기를 나눴어요 (' + items.length + '개). 정리해서 보내드릴까요?', chainContinue: false });
       pendingMeta = { id, type: 'upload' };
     }
+  }
+
+  function offerRecap() {
+    const items = sessionList();
+    if (!items.length) {
+      appendMessage({ id: 'recap-' + Date.now(), role: 'ai', kind: 'system', text: '오늘은 아직 정리할 만큼 나눈 이야기가 없어요.' });
+      return;
+    }
+    const topics = [...new Set(items.map(i => i.node))].slice(0, 8).join(', ');
+    appendMessage({ id: 'recap-' + Date.now(), role: 'ai', kind: 'system', text: '지금까지 오늘은 ' + topics + ' 이야기를 나눴어요 (' + items.length + '개). 계속 이어갈까요?' });
+  }
+
+  async function handleStopIntent(val, wasVoice) {
+    appendMessage({ id: 'stop-' + Date.now() + '-' + Math.random().toString(36).slice(2, 5), role: 'user', kind: 'answer', text: val, voice: wasVoice });
+    offerWrapUp();
   }
 
   function startSessionGreeting() {
@@ -854,10 +875,6 @@
     appendMessage({ id: 'a-' + Date.now() + '-' + Math.random().toString(36).slice(2, 5), role: 'user', kind: 'answer', text: val, voice: wasVoice });
 
     if (q) {
-      addToSession({ node: q.node, question: q.q, answer: val, mode: usedChoices.length ? 'choice' : (wasVoice ? 'voice' : 'text') });
-      current = null; persist();
-      appendMessage({ id: 'ghost-' + Date.now(), role: 'ai', kind: 'ghost', text: '✦ 다음 질문을 만들고 있어요…' });
-
       let followUpQs = [];
       if (usedChoices.length && q.followUps) {
         usedChoices.forEach(ch => {
@@ -865,23 +882,66 @@
           if (fus) fus.forEach(fu => followUpQs.push(Object.assign({}, fu, { id: 'fu-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6) })));
         });
       }
-      let confirmText = null;
-      if (!followUpQs.length) {
-        const ai = await tryGenerateFollowUp(q, val);
-        if (ai) { followUpQs = [ai]; confirmText = ai.confirm; }
-      }
-      removeGhost();
-      if (confirmText) appendMessage({ id: 'c-' + Date.now(), role: 'ai', kind: 'confirm', text: confirmText });
 
-      if (followUpQs.length) {
-        addDyn(followUpQs);
-        queue = followUpQs.map(x => x.id).concat(queue);
-        current = followUpQs[0].id;
-      } else {
-        current = pullRelated(q.node);
+      let confirmText = null;
+      let routedAway = false;
+
+      if (!followUpQs.length) {
+        // 선택지를 눌러 답한 게 아니라 자유 텍스트라면, 진짜 답변인지 다른 의도인지 먼저 판단한다 —
+        // 그래야 "다른 얘기 하고 싶어" 같은 말이 엉뚱한 질문의 답으로 잘못 저장되지 않는다.
+        appendMessage({ id: 'ghost-' + Date.now(), role: 'ai', kind: 'ghost', text: '✦ 생각하고 있어요…' });
+        const handled = await classifyReply(q, val);
+        removeGhost();
+
+        if (handled && handled.intent && handled.intent !== 'answer') {
+          routedAway = true;
+          if (handled.intent === 'stop') {
+            offerWrapUp();
+          } else if (handled.intent === 'pause') {
+            paused = true; LS.set('iv-paused', '1');
+            current = null; persist();
+            renderStatusBar();
+            ensureCurrent(); // "질문을 멈췄어요" 안내는 ensureCurrent가 이미 보여준다
+          } else if (handled.intent === 'topic_change') {
+            const hintId = findQuestionByHint(handled.topicHint || val);
+            if (hintId) {
+              later.unshift(current);
+              current = hintId;
+              queue = queue.filter(id => id !== hintId);
+              persist();
+              appendMessage({ id: 'topic-ack-' + Date.now(), role: 'ai', kind: 'system', text: handled.reply || '네, 그 이야기로 넘어가볼게요.' });
+              ensureCurrent();
+            } else {
+              appendMessage({ id: 'topic-ack-' + Date.now(), role: 'ai', kind: 'system', text: handled.reply || '어떤 이야기인지 조금 더 말해주시겠어요?' });
+            }
+          } else if (handled.intent === 'summarize_request') {
+            offerRecap();
+          } else {
+            // chitchat 등 — 지금 질문은 그대로 두고, 자연스럽게 한 마디만 남긴다.
+            appendMessage({ id: 'chitchat-' + Date.now(), role: 'ai', kind: 'system', text: handled.reply || '네!' });
+          }
+        } else if (handled && handled.intent === 'answer' && handled.followup) {
+          followUpQs = [handled.followup];
+          confirmText = handled.followup.confirm;
+        }
+        // handled === null(AI 실패) → 기존처럼 그냥 답변으로 처리하고 아래로 진행(폴백)
       }
-      persist();
-      ensureCurrent();
+
+      if (!routedAway) {
+        addToSession({ node: q.node, question: q.q, answer: val, mode: usedChoices.length ? 'choice' : (wasVoice ? 'voice' : 'text') });
+        current = null; persist();
+        if (confirmText) appendMessage({ id: 'c-' + Date.now(), role: 'ai', kind: 'confirm', text: confirmText });
+
+        if (followUpQs.length) {
+          addDyn(followUpQs);
+          queue = followUpQs.map(x => x.id).concat(queue);
+          current = followUpQs[0].id;
+        } else {
+          current = pullRelated(q.node);
+        }
+        persist();
+        ensureCurrent();
+      }
     } else {
       appendMessage({ id: 'react-' + Date.now(), role: 'ai', kind: 'react', text: REACT_LINES[Math.floor(Math.random() * REACT_LINES.length)], captureRef: { text: val, photo: null } });
     }

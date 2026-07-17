@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
   if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = {}; } }
 
   if (req.method === 'POST') {
-    const { text, dataUrl, tags } = body || {};
+    const { text, dataUrl, tags, tagLabels } = body || {};
     // text는 빠른 기록처럼 단일 문자열이거나, 다듬어진 3개 언어 {ko,en,zh}일 수 있다.
     const isTrilingual = text && typeof text === 'object';
     const emptyText = isTrilingual ? !(text.ko || text.en || text.zh) : !text || !String(text).trim();
@@ -44,6 +44,7 @@ module.exports = async (req, res) => {
     const record = {
       id: 'th-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
       text: normalizedText, photoUrl, tags: Array.isArray(tags) ? tags : [],
+      tagLabels: (tagLabels && typeof tagLabels === 'object') ? tagLabels : {},
       createdAt: Date.now(), published: true,
     };
     await kvPushJSON('thoughts:captured', record);
