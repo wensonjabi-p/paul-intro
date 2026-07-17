@@ -751,6 +751,9 @@
         vy: (Math.random() - 0.5) * t.drift,
         w: 0,
         freshMul: n.fresh ? 1.55 : 1,
+        pulsePhase: Math.random() * Math.PI * 2,
+        pulseSpeed: 0.006 + Math.random() * 0.012,
+        pulseAmp: 0.05 + Math.random() * 0.05,
       };
     });
   }
@@ -806,7 +809,9 @@
       const isHov = hovered === p.id;
       const comboW = isSel && state.activeCombo && state.activeCombo.weights[p.id];
       const selMul = isSel ? (comboW || 1.25) : 1;
-      const fs = t.size * selMul * p.freshMul * sizeScale;
+      // 은은하게 숨쉬듯 커졌다 작아졌다 — 단어마다 위상·속도가 달라서 다 같이 움직이지 않는다.
+      const pulse = 1 + Math.sin(p.pulsePhase || 0) * (p.pulseAmp || 0);
+      const fs = t.size * selMul * p.freshMul * sizeScale * pulse;
       ctx.font = (isSel ? '700 ' : '400 ') + fs + 'px Pretendard, "Malgun Gothic", sans-serif';
       ctx.textAlign = 'center';
       p.w = ctx.measureText(p.label).width;
@@ -837,7 +842,18 @@
   function stepLoop() {
     particles.forEach(p => {
       p.freshMul += (1 - p.freshMul) * 0.003;
+      p.pulsePhase = (p.pulsePhase || 0) + (p.pulseSpeed || 0.008); // 선택된 단어도 계속 은은하게 숨쉬게
       if (state.selected.includes(p.id)) return;
+
+      const t = TYPE[p.type] || TYPE.core;
+      // 일직선으로 튕기기만 하지 않도록 매 프레임 살짝 무작위로 방향을 흔들어준다 — 자연스럽게 흘러다니는 느낌.
+      p.vx += (Math.random() - 0.5) * t.drift * 0.05;
+      p.vy += (Math.random() - 0.5) * t.drift * 0.05;
+      const maxSpeed = t.drift * 1.8, minSpeed = t.drift * 0.25;
+      const speed = Math.hypot(p.vx, p.vy) || 0.0001;
+      if (speed > maxSpeed) { p.vx = p.vx / speed * maxSpeed; p.vy = p.vy / speed * maxSpeed; }
+      else if (speed < minSpeed) { p.vx = p.vx / speed * minSpeed; p.vy = p.vy / speed * minSpeed; }
+
       p.x += p.vx; p.y += p.vy;
       const hw = p.w / 2 + 14;
       if (p.x < hw || p.x > W - hw) p.vx *= -1;
