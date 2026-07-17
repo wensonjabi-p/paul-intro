@@ -145,16 +145,6 @@
 
   <section id="s-interview">
     <div class="card">
-      <h3>전체 다시 다듬기</h3>
-      <div style="font-size:12.5px; color:var(--muted); margin-bottom:10px; line-height:1.6;">
-        저장된 인터뷰 답변 전체를 최신 기준(맥락이 통하는 문장, 더 구체적인 태그)으로 다시 다듬어서 공개 피드에 반영해요.
-        이미 발행된 항목은 같은 자리에서 문구만 새로 바뀌고, 아직 한 번도 안 올라간 옛 답변은 이번에 새로 올라가요.
-        답변이 많으면 몇 분 걸릴 수 있어요 — 중간에 창을 닫아도 다음에 이어서 할 수 있어요.
-      </div>
-      <button class="btn" id="backfillBtn">전체 다시 다듬기</button>
-      <div id="backfillStatus" style="font-size:12.5px; color:var(--muted); margin-top:10px;"></div>
-    </div>
-    <div class="card">
       <h3>인터뷰 답변 (폰 앱에서 저장된 것)</h3>
       <div id="ivList"><div class="empty">불러오는 중…</div></div>
     </div>
@@ -209,7 +199,7 @@
   });
 
   document.getElementById('logoutBtn').addEventListener('click', async () => {
-    await fetch('/api/admin-logout', { method: 'POST' });
+    await fetch('/api/admin-session', { method: 'DELETE' });
     location.href = '/admin-login.html';
   });
 
@@ -258,7 +248,7 @@
     const tags = document.getElementById('pTags').value.split(',').map(s => s.trim()).filter(Boolean);
     const btn = document.getElementById('pSave'); btn.disabled = true; btn.textContent = '업로드 중…';
     try {
-      const r = await fetch('/api/photos-upload', {
+      const r = await fetch('/api/photos', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ dataUrl: pDataUrl, caption, tags }),
       });
@@ -283,7 +273,7 @@
     grid.innerHTML = '<div class="empty">불러오는 중…</div>';
     let d;
     try {
-      const r = await fetch('/api/photos-manage');
+      const r = await fetch('/api/photos');
       d = await r.json();
       if (!r.ok) {
         if (r.status === 401) { grid.innerHTML = '<div class="empty">로그인이 풀렸어요 — <a href="/admin-login.html" style="color:var(--accent);">다시 로그인</a>해주세요.</div>'; return; }
@@ -315,7 +305,7 @@
         '<button data-act="del">삭제</button></div></div>';
       el.querySelector('[data-act="pub"]').addEventListener('click', async () => {
         try {
-          await fetch('/api/photos-manage', { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
+          await fetch('/api/photos', { method: 'PATCH', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: p.id, published: p.published === false }) });
           loadPhotos();
         } catch (e) { toast('오프라인 — 연결 후 다시 시도해주세요'); }
@@ -323,7 +313,7 @@
       el.querySelector('[data-act="del"]').addEventListener('click', async () => {
         if (!confirm('이 사진을 삭제할까요?')) return;
         try {
-          await fetch('/api/photos-manage', { method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+          await fetch('/api/photos', { method: 'DELETE', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: p.id }) });
           loadPhotos();
         } catch (e) { toast('오프라인 — 연결 후 다시 시도해주세요'); }
@@ -385,45 +375,6 @@
       list.appendChild(el);
     });
   }
-
-  let backfillRunning = false;
-  document.getElementById('backfillBtn').addEventListener('click', async () => {
-    if (backfillRunning) return;
-    backfillRunning = true;
-    const btn = document.getElementById('backfillBtn');
-    const statusEl = document.getElementById('backfillStatus');
-    btn.disabled = true;
-    let offset = 0, totalUpdated = 0, totalCreated = 0, totalFailed = 0, total = null;
-    try {
-      while (true) {
-        statusEl.textContent = total == null
-          ? '시작하는 중…'
-          : `진행 중… ${offset}/${total} (수정 ${totalUpdated} · 신규 발행 ${totalCreated}${totalFailed ? ' · 실패 ' + totalFailed : ''})`;
-        const r = await fetch('/api/backfill-thoughts', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ offset }),
-        });
-        if (r.status === 401) { statusEl.textContent = '로그인이 풀렸어요 — 다시 로그인해주세요.'; break; }
-        if (!r.ok) { statusEl.textContent = '처리 중 오류가 발생했어요. 잠시 후 다시 시도해주세요.'; break; }
-        const d = await r.json();
-        total = d.total;
-        totalUpdated += d.updated; totalCreated += d.created; totalFailed += d.failed;
-        offset = d.nextOffset;
-        if (d.done) {
-          statusEl.textContent = `완료! 총 ${total}개 중 수정 ${totalUpdated}개 · 신규 발행 ${totalCreated}개${totalFailed ? ' · 실패 ' + totalFailed + '개' : ''}. 공개 페이지에 반영됐어요.`;
-          toast('다시 다듬기 완료');
-          break;
-        }
-      }
-    } catch (e) {
-      statusEl.textContent = e instanceof TypeError
-        ? '오프라인이거나 연결이 끊겼어요. 다시 눌러서 이어서 할 수 있어요.'
-        : '처리 중 문제가 생겼어요. 다시 눌러서 이어서 할 수 있어요.';
-    } finally {
-      backfillRunning = false;
-      btn.disabled = false;
-    }
-  });
 
   async function loadInterview() {
     const el = document.getElementById('ivList');
