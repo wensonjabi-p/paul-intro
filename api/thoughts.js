@@ -7,9 +7,11 @@ const { put } = require('@vercel/blob');
 const { isValidSession, kvListAll, kvReplaceAll, kvPushJSON } = require('./_lib');
 const { polishAnswer } = require('./_polish');
 
-const BACKFILL_CHUNK = 8;
+const BACKFILL_MAX_ITEMS = 40; // 한 번에 시도할 최대 개수(상한선 — 시간예산이 보통 먼저 걸림)
+const BACKFILL_TIME_BUDGET_MS = 45000; // 서버리스 함수 시간제한(60초로 설정) 안에서 안전하게 멈추기 위한 예산
 
 async function runBackfill(offset) {
+  const startedAt = Date.now();
   const batches = await kvListAll('interview:answers');
   const thoughts = await kvListAll('thoughts:captured');
   const thoughtById = new Map(thoughts.map(t => [t.id, t]));
@@ -19,10 +21,12 @@ async function runBackfill(offset) {
   batches.forEach((b, bi) => (b.items || []).forEach((it, ii) => flat.push({ bi, ii, it, savedAt: b.savedAt })));
 
   const total = flat.length;
-  const slice = flat.slice(offset, offset + BACKFILL_CHUNK);
-  let updated = 0, created = 0, failed = 0;
+  const slice = flat.slice(offset, offset + BACKFILL_MAX_ITEMS);
+  let updated = 0, created = 0, failed = 0, attempted = 0;
 
   for (const { bi, ii, it, savedAt } of slice) {
+    if (Date.now() - startedAt > BACKFILL_TIME_BUDGET_MS) break; // 시간 다 되면 진행한 만큼만 저장하고 다음 호출에 이어감
+    attempted++;
     try {
       const result = await polishAnswer({ question: it.question, answer: it.answer, node: it.node });
       if (!result) { failed++; continue; }
@@ -50,8 +54,8 @@ async function runBackfill(offset) {
   await kvReplaceAll('thoughts:captured', Array.from(thoughtById.values()));
   await kvReplaceAll('interview:answers', batches);
 
-  const nextOffset = offset + slice.length;
-  return { processedThisRun: slice.length, updated, created, failed, total, nextOffset, done: nextOffset >= total };
+  const nextOffset = offset + attempted;
+  return { processedThisRun: attempted, updated, created, failed, total, nextOffset, done: nextOffset >= total };
 }
 
 module.exports = async (req, res) => {

@@ -386,14 +386,40 @@
     });
   }
 
+  // ---- 전체 다시 다듬기: 화면 꺼짐/연결 끊김에도 최대한 버티도록 ----
+  const BACKFILL_LS_KEY = 'admin-backfill-progress';
   let backfillRunning = false;
-  document.getElementById('backfillBtn').addEventListener('click', async () => {
+  let backfillWakeLock = null;
+
+  async function acquireBackfillWakeLock() {
+    try {
+      if ('wakeLock' in navigator) {
+        backfillWakeLock = await navigator.wakeLock.request('screen');
+        backfillWakeLock.addEventListener('release', () => { backfillWakeLock = null; });
+      }
+    } catch (e) { /* 지원 안 하거나 거부돼도 다듬기 자체는 계속 진행 */ }
+  }
+  function releaseBackfillWakeLock() {
+    if (backfillWakeLock) { backfillWakeLock.release().catch(() => {}); backfillWakeLock = null; }
+  }
+  function saveBackfillProgress(offset, total) {
+    try { localStorage.setItem(BACKFILL_LS_KEY, JSON.stringify({ offset, total })); } catch (e) {}
+  }
+  function clearBackfillProgress() {
+    try { localStorage.removeItem(BACKFILL_LS_KEY); } catch (e) {}
+  }
+  function loadBackfillProgress() {
+    try { return JSON.parse(localStorage.getItem(BACKFILL_LS_KEY)); } catch (e) { return null; }
+  }
+
+  async function runBackfillLoop(startOffset) {
     if (backfillRunning) return;
     backfillRunning = true;
     const btn = document.getElementById('backfillBtn');
     const statusEl = document.getElementById('backfillStatus');
     btn.disabled = true;
-    let offset = 0, totalUpdated = 0, totalCreated = 0, totalFailed = 0, total = null;
+    await acquireBackfillWakeLock(); // 화면이 켜져 있는 동안은 자동으로 안 꺼지게 — 폰이 잠들면서 끊기는 걸 줄여준다.
+    let offset = startOffset, totalUpdated = 0, totalCreated = 0, totalFailed = 0, total = null;
     try {
       while (true) {
         statusEl.textContent = total == null
@@ -403,27 +429,65 @@
           method: 'POST', headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ action: 'backfill', offset }),
         });
-        if (r.status === 401) { statusEl.textContent = '로그인이 풀렸어요 — 다시 로그인해주세요.'; break; }
-        if (!r.ok) { statusEl.textContent = '처리 중 오류가 발생했어요. 잠시 후 다시 시도해주세요.'; break; }
+        if (r.status === 401) { statusEl.textContent = '로그인이 풀렸어요 — 다시 로그인해주세요.'; clearBackfillProgress(); break; }
+        if (!r.ok) {
+          saveBackfillProgress(offset, total);
+          statusEl.textContent = '처리 중 오류가 발생했어요 — 다시 연결되면 자동으로 이어갈게요.';
+          break;
+        }
         const d = await r.json();
         total = d.total;
         totalUpdated += d.updated; totalCreated += d.created; totalFailed += d.failed;
         offset = d.nextOffset;
+        saveBackfillProgress(offset, total);
         if (d.done) {
           statusEl.textContent = `완료! 총 ${total}개 중 수정 ${totalUpdated}개 · 신규 발행 ${totalCreated}개${totalFailed ? ' · 실패 ' + totalFailed + '개' : ''}. 공개 페이지에 반영됐어요.`;
           toast('다시 다듬기 완료');
+          clearBackfillProgress();
           break;
         }
       }
     } catch (e) {
+      saveBackfillProgress(offset, total);
       statusEl.textContent = e instanceof TypeError
-        ? '오프라인이거나 연결이 끊겼어요. 다시 눌러서 이어서 할 수 있어요.'
-        : '처리 중 문제가 생겼어요. 다시 눌러서 이어서 할 수 있어요.';
+        ? '오프라인이에요 — 다시 연결되면 자동으로 이어갈게요.'
+        : '처리 중 문제가 생겼어요 — 곧 자동으로 다시 시도할게요.';
     } finally {
       backfillRunning = false;
       btn.disabled = false;
+      releaseBackfillWakeLock();
+    }
+  }
+
+  document.getElementById('backfillBtn').addEventListener('click', () => {
+    const saved = loadBackfillProgress();
+    runBackfillLoop(saved ? saved.offset : 0);
+  });
+
+  // 연결이 끊겨서 멈췄으면, 다시 온라인이 되는 순간 자동으로 이어서 시작한다.
+  window.addEventListener('online', () => {
+    const saved = loadBackfillProgress();
+    if (saved && !backfillRunning) {
+      toast('연결됐어요 — 다시 다듬기를 이어갈게요');
+      runBackfillLoop(saved.offset);
     }
   });
+
+  // 화면이 꺼졌다 켜지거나 앱을 다시 열었을 때도, 끝내지 못한 진행 상황이 있으면 자동으로 이어서 시작한다.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible' || backfillRunning) return;
+    const saved = loadBackfillProgress();
+    if (saved && navigator.onLine) runBackfillLoop(saved.offset);
+  });
+
+  // 페이지를 새로 열었을 때 이미 진행 중이던 게 있으면 바로 이어서 시작.
+  (function resumeBackfillOnLoad() {
+    const saved = loadBackfillProgress();
+    if (saved && navigator.onLine) {
+      document.getElementById('backfillStatus').textContent = '지난번에 하던 다듬기를 이어갈게요…';
+      runBackfillLoop(saved.offset);
+    }
+  })();
 
   async function loadInterview() {
     const el = document.getElementById('ivList');
