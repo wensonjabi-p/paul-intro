@@ -16,49 +16,55 @@ module.exports = async (req, res) => {
   if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = {}; } }
   const offset = Math.max(0, Number(body && body.offset) || 0);
 
-  const batches = await kvListAll('interview:answers');
-  const thoughts = await kvListAll('thoughts:captured');
-  const thoughtById = new Map(thoughts.map(t => [t.id, t]));
+  try {
+    const batches = await kvListAll('interview:answers');
+    const thoughts = await kvListAll('thoughts:captured');
+    const thoughtById = new Map(thoughts.map(t => [t.id, t]));
 
-  // 전체 답변을 배치 순서대로 평탄화 — offset은 이 순서를 기준으로 한다.
-  const flat = [];
-  batches.forEach((b, bi) => (b.items || []).forEach((it, ii) => flat.push({ bi, ii, it, savedAt: b.savedAt })));
+    // 전체 답변을 배치 순서대로 평탄화 — offset은 이 순서를 기준으로 한다.
+    const flat = [];
+    batches.forEach((b, bi) => (b.items || []).forEach((it, ii) => flat.push({ bi, ii, it, savedAt: b.savedAt })));
 
-  const total = flat.length;
-  const slice = flat.slice(offset, offset + CHUNK);
-  let updated = 0, created = 0, failed = 0;
+    const total = flat.length;
+    const slice = flat.slice(offset, offset + CHUNK);
+    let updated = 0, created = 0, failed = 0;
 
-  for (const { bi, ii, it, savedAt } of slice) {
-    try {
-      const result = await polishAnswer({ question: it.question, answer: it.answer, node: it.node });
-      if (!result) { failed++; continue; }
-      const existingId = it.thoughtId;
-      if (existingId && thoughtById.has(existingId)) {
-        const t = thoughtById.get(existingId);
-        t.text = result.polished.text;
-        t.tags = result.polished.tags || [];
-        t.tagLabels = result.polished.tagLabels || {};
-        t.source = 'interview';
-        updated++;
-      } else {
-        const thoughtId = 'th-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
-        thoughtById.set(thoughtId, {
-          id: thoughtId, text: result.polished.text, photoUrl: null,
-          tags: result.polished.tags || [], tagLabels: result.polished.tagLabels || {},
-          createdAt: savedAt || Date.now(), published: true, source: 'interview',
-        });
-        batches[bi].items[ii] = Object.assign({}, it, { autoPublished: true, thoughtId });
-        created++;
-      }
-    } catch (e) { failed++; }
+    for (const { bi, ii, it, savedAt } of slice) {
+      try {
+        const result = await polishAnswer({ question: it.question, answer: it.answer, node: it.node });
+        if (!result) { failed++; continue; }
+        const existingId = it.thoughtId;
+        if (existingId && thoughtById.has(existingId)) {
+          const t = thoughtById.get(existingId);
+          t.text = result.polished.text;
+          t.tags = result.polished.tags || [];
+          t.tagLabels = result.polished.tagLabels || {};
+          t.source = 'interview';
+          updated++;
+        } else {
+          const thoughtId = 'th-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+          thoughtById.set(thoughtId, {
+            id: thoughtId, text: result.polished.text, photoUrl: null,
+            tags: result.polished.tags || [], tagLabels: result.polished.tagLabels || {},
+            createdAt: savedAt || Date.now(), published: true, source: 'interview',
+          });
+          batches[bi].items[ii] = Object.assign({}, it, { autoPublished: true, thoughtId });
+          created++;
+        }
+      } catch (e) { failed++; }
+    }
+
+    await kvReplaceAll('thoughts:captured', Array.from(thoughtById.values()));
+    await kvReplaceAll('interview:answers', batches);
+
+    const nextOffset = offset + slice.length;
+    res.status(200).json({
+      processedThisRun: slice.length, updated, created, failed,
+      total, nextOffset, done: nextOffset >= total,
+    });
+  } catch (e) {
+    // KV 일시 장애 등으로 여기서 죽으면 응답이 JSON이 아니게 되어, 관리자 화면이 "오프라인"으로
+    // 잘못 표시하게 된다 — 반드시 유효한 JSON 에러로 돌려줘서 다시 눌러보라고 안내할 수 있게 한다.
+    res.status(503).json({ error: 'storage not ready: ' + e.message });
   }
-
-  await kvReplaceAll('thoughts:captured', Array.from(thoughtById.values()));
-  await kvReplaceAll('interview:answers', batches);
-
-  const nextOffset = offset + slice.length;
-  res.status(200).json({
-    processedThisRun: slice.length, updated, created, failed,
-    total, nextOffset, done: nextOffset >= total,
-  });
 };

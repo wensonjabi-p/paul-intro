@@ -12,6 +12,7 @@ module.exports = async (req, res) => {
     return res.status(401).json({ error: '로그인이 필요해요.' });
   }
 
+  try {
   if (req.method === 'GET') {
     const all = await kvListAll('thoughts:captured');
     const visible = admin ? all : all.filter(t => t.published !== false);
@@ -77,4 +78,9 @@ module.exports = async (req, res) => {
   }
 
   res.status(405).json({ error: 'method' });
+  } catch (e) {
+    // KV 일시 장애 등으로 여기서 죽으면 응답이 JSON이 아니게 되어, 클라이언트가 이걸 "오프라인"으로
+    // 잘못 표시하게 된다 — 반드시 유효한 JSON 에러로 돌려준다.
+    res.status(503).json({ error: 'storage not ready: ' + e.message });
+  }
 };
