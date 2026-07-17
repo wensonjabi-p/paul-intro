@@ -40,7 +40,7 @@
   const err = document.getElementById('err');
   async function submit() {
     err.textContent = '';
-    const r = await fetch('/api/admin-login', {
+    const r = await fetch('/api/admin-session', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password: pw.value }),
     });
