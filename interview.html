@@ -46,9 +46,19 @@
   .empty-hint { align-self: center; color: var(--faint); font-size: 12.5px; text-align: center; margin: 30px 20px; line-height: 1.6; }
   .divider { align-self: center; font-size: 10.5px; color: var(--faint); letter-spacing: 0.03em; margin: 4px 0; }
 
-  .msg { max-width: 82%; padding: 10px 13px; border-radius: 16px; font-size: 14px; line-height: 1.55; word-break: break-word; }
-  .msg.ai { align-self: flex-start; background: var(--bg-soft); border-bottom-left-radius: 5px; }
-  .msg.user { align-self: flex-end; background: rgba(212,162,78,0.14); border: 1px solid rgba(212,162,78,0.4); border-bottom-right-radius: 5px; }
+  .msg-row { display: flex; align-items: flex-end; gap: 7px; max-width: 86%; }
+  .msg-row.ai { align-self: flex-start; flex-direction: row; }
+  .msg-row.user { align-self: flex-end; flex-direction: row-reverse; }
+  .avatar {
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+  }
+  .avatar.ai { background: var(--bg-soft); color: var(--accent); border: 1px solid var(--line); }
+  .avatar.user { background: var(--accent); color: var(--bg); }
+
+  .msg { min-width: 0; padding: 10px 13px; border-radius: 16px; font-size: 14px; line-height: 1.55; word-break: break-word; }
+  .msg.ai { background: var(--bg-soft); border-bottom-left-radius: 5px; }
+  .msg.user { background: rgba(212,162,78,0.14); border: 1px solid rgba(212,162,78,0.4); border-bottom-right-radius: 5px; }
   .msg.confirm { border-left: 2px solid var(--accent); }
   .msg-tag { font-size: 10px; color: var(--faint); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 4px; }
   .msg-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
@@ -276,6 +286,8 @@
   let thread = loadArr('iv-thread');
   let pendingChoiceSelections = [];
   let awaitingTopicHint = false;
+  const THREAD_RECENT_WINDOW = 24; // 열 때마다 매번 스크롤해서 내리는 게 귀찮다고 해서, 최근 것만 먼저 보여줌
+  let threadRevealAll = false; // "이전 대화 보기"를 누르면 이번 세션 동안은 계속 전체 표시
 
   /* 마지막 메시지가 아직 답 안 한 continue-prompt/upload-prompt면, 다음에 자유롭게 타이핑한 답을
      엉뚱한 인터뷰 질문의 답으로 잘못 채워넣지 않고 이 프롬프트에 대한 답으로 해석한다. */
@@ -554,8 +566,16 @@
     if (msg.kind === 'system') {
       const s = document.createElement('div'); s.className = 'divider'; s.textContent = msg.text; return s;
     }
+    const isAi = msg.role === 'ai';
+    const msgRow = document.createElement('div');
+    msgRow.className = 'msg-row ' + (isAi ? 'ai' : 'user');
+    const avatar = document.createElement('div');
+    avatar.className = 'avatar ' + (isAi ? 'ai' : 'user');
+    avatar.textContent = isAi ? '✦' : 'P';
+    msgRow.appendChild(avatar);
+
     const wrap = document.createElement('div');
-    wrap.className = 'msg ' + (msg.role === 'ai' ? 'ai' : 'user') + (msg.kind === 'confirm' ? ' confirm' : '');
+    wrap.className = 'msg ' + (isAi ? 'ai' : 'user') + (msg.kind === 'confirm' ? ' confirm' : '');
     if (msg.kind === 'ghost') wrap.style.opacity = '0.55';
 
     if (msg.tierLabel) {
@@ -629,7 +649,8 @@
       row.appendChild(cont); row.appendChild(fresh);
       wrap.appendChild(row);
     }
-    return wrap;
+    msgRow.appendChild(wrap);
+    return msgRow;
   }
 
   function renderThread() {
@@ -641,8 +662,22 @@
       el.appendChild(hint);
       return;
     }
+
+    const hiddenCount = thread.length - THREAD_RECENT_WINDOW;
+    const collapsed = !threadRevealAll && hiddenCount > 0;
+    const visibleThread = collapsed ? thread.slice(-THREAD_RECENT_WINDOW) : thread;
+
+    if (collapsed) {
+      const moreBtn = document.createElement('button');
+      moreBtn.type = 'button';
+      moreBtn.style.cssText = 'align-self:center; background:none; border:1px solid var(--line); color:var(--faint); font-family:inherit; font-size:11.5px; padding:6px 14px; border-radius:14px; cursor:pointer; margin-bottom:6px;';
+      moreBtn.textContent = '↑ 이전 대화 보기 (' + hiddenCount + '개)';
+      moreBtn.addEventListener('click', () => { threadRevealAll = true; renderThread(); });
+      el.appendChild(moreBtn);
+    }
+
     let lastDay = null;
-    thread.forEach((msg) => {
+    visibleThread.forEach((msg) => {
       const dayKey = new Date(msg.ts).toDateString();
       if (dayKey !== lastDay) {
         lastDay = dayKey;
@@ -950,6 +985,7 @@
   sendMsgBtn.addEventListener('click', sendComposer);
 
   renderThread();
+  scrollThreadToBottom(); // 열 때마다 맨 아래(최근 대화)부터 보이게 — 매번 손으로 내릴 필요 없이
   const lastOpen = parseInt(LS.get('iv-last-open') || '0', 10);
   const freshReturn = (Date.now() - lastOpen) > FRESH_RETURN_MS;
   LS.set('iv-last-open', String(Date.now()));
