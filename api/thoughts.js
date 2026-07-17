@@ -1,7 +1,58 @@
 /* 빠른 기록(생각+사진 선택). 만들기(POST)는 인터뷰 앱에서 로그인 없이 쓸 수 있게 열어둠(개인용, 스팸 위험 낮음).
-   조회·수정·삭제(GET/PATCH/DELETE)는 관리자 전용. */
+   조회·수정·삭제(GET/PATCH/DELETE)는 관리자 전용.
+   POST에 { action: 'backfill', offset } 을 보내면(관리자 전용) 저장된 인터뷰 답변 전체를 개선된
+   프롬프트로 다시 다듬어 재발행한다 — Vercel Hobby 플랜의 서버리스 함수 12개 제한 때문에 별도
+   파일(예전 api/backfill-thoughts.js)로 안 만들고 이미 있는 이 라우트에 액션으로 얹었다. */
 const { put } = require('@vercel/blob');
 const { isValidSession, kvListAll, kvReplaceAll, kvPushJSON } = require('./_lib');
+const { polishAnswer } = require('./_polish');
+
+const BACKFILL_CHUNK = 8;
+
+async function runBackfill(offset) {
+  const batches = await kvListAll('interview:answers');
+  const thoughts = await kvListAll('thoughts:captured');
+  const thoughtById = new Map(thoughts.map(t => [t.id, t]));
+
+  // 전체 답변을 배치 순서대로 평탄화 — offset은 이 순서를 기준으로 한다.
+  const flat = [];
+  batches.forEach((b, bi) => (b.items || []).forEach((it, ii) => flat.push({ bi, ii, it, savedAt: b.savedAt })));
+
+  const total = flat.length;
+  const slice = flat.slice(offset, offset + BACKFILL_CHUNK);
+  let updated = 0, created = 0, failed = 0;
+
+  for (const { bi, ii, it, savedAt } of slice) {
+    try {
+      const result = await polishAnswer({ question: it.question, answer: it.answer, node: it.node });
+      if (!result) { failed++; continue; }
+      const existingId = it.thoughtId;
+      if (existingId && thoughtById.has(existingId)) {
+        const t = thoughtById.get(existingId);
+        t.text = result.polished.text;
+        t.tags = result.polished.tags || [];
+        t.tagLabels = result.polished.tagLabels || {};
+        t.source = 'interview';
+        updated++;
+      } else {
+        const thoughtId = 'th-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+        thoughtById.set(thoughtId, {
+          id: thoughtId, text: result.polished.text, photoUrl: null,
+          tags: result.polished.tags || [], tagLabels: result.polished.tagLabels || {},
+          createdAt: savedAt || Date.now(), published: true, source: 'interview',
+        });
+        batches[bi].items[ii] = Object.assign({}, it, { autoPublished: true, thoughtId });
+        created++;
+      }
+    } catch (e) { failed++; }
+  }
+
+  await kvReplaceAll('thoughts:captured', Array.from(thoughtById.values()));
+  await kvReplaceAll('interview:answers', batches);
+
+  const nextOffset = offset + slice.length;
+  return { processedThisRun: slice.length, updated, created, failed, total, nextOffset, done: nextOffset >= total };
+}
 
 module.exports = async (req, res) => {
   const admin = isValidSession(req.headers.cookie);
@@ -21,6 +72,13 @@ module.exports = async (req, res) => {
 
   let body = req.body;
   if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = {}; } }
+
+  if (req.method === 'POST' && body && body.action === 'backfill') {
+    if (!admin) return res.status(401).json({ error: '로그인이 필요해요.' });
+    const offset = Math.max(0, Number(body.offset) || 0);
+    const result = await runBackfill(offset);
+    return res.status(200).json(result);
+  }
 
   if (req.method === 'POST') {
     const { text, dataUrl, tags, tagLabels, source } = body || {};
