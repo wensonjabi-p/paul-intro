@@ -637,14 +637,56 @@
     return [...remoteThoughts, ...saved.thoughts, ...buildBaseThoughts()];
   }
   const VISIBLE_COUNT = 13; // 한 번에 보이는 단어 수 (10~15 사이)
-  function pickVisibleSubset(count, keepIds) {
-    const pool = state.nodes.map(n => n.id).filter(id => !keepIds.includes(id));
-    for (let i = pool.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [pool[i], pool[j]] = [pool[j], pool[i]];
+  // PNG 투자 목록처럼 이야기 빈도가 낮은 키워드 — 가끔만 보이게
+  const RARE_IDS = new Set(['noni', 'coffee', 'ebony', 'taekwondo', 'scrap', 'chain', 'subline']);
+  function nodeDisplayWeight(n, preferFresh) {
+    if (!n) return 0.05;
+    let w = 1;
+    if (n.status === 'told') w += 2.2;
+    else if (n.status === 'seed') w += 0.4;
+    const storyLen = (n.story || '').length;
+    if (storyLen > 280) w += 1.8;
+    else if (storyLen > 160) w += 1;
+    else if (storyLen < 90) w *= 0.45;
+    const thoughtHits = (D.thoughts || []).filter(t => (t.tags || []).includes(n.id)).length;
+    w += thoughtHits * 0.9;
+    const comboHits = (D.combos || []).filter(c => (c.ids || []).includes(n.id)).length;
+    w += comboHits * 0.7;
+    const linkHits = (n.links || []).length;
+    w += Math.min(linkHits, 4) * 0.15;
+    if (RARE_IDS.has(n.id)) w *= 0.22;
+    // 새로고침 시 새 단어(fresh)를 우선적으로
+    if (preferFresh && n.fresh) w *= 3.2;
+    else if (n.fresh) w *= 1.6;
+    // 방금 동적(인터뷰)으로 생긴 단어도 우선
+    if (preferFresh && n.type === 'wildcard' && n.status === 'told' && n.fresh && !(DATASETS.ko.nodes || []).some(x => x.id === n.id)) {
+      w *= 1.4;
     }
-    const need = Math.max(0, count - keepIds.length);
-    return [...keepIds, ...pool.slice(0, need)];
+    return Math.max(0.04, w);
+  }
+  function weightedSample(ids, count, preferFresh) {
+    const bag = ids.map(id => ({ id, w: nodeDisplayWeight(nodeById(id) || state.nodes.find(n => n.id === id), preferFresh) }));
+    const picked = [];
+    while (picked.length < count && bag.length) {
+      const total = bag.reduce((s, x) => s + x.w, 0);
+      let r = Math.random() * total;
+      let idx = 0;
+      for (; idx < bag.length; idx++) {
+        r -= bag[idx].w;
+        if (r <= 0) break;
+      }
+      idx = Math.min(idx, bag.length - 1);
+      picked.push(bag[idx].id);
+      bag.splice(idx, 1);
+    }
+    return picked;
+  }
+  function pickVisibleSubset(count, keepIds, preferFresh) {
+    const keep = keepIds || [];
+    const pool = state.nodes.map(n => n.id).filter(id => !keep.includes(id));
+    const need = Math.max(0, count - keep.length);
+    // 새로고침(다른 단어 보기)일 때 fresh 우선, 첫 로드도 약간 반영
+    return [...keep, ...weightedSample(pool, need, preferFresh !== false)];
   }
 
   const state = {
@@ -654,8 +696,10 @@
     visibleIds: [],
     activeCombo: null,
   };
-  state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, []);
-  const nodeById = id => state.nodes.find(n => n.id === id);
+  // nodeById는 pick 전에 필요 — 임시로 D.nodes 기준
+  let nodeById = id => state.nodes.find(n => n.id === id);
+  state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, [], true);
+  nodeById = id => state.nodes.find(n => n.id === id);
   const labelOf = id => (nodeById(id) || {}).label || id;
   // 생각의 text는 예전 항목처럼 단순 문자열이거나, 새로 다듬어진 항목처럼 {ko,en,zh}일 수 있다 —
   // 현재 사이트 언어에 맞는 버전을 고른다.
@@ -904,10 +948,10 @@
   }
 
   document.getElementById('sky-reset').addEventListener('click', () => {
-    // 선택된 단어는 항상 유지하고, 최근 인터뷰에서 나온 키워드도 몇 개는 계속 섞어 보여준다 —
-    // 안 그러면 처음 한 번만 반영되고 그다음 "다른 단어 보기"부터는 다시 완전 무작위로 돌아가 버린다.
+    // 선택된 단어는 유지. 새로고침 때는 fresh·이야기 빈도 높은 단어를 우선 섞고,
+    // 노니/태권도/고철 등 낮은 빈도 키워드는 가끔만 등장.
     const keep = [...new Set([...state.selected, ...recentTagIds(15, 4)])];
-    state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, keep);
+    state.visibleIds = pickVisibleSubset(VISIBLE_COUNT, keep, true);
     initParticles();
     particles.forEach(p => {
       if (keep.includes(p.id)) return;
