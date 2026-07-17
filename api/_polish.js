@@ -65,6 +65,26 @@ function fallback(answer, node) {
   return { text: { ko: text, en: text, zh: text }, tags: node ? [node] : [], tagLabels: {} };
 }
 
+// 드물게 모델이 ko 필드 하나에 en/zh 문장과 tagLabels JSON까지 다 욱여넣고 en/zh 필드는
+// 비워버리는 경우가 실제로 관측됨(라이브 백필 123개 중 1개). 그런 오염된 필드를 걸러낸다.
+const CONTAMINATION_RE = /<en"?>|<zh"?>|<ko"?>|\[\{"tag"/;
+const MAX_FIELD_LEN = 400; // "1~2문장, 아주 짧게"엔 충분한 여유 — 이걸 넘으면 뭔가 섞인 것으로 간주
+
+function sanitizeField(raw) {
+  if (typeof raw !== 'string') return '';
+  return stripModelArtifacts(raw.split(CONTAMINATION_RE)[0]);
+}
+
+function fieldLooksBad(s) {
+  return typeof s === 'string' && (CONTAMINATION_RE.test(s) || s.length > MAX_FIELD_LEN);
+}
+
+function looksValid(input) {
+  if (!input || typeof input.ko !== 'string' || !input.ko.trim()) return false;
+  if (fieldLooksBad(input.ko) || fieldLooksBad(input.en) || fieldLooksBad(input.zh)) return false;
+  return true;
+}
+
 async function callOnce(key, userMsg) {
   const r = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -82,7 +102,9 @@ async function callOnce(key, userMsg) {
   const data = await r.json();
   const block = (data.content || []).find(c => c.type === 'tool_use' && c.name === 'submit_thought');
   const input = block && block.input;
-  if (!input || !input.ko) return null;
+  // 형식이 멀쩡해도 내용이 오염돼 있으면(여러 언어가 한 필드에 섞임 등) 실패로 취급해서
+  // 호출한 쪽의 재시도 로직을 그대로 태운다.
+  if (!looksValid(input)) return null;
   return input;
 }
 
@@ -101,9 +123,9 @@ async function polishAnswer({ question, answer, node }) {
   if (!input) return { polished: fallback(answer, node), ai: false };
 
   const text = {
-    ko: stripModelArtifacts(input.ko),
-    en: stripModelArtifacts(input.en) || stripModelArtifacts(input.ko),
-    zh: stripModelArtifacts(input.zh) || stripModelArtifacts(input.ko),
+    ko: sanitizeField(input.ko),
+    en: sanitizeField(input.en) || sanitizeField(input.ko),
+    zh: sanitizeField(input.zh) || sanitizeField(input.ko),
   };
   let tags = (input.tags || []).filter(t => typeof t === 'string' && t.trim()).map(t => t.trim());
   if (!tags.length && node) tags = [node];
