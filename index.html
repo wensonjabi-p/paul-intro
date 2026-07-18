@@ -217,6 +217,41 @@
   .feed .lede { margin-top: 14px; color: var(--muted); max-width: 620px; font-size: 15px; }
   .feed-list { margin-top: 6vh; }
 
+  /* ---------- GUESTBOOK ---------- */
+  .guestbook { padding: 10vh 5vw 4vh; max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--line); }
+  .guestbook .eyebrow {
+    font-size: 13px; letter-spacing: 0.25em; color: var(--accent); text-transform: uppercase; margin-bottom: 16px;
+  }
+  .guestbook h2 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 44px); font-weight: 700; }
+  .guestbook .lede { margin-top: 14px; color: var(--muted); max-width: 620px; font-size: 15px; }
+  .gb-visits { margin-top: 10px; font-family: var(--font-mono); font-size: 12px; color: var(--faint); letter-spacing: 0.03em; }
+  .gb-list { margin-top: 5vh; max-width: 720px; }
+  .gb-empty { color: var(--faint); font-size: 14px; }
+  .gb-item { border-left: 2px solid var(--line); padding: 4px 0 4px 20px; margin-bottom: 22px; }
+  .gb-item .gb-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .gb-item .gb-txt { font-size: 15px; line-height: 1.7; color: var(--ink); margin-top: 4px; word-break: break-word; }
+  .gb-item .gb-meta { font-family: var(--font-mono); font-size: 11px; color: var(--faint); margin-top: 8px; letter-spacing: 0.02em; }
+  .gb-actions { margin-top: 8px; display: flex; gap: 14px; }
+  .gb-actions button {
+    background: none; border: none; padding: 0; color: var(--muted); font-size: 12px; cursor: pointer;
+    letter-spacing: 0.03em; text-decoration: underline; text-underline-offset: 3px;
+  }
+  .gb-actions button:hover { color: var(--accent); }
+  .gb-replies { margin-top: 16px; }
+  .gb-replies .gb-item { border-left-color: var(--faint); }
+  .gb-reply-form { margin-top: 12px; max-width: 520px; }
+  .gb-reply-form textarea {
+    width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+    color: var(--ink); font-family: inherit; font-size: 14px; padding: 10px 12px; min-height: 60px; resize: vertical;
+  }
+  .gb-reply-form textarea:focus { outline: none; border-color: var(--accent); }
+  .gb-reply-form .btns { margin-top: 10px; display: flex; gap: 8px; }
+  .gb-reply-form .btns button {
+    font-size: 12px; padding: 8px 16px; border-radius: 6px; cursor: pointer; letter-spacing: 0.03em;
+  }
+  .gb-reply-form .btn-gold { background: var(--accent); color: var(--bg); border: none; font-weight: 700; }
+  .gb-reply-form .btn-cancel { background: none; border: 1px solid var(--line); color: var(--muted); }
+
   .form-box {
     margin-top: 7vh; border: 1px solid var(--line); border-radius: 12px; padding: 30px;
     background: var(--bg-soft); max-width: 720px;
@@ -422,6 +457,26 @@
   </div>
 </section>
 
+<section class="guestbook">
+  <div class="eyebrow">Guestbook</div>
+  <h2 id="p-gb-h2"></h2>
+  <p class="lede" id="gb-lede"></p>
+  <div class="gb-visits" id="gb-visits"></div>
+  <div class="gb-list" id="gb-list"></div>
+  <form id="gb-form" class="form-box" style="margin-top:28px; max-width:100%;">
+    <label id="p-gb-namelabel"></label>
+    <input type="text" id="gb-name" maxlength="40" autocomplete="off" />
+    <label id="p-gb-textlabel"></label>
+    <textarea id="gb-text" rows="3" maxlength="500"></textarea>
+    <input type="text" id="gb-hp" name="website" autocomplete="off" tabindex="-1" aria-hidden="true"
+      style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
+    <div class="btns">
+      <button type="submit" class="btn-gold" id="gb-submit"></button>
+    </div>
+    <div id="gb-status" style="margin-top:10px; font-size:13px; min-height:18px;"></div>
+  </form>
+</section>
+
 <section class="share-section">
   <button class="share-btn" id="share-btn"></button>
   <div class="share-menu" id="share-menu" style="display:none;">
@@ -484,6 +539,18 @@
       cardDownload: '다운로드', cardShare: '공유', cardShared: '공유됨',
       cardAsOf: '기록 기준', cardMadeOn: '카드 생성', cardQrCaption: '스캔해서 사이트 방문',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
+      gbH2: '방명록', gbLede: '다녀갔다는 흔적을 남겨주세요. 답글로 서로 이야기를 나눠도 좋아요.',
+      gbVisits: n => '지금까지 ' + n.toLocaleString() + '번 다녀갔어요',
+      gbNameLabel: '이름 (선택)', gbNamePlaceholder: '손님',
+      gbTextLabel: '방명록', gbTextPlaceholder: '다녀간 흔적을 남겨주세요…',
+      gbSubmitBtn: '남기기', gbSending: '남기는 중…',
+      gbEmptyMsg: '내용을 입력해주세요.', gbGenericError: '문제가 생겼어요. 잠시 후 다시 시도해주세요.',
+      gbCooldownError: '너무 빨리 연달아 남겼어요. 잠시 후 다시 시도해주세요.',
+      gbEmptyList: '아직 방명록이 비어있어요. 첫 흔적을 남겨보세요!',
+      gbGuestName: '손님',
+      gbReplyBtn: '답글', gbReplyingTo: name => name + '님에게 답글', gbReplyPlaceholder: '답글을 입력하세요…',
+      gbReplySubmit: '답글 남기기', gbReplyCancel: '취소',
+      gbTranslateBtn: '번역 보기', gbShowOriginal: '원문 보기', gbTranslating: '번역 중…',
     },
     en: {
       legend: { core: 'Me', place: 'Places That Changed Me', associative: 'Related Words', wildcard: 'Odd Hooks' },
@@ -530,6 +597,18 @@
       cardDownload: 'Download', cardShare: 'Share', cardShared: 'Shared',
       cardAsOf: 'As of', cardMadeOn: 'Card made', cardQrCaption: 'Scan to visit',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
+      gbH2: 'Guestbook', gbLede: 'Leave a trace that you were here. Feel free to reply to each other, too.',
+      gbVisits: n => n.toLocaleString() + ' visits so far',
+      gbNameLabel: 'Name (optional)', gbNamePlaceholder: 'Guest',
+      gbTextLabel: 'Message', gbTextPlaceholder: 'Leave a trace of your visit…',
+      gbSubmitBtn: 'Post', gbSending: 'Posting…',
+      gbEmptyMsg: 'Please write something first.', gbGenericError: 'Something went wrong. Please try again in a moment.',
+      gbCooldownError: 'You posted too quickly — please wait a bit and try again.',
+      gbEmptyList: 'No entries yet. Be the first to leave a trace!',
+      gbGuestName: 'Guest',
+      gbReplyBtn: 'Reply', gbReplyingTo: name => 'Replying to ' + name, gbReplyPlaceholder: 'Write a reply…',
+      gbReplySubmit: 'Post reply', gbReplyCancel: 'Cancel',
+      gbTranslateBtn: 'Translate', gbShowOriginal: 'Show original', gbTranslating: 'Translating…',
     },
     zh: {
       legend: { core: '我', place: '改变我的地方', associative: '关联词', wildcard: '奇怪的钩子' },
@@ -574,6 +653,18 @@
       cardDownload: '下载', cardShare: '分享', cardShared: '已分享',
       cardAsOf: '内容截至', cardMadeOn: '卡片制作于', cardQrCaption: '扫码访问网站',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
+      gbH2: '留言簿', gbLede: '留下你来过的痕迹吧。也欢迎互相回复交流。',
+      gbVisits: n => '目前已有 ' + n.toLocaleString() + ' 次访问',
+      gbNameLabel: '姓名（可选）', gbNamePlaceholder: '访客',
+      gbTextLabel: '留言', gbTextPlaceholder: '留下你来过的痕迹…',
+      gbSubmitBtn: '发布', gbSending: '发布中…',
+      gbEmptyMsg: '请先写点内容。', gbGenericError: '出了点问题，请稍后重试。',
+      gbCooldownError: '发得太快了，请稍后再试。',
+      gbEmptyList: '留言簿还是空的，来留下第一条痕迹吧！',
+      gbGuestName: '访客',
+      gbReplyBtn: '回复', gbReplyingTo: name => '回复 ' + name, gbReplyPlaceholder: '写下回复…',
+      gbReplySubmit: '发布回复', gbReplyCancel: '取消',
+      gbTranslateBtn: '查看翻译', gbShowOriginal: '查看原文', gbTranslating: '翻译中…',
     },
   };
 
@@ -612,6 +703,14 @@
     document.getElementById('p-contact-msglabel').textContent = u.contactMsgLabel;
     document.getElementById('contact-send').textContent = u.contactSendBtn;
     document.getElementById('p-interview-link').textContent = u.interviewLink;
+
+    document.getElementById('p-gb-h2').textContent = u.gbH2;
+    document.getElementById('gb-lede').textContent = u.gbLede;
+    document.getElementById('p-gb-namelabel').textContent = u.gbNameLabel;
+    document.getElementById('gb-name').placeholder = u.gbNamePlaceholder;
+    document.getElementById('p-gb-textlabel').textContent = u.gbTextLabel;
+    document.getElementById('gb-text').placeholder = u.gbTextPlaceholder;
+    document.getElementById('gb-submit').textContent = u.gbSubmitBtn;
 
     document.getElementById('share-btn').textContent = u.shareBtn;
     document.getElementById('share-kakao-label').textContent = u.shareKakao;
@@ -760,6 +859,8 @@
     initParticles();
     renderSynthesis();
     renderFeed();
+    gbShownTranslation = {};
+    renderGuestbook();
   }
 
   document.getElementById('lang-toggle').addEventListener('click', e => {
@@ -1178,6 +1279,173 @@
     initParticles();
   }
 
+  /* ---------- 방명록 (방문 집계 + 댓글/답글 + 필요시 번역) ----------
+     방문자 누구나 로그인 없이 즉시 올릴 수 있어서(관리자 승인 절차 없음), 화면에 그릴 때 반드시
+     이스케이프해서 stored XSS를 막는다 — 다른 콘텐츠(D.thoughts 등)는 신뢰된 소스라 그냥 innerHTML로
+     넣지만, 여기 텍스트는 익명 방문자가 직접 쓴 것이므로 다르게 다룬다. */
+  let guestbook = { comments: [], visits: 0 };
+  let gbOpenReplyId = null; // 지금 답글 입력창이 열려 있는 댓글 id
+  let gbShownTranslation = {}; // { [commentId]: 'en' } — 지금 번역이 켜져 있는 언어(없으면 원문 표시)
+
+  function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
+  }
+
+  async function loadGuestbook() {
+    try {
+      const r = await fetch('/api/comments');
+      if (!r.ok) return;
+      const d = await r.json();
+      guestbook = { comments: Array.isArray(d.comments) ? d.comments : [], visits: Number(d.visits) || 0 };
+      renderGuestbook();
+    } catch (e) { /* 서버 준비 전이면 조용히 빈 상태로 둠 */ }
+  }
+
+  function gbChildren(parentId) {
+    return guestbook.comments.filter(c => c.parentId === parentId).sort((a, b) => a.createdAt - b.createdAt);
+  }
+
+  function gbItemHtml(c, isReply) {
+    const u = UI[LANG];
+    const name = c.name ? escapeHtml(c.name) : u.gbGuestName;
+    const shownLang = gbShownTranslation[c.id];
+    const bodyText = shownLang && c.translations && c.translations[shownLang] ? c.translations[shownLang] : c.text;
+    const translateLabel = shownLang ? u.gbShowOriginal : u.gbTranslateBtn;
+    const replies = gbChildren(c.id);
+    return '<div class="gb-item" data-gb-id="' + c.id + '">' +
+      '<div class="gb-name">' + name + '</div>' +
+      '<div class="gb-txt">' + escapeHtml(bodyText).replace(/\n/g, '<br>') + '</div>' +
+      '<div class="gb-meta">' + formatDate(c.createdAt) + '</div>' +
+      '<div class="gb-actions">' +
+        '<button type="button" data-gb-reply="' + c.id + '">' + u.gbReplyBtn + '</button>' +
+        '<button type="button" data-gb-translate="' + c.id + '">' + translateLabel + '</button>' +
+      '</div>' +
+      (gbOpenReplyId === c.id ? gbReplyFormHtml(c, name) : '') +
+      (!isReply && replies.length ? '<div class="gb-replies">' + replies.map(r => gbItemHtml(r, true)).join('') + '</div>' : '') +
+    '</div>';
+  }
+
+  function gbReplyFormHtml(c, name) {
+    const u = UI[LANG];
+    return '<div class="gb-reply-form">' +
+      '<div style="font-size:12px; color:var(--faint); margin-bottom:6px;">' + u.gbReplyingTo(name) + '</div>' +
+      '<textarea data-gb-reply-text placeholder="' + escapeHtml(u.gbReplyPlaceholder) + '" maxlength="500"></textarea>' +
+      '<div class="btns">' +
+        '<button type="button" class="btn-gold" data-gb-reply-submit="' + c.id + '">' + u.gbReplySubmit + '</button>' +
+        '<button type="button" class="btn-cancel" data-gb-cancel>' + u.gbReplyCancel + '</button>' +
+      '</div>' +
+      '<div class="gb-reply-status" style="margin-top:8px; font-size:12px; min-height:16px; color:var(--muted);"></div>' +
+    '</div>';
+  }
+
+  function renderGuestbook() {
+    const u = UI[LANG];
+    document.getElementById('gb-visits').textContent = u.gbVisits(guestbook.visits);
+    const top = gbChildren(null);
+    const list = document.getElementById('gb-list');
+    list.innerHTML = top.length ? top.map(c => gbItemHtml(c, false)).join('') : '<div class="gb-empty">' + u.gbEmptyList + '</div>';
+  }
+
+  function gbErrorMessage(status, serverError) {
+    const u = UI[LANG];
+    if (status === 429) return u.gbCooldownError;
+    if (status === 400 && /내용/.test(serverError || '')) return u.gbEmptyMsg;
+    return u.gbGenericError;
+  }
+
+  async function gbPost(payload) {
+    const r = await fetch('/api/comments', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload),
+    });
+    const d = await r.json().catch(() => ({}));
+    return { ok: r.ok, status: r.status, data: d };
+  }
+
+  document.getElementById('gb-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const u = UI[LANG];
+    const nameEl = document.getElementById('gb-name');
+    const textEl = document.getElementById('gb-text');
+    const hpEl = document.getElementById('gb-hp');
+    const statusEl = document.getElementById('gb-status');
+    const submitBtn = document.getElementById('gb-submit');
+    const text = textEl.value.trim();
+    if (!text) { statusEl.textContent = u.gbEmptyMsg; statusEl.style.color = '#e2a0a0'; return; }
+    submitBtn.disabled = true;
+    statusEl.style.color = 'var(--muted)';
+    statusEl.textContent = u.gbSending;
+    const { ok, status, data } = await gbPost({ name: nameEl.value.trim(), text, hp: hpEl.value });
+    submitBtn.disabled = false;
+    if (ok && data.ok) {
+      guestbook.comments.push(data.comment);
+      textEl.value = '';
+      statusEl.textContent = '';
+      renderGuestbook();
+    } else {
+      statusEl.textContent = gbErrorMessage(status, data.error);
+      statusEl.style.color = '#e2a0a0';
+    }
+  });
+
+  document.getElementById('gb-list').addEventListener('click', async e => {
+    const replyBtn = e.target.closest('[data-gb-reply]');
+    if (replyBtn) { gbOpenReplyId = gbOpenReplyId === replyBtn.dataset.gbReply ? null : replyBtn.dataset.gbReply; renderGuestbook(); return; }
+
+    const cancelBtn = e.target.closest('[data-gb-cancel]');
+    if (cancelBtn) { gbOpenReplyId = null; renderGuestbook(); return; }
+
+    const translateBtn = e.target.closest('[data-gb-translate]');
+    if (translateBtn) {
+      const id = translateBtn.dataset.gbTranslate;
+      if (gbShownTranslation[id]) { delete gbShownTranslation[id]; renderGuestbook(); return; }
+      const c = guestbook.comments.find(x => x.id === id);
+      if (!c) return;
+      if (c.translations && c.translations[LANG]) { gbShownTranslation[id] = LANG; renderGuestbook(); return; }
+      const prevLabel = translateBtn.textContent;
+      translateBtn.textContent = UI[LANG].gbTranslating;
+      translateBtn.disabled = true;
+      try {
+        const r = await fetch('/api/comments', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'translate', id, lang: LANG }),
+        });
+        const d = await r.json().catch(() => ({}));
+        if (r.ok && d.text) {
+          c.translations = Object.assign({}, c.translations, { [LANG]: d.text });
+          gbShownTranslation[id] = LANG;
+        }
+      } catch (err) { /* 실패하면 그냥 원문 유지 */ }
+      renderGuestbook();
+      return;
+    }
+
+    const replySubmitBtn = e.target.closest('[data-gb-reply-submit]');
+    if (replySubmitBtn) {
+      const parentId = replySubmitBtn.dataset.gbReplySubmit;
+      const form = replySubmitBtn.closest('.gb-reply-form');
+      const textEl = form.querySelector('[data-gb-reply-text]');
+      const statusEl = form.querySelector('.gb-reply-status');
+      const text = textEl.value.trim();
+      const u = UI[LANG];
+      if (!text) { statusEl.textContent = u.gbEmptyMsg; statusEl.style.color = '#e2a0a0'; return; }
+      replySubmitBtn.disabled = true;
+      statusEl.style.color = 'var(--muted)';
+      statusEl.textContent = u.gbSending;
+      const { ok, status, data } = await gbPost({ text, parentId });
+      if (ok && data.ok) {
+        guestbook.comments.push(data.comment);
+        gbOpenReplyId = null;
+        renderGuestbook();
+      } else {
+        replySubmitBtn.disabled = false;
+        statusEl.textContent = gbErrorMessage(status, data.error);
+        statusEl.style.color = '#e2a0a0';
+      }
+    }
+  });
+
   document.getElementById('contact-form').addEventListener('submit', async e => {
     e.preventDefault();
     const u = UI[LANG];
@@ -1544,6 +1812,7 @@
   renderStaticText();
   resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop();
   fetchRemoteThoughts();
+  loadGuestbook();
 })();
 </script>
 </body>
