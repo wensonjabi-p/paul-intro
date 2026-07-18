@@ -130,6 +130,13 @@
   .story-single .prose {
     margin-top: 20px; font-size: clamp(16px, 2vw, 20px); line-height: 1.85; color: var(--ink); max-width: 720px;
   }
+  .doodle-box { float: right; margin: 0 0 14px 20px; text-align: center; }
+  .doodle-box svg { width: 92px; height: 92px; color: var(--ink); opacity: 0.9; display: block; }
+  .doodle-redraw {
+    display: block; margin: 2px auto 0; background: none; border: none; color: var(--faint);
+    font-size: 10px; cursor: pointer; font-family: inherit; letter-spacing: 0.03em; padding: 2px;
+  }
+  .doodle-redraw:hover { color: var(--accent); }
   .fact-bar { margin-top: 18px; max-width: 420px; }
   .fact-bar-label { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
   .fact-bar-pct { color: var(--accent); font-weight: 600; }
@@ -551,6 +558,7 @@
       gbReplyBtn: '답글', gbReplyingTo: name => name + '님에게 답글', gbReplyPlaceholder: '답글을 입력하세요…',
       gbReplySubmit: '답글 남기기', gbReplyCancel: '취소',
       gbTranslateBtn: '번역 보기', gbShowOriginal: '원문 보기', gbTranslating: '번역 중…',
+      doodleRedraw: '↻ 다시 그리기',
     },
     en: {
       legend: { core: 'Me', place: 'Places That Changed Me', associative: 'Related Words', wildcard: 'Odd Hooks' },
@@ -609,6 +617,7 @@
       gbReplyBtn: 'Reply', gbReplyingTo: name => 'Replying to ' + name, gbReplyPlaceholder: 'Write a reply…',
       gbReplySubmit: 'Post reply', gbReplyCancel: 'Cancel',
       gbTranslateBtn: 'Translate', gbShowOriginal: 'Show original', gbTranslating: 'Translating…',
+      doodleRedraw: '↻ Redraw',
     },
     zh: {
       legend: { core: '我', place: '改变我的地方', associative: '关联词', wildcard: '奇怪的钩子' },
@@ -665,6 +674,7 @@
       gbReplyBtn: '回复', gbReplyingTo: name => '回复 ' + name, gbReplyPlaceholder: '写下回复…',
       gbReplySubmit: '发布回复', gbReplyCancel: '取消',
       gbTranslateBtn: '查看翻译', gbShowOriginal: '查看原文', gbTranslating: '翻译中…',
+      doodleRedraw: '↻ 重新绘制',
     },
   };
 
@@ -794,6 +804,7 @@
     selected: [],
     visibleIds: [],
     activeCombo: null,
+    doodleSeed: {},
   };
   // nodeById는 pick 전에 필요 — 임시로 D.nodes 기준
   let nodeById = id => state.nodes.find(n => n.id === id);
@@ -1068,6 +1079,186 @@
     renderSynthesis();
   });
 
+  /* ---------- 손그림 낙서 아이콘 ----------
+     완전 랜덤(코드가 뜻 모르고 그리는 추상 낙서) 대신, 자주 나오는 단어는 의미를 아는 내가 뼈대(점 목록)를
+     미리 정해두고, 그 뼈대를 매번 손떨림(흔들림+휨)으로 다르게 그려서 손그림 느낌을 낸다. 뼈대가 없는
+     단어(주로 새로 생기는 동적 키워드)는 추상 낙서로 자동 대체 — 절대 깨지지 않는 폴백.
+     스토리 페이지에서는 "다시 그리기"로 매번 다르게, 카드에서는 항상 시드 0(고정)으로 공유 결과물이
+     안정적이게 한다. */
+  function mulberry32(seed) {
+    return function () {
+      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+      let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function hashStr(s) {
+    let h = 2166136261;
+    for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return h >>> 0;
+  }
+  function ditJitter(rand, amt) { return (rand() - 0.5) * amt; }
+  function circlePts(cx, cy, r, segs) {
+    segs = segs || 16; const pts = [];
+    for (let i = 0; i <= segs; i++) { const a = (i / segs) * Math.PI * 2; pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]); }
+    return pts;
+  }
+  function spiralPts(cx, cy, turns, maxR) {
+    const pts = []; const steps = 40;
+    for (let i = 0; i <= steps; i++) { const t = i / steps; const a = t * Math.PI * 2 * turns; const r = t * maxR; pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]); }
+    return pts;
+  }
+  function archPts(cx, cy, r, a0, a1) {
+    const pts = []; const n = 14;
+    for (let i = 0; i <= n; i++) { const a = a0 + (a1 - a0) * (i / n); pts.push([cx + Math.cos(Math.PI - a) * r, cy - Math.sin(a) * r]); }
+    return pts;
+  }
+  function wavePts(x0, x1, y, amp, phase, freq) {
+    const pts = [];
+    for (let x = x0; x <= x1; x += 6) pts.push([x, y + Math.sin(x / freq + phase) * amp]);
+    return pts;
+  }
+  function starPts(cx, cy) {
+    const pts = [];
+    for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + (i * Math.PI) / 5; const r = i % 2 === 0 ? 46 : 19; pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]); }
+    pts.push(pts[0]);
+    return pts;
+  }
+
+  const DOODLE_MOTIFS = {
+    bike: () => [
+      circlePts(38, 88, 20), circlePts(112, 88, 20),
+      [[38, 88], [68, 50], [95, 50]], [[68, 50], [55, 88]], [[95, 50], [112, 88]], [[95, 50], [102, 40], [120, 40]],
+    ],
+    pin: () => [
+      [[75, 18], [95, 26], [107, 44], [107, 64], [93, 90], [75, 128], [57, 90], [43, 64], [43, 44], [55, 26], [75, 18]],
+      circlePts(75, 52, 12, 10),
+    ],
+    compass: () => [circlePts(75, 72, 42), [[75, 32], [83, 72], [75, 112], [67, 72], [75, 32]]],
+    bridge: () => [
+      [[28, 118], [28, 30]], [[122, 118], [122, 30]], [[8, 118], [142, 118]],
+      [[28, 30], [75, 62], [122, 30]], [[50, 62], [50, 118]], [[100, 62], [100, 118]],
+    ],
+    handshake: () => [[[14, 38], [66, 76]], [[136, 38], [84, 76]], circlePts(75, 78, 15, 10)],
+    star: () => [starPts(75, 72)],
+    wave: () => [wavePts(10, 140, 50, 10, 50, 16), wavePts(10, 140, 75, 10, 75, 16), wavePts(10, 140, 100, 10, 100, 16)],
+    book: () => [[[75, 30], [22, 42], [22, 108], [75, 98], [75, 30]], [[75, 30], [128, 42], [128, 108], [75, 98], [75, 30]]],
+    tool: () => [circlePts(35, 35, 17, 12), circlePts(115, 115, 17, 12), [[47, 47], [103, 103]]],
+    plant: () => [
+      [[75, 130], [75, 68]],
+      [[75, 92], [48, 78], [40, 50], [64, 58], [75, 88]],
+      [[75, 92], [102, 78], [110, 50], [86, 58], [75, 88]],
+    ],
+    heart: () => [[[75, 118], [28, 76], [28, 44], [50, 24], [75, 50], [100, 24], [122, 44], [122, 76], [75, 118]]],
+    figure: () => [circlePts(75, 34, 14, 12), [[75, 48], [75, 96]], [[48, 66], [102, 66]], [[75, 96], [54, 132]], [[75, 96], [96, 132]]],
+    flag: () => [[[30, 18], [30, 132]], [[30, 24], [112, 36], [86, 56], [112, 76], [30, 66], [30, 24]]],
+    box: () => [
+      [[30, 62], [100, 62], [100, 126], [30, 126], [30, 62]],
+      [[30, 62], [54, 36], [124, 36], [100, 62]],
+      [[100, 62], [124, 36], [124, 100], [100, 126]],
+    ],
+    bird: () => [[[16, 74], [46, 50], [75, 70], [104, 50], [134, 74]], circlePts(75, 70, 4, 8)],
+    boat: () => [
+      [[28, 100], [122, 100], [106, 122], [44, 122], [28, 100]],
+      [[75, 100], [75, 46]], [[75, 52], [102, 80], [75, 80], [75, 52]],
+      [[8, 128], [40, 120], [70, 128], [100, 120], [130, 128], [142, 122]],
+    ],
+    // 아래 세 개는 원래 집/말풍선/체크리스트처럼 더 구체적으로 그렸다가, 다른 아이콘들과 톤이 안 맞아서
+    // 흐르는 곡선·나선 위주의 추상적인 모양으로 바꿈(2026-07-18, Paul 피드백).
+    spiral: () => [spiralPts(75, 75, 2.4, 52)],
+    weave: () => [wavePts(12, 138, 75, 30, 0, 22), wavePts(12, 138, 75, 30, Math.PI, 22)],
+    arch: () => [archPts(75, 108, 55, 0, Math.PI), archPts(75, 108, 38, 0, Math.PI), archPts(75, 108, 22, 0, Math.PI)],
+  };
+
+  const NODE_MOTIF = {
+    bike: 'bike', bikery: 'bike',
+    freedom: 'bird', bold: 'bird', worth: 'bird',
+    drift: 'boat',
+    nomad: 'compass', adapt: 'compass', travel: 'compass', train: 'compass',
+    guesthouse: 'arch', comfort: 'arch', park: 'arch',
+    trade: 'handshake', sales: 'handshake', negotiate: 'handshake', export: 'handshake', logi: 'handshake',
+    bridge: 'bridge', boundary: 'bridge', relation: 'bridge', colleague: 'bridge',
+    interp: 'weave', multiling: 'weave', translate: 'weave', subtitle: 'weave', nuance: 'weave',
+    teaching: 'weave', student: 'weave', chinese: 'weave', japanese: 'weave', english: 'weave', honorific: 'weave',
+    pm: 'spiral', context: 'spiral', chain: 'spiral', mediation: 'spiral',
+    sky: 'star', star: 'star',
+    stranger: 'figure', personality: 'figure', worldview: 'figure', father: 'figure',
+    insight: 'book', masters: 'book', culture: 'book', event: 'book',
+    repair: 'tool', factory: 'tool', container: 'tool',
+    ecoventure: 'plant', plogging: 'plant',
+    trust: 'heart', luxury: 'heart', loneliness: 'heart',
+    war: 'flag', battlefield: 'flag', caution: 'flag', chance: 'flag', failure: 'flag', poverty: 'flag',
+    salt: 'box', rocksalt: 'box', noni: 'box', coffee: 'box', ebony: 'box', scrap: 'box', timber: 'box',
+    wine: 'box', backpack: 'box', beer: 'box', dog: 'box', navy: 'box', winter: 'box', cold: 'box', malaria: 'box',
+    tokyo: 'pin', seoul: 'pin', shanghai: 'pin', hangzhou: 'pin', dublin: 'pin', vienna: 'pin', prague: 'pin',
+    croatia: 'pin', cambodia: 'pin', pakistan: 'pin', ireland: 'pin', saitama: 'pin', masan: 'pin', jinhae: 'pin', islam: 'pin',
+  };
+
+  function doodleAbstractScribble(rand) {
+    const cx = 75, cy = 68, pts = [];
+    const n = 7 + Math.floor(rand() * 3);
+    for (let i = 0; i <= n; i++) { const a = (i / n) * Math.PI * 2.4; const r = 16 + rand() * 28; pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r * 0.75]); }
+    return [pts];
+  }
+  function doodleHandTremor(pts, rand, wobbleAmt, bowAmt) {
+    const bowDirX = ditJitter(rand, 1), bowDirY = ditJitter(rand, 1);
+    const n = pts.length;
+    return pts.map((p, i) => {
+      const t = n > 1 ? i / (n - 1) : 0;
+      const bow = Math.sin(t * Math.PI) * bowAmt;
+      return [p[0] + ditJitter(rand, wobbleAmt) + bowDirX * bow, p[1] + ditJitter(rand, wobbleAmt) + bowDirY * bow];
+    });
+  }
+  function doodleSmoothPathD(pts) {
+    if (pts.length < 3) return 'M ' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L ');
+    let d = 'M ' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1);
+    for (let i = 0; i < pts.length - 1; i++) {
+      const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+      const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+      const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+      d += ' C ' + c1[0].toFixed(1) + ' ' + c1[1].toFixed(1) + ', ' + c2[0].toFixed(1) + ' ' + c2[1].toFixed(1) + ', ' + p2[0].toFixed(1) + ' ' + p2[1].toFixed(1);
+    }
+    return d;
+  }
+  const DOODLE_PASSES = [
+    { wobble: 4.2, bow: 9, width: 4.2, opacity: 0.22 },
+    { wobble: 3.6, bow: 7.5, width: 2.7, opacity: 0.48 },
+    { wobble: 3.0, bow: 6, width: 1.8, opacity: 0.93 },
+  ];
+  // 노드 id로 뼈대(있으면)와 랜덤 시드를 정해, 3겹 손떨림 경로(d) 목록을 만든다 — SVG/캔버스 공용.
+  function doodlePathsFor(nodeId, seedOffset) {
+    const rand = mulberry32(hashStr(nodeId) + (seedOffset || 0));
+    const motifKey = NODE_MOTIF[nodeId];
+    const fn = motifKey && DOODLE_MOTIFS[motifKey];
+    const strokes = fn ? fn() : doodleAbstractScribble(rand);
+    return DOODLE_PASSES.map(pass => ({
+      d: strokes.map(s => doodleSmoothPathD(doodleHandTremor(s, rand, pass.wobble, pass.bow))).join(' '),
+      width: pass.width, opacity: pass.opacity,
+    }));
+  }
+  function doodleSvg(nodeId, seedOffset) {
+    const paths = doodlePathsFor(nodeId, seedOffset);
+    const body = paths.map(p => '<path d="' + p.d + '" fill="none" stroke="currentColor" stroke-width="' + p.width +
+      '" stroke-linecap="round" stroke-linejoin="round" opacity="' + p.opacity + '"/>').join('');
+    return '<svg viewBox="0 0 150 150" role="img" aria-hidden="true">' + body + '</svg>';
+  }
+  function drawDoodleOnCanvas(ctx, nodeId, x, y, size, color) {
+    const paths = doodlePathsFor(nodeId, 0);
+    const scale = size / 150;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.scale(scale, scale);
+    ctx.strokeStyle = color;
+    paths.forEach(p => {
+      ctx.globalAlpha = p.opacity;
+      ctx.lineWidth = p.width; // 150 기준 좌표계 그대로 두면 위의 scale transform이 실제 픽셀 굵기에 반영됨
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.stroke(new Path2D(p.d));
+    });
+    ctx.restore();
+  }
+
   function findCombo(ids) {
     const set = [...ids].sort().join('|');
     return (D.combos || []).find(c => [...c.ids].sort().join('|') === set) || null;
@@ -1086,7 +1277,7 @@
     }
     if (state.selected.length === 1) {
       state.activeCombo = null;
-      el.innerHTML = renderSingle(nodeById(state.selected[0])); bindChips(el);
+      el.innerHTML = renderSingle(nodeById(state.selected[0])); bindChips(el); bindDoodle(el);
       attachPhoto(el, state.selected.slice());
       return;
     }
@@ -1196,6 +1387,8 @@
   function renderSingle(n) {
     if (!n) return '';
     let h = '<div class="story-single">';
+    h += '<div class="doodle-box" data-doodle-id="' + n.id + '">' + doodleSvg(n.id, state.doodleSeed[n.id] || 0) +
+      '<button type="button" class="doodle-redraw" data-doodle-redraw="' + n.id + '">' + UI[LANG].doodleRedraw + '</button></div>';
     h += '<div><span class="badge t-' + n.type + '">' + UI[LANG].legend[n.type] + '</span>';
     if (n.era) h += '<span class="era">' + n.era + '</span>';
     h += '</div>';
@@ -1219,6 +1412,17 @@
   function bindChips(el) {
     el.querySelectorAll('.chip').forEach(c =>
       c.addEventListener('click', () => toggleSelect(c.dataset.id)));
+  }
+
+  function bindDoodle(el) {
+    const btn = el.querySelector('[data-doodle-redraw]');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.doodleRedraw;
+      state.doodleSeed[id] = (state.doodleSeed[id] || 0) + 97;
+      const box = el.querySelector('[data-doodle-id="' + id + '"] svg');
+      if (box) box.outerHTML = doodleSvg(id, state.doodleSeed[id]);
+    });
   }
 
   function thoughtCard(t) {
@@ -1629,6 +1833,10 @@
     vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.4)');
     ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
 
+    // 단어 하나짜리 카드에만, 헤더 위 빈 공간에 손그림 낙서를 얹는다 — 카드는 항상 시드 0(고정)이라
+    // 같은 단어로 다시 만들면 매번 같은 그림이 나옴(공유해도 안정적).
+    if (content.doodleNodeId) drawDoodleOnCanvas(ctx, content.doodleNodeId, W - marginX - 128, 18, 128, 'rgba(232,229,221,0.8)');
+
     ctx.textBaseline = 'alphabetic';
     let y = 150;
 
@@ -1757,8 +1965,9 @@
 
       const langs = ['ko', 'en', 'zh'];
       const canvases = {};
+      const doodleNodeId = ids.length === 1 ? ids[0] : null;
       for (const l of langs) {
-        canvases[l] = await drawCard(l, Object.assign({}, content[l], { asOfDate, madeDate: dateStr, qrImg: l === 'zh' ? qrImg : null }));
+        canvases[l] = await drawCard(l, Object.assign({}, content[l], { asOfDate, madeDate: dateStr, qrImg: l === 'zh' ? qrImg : null, doodleNodeId }));
       }
       if (myToken !== cmToken) return;
 
