@@ -103,7 +103,9 @@ module.exports = async (req, res) => {
     if (!imgRes.ok) return res.status(200).json({ imageUrl: null, debug: debug ? { stage: 'fetch-image', status: imgRes.status } : undefined });
     const buf = Buffer.from(await imgRes.arrayBuffer());
     const filename = 'cards/' + Date.now() + '-' + Math.random().toString(36).slice(2, 8) + '.png';
-    const blob = await put(filename, buf, { access: 'public', contentType: 'image/png' });
+    // paul-intro-blob(기존 스토어)는 Private로 고정돼 공개 URL을 못 씀 — 새로 만든 Public 스토어를
+    // storeId로 명시해서 그쪽에 올린다. (env: BLOB_PUBLIC_STORE_ID, Vercel Storage 탭에서 연결)
+    const blob = await put(filename, buf, { access: 'public', contentType: 'image/png', storeId: process.env.BLOB_PUBLIC_STORE_ID });
 
     res.status(200).json({ imageUrl: blob.url, prompt: promptResult.prompt });
   } catch (e) {
