@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
                                                                         const buf = Buffer.from(m[2], 'base64');
                                                                               const ext = mime.split('/')[1].replace('jpeg', 'jpg');
                                                                                     const filename = 'photos/' + Date.now() + '-' + Math.random().toString(36).slice(2, 8) + '.' + ext;
-                                                                                          const blob = await put(filename, buf, { access: 'public', contentType: mime });
+                                                                                          const blob = await put(filename, buf, { access: 'public', contentType: mime, storeId: process.env.BLOB_PUBLIC_STORE_ID });
                                                                                                 const record = {
                                                                                                         id: filename,
                                                                                                                 url: blob.url,
