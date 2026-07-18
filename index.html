@@ -165,8 +165,15 @@
   .card-maker {
     margin-top: 26px; border-top: 1px solid var(--line); padding-top: 26px;
   }
-  .card-maker .cm-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .card-maker .cm-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
   .card-maker .cm-title { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); }
+  .card-maker .cm-head-btns { display: flex; align-items: center; gap: 10px; }
+  .card-maker .cm-restyle {
+    background: rgba(201,164,92,0.1); border: 1px solid var(--accent-dim); color: var(--accent); font-family: inherit;
+    font-size: 12px; padding: 7px 14px; border-radius: 16px; cursor: pointer; transition: all 0.2s;
+  }
+  .card-maker .cm-restyle:hover { background: rgba(201,164,92,0.18); }
+  .card-maker .cm-restyle:disabled { opacity: 0.6; cursor: default; }
   .card-maker .cm-close {
     background: none; border: none; color: var(--faint); font-size: 13px; cursor: pointer; padding: 4px 8px;
   }
@@ -545,6 +552,8 @@
       cardGenerating: '카드를 엮고 있어요…', cardGenError: '카드를 만들지 못했어요. 잠시 후 다시 시도해주세요.',
       cardDownload: '다운로드', cardShare: '공유', cardShared: '공유됨',
       cardAsOf: '기록 기준', cardMadeOn: '카드 생성', cardQrCaption: '스캔해서 사이트 방문',
+      cardAiNote: '✦ 이 그림과 글은 Paul의 실제 이야기를 AI가 읽고 해석해 만들었습니다',
+      cardRestyleBtn: '🎲 스타일 다시 만들기', cardRestyling: '다시 그리는 중…',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
       gbH2: '방명록', gbLede: '다녀갔다는 흔적을 남겨주세요. 답글로 서로 이야기를 나눠도 좋아요.',
       gbVisits: n => '지금까지 ' + n.toLocaleString() + '번 다녀갔어요',
@@ -604,6 +613,8 @@
       cardGenerating: 'Weaving your cards…', cardGenError: "Couldn't make the cards. Please try again in a moment.",
       cardDownload: 'Download', cardShare: 'Share', cardShared: 'Shared',
       cardAsOf: 'As of', cardMadeOn: 'Card made', cardQrCaption: 'Scan to visit',
+      cardAiNote: '✦ This picture and text draw on Paul\'s real story, read and interpreted by AI',
+      cardRestyleBtn: '🎲 Remake style', cardRestyling: 'Redrawing…',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
       gbH2: 'Guestbook', gbLede: 'Leave a trace that you were here. Feel free to reply to each other, too.',
       gbVisits: n => n.toLocaleString() + ' visits so far',
@@ -661,6 +672,8 @@
       cardGenerating: '正在制作卡片…', cardGenError: '卡片制作失败，请稍后重试。',
       cardDownload: '下载', cardShare: '分享', cardShared: '已分享',
       cardAsOf: '内容截至', cardMadeOn: '卡片制作于', cardQrCaption: '扫码访问网站',
+      cardAiNote: '✦ 这幅画和这段文字基于 Paul 的真实故事，由 AI 阅读并加以解读创作而成',
+      cardRestyleBtn: '🎲 重新生成风格', cardRestyling: '正在重新绘制…',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
       gbH2: '留言簿', gbLede: '留下你来过的痕迹吧。也欢迎互相回复交流。',
       gbVisits: n => '目前已有 ' + n.toLocaleString() + ' 次访问',
@@ -1226,25 +1239,32 @@
     { wobble: 3.6, bow: 7.5, width: 2.7, opacity: 0.48 },
     { wobble: 3.0, bow: 6, width: 1.8, opacity: 0.93 },
   ];
-  // 노드 id로 뼈대(있으면)와 랜덤 시드를 정해, 3겹 손떨림 경로(d) 목록을 만든다 — SVG/캔버스 공용.
-  function doodlePathsFor(nodeId, seedOffset) {
-    const rand = mulberry32(hashStr(nodeId) + (seedOffset || 0));
-    const motifKey = NODE_MOTIF[nodeId];
-    const fn = motifKey && DOODLE_MOTIFS[motifKey];
-    const strokes = fn ? fn() : doodleAbstractScribble(rand);
+  // 노드 id 하나 또는 여러 개(조합 카드용)로 뼈대(있으면)와 랜덤 시드를 정해, 3겹 손떨림 경로(d) 목록을 만든다 — SVG/캔버스 공용.
+  // 여러 개면 각자의 모티프를 살짝 어긋나게 겹쳐 그려서 조합 스토리에도 항상 그림이 생기게 한다.
+  function doodlePathsFor(nodeIds, seedOffset) {
+    const idsArr = Array.isArray(nodeIds) ? nodeIds : [nodeIds];
+    const rand = mulberry32(hashStr(idsArr.join('|')) + (seedOffset || 0));
+    let allStrokes = [];
+    idsArr.forEach((id, i) => {
+      const motifKey = NODE_MOTIF[id];
+      const fn = motifKey && DOODLE_MOTIFS[motifKey];
+      const strokes = fn ? fn() : doodleAbstractScribble(rand);
+      const off = i === 0 ? [0, 0] : [(i % 2 === 0 ? 1 : -1) * 16, i * 9];
+      allStrokes = allStrokes.concat(strokes.map(s => s.map(p => [p[0] + off[0], p[1] + off[1]])));
+    });
     return DOODLE_PASSES.map(pass => ({
-      d: strokes.map(s => doodleSmoothPathD(doodleHandTremor(s, rand, pass.wobble, pass.bow))).join(' '),
+      d: allStrokes.map(s => doodleSmoothPathD(doodleHandTremor(s, rand, pass.wobble, pass.bow))).join(' '),
       width: pass.width, opacity: pass.opacity,
     }));
   }
-  function doodleSvg(nodeId, seedOffset) {
-    const paths = doodlePathsFor(nodeId, seedOffset);
+  function doodleSvg(nodeIds, seedOffset) {
+    const paths = doodlePathsFor(nodeIds, seedOffset);
     const body = paths.map(p => '<path d="' + p.d + '" fill="none" stroke="currentColor" stroke-width="' + p.width +
       '" stroke-linecap="round" stroke-linejoin="round" opacity="' + p.opacity + '"/>').join('');
     return '<svg viewBox="0 0 150 150" role="img" aria-hidden="true">' + body + '</svg>';
   }
-  function drawDoodleOnCanvas(ctx, nodeId, x, y, size, color) {
-    const paths = doodlePathsFor(nodeId, 0);
+  function drawDoodleOnCanvas(ctx, nodeIds, x, y, size, color, seedOffset) {
+    const paths = doodlePathsFor(nodeIds, seedOffset || 0);
     const scale = size / 150;
     ctx.save();
     ctx.translate(x, y);
@@ -1731,9 +1751,11 @@
 
   // ---- 카드 만들기 ----
   let cmToken = 0;
+  let currentCardState = null; // 카드메이커 패널이 열려있는 동안의 상태(ids/content/style/factPct) — "스타일 다시 만들기"가 참조
 
   function closeCardMaker() {
     cmToken++;
+    currentCardState = null;
     const panel = document.getElementById('card-maker');
     panel.style.display = 'none';
     panel.innerHTML = '';
@@ -1813,6 +1835,46 @@
     });
   }
 
+  /* ---------- 카드 스타일 시스템 (팔레트 20종 + 배치 4종) ----------
+     "스타일 다시 만들기"를 눌렀을 때 AI가 완전히 자유롭게 색·폰트를 고르면 가독성이 깨지거나
+     브랜드 톤이 사라질 위험이 있어서, 미리 정해둔 팔레트/배치 조합 안에서만 무작위로 고른다
+     (2026-07-18, Paul 피드백 — Awwwards/2026 디자인 트렌드 리서치 기반으로 팔레트 20종 큐레이션). */
+  const CARD_PALETTES = [
+    { id: 'archive-indigo', name: '아카이브 인디고', mode: 'dark', bg: '#0B0F1F', bg2: '#050818', text: '#E8E5DD', muted: '#B0ACA1', faint: '#7C786D', accent: '#D4A24E', headFont: '"Archivo Black", sans-serif', bodyFont: '"Space Mono", monospace' },
+    { id: 'carbon-copper', name: '카본 코퍼', mode: 'dark', bg: '#0D0D0D', bg2: '#050505', text: '#EDEDED', muted: '#B5B5B5', faint: '#7A7A7A', accent: '#B87333', headFont: '"Archivo Black", sans-serif', bodyFont: '"Space Mono", monospace' },
+    { id: 'dark-academia', name: '다크 아카데미아', mode: 'dark', bg: '#2A1A1C', bg2: '#1A0F10', text: '#EAD9C0', muted: '#C7B394', faint: '#8F7C63', accent: '#8B3A3A', headFont: 'Georgia, serif', bodyFont: 'Georgia, serif' },
+    { id: 'glass-night', name: '글래스 나이트', mode: 'dark', bg: '#12101F', bg2: '#0A0915', text: '#E9E7F5', muted: '#B3AFC8', faint: '#7E7A96', accent: '#5FE0D0', headFont: '"Archivo Black", sans-serif', bodyFont: '"Space Mono", monospace' },
+    { id: 'saas-coral', name: 'SaaS 코랄 팝', mode: 'dark', bg: '#1A1A1E', bg2: '#0F0F12', text: '#E5E5E5', muted: '#A8A8A8', faint: '#787878', accent: '#FF6B4A', headFont: '-apple-system, sans-serif', bodyFont: '-apple-system, sans-serif' },
+    { id: 'electric-blue', name: '일렉트릭 블루', mode: 'dark', bg: '#16161C', bg2: '#0C0C10', text: '#EAEAF0', muted: '#B0B0BE', faint: '#75758A', accent: '#3D7BFF', headFont: '-apple-system, sans-serif', bodyFont: '-apple-system, sans-serif' },
+    { id: 'lime-spark', name: '라임 스파크', mode: 'dark', bg: '#18181A', bg2: '#0E0E10', text: '#E8E8E4', muted: '#AFAFAA', faint: '#77776F', accent: '#C6FF3C', headFont: '-apple-system, sans-serif', bodyFont: '-apple-system, sans-serif' },
+    { id: 'brutalist-red', name: '브루탈리스트 레드', mode: 'dark', bg: '#0A0A0A', bg2: '#000000', text: '#FFFFFF', muted: '#CCCCCC', faint: '#888888', accent: '#E8442E', headFont: 'Impact, "Arial Black", sans-serif', bodyFont: 'Arial, sans-serif' },
+    { id: 'cloud-dancer', name: '클라우드 댄서', mode: 'light', bg: '#F5F1EA', bg2: '#EBE4D6', text: '#2B2620', muted: '#5C5344', faint: '#8A8070', accent: '#8B7355', headFont: 'Georgia, serif', bodyFont: 'Georgia, serif' },
+    { id: 'architectural-cold', name: '아키텍추럴 콜드', mode: 'light', bg: '#ECECEA', bg2: '#E0E0DC', text: '#1F2224', muted: '#4C5254', faint: '#7A8082', accent: '#5C6B73', headFont: '-apple-system, sans-serif', bodyFont: '-apple-system, sans-serif' },
+    { id: 'scandi-minimal', name: '스칸디 미니멀', mode: 'light', bg: '#F2F2F0', bg2: '#E6E6E2', text: '#232323', muted: '#5A5A5A', faint: '#8A8A8A', accent: '#8A97A0', headFont: '-apple-system, sans-serif', bodyFont: '-apple-system, sans-serif' },
+    { id: 'warm-cream', name: '웜 크림 페이퍼', mode: 'light', bg: '#F3ECDD', bg2: '#E9DDC4', text: '#3A2F20', muted: '#6B5D47', faint: '#9C8F76', accent: '#A67C52', headFont: 'Georgia, serif', bodyFont: 'Georgia, serif' },
+    { id: 'mediterranean', name: '지중해 럭셔리', mode: 'light', bg: '#EDE4D3', bg2: '#E3D5BC', text: '#3D3527', muted: '#6B5D47', faint: '#8A7C64', accent: '#C4622D', headFont: 'Georgia, serif', bodyFont: 'Georgia, serif' },
+    { id: 'moss-clay', name: '모스 앤 클레이', mode: 'light', bg: '#EDEAE0', bg2: '#E1DCC9', text: '#2E3324', muted: '#5A6249', faint: '#828A6E', accent: '#6B7A4F', headFont: '-apple-system, sans-serif', bodyFont: '-apple-system, sans-serif' },
+    { id: 'ocean-copper', name: '오션 앤 코퍼', mode: 'light', bg: '#E4E9E8', bg2: '#D5DEDC', text: '#22302E', muted: '#4A5856', faint: '#6E7D7A', accent: '#B87333', headFont: '-apple-system, sans-serif', bodyFont: '-apple-system, sans-serif' },
+    { id: 'terracotta-sunset', name: '테라코타 선셋', mode: 'light', bg: '#EFE2D8', bg2: '#E3CFC0', text: '#3D2B22', muted: '#6B5346', faint: '#96806F', accent: '#E0693F', headFont: 'Georgia, serif', bodyFont: 'Georgia, serif' },
+    { id: 'marie-antoinette', name: '마리 앙투아네트', mode: 'light', bg: '#F3E4E1', bg2: '#E9CFC9', text: '#3A2A2C', muted: '#6E5758', faint: '#9C8788', accent: '#C9A45C', headFont: 'Georgia, serif', bodyFont: 'Georgia, serif' },
+    { id: 'citrus-warmth', name: '시트러스 웜스', mode: 'light', bg: '#F6EFDD', bg2: '#EEDFB8', text: '#33291A', muted: '#6B5C3E', faint: '#978763', accent: '#D9A429', headFont: '-apple-system, sans-serif', bodyFont: '-apple-system, sans-serif' },
+    { id: 'pastel-dream', name: '소프트 파스텔 드림', mode: 'light', bg: '#EDEBF5', bg2: '#DFDBEE', text: '#332F42', muted: '#615C77', faint: '#8B85A3', accent: '#7FBFA3', headFont: '-apple-system, sans-serif', bodyFont: '-apple-system, sans-serif' },
+    { id: 'vintage-sepia', name: '빈티지 필름 세피아', mode: 'light', bg: '#E8DCC4', bg2: '#DCC9A3', text: '#4A3B26', muted: '#7A6748', faint: '#A59270', accent: '#8C5A3C', headFont: 'Georgia, serif', bodyFont: 'Georgia, serif' },
+  ];
+  const CARD_LAYOUTS = ['watermark', 'break-top', 'break-mid', 'poster'];
+  const DEFAULT_CARD_PALETTE = 'archive-indigo';
+  const DEFAULT_CARD_LAYOUT = 'watermark';
+
+  function hexToRgba(hex, alpha) {
+    const h = hex.replace('#', '');
+    const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+  }
+  function pickRandomDifferent(list, current) {
+    const pool = list.filter(x => x !== current);
+    return pool[Math.floor(Math.random() * pool.length)] || list[0];
+  }
+
   async function drawCard(lang, content) {
     const u = UI[lang] || UI.ko;
     const W = 1080, H = 1920, marginX = 96;
@@ -1820,82 +1882,144 @@
     canvas.width = W; canvas.height = H;
     const ctx = canvas.getContext('2d');
 
+    const palette = CARD_PALETTES.find(p => p.id === content.paletteId) || CARD_PALETTES.find(p => p.id === DEFAULT_CARD_PALETTE);
+    const layout = CARD_LAYOUTS.includes(content.layout) ? content.layout : DEFAULT_CARD_LAYOUT;
+    const isPoster = layout === 'poster';
+
     const bg = ctx.createLinearGradient(0, 0, W, H);
-    bg.addColorStop(0, '#26241f'); bg.addColorStop(0.55, '#302e29'); bg.addColorStop(1, '#1c1b19');
+    bg.addColorStop(0, palette.bg); bg.addColorStop(0.55, palette.bg); bg.addColorStop(1, palette.bg2);
     ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
 
+    const noiseIsLight = palette.mode === 'light';
     for (let i = 0; i < 2400; i++) {
       const x = Math.random() * W, y = Math.random() * H, a = Math.random() * 0.05;
-      ctx.fillStyle = Math.random() > 0.5 ? 'rgba(255,255,255,' + a + ')' : 'rgba(0,0,0,' + (a * 1.3) + ')';
+      ctx.fillStyle = (Math.random() > 0.5) === noiseIsLight ? 'rgba(255,255,255,' + a + ')' : 'rgba(0,0,0,' + (a * 1.3) + ')';
       ctx.fillRect(x, y, 1.6, 1.6);
     }
     const vg = ctx.createRadialGradient(W * 0.5, H * 0.4, W * 0.25, W * 0.5, H * 0.5, W * 0.95);
-    vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,0.4)');
+    vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, palette.mode === 'light' ? 'rgba(0,0,0,0.08)' : 'rgba(0,0,0,0.4)');
     ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
 
-    // 단어 하나짜리 카드에만, 헤더 위 빈 공간에 손그림 낙서를 얹는다 — 카드는 항상 시드 0(고정)이라
-    // 같은 단어로 다시 만들면 매번 같은 그림이 나옴(공유해도 안정적).
-    if (content.doodleNodeId) drawDoodleOnCanvas(ctx, content.doodleNodeId, W - marginX - 128, 18, 128, 'rgba(232,229,221,0.8)');
+    const doodleIds = content.doodleIds && content.doodleIds.length ? content.doodleIds : null;
+    // 배경 워터마크/포스터 배치는 텍스트보다 먼저(뒤에) 그린다.
+    if (doodleIds && layout === 'watermark') {
+      drawDoodleOnCanvas(ctx, doodleIds, W * 0.06, H * 0.24, W * 0.88, palette.text, content.doodleSeed);
+      ctx.globalAlpha = 1;
+    }
+    if (doodleIds && isPoster) {
+      const size = W * 1.15;
+      drawDoodleOnCanvas(ctx, doodleIds, (W - size) / 2, H * 0.18, size, palette.accent, content.doodleSeed);
+      ctx.globalAlpha = 1;
+    }
+    // watermark/poster는 opacity를 그림 자체 stroke opacity로 이미 낮게 그리지만, 배경으로 더 죽이고 싶으면 여기서 한 번 더 덮는다.
+    if (doodleIds && (layout === 'watermark' || isPoster)) {
+      ctx.fillStyle = hexToRgba(palette.bg, isPoster ? 0.35 : 0.55);
+      ctx.fillRect(0, 0, W, H);
+    }
 
     ctx.textBaseline = 'alphabetic';
     let y = 150;
 
-    ctx.fillStyle = '#c9a45c';
-    ctx.font = '600 26px "Space Mono", monospace';
+    ctx.fillStyle = palette.accent;
+    ctx.font = '600 26px ' + palette.bodyFont;
     ctx.fillText('FRAGMENTS OF THOUGHT', marginX, y);
     if (content.era) {
-      ctx.fillStyle = 'rgba(232,229,221,0.55)';
-      ctx.font = '400 24px "Space Mono", monospace';
+      ctx.fillStyle = hexToRgba(palette.text, 0.55);
+      ctx.font = '400 24px ' + palette.bodyFont;
       const eraW = ctx.measureText(content.era).width;
       ctx.fillText(content.era, W - marginX - eraW, y);
     }
 
     y += 70;
-    ctx.strokeStyle = 'rgba(232,229,221,0.15)'; ctx.lineWidth = 2;
+    ctx.strokeStyle = hexToRgba(palette.text, 0.15); ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(marginX, y); ctx.lineTo(W - marginX, y); ctx.stroke();
+    y += 50;
 
-    y += 78;
-    ctx.fillStyle = '#e8e5dd';
-    ctx.font = '700 62px "Archivo Black", sans-serif';
-    wrapText(ctx, content.title, W - marginX * 2).slice(0, 3).forEach(l => { ctx.fillText(l, marginX, y); y += 72; });
+    // 본문 위 삽화(break-top) — 제목보다 먼저, 읽는 흐름 속 그림처럼.
+    // drawDoodleOnCanvas는 정사각형(150x150 기준)으로 그리므로, 띠 높이를 기준 크기로 삼아 가운데 정렬한다.
+    if (doodleIds && layout === 'break-top') {
+      const bandH = 260;
+      const dx = marginX + (W - marginX * 2 - bandH) / 2;
+      drawDoodleOnCanvas(ctx, doodleIds, dx, y, bandH, palette.accent, content.doodleSeed);
+      y += bandH + 20;
+    }
 
-    y += 36;
-    let fontSize = 40, storyLines;
-    const maxStoryHeight = H - y - 380;
+    ctx.fillStyle = palette.text;
+    ctx.font = (isPoster ? '900 96px ' : '700 62px ') + palette.headFont;
+    const titleMaxLines = isPoster ? 4 : 3;
+    wrapText(ctx, content.title, W - marginX * 2).slice(0, titleMaxLines).forEach(l => { ctx.fillText(l, marginX, y); y += (isPoster ? 100 : 72); });
+
+    // 본문 중간 삽화(break-mid) — 제목과 본문 사이 여백에.
+    if (doodleIds && layout === 'break-mid') {
+      y += 20;
+      const bandH = 210;
+      const dx = marginX + (W - marginX * 2 - bandH) / 2;
+      drawDoodleOnCanvas(ctx, doodleIds, dx, y, bandH, palette.accent, content.doodleSeed);
+      y += bandH + 20;
+    } else {
+      y += 36;
+    }
+
+    let fontSize = isPoster ? 32 : 40, storyLines;
+    const maxStoryHeight = H - y - 460;
     do {
-      ctx.font = '400 ' + fontSize + 'px "Space Mono", monospace';
+      ctx.font = '400 ' + fontSize + 'px ' + palette.bodyFont;
       storyLines = wrapText(ctx, content.story, W - marginX * 2);
-      if (storyLines.length * (fontSize * 1.65) <= maxStoryHeight || fontSize <= 24) break;
+      if (storyLines.length * (fontSize * 1.65) <= maxStoryHeight || fontSize <= 22) break;
       fontSize -= 2;
     } while (true);
     const lineHeight = fontSize * 1.65;
-    ctx.fillStyle = '#d8d4c9';
+    ctx.fillStyle = hexToRgba(palette.text, 0.85);
     storyLines.forEach(l => { ctx.fillText(l, marginX, y); y += lineHeight; });
 
-    const footerY = H - 260;
-    ctx.strokeStyle = 'rgba(232,229,221,0.15)';
+    // ---- 푸터: 배치가 바뀌어도 항상 고정 — 사실기반 %, AI 해석 표시, 서명, QR+주소 ----
+    const footerY = H - 400;
+    ctx.strokeStyle = hexToRgba(palette.text, 0.15);
     ctx.beginPath(); ctx.moveTo(marginX, footerY); ctx.lineTo(W - marginX, footerY); ctx.stroke();
 
-    ctx.fillStyle = 'rgba(232,229,221,0.55)';
-    ctx.font = '400 22px "Space Mono", monospace';
-    ctx.fillText(u.cardAsOf + ' ' + content.asOfDate, marginX, footerY + 46);
-    ctx.fillText(u.cardMadeOn + ' ' + content.madeDate, marginX, footerY + 80);
+    const factPct = Math.max(0, Math.min(100, Math.round(content.factPct != null ? content.factPct : 100)));
+    ctx.font = '400 20px ' + palette.bodyFont;
+    ctx.fillStyle = hexToRgba(palette.text, 0.55);
+    ctx.fillText(u.factBarLabel, marginX, footerY + 40);
+    ctx.fillStyle = palette.accent;
+    const pctText = factPct + '%';
+    const pctW = ctx.measureText(pctText).width;
+    ctx.fillText(pctText, W - marginX - pctW, footerY + 40);
+    const barY = footerY + 54, barW = W - marginX * 2;
+    ctx.fillStyle = hexToRgba(palette.text, 0.12);
+    ctx.fillRect(marginX, barY, barW, 6);
+    ctx.fillStyle = palette.accent;
+    ctx.fillRect(marginX, barY, barW * (factPct / 100), 6);
 
-    ctx.fillStyle = '#c9a45c';
-    ctx.font = '700 56px "Caveat", cursive';
-    ctx.fillText('Paul Bhang', marginX, footerY + 162);
+    ctx.fillStyle = hexToRgba(palette.text, 0.6);
+    ctx.font = '400 19px ' + palette.bodyFont;
+    wrapText(ctx, u.cardAiNote, barW).slice(0, 2).forEach((l, i) => ctx.fillText(l, marginX, barY + 44 + i * 26));
 
-    ctx.fillStyle = 'rgba(232,229,221,0.7)';
-    ctx.font = '400 24px "Space Mono", monospace';
-    ctx.fillText('wensonjabi.com', marginX, footerY + 202);
+    ctx.fillStyle = hexToRgba(palette.text, 0.5);
+    ctx.font = '400 18px ' + palette.bodyFont;
+    ctx.fillText(u.cardAsOf + ' ' + content.asOfDate, marginX, barY + 108);
+    ctx.fillText(u.cardMadeOn + ' ' + content.madeDate, marginX, barY + 134);
 
-    if (lang === 'zh' && content.qrImg) {
-      const qrSize = 150;
-      ctx.drawImage(content.qrImg, W - marginX - qrSize, footerY + 20, qrSize, qrSize);
-      ctx.fillStyle = 'rgba(232,229,221,0.55)';
-      ctx.font = '400 18px "Space Mono", monospace';
+    ctx.fillStyle = palette.accent;
+    ctx.font = '700 50px "Caveat", cursive';
+    ctx.fillText('Paul Bhang', marginX, barY + 200);
+
+    ctx.fillStyle = hexToRgba(palette.text, 0.7);
+    ctx.font = '400 22px ' + palette.bodyFont;
+    ctx.fillText('wensonjabi.com', marginX, barY + 234);
+
+    if (content.qrImg) {
+      const qrSize = 128;
+      const qx = W - marginX - qrSize, qy = barY + 92;
+      if (palette.mode === 'dark') {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(qx - 8, qy - 8, qrSize + 16, qrSize + 16);
+      }
+      ctx.drawImage(content.qrImg, qx, qy, qrSize, qrSize);
+      ctx.fillStyle = hexToRgba(palette.text, 0.55);
+      ctx.font = '400 16px ' + palette.bodyFont;
       const capW = ctx.measureText(u.cardQrCaption).width;
-      ctx.fillText(u.cardQrCaption, W - marginX - Math.max(capW, qrSize) / 2 - Math.min(capW, qrSize) / 2, footerY + 195);
+      ctx.fillText(u.cardQrCaption, qx + qrSize / 2 - capW / 2, qy + qrSize + 26);
     }
 
     return canvas;
@@ -1932,6 +2056,121 @@
     }
   }
 
+  function computeFactPct(ids) {
+    const sel = ids.map(nodeById).filter(Boolean);
+    if (!sel.length) return 100;
+    const avgScore = sel.reduce((s, n) => s + factScoreOf(n), 0) / sel.length;
+    // 큐레이션 안 된 조합(AI 합성)은 살짝 낮게 — renderComboSynthesis의 기존 0.85 배 규칙과 동일.
+    if (ids.length > 1 && !findComboIn(ids, DATASETS.ko)) return Math.round(avgScore * 0.85);
+    return Math.round(avgScore);
+  }
+
+  async function buildCardCanvases(ids, content, style, factPct) {
+    const today = new Date();
+    const dateStr = today.getFullYear() + '.' + String(today.getMonth() + 1).padStart(2, '0') + '.' + String(today.getDate()).padStart(2, '0');
+    const asOfDate = (D.profile && D.profile.contentAsOf) || dateStr;
+    try {
+      await Promise.all([
+        document.fonts.load('700 62px "Archivo Black"'),
+        document.fonts.load('400 40px "Space Mono"'),
+        document.fonts.load('700 56px "Caveat"'),
+      ]);
+    } catch (e) {}
+    let qrImg = null;
+    // QR은 이제 세 언어 카드 모두에 표시 — "더 알고 싶으면 사이트로" 도선을 항상 열어둔다.
+    try { qrImg = await loadImage('https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(SHARE_URL)); } catch (e) {}
+    const canvases = {};
+    for (const l of ['ko', 'en', 'zh']) {
+      canvases[l] = await drawCard(l, Object.assign({}, content[l], {
+        asOfDate, madeDate: dateStr, qrImg, doodleIds: ids, factPct,
+        paletteId: style.paletteId, layout: style.layout, doodleSeed: style.doodleSeed,
+      }));
+    }
+    return canvases;
+  }
+
+  async function renderCardPanel(ids, content, style, factPct, fileSlug, myToken) {
+    const panel = document.getElementById('card-maker');
+    const canvases = await buildCardCanvases(ids, content, style, factPct);
+    if (myToken !== cmToken) return;
+
+    panel.innerHTML =
+      '<div class="cm-head"><span class="cm-title">' + UI[LANG].cardMakerTitle + '</span>' +
+      '<div class="cm-head-btns">' +
+      '<button class="cm-restyle" type="button" id="cm-restyle-btn">' + UI[LANG].cardRestyleBtn + '</button>' +
+      '<button class="cm-close" type="button" id="cm-close-btn">✕ ' + UI[LANG].cardClose + '</button>' +
+      '</div></div>' +
+      '<div class="cm-row" id="cm-row"></div>';
+    const row = document.getElementById('cm-row');
+    ['ko', 'en', 'zh'].forEach(l => {
+      const wrap = document.createElement('div');
+      wrap.className = 'cm-card';
+      wrap.appendChild(canvases[l]);
+      const langLabel = document.createElement('div');
+      langLabel.className = 'cm-lang';
+      langLabel.textContent = UI[LANG].cardLangLabel[l];
+      wrap.appendChild(langLabel);
+      const btns = document.createElement('div');
+      btns.className = 'cm-btns';
+      const dlBtn = document.createElement('button');
+      dlBtn.type = 'button'; dlBtn.textContent = UI[LANG].cardDownload;
+      dlBtn.addEventListener('click', () => downloadCanvas(canvases[l], l, fileSlug));
+      btns.appendChild(dlBtn);
+      if (navigator.share) {
+        const shBtn = document.createElement('button');
+        shBtn.type = 'button'; shBtn.textContent = UI[LANG].cardShare;
+        shBtn.addEventListener('click', () => shareCanvas(canvases[l], l, shBtn, fileSlug));
+        btns.appendChild(shBtn);
+      }
+      wrap.appendChild(btns);
+      row.appendChild(wrap);
+    });
+    document.getElementById('cm-close-btn').addEventListener('click', closeCardMaker);
+    document.getElementById('cm-restyle-btn').addEventListener('click', restyleCurrentCard);
+  }
+
+  // "스타일 다시 만들기" — 텍스트는 AI가 더 상상력 있게 재해석(그만큼 사실기반 %는 낮춤),
+  // 스타일(팔레트/배치/그림 시드)은 미리 정해둔 조합 안에서 무작위로 새로 고른다.
+  async function restyleCurrentCard() {
+    if (!currentCardState) return;
+    const { ids, style, factPct, content: baseContent, fileSlug } = currentCardState;
+    const myToken = ++cmToken;
+    const restyleBtn = document.getElementById('cm-restyle-btn');
+    if (restyleBtn) { restyleBtn.disabled = true; restyleBtn.textContent = UI[LANG].cardRestyling; }
+
+    const langs = ['ko', 'en', 'zh'];
+    const restyled = await Promise.all(langs.map(async l => {
+      const nodesForLang = ids.map(id => nodesFor(l).find(x => x.id === id)).filter(Boolean);
+      if (!nodesForLang.length) return null;
+      try {
+        const r = await fetch('/api/synthesize-combo', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode: 'restyle', lang: l, nodes: nodesForLang.map(n => ({ id: n.id, label: n.label, story: n.story })) }),
+        });
+        const d = await r.json();
+        return d.synthesis || null;
+      } catch (e) { return null; }
+    }));
+    if (myToken !== cmToken) return;
+
+    const anyRestyled = restyled.some(Boolean);
+    const newContent = {};
+    langs.forEach((l, i) => { newContent[l] = Object.assign({}, baseContent[l], restyled[i] ? { story: restyled[i] } : {}); });
+    const newFactPct = anyRestyled ? Math.max(15, Math.round(factPct * 0.5)) : factPct;
+    const newStyle = {
+      paletteId: pickRandomDifferent(CARD_PALETTES.map(p => p.id), style.paletteId),
+      layout: pickRandomDifferent(CARD_LAYOUTS, style.layout),
+      doodleSeed: (style.doodleSeed || 0) + 97 + Math.floor(Math.random() * 900),
+    };
+    currentCardState = { ids, content: newContent, style: newStyle, factPct: newFactPct, fileSlug };
+    try {
+      await renderCardPanel(ids, newContent, newStyle, newFactPct, fileSlug, myToken);
+    } catch (e) {
+      if (myToken !== cmToken) return;
+      if (restyleBtn) { restyleBtn.disabled = false; restyleBtn.textContent = UI[LANG].cardRestyleBtn; }
+    }
+  }
+
   async function openCardMaker(ids) {
     if (!ids.length) return;
     const panel = document.getElementById('card-maker');
@@ -1945,61 +2184,15 @@
       if (myToken !== cmToken) return;
 
       const today = new Date();
-      const dateStr = today.getFullYear() + '.' + String(today.getMonth() + 1).padStart(2, '0') + '.' + String(today.getDate()).padStart(2, '0');
-      const asOfDate = (D.profile && D.profile.contentAsOf) || dateStr;
       // 카드마다 다른 파일명으로 저장되도록 — 고른 단어(들) + 날짜를 파일명에 반영.
       const fileSlug = ids.join('-').replace(/[^a-zA-Z0-9-]/g, '').slice(0, 60) + '-' +
         today.getFullYear() + String(today.getMonth() + 1).padStart(2, '0') + String(today.getDate()).padStart(2, '0');
-
-      try {
-        await Promise.all([
-          document.fonts.load('700 62px "Archivo Black"'),
-          document.fonts.load('400 40px "Space Mono"'),
-          document.fonts.load('700 56px "Caveat"'),
-        ]);
-      } catch (e) {}
-
-      let qrImg = null;
-      try { qrImg = await loadImage('https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(SHARE_URL)); } catch (e) {}
-      if (myToken !== cmToken) return;
-
-      const langs = ['ko', 'en', 'zh'];
-      const canvases = {};
-      const doodleNodeId = ids.length === 1 ? ids[0] : null;
-      for (const l of langs) {
-        canvases[l] = await drawCard(l, Object.assign({}, content[l], { asOfDate, madeDate: dateStr, qrImg: l === 'zh' ? qrImg : null, doodleNodeId }));
-      }
-      if (myToken !== cmToken) return;
-
-      panel.innerHTML =
-        '<div class="cm-head"><span class="cm-title">' + UI[LANG].cardMakerTitle + '</span>' +
-        '<button class="cm-close" type="button" id="cm-close-btn">✕ ' + UI[LANG].cardClose + '</button></div>' +
-        '<div class="cm-row" id="cm-row"></div>';
-      const row = document.getElementById('cm-row');
-      langs.forEach(l => {
-        const wrap = document.createElement('div');
-        wrap.className = 'cm-card';
-        wrap.appendChild(canvases[l]);
-        const langLabel = document.createElement('div');
-        langLabel.className = 'cm-lang';
-        langLabel.textContent = UI[LANG].cardLangLabel[l];
-        wrap.appendChild(langLabel);
-        const btns = document.createElement('div');
-        btns.className = 'cm-btns';
-        const dlBtn = document.createElement('button');
-        dlBtn.type = 'button'; dlBtn.textContent = UI[LANG].cardDownload;
-        dlBtn.addEventListener('click', () => downloadCanvas(canvases[l], l, fileSlug));
-        btns.appendChild(dlBtn);
-        if (navigator.share) {
-          const shBtn = document.createElement('button');
-          shBtn.type = 'button'; shBtn.textContent = UI[LANG].cardShare;
-          shBtn.addEventListener('click', () => shareCanvas(canvases[l], l, shBtn, fileSlug));
-          btns.appendChild(shBtn);
-        }
-        wrap.appendChild(btns);
-        row.appendChild(wrap);
-      });
-      document.getElementById('cm-close-btn').addEventListener('click', closeCardMaker);
+      const factPct = computeFactPct(ids);
+      // 처음 만든 카드는 항상 같은 팔레트/배치(시드 0)로 고정 — 기존 사이트 톤과 맞고, 공유해도 안정적.
+      // "스타일 다시 만들기"를 눌러야 비로소 다른 조합으로 바뀐다.
+      const style = { paletteId: DEFAULT_CARD_PALETTE, layout: DEFAULT_CARD_LAYOUT, doodleSeed: 0 };
+      currentCardState = { ids, content, style, factPct, fileSlug };
+      await renderCardPanel(ids, content, style, factPct, fileSlug, myToken);
     } catch (e) {
       if (myToken !== cmToken) return;
       panel.innerHTML = '<div class="cm-status">' + UI[LANG].cardGenError + '</div>';
