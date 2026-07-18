@@ -1933,19 +1933,29 @@
     return { ko: results[0], en: results[1], zh: results[2] };
   }
 
+  // 공백으로 구분된 토큰(단어·키워드)은 통째로 한 줄에 배치 — 카드 제목처럼 "자전거 · 자유"류가
+  // 키워드 중간에서 다음 줄로 끊기지 않게. 공백이 아예 없는 토큰(중국어 문장처럼)이 한 줄 폭보다
+  // 넓으면 그때만 문자 단위로 쪼갠다(기존 방식과 동일하게 동작).
   function wrapText(ctx, text, maxWidth) {
     const lines = [];
     text.split('\n').forEach(para => {
       let line = '';
-      for (const ch of para) {
-        const test = line + ch;
-        if (ctx.measureText(test).width > maxWidth && line) {
-          lines.push(line);
-          line = ch;
-        } else {
+      para.split(' ').forEach(token => {
+        const sep = line ? ' ' : '';
+        const test = line + sep + token;
+        if (!line || ctx.measureText(test).width <= maxWidth) {
           line = test;
+        } else {
+          lines.push(line);
+          line = token;
         }
-      }
+        while (ctx.measureText(line).width > maxWidth && line.length > 1) {
+          let cut = line.length;
+          while (cut > 1 && ctx.measureText(line.slice(0, cut)).width > maxWidth) cut--;
+          lines.push(line.slice(0, cut));
+          line = line.slice(cut);
+        }
+      });
       lines.push(line);
     });
     return lines;
@@ -2037,9 +2047,9 @@
       drawDoodleOnCanvas(ctx, doodleIds, (W - size) / 2, H * 0.18, size, palette.accent, content.doodleSeed);
       ctx.globalAlpha = 1;
     }
-    // watermark/poster는 opacity를 그림 자체 stroke opacity로 이미 낮게 그리지만, 배경으로 더 죽이고 싶으면 여기서 한 번 더 덮는다.
+    // 배경에 깔리는 그림은 글 읽기를 방해하면 안 되므로 훨씬 옅게 — Paul 피드백: "가독성에 방해가 된다".
     if (doodleIds && (layout === 'watermark' || isPoster)) {
-      ctx.fillStyle = hexToRgba(palette.bg, isPoster ? 0.35 : 0.55);
+      ctx.fillStyle = hexToRgba(palette.bg, isPoster ? 0.6 : 0.8);
       ctx.fillRect(0, 0, W, H);
     }
 
