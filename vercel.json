@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/thoughts.js": { "maxDuration": 60 },
-    "api/generate-image.js": { "maxDuration": 45 }
+    "api/generate-image.js": { "maxDuration": 60 }
   },
   "headers": [
     {

@@ -54,14 +54,27 @@ async function writeImagePrompt(key, storyText, moodText) {
   return { ok: true, prompt: stripModelArtifacts(prompt) };
 }
 
+// Prefer:wait만 믿으면 계정의 첫 호출처럼 모델 콜드스타트가 대기시간을 넘길 때 "starting" 상태로
+// 그냥 돌아온다(실제 확인됨) — 그래서 즉시 응답이 안 끝나 있으면 짧은 간격으로 직접 폴링한다.
 async function runReplicate(token, prompt) {
-  const r = await fetch('https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions', {
+  const createRes = await fetch('https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions', {
     method: 'POST',
     headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json', Prefer: 'wait=25' },
     body: JSON.stringify({ input: { prompt, aspect_ratio: '1:1', output_format: 'png', num_outputs: 1 } }),
   });
-  if (!r.ok) return { ok: false, stage: 'replicate', status: r.status, body: (await r.text().catch(() => '')).slice(0, 400) };
-  const data = await r.json();
+  if (!createRes.ok) return { ok: false, stage: 'replicate-create', status: createRes.status, body: (await createRes.text().catch(() => '')).slice(0, 400) };
+  let data = await createRes.json();
+  const pollUrl = data.urls && data.urls.get;
+
+  const startedAt = Date.now();
+  const budgetMs = 45000; // Vercel 함수 제한(60초) 안에서 Claude 호출·Blob 업로드 시간을 남겨두고 폴링
+  while (data.status !== 'succeeded' && data.status !== 'failed' && data.status !== 'canceled') {
+    if (!pollUrl || Date.now() - startedAt > budgetMs) return { ok: false, stage: 'replicate-timeout', status: data.status };
+    await new Promise(resolve => setTimeout(resolve, 1200));
+    const pollRes = await fetch(pollUrl, { headers: { Authorization: 'Bearer ' + token } });
+    if (!pollRes.ok) return { ok: false, stage: 'replicate-poll', status: pollRes.status };
+    data = await pollRes.json();
+  }
   if (data.status !== 'succeeded') return { ok: false, stage: 'replicate-status', status: data.status, body: JSON.stringify(data.error || data).slice(0, 400) };
   const out = Array.isArray(data.output) ? data.output[0] : data.output;
   if (!out) return { ok: false, stage: 'replicate-no-output', body: JSON.stringify(data).slice(0, 400) };
