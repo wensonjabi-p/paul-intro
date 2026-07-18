@@ -391,12 +391,22 @@
   /* ---------- AI 의도 판단 + 후속 질문 ----------
      범용 문장("그거 말고 다른 얘기", "지금까지 정리해줘", "잠깐만", 잡담 등)이 엉뚱한 질문의 답으로
      잘못 저장되지 않도록, 먼저 이 메시지가 진짜 답변인지 다른 의도인지 판단한 뒤(answer가 아니면
-     저장하지 않음), 답변일 때만 그 자리에서 후속 질문까지 같이 받아온다 — 왕복 한 번으로 처리. */
+     저장하지 않음), 답변일 때만 그 자리에서 후속 질문까지 같이 받아온다 — 왕복 한 번으로 처리.
+     현재 질문+방금 답변만 봐서는 "아까 그거", "그것도 비슷했어" 같은 대명사·생략을 못 알아듣기 때문에,
+     직전 대화 몇 턴을 함께 보내서 맥락을 반영하게 한다. */
+  function recentHistoryForAI(limit) {
+    const KEEP = { question: 1, answer: 1, confirm: 1 };
+    return thread
+      .filter(m => KEEP[m.kind])
+      .slice(-limit)
+      .map(m => ({ role: m.role === 'user' ? 'user' : 'ai', text: m.text }));
+  }
+
   async function classifyReply(q, answerText) {
     try {
       const r = await fetch('/api/generate-followup', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: q.q, answer: answerText, node: q.node }),
+        body: JSON.stringify({ question: q.q, answer: answerText, node: q.node, history: recentHistoryForAI(12) }),
       });
       if (!r.ok) return null;
       const d = await r.json();
