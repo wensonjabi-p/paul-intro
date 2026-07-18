@@ -588,6 +588,7 @@
       cardRestyleBtn: '🎲 스타일 다시 만들기', cardRestyling: '다시 그리는 중…',
       cardDownloadSelected: '선택한 카드 다운로드', cardShareSelected: '선택한 카드 공유', cardSelectForDownload: '선택',
       cardStyleLabel: n => '스타일 ' + n, cardImageSetLabel: '이미지 카드',
+      imgLayoutLabel: { 'full-bleed': '풀블리드', framed: '프레임', polaroid: '폴라로이드' },
       cardMakeImageBtn: '🖼️ 이 스타일로 이미지 카드 만들기', cardGeneratingImage: '이미지를 그리는 중… (첫 시도는 좀 걸릴 수 있어요)',
       cardImageFailed: '이미지 생성 실패 — 잠시 후 다시 시도해주세요',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
@@ -655,6 +656,7 @@
       cardRestyleBtn: '🎲 Remake style', cardRestyling: 'Redrawing…',
       cardDownloadSelected: 'Download selected', cardShareSelected: 'Share selected', cardSelectForDownload: 'Select',
       cardStyleLabel: n => 'Style ' + n, cardImageSetLabel: 'Image card',
+      imgLayoutLabel: { 'full-bleed': 'Full-bleed', framed: 'Framed', polaroid: 'Polaroid' },
       cardMakeImageBtn: '🖼️ Make an image card in this style', cardGeneratingImage: 'Painting the image… (the first try may take a bit)',
       cardImageFailed: 'Image generation failed — please try again in a moment',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
@@ -720,6 +722,7 @@
       cardRestyleBtn: '🎲 重新生成风格', cardRestyling: '正在重新绘制…',
       cardDownloadSelected: '下载所选卡片', cardShareSelected: '分享所选卡片', cardSelectForDownload: '选择',
       cardStyleLabel: n => '风格 ' + n, cardImageSetLabel: '图片卡片',
+      imgLayoutLabel: { 'full-bleed': '全出血', framed: '相框式', polaroid: '拍立得' },
       cardMakeImageBtn: '🖼️ 用这个风格生成图片卡片', cardGeneratingImage: '正在生成图片…（第一次可能要等一会儿）',
       cardImageFailed: '图片生成失败——请稍后重试',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
@@ -2018,6 +2021,10 @@
   const CARD_LAYOUTS = ['watermark', 'break-top', 'break-mid', 'poster'];
   const DEFAULT_CARD_PALETTE = 'archive-indigo';
   const DEFAULT_CARD_LAYOUT = 'watermark';
+  // AI 이미지 카드 전용 배치 3종 — 글카드(CARD_LAYOUTS)와는 별개. 글카드의 본문 텍스트는 넣지 않고
+  // 그림을 주인공으로, 키워드(짧은 제목)+서명+사이트만 최소한으로 얹는다(Paul 피드백: "글자 카드와 합쳐지면 안 됨").
+  const IMAGE_CARD_LAYOUTS = ['full-bleed', 'framed', 'polaroid'];
+  const DEFAULT_IMAGE_CARD_LAYOUT = 'full-bleed';
 
   function hexToRgba(hex, alpha) {
     const h = hex.replace('#', '');
@@ -2049,48 +2056,38 @@
     const layout = CARD_LAYOUTS.includes(content.layout) ? content.layout : DEFAULT_CARD_LAYOUT;
     const isPoster = layout === 'poster';
 
-    let y, doodleIds = null;
-    if (content.aiImage) {
-      // AI가 스토리를 바탕으로 실제로 그린 그림 — 위 절반은 그림, 아래 절반은 항상 불투명한 텍스트 패널이라
-      // 그림이 얼마나 화려하든 글은 절대 가려지지 않는다(손그림 배경 낙서와는 다른 원칙).
-      const photoH = H * 0.5;
-      drawCoverImage(ctx, content.aiImage, 0, 0, W, photoH);
-      ctx.fillStyle = palette.bg2;
-      ctx.fillRect(0, photoH, W, H - photoH);
-      y = photoH + 90;
-    } else {
-      const bg = ctx.createLinearGradient(0, 0, W, H);
-      bg.addColorStop(0, palette.bg); bg.addColorStop(0.55, palette.bg); bg.addColorStop(1, palette.bg2);
-      ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+    let y;
+    const bg = ctx.createLinearGradient(0, 0, W, H);
+    bg.addColorStop(0, palette.bg); bg.addColorStop(0.55, palette.bg); bg.addColorStop(1, palette.bg2);
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
 
-      const noiseIsLight = palette.mode === 'light';
-      for (let i = 0; i < 2400; i++) {
-        const nx = Math.random() * W, ny = Math.random() * H, a = Math.random() * 0.05;
-        ctx.fillStyle = (Math.random() > 0.5) === noiseIsLight ? 'rgba(255,255,255,' + a + ')' : 'rgba(0,0,0,' + (a * 1.3) + ')';
-        ctx.fillRect(nx, ny, 1.6, 1.6);
-      }
-      const vg = ctx.createRadialGradient(W * 0.5, H * 0.4, W * 0.25, W * 0.5, H * 0.5, W * 0.95);
-      vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, palette.mode === 'light' ? 'rgba(0,0,0,0.08)' : 'rgba(0,0,0,0.4)');
-      ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
-
-      doodleIds = content.doodleIds && content.doodleIds.length ? content.doodleIds : null;
-      // 배경 워터마크/포스터 배치는 텍스트보다 먼저(뒤에) 그린다.
-      if (doodleIds && layout === 'watermark') {
-        drawDoodleOnCanvas(ctx, doodleIds, W * 0.06, H * 0.24, W * 0.88, palette.text, content.doodleSeed);
-        ctx.globalAlpha = 1;
-      }
-      if (doodleIds && isPoster) {
-        const size = W * 1.15;
-        drawDoodleOnCanvas(ctx, doodleIds, (W - size) / 2, H * 0.18, size, palette.accent, content.doodleSeed);
-        ctx.globalAlpha = 1;
-      }
-      // 배경에 깔리는 그림은 글 읽기를 방해하면 안 되므로 훨씬 옅게 — Paul 피드백: "가독성에 방해가 된다".
-      if (doodleIds && (layout === 'watermark' || isPoster)) {
-        ctx.fillStyle = hexToRgba(palette.bg, isPoster ? 0.6 : 0.8);
-        ctx.fillRect(0, 0, W, H);
-      }
-      y = 150;
+    const noiseIsLight = palette.mode === 'light';
+    for (let i = 0; i < 2400; i++) {
+      const nx = Math.random() * W, ny = Math.random() * H, a = Math.random() * 0.05;
+      ctx.fillStyle = (Math.random() > 0.5) === noiseIsLight ? 'rgba(255,255,255,' + a + ')' : 'rgba(0,0,0,' + (a * 1.3) + ')';
+      ctx.fillRect(nx, ny, 1.6, 1.6);
     }
+    const vg = ctx.createRadialGradient(W * 0.5, H * 0.4, W * 0.25, W * 0.5, H * 0.5, W * 0.95);
+    vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, palette.mode === 'light' ? 'rgba(0,0,0,0.08)' : 'rgba(0,0,0,0.4)');
+    ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
+
+    const doodleIds = content.doodleIds && content.doodleIds.length ? content.doodleIds : null;
+    // 배경 워터마크/포스터 배치는 텍스트보다 먼저(뒤에) 그린다.
+    if (doodleIds && layout === 'watermark') {
+      drawDoodleOnCanvas(ctx, doodleIds, W * 0.06, H * 0.24, W * 0.88, palette.text, content.doodleSeed);
+      ctx.globalAlpha = 1;
+    }
+    if (doodleIds && isPoster) {
+      const size = W * 1.15;
+      drawDoodleOnCanvas(ctx, doodleIds, (W - size) / 2, H * 0.18, size, palette.accent, content.doodleSeed);
+      ctx.globalAlpha = 1;
+    }
+    // 배경에 깔리는 그림은 글 읽기를 방해하면 안 되므로 훨씬 옅게 — Paul 피드백: "가독성에 방해가 된다".
+    if (doodleIds && (layout === 'watermark' || isPoster)) {
+      ctx.fillStyle = hexToRgba(palette.bg, isPoster ? 0.6 : 0.8);
+      ctx.fillRect(0, 0, W, H);
+    }
+    y = 150;
 
     ctx.textBaseline = 'alphabetic';
 
@@ -2167,7 +2164,7 @@
 
     ctx.fillStyle = hexToRgba(palette.text, 0.6);
     ctx.font = '400 19px ' + palette.bodyFont;
-    wrapText(ctx, content.aiImage ? u.cardAiImageNote : u.cardAiNote, barW).slice(0, 2).forEach((l, i) => ctx.fillText(l, marginX, barY + 44 + i * 26));
+    wrapText(ctx, u.cardAiNote, barW).slice(0, 2).forEach((l, i) => ctx.fillText(l, marginX, barY + 44 + i * 26));
 
     ctx.fillStyle = hexToRgba(palette.text, 0.5);
     ctx.font = '400 18px ' + palette.bodyFont;
@@ -2194,6 +2191,108 @@
       ctx.font = '400 16px ' + palette.bodyFont;
       const capW = ctx.measureText(u.cardQrCaption).width;
       ctx.fillText(u.cardQrCaption, qx + qrSize / 2 - capW / 2, qy + qrSize + 26);
+    }
+
+    return canvas;
+  }
+
+  // AI 이미지 카드 전용 푸터 — 글카드(drawCard)의 사실기반 바·날짜는 넣지 않고, 키워드(짧은 제목,
+  // Paul 피드백: "글카드에 들어간 글을 제외한 부분") + AI 고지 + 서명 + 사이트만 최소한으로.
+  // 반환값은 그린 내용의 마지막 y좌표(호출부에서 배치 확인용, 지금은 안 씀).
+  function drawImageCardFooter(ctx, palette, u, content, fx, fy, fw, opts) {
+    opts = opts || {};
+    const textColor = opts.textColor || palette.text;
+    const mutedColor = opts.mutedColor || hexToRgba(palette.text, 0.62);
+    let y = fy;
+
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = palette.accent;
+    ctx.font = '600 24px ' + palette.bodyFont;
+    ctx.fillText('FRAGMENTS OF THOUGHT', fx, y);
+    y += 54;
+
+    if (opts.showKeyword !== false) {
+      ctx.fillStyle = textColor;
+      ctx.font = '700 50px ' + palette.headFont;
+      wrapText(ctx, content.title, fw - 160).slice(0, 2).forEach(l => { ctx.fillText(l, fx, y); y += 58; });
+      y += 14;
+    }
+
+    ctx.fillStyle = mutedColor;
+    ctx.font = '400 19px ' + palette.bodyFont;
+    wrapText(ctx, u.cardAiImageNote, fw - 160).slice(0, 2).forEach(l => { ctx.fillText(l, fx, y); y += 26; });
+    y += 30;
+
+    ctx.fillStyle = palette.accent;
+    ctx.font = '700 44px "Caveat", cursive';
+    ctx.fillText('Paul Bhang', fx, y);
+    y += 38;
+
+    ctx.fillStyle = mutedColor;
+    ctx.font = '400 21px ' + palette.bodyFont;
+    ctx.fillText('wensonjabi.com', fx, y);
+
+    if (content.qrImg) {
+      const qrSize = 108;
+      const qx = fx + fw - qrSize, qy = fy - 6;
+      if (opts.qrBg) { ctx.fillStyle = '#ffffff'; ctx.fillRect(qx - 8, qy - 8, qrSize + 16, qrSize + 16); }
+      ctx.drawImage(content.qrImg, qx, qy, qrSize, qrSize);
+    }
+    return y;
+  }
+
+  // AI가 스토리를 바탕으로 그린 그림을 위한 독립 카드 — 글카드와 완전히 다른 함수(더 이상 drawCard 안에서
+  // 텍스트 패널과 합치지 않음, Paul 피드백: "이미지가 글자 카드와 합쳐져 보인다"). 그림이 주인공이고
+  // 본문 스토리 텍스트는 아예 넣지 않는다. IMAGE_CARD_LAYOUTS 3종(full-bleed/framed/polaroid) 중 하나.
+  async function drawImageCard(lang, content) {
+    const u = UI[lang] || UI.ko;
+    const W = 1080, H = 1920, marginX = 96;
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    const palette = CARD_PALETTES.find(p => p.id === content.paletteId) || CARD_PALETTES.find(p => p.id === DEFAULT_CARD_PALETTE);
+    const layout = IMAGE_CARD_LAYOUTS.includes(content.imgLayout) ? content.imgLayout : DEFAULT_IMAGE_CARD_LAYOUT;
+    const img = content.aiImage;
+    const qrBg = palette.mode === 'dark';
+
+    if (layout === 'framed') {
+      ctx.fillStyle = palette.bg; ctx.fillRect(0, 0, W, H);
+      const mx = 90, myTop = 110, imgH = 1200;
+      drawCoverImage(ctx, img, mx, myTop, W - mx * 2, imgH);
+      ctx.strokeStyle = hexToRgba(palette.accent, 0.55); ctx.lineWidth = 3;
+      ctx.strokeRect(mx, myTop, W - mx * 2, imgH);
+      drawImageCardFooter(ctx, palette, u, content, mx, myTop + imgH + 90, W - mx * 2, { qrBg });
+    } else if (layout === 'polaroid') {
+      ctx.fillStyle = palette.bg2; ctx.fillRect(0, 0, W, H);
+      ctx.save();
+      ctx.translate(W / 2, H * 0.46);
+      ctx.rotate(-0.014);
+      const pw = W - 170, frameSide = 26, frameTop = 26, frameBottom = 210, ph = pw * 1.05;
+      const paper = palette.mode === 'dark' ? '#EDE9DF' : '#FFFFFF';
+      ctx.save();
+      ctx.shadowColor = 'rgba(0,0,0,0.35)'; ctx.shadowBlur = 40; ctx.shadowOffsetY = 18;
+      ctx.fillStyle = paper;
+      ctx.fillRect(-pw / 2 - frameSide, -ph / 2 - frameTop, pw + frameSide * 2, ph + frameTop + frameBottom);
+      ctx.restore();
+      drawCoverImage(ctx, img, -pw / 2, -ph / 2, pw, ph);
+      ctx.fillStyle = '#2B2620';
+      ctx.font = '700 46px "Caveat", cursive';
+      const cap = content.title.length > 16 ? content.title.slice(0, 16) + '…' : content.title;
+      const capW = ctx.measureText(cap).width;
+      ctx.textBaseline = 'alphabetic';
+      ctx.fillText(cap, -capW / 2, ph / 2 + 92);
+      ctx.restore();
+      drawImageCardFooter(ctx, palette, u, content, marginX, H - 250, W - marginX * 2, { showKeyword: false, qrBg });
+    } else {
+      // full-bleed(기본): 그림이 카드 전체를 채우고, 아래쪽만 그라디언트 스크림으로 살짝 어둡게 해 글을 얹는다.
+      drawCoverImage(ctx, img, 0, 0, W, H);
+      const bandH = 560;
+      const grad = ctx.createLinearGradient(0, H - bandH, 0, H);
+      grad.addColorStop(0, hexToRgba(palette.bg, 0));
+      grad.addColorStop(0.32, hexToRgba(palette.bg, 0.82));
+      grad.addColorStop(1, hexToRgba(palette.bg, 0.97));
+      ctx.fillStyle = grad; ctx.fillRect(0, H - bandH, W, bandH);
+      drawImageCardFooter(ctx, palette, u, content, marginX, H - bandH + 74, W - marginX * 2, { qrBg });
     }
 
     return canvas;
@@ -2257,10 +2356,12 @@
     try { qrImg = await loadImage('https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(SHARE_URL)); } catch (e) {}
     const canvases = {};
     for (const l of ['ko', 'en', 'zh']) {
-      canvases[l] = await drawCard(l, Object.assign({}, content[l], {
-        asOfDate, madeDate: dateStr, qrImg, doodleIds: style.aiImage ? null : ids, factPct,
-        paletteId: style.paletteId, layout: style.layout, doodleSeed: style.doodleSeed, aiImage: style.aiImage || null,
-      }));
+      canvases[l] = style.aiImage
+        ? await drawImageCard(l, { title: content[l].title, qrImg, paletteId: style.paletteId, imgLayout: style.imgLayout, aiImage: style.aiImage })
+        : await drawCard(l, Object.assign({}, content[l], {
+            asOfDate, madeDate: dateStr, qrImg, doodleIds: ids, factPct,
+            paletteId: style.paletteId, layout: style.layout, doodleSeed: style.doodleSeed,
+          }));
     }
     return canvases;
   }
@@ -2299,7 +2400,10 @@
       labelRow.className = 'cm-set-labelrow';
       const label = document.createElement('div');
       label.className = 'cm-set-label';
-      label.textContent = (set.kind === 'ai-image' ? '🖼️ ' + UI[LANG].cardImageSetLabel + ' · ' : UI[LANG].cardStyleLabel(si + 1) + ' · ') + paletteName;
+      const imgLayoutName = set.kind === 'ai-image' ? (UI[LANG].imgLayoutLabel[set.style.imgLayout] || set.style.imgLayout) : '';
+      label.textContent = set.kind === 'ai-image'
+        ? '🖼️ ' + UI[LANG].cardImageSetLabel + ' · ' + imgLayoutName + ' · ' + paletteName
+        : UI[LANG].cardStyleLabel(si + 1) + ' · ' + paletteName;
       labelRow.appendChild(label);
       if (set.kind !== 'ai-image') {
         const genImgBtn = document.createElement('button');
@@ -2451,9 +2555,15 @@
       return;
     }
 
-    // 그림은 그 스타일 세트의 팔레트를 그대로 이어받아 분위기를 맞춘다 — 배치(layout)는 사진+텍스트패널
-    // 전용 구성을 drawCard가 알아서 쓰므로 여기선 원래 배치값을 그냥 같이 넘겨도 무방.
-    await addCardSet({ paletteId: sourceSet.style.paletteId, layout: sourceSet.style.layout, doodleSeed: 0, aiImage: img });
+    // 그림은 그 스타일 세트의 팔레트를 그대로 이어받아 분위기를 맞춘다. 배치(imgLayout)는 3가지
+    // 독립 형태(full-bleed/framed/polaroid) 중 아직 안 쓴 것부터 — Paul 피드백: "3가지 다른 형태로".
+    const usedImgLayouts = currentCardState.cardSets.filter(s => s.kind === 'ai-image').map(s => s.style.imgLayout);
+    const unusedImgLayouts = IMAGE_CARD_LAYOUTS.filter(l => !usedImgLayouts.includes(l));
+    const imgLayout = unusedImgLayouts.length
+      ? unusedImgLayouts[Math.floor(Math.random() * unusedImgLayouts.length)]
+      : pickRandomDifferent(IMAGE_CARD_LAYOUTS, usedImgLayouts[usedImgLayouts.length - 1]);
+
+    await addCardSet({ paletteId: sourceSet.style.paletteId, imgLayout, aiImage: img });
   }
 
   async function openCardMaker(ids) {
