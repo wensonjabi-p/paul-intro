@@ -162,6 +162,13 @@
     cursor: pointer; letter-spacing: 0.03em; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
   }
   .card-make-btn:hover { background: rgba(201,164,92,0.1); }
+  .story-remake-btn {
+    margin-top: 22px; margin-right: 10px; background: none; border: 1px solid var(--line); color: var(--muted);
+    font-family: inherit; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 20px;
+    cursor: pointer; letter-spacing: 0.03em; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .story-remake-btn:hover { border-color: var(--muted); color: var(--ink); }
+  .story-remake-btn:disabled { opacity: 0.6; cursor: default; }
   .card-maker {
     margin-top: 26px; border-top: 1px solid var(--line); padding-top: 26px;
   }
@@ -174,11 +181,22 @@
   }
   .card-maker .cm-restyle:hover { background: rgba(201,164,92,0.18); }
   .card-maker .cm-restyle:disabled { opacity: 0.6; cursor: default; }
+  .card-maker .cm-dl-selected {
+    background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
+    font-size: 12px; padding: 7px 14px; border-radius: 16px; cursor: pointer; transition: all 0.2s;
+  }
+  .card-maker .cm-dl-selected:hover { border-color: var(--muted); color: var(--ink); }
   .card-maker .cm-close {
     background: none; border: none; color: var(--faint); font-size: 13px; cursor: pointer; padding: 4px 8px;
   }
   .card-maker .cm-close:hover { color: var(--ink); }
   .cm-status { color: var(--muted); font-size: 14px; padding: 20px 0; }
+  .cm-sets { display: flex; flex-direction: column; gap: 28px; }
+  .cm-set-label {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);
+    margin-bottom: 12px; padding-top: 14px; border-top: 1px solid var(--line);
+  }
+  .cm-set:first-child .cm-set-label { border-top: none; padding-top: 0; }
   .cm-row { display: flex; gap: 18px; overflow-x: auto; padding-bottom: 10px; }
   .cm-card { flex: 0 0 auto; text-align: center; }
   .cm-card canvas {
@@ -186,6 +204,10 @@
     box-shadow: 0 12px 34px rgba(0,0,0,0.35);
   }
   .cm-card .cm-lang { margin-top: 10px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+  .cm-card .cm-check {
+    display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 8px;
+    font-size: 11.5px; color: var(--muted); cursor: pointer;
+  }
   .cm-card .cm-btns { margin-top: 8px; display: flex; gap: 6px; justify-content: center; }
   .cm-card .cm-btns button {
     background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
@@ -554,6 +576,8 @@
       cardAsOf: '기록 기준', cardMadeOn: '카드 생성', cardQrCaption: '스캔해서 사이트 방문',
       cardAiNote: '✦ 이 그림과 글은 Paul의 실제 이야기를 AI가 읽고 해석해 만들었습니다',
       cardRestyleBtn: '🎲 스타일 다시 만들기', cardRestyling: '다시 그리는 중…',
+      cardDownloadSelected: '선택한 카드 다운로드', cardSelectForDownload: '선택',
+      cardStyleLabel: n => '스타일 ' + n,
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
       gbH2: '방명록', gbLede: '다녀갔다는 흔적을 남겨주세요. 답글로 서로 이야기를 나눠도 좋아요.',
       gbVisits: n => '지금까지 ' + n.toLocaleString() + '번 다녀갔어요',
@@ -568,6 +592,7 @@
       gbReplySubmit: '답글 남기기', gbReplyCancel: '취소',
       gbTranslateBtn: '번역 보기', gbShowOriginal: '원문 보기', gbTranslating: '번역 중…',
       doodleRedraw: '↻ 다시 그리기',
+      storyRemakeBtn: '🎲 다른 스토리로 만들어보기', storyRemaking: '다르게 써보는 중…',
     },
     en: {
       legend: { core: 'Me', place: 'Places That Changed Me', associative: 'Related Words', wildcard: 'Odd Hooks' },
@@ -615,6 +640,8 @@
       cardAsOf: 'As of', cardMadeOn: 'Card made', cardQrCaption: 'Scan to visit',
       cardAiNote: '✦ This picture and text draw on Paul\'s real story, read and interpreted by AI',
       cardRestyleBtn: '🎲 Remake style', cardRestyling: 'Redrawing…',
+      cardDownloadSelected: 'Download selected', cardSelectForDownload: 'Select',
+      cardStyleLabel: n => 'Style ' + n,
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
       gbH2: 'Guestbook', gbLede: 'Leave a trace that you were here. Feel free to reply to each other, too.',
       gbVisits: n => n.toLocaleString() + ' visits so far',
@@ -629,6 +656,7 @@
       gbReplySubmit: 'Post reply', gbReplyCancel: 'Cancel',
       gbTranslateBtn: 'Translate', gbShowOriginal: 'Show original', gbTranslating: 'Translating…',
       doodleRedraw: '↻ Redraw',
+      storyRemakeBtn: '🎲 Try a different story', storyRemaking: 'Writing a new version…',
     },
     zh: {
       legend: { core: '我', place: '改变我的地方', associative: '关联词', wildcard: '奇怪的钩子' },
@@ -674,6 +702,8 @@
       cardAsOf: '内容截至', cardMadeOn: '卡片制作于', cardQrCaption: '扫码访问网站',
       cardAiNote: '✦ 这幅画和这段文字基于 Paul 的真实故事，由 AI 阅读并加以解读创作而成',
       cardRestyleBtn: '🎲 重新生成风格', cardRestyling: '正在重新绘制…',
+      cardDownloadSelected: '下载所选卡片', cardSelectForDownload: '选择',
+      cardStyleLabel: n => '风格 ' + n,
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
       gbH2: '留言簿', gbLede: '留下你来过的痕迹吧。也欢迎互相回复交流。',
       gbVisits: n => '目前已有 ' + n.toLocaleString() + ' 次访问',
@@ -688,6 +718,7 @@
       gbReplySubmit: '发布回复', gbReplyCancel: '取消',
       gbTranslateBtn: '查看翻译', gbShowOriginal: '查看原文', gbTranslating: '翻译中…',
       doodleRedraw: '↻ 重新绘制',
+      storyRemakeBtn: '🎲 换一个故事版本', storyRemaking: '正在重新创作…',
     },
   };
 
@@ -818,6 +849,8 @@
     visibleIds: [],
     activeCombo: null,
     doodleSeed: {},
+    storyOverride: null, // "다른 스토리로 만들어보기"로 만든 대체 글 — {ids, text:{ko,en,zh}, factPct, level}
+    remakeLevel: null,
   };
   // nodeById는 pick 전에 필요 — 임시로 D.nodes 기준
   let nodeById = id => state.nodes.find(n => n.id === id);
@@ -1069,6 +1102,7 @@
         initParticles();
       }
     }
+    state.storyOverride = null; // 선택이 바뀌면 이전 단어의 대체 글은 더 이상 유효하지 않음
     renderSynthesis();
   }
 
@@ -1089,6 +1123,7 @@
   document.getElementById('sky-deselect').addEventListener('click', () => {
     state.selected = [];
     state.activeCombo = null;
+    state.storyOverride = null;
     renderSynthesis();
   });
 
@@ -1284,6 +1319,71 @@
     return (D.combos || []).find(c => [...c.ids].sort().join('|') === set) || null;
   }
 
+  // "다른 스토리로 만들어보기"로 만든 대체 글이 지금 선택된 단어(들)과 정확히 일치할 때만 유효.
+  function activeStoryFor(ids) {
+    const o = state.storyOverride;
+    return (o && JSON.stringify(o.ids) === JSON.stringify(ids)) ? o : null;
+  }
+  function storyRemakeBtnHtml() {
+    return '<button class="story-remake-btn" id="story-remake-btn" type="button">' + UI[LANG].storyRemakeBtn + '</button>';
+  }
+  function bindStoryRemake(el) {
+    const btn = el.querySelector('#story-remake-btn');
+    if (btn) btn.addEventListener('click', remakeStory);
+  }
+
+  // 단일 단어라도 항상 같은 글 대신, 사실은 유지하되 에세이답게 다시 쓴 버전을 만든다.
+  // 클릭할 때마다 상상력 비중(light/medium/heavy)을 직전과 다르게 순환해서 매번 다른 느낌이 나오게 함.
+  // 카드로 만들기는 이 결과(state.storyOverride)를 그대로 가져다 쓰고, 카드의 "스타일 다시 만들기"는
+  // 이후 글을 더 건드리지 않는다 — 글은 여기서 한 번 정해지면 카드 패널을 새로 열기 전까지 고정.
+  async function remakeStory() {
+    const ids = state.selected.slice();
+    if (!ids.length) return;
+    const el = document.getElementById('synthesis');
+    const btn = el.querySelector('#story-remake-btn');
+    if (btn) { btn.disabled = true; btn.textContent = UI[LANG].storyRemaking; }
+
+    const levels = ['light', 'medium', 'heavy'];
+    state.remakeLevel = pickRandomDifferent(levels, state.remakeLevel);
+
+    const results = await Promise.all(['ko', 'en', 'zh'].map(async l => {
+      const nodesForLang = ids.map(id => nodesFor(l).find(x => x.id === id)).filter(Boolean);
+      if (!nodesForLang.length) return null;
+      try {
+        const r = await fetch('/api/synthesize-combo', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode: 'story-remake', lang: l, level: state.remakeLevel, nodes: nodesForLang.map(n => ({ id: n.id, label: n.label, story: n.story })) }),
+        });
+        const d = await r.json();
+        return d.synthesis || null;
+      } catch (e) { return null; }
+    }));
+    if (JSON.stringify(state.selected) !== JSON.stringify(ids)) return; // 그 사이 선택이 바뀌었으면 버림
+    if (!results.every(Boolean)) {
+      const btn2 = document.getElementById('story-remake-btn');
+      if (btn2) { btn2.disabled = false; btn2.textContent = UI[LANG].storyRemakeBtn; }
+      return;
+    }
+
+    const sel = ids.map(nodeById).filter(Boolean);
+    const baseAvg = sel.reduce((s, n) => s + factScoreOf(n), 0) / (sel.length || 1);
+    const levelMul = { light: 0.85, medium: 0.6, heavy: 0.35 }[state.remakeLevel];
+    const factPct = Math.max(15, Math.round(baseAvg * levelMul));
+    const titleFor = l => ids.length === 1
+      ? ((nodesFor(l).find(x => x.id === ids[0]) || {}).label || ids[0])
+      : ids.map(id => (nodesFor(l).find(x => x.id === id) || {}).label || id).join(' · ');
+
+    state.storyOverride = {
+      ids: ids.slice(), factPct, level: state.remakeLevel,
+      text: {
+        ko: { title: titleFor('ko'), story: results[0], era: '' },
+        en: { title: titleFor('en'), story: results[1], era: '' },
+        zh: { title: titleFor('zh'), story: results[2], era: '' },
+      },
+    };
+    renderSynthesis();
+  }
+
   function renderSynthesis() {
     const el = document.getElementById('synthesis');
     document.getElementById('sky-hint').style.opacity = state.selected.length ? '0' : '1';
@@ -1297,7 +1397,7 @@
     }
     if (state.selected.length === 1) {
       state.activeCombo = null;
-      el.innerHTML = renderSingle(nodeById(state.selected[0])); bindChips(el); bindDoodle(el);
+      el.innerHTML = renderSingle(nodeById(state.selected[0])); bindChips(el); bindDoodle(el); bindStoryRemake(el);
       attachPhoto(el, state.selected.slice());
       return;
     }
@@ -1305,7 +1405,7 @@
     state.activeCombo = combo;
     if (combo) {
       el.innerHTML = renderComboStory(combo);
-      bindChips(el);
+      bindChips(el); bindStoryRemake(el);
       attachPhoto(el, state.selected.slice());
     } else {
       renderComboSynthesis(el, state.selected.slice());
@@ -1315,6 +1415,20 @@
   async function renderComboSynthesis(el, ids) {
     const sel = ids.map(nodeById).filter(Boolean);
     const title = sel.map(n => n.label).join('<span class="x">×</span>');
+
+    const override = activeStoryFor(ids);
+    if (override) {
+      el.innerHTML = '<div class="synth-title">' + title + '</div>' +
+        factBarHtml(override.factPct) +
+        '<div class="prose" style="margin-top:20px;">' + override.text[LANG].story + '</div>' +
+        '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsSynth + '</span>' +
+        sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>' +
+        storyRemakeBtnHtml() + cardMakeBtnHtml();
+      bindChips(el); bindStoryRemake(el);
+      attachPhoto(el, ids);
+      return;
+    }
+
     el.innerHTML = '<div class="synth-title">' + title + '</div>' +
       '<div class="prose" style="margin-top:20px; color:var(--muted);">' + UI[LANG].comboLoading + '</div>';
 
@@ -1341,8 +1455,8 @@
       '<div class="prose" style="margin-top:20px;">' + paragraph + '</div>' +
       '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsSynth + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>' +
-      cardMakeBtnHtml();
-    bindChips(el);
+      storyRemakeBtnHtml() + cardMakeBtnHtml();
+    bindChips(el); bindStoryRemake(el);
     attachPhoto(el, ids);
   }
 
@@ -1387,14 +1501,18 @@
 
   function renderComboStory(combo) {
     const sel = combo.ids.map(nodeById).filter(Boolean);
+    const override = activeStoryFor(combo.ids);
     const avgScore = sel.reduce((s, n) => s + factScoreOf(n), 0) / (sel.length || 1);
+    const shownScore = override ? override.factPct : avgScore;
+    const storyText = override ? override.text[LANG].story : combo.story;
     let h = '<div class="story-single">';
     h += '<div><span class="badge t-place">' + UI[LANG].badgeComboStory + '</span></div>';
     h += '<div class="headword">' + combo.title + '</div>';
-    h += factBarHtml(avgScore);
-    h += '<div class="prose">' + combo.story + '</div>';
+    h += factBarHtml(shownScore);
+    h += '<div class="prose">' + storyText + '</div>';
     h += '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsCurated + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
+    h += storyRemakeBtnHtml();
     h += cardMakeBtnHtml();
     h += '</div>';
     return h;
@@ -1406,6 +1524,9 @@
 
   function renderSingle(n) {
     if (!n) return '';
+    const override = activeStoryFor([n.id]);
+    const shownScore = override ? override.factPct : factScoreOf(n);
+    const storyText = override ? override.text[LANG].story : n.story;
     let h = '<div class="story-single">';
     h += '<div class="doodle-box" data-doodle-id="' + n.id + '">' + doodleSvg(n.id, state.doodleSeed[n.id] || 0) +
       '<button type="button" class="doodle-redraw" data-doodle-redraw="' + n.id + '">' + UI[LANG].doodleRedraw + '</button></div>';
@@ -1413,9 +1534,9 @@
     if (n.era) h += '<span class="era">' + n.era + '</span>';
     h += '</div>';
     h += '<div class="headword">' + n.label + '</div>';
-    h += factBarHtml(factScoreOf(n));
-    h += '<div class="prose">' + n.story + '</div>';
-    if (n.status === 'ask') {
+    h += factBarHtml(shownScore);
+    h += '<div class="prose">' + storyText + '</div>';
+    if (!override && n.status === 'ask') {
       const oq = D.openQuestions.find(q => q.node === n.id);
       h += '<div class="ask-ribbon">' + UI[LANG].askRibbonPrefix + (oq ? ' — "' + oq.q + '"' : '') + '</div>';
     }
@@ -1424,6 +1545,7 @@
       h += '<div class="related-row"><span class="lbl">' + UI[LANG].relatedLinked + '</span>' +
         links.map(id => '<span class="chip" data-id="' + id + '">' + labelOf(id) + '</span>').join('') + '</div>';
     }
+    h += storyRemakeBtnHtml();
     h += cardMakeBtnHtml();
     h += '</div>';
     return h;
@@ -1768,6 +1890,10 @@
 
   async function getTrilingualCardText(ids) {
     const langs = ['ko', 'en', 'zh'];
+    // 스토리 페이지에서 "다른 스토리로 만들어보기"로 이미 확정된 글이 있으면 그걸 그대로 카드에 쓴다 —
+    // 카드의 "스타일 다시 만들기"는 이제 글을 건드리지 않고 이 결과를 계속 재사용.
+    const override = activeStoryFor(ids);
+    if (override) return override.text;
     if (ids.length === 1) {
       const id = ids[0];
       const out = {};
@@ -2057,6 +2183,8 @@
   }
 
   function computeFactPct(ids) {
+    const override = activeStoryFor(ids);
+    if (override) return override.factPct;
     const sel = ids.map(nodeById).filter(Boolean);
     if (!sel.length) return 100;
     const avgScore = sel.reduce((s, n) => s + factScoreOf(n), 0) / sel.length;
@@ -2089,85 +2217,117 @@
     return canvases;
   }
 
-  async function renderCardPanel(ids, content, style, factPct, fileSlug, myToken) {
-    const panel = document.getElementById('card-maker');
-    const canvases = await buildCardCanvases(ids, content, style, factPct);
-    if (myToken !== cmToken) return;
+  // 글(content/factPct)은 카드 패널이 열려있는 동안 고정 — "스타일 다시 만들기"는 새 스타일의 카드 세트를
+  // cardSets 배열에 계속 쌓기만 하고, 기존에 만든 세트는 지우지 않는다(패널을 닫기 전까지 전부 남아있음).
+  async function addCardSet(style) {
+    if (!currentCardState) return;
+    const myToken = cmToken;
+    const canvases = await buildCardCanvases(currentCardState.ids, currentCardState.content, style, currentCardState.factPct);
+    if (myToken !== cmToken || !currentCardState) return; // 그 사이 패널이 닫혔거나 새로 열렸으면 버림
+    currentCardState.cardSets.push({ setId: 'set-' + Date.now() + '-' + Math.floor(Math.random() * 1000), style, canvases });
+    renderCardGallery();
+  }
 
+  function renderCardGallery() {
+    if (!currentCardState) return;
+    const panel = document.getElementById('card-maker');
+    const { cardSets, fileSlugBase } = currentCardState;
     panel.innerHTML =
       '<div class="cm-head"><span class="cm-title">' + UI[LANG].cardMakerTitle + '</span>' +
       '<div class="cm-head-btns">' +
       '<button class="cm-restyle" type="button" id="cm-restyle-btn">' + UI[LANG].cardRestyleBtn + '</button>' +
+      '<button class="cm-dl-selected" type="button" id="cm-dl-selected-btn">' + UI[LANG].cardDownloadSelected + '</button>' +
       '<button class="cm-close" type="button" id="cm-close-btn">✕ ' + UI[LANG].cardClose + '</button>' +
       '</div></div>' +
-      '<div class="cm-row" id="cm-row"></div>';
-    const row = document.getElementById('cm-row');
-    ['ko', 'en', 'zh'].forEach(l => {
-      const wrap = document.createElement('div');
-      wrap.className = 'cm-card';
-      wrap.appendChild(canvases[l]);
-      const langLabel = document.createElement('div');
-      langLabel.className = 'cm-lang';
-      langLabel.textContent = UI[LANG].cardLangLabel[l];
-      wrap.appendChild(langLabel);
-      const btns = document.createElement('div');
-      btns.className = 'cm-btns';
-      const dlBtn = document.createElement('button');
-      dlBtn.type = 'button'; dlBtn.textContent = UI[LANG].cardDownload;
-      dlBtn.addEventListener('click', () => downloadCanvas(canvases[l], l, fileSlug));
-      btns.appendChild(dlBtn);
-      if (navigator.share) {
-        const shBtn = document.createElement('button');
-        shBtn.type = 'button'; shBtn.textContent = UI[LANG].cardShare;
-        shBtn.addEventListener('click', () => shareCanvas(canvases[l], l, shBtn, fileSlug));
-        btns.appendChild(shBtn);
-      }
-      wrap.appendChild(btns);
-      row.appendChild(wrap);
+      '<div class="cm-sets" id="cm-sets"></div>';
+    const setsWrap = document.getElementById('cm-sets');
+    cardSets.forEach((set, si) => {
+      const setEl = document.createElement('div');
+      setEl.className = 'cm-set';
+      const paletteName = (CARD_PALETTES.find(p => p.id === set.style.paletteId) || {}).name || set.style.paletteId;
+      const label = document.createElement('div');
+      label.className = 'cm-set-label';
+      label.textContent = UI[LANG].cardStyleLabel(si + 1) + ' · ' + paletteName;
+      setEl.appendChild(label);
+      const row = document.createElement('div');
+      row.className = 'cm-row';
+      ['ko', 'en', 'zh'].forEach(l => {
+        const wrap = document.createElement('div');
+        wrap.className = 'cm-card';
+        wrap.appendChild(set.canvases[l]);
+        const langLabel = document.createElement('div');
+        langLabel.className = 'cm-lang';
+        langLabel.textContent = UI[LANG].cardLangLabel[l];
+        wrap.appendChild(langLabel);
+        const checkLabel = document.createElement('label');
+        checkLabel.className = 'cm-check';
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.dataset.setId = set.setId;
+        checkbox.dataset.lang = l;
+        checkLabel.appendChild(checkbox);
+        checkLabel.appendChild(document.createTextNode(UI[LANG].cardSelectForDownload));
+        wrap.appendChild(checkLabel);
+        const btns = document.createElement('div');
+        btns.className = 'cm-btns';
+        const dlBtn = document.createElement('button');
+        dlBtn.type = 'button'; dlBtn.textContent = UI[LANG].cardDownload;
+        dlBtn.addEventListener('click', () => downloadCanvas(set.canvases[l], l, fileSlugBase + '-' + set.style.paletteId));
+        btns.appendChild(dlBtn);
+        if (navigator.share) {
+          const shBtn = document.createElement('button');
+          shBtn.type = 'button'; shBtn.textContent = UI[LANG].cardShare;
+          shBtn.addEventListener('click', () => shareCanvas(set.canvases[l], l, shBtn, fileSlugBase + '-' + set.style.paletteId));
+          btns.appendChild(shBtn);
+        }
+        wrap.appendChild(btns);
+        row.appendChild(wrap);
+      });
+      setEl.appendChild(row);
+      setsWrap.appendChild(setEl);
     });
     document.getElementById('cm-close-btn').addEventListener('click', closeCardMaker);
     document.getElementById('cm-restyle-btn').addEventListener('click', restyleCurrentCard);
+    document.getElementById('cm-dl-selected-btn').addEventListener('click', downloadSelectedCards);
+    const last = setsWrap.lastElementChild;
+    if (last) last.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-  // "스타일 다시 만들기" — 텍스트는 AI가 더 상상력 있게 재해석(그만큼 사실기반 %는 낮춤),
-  // 스타일(팔레트/배치/그림 시드)은 미리 정해둔 조합 안에서 무작위로 새로 고른다.
+  function downloadSelectedCards() {
+    if (!currentCardState) return;
+    const checks = document.querySelectorAll('#cm-sets input[type=checkbox]:checked');
+    if (!checks.length) return;
+    Array.from(checks).forEach((cb, i) => {
+      const set = currentCardState.cardSets.find(s => s.setId === cb.dataset.setId);
+      if (!set) return;
+      const l = cb.dataset.lang;
+      // 여러 개를 한꺼번에 트리거하면 브라우저가 일부를 막을 수 있어 살짝 간격을 둔다.
+      setTimeout(() => downloadCanvas(set.canvases[l], l, currentCardState.fileSlugBase + '-' + set.style.paletteId), i * 260);
+    });
+  }
+
+  // "스타일 다시 만들기" — 글은 절대 건드리지 않고(카드 패널을 여는 시점에 이미 고정됨),
+  // 팔레트/배치/그림 시드만 미리 정해둔 조합 안에서 새로 골라 카드 세트를 하나 더 쌓는다.
   async function restyleCurrentCard() {
     if (!currentCardState) return;
-    const { ids, style, factPct, content: baseContent, fileSlug } = currentCardState;
-    const myToken = ++cmToken;
     const restyleBtn = document.getElementById('cm-restyle-btn');
     if (restyleBtn) { restyleBtn.disabled = true; restyleBtn.textContent = UI[LANG].cardRestyling; }
 
-    const langs = ['ko', 'en', 'zh'];
-    const restyled = await Promise.all(langs.map(async l => {
-      const nodesForLang = ids.map(id => nodesFor(l).find(x => x.id === id)).filter(Boolean);
-      if (!nodesForLang.length) return null;
-      try {
-        const r = await fetch('/api/synthesize-combo', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ mode: 'restyle', lang: l, nodes: nodesForLang.map(n => ({ id: n.id, label: n.label, story: n.story })) }),
-        });
-        const d = await r.json();
-        return d.synthesis || null;
-      } catch (e) { return null; }
-    }));
-    if (myToken !== cmToken) return;
+    const usedPalettes = currentCardState.cardSets.map(s => s.style.paletteId);
+    const lastSet = currentCardState.cardSets[currentCardState.cardSets.length - 1];
+    const lastStyle = lastSet ? lastSet.style : { paletteId: DEFAULT_CARD_PALETTE, layout: DEFAULT_CARD_LAYOUT, doodleSeed: 0 };
+    const unusedPalettes = CARD_PALETTES.map(p => p.id).filter(id => !usedPalettes.includes(id));
+    const paletteId = unusedPalettes.length
+      ? unusedPalettes[Math.floor(Math.random() * unusedPalettes.length)]
+      : pickRandomDifferent(CARD_PALETTES.map(p => p.id), lastStyle.paletteId);
+    const layout = pickRandomDifferent(CARD_LAYOUTS, lastStyle.layout);
+    const doodleSeed = (lastStyle.doodleSeed || 0) + 97 + Math.floor(Math.random() * 900);
 
-    const anyRestyled = restyled.some(Boolean);
-    const newContent = {};
-    langs.forEach((l, i) => { newContent[l] = Object.assign({}, baseContent[l], restyled[i] ? { story: restyled[i] } : {}); });
-    const newFactPct = anyRestyled ? Math.max(15, Math.round(factPct * 0.5)) : factPct;
-    const newStyle = {
-      paletteId: pickRandomDifferent(CARD_PALETTES.map(p => p.id), style.paletteId),
-      layout: pickRandomDifferent(CARD_LAYOUTS, style.layout),
-      doodleSeed: (style.doodleSeed || 0) + 97 + Math.floor(Math.random() * 900),
-    };
-    currentCardState = { ids, content: newContent, style: newStyle, factPct: newFactPct, fileSlug };
     try {
-      await renderCardPanel(ids, newContent, newStyle, newFactPct, fileSlug, myToken);
-    } catch (e) {
-      if (myToken !== cmToken) return;
-      if (restyleBtn) { restyleBtn.disabled = false; restyleBtn.textContent = UI[LANG].cardRestyleBtn; }
+      await addCardSet({ paletteId, layout, doodleSeed });
+    } finally {
+      const btn2 = document.getElementById('cm-restyle-btn');
+      if (btn2) { btn2.disabled = false; btn2.textContent = UI[LANG].cardRestyleBtn; }
     }
   }
 
@@ -2185,14 +2345,12 @@
 
       const today = new Date();
       // 카드마다 다른 파일명으로 저장되도록 — 고른 단어(들) + 날짜를 파일명에 반영.
-      const fileSlug = ids.join('-').replace(/[^a-zA-Z0-9-]/g, '').slice(0, 60) + '-' +
+      const fileSlugBase = ids.join('-').replace(/[^a-zA-Z0-9-]/g, '').slice(0, 60) + '-' +
         today.getFullYear() + String(today.getMonth() + 1).padStart(2, '0') + String(today.getDate()).padStart(2, '0');
       const factPct = computeFactPct(ids);
-      // 처음 만든 카드는 항상 같은 팔레트/배치(시드 0)로 고정 — 기존 사이트 톤과 맞고, 공유해도 안정적.
-      // "스타일 다시 만들기"를 눌러야 비로소 다른 조합으로 바뀐다.
-      const style = { paletteId: DEFAULT_CARD_PALETTE, layout: DEFAULT_CARD_LAYOUT, doodleSeed: 0 };
-      currentCardState = { ids, content, style, factPct, fileSlug };
-      await renderCardPanel(ids, content, style, factPct, fileSlug, myToken);
+      // 글은 이제부터 이 패널이 열려있는 동안 고정. 처음 세트는 항상 기존 브랜드 톤(archive-indigo+watermark, 시드 0).
+      currentCardState = { ids, content, factPct, fileSlugBase, cardSets: [] };
+      await addCardSet({ paletteId: DEFAULT_CARD_PALETTE, layout: DEFAULT_CARD_LAYOUT, doodleSeed: 0 });
     } catch (e) {
       if (myToken !== cmToken) return;
       panel.innerHTML = '<div class="cm-status">' + UI[LANG].cardGenError + '</div>';
