@@ -30,6 +30,8 @@ const PROMPT_TOOL = {
   },
 };
 
+// 실패 지점을 알 수 있게 각 단계에서 { ok, ...} 또는 { ok:false, status, body } 형태로 돌려준다 —
+// 클라이언트엔 imageUrl:null만 보이면 되지만, 문제 진단할 때 Vercel 로그 없이도 바로 원인을 알 수 있게.
 async function writeImagePrompt(key, storyText, moodText) {
   const userMsg = `이야기: ${storyText}\n\n카드 스타일 무드: ${moodText || '(지정 없음)'}\n\n위 이야기와 무드에 어울리는 이미지 생성 프롬프트를 써주세요.`;
   const r = await fetch('https://api.anthropic.com/v1/messages', {
@@ -44,11 +46,12 @@ async function writeImagePrompt(key, storyText, moodText) {
       tool_choice: { type: 'tool', name: 'submit_image_prompt' },
     }),
   });
-  if (!r.ok) return null;
+  if (!r.ok) return { ok: false, stage: 'claude', status: r.status, body: (await r.text().catch(() => '')).slice(0, 400) };
   const data = await r.json();
   const block = (data.content || []).find(c => c.type === 'tool_use' && c.name === 'submit_image_prompt');
   const prompt = block && block.input && block.input.prompt;
-  return prompt ? stripModelArtifacts(prompt) : null;
+  if (!prompt) return { ok: false, stage: 'claude-no-prompt', body: JSON.stringify(data).slice(0, 400) };
+  return { ok: true, prompt: stripModelArtifacts(prompt) };
 }
 
 async function runReplicate(token, prompt) {
@@ -57,11 +60,12 @@ async function runReplicate(token, prompt) {
     headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json', Prefer: 'wait=25' },
     body: JSON.stringify({ input: { prompt, aspect_ratio: '1:1', output_format: 'png', num_outputs: 1 } }),
   });
-  if (!r.ok) return null;
+  if (!r.ok) return { ok: false, stage: 'replicate', status: r.status, body: (await r.text().catch(() => '')).slice(0, 400) };
   const data = await r.json();
-  if (data.status !== 'succeeded') return null;
+  if (data.status !== 'succeeded') return { ok: false, stage: 'replicate-status', status: data.status, body: JSON.stringify(data.error || data).slice(0, 400) };
   const out = Array.isArray(data.output) ? data.output[0] : data.output;
-  return out || null;
+  if (!out) return { ok: false, stage: 'replicate-no-output', body: JSON.stringify(data).slice(0, 400) };
+  return { ok: true, url: out };
 }
 
 module.exports = async (req, res) => {
@@ -72,24 +76,24 @@ module.exports = async (req, res) => {
 
   let body = req.body;
   if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = {}; } }
-  const { story, mood } = body || {};
+  const { story, mood, debug } = body || {};
   if (!story || !String(story).trim()) return res.status(200).json({ imageUrl: null });
 
   try {
-    const prompt = await writeImagePrompt(anthropicKey, String(story).slice(0, 1500), String(mood || '').slice(0, 200));
-    if (!prompt) return res.status(200).json({ imageUrl: null });
+    const promptResult = await writeImagePrompt(anthropicKey, String(story).slice(0, 1500), String(mood || '').slice(0, 200));
+    if (!promptResult.ok) return res.status(200).json({ imageUrl: null, debug: debug ? promptResult : undefined });
 
-    const replicateUrl = await runReplicate(replicateToken, prompt);
-    if (!replicateUrl) return res.status(200).json({ imageUrl: null });
+    const replicateResult = await runReplicate(replicateToken, promptResult.prompt);
+    if (!replicateResult.ok) return res.status(200).json({ imageUrl: null, debug: debug ? replicateResult : undefined, prompt: promptResult.prompt });
 
-    const imgRes = await fetch(replicateUrl);
-    if (!imgRes.ok) return res.status(200).json({ imageUrl: null });
+    const imgRes = await fetch(replicateResult.url);
+    if (!imgRes.ok) return res.status(200).json({ imageUrl: null, debug: debug ? { stage: 'fetch-image', status: imgRes.status } : undefined });
     const buf = Buffer.from(await imgRes.arrayBuffer());
     const filename = 'cards/' + Date.now() + '-' + Math.random().toString(36).slice(2, 8) + '.png';
     const blob = await put(filename, buf, { access: 'public', contentType: 'image/png' });
 
-    res.status(200).json({ imageUrl: blob.url, prompt });
+    res.status(200).json({ imageUrl: blob.url, prompt: promptResult.prompt });
   } catch (e) {
-    res.status(200).json({ imageUrl: null });
+    res.status(200).json({ imageUrl: null, debug: debug ? { stage: 'exception', message: e.message } : undefined });
   }
 };
