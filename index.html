@@ -2025,6 +2025,20 @@
   // 그림을 주인공으로, 키워드(짧은 제목)+서명+사이트만 최소한으로 얹는다(Paul 피드백: "글자 카드와 합쳐지면 안 됨").
   const IMAGE_CARD_LAYOUTS = ['full-bleed', 'framed', 'polaroid'];
   const DEFAULT_IMAGE_CARD_LAYOUT = 'full-bleed';
+  // Paul이 화풍 샘플 갤러리를 보고 실제로 고른 화풍들(2026-07-19) — "이미지로 만들기"를 누를 때마다
+  // 이 중 안 쓴 것부터 순환해서 골라 api/generate-image.js에 styleId로 넘긴다. 나중에 다시 조정 가능.
+  const LIKED_AI_STYLES = [
+    'pen-sketch', 'sumi-e', 'wet-watercolor', 'abstract-geo', 'abstract-minimal', 'ukiyo-e',
+    'art-deco', 'bauhaus', 'impressionist', 'cubist', 'film-grain', 'stained-glass',
+    'urban-ink-density', 'urban-sketch-wash', 'marker-doodle',
+  ];
+  const AI_STYLE_LABELS = {
+    'pen-sketch': '펜 스케치', 'sumi-e': '수묵화', 'wet-watercolor': '웻온웻 수채',
+    'abstract-geo': '추상 기하학', 'abstract-minimal': '미니멀 추상 라인', 'ukiyo-e': '우키요에',
+    'art-deco': '아르데코', 'bauhaus': '바우하우스', 'impressionist': '인상주의', 'cubist': '큐비즘풍',
+    'film-grain': '아날로그 필름', 'stained-glass': '스테인드글라스', 'urban-ink-density': '도심 밀도 펜화',
+    'urban-sketch-wash': '어반스케치 펜+수채', 'marker-doodle': '마커 손그림',
+  };
 
   function hexToRgba(hex, alpha) {
     const h = hex.replace('#', '');
@@ -2401,8 +2415,9 @@
       const label = document.createElement('div');
       label.className = 'cm-set-label';
       const imgLayoutName = set.kind === 'ai-image' ? (UI[LANG].imgLayoutLabel[set.style.imgLayout] || set.style.imgLayout) : '';
+      const aiStyleName = set.kind === 'ai-image' ? (AI_STYLE_LABELS[set.style.styleId] || '') : '';
       label.textContent = set.kind === 'ai-image'
-        ? '🖼️ ' + UI[LANG].cardImageSetLabel + ' · ' + imgLayoutName + ' · ' + paletteName
+        ? '🖼️ ' + UI[LANG].cardImageSetLabel + ' · ' + imgLayoutName + (aiStyleName ? ' · ' + aiStyleName : '')
         : UI[LANG].cardStyleLabel(si + 1) + ' · ' + paletteName;
       labelRow.appendChild(label);
       if (set.kind !== 'ai-image') {
@@ -2534,11 +2549,18 @@
     const moodText = palette.name + ' (배경 ' + palette.bg + ', 포인트 색 ' + palette.accent + ')';
     const storyText = (currentCardState.content[LANG] || currentCardState.content.ko).story;
 
+    // 화풍도 배치(imgLayout)와 같은 방식으로 순환 — Paul이 고른 화풍 목록 중 아직 안 쓴 것부터.
+    const usedStyleIds = currentCardState.cardSets.filter(s => s.kind === 'ai-image').map(s => s.style.styleId).filter(Boolean);
+    const unusedStyleIds = LIKED_AI_STYLES.filter(id => !usedStyleIds.includes(id));
+    const styleId = unusedStyleIds.length
+      ? unusedStyleIds[Math.floor(Math.random() * unusedStyleIds.length)]
+      : pickRandomDifferent(LIKED_AI_STYLES, usedStyleIds[usedStyleIds.length - 1]);
+
     let imageUrl = null;
     try {
       const r = await fetch('/api/generate-image', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ story: storyText, mood: moodText }),
+        body: JSON.stringify({ story: storyText, mood: moodText, styleId: styleId }),
       });
       const d = await r.json();
       imageUrl = d.imageUrl || null;
@@ -2563,7 +2585,7 @@
       ? unusedImgLayouts[Math.floor(Math.random() * unusedImgLayouts.length)]
       : pickRandomDifferent(IMAGE_CARD_LAYOUTS, usedImgLayouts[usedImgLayouts.length - 1]);
 
-    await addCardSet({ paletteId: sourceSet.style.paletteId, imgLayout, aiImage: img });
+    await addCardSet({ paletteId: sourceSet.style.paletteId, imgLayout, styleId, aiImage: img });
   }
 
   async function openCardMaker(ids) {
