@@ -89,10 +89,13 @@ module.exports = async (req, res) => {
     // text는 빠른 기록처럼 단일 문자열이거나, 다듬어진 3개 언어 {ko,en,zh}일 수 있다.
     const isTrilingual = text && typeof text === 'object';
     const emptyText = isTrilingual ? !(text.ko || text.en || text.zh) : !text || !String(text).trim();
-    if (emptyText) return res.status(400).json({ error: '내용이 비어있어요.' });
+    const hasPhoto = dataUrl && /^data:image\//.test(dataUrl);
+    // 글 없이 사진만 남기는 것도 유효한 기록 — 예전엔 여기서 무조건 막아서, 클라이언트가 이 검증을
+    // 피하려고 text에 "(사진)" 같은 가짜 placeholder를 채워 보냈고, 그게 그대로 공개 피드에 노출됐었다.
+    if (emptyText && !hasPhoto) return res.status(400).json({ error: '내용이 비어있어요.' });
     const normalizedText = isTrilingual
       ? { ko: text.ko || text.en || text.zh || '', en: text.en || text.ko || '', zh: text.zh || text.ko || '' }
-      : String(text).trim();
+      : (emptyText ? '' : String(text).trim());
     let photoUrl = null;
     if (dataUrl && /^data:image\//.test(dataUrl)) {
       const m = dataUrl.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.+)$/);

@@ -257,6 +257,7 @@
   }
   .thought-card { border-left: 2px solid var(--accent); padding: 4px 0 4px 20px; margin-bottom: 20px; }
   .thought-card .txt { font-size: 15px; line-height: 1.75; color: var(--ink); max-width: 720px; }
+  .thought-card .photo { display: block; max-width: 260px; max-height: 260px; border-radius: 8px; object-fit: cover; }
   .thought-card .meta { font-family: var(--font-mono); font-size: 12px; color: var(--faint); margin-top: 8px; letter-spacing: 0.02em; }
 
   /* ---------- FEED + ADD ---------- */
@@ -594,7 +595,6 @@
       cardRestyleBtn: '🎲 스타일 다시 만들기', cardRestyling: '다시 그리는 중…',
       cardDownloadSelected: '선택한 카드 다운로드', cardShareSelected: '선택한 카드 공유', cardSelectForDownload: '선택',
       cardStyleLabel: n => '스타일 ' + n, cardImageSetLabel: '이미지 카드',
-      imgLayoutLabel: { 'full-bleed': '풀블리드', framed: '프레임', polaroid: '폴라로이드' },
       cardTextSectionTitle: '글 카드', cardImageSectionTitle: '이미지 카드',
       cardImageSectionEmpty: '아직 만든 이미지 카드가 없어요. 위 버튼을 눌러 첫 이미지를 만들어보세요.',
       cardMakeImageBtnFirst: '🖼️ 이미지 카드 만들기', cardMakeImageBtnMore: '🖼️ 다른 이미지로 추가로 만들기',
@@ -665,7 +665,6 @@
       cardRestyleBtn: '🎲 Remake style', cardRestyling: 'Redrawing…',
       cardDownloadSelected: 'Download selected', cardShareSelected: 'Share selected', cardSelectForDownload: 'Select',
       cardStyleLabel: n => 'Style ' + n, cardImageSetLabel: 'Image card',
-      imgLayoutLabel: { 'full-bleed': 'Full-bleed', framed: 'Framed', polaroid: 'Polaroid' },
       cardTextSectionTitle: 'Text cards', cardImageSectionTitle: 'Image cards',
       cardImageSectionEmpty: 'No image cards yet — click the button above to make your first one.',
       cardMakeImageBtnFirst: '🖼️ Make an image card', cardMakeImageBtnMore: '🖼️ Make another with a different image',
@@ -734,7 +733,6 @@
       cardRestyleBtn: '🎲 重新生成风格', cardRestyling: '正在重新绘制…',
       cardDownloadSelected: '下载所选卡片', cardShareSelected: '分享所选卡片', cardSelectForDownload: '选择',
       cardStyleLabel: n => '风格 ' + n, cardImageSetLabel: '图片卡片',
-      imgLayoutLabel: { 'full-bleed': '全出血', framed: '相框式', polaroid: '拍立得' },
       cardTextSectionTitle: '文字卡片', cardImageSectionTitle: '图片卡片',
       cardImageSectionEmpty: '还没有生成图片卡片，点击上方按钮生成第一张。',
       cardMakeImageBtnFirst: '🖼️ 生成图片卡片', cardMakeImageBtnMore: '🖼️ 用另一张图片再做一张',
@@ -1604,8 +1602,13 @@
   }
 
   function thoughtCard(t) {
-    return '<div class="thought-card"><div class="txt">' + thoughtText(t) +
-      '</div><div class="meta">' + formatDate(t.addedAt) + ' · ' +
+    const txt = thoughtText(t);
+    // 글 없이 사진만 남긴 기록("(사진)" 가짜 텍스트로 새던 버그 수정) — 실제 사진을 보여준다.
+    const body = txt
+      ? '<div class="txt">' + txt + '</div>'
+      : (t.photoUrl ? '<img class="photo" src="' + t.photoUrl + '" alt="" loading="lazy">' : '');
+    return '<div class="thought-card">' + body +
+      '<div class="meta">' + formatDate(t.addedAt) + ' · ' +
       t.tags.map(labelOf).join(' · ') + '</div></div>';
   }
   function formatDate(ts) {
@@ -1633,7 +1636,7 @@
       remoteThoughts = d.thoughts.map(t => ({
         id: t.id, text: t.text, tags: Array.isArray(t.tags) ? t.tags : [],
         tagLabels: (t.tagLabels && typeof t.tagLabels === 'object') ? t.tagLabels : {},
-        source: t.source, addedAt: t.createdAt || Date.now(), remote: true,
+        source: t.source, addedAt: t.createdAt || Date.now(), remote: true, photoUrl: t.photoUrl || null,
       }));
       buildDynamicNodes();
       state.nodes = nodesFor(LANG);
@@ -2036,10 +2039,6 @@
   const CARD_LAYOUTS = ['watermark', 'break-top', 'break-mid', 'poster'];
   const DEFAULT_CARD_PALETTE = 'archive-indigo';
   const DEFAULT_CARD_LAYOUT = 'watermark';
-  // AI 이미지 카드 전용 배치 3종 — 글카드(CARD_LAYOUTS)와는 별개. 글카드의 본문 텍스트는 넣지 않고
-  // 그림을 주인공으로, 키워드(짧은 제목)+서명+사이트만 최소한으로 얹는다(Paul 피드백: "글자 카드와 합쳐지면 안 됨").
-  const IMAGE_CARD_LAYOUTS = ['full-bleed', 'framed', 'polaroid'];
-  const DEFAULT_IMAGE_CARD_LAYOUT = 'full-bleed';
   // Paul이 화풍 샘플 갤러리를 보고 실제로 고른 화풍들(2026-07-19) — "이미지로 만들기"를 누를 때마다
   // 이 중 안 쓴 것부터 순환해서 골라 api/generate-image.js에 styleId로 넘긴다. 나중에 다시 조정 가능.
   const LIKED_AI_STYLES = [
@@ -2063,6 +2062,14 @@
   function pickRandomDifferent(list, current) {
     const pool = list.filter(x => x !== current);
     return pool[Math.floor(Math.random() * pool.length)] || list[0];
+  }
+
+  // 파일명 슬러그 — setId(생성 시각+난수라 항상 고유)를 그대로 써서, 같은 팔레트/화풍을 여러 번
+  // 골라도 파일명이 절대 겹치지 않게 한다(Paul 피드백: "파일 이름 중복 오류 아직도 발생").
+  function uniqueSlugFor(set, fileSlugBase) {
+    const uniq = set.setId.replace(/^(img|set)-/, '');
+    const tag = set.kind === 'ai-image' ? (set.style.styleId || 'image') : set.style.paletteId;
+    return fileSlugBase + '-' + tag + '-' + uniq;
   }
 
   // object-fit:cover와 같은 방식 — 비율이 안 맞아도 잘리기만 하고 찌그러지지 않는다.
@@ -2272,7 +2279,8 @@
 
   // AI가 스토리를 바탕으로 그린 그림을 위한 독립 카드 — 글카드와 완전히 다른 함수(더 이상 drawCard 안에서
   // 텍스트 패널과 합치지 않음, Paul 피드백: "이미지가 글자 카드와 합쳐져 보인다"). 그림이 주인공이고
-  // 본문 스토리 텍스트는 아예 넣지 않는다. IMAGE_CARD_LAYOUTS 3종(full-bleed/framed/polaroid) 중 하나.
+  // 본문 스토리 텍스트는 아예 넣지 않는다. full-bleed 배치 하나뿐 — 프레임/폴라로이드는
+  // Paul 피드백으로 삭제(2026-07-19): "폴라로이드, 프레임 스타일 삭제해줘".
   async function drawImageCard(lang, content) {
     const u = UI[lang] || UI.ko;
     const W = 1080, H = 1920, marginX = 96;
@@ -2280,49 +2288,18 @@
     canvas.width = W; canvas.height = H;
     const ctx = canvas.getContext('2d');
     const palette = CARD_PALETTES.find(p => p.id === content.paletteId) || CARD_PALETTES.find(p => p.id === DEFAULT_CARD_PALETTE);
-    const layout = IMAGE_CARD_LAYOUTS.includes(content.imgLayout) ? content.imgLayout : DEFAULT_IMAGE_CARD_LAYOUT;
     const img = content.aiImage;
     const qrBg = palette.mode === 'dark';
 
-    if (layout === 'framed') {
-      ctx.fillStyle = palette.bg; ctx.fillRect(0, 0, W, H);
-      const mx = 90, myTop = 110, imgH = 1200;
-      drawCoverImage(ctx, img, mx, myTop, W - mx * 2, imgH);
-      ctx.strokeStyle = hexToRgba(palette.accent, 0.55); ctx.lineWidth = 3;
-      ctx.strokeRect(mx, myTop, W - mx * 2, imgH);
-      drawImageCardFooter(ctx, palette, u, content, mx, myTop + imgH + 90, W - mx * 2, { qrBg });
-    } else if (layout === 'polaroid') {
-      ctx.fillStyle = palette.bg2; ctx.fillRect(0, 0, W, H);
-      ctx.save();
-      ctx.translate(W / 2, H * 0.46);
-      ctx.rotate(-0.014);
-      const pw = W - 170, frameSide = 26, frameTop = 26, frameBottom = 210, ph = pw * 1.05;
-      const paper = palette.mode === 'dark' ? '#EDE9DF' : '#FFFFFF';
-      ctx.save();
-      ctx.shadowColor = 'rgba(0,0,0,0.35)'; ctx.shadowBlur = 40; ctx.shadowOffsetY = 18;
-      ctx.fillStyle = paper;
-      ctx.fillRect(-pw / 2 - frameSide, -ph / 2 - frameTop, pw + frameSide * 2, ph + frameTop + frameBottom);
-      ctx.restore();
-      drawCoverImage(ctx, img, -pw / 2, -ph / 2, pw, ph);
-      ctx.fillStyle = '#2B2620';
-      ctx.font = '700 46px "Caveat", cursive';
-      const cap = content.title.length > 16 ? content.title.slice(0, 16) + '…' : content.title;
-      const capW = ctx.measureText(cap).width;
-      ctx.textBaseline = 'alphabetic';
-      ctx.fillText(cap, -capW / 2, ph / 2 + 92);
-      ctx.restore();
-      drawImageCardFooter(ctx, palette, u, content, marginX, H - 250, W - marginX * 2, { showKeyword: false, qrBg });
-    } else {
-      // full-bleed(기본): 그림이 카드 전체를 채우고, 아래쪽만 그라디언트 스크림으로 살짝 어둡게 해 글을 얹는다.
-      drawCoverImage(ctx, img, 0, 0, W, H);
-      const bandH = 560;
-      const grad = ctx.createLinearGradient(0, H - bandH, 0, H);
-      grad.addColorStop(0, hexToRgba(palette.bg, 0));
-      grad.addColorStop(0.32, hexToRgba(palette.bg, 0.82));
-      grad.addColorStop(1, hexToRgba(palette.bg, 0.97));
-      ctx.fillStyle = grad; ctx.fillRect(0, H - bandH, W, bandH);
-      drawImageCardFooter(ctx, palette, u, content, marginX, H - bandH + 74, W - marginX * 2, { qrBg });
-    }
+    // 그림이 카드 전체를 채우고, 아래쪽만 그라디언트 스크림으로 살짝 어둡게 해 글을 얹는다.
+    drawCoverImage(ctx, img, 0, 0, W, H);
+    const bandH = 560;
+    const grad = ctx.createLinearGradient(0, H - bandH, 0, H);
+    grad.addColorStop(0, hexToRgba(palette.bg, 0));
+    grad.addColorStop(0.32, hexToRgba(palette.bg, 0.82));
+    grad.addColorStop(1, hexToRgba(palette.bg, 0.97));
+    ctx.fillStyle = grad; ctx.fillRect(0, H - bandH, W, bandH);
+    drawImageCardFooter(ctx, palette, u, content, marginX, H - bandH + 74, W - marginX * 2, { qrBg });
 
     return canvas;
   }
@@ -2386,7 +2363,7 @@
     const canvases = {};
     for (const l of ['ko', 'en', 'zh']) {
       canvases[l] = style.aiImage
-        ? await drawImageCard(l, { title: content[l].title, qrImg, paletteId: style.paletteId, imgLayout: style.imgLayout, aiImage: style.aiImage })
+        ? await drawImageCard(l, { title: content[l].title, qrImg, paletteId: style.paletteId, aiImage: style.aiImage })
         : await drawCard(l, Object.assign({}, content[l], {
             asOfDate, madeDate: dateStr, qrImg, doodleIds: ids, factPct,
             paletteId: style.paletteId, layout: style.layout, doodleSeed: style.doodleSeed,
@@ -2441,12 +2418,12 @@
       btns.className = 'cm-btns';
       const dlBtn = document.createElement('button');
       dlBtn.type = 'button'; dlBtn.textContent = UI[LANG].cardDownload;
-      dlBtn.addEventListener('click', () => downloadCanvas(set.canvases[l], l, fileSlugBase + '-' + set.style.paletteId));
+      dlBtn.addEventListener('click', () => downloadCanvas(set.canvases[l], l, uniqueSlugFor(set, fileSlugBase)));
       btns.appendChild(dlBtn);
       if (navigator.share) {
         const shBtn = document.createElement('button');
         shBtn.type = 'button'; shBtn.textContent = UI[LANG].cardShare;
-        shBtn.addEventListener('click', () => shareCanvas(set.canvases[l], l, shBtn, fileSlugBase + '-' + set.style.paletteId));
+        shBtn.addEventListener('click', () => shareCanvas(set.canvases[l], l, shBtn, uniqueSlugFor(set, fileSlugBase)));
         btns.appendChild(shBtn);
       }
       wrap.appendChild(btns);
@@ -2496,9 +2473,7 @@
       imageWrap.appendChild(empty);
     }
     imageSets.forEach(set => {
-      const imgLayoutName = UI[LANG].imgLayoutLabel[set.style.imgLayout] || set.style.imgLayout;
-      const aiStyleName = AI_STYLE_LABELS[set.style.styleId] || '';
-      const label = imgLayoutName + (aiStyleName ? ' · ' + aiStyleName : '');
+      const label = AI_STYLE_LABELS[set.style.styleId] || UI[LANG].cardImageSetLabel;
       imageWrap.appendChild(buildCardSetEl(set, label, fileSlugBase));
     });
 
@@ -2512,12 +2487,14 @@
 
   function selectedCardItems() {
     if (!currentCardState) return [];
-    const checks = document.querySelectorAll('#cm-sets input[type=checkbox]:checked');
+    // 글카드/이미지카드 두 섹션에 나뉘어 있으므로 패널 전체에서 체크된 걸 찾는다
+    // (예전엔 #cm-sets 하나였는데 분리하면서 이 셀렉터가 깨져 있었음 — 다중 선택 저장/공유가 안 되던 원인).
+    const checks = document.querySelectorAll('#card-maker input[type=checkbox]:checked');
     return Array.from(checks).map(cb => {
       const set = currentCardState.cardSets.find(s => s.setId === cb.dataset.setId);
       if (!set) return null;
       const l = cb.dataset.lang;
-      return { canvas: set.canvases[l], lang: l, slug: currentCardState.fileSlugBase + '-' + set.style.paletteId };
+      return { canvas: set.canvases[l], lang: l, slug: uniqueSlugFor(set, currentCardState.fileSlugBase) };
     }).filter(Boolean);
   }
 
@@ -2624,15 +2601,7 @@
       return;
     }
 
-    // 배치(imgLayout)는 3가지 독립 형태(full-bleed/framed/polaroid) 중 아직 안 쓴 것부터
-    // — Paul 피드백: "3가지 다른 형태로".
-    const usedImgLayouts = existingImageSets.map(s => s.style.imgLayout);
-    const unusedImgLayouts = IMAGE_CARD_LAYOUTS.filter(l => !usedImgLayouts.includes(l));
-    const imgLayout = unusedImgLayouts.length
-      ? unusedImgLayouts[Math.floor(Math.random() * unusedImgLayouts.length)]
-      : pickRandomDifferent(IMAGE_CARD_LAYOUTS, usedImgLayouts[usedImgLayouts.length - 1]);
-
-    await addCardSet({ paletteId, imgLayout, styleId, aiImage: img });
+    await addCardSet({ paletteId, styleId, aiImage: img });
   }
 
   async function openCardMaker(ids) {
@@ -2652,9 +2621,13 @@
       const fileSlugBase = ids.join('-').replace(/[^a-zA-Z0-9-]/g, '').slice(0, 60) + '-' +
         today.getFullYear() + String(today.getMonth() + 1).padStart(2, '0') + String(today.getDate()).padStart(2, '0');
       const factPct = computeFactPct(ids);
-      // 글은 이제부터 이 패널이 열려있는 동안 고정. 처음 세트는 항상 기존 브랜드 톤(archive-indigo+watermark, 시드 0).
+      // 글은 이제부터 이 패널이 열려있는 동안 고정. 첫 스타일도 랜덤 — Paul 피드백: "카드로 만들기 시
+      // 랜덤으로 만들기 실행(현재는 기본 형식만 처음으로 나옴)".
       currentCardState = { ids, content, factPct, fileSlugBase, cardSets: [] };
-      await addCardSet({ paletteId: DEFAULT_CARD_PALETTE, layout: DEFAULT_CARD_LAYOUT, doodleSeed: 0 });
+      const firstPaletteId = CARD_PALETTES[Math.floor(Math.random() * CARD_PALETTES.length)].id;
+      const firstLayout = CARD_LAYOUTS[Math.floor(Math.random() * CARD_LAYOUTS.length)];
+      const firstDoodleSeed = Math.floor(Math.random() * 1000);
+      await addCardSet({ paletteId: firstPaletteId, layout: firstLayout, doodleSeed: firstDoodleSeed });
     } catch (e) {
       if (myToken !== cmToken) return;
       panel.innerHTML = '<div class="cm-status">' + UI[LANG].cardGenError + '</div>';
