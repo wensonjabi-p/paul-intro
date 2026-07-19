@@ -48,6 +48,11 @@ const STYLE_PRESETS = [
   { id: 'fashion-line', label: '패션 일러스트 라인', directive: 'fashion illustration continuous line art, elegant flowing gestural contour lines, mostly white negative space with one soft flat accent color used sparingly' },
   { id: 'single-accent-line', label: '단색 포인트 라인', directive: 'flat minimal line illustration, thin uniform black contour lines throughout, one small area filled with a single solid accent color, generous white space' },
   { id: 'marker-doodle', label: '마커 손그림', directive: 'bold felt-tip marker line doodle, thick confident continuous hand-drawn strokes, monochrome or a single flat accent color, playful loose energy' },
+  // 2026-07-19 추가분 2차 — Paul이 참고 이미지(어반스케치 계열: 펜 크로스해칭 도심 스케치, 채색 없는 순수 라인
+  // 드로잉, 펜+옅은 수채 워시 여행 스케치)를 보여주며 "채우기 없이 선만으로 그린 그림"을 더 요청.
+  { id: 'urban-ink-density', label: '도심 밀도 펜화', directive: 'dense detailed pen-and-ink illustration, intricate cross-hatching filling the entire composition, bold black linework, monochrome, no color, gritty urban sketch density' },
+  { id: 'fineliner-nocolor', label: '순수 라인(무채색)', directive: 'precise fineliner pen contour line art, multiple clean black lines with architectural precision, absolutely no shading, no fill, no color — pure line on white paper' },
+  { id: 'urban-sketch-wash', label: '어반스케치 펜+수채', directive: 'urban sketch style, precise pen ink linework, controlled light watercolor wash in muted natural tones, generous white paper left unpainted, travel-journal illustration quality' },
 ];
 const DEFAULT_STYLE_ID = 'ink-watercolor'; // Paul이 30종 검토 후 최종 선택하면 이 값을 바꿀 것
 
