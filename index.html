@@ -893,10 +893,17 @@
   const labelOf = id => (nodeById(id) || {}).label || id;
   // 생각의 text는 예전 항목처럼 단순 문자열이거나, 새로 다듬어진 항목처럼 {ko,en,zh}일 수 있다 —
   // 현재 사이트 언어에 맞는 버전을 고른다.
+  // "(사진)"은 예전 빠른 기록이 사진만 있고 글이 없을 때 서버 검증을 피하려고 채워 넣던 가짜
+  // placeholder(지금은 안 씀, interview.html 수정 완료) — 이미 저장된 기존 기록엔 여전히 이 글자
+  // 그대로 남아있어서, 빈 텍스트와 똑같이 취급해 photoUrl로 폴백하게 한다.
+  function isPlaceholderText(s) { return !s || s.trim() === '(사진)'; }
   function thoughtText(t) {
     const v = t && t.text;
-    if (v && typeof v === 'object') return v[LANG] || v.ko || v.en || v.zh || '';
-    return v || '';
+    if (v && typeof v === 'object') {
+      const picked = v[LANG] || v.ko || v.en || v.zh || '';
+      return isPlaceholderText(picked) ? '' : picked;
+    }
+    return isPlaceholderText(v) ? '' : v;
   }
 
   // 새로 발행된 생각들 중 기존 성좌 노드에 없는 태그는, 그 자체로 클릭 가능한 단어(엉뚱한 갈고리 부류)로
