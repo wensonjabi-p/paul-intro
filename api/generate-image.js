@@ -53,6 +53,12 @@ const STYLE_PRESETS = [
   { id: 'urban-ink-density', label: '도심 밀도 펜화', directive: 'dense detailed pen-and-ink illustration, intricate cross-hatching filling the entire composition, bold black linework, monochrome, no color, gritty urban sketch density' },
   { id: 'fineliner-nocolor', label: '순수 라인(무채색)', directive: 'precise fineliner pen contour line art, multiple clean black lines with architectural precision, absolutely no shading, no fill, no color — pure line on white paper' },
   { id: 'urban-sketch-wash', label: '어반스케치 펜+수채', directive: 'urban sketch style, precise pen ink linework, controlled light watercolor wash in muted natural tones, generous white paper left unpainted, travel-journal illustration quality' },
+  // 2026-07-19 추가분 3차 — Paul이 urban-ink-density/urban-sketch-wash/marker-doodle을 마음에 들어 함,
+  // "좀 더 손으로 그린 단순한 선 위주의 그림들" 추가 요청 — 정교함보다 단순함·손맛에 무게를 둔 라인 계열.
+  { id: 'crayon-line', label: '크레용 라인', directive: 'thick soft wax crayon line drawing, simple childlike shapes, minimal detail, single or two flat colors, warm tactile hand-drawn texture' },
+  { id: 'pencil-simple', label: '연필 라인 스케치', directive: 'soft graphite pencil sketch, sparse simple lines, minimal light smudged shading only where needed, quiet understated hand-drawn quality' },
+  { id: 'brush-pen-line', label: '붓펜 손그림', directive: 'tapered brush-pen line drawing, strokes varying naturally in width, simple confident linework, monochrome, organic hand-drawn energy' },
+  { id: 'naive-doodle', label: '내추럴 손그림', directive: 'naive folk-art style simple line drawing, childlike loose proportions, thick uneven hand-drawn strokes, single flat color, charmingly imperfect' },
 ];
 const DEFAULT_STYLE_ID = 'ink-watercolor'; // Paul이 30종 검토 후 최종 선택하면 이 값을 바꿀 것
 
