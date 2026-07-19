@@ -191,6 +191,18 @@
   }
   .card-maker .cm-close:hover { color: var(--ink); }
   .cm-status { color: var(--muted); font-size: 14px; padding: 20px 0; }
+  /* 글 카드 / 이미지 카드를 완전히 다른 두 섹션으로 분리 — Paul 피드백: "이미지 카드와 글 카드를 구분해".
+     이미지 생성 버튼은 이제 개별 글카드가 아니라 이미지 카드 섹션 자체에 딸린 독립 컨트롤. */
+  .cm-section + .cm-section { margin-top: 34px; padding-top: 30px; border-top: 1px solid var(--line); }
+  .cm-section-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+  .cm-section-title { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); }
+  .cm-section-btn {
+    background: rgba(201,164,92,0.1); border: 1px solid var(--accent-dim); color: var(--accent); font-family: inherit;
+    font-size: 12px; padding: 7px 14px; border-radius: 16px; cursor: pointer; transition: all 0.2s;
+  }
+  .cm-section-btn:hover { background: rgba(201,164,92,0.18); }
+  .cm-section-btn:disabled { opacity: 0.6; cursor: default; }
+  .cm-section-empty { color: var(--faint); font-size: 13px; padding: 6px 0 4px; }
   .cm-sets { display: flex; flex-direction: column; gap: 28px; }
   .cm-set-labelrow {
     display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
@@ -200,12 +212,6 @@
   .cm-set-label {
     font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);
   }
-  .cm-gen-image {
-    background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
-    font-size: 11.5px; padding: 6px 12px; border-radius: 14px; cursor: pointer; transition: all 0.2s;
-  }
-  .cm-gen-image:hover { border-color: var(--accent-dim); color: var(--accent); }
-  .cm-gen-image:disabled { opacity: 0.6; cursor: default; }
   .cm-row { display: flex; gap: 18px; overflow-x: auto; padding-bottom: 10px; }
   .cm-card { flex: 0 0 auto; text-align: center; }
   .cm-card canvas {
@@ -589,7 +595,10 @@
       cardDownloadSelected: '선택한 카드 다운로드', cardShareSelected: '선택한 카드 공유', cardSelectForDownload: '선택',
       cardStyleLabel: n => '스타일 ' + n, cardImageSetLabel: '이미지 카드',
       imgLayoutLabel: { 'full-bleed': '풀블리드', framed: '프레임', polaroid: '폴라로이드' },
-      cardMakeImageBtn: '🖼️ 이 스타일로 이미지 카드 만들기', cardGeneratingImage: '이미지를 그리는 중… (첫 시도는 좀 걸릴 수 있어요)',
+      cardTextSectionTitle: '글 카드', cardImageSectionTitle: '이미지 카드',
+      cardImageSectionEmpty: '아직 만든 이미지 카드가 없어요. 위 버튼을 눌러 첫 이미지를 만들어보세요.',
+      cardMakeImageBtnFirst: '🖼️ 이미지 카드 만들기', cardMakeImageBtnMore: '🖼️ 다른 이미지로 추가로 만들기',
+      cardGeneratingImage: '이미지를 그리는 중… (첫 시도는 좀 걸릴 수 있어요)',
       cardImageFailed: '이미지 생성 실패 — 잠시 후 다시 시도해주세요',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
       gbH2: '방명록', gbLede: '다녀갔다는 흔적을 남겨주세요. 답글로 서로 이야기를 나눠도 좋아요.',
@@ -657,7 +666,10 @@
       cardDownloadSelected: 'Download selected', cardShareSelected: 'Share selected', cardSelectForDownload: 'Select',
       cardStyleLabel: n => 'Style ' + n, cardImageSetLabel: 'Image card',
       imgLayoutLabel: { 'full-bleed': 'Full-bleed', framed: 'Framed', polaroid: 'Polaroid' },
-      cardMakeImageBtn: '🖼️ Make an image card in this style', cardGeneratingImage: 'Painting the image… (the first try may take a bit)',
+      cardTextSectionTitle: 'Text cards', cardImageSectionTitle: 'Image cards',
+      cardImageSectionEmpty: 'No image cards yet — click the button above to make your first one.',
+      cardMakeImageBtnFirst: '🖼️ Make an image card', cardMakeImageBtnMore: '🖼️ Make another with a different image',
+      cardGeneratingImage: 'Painting the image… (the first try may take a bit)',
       cardImageFailed: 'Image generation failed — please try again in a moment',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
       gbH2: 'Guestbook', gbLede: 'Leave a trace that you were here. Feel free to reply to each other, too.',
@@ -723,7 +735,10 @@
       cardDownloadSelected: '下载所选卡片', cardShareSelected: '分享所选卡片', cardSelectForDownload: '选择',
       cardStyleLabel: n => '风格 ' + n, cardImageSetLabel: '图片卡片',
       imgLayoutLabel: { 'full-bleed': '全出血', framed: '相框式', polaroid: '拍立得' },
-      cardMakeImageBtn: '🖼️ 用这个风格生成图片卡片', cardGeneratingImage: '正在生成图片…（第一次可能要等一会儿）',
+      cardTextSectionTitle: '文字卡片', cardImageSectionTitle: '图片卡片',
+      cardImageSectionEmpty: '还没有生成图片卡片，点击上方按钮生成第一张。',
+      cardMakeImageBtnFirst: '🖼️ 生成图片卡片', cardMakeImageBtnMore: '🖼️ 用另一张图片再做一张',
+      cardGeneratingImage: '正在生成图片…（第一次可能要等一会儿）',
       cardImageFailed: '图片生成失败——请稍后重试',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
       gbH2: '留言簿', gbLede: '留下你来过的痕迹吧。也欢迎互相回复交流。',
@@ -2392,85 +2407,107 @@
     renderCardGallery();
   }
 
+  // 카드 세트 하나(글카드 또는 이미지카드)를 렌더링 — 두 섹션이 공통으로 쓰는 조각.
+  function buildCardSetEl(set, label, fileSlugBase) {
+    const setEl = document.createElement('div');
+    setEl.className = 'cm-set';
+    const labelRow = document.createElement('div');
+    labelRow.className = 'cm-set-labelrow';
+    const labelEl = document.createElement('div');
+    labelEl.className = 'cm-set-label';
+    labelEl.textContent = label;
+    labelRow.appendChild(labelEl);
+    setEl.appendChild(labelRow);
+    const row = document.createElement('div');
+    row.className = 'cm-row';
+    ['ko', 'en', 'zh'].forEach(l => {
+      const wrap = document.createElement('div');
+      wrap.className = 'cm-card';
+      wrap.appendChild(set.canvases[l]);
+      const langLabel = document.createElement('div');
+      langLabel.className = 'cm-lang';
+      langLabel.textContent = UI[LANG].cardLangLabel[l];
+      wrap.appendChild(langLabel);
+      const checkLabel = document.createElement('label');
+      checkLabel.className = 'cm-check';
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.dataset.setId = set.setId;
+      checkbox.dataset.lang = l;
+      checkLabel.appendChild(checkbox);
+      checkLabel.appendChild(document.createTextNode(UI[LANG].cardSelectForDownload));
+      wrap.appendChild(checkLabel);
+      const btns = document.createElement('div');
+      btns.className = 'cm-btns';
+      const dlBtn = document.createElement('button');
+      dlBtn.type = 'button'; dlBtn.textContent = UI[LANG].cardDownload;
+      dlBtn.addEventListener('click', () => downloadCanvas(set.canvases[l], l, fileSlugBase + '-' + set.style.paletteId));
+      btns.appendChild(dlBtn);
+      if (navigator.share) {
+        const shBtn = document.createElement('button');
+        shBtn.type = 'button'; shBtn.textContent = UI[LANG].cardShare;
+        shBtn.addEventListener('click', () => shareCanvas(set.canvases[l], l, shBtn, fileSlugBase + '-' + set.style.paletteId));
+        btns.appendChild(shBtn);
+      }
+      wrap.appendChild(btns);
+      row.appendChild(wrap);
+    });
+    setEl.appendChild(row);
+    return setEl;
+  }
+
+  // 글 카드와 이미지 카드는 완전히 분리된 두 섹션 — 각자 자기만의 "더 만들기" 컨트롤을 가진다
+  // (Paul 피드백: "이미지 카드와 글 카드를 구분해. 지금도 글카드에 이미지를 추가하고 있어").
   function renderCardGallery() {
     if (!currentCardState) return;
     const panel = document.getElementById('card-maker');
     const { cardSets, fileSlugBase } = currentCardState;
+    const textSets = cardSets.filter(s => s.kind !== 'ai-image');
+    const imageSets = cardSets.filter(s => s.kind === 'ai-image');
+
     panel.innerHTML =
       '<div class="cm-head"><span class="cm-title">' + UI[LANG].cardMakerTitle + '</span>' +
       '<div class="cm-head-btns">' +
-      '<button class="cm-restyle" type="button" id="cm-restyle-btn">' + UI[LANG].cardRestyleBtn + '</button>' +
       (navigator.share ? '<button class="cm-dl-selected" type="button" id="cm-share-selected-btn">' + UI[LANG].cardShareSelected + '</button>' : '') +
       '<button class="cm-dl-selected" type="button" id="cm-dl-selected-btn">' + UI[LANG].cardDownloadSelected + '</button>' +
       '<button class="cm-close" type="button" id="cm-close-btn">✕ ' + UI[LANG].cardClose + '</button>' +
       '</div></div>' +
-      '<div class="cm-sets" id="cm-sets"></div>';
-    const setsWrap = document.getElementById('cm-sets');
-    cardSets.forEach((set, si) => {
-      const setEl = document.createElement('div');
-      setEl.className = 'cm-set';
+      '<div class="cm-section" id="cm-text-section">' +
+      '<div class="cm-section-head"><span class="cm-section-title">' + UI[LANG].cardTextSectionTitle + '</span>' +
+      '<button class="cm-section-btn" type="button" id="cm-restyle-btn">' + UI[LANG].cardRestyleBtn + '</button></div>' +
+      '<div class="cm-sets" id="cm-text-sets"></div></div>' +
+      '<div class="cm-section" id="cm-image-section">' +
+      '<div class="cm-section-head"><span class="cm-section-title">' + UI[LANG].cardImageSectionTitle + '</span>' +
+      '<button class="cm-section-btn" type="button" id="cm-gen-image-btn">' +
+      (imageSets.length ? UI[LANG].cardMakeImageBtnMore : UI[LANG].cardMakeImageBtnFirst) + '</button></div>' +
+      '<div class="cm-sets" id="cm-image-sets"></div></div>';
+
+    const textWrap = document.getElementById('cm-text-sets');
+    textSets.forEach((set, si) => {
       const paletteName = (CARD_PALETTES.find(p => p.id === set.style.paletteId) || {}).name || set.style.paletteId;
-      const labelRow = document.createElement('div');
-      labelRow.className = 'cm-set-labelrow';
-      const label = document.createElement('div');
-      label.className = 'cm-set-label';
-      const imgLayoutName = set.kind === 'ai-image' ? (UI[LANG].imgLayoutLabel[set.style.imgLayout] || set.style.imgLayout) : '';
-      const aiStyleName = set.kind === 'ai-image' ? (AI_STYLE_LABELS[set.style.styleId] || '') : '';
-      label.textContent = set.kind === 'ai-image'
-        ? '🖼️ ' + UI[LANG].cardImageSetLabel + ' · ' + imgLayoutName + (aiStyleName ? ' · ' + aiStyleName : '')
-        : UI[LANG].cardStyleLabel(si + 1) + ' · ' + paletteName;
-      labelRow.appendChild(label);
-      if (set.kind !== 'ai-image') {
-        const genImgBtn = document.createElement('button');
-        genImgBtn.type = 'button'; genImgBtn.className = 'cm-gen-image'; genImgBtn.textContent = UI[LANG].cardMakeImageBtn;
-        genImgBtn.addEventListener('click', () => generateImageCard(set, genImgBtn));
-        labelRow.appendChild(genImgBtn);
-      }
-      setEl.appendChild(labelRow);
-      const row = document.createElement('div');
-      row.className = 'cm-row';
-      ['ko', 'en', 'zh'].forEach(l => {
-        const wrap = document.createElement('div');
-        wrap.className = 'cm-card';
-        wrap.appendChild(set.canvases[l]);
-        const langLabel = document.createElement('div');
-        langLabel.className = 'cm-lang';
-        langLabel.textContent = UI[LANG].cardLangLabel[l];
-        wrap.appendChild(langLabel);
-        const checkLabel = document.createElement('label');
-        checkLabel.className = 'cm-check';
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.dataset.setId = set.setId;
-        checkbox.dataset.lang = l;
-        checkLabel.appendChild(checkbox);
-        checkLabel.appendChild(document.createTextNode(UI[LANG].cardSelectForDownload));
-        wrap.appendChild(checkLabel);
-        const btns = document.createElement('div');
-        btns.className = 'cm-btns';
-        const dlBtn = document.createElement('button');
-        dlBtn.type = 'button'; dlBtn.textContent = UI[LANG].cardDownload;
-        dlBtn.addEventListener('click', () => downloadCanvas(set.canvases[l], l, fileSlugBase + '-' + set.style.paletteId));
-        btns.appendChild(dlBtn);
-        if (navigator.share) {
-          const shBtn = document.createElement('button');
-          shBtn.type = 'button'; shBtn.textContent = UI[LANG].cardShare;
-          shBtn.addEventListener('click', () => shareCanvas(set.canvases[l], l, shBtn, fileSlugBase + '-' + set.style.paletteId));
-          btns.appendChild(shBtn);
-        }
-        wrap.appendChild(btns);
-        row.appendChild(wrap);
-      });
-      setEl.appendChild(row);
-      setsWrap.appendChild(setEl);
+      textWrap.appendChild(buildCardSetEl(set, UI[LANG].cardStyleLabel(si + 1) + ' · ' + paletteName, fileSlugBase));
     });
+
+    const imageWrap = document.getElementById('cm-image-sets');
+    if (!imageSets.length) {
+      const empty = document.createElement('div');
+      empty.className = 'cm-section-empty';
+      empty.textContent = UI[LANG].cardImageSectionEmpty;
+      imageWrap.appendChild(empty);
+    }
+    imageSets.forEach(set => {
+      const imgLayoutName = UI[LANG].imgLayoutLabel[set.style.imgLayout] || set.style.imgLayout;
+      const aiStyleName = AI_STYLE_LABELS[set.style.styleId] || '';
+      const label = imgLayoutName + (aiStyleName ? ' · ' + aiStyleName : '');
+      imageWrap.appendChild(buildCardSetEl(set, label, fileSlugBase));
+    });
+
     document.getElementById('cm-close-btn').addEventListener('click', closeCardMaker);
     document.getElementById('cm-restyle-btn').addEventListener('click', restyleCurrentCard);
+    document.getElementById('cm-gen-image-btn').addEventListener('click', (e) => generateImageCard(e.currentTarget));
     document.getElementById('cm-dl-selected-btn').addEventListener('click', downloadSelectedCards);
     const shareSelBtn = document.getElementById('cm-share-selected-btn');
     if (shareSelBtn) shareSelBtn.addEventListener('click', shareSelectedCards);
-    const last = setsWrap.lastElementChild;
-    if (last) last.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   function selectedCardItems() {
@@ -2540,17 +2577,27 @@
 
   // 특정 스타일 세트를 골라 그 스토리+팔레트 무드를 바탕으로 실제 AI 그림 카드를 하나 만든다.
   // 스타일 세트와 마찬가지로 "쌓이는" 방식 — 같은 세트에서 또 누르면 다른 그림이 하나 더 추가된다.
-  async function generateImageCard(sourceSet, btn) {
+  // 이미지 카드 섹션 자체에 딸린 독립 컨트롤 — 더 이상 특정 글카드에 종속되지 않는다
+  // (Paul 피드백: "이미지 카드와 글 카드를 구분해"). 팔레트(무드)·화풍·배치 전부 이 함수 안에서
+  // 안 쓴 것부터 알아서 순환해 고른다. 몇 번을 눌러도 계속 다른 이미지가 쌓인다.
+  async function generateImageCard(btn) {
     if (!currentCardState) return;
     const originalLabel = btn.textContent;
     btn.disabled = true; btn.textContent = UI[LANG].cardGeneratingImage;
 
-    const palette = CARD_PALETTES.find(p => p.id === sourceSet.style.paletteId) || CARD_PALETTES.find(p => p.id === DEFAULT_CARD_PALETTE);
+    const existingImageSets = currentCardState.cardSets.filter(s => s.kind === 'ai-image');
+
+    const usedPaletteIds = existingImageSets.map(s => s.style.paletteId);
+    const unusedPaletteIds = CARD_PALETTES.map(p => p.id).filter(id => !usedPaletteIds.includes(id));
+    const paletteId = unusedPaletteIds.length
+      ? unusedPaletteIds[Math.floor(Math.random() * unusedPaletteIds.length)]
+      : pickRandomDifferent(CARD_PALETTES.map(p => p.id), usedPaletteIds[usedPaletteIds.length - 1] || DEFAULT_CARD_PALETTE);
+    const palette = CARD_PALETTES.find(p => p.id === paletteId);
     const moodText = palette.name + ' (배경 ' + palette.bg + ', 포인트 색 ' + palette.accent + ')';
     const storyText = (currentCardState.content[LANG] || currentCardState.content.ko).story;
 
-    // 화풍도 배치(imgLayout)와 같은 방식으로 순환 — Paul이 고른 화풍 목록 중 아직 안 쓴 것부터.
-    const usedStyleIds = currentCardState.cardSets.filter(s => s.kind === 'ai-image').map(s => s.style.styleId).filter(Boolean);
+    // 화풍도 같은 방식으로 순환 — Paul이 고른 화풍 목록 중 아직 안 쓴 것부터.
+    const usedStyleIds = existingImageSets.map(s => s.style.styleId).filter(Boolean);
     const unusedStyleIds = LIKED_AI_STYLES.filter(id => !usedStyleIds.includes(id));
     const styleId = unusedStyleIds.length
       ? unusedStyleIds[Math.floor(Math.random() * unusedStyleIds.length)]
@@ -2577,15 +2624,15 @@
       return;
     }
 
-    // 그림은 그 스타일 세트의 팔레트를 그대로 이어받아 분위기를 맞춘다. 배치(imgLayout)는 3가지
-    // 독립 형태(full-bleed/framed/polaroid) 중 아직 안 쓴 것부터 — Paul 피드백: "3가지 다른 형태로".
-    const usedImgLayouts = currentCardState.cardSets.filter(s => s.kind === 'ai-image').map(s => s.style.imgLayout);
+    // 배치(imgLayout)는 3가지 독립 형태(full-bleed/framed/polaroid) 중 아직 안 쓴 것부터
+    // — Paul 피드백: "3가지 다른 형태로".
+    const usedImgLayouts = existingImageSets.map(s => s.style.imgLayout);
     const unusedImgLayouts = IMAGE_CARD_LAYOUTS.filter(l => !usedImgLayouts.includes(l));
     const imgLayout = unusedImgLayouts.length
       ? unusedImgLayouts[Math.floor(Math.random() * unusedImgLayouts.length)]
       : pickRandomDifferent(IMAGE_CARD_LAYOUTS, usedImgLayouts[usedImgLayouts.length - 1]);
 
-    await addCardSet({ paletteId: sourceSet.style.paletteId, imgLayout, styleId, aiImage: img });
+    await addCardSet({ paletteId, imgLayout, styleId, aiImage: img });
   }
 
   async function openCardMaker(ids) {
