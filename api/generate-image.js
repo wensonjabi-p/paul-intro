@@ -42,6 +42,12 @@ const STYLE_PRESETS = [
   { id: 'stained-glass', label: '스테인드글라스', directive: 'stained glass style, bold black leading lines, jewel-toned translucent color panels' },
   { id: 'paper-cutout', label: '종이 오림 콜라주', directive: 'paper cutout collage style, layered flat shapes, subtle soft drop shadows' },
   { id: 'monoprint', label: '모노프린트 질감', directive: 'monoprint textured illustration, organic ink blooms, tactile paper grain' },
+  // 2026-07-19 추가분 — Paul 요청: "선으로만 그려진 그림", 손으로 그린 느낌, 단색/심플한 색상 위주로 더.
+  { id: 'mono-line-art', label: '모노라인 아트', directive: 'clean continuous single-line illustration, one unbroken fluid contour line, monochrome black ink on plain white background, no shading, no cross-hatching, elegant minimalism' },
+  { id: 'blind-contour', label: '블라인드 컨투어 드로잉', directive: 'loose blind-contour drawing, a single imperfect wobbly hand-drawn line, raw intimate sketchbook quality, black ink on white, uncorrected and spontaneous' },
+  { id: 'fashion-line', label: '패션 일러스트 라인', directive: 'fashion illustration continuous line art, elegant flowing gestural contour lines, mostly white negative space with one soft flat accent color used sparingly' },
+  { id: 'single-accent-line', label: '단색 포인트 라인', directive: 'flat minimal line illustration, thin uniform black contour lines throughout, one small area filled with a single solid accent color, generous white space' },
+  { id: 'marker-doodle', label: '마커 손그림', directive: 'bold felt-tip marker line doodle, thick confident continuous hand-drawn strokes, monochrome or a single flat accent color, playful loose energy' },
 ];
 const DEFAULT_STYLE_ID = 'ink-watercolor'; // Paul이 30종 검토 후 최종 선택하면 이 값을 바꿀 것
 
