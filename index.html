@@ -1549,7 +1549,9 @@
     const box = document.getElementById('story-edit-toolbar');
     const u = UI[LANG];
     box.dataset.mode = 'compose';
-    box.dataset.action = action;
+    box.dataset.pendingAction = action; // 'pendingAction'으로 저장 — 'action'을 쓰면 [data-action] 위임 셀렉터가
+    // 박스 자신도 매칭해버려서(피커 버튼용 셀렉터인데), 지시문 창 안 아무 클릭이나 다시 renderStoryEditComposer로
+    // 되돌려버리는 버그가 있었다(실제로 재현·확인함) — submit 버튼 클릭이 씹히는 원인이었다.
     box.innerHTML =
       '<div class="se-compose">' +
       '<textarea id="se-instruction" placeholder="' + escapeHtml(u.storyEditInstructionPlaceholder) + '"></textarea>' +
@@ -1588,7 +1590,7 @@
   async function runStoryEdit() {
     const box = document.getElementById('story-edit-toolbar');
     const pending = storyEditPending;
-    const action = box.dataset.action;
+    const action = box.dataset.pendingAction;
     if (!pending || !action) return;
     const instruction = (box.querySelector('#se-instruction') || {}).value || '';
     const u = UI[LANG];
