@@ -177,41 +177,48 @@
   .story-remake-btn:hover { border-color: var(--muted); color: var(--ink); }
   .story-remake-btn:disabled { opacity: 0.6; cursor: default; }
 
-  /* ---------- 스토리 세부 수정(선택 → 삭제/상상/강조/더 자세히 → 지시 → 다시 쓰기) ----------
-     Paul 피드백(2026-07-20): "일부 구간이나 전체를 마크하고 ... 다시 쓰기 하면 좋겠어".
-     .prose 안에서 텍스트를 마크(선택)하면 뜨는 플로팅 툴바 — 전체 화면 기준 위치라 position:fixed. */
-  .story-edit-toolbar {
-    position: fixed; z-index: 60; background: var(--bg-soft); border: 1px solid var(--line);
-    border-radius: 14px; box-shadow: 0 14px 34px rgba(0,0,0,0.45); padding: 10px; max-width: 340px;
+  /* ---------- 스토리 세부 수정(직접 수정 / 옵션으로 수정) ----------
+     Paul 피드백(2026-07-20): 처음엔 텍스트를 드래그 선택해서 고치는 방식으로 만들었으나,
+     "부분 선택 수정을 전체 수정으로 바꿔줘"라는 피드백에 따라 전체 텍스트를 대상으로 하는
+     두 버튼(직접 수정 / 옵션으로 수정)으로 교체 — 더 이상 위치를 추적하는 플로팅 툴바가 아니라
+     .story-single/.synth-title 안에 그대로 이어지는 인라인 패널. */
+  .story-edit-btn {
+    margin-top: 22px; margin-right: 10px; background: none; border: 1px solid var(--line); color: var(--muted);
+    font-family: inherit; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 20px;
+    cursor: pointer; letter-spacing: 0.03em; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
   }
-  .story-edit-toolbar .se-quote {
-    font-size: 12px; color: var(--faint); padding: 2px 4px 8px; max-width: 320px;
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  .story-edit-btn:hover { border-color: var(--muted); color: var(--ink); }
+  .story-edit-panel {
+    margin-top: 20px; border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: var(--bg-soft);
   }
-  .story-edit-toolbar .se-actions { display: flex; flex-wrap: wrap; gap: 6px; }
-  .story-edit-toolbar .se-actions button {
+  .story-edit-panel textarea {
+    width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; color: var(--ink);
+    font-family: inherit; font-size: 15px; line-height: 1.7; padding: 12px 14px; resize: vertical; box-sizing: border-box;
+  }
+  .story-edit-panel textarea:focus { outline: none; border-color: var(--accent-dim); }
+  .story-edit-panel .se-manual-textarea { min-height: 160px; }
+  .story-edit-panel .se-instruction { min-height: 56px; margin-top: 14px; font-size: 13px; }
+  .se-cats { display: flex; flex-direction: column; gap: 14px; }
+  .se-cat-title { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+  .se-cat-opts { display: flex; flex-wrap: wrap; gap: 6px; }
+  .se-opt {
     background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
-    font-size: 12.5px; padding: 7px 12px; border-radius: 14px; cursor: pointer; transition: all 0.2s; white-space: nowrap;
+    font-size: 12.5px; padding: 7px 12px; border-radius: 14px; cursor: pointer; transition: all 0.2s;
   }
-  .story-edit-toolbar .se-actions button:hover { border-color: var(--accent-dim); color: var(--accent); }
-  .story-edit-toolbar .se-compose { display: flex; flex-direction: column; gap: 8px; width: 300px; }
-  .story-edit-toolbar .se-compose textarea {
-    width: 100%; min-height: 60px; resize: vertical; background: var(--bg); border: 1px solid var(--line);
-    border-radius: 8px; color: var(--ink); font-family: inherit; font-size: 13px; padding: 8px 10px; line-height: 1.5;
+  .se-opt:hover { border-color: var(--accent-dim); color: var(--accent); }
+  .se-opt.selected { background: rgba(201,164,92,0.16); border-color: var(--accent); color: var(--accent); }
+  .se-panel-btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+  .se-btn-cancel {
+    background: none; border: none; color: var(--faint); font-family: inherit; font-size: 12.5px; cursor: pointer; padding: 8px 10px;
   }
-  .story-edit-toolbar .se-compose textarea:focus { outline: none; border-color: var(--accent-dim); }
-  .story-edit-toolbar .se-compose-btns { display: flex; justify-content: flex-end; gap: 8px; }
-  .story-edit-toolbar .se-btn-cancel {
-    background: none; border: none; color: var(--faint); font-family: inherit; font-size: 12.5px; cursor: pointer; padding: 6px 8px;
-  }
-  .story-edit-toolbar .se-btn-cancel:hover { color: var(--ink); }
-  .story-edit-toolbar .se-btn-submit {
+  .se-btn-cancel:hover { color: var(--ink); }
+  .se-btn-submit {
     background: rgba(201,164,92,0.14); border: 1px solid var(--accent-dim); color: var(--accent); font-family: inherit;
-    font-size: 12.5px; font-weight: 600; padding: 7px 16px; border-radius: 14px; cursor: pointer; transition: all 0.2s;
+    font-size: 13px; font-weight: 600; padding: 9px 20px; border-radius: 16px; cursor: pointer; transition: all 0.2s;
   }
-  .story-edit-toolbar .se-btn-submit:hover { background: rgba(201,164,92,0.22); }
-  .story-edit-toolbar .se-btn-submit:disabled { opacity: 0.6; cursor: default; }
-  .story-edit-toolbar .se-error { font-size: 12px; color: #c0553f; }
+  .se-btn-submit:hover { background: rgba(201,164,92,0.22); }
+  .se-btn-submit:disabled { opacity: 0.5; cursor: default; }
+  .se-error { margin-top: 10px; font-size: 12px; color: #c0553f; }
   .card-maker {
     margin-top: 26px; border-top: 1px solid var(--line); padding-top: 26px;
   }
@@ -252,6 +259,17 @@
     font-size: 12px; padding: 7px 10px; border-radius: 14px; cursor: pointer; max-width: 160px;
   }
   .cm-style-select:focus { outline: none; border-color: var(--accent-dim); }
+  .cm-set-edit-select {
+    background: var(--bg-soft); border: 1px solid var(--line); color: var(--ink); font-family: inherit;
+    font-size: 11.5px; padding: 5px 8px; border-radius: 12px; cursor: pointer; max-width: 170px;
+  }
+  .cm-set-edit-select:focus { outline: none; border-color: var(--accent-dim); }
+  .cm-set-edit-btn {
+    background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
+    font-size: 11.5px; padding: 5px 12px; border-radius: 12px; cursor: pointer; transition: all 0.2s;
+  }
+  .cm-set-edit-btn:hover { border-color: var(--accent-dim); color: var(--accent); }
+  .cm-set-edit-btn:disabled { opacity: 0.6; cursor: default; }
   .cm-sets { display: flex; flex-direction: column; gap: 28px; }
   .cm-set-labelrow {
     display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
@@ -599,7 +617,6 @@
 <div class="credit" id="p-credit"></div>
 <div style="text-align:center; padding:0 5vw 40px;"><a href="interview.html" style="color:var(--faint); font-size:11px; letter-spacing:0.14em; text-decoration:none;" id="p-interview-link"></a></div>
 <div id="pb-toast"></div>
-<div id="story-edit-toolbar" class="story-edit-toolbar" style="display:none;"></div>
 
 <script src="data.js"></script>
 <script src="data.en.js"></script>
@@ -663,6 +680,7 @@
       cardImageSectionEmpty: '아직 만든 이미지 카드가 없어요. 위 버튼을 눌러 첫 이미지를 만들어보세요.',
       cardMakeImageBtnFirst: '🖼️ 이미지 카드 만들기', cardMakeImageBtnMore: '🖼️ 다른 이미지로 추가로 만들기',
       cardStyleSelectTitle: '화풍 직접 고르기 (비워두면 랜덤)', cardStyleRandomOption: '🎲 랜덤 화풍',
+      cardProtagonistSelectTitle: '주인공 표현 방식', cardImageEditBtn: '✎ 이 그림 수정', cardImageEditing: '다시 그리는 중…',
       cardGeneratingImage: n => '이미지를 그리는 중… ' + n + '초 (첫 시도는 좀 걸릴 수 있어요)',
       cardImageFailed: '이미지 생성 실패 — 잠시 후 다시 시도해주세요',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
@@ -680,7 +698,7 @@
       gbTranslateBtn: '번역 보기', gbShowOriginal: '원문 보기', gbTranslating: '번역 중…',
       doodleRedraw: '↻ 다시 그리기',
       storyRemakeBtn: '🎲 다른 스토리로 만들어보기', storyRemaking: '다르게 써보는 중…',
-      storyEditDelete: '🗑 삭제', storyEditImagine: '💭 상상', storyEditEmphasize: '✦ 강조', storyEditDetail: '🔍 더 자세히',
+      storyEditManualBtn: '✏️ 직접 수정', storyEditOptionsBtn: '🎛 옵션으로 수정', storyEditSaveBtn: '저장',
       storyEditInstructionPlaceholder: '구체적으로 어떻게 바꿀지 적어주세요 (선택사항)',
       storyEditSubmit: '다시 쓰기', storyEditCancel: '취소', storyEditWorking: '다시 쓰는 중…',
       storyEditFailed: '수정하지 못했어요. 잠시 후 다시 시도해주세요.',
@@ -743,6 +761,7 @@
       cardImageSectionEmpty: 'No image cards yet — click the button above to make your first one.',
       cardMakeImageBtnFirst: '🖼️ Make an image card', cardMakeImageBtnMore: '🖼️ Make another with a different image',
       cardStyleSelectTitle: 'Pick a style directly (leave blank for random)', cardStyleRandomOption: '🎲 Random style',
+      cardProtagonistSelectTitle: 'Protagonist style', cardImageEditBtn: '✎ Edit this image', cardImageEditing: 'Redrawing…',
       cardGeneratingImage: n => 'Painting the image… ' + n + 's (the first try may take a bit)',
       cardImageFailed: 'Image generation failed — please try again in a moment',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
@@ -760,7 +779,7 @@
       gbTranslateBtn: 'Translate', gbShowOriginal: 'Show original', gbTranslating: 'Translating…',
       doodleRedraw: '↻ Redraw',
       storyRemakeBtn: '🎲 Try a different story', storyRemaking: 'Writing a new version…',
-      storyEditDelete: '🗑 Delete', storyEditImagine: '💭 Imagine', storyEditEmphasize: '✦ Emphasize', storyEditDetail: '🔍 More detail',
+      storyEditManualBtn: '✏️ Edit directly', storyEditOptionsBtn: '🎛 Edit with options', storyEditSaveBtn: 'Save',
       storyEditInstructionPlaceholder: 'Add specific instructions (optional)',
       storyEditSubmit: 'Rewrite', storyEditCancel: 'Cancel', storyEditWorking: 'Rewriting…',
       storyEditFailed: 'Could not edit that. Please try again shortly.',
@@ -821,6 +840,7 @@
       cardImageSectionEmpty: '还没有生成图片卡片，点击上方按钮生成第一张。',
       cardMakeImageBtnFirst: '🖼️ 生成图片卡片', cardMakeImageBtnMore: '🖼️ 用另一张图片再做一张',
       cardStyleSelectTitle: '直接选择画风（留空则随机）', cardStyleRandomOption: '🎲 随机画风',
+      cardProtagonistSelectTitle: '主人公表现方式', cardImageEditBtn: '✎ 修改这张图', cardImageEditing: '正在重新绘制…',
       cardGeneratingImage: n => '正在生成图片… ' + n + ' 秒（第一次可能要等一会儿）',
       cardImageFailed: '图片生成失败——请稍后重试',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
@@ -838,7 +858,7 @@
       gbTranslateBtn: '查看翻译', gbShowOriginal: '查看原文', gbTranslating: '翻译中…',
       doodleRedraw: '↻ 重新绘制',
       storyRemakeBtn: '🎲 换一个故事版本', storyRemaking: '正在重新创作…',
-      storyEditDelete: '🗑 删除', storyEditImagine: '💭 想象', storyEditEmphasize: '✦ 强调', storyEditDetail: '🔍 更详细',
+      storyEditManualBtn: '✏️ 手动编辑', storyEditOptionsBtn: '🎛 用选项修改', storyEditSaveBtn: '保存',
       storyEditInstructionPlaceholder: '写下具体想怎么改（可选）',
       storyEditSubmit: '重写', storyEditCancel: '取消', storyEditWorking: '正在重写…',
       storyEditFailed: '修改失败，请稍后再试。',
@@ -1478,160 +1498,171 @@
     if (btn) btn.addEventListener('click', remakeStory);
   }
 
-  // ---------- 스토리 세부 수정(선택 → 삭제/상상/강조/더 자세히 → 지시 → 다시 쓰기) ----------
-  // Paul 피드백(2026-07-20): "일부 구간이나 전체를 마크하고 삭제, 상상, 강조, 더 자세히 등의 버튼을
-  // 클릭하고 세부 수정 지시를 한 후에 다시 쓰기 하면 좋겠어". .prose 안에서 텍스트를 마크(선택)하면
-  // 플로팅 툴바가 뜨고, 액션을 고르면 지시문 입력창으로 바뀐다. 실제 수정은 synthesize-combo.js의
-  // story-edit 모드가 세 언어 버전을 한 번에 받아 같은 부분을 동시에 고쳐서 언어 간 불일치를 막는다.
-  const STORY_EDIT_FACT_MUL = { delete: 1, emphasize: 1, detail: 0.92, imagine: 0.78 };
-  let storyEditPending = null; // { ids, text, factPct, rect } — 툴바가 떠 있는 동안의 선택 정보
+  // ---------- 스토리 세부 수정(직접 수정 / 옵션으로 수정) ----------
+  // Paul 피드백(2026-07-20): 처음엔 텍스트를 드래그 선택하는 방식으로 만들었으나, "부분 선택 수정을
+  // 전체 수정으로 바꿔줘"라는 후속 피드백에 따라 전체 텍스트를 대상으로 하는 두 갈래로 교체:
+  // (1) 직접 수정 — Paul이 textarea에서 직접 고쳐 쓰고(삭제도 본인이), 나머지 두 언어는 AI가 그 내용에
+  //     맞춰 다시 씀. (2) 옵션으로 수정 — 카테고리별 21개 옵션 중 하나(+선택적 지시문)를 골라 AI가 전체
+  //     문단을 다시 씀. 두 경우 모두 synthesize-combo.js의 story-edit 모드가 세 언어를 한 번에 받아
+  //     동시에 고쳐서 언어 간 불일치를 막는다. #synthesis는 매번 통째로 다시 그려지는 안정된 부모라,
+  //     패널 클릭 위임을 여기 한 번만 걸어두면 렌더될 때마다 다시 바인딩할 필요가 없다.
+  const STORY_EDIT_OPTIONS = [
+    { id: 'structure', label: { ko: '분량·구조', en: 'Length & structure', zh: '分量与结构' }, options: [
+      { id: 'shorten', label: { ko: '✂️ 짧게 줄이기', en: '✂️ Make it shorter', zh: '✂️ 缩短' } },
+      { id: 'lengthen', label: { ko: '📏 더 길게 늘리기', en: '📏 Make it longer', zh: '📏 拉长' } },
+      { id: 'trim-filler', label: { ko: '🪶 군더더기 제거', en: '🪶 Trim the filler', zh: '🪶 去掉冗余' } },
+      { id: 'wistful-ending', label: { ko: '🌙 여운 있는 마무리로', en: '🌙 End with a lingering note', zh: '🌙 结尾更有余韵' } },
+      { id: 'end-with-question', label: { ko: '❓ 질문으로 끝내기', en: '❓ End with a question', zh: '❓ 以问句结尾' } },
+      { id: 'restructure-flow', label: { ko: '🔀 문단 흐름 재구성', en: '🔀 Restructure the flow', zh: '🔀 重组行文顺序' } },
+    ] },
+    { id: 'tone', label: { ko: '어조·문체', en: 'Tone & voice', zh: '语气与文风' }, options: [
+      { id: 'calm-tone', label: { ko: '🧊 더 담담하게', en: '🧊 Calmer tone', zh: '🧊 更平静' } },
+      { id: 'emotional-tone', label: { ko: '🔥 더 감정적으로', en: '🔥 More emotional', zh: '🔥 更有情感' } },
+      { id: 'add-humor', label: { ko: '😄 유머 살짝 더하기', en: '😄 Add a touch of humor', zh: '😄 加一点幽默' } },
+      { id: 'more-serious', label: { ko: '🎭 더 진지하게', en: '🎭 More serious', zh: '🎭 更严肃' } },
+      { id: 'more-poetic', label: { ko: '🖋️ 더 시적으로', en: '🖋️ More poetic', zh: '🖋️ 更诗意' } },
+      { id: 'more-reflective', label: { ko: '🤔 더 자기성찰적으로', en: '🤔 More reflective', zh: '🤔 更自省' } },
+    ] },
+    { id: 'detail', label: { ko: '디테일 추가', en: 'Add detail', zh: '增加细节' }, options: [
+      { id: 'sensory-detail', label: { ko: '👃 감각적 디테일', en: '👃 Sensory detail', zh: '👃 感官细节' } },
+      { id: 'add-dialogue', label: { ko: '💬 대화 재현', en: '💬 Recreate dialogue', zh: '💬 还原对话' } },
+      { id: 'specific-numbers', label: { ko: '🔢 구체적 숫자·시기', en: '🔢 Specific numbers or dates', zh: '🔢 具体数字或时间' } },
+      { id: 'concrete-setting', label: { ko: '📍 장소·배경 구체화', en: '📍 More concrete setting', zh: '📍 具体化背景' } },
+      { id: 'inner-thoughts', label: { ko: '🧠 속마음 덧붙이기', en: '🧠 Add inner thoughts', zh: '🧠 加入内心想法' } },
+      { id: 'add-metaphor', label: { ko: '🖼️ 비유·은유 추가', en: '🖼️ Add a metaphor', zh: '🖼️ 加入比喻' } },
+    ] },
+    { id: 'emphasis', label: { ko: '강조·구성', en: 'Emphasis & composition', zh: '强调与结构' }, options: [
+      { id: 'contrast', label: { ko: '⚖️ 전후 대비 강조', en: '⚖️ Emphasize contrast', zh: '⚖️ 强调前后对比' } },
+      { id: 'key-insight', label: { ko: '💡 핵심 통찰 강조', en: '💡 Emphasize the key insight', zh: '💡 强调核心感悟' } },
+      { id: 'irony-twist', label: { ko: '🌀 반전·아이러니', en: '🌀 Add a twist or irony', zh: '🌀 加入转折或反讽' } },
+    ] },
+  ];
+  const STORY_EDIT_FACT_MUL = {
+    shorten: 1, lengthen: 0.9, 'trim-filler': 1, 'wistful-ending': 0.95, 'end-with-question': 0.95, 'restructure-flow': 1,
+    'calm-tone': 1, 'emotional-tone': 0.95, 'add-humor': 0.9, 'more-serious': 1, 'more-poetic': 0.9, 'more-reflective': 0.95,
+    'sensory-detail': 0.75, 'add-dialogue': 0.7, 'specific-numbers': 0.85, 'concrete-setting': 0.8, 'inner-thoughts': 0.75, 'add-metaphor': 0.9,
+    contrast: 0.95, 'key-insight': 0.95, 'irony-twist': 0.85, manual: 1,
+  };
 
-  function initStoryEditToolbar() {
-    const box = document.getElementById('story-edit-toolbar');
-    document.addEventListener('selectionchange', onStorySelectionChange);
-    document.addEventListener('mousedown', e => {
-      if (box.contains(e.target)) {
-        // 버튼을 누를 때 기본 포커스 이동으로 텍스트 선택이 풀리는 것을 막는다(입력창은 예외).
-        if (e.target.tagName !== 'TEXTAREA') e.preventDefault();
+  function storyEditBtnsHtml() {
+    const u = UI[LANG];
+    return '<button class="story-edit-btn" type="button" data-story-edit="manual">' + u.storyEditManualBtn + '</button>' +
+      '<button class="story-edit-btn" type="button" data-story-edit="options">' + u.storyEditOptionsBtn + '</button>' +
+      '<div class="story-edit-panel" id="story-edit-panel" style="display:none;"></div>';
+  }
+
+  function initStoryEditPanel() {
+    const synth = document.getElementById('synthesis');
+    synth.addEventListener('click', e => {
+      const openBtn = e.target.closest('[data-story-edit]');
+      if (openBtn) { openStoryEditPanel(openBtn.dataset.storyEdit); return; }
+
+      const panel = document.getElementById('story-edit-panel');
+      if (!panel || !panel.contains(e.target)) return;
+      if (e.target.closest('[data-se-close]')) { panel.style.display = 'none'; panel.innerHTML = ''; return; }
+      if (e.target.closest('[data-se-manual-submit]')) {
+        const ta = panel.querySelector('#story-manual-textarea');
+        submitStoryEdit('manual', '', ta ? ta.value : '');
         return;
       }
-      if (box.style.display !== 'none') hideStoryEditToolbar();
+      const optBtn = e.target.closest('[data-se-option]');
+      if (optBtn) {
+        panel.querySelectorAll('.se-opt').forEach(b => b.classList.toggle('selected', b === optBtn));
+        panel.dataset.selectedOption = optBtn.dataset.seOption;
+        const submitBtn = panel.querySelector('[data-se-option-submit]');
+        if (submitBtn) submitBtn.disabled = false;
+        return;
+      }
+      if (e.target.closest('[data-se-option-submit]')) {
+        const action = panel.dataset.selectedOption;
+        if (!action) return;
+        const ta = panel.querySelector('#se-instruction');
+        submitStoryEdit(action, ta ? ta.value : '', null);
+      }
     });
-    box.addEventListener('click', onStoryEditToolbarClick);
   }
 
-  function hideStoryEditToolbar() {
-    const box = document.getElementById('story-edit-toolbar');
-    box.style.display = 'none';
-    box.innerHTML = '';
-    delete box.dataset.mode;
-    storyEditPending = null;
+  function openStoryEditPanel(kind) {
+    if (!state.selected.length) return;
+    const panel = document.getElementById('story-edit-panel');
+    if (!panel) return;
+    const proseEl = document.querySelector('#synthesis .prose');
+    const currentText = proseEl ? proseEl.textContent : '';
+    panel.style.display = 'block';
+    panel.dataset.selectedOption = '';
+    if (kind === 'manual') renderManualEditPanel(panel, currentText);
+    else renderOptionsEditPanel(panel);
   }
 
-  function onStorySelectionChange() {
-    const box = document.getElementById('story-edit-toolbar');
-    // 지시문을 입력하는 중(compose 상태)에는 textarea 포커스 등으로 선택이 바뀌어도 안 닫히게.
-    if (box.dataset.mode === 'compose') return;
-    const sel = window.getSelection();
-    if (!sel || sel.rangeCount === 0 || sel.isCollapsed) { hideStoryEditToolbar(); return; }
-    const text = sel.toString().trim();
-    if (!text || !state.selected.length) { hideStoryEditToolbar(); return; }
-    const anchorEl = sel.anchorNode && (sel.anchorNode.nodeType === 3 ? sel.anchorNode.parentElement : sel.anchorNode);
-    const proseEl = anchorEl && anchorEl.closest && anchorEl.closest('#synthesis .prose');
-    if (!proseEl || !proseEl.contains(sel.focusNode)) { hideStoryEditToolbar(); return; }
-
-    const r = sel.getRangeAt(0).getBoundingClientRect();
-    storyEditPending = {
-      ids: state.selected.slice(), text,
-      factPct: Number(proseEl.dataset.factPct) || 100,
-      rect: { left: r.left, top: r.top, bottom: r.bottom, width: r.width },
-    };
-    renderStoryEditPicker();
-  }
-
-  function renderStoryEditPicker() {
-    const box = document.getElementById('story-edit-toolbar');
+  function renderManualEditPanel(panel, currentText) {
     const u = UI[LANG];
-    box.dataset.mode = 'pick';
-    box.innerHTML =
-      '<div class="se-quote">&ldquo;' + escapeHtml(storyEditPending.text.slice(0, 60)) + '&rdquo;</div>' +
-      '<div class="se-actions">' +
-      '<button type="button" data-action="delete">' + u.storyEditDelete + '</button>' +
-      '<button type="button" data-action="imagine">' + u.storyEditImagine + '</button>' +
-      '<button type="button" data-action="emphasize">' + u.storyEditEmphasize + '</button>' +
-      '<button type="button" data-action="detail">' + u.storyEditDetail + '</button>' +
+    panel.innerHTML =
+      '<textarea id="story-manual-textarea" class="se-manual-textarea">' + escapeHtml(currentText) + '</textarea>' +
+      '<div class="se-panel-btns">' +
+      '<button type="button" class="se-btn-cancel" data-se-close>' + u.storyEditCancel + '</button>' +
+      '<button type="button" class="se-btn-submit" data-se-manual-submit>' + u.storyEditSaveBtn + '</button>' +
       '</div>';
-    box.style.display = 'block';
-    positionStoryEditToolbar();
+    panel.querySelector('#story-manual-textarea').focus();
   }
 
-  function renderStoryEditComposer(action) {
-    const box = document.getElementById('story-edit-toolbar');
+  function renderOptionsEditPanel(panel) {
     const u = UI[LANG];
-    box.dataset.mode = 'compose';
-    box.dataset.pendingAction = action; // 'pendingAction'으로 저장 — 'action'을 쓰면 [data-action] 위임 셀렉터가
-    // 박스 자신도 매칭해버려서(피커 버튼용 셀렉터인데), 지시문 창 안 아무 클릭이나 다시 renderStoryEditComposer로
-    // 되돌려버리는 버그가 있었다(실제로 재현·확인함) — submit 버튼 클릭이 씹히는 원인이었다.
-    box.innerHTML =
-      '<div class="se-compose">' +
-      '<textarea id="se-instruction" placeholder="' + escapeHtml(u.storyEditInstructionPlaceholder) + '"></textarea>' +
-      '<div class="se-compose-btns">' +
-      '<button type="button" class="se-btn-cancel" data-se-cancel>' + u.storyEditCancel + '</button>' +
-      '<button type="button" class="se-btn-submit" data-se-submit>' + u.storyEditSubmit + '</button>' +
-      '</div></div>';
-    positionStoryEditToolbar();
-    box.querySelector('#se-instruction').focus();
+    let h = '<div class="se-cats">';
+    STORY_EDIT_OPTIONS.forEach(cat => {
+      h += '<div class="se-cat"><div class="se-cat-title">' + escapeHtml(cat.label[LANG] || cat.label.ko) + '</div>' +
+        '<div class="se-cat-opts">' +
+        cat.options.map(o => '<button type="button" class="se-opt" data-se-option="' + o.id + '">' + (o.label[LANG] || o.label.ko) + '</button>').join('') +
+        '</div></div>';
+    });
+    h += '</div>' +
+      '<textarea id="se-instruction" class="se-instruction" placeholder="' + escapeHtml(u.storyEditInstructionPlaceholder) + '"></textarea>' +
+      '<div class="se-panel-btns">' +
+      '<button type="button" class="se-btn-cancel" data-se-close>' + u.storyEditCancel + '</button>' +
+      '<button type="button" class="se-btn-submit" data-se-option-submit disabled>' + u.storyEditSubmit + '</button>' +
+      '</div>';
+    panel.innerHTML = h;
   }
 
-  function positionStoryEditToolbar() {
-    const box = document.getElementById('story-edit-toolbar');
-    const r = storyEditPending && storyEditPending.rect;
-    if (!r) return;
-    const bw = box.offsetWidth, bh = box.offsetHeight;
-    let left = r.left + r.width / 2 - bw / 2;
-    left = Math.max(10, Math.min(left, window.innerWidth - bw - 10));
-    let top = r.top - bh - 10;
-    if (top < 10) top = r.bottom + 10; // 화면 위쪽에 붙으면 선택 아래로 뒤집기
-    box.style.left = left + 'px';
-    box.style.top = top + 'px';
-  }
-
-  function onStoryEditToolbarClick(e) {
-    const actionBtn = e.target.closest('[data-action]');
-    if (actionBtn && storyEditPending) { renderStoryEditComposer(actionBtn.dataset.action); return; }
-    if (e.target.closest('[data-se-cancel]')) {
-      hideStoryEditToolbar();
-      window.getSelection().removeAllRanges();
-      return;
-    }
-    if (e.target.closest('[data-se-submit]')) runStoryEdit();
-  }
-
-  async function runStoryEdit() {
-    const box = document.getElementById('story-edit-toolbar');
-    const pending = storyEditPending;
-    const action = box.dataset.pendingAction;
-    if (!pending || !action) return;
-    const instruction = (box.querySelector('#se-instruction') || {}).value || '';
+  async function submitStoryEdit(action, instruction, manualText) {
+    const ids = state.selected.slice();
+    if (!ids.length) return;
+    const panel = document.getElementById('story-edit-panel');
+    const proseEl = document.querySelector('#synthesis .prose');
+    const factPct = Number(proseEl && proseEl.dataset.factPct) || 100;
     const u = UI[LANG];
-    box.querySelectorAll('button, textarea').forEach(el2 => { el2.disabled = true; });
-    const submitBtn = box.querySelector('[data-se-submit]');
+    panel.querySelectorAll('button, textarea').forEach(el2 => { el2.disabled = true; });
+    const submitBtn = panel.querySelector('[data-se-manual-submit], [data-se-option-submit]');
+    const originalLabel = submitBtn ? submitBtn.textContent : '';
     if (submitBtn) submitBtn.textContent = u.storyEditWorking;
 
     try {
-      const base = await getTrilingualCardText(pending.ids);
-      if (JSON.stringify(state.selected) !== JSON.stringify(pending.ids)) return; // 그 사이 선택이 바뀌었으면 버림
+      const base = await getTrilingualCardText(ids);
+      if (JSON.stringify(state.selected) !== JSON.stringify(ids)) return; // 그 사이 선택이 바뀌었으면 버림
+      const text = { ko: base.ko.story, en: base.en.story, zh: base.zh.story };
+      if (manualText != null) text[LANG] = manualText; // '직접 수정'이면 지금 보고 있는 언어만 사용자가 새로 쓴 값으로 교체
       const r = await fetch('/api/synthesize-combo', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          mode: 'story-edit', action, instruction, selectedText: pending.text, currentLang: LANG,
-          text: { ko: base.ko.story, en: base.en.story, zh: base.zh.story },
-        }),
+        body: JSON.stringify({ mode: 'story-edit', action, instruction: instruction || '', selectedText: '', currentLang: LANG, text }),
       });
       const d = await r.json();
       if (!d.edited) throw new Error('no-edit');
-      if (JSON.stringify(state.selected) !== JSON.stringify(pending.ids)) return;
+      if (JSON.stringify(state.selected) !== JSON.stringify(ids)) return;
 
       const mul = STORY_EDIT_FACT_MUL[action] != null ? STORY_EDIT_FACT_MUL[action] : 1;
-      const factPct = Math.max(15, Math.round(pending.factPct * mul));
+      const newFactPct = Math.max(15, Math.round(factPct * mul));
       state.storyOverride = {
-        ids: pending.ids, factPct, level: 'edited',
+        ids, factPct: newFactPct, level: 'edited',
         text: {
           ko: { title: base.ko.title, story: d.edited.ko, era: base.ko.era },
           en: { title: base.en.title, story: d.edited.en, era: base.en.era },
           zh: { title: base.zh.title, story: d.edited.zh, era: base.zh.era },
         },
       };
-      hideStoryEditToolbar();
-      window.getSelection().removeAllRanges();
       renderSynthesis();
     } catch (e) {
-      // insertAdjacentHTML을 쓰는 이유: innerHTML += 는 기존 노드를 통째로 재파싱해서 날려버려,
-      // 위에서 잡아둔 submitBtn 참조가 끊어지고 "다시 쓰는 중…" 표시가 영영 안 돌아온다.
-      box.insertAdjacentHTML('beforeend', '<div class="se-error">' + escapeHtml(u.storyEditFailed) + '</div>');
-      box.querySelectorAll('button, textarea').forEach(el2 => { el2.disabled = false; });
-      if (submitBtn) submitBtn.textContent = u.storyEditSubmit;
-      positionStoryEditToolbar();
+      panel.insertAdjacentHTML('beforeend', '<div class="se-error">' + escapeHtml(u.storyEditFailed) + '</div>');
+      panel.querySelectorAll('button, textarea').forEach(el2 => { el2.disabled = false; });
+      if (submitBtn) submitBtn.textContent = originalLabel;
     }
   }
 
@@ -1688,7 +1719,8 @@
   }
 
   function renderSynthesis() {
-    hideStoryEditToolbar(); // 스토리가 바뀌면 이전 선택에 붙어있던 세부수정 툴바는 더 이상 유효하지 않음
+    // 세부수정 패널은 이제 #synthesis.innerHTML 안에서 함께 그려지는 인라인 패널이라, 여기서
+    // 통째로 다시 그려지면서 자연히 사라진다 — 예전처럼 별도로 닫아줄 필요가 없다.
     const el = document.getElementById('synthesis');
     document.getElementById('sky-hint').style.opacity = state.selected.length ? '0' : '1';
     document.getElementById('sky-deselect').style.display = state.selected.length ? 'inline-block' : 'none';
@@ -1729,7 +1761,7 @@
         '<div class="prose" data-fact-pct="' + override.factPct + '" style="margin-top:20px;">' + override.text[LANG].story + '</div>' +
         '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsSynth + '</span>' +
         sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>' +
-        storyRemakeBtnHtml() + cardMakeBtnHtml();
+        storyRemakeBtnHtml() + cardMakeBtnHtml() + storyEditBtnsHtml();
       bindChips(el); bindStoryRemake(el);
       attachPhoto(el, ids);
       return;
@@ -1761,7 +1793,7 @@
       '<div class="prose" data-fact-pct="' + Math.round(shownScore) + '" style="margin-top:20px;">' + paragraph + '</div>' +
       '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsSynth + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>' +
-      storyRemakeBtnHtml() + cardMakeBtnHtml();
+      storyRemakeBtnHtml() + cardMakeBtnHtml() + storyEditBtnsHtml();
     bindChips(el); bindStoryRemake(el);
     attachPhoto(el, ids);
   }
@@ -1820,6 +1852,7 @@
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
     h += storyRemakeBtnHtml();
     h += cardMakeBtnHtml();
+    h += storyEditBtnsHtml();
     h += '</div>';
     return h;
   }
@@ -1853,6 +1886,7 @@
     }
     h += storyRemakeBtnHtml();
     h += cardMakeBtnHtml();
+    h += storyEditBtnsHtml();
     h += '</div>';
     return h;
   }
@@ -2332,6 +2366,66 @@
     'urban-sketch-wash': '어반스케치 펜+수채', 'marker-doodle': '마커 손그림',
   };
 
+  // 주인공 표현 방식 선택 드롭다운(2026-07-20, Paul 피드백: "주인공이 주로 검은색이 채워진 남자로
+  // 나오는데 다양하게 선택할 수 있었으면 좋겠어") — 'auto'는 화풍에 맞춰 AI가 알아서 고르게 둔다(기존
+  // 동작 유지). id는 api/generate-image.js의 PROTAGONIST_PRESETS와 정확히 일치해야 한다.
+  const PROTAGONIST_OPTIONS = [
+    { id: 'auto', label: { ko: '화풍에 맞게 자동', en: 'Match the art style', zh: '匹配画风自动选择' } },
+    { id: 'pen-line', label: { ko: '펜 스케치 인물', en: 'Pen-line sketch', zh: '钢笔线条人物' } },
+    { id: 'watercolor-figure', label: { ko: '수채화 인물', en: 'Watercolor wash', zh: '水彩人物' } },
+    { id: 'thread-line', label: { ko: '실선·자수 느낌', en: 'Thread / embroidery line', zh: '线迹·刺绣感' } },
+    { id: 'color-block', label: { ko: '컬러 블록 인물', en: 'Flat color block', zh: '色块人物' } },
+    { id: 'semi-transparent', label: { ko: '반투명 실루엣', en: 'Semi-transparent silhouette', zh: '半透明剪影' } },
+    { id: 'light-outline', label: { ko: '빛·윤곽으로만', en: 'Light / faint outline only', zh: '仅用光与轮廓' } },
+    { id: 'gradient-figure', label: { ko: '그라디언트 인물', en: 'Gradient figure', zh: '渐变色人物' } },
+    { id: 'from-behind', label: { ko: '뒷모습·그림자로만', en: 'From behind / shadow only', zh: '背影或影子' } },
+    { id: 'partial-figure', label: { ko: '부분만 보이는 인물', en: 'Partial figure only', zh: '仅局部人物' } },
+    { id: 'no-figure', label: { ko: '인물 없이 소품·공간으로만', en: 'No figure — objects & space', zh: '不出现人物，只用物品与空间' } },
+    { id: 'abstract-shape', label: { ko: '완전 추상적 형태', en: 'Fully abstract shape', zh: '完全抽象形态' } },
+    { id: 'fading', label: { ko: '반쯤 지워지는 느낌', en: 'Half-erased / fading', zh: '半消散的感觉' } },
+    { id: 'simplified-cartoon', label: { ko: '만화적으로 단순화', en: 'Simplified cartoon', zh: '卡通化简化' } },
+    { id: 'gender-neutral', label: { ko: '중성적 인물', en: 'Gender-neutral figure', zh: '中性化人物' } },
+  ];
+
+  // 생성된 이미지 카드를 손보는 메뉴(2026-07-20, Paul 요청) — 같은 스토리·화풍·주인공 표현을 유지한
+  // 채 이 지시를 더해 다시 그린다(완전히 같은 픽셀을 고치는 게 아니라 재생성). id는
+  // api/generate-image.js의 IMAGE_EDIT_GUIDE와 정확히 일치해야 한다.
+  const IMAGE_EDIT_OPTIONS = [
+    { id: 'mood', label: { ko: '분위기·톤', en: 'Mood & tone', zh: '氛围与色调' }, options: [
+      { id: 'darker', label: { ko: '🌑 더 어둡게·무드있게', en: '🌑 Darker & moodier', zh: '🌑 更暗更有氛围' } },
+      { id: 'brighter', label: { ko: '☀️ 더 밝고 화사하게', en: '☀️ Brighter', zh: '☀️ 更明亮' } },
+      { id: 'dreamy', label: { ko: '🌫️ 더 몽환적으로', en: '🌫️ More dreamlike', zh: '🌫️ 更梦幻' } },
+      { id: 'contrast', label: { ko: '⚡ 더 강렬한 대비로', en: '⚡ Stronger contrast', zh: '⚡ 更强烈的对比' } },
+    ] },
+    { id: 'color', label: { ko: '색감', en: 'Color', zh: '色感' }, options: [
+      { id: 'warm-color', label: { ko: '🎨 더 따뜻한 색감으로', en: '🎨 Warmer colors', zh: '🎨 更暖的色调' } },
+      { id: 'cool-color', label: { ko: '❄️ 더 차가운 색감으로', en: '❄️ Cooler colors', zh: '❄️ 更冷的色调' } },
+      { id: 'monochrome', label: { ko: '⚫ 흑백·모노톤으로', en: '⚫ Black & white', zh: '⚫ 黑白单色' } },
+      { id: 'saturation', label: { ko: '🌈 채도 더 높게', en: '🌈 More saturated', zh: '🌈 提高饱和度' } },
+    ] },
+    { id: 'composition', label: { ko: '구도·시점', en: 'Composition', zh: '构图与视角' }, options: [
+      { id: 'closeup', label: { ko: '🔍 더 클로즈업으로', en: '🔍 Closer close-up', zh: '🔍 更近的特写' } },
+      { id: 'wide-shot', label: { ko: '🏞️ 더 넓은 배경 위주로', en: '🏞️ Wider background', zh: '🏞️ 更广的背景' } },
+      { id: 'symmetric', label: { ko: '📐 구도를 대칭적으로', en: '📐 More symmetric', zh: '📐 更对称的构图' } },
+    ] },
+    { id: 'texture', label: { ko: '디테일·질감', en: 'Detail & texture', zh: '细节与质感' }, options: [
+      { id: 'rougher', label: { ko: '✏️ 선을 더 거칠고 러프하게', en: '✏️ Rougher linework', zh: '✏️ 线条更粗犷' } },
+      { id: 'finer', label: { ko: '🪶 선을 더 섬세하게', en: '🪶 Finer linework', zh: '🪶 线条更精细' } },
+      { id: 'paper-texture', label: { ko: '🌾 종이·캔버스 질감 강조', en: '🌾 Emphasize paper texture', zh: '🌾 强调纸张质感' } },
+      { id: 'simpler', label: { ko: '💫 배경을 더 단순하게', en: '💫 Simpler background', zh: '💫 背景更简洁' } },
+    ] },
+    { id: 'subject', label: { ko: '주인공', en: 'Protagonist', zh: '主人公' }, options: [
+      { id: 'pose', label: { ko: '🚶 포즈·동작 바꾸기', en: '🚶 Change pose/gesture', zh: '🚶 改变姿势动作' } },
+      { id: 'clearer', label: { ko: '👤 주인공을 더 또렷하게', en: '👤 Clearer protagonist', zh: '👤 主人公更清晰' } },
+      { id: 'silhouette', label: { ko: '🌫️ 더 실루엣·추상적으로', en: '🌫️ More silhouette-like', zh: '🌫️ 更剪影抽象' } },
+    ] },
+    { id: 'time', label: { ko: '시간·계절', en: 'Time & season', zh: '时间与季节' }, options: [
+      { id: 'night', label: { ko: '🌙 야간 느낌으로', en: '🌙 Night scene', zh: '🌙 夜晚氛围' } },
+      { id: 'sunset', label: { ko: '🌅 노을·황혼 느낌으로', en: '🌅 Sunset/dusk', zh: '🌅 日落黄昏' } },
+      { id: 'season', label: { ko: '❄️ 계절감 바꾸기', en: '❄️ Change the season', zh: '❄️ 改变季节感' } },
+    ] },
+  ];
+
   function hexToRgba(hex, alpha) {
     const h = hex.replace('#', '');
     const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
@@ -2678,6 +2772,31 @@
     labelEl.className = 'cm-set-label';
     labelEl.textContent = label;
     labelRow.appendChild(labelEl);
+    // 이미지 카드에만 "이 그림 수정" 메뉴 — 같은 스토리·화풍·주인공 표현을 유지한 채 고른 지시를
+    // 더해 다시 그린다(Paul 요청, 2026-07-20).
+    if (set.kind === 'ai-image') {
+      const editWrap = document.createElement('div');
+      editWrap.style.cssText = 'display:flex;align-items:center;gap:6px;';
+      const editSelect = document.createElement('select');
+      editSelect.className = 'cm-set-edit-select';
+      IMAGE_EDIT_OPTIONS.forEach(cat => {
+        const group = document.createElement('optgroup');
+        group.label = cat.label[LANG] || cat.label.ko;
+        cat.options.forEach(o => {
+          const opt = document.createElement('option');
+          opt.value = o.id;
+          opt.textContent = o.label[LANG] || o.label.ko;
+          group.appendChild(opt);
+        });
+        editSelect.appendChild(group);
+      });
+      editWrap.appendChild(editSelect);
+      const editBtn = document.createElement('button');
+      editBtn.type = 'button'; editBtn.className = 'cm-set-edit-btn'; editBtn.textContent = UI[LANG].cardImageEditBtn;
+      editBtn.addEventListener('click', () => regenerateImageWithEdit(set.setId, editSelect.value, editBtn));
+      editWrap.appendChild(editBtn);
+      labelRow.appendChild(editWrap);
+    }
     setEl.appendChild(labelRow);
     const row = document.createElement('div');
     row.className = 'cm-row';
@@ -2745,6 +2864,9 @@
       '<select class="cm-style-select" id="cm-style-select" title="' + UI[LANG].cardStyleSelectTitle + '">' +
       '<option value="">' + UI[LANG].cardStyleRandomOption + '</option>' +
       LIKED_AI_STYLES.map(id => '<option value="' + id + '">' + (AI_STYLE_LABELS[id] || id) + '</option>').join('') +
+      '</select>' +
+      '<select class="cm-style-select" id="cm-protagonist-select" title="' + UI[LANG].cardProtagonistSelectTitle + '">' +
+      PROTAGONIST_OPTIONS.map(o => '<option value="' + o.id + '">' + (o.label[LANG] || o.label.ko) + '</option>').join('') +
       '</select>' +
       '<button class="cm-section-btn" type="button" id="cm-gen-image-btn">' +
       (imageSets.length ? UI[LANG].cardMakeImageBtnMore : UI[LANG].cardMakeImageBtnFirst) + '</button>' +
@@ -2934,11 +3056,16 @@
         : pickRandomDifferent(LIKED_AI_STYLES, usedStyleIds[usedStyleIds.length - 1]);
     }
 
+    // 주인공 표현 방식 — Paul 피드백(2026-07-20): "주인공을 다양하게 선택할 수 있었으면 좋겠어".
+    // 비워두면(= 'auto') 기존처럼 화풍에 맞춰 AI가 알아서 고른다.
+    const protagonistSelectEl = document.getElementById('cm-protagonist-select');
+    const protagonistId = protagonistSelectEl && protagonistSelectEl.value ? protagonistSelectEl.value : 'auto';
+
     let imageUrl = null;
     try {
       const r = await fetch('/api/generate-image', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ story: storyText, mood: moodText, styleId: styleId }),
+        body: JSON.stringify({ story: storyText, mood: moodText, styleId: styleId, protagonistId: protagonistId }),
       });
       const d = await r.json();
       imageUrl = d.imageUrl || null;
@@ -2956,7 +3083,59 @@
       return;
     }
 
-    await addCardSet({ paletteId, styleId, aiImage: img });
+    await addCardSet({ paletteId, styleId, protagonistId, aiImage: img });
+  }
+
+  // 이미 만든 이미지 카드를 손보는 메뉴(2026-07-20, Paul 요청) — 같은 스토리·팔레트·화풍·주인공 표현을
+  // 그대로 두고 고른 지시만 더해서 다시 그린다. 완전히 같은 픽셀을 고치는 게 아니라 재생성이라, 구도가
+  // 100% 그대로 유지되진 않을 수 있음 — 새로 생성된 그림으로 해당 세트를 통째로 교체한다.
+  async function regenerateImageWithEdit(setId, editId, btn) {
+    if (!currentCardState) return;
+    const set = currentCardState.cardSets.find(s => s.setId === setId);
+    if (!set || set.kind !== 'ai-image') return;
+    const originalLabel = btn.textContent;
+    btn.disabled = true;
+
+    const startedAt = Date.now();
+    const tickProgress = () => { btn.textContent = UI[LANG].cardImageEditing + ' ' + Math.floor((Date.now() - startedAt) / 1000) + 's'; };
+    tickProgress();
+    const progressTimer = setInterval(tickProgress, 1000);
+
+    const palette = CARD_PALETTES.find(p => p.id === set.style.paletteId) || CARD_PALETTES.find(p => p.id === DEFAULT_CARD_PALETTE);
+    const moodText = palette.name + ' (배경 ' + palette.bg + ', 포인트 색 ' + palette.accent + ')';
+    const storyText = (currentCardState.content[LANG] || currentCardState.content.ko).story;
+
+    let imageUrl = null;
+    try {
+      const r = await fetch('/api/generate-image', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          story: storyText, mood: moodText, styleId: set.style.styleId,
+          protagonistId: set.style.protagonistId || 'auto', editId,
+        }),
+      });
+      const d = await r.json();
+      imageUrl = d.imageUrl || null;
+    } catch (e) { imageUrl = null; }
+    clearInterval(progressTimer);
+    if (!currentCardState) return;
+
+    let img = null;
+    if (imageUrl) { try { img = await loadImage(imageUrl); } catch (e) { img = null; } }
+    if (!currentCardState) return;
+
+    if (!img) {
+      btn.disabled = false; btn.textContent = UI[LANG].cardImageFailed;
+      setTimeout(() => { if (btn.isConnected) btn.textContent = originalLabel; }, 2400);
+      return;
+    }
+
+    const newStyle = Object.assign({}, set.style, { aiImage: img });
+    const canvases = await buildCardCanvases(currentCardState.ids, currentCardState.content, newStyle, currentCardState.factPct);
+    if (!currentCardState) return;
+    set.style = newStyle;
+    set.canvases = canvases;
+    renderCardGallery();
   }
 
   async function openCardMaker(ids) {
@@ -3003,7 +3182,7 @@
   window.addEventListener('resize', resize);
   document.body.classList.toggle('lang-zh', LANG === 'zh');
   renderStaticText();
-  resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop(); initStoryEditToolbar();
+  resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop(); initStoryEditPanel();
   fetchRemoteThoughts();
   loadGuestbook();
 })();

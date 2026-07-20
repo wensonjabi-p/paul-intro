@@ -62,6 +62,55 @@ const STYLE_PRESETS = [
 ];
 const DEFAULT_STYLE_ID = 'ink-watercolor'; // Paul이 30종 검토 후 최종 선택하면 이 값을 바꿀 것
 
+// 주인공 표현 방식 프리셋(2026-07-20, Paul 피드백: "주인공이 주로 검은색이 채워진 남자로 나오는데
+// 다양하게 선택할 수 있었으면 좋겠어") — PROMPT_SYSTEM의 일반적인 다양화 지시만으로는 여전히 검은
+// 실루엣으로 자주 그려져서, 사용자가 명시적으로 표현 방식을 고를 수 있게 함. 'auto'는 directive가
+// 비어있어 PROMPT_SYSTEM의 기본 지시를 그대로 따른다(= 화풍에 맞게 자동).
+const PROTAGONIST_PRESETS = [
+  { id: 'auto', directive: '' },
+  { id: 'pen-line', directive: "depict any human figure as a light, unfilled pen-line sketch outline only, never filled with solid color" },
+  { id: 'watercolor-figure', directive: 'depict any human figure as a soft translucent watercolor wash with blurred diffuse edges, not a solid silhouette' },
+  { id: 'thread-line', directive: 'depict any human figure as if traced from a single continuous thread or embroidery line' },
+  { id: 'color-block', directive: "depict any human figure as a flat shape filled with the illustration's accent color, never solid black" },
+  { id: 'semi-transparent', directive: 'depict any human figure as a semi-transparent, see-through silhouette rather than a solid filled shape' },
+  { id: 'light-outline', directive: 'suggest any human figure only through light, glow, or a faint outline rather than a solid rendered form' },
+  { id: 'gradient-figure', directive: 'depict any human figure filled with a soft color gradient rather than one flat solid color' },
+  { id: 'from-behind', directive: 'if a human figure appears, show them from behind or as a soft cast shadow, never a front-facing silhouette' },
+  { id: 'partial-figure', directive: 'show only a fragment of a human figure — a hand, feet, or the back of a neck — rather than a full body' },
+  { id: 'no-figure', directive: 'do not depict any human figure at all — represent the person through objects and space instead, like an empty chair, a desk, or a window' },
+  { id: 'abstract-shape', directive: 'depict any human figure as a fully abstract shape that only hints at a person, never a literal or recognizable form' },
+  { id: 'fading', directive: 'depict any human figure as if half-erased or fading away, with soft incomplete edges' },
+  { id: 'simplified-cartoon', directive: 'depict any human figure in a simplified, doodle-like style rather than a realistic silhouette' },
+  { id: 'gender-neutral', directive: 'depict any human figure in a gender-neutral way, without clearly masculine or feminine markers' },
+];
+
+// 이미 만든 이미지를 손보는 메뉴(2026-07-20, Paul 요청) — 완전히 같은 픽셀을 고치는 게 아니라, 같은
+// story/mood/화풍/주인공 표현을 유지한 채 이 지시를 더해서 다시 그리는 방식(재생성). id는
+// index.html의 IMAGE_EDIT_OPTIONS와 정확히 일치해야 한다.
+const IMAGE_EDIT_GUIDE = {
+  darker: 'make the mood darker and moodier, with low-key lighting',
+  brighter: 'make it brighter and more radiant',
+  dreamy: 'make it more dreamlike, soft and hazy',
+  contrast: 'increase the contrast and make it bolder',
+  'warm-color': 'shift the color palette warmer',
+  'cool-color': 'shift the color palette cooler',
+  monochrome: 'render it in black and white, monochrome',
+  saturation: 'increase the color saturation, more vivid',
+  closeup: 'compose it as a closer, more intimate close-up',
+  'wide-shot': 'compose it as a wider shot with more background and landscape visible',
+  symmetric: 'use a more symmetric, centered composition',
+  rougher: 'make the linework rougher and more expressive',
+  finer: 'make the linework finer and more delicate',
+  'paper-texture': 'emphasize visible paper or canvas texture',
+  simpler: 'simplify the background so the subject stands out more',
+  pose: "change the protagonist's pose or gesture",
+  clearer: 'make the protagonist appear more clearly and distinctly',
+  silhouette: 'make the protagonist more silhouette-like and abstract',
+  night: 'set the scene at night',
+  sunset: 'set the scene at golden-hour sunset or dusk',
+  season: 'shift the season, for example to winter',
+};
+
 const PROMPT_SYSTEM = `당신은 이미지 생성 AI에게 넘길 프롬프트를 쓰는 아트 디렉터입니다.
 Paul Bhang이라는 사람의 인생 이야기 한 조각과, 이미 골라둔 카드 스타일의 색·분위기, 그리고 지정된 화풍을 보고,
 그 장면을 표현할 영어 이미지 생성 프롬프트를 씁니다.
@@ -91,8 +140,11 @@ const PROMPT_TOOL = {
 
 // 실패 지점을 알 수 있게 각 단계에서 { ok, ...} 또는 { ok:false, status, body } 형태로 돌려준다 —
 // 클라이언트엔 imageUrl:null만 보이면 되지만, 문제 진단할 때 Vercel 로그 없이도 바로 원인을 알 수 있게.
-async function writeImagePrompt(key, storyText, moodText, styleDirective) {
-  const userMsg = `이야기: ${storyText}\n\n카드 스타일 무드: ${moodText || '(지정 없음)'}\n\n화풍 지시어(반드시 그대로 프롬프트에 녹여 쓸 것): ${styleDirective}\n\n위 이야기와 무드, 화풍에 어울리는 이미지 생성 프롬프트를 써주세요.`;
+async function writeImagePrompt(key, storyText, moodText, styleDirective, protagonistDirective, editDirective) {
+  const userMsg = `이야기: ${storyText}\n\n카드 스타일 무드: ${moodText || '(지정 없음)'}\n\n화풍 지시어(반드시 그대로 프롬프트에 녹여 쓸 것): ${styleDirective}` +
+    (protagonistDirective ? `\n\n주인공 표현 방식(사람이 등장하는 경우 반드시 이 방식을 따를 것): ${protagonistDirective}` : '') +
+    (editDirective ? `\n\n추가 수정 지시(반드시 반영할 것): ${editDirective}` : '') +
+    `\n\n위 이야기와 무드, 화풍에 어울리는 이미지 생성 프롬프트를 써주세요.`;
   const r = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: { 'x-api-key': key, 'anthropic-version': '2023-06-01', 'Content-Type': 'application/json' },
@@ -211,13 +263,18 @@ module.exports = async (req, res) => {
   const replicateToken = process.env.REPLICATE_API_TOKEN;
   if (!anthropicKey || !replicateToken) return res.status(200).json({ imageUrl: null, reason: 'not-configured' });
 
-  const { story, mood, debug, styleId } = body || {};
+  const { story, mood, debug, styleId, protagonistId, editId } = body || {};
   if (!story || !String(story).trim()) return res.status(200).json({ imageUrl: null });
 
   const preset = STYLE_PRESETS.find(s => s.id === styleId) || STYLE_PRESETS.find(s => s.id === DEFAULT_STYLE_ID);
+  const protagonistPreset = PROTAGONIST_PRESETS.find(p => p.id === protagonistId) || PROTAGONIST_PRESETS[0]; // 없으면 'auto'
+  const editDirective = IMAGE_EDIT_GUIDE[editId] || '';
 
   try {
-    const promptResult = await writeImagePrompt(anthropicKey, String(story).slice(0, 1500), String(mood || '').slice(0, 200), preset.directive);
+    const promptResult = await writeImagePrompt(
+      anthropicKey, String(story).slice(0, 1500), String(mood || '').slice(0, 200),
+      preset.directive, protagonistPreset.directive, editDirective
+    );
     if (!promptResult.ok) return res.status(200).json({ imageUrl: null, debug: debug ? promptResult : undefined });
 
     const replicateResult = await runReplicate(replicateToken, promptResult.prompt);
@@ -231,7 +288,7 @@ module.exports = async (req, res) => {
     // storeId로 명시해서 그쪽에 올린다. (env: BLOB_PUBLIC_STORE_ID, Vercel Storage 탭에서 연결)
     const blob = await put(filename, buf, { access: 'public', contentType: 'image/png', storeId: process.env.BLOB_PUBLIC_STORE_ID });
 
-    res.status(200).json({ imageUrl: blob.url, prompt: promptResult.prompt, styleId: preset.id });
+    res.status(200).json({ imageUrl: blob.url, prompt: promptResult.prompt, styleId: preset.id, protagonistId: protagonistPreset.id });
   } catch (e) {
     res.status(200).json({ imageUrl: null, debug: debug ? { stage: 'exception', message: e.message } : undefined });
   }

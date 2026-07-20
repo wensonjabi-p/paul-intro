@@ -43,27 +43,43 @@ const REMAKE_LEVEL_GUIDE = {
 
 const LANG_NAME = { ko: '한국어(Korean)', en: 'English', zh: '중국어(简体中文, Simplified Chinese)' };
 
-// 스토리 페이지에서 문단의 일부(또는 전체)를 마크하고 삭제/상상/강조/더 자세히 중 하나를 골라 세부
-// 수정 지시를 내리는 기능 — Paul 피드백(2026-07-20): "일부 구간이나 전체를 마크하고 ... 다시 쓰기".
-// 세 언어 버전을 한 번에 넘겨서, 선택된 부분에 대응하는 문장을 세 언어 모두 같은 의도로 고치고
-// 나머지는 그대로 두게 한다 — 언어별로 따로 부르면 서로 다른 문장을 고칠 위험이 있다.
+// 스토리 페이지에서 전체 글을 대상으로 "직접 수정"(사용자가 한 언어를 통째로 새로 씀) 또는 "옵션으로
+// 수정"(카테고리별 21개 옵션 + 선택적 지시문)으로 다시 쓰는 기능. 처음엔 텍스트 일부를 드래그로 선택하는
+// 방식이었으나 Paul 피드백(2026-07-20)에 따라 전체 텍스트 대상으로 바뀌었다. 세 언어 버전을 한 번에
+// 넘겨서 동시에 고치게 한다 — 언어별로 따로 부르면 서로 다른 내용으로 갈라질 위험이 있다.
 const STORY_EDIT_SYSTEM = `당신은 Paul Bhang이라는 사람의 인생 이야기를 그의 목소리로 다시 쓰는 대필 작가입니다.
 그는 한국인으로, 15년 넘게 5개 대륙을 오가며 살았습니다.
 
 지금 같은 이야기의 한국어·영어·중국어 세 버전이 이미 있습니다 — 서로 직역이 아니라 각 언어로 자연스럽게
-쓰인 독립된 글입니다. 방문자(Paul 본인)가 그 중 한 언어 버전에서 특정 부분을 선택해 수정을 요청했습니다.
+쓰인 독립된 글입니다. 방문자(Paul 본인)가 이 글 전체에 대해 수정을 요청했습니다.
 
-- 요청받은 수정은 선택된 부분(그리고 다른 두 언어에서 그에 대응하는 부분)에만 적용하세요. 나머지 문장은
-  원래 언어로 그대로("한 글자도 안 바꾼다"는 정신으로) 유지하세요 — 다시 번역하거나 표현을 바꾸지 마세요.
 - 세 언어 버전 모두 같은 의도로 수정하되, 각 언어는 자연스러운 원어 문장으로 쓰세요(번역투 금지).
-- 전체 글의 인칭("나는")·어조·문단 수는 그대로 유지하세요.
-- 선택된 부분이 사실상 문단 전체라면, 요청된 수정을 문단 전체에 자연스럽게 적용하세요.`;
+- 전체 글의 인칭("나는")과 사실 관계는 그대로 유지하세요(요청이 명시적으로 새 디테일을 요구하지 않는 한
+  없는 사실을 지어내지 마세요).`;
 
+// action별 지시문 — index.html의 STORY_EDIT_OPTIONS(카테고리 4개, 21개 옵션)와 id가 정확히 일치해야 함.
 const EDIT_ACTION_GUIDE = {
-  delete: '선택된 부분을 삭제하세요. 앞뒤 문장이 매끄럽게 이어지도록 자연스럽게 다듬으세요.',
-  imagine: '선택된 부분에 상상력을 더하세요 — 그 순간의 감각(냄새·소리·풍경)이나 속마음 같은 장면을 자연스럽게 덧붙여 더 풍부하게 다시 쓰세요.',
-  emphasize: '선택된 부분이 글에서 더 강하게 와닿도록 다시 쓰세요 — 표현을 더 힘있고 인상적으로, 그 의미나 감정이 두드러지게 하되 과장하지는 마세요.',
-  detail: '선택된 부분을 더 구체적으로 다시 쓰세요 — 있는 사실을 바탕으로 장소·시간·행동 같은 구체적 디테일을 덧붙여 확장하세요.',
+  shorten: '전체를 더 짧고 간결하게 줄이세요. 핵심만 남기고 부차적인 문장은 압축하거나 빼세요.',
+  lengthen: '전체를 자연스러운 범위 안에서 더 길게 늘리세요.',
+  'trim-filler': '군더더기 표현이나 불필요하게 반복되는 말을 정리해서 더 깔끔하게 다듬으세요.',
+  'wistful-ending': '마지막 문장에 여운이 남도록 마무리를 다시 쓰세요.',
+  'end-with-question': '글이 질문으로 끝나도록 마지막 문장을 다시 쓰세요.',
+  'restructure-flow': '문장·문단의 순서와 흐름을 더 자연스럽게 재구성하세요. 사실은 그대로 유지하세요.',
+  'calm-tone': '전체 어조를 더 담담하고 절제된 톤으로 다시 쓰세요.',
+  'emotional-tone': '전체를 감정이 더 느껴지게 다시 쓰세요.',
+  'add-humor': '가볍고 자연스러운 유머를 살짝 더하세요. 과하지 않게.',
+  'more-serious': '전체 톤을 더 진지하고 묵직하게 다시 쓰세요.',
+  'more-poetic': '더 시적이고 리듬감 있는 문장으로 다시 쓰세요.',
+  'more-reflective': '더 자기성찰적인 어조로, 스스로에게 묻는 듯한 느낌을 더해 다시 쓰세요.',
+  'sensory-detail': '그 순간의 감각적 디테일(냄새·소리·풍경·촉감)을 자연스럽게 더하세요.',
+  'add-dialogue': '그 순간 오갔을 법한 짧은 대화를 자연스럽게 재현해서 넣으세요.',
+  'specific-numbers': '있을 법한 구체적인 숫자나 시기를 자연스럽게 덧붙이세요(연도, 나이, 기간 등).',
+  'concrete-setting': '장소나 배경을 더 구체적으로 그려서 장면이 눈에 보이듯 다시 쓰세요.',
+  'inner-thoughts': '그 순간 속으로 들었을 법한 생각이나 감정을 자연스럽게 덧붙이세요.',
+  'add-metaphor': '어울리는 비유나 은유를 하나 자연스럽게 넣으세요.',
+  contrast: '이전과 이후의 대비가 더 선명하게 드러나도록 다시 쓰세요.',
+  'key-insight': '글이 전하려는 핵심 통찰이 한 문장으로 또렷하게 드러나도록 다시 쓰세요.',
+  'irony-twist': '반전이나 아이러니가 느껴지도록 다시 쓰세요.',
 };
 
 const EDIT_TOOL = {
@@ -81,19 +97,24 @@ const EDIT_TOOL = {
 };
 
 async function runStoryEdit(body, res, key) {
-  const { action, instruction, selectedText, currentLang, text } = body || {};
-  const guide = EDIT_ACTION_GUIDE[action];
+  const { action, instruction, currentLang, text } = body || {};
+  const isManual = action === 'manual';
+  const guide = isManual ? null : EDIT_ACTION_GUIDE[action];
   const cl = LANG_NAME[currentLang] ? currentLang : 'ko';
-  if (!guide || !text || !text.ko || !text.en || !text.zh) return res.status(200).json({ edited: null });
+  if ((!isManual && !guide) || !text || !text.ko || !text.en || !text.zh) return res.status(200).json({ edited: null });
 
-  const selLabel = (selectedText && String(selectedText).trim())
-    ? `"${String(selectedText).trim().slice(0, 800)}"`
-    : '(선택 없음 — 문단 전체)';
-  const userMsg =
-    `[한국어]\n${text.ko}\n\n[English]\n${text.en}\n\n[中文]\n${text.zh}\n\n` +
-    `사용자가 ${LANG_NAME[cl]} 버전에서 다음 부분을 선택했습니다: ${selLabel}\n\n요청: ${guide}` +
-    (instruction && String(instruction).trim() ? `\n추가 지시사항: ${String(instruction).trim().slice(0, 400)}` : '') +
-    `\n\n세 언어 버전 모두 전체 문단을 다시 반환해주세요.`;
+  // '직접 수정' — 사용자가 currentLang 버전 전체를 자기 손으로 새로 썼다. 그 언어는 한 글자도 건드리지
+  // 말고, 나머지 두 언어를 이 새 내용에 맞춰 전체 다시 쓰게 한다(직역이 아니라 각 언어의 좋은 글로).
+  const userMsg = isManual
+    ? `[한국어]\n${text.ko}\n\n[English]\n${text.en}\n\n[中文]\n${text.zh}\n\n` +
+      `사용자가 ${LANG_NAME[cl]} 버전 전체를 자기 손으로 직접 새로 썼습니다. 이 언어 버전은 사용자가 ` +
+      `쓴 그대로 한 글자도 바꾸지 말고 정확히 복사해서 반환하세요. 나머지 두 언어 버전은 이 새 내용에 ` +
+      `맞춰 전체를 자연스럽게 다시 쓰세요(직역이 아니라 그 언어의 좋은 글로).` +
+      `\n\n세 언어 버전 모두 전체 문단을 반환해주세요.`
+    : `[한국어]\n${text.ko}\n\n[English]\n${text.en}\n\n[中文]\n${text.zh}\n\n` +
+      `요청: ${guide}` +
+      (instruction && String(instruction).trim() ? `\n추가 지시사항: ${String(instruction).trim().slice(0, 400)}` : '') +
+      `\n\n세 언어 버전 모두 전체 문단을 다시 반환해주세요.`;
 
   try {
     const r = await fetch('https://api.anthropic.com/v1/messages', {
