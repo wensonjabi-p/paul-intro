@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Paul 관리자</title>
 <meta name="theme-color" content="#050419">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #050419; --bg-soft: #0b0a26; --ink: #edebe6; --muted: #8a879c;
@@ -12,7 +15,10 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   body {
-    background: var(--bg); color: var(--ink); font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+    background: var(--bg); color: var(--ink);
+    /* 중국어(zh) 답변 편집란도 이 스택을 그대로 물려받는데, 방문 기기에 중국어 폰트가 안 깔려 있으면
+       한자가 깨져 보일 수 있어(Paul 피드백, 2026-07-20) Noto Sans SC를 웹폰트로 명시했다. */
+    font-family: 'Pretendard', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
     line-height: 1.6; padding-bottom: 80px;
   }
   .wrap { max-width: 720px; margin: 0 auto; padding: 24px 18px; }

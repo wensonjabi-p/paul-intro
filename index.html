@@ -6,7 +6,7 @@
 <title>Paul Bhang — 생각의 파편들</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&family=Noto+Sans+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #201f1d;
@@ -31,6 +31,13 @@
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
     line-height: 1.7;
     overflow-x: hidden;
+  }
+  /* 진행 언어가 중국어일 때 — 브랜드 폰트(Archivo Black 등)는 한자 글리프가 없어 시스템이 대신
+     고르는 폴백 폰트가 기기마다 들쭉날쭉해 글자가 깨져 보였다(Paul 피드백, 2026-07-20).
+     Noto Sans SC를 최우선으로 둬서 어떤 기기에서도 한자가 확실히 나오게 한다. */
+  body.lang-zh {
+    --font-display: 'Noto Sans SC', 'Archivo Black', -apple-system, sans-serif;
+    font-family: 'Noto Sans SC', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   ::selection { background: var(--accent); color: var(--bg); }
 
@@ -993,6 +1000,7 @@
     LANG = lang;
     D = DATASETS[LANG];
     P = D.profile;
+    document.body.classList.toggle('lang-zh', LANG === 'zh');
     try { localStorage.setItem(LANG_KEY, LANG); } catch (e) {}
     state.nodes = nodesFor(LANG);
     state.thoughts = composeThoughts();
@@ -1098,7 +1106,7 @@
       // 은은하게 숨쉬듯 커졌다 작아졌다 — 단어마다 위상·속도가 달라서 다 같이 움직이지 않는다.
       const pulse = 1 + Math.sin(p.pulsePhase || 0) * (p.pulseAmp || 0);
       const fs = t.size * selMul * p.freshMul * sizeScale * pulse;
-      ctx.font = (isSel ? '700 ' : '400 ') + fs + 'px Pretendard, "Malgun Gothic", sans-serif';
+      ctx.font = (isSel ? '700 ' : '400 ') + fs + 'px Pretendard, "Noto Sans SC", "Malgun Gothic", sans-serif';
       ctx.textAlign = 'center';
       p.w = ctx.measureText(p.label).width;
       p.fs = fs;
@@ -2096,6 +2104,12 @@
   const CARD_LAYOUTS = ['watermark', 'break-top', 'break-mid', 'poster'];
   const DEFAULT_CARD_PALETTE = 'archive-indigo';
   const DEFAULT_CARD_LAYOUT = 'watermark';
+  // 팔레트의 헤드/바디 폰트(Archivo Black, Georgia 등)는 한자 글리프가 없어서, 중국어 카드를 그릴 때
+  // 브라우저가 고르는 폴백 폰트가 기기마다 달라 글자가 깨져 보였다(Paul 피드백, 2026-07-20).
+  // 중국어로 그릴 때만 Noto Sans SC를 맨 앞에 끼워 넣어 한자가 항상 제대로 나오게 한다.
+  function fontStackFor(lang, baseFontFamily) {
+    return lang === 'zh' ? '"Noto Sans SC", ' + baseFontFamily : baseFontFamily;
+  }
   // Paul이 화풍 샘플 갤러리를 보고 실제로 고른 화풍들(2026-07-19) — "이미지로 만들기"를 누를 때마다
   // 이 중 안 쓴 것부터 순환해서 골라 api/generate-image.js에 styleId로 넘긴다. 나중에 다시 조정 가능.
   const LIKED_AI_STYLES = [
@@ -2189,7 +2203,7 @@
     ctx.fillText('FRAGMENTS OF THOUGHT', marginX, y);
     if (content.era) {
       ctx.fillStyle = hexToRgba(palette.text, 0.55);
-      ctx.font = '400 24px ' + palette.bodyFont;
+      ctx.font = '400 24px ' + fontStackFor(lang, palette.bodyFont);
       const eraW = ctx.measureText(content.era).width;
       ctx.fillText(content.era, W - marginX - eraW, y);
     }
@@ -2209,7 +2223,7 @@
     }
 
     ctx.fillStyle = palette.text;
-    ctx.font = (isPoster ? '900 96px ' : '700 62px ') + palette.headFont;
+    ctx.font = (isPoster ? '900 96px ' : '700 62px ') + fontStackFor(lang, palette.headFont);
     const titleMaxLines = isPoster ? 4 : 3;
     wrapText(ctx, content.title, W - marginX * 2).slice(0, titleMaxLines).forEach(l => { ctx.fillText(l, marginX, y); y += (isPoster ? 100 : 72); });
 
@@ -2227,7 +2241,7 @@
     let fontSize = isPoster ? 32 : 40, storyLines;
     const maxStoryHeight = H - y - 460;
     do {
-      ctx.font = '400 ' + fontSize + 'px ' + palette.bodyFont;
+      ctx.font = '400 ' + fontSize + 'px ' + fontStackFor(lang, palette.bodyFont);
       storyLines = wrapText(ctx, content.story, W - marginX * 2);
       if (storyLines.length * (fontSize * 1.65) <= maxStoryHeight || fontSize <= 22) break;
       fontSize -= 2;
@@ -2242,7 +2256,7 @@
     ctx.beginPath(); ctx.moveTo(marginX, footerY); ctx.lineTo(W - marginX, footerY); ctx.stroke();
 
     const factPct = Math.max(0, Math.min(100, Math.round(content.factPct != null ? content.factPct : 100)));
-    ctx.font = '400 20px ' + palette.bodyFont;
+    ctx.font = '400 20px ' + fontStackFor(lang, palette.bodyFont);
     ctx.fillStyle = hexToRgba(palette.text, 0.55);
     ctx.fillText(u.factBarLabel, marginX, footerY + 40);
     ctx.fillStyle = palette.accent;
@@ -2256,11 +2270,11 @@
     ctx.fillRect(marginX, barY, barW * (factPct / 100), 6);
 
     ctx.fillStyle = hexToRgba(palette.text, 0.6);
-    ctx.font = '400 19px ' + palette.bodyFont;
+    ctx.font = '400 19px ' + fontStackFor(lang, palette.bodyFont);
     wrapText(ctx, u.cardAiNote, barW).slice(0, 2).forEach((l, i) => ctx.fillText(l, marginX, barY + 44 + i * 26));
 
     ctx.fillStyle = hexToRgba(palette.text, 0.5);
-    ctx.font = '400 18px ' + palette.bodyFont;
+    ctx.font = '400 18px ' + fontStackFor(lang, palette.bodyFont);
     ctx.fillText(u.cardAsOf + ' ' + content.asOfDate, marginX, barY + 108);
     ctx.fillText(u.cardMadeOn + ' ' + content.madeDate, marginX, barY + 134);
 
@@ -2281,7 +2295,7 @@
       }
       ctx.drawImage(content.qrImg, qx, qy, qrSize, qrSize);
       ctx.fillStyle = hexToRgba(palette.text, 0.55);
-      ctx.font = '400 16px ' + palette.bodyFont;
+      ctx.font = '400 16px ' + fontStackFor(lang, palette.bodyFont);
       const capW = ctx.measureText(u.cardQrCaption).width;
       ctx.fillText(u.cardQrCaption, qx + qrSize / 2 - capW / 2, qy + qrSize + 26);
     }
@@ -2306,13 +2320,13 @@
 
     if (opts.showKeyword !== false) {
       ctx.fillStyle = textColor;
-      ctx.font = '700 50px ' + palette.headFont;
+      ctx.font = '700 50px ' + fontStackFor(opts.lang, palette.headFont);
       wrapText(ctx, content.title, fw - 160).slice(0, 2).forEach(l => { ctx.fillText(l, fx, y); y += 58; });
       y += 14;
     }
 
     ctx.fillStyle = mutedColor;
-    ctx.font = '400 19px ' + palette.bodyFont;
+    ctx.font = '400 19px ' + fontStackFor(opts.lang, palette.bodyFont);
     wrapText(ctx, u.cardAiImageNote, fw - 160).slice(0, 2).forEach(l => { ctx.fillText(l, fx, y); y += 26; });
     y += 30;
 
@@ -2356,7 +2370,7 @@
     grad.addColorStop(0.32, hexToRgba(palette.bg, 0.82));
     grad.addColorStop(1, hexToRgba(palette.bg, 0.97));
     ctx.fillStyle = grad; ctx.fillRect(0, H - bandH, W, bandH);
-    drawImageCardFooter(ctx, palette, u, content, marginX, H - bandH + 74, W - marginX * 2, { qrBg });
+    drawImageCardFooter(ctx, palette, u, content, marginX, H - bandH + 74, W - marginX * 2, { qrBg, lang });
 
     return canvas;
   }
@@ -2412,6 +2426,12 @@
         document.fonts.load('700 62px "Archivo Black"'),
         document.fonts.load('400 40px "Space Mono"'),
         document.fonts.load('700 56px "Caveat"'),
+        // 중국어 카드는 Noto Sans SC로 그리므로(fontStackFor), 그리기 전에 실제 로딩까지 끝나 있어야
+        // 폰트가 아직 안 받아진 상태에서 폴백 글꼴로 먼저 그려지는 걸(=글자 깨짐) 막을 수 있다.
+        document.fonts.load('400 40px "Noto Sans SC"'),
+        document.fonts.load('600 26px "Noto Sans SC"'),
+        document.fonts.load('700 62px "Noto Sans SC"'),
+        document.fonts.load('900 96px "Noto Sans SC"'),
       ]);
     } catch (e) {}
     let qrImg = null;
@@ -2774,6 +2794,7 @@
   }
 
   window.addEventListener('resize', resize);
+  document.body.classList.toggle('lang-zh', LANG === 'zh');
   renderStaticText();
   resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop();
   fetchRemoteThoughts();
