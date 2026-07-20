@@ -43,6 +43,84 @@ const REMAKE_LEVEL_GUIDE = {
 
 const LANG_NAME = { ko: '한국어(Korean)', en: 'English', zh: '중국어(简体中文, Simplified Chinese)' };
 
+// 스토리 페이지에서 문단의 일부(또는 전체)를 마크하고 삭제/상상/강조/더 자세히 중 하나를 골라 세부
+// 수정 지시를 내리는 기능 — Paul 피드백(2026-07-20): "일부 구간이나 전체를 마크하고 ... 다시 쓰기".
+// 세 언어 버전을 한 번에 넘겨서, 선택된 부분에 대응하는 문장을 세 언어 모두 같은 의도로 고치고
+// 나머지는 그대로 두게 한다 — 언어별로 따로 부르면 서로 다른 문장을 고칠 위험이 있다.
+const STORY_EDIT_SYSTEM = `당신은 Paul Bhang이라는 사람의 인생 이야기를 그의 목소리로 다시 쓰는 대필 작가입니다.
+그는 한국인으로, 15년 넘게 5개 대륙을 오가며 살았습니다.
+
+지금 같은 이야기의 한국어·영어·중국어 세 버전이 이미 있습니다 — 서로 직역이 아니라 각 언어로 자연스럽게
+쓰인 독립된 글입니다. 방문자(Paul 본인)가 그 중 한 언어 버전에서 특정 부분을 선택해 수정을 요청했습니다.
+
+- 요청받은 수정은 선택된 부분(그리고 다른 두 언어에서 그에 대응하는 부분)에만 적용하세요. 나머지 문장은
+  원래 언어로 그대로("한 글자도 안 바꾼다"는 정신으로) 유지하세요 — 다시 번역하거나 표현을 바꾸지 마세요.
+- 세 언어 버전 모두 같은 의도로 수정하되, 각 언어는 자연스러운 원어 문장으로 쓰세요(번역투 금지).
+- 전체 글의 인칭("나는")·어조·문단 수는 그대로 유지하세요.
+- 선택된 부분이 사실상 문단 전체라면, 요청된 수정을 문단 전체에 자연스럽게 적용하세요.`;
+
+const EDIT_ACTION_GUIDE = {
+  delete: '선택된 부분을 삭제하세요. 앞뒤 문장이 매끄럽게 이어지도록 자연스럽게 다듬으세요.',
+  imagine: '선택된 부분에 상상력을 더하세요 — 그 순간의 감각(냄새·소리·풍경)이나 속마음 같은 장면을 자연스럽게 덧붙여 더 풍부하게 다시 쓰세요.',
+  emphasize: '선택된 부분이 글에서 더 강하게 와닿도록 다시 쓰세요 — 표현을 더 힘있고 인상적으로, 그 의미나 감정이 두드러지게 하되 과장하지는 마세요.',
+  detail: '선택된 부분을 더 구체적으로 다시 쓰세요 — 있는 사실을 바탕으로 장소·시간·행동 같은 구체적 디테일을 덧붙여 확장하세요.',
+};
+
+const EDIT_TOOL = {
+  name: 'submit_story_edit',
+  description: '수정된 세 언어 버전의 전체 문단을 제출한다.',
+  input_schema: {
+    type: 'object',
+    properties: {
+      ko: { type: 'string', description: '수정된 한국어 전체 문단' },
+      en: { type: 'string', description: '수정된 영어 전체 문단' },
+      zh: { type: 'string', description: '수정된 중국어(简体中文) 전체 문단' },
+    },
+    required: ['ko', 'en', 'zh'],
+  },
+};
+
+async function runStoryEdit(body, res, key) {
+  const { action, instruction, selectedText, currentLang, text } = body || {};
+  const guide = EDIT_ACTION_GUIDE[action];
+  const cl = LANG_NAME[currentLang] ? currentLang : 'ko';
+  if (!guide || !text || !text.ko || !text.en || !text.zh) return res.status(200).json({ edited: null });
+
+  const selLabel = (selectedText && String(selectedText).trim())
+    ? `"${String(selectedText).trim().slice(0, 800)}"`
+    : '(선택 없음 — 문단 전체)';
+  const userMsg =
+    `[한국어]\n${text.ko}\n\n[English]\n${text.en}\n\n[中文]\n${text.zh}\n\n` +
+    `사용자가 ${LANG_NAME[cl]} 버전에서 다음 부분을 선택했습니다: ${selLabel}\n\n요청: ${guide}` +
+    (instruction && String(instruction).trim() ? `\n추가 지시사항: ${String(instruction).trim().slice(0, 400)}` : '') +
+    `\n\n세 언어 버전 모두 전체 문단을 다시 반환해주세요.`;
+
+  try {
+    const r = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'x-api-key': key, 'anthropic-version': '2023-06-01', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-5',
+        max_tokens: 1600,
+        system: STORY_EDIT_SYSTEM,
+        messages: [{ role: 'user', content: userMsg.slice(0, 6000) }],
+        tools: [EDIT_TOOL],
+        tool_choice: { type: 'tool', name: 'submit_story_edit' },
+      }),
+    });
+    if (!r.ok) return res.status(200).json({ edited: null });
+    const data = await r.json();
+    const block = (data.content || []).find(c => c.type === 'tool_use' && c.name === 'submit_story_edit');
+    const out = block && block.input;
+    if (!out || !out.ko || !out.en || !out.zh) return res.status(200).json({ edited: null });
+    res.status(200).json({
+      edited: { ko: stripModelArtifacts(out.ko), en: stripModelArtifacts(out.en), zh: stripModelArtifacts(out.zh) },
+    });
+  } catch (e) {
+    res.status(200).json({ edited: null });
+  }
+}
+
 const TOOL = {
   name: 'submit_synthesis',
   description: '합성한 문단을 제출한다.',
@@ -62,6 +140,9 @@ module.exports = async (req, res) => {
 
   let body = req.body;
   if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = {}; } }
+
+  if (body && body.mode === 'story-edit') return runStoryEdit(body, res, key);
+
   const { nodes, lang, mode, level } = body || {};
   const isRemake = mode === 'story-remake';
   const minNodes = isRemake ? 1 : 2;

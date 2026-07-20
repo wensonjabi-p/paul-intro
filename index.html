@@ -176,6 +176,42 @@
   }
   .story-remake-btn:hover { border-color: var(--muted); color: var(--ink); }
   .story-remake-btn:disabled { opacity: 0.6; cursor: default; }
+
+  /* ---------- 스토리 세부 수정(선택 → 삭제/상상/강조/더 자세히 → 지시 → 다시 쓰기) ----------
+     Paul 피드백(2026-07-20): "일부 구간이나 전체를 마크하고 ... 다시 쓰기 하면 좋겠어".
+     .prose 안에서 텍스트를 마크(선택)하면 뜨는 플로팅 툴바 — 전체 화면 기준 위치라 position:fixed. */
+  .story-edit-toolbar {
+    position: fixed; z-index: 60; background: var(--bg-soft); border: 1px solid var(--line);
+    border-radius: 14px; box-shadow: 0 14px 34px rgba(0,0,0,0.45); padding: 10px; max-width: 340px;
+  }
+  .story-edit-toolbar .se-quote {
+    font-size: 12px; color: var(--faint); padding: 2px 4px 8px; max-width: 320px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .story-edit-toolbar .se-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+  .story-edit-toolbar .se-actions button {
+    background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
+    font-size: 12.5px; padding: 7px 12px; border-radius: 14px; cursor: pointer; transition: all 0.2s; white-space: nowrap;
+  }
+  .story-edit-toolbar .se-actions button:hover { border-color: var(--accent-dim); color: var(--accent); }
+  .story-edit-toolbar .se-compose { display: flex; flex-direction: column; gap: 8px; width: 300px; }
+  .story-edit-toolbar .se-compose textarea {
+    width: 100%; min-height: 60px; resize: vertical; background: var(--bg); border: 1px solid var(--line);
+    border-radius: 8px; color: var(--ink); font-family: inherit; font-size: 13px; padding: 8px 10px; line-height: 1.5;
+  }
+  .story-edit-toolbar .se-compose textarea:focus { outline: none; border-color: var(--accent-dim); }
+  .story-edit-toolbar .se-compose-btns { display: flex; justify-content: flex-end; gap: 8px; }
+  .story-edit-toolbar .se-btn-cancel {
+    background: none; border: none; color: var(--faint); font-family: inherit; font-size: 12.5px; cursor: pointer; padding: 6px 8px;
+  }
+  .story-edit-toolbar .se-btn-cancel:hover { color: var(--ink); }
+  .story-edit-toolbar .se-btn-submit {
+    background: rgba(201,164,92,0.14); border: 1px solid var(--accent-dim); color: var(--accent); font-family: inherit;
+    font-size: 12.5px; font-weight: 600; padding: 7px 16px; border-radius: 14px; cursor: pointer; transition: all 0.2s;
+  }
+  .story-edit-toolbar .se-btn-submit:hover { background: rgba(201,164,92,0.22); }
+  .story-edit-toolbar .se-btn-submit:disabled { opacity: 0.6; cursor: default; }
+  .story-edit-toolbar .se-error { font-size: 12px; color: #c0553f; }
   .card-maker {
     margin-top: 26px; border-top: 1px solid var(--line); padding-top: 26px;
   }
@@ -563,6 +599,7 @@
 <div class="credit" id="p-credit"></div>
 <div style="text-align:center; padding:0 5vw 40px;"><a href="interview.html" style="color:var(--faint); font-size:11px; letter-spacing:0.14em; text-decoration:none;" id="p-interview-link"></a></div>
 <div id="pb-toast"></div>
+<div id="story-edit-toolbar" class="story-edit-toolbar" style="display:none;"></div>
 
 <script src="data.js"></script>
 <script src="data.en.js"></script>
@@ -643,6 +680,10 @@
       gbTranslateBtn: '번역 보기', gbShowOriginal: '원문 보기', gbTranslating: '번역 중…',
       doodleRedraw: '↻ 다시 그리기',
       storyRemakeBtn: '🎲 다른 스토리로 만들어보기', storyRemaking: '다르게 써보는 중…',
+      storyEditDelete: '🗑 삭제', storyEditImagine: '💭 상상', storyEditEmphasize: '✦ 강조', storyEditDetail: '🔍 더 자세히',
+      storyEditInstructionPlaceholder: '구체적으로 어떻게 바꿀지 적어주세요 (선택사항)',
+      storyEditSubmit: '다시 쓰기', storyEditCancel: '취소', storyEditWorking: '다시 쓰는 중…',
+      storyEditFailed: '수정하지 못했어요. 잠시 후 다시 시도해주세요.',
     },
     en: {
       legend: { core: 'Me', place: 'Places That Changed Me', associative: 'Related Words', wildcard: 'Odd Hooks' },
@@ -719,6 +760,10 @@
       gbTranslateBtn: 'Translate', gbShowOriginal: 'Show original', gbTranslating: 'Translating…',
       doodleRedraw: '↻ Redraw',
       storyRemakeBtn: '🎲 Try a different story', storyRemaking: 'Writing a new version…',
+      storyEditDelete: '🗑 Delete', storyEditImagine: '💭 Imagine', storyEditEmphasize: '✦ Emphasize', storyEditDetail: '🔍 More detail',
+      storyEditInstructionPlaceholder: 'Add specific instructions (optional)',
+      storyEditSubmit: 'Rewrite', storyEditCancel: 'Cancel', storyEditWorking: 'Rewriting…',
+      storyEditFailed: 'Could not edit that. Please try again shortly.',
     },
     zh: {
       legend: { core: '我', place: '改变我的地方', associative: '关联词', wildcard: '奇怪的钩子' },
@@ -793,6 +838,10 @@
       gbTranslateBtn: '查看翻译', gbShowOriginal: '查看原文', gbTranslating: '翻译中…',
       doodleRedraw: '↻ 重新绘制',
       storyRemakeBtn: '🎲 换一个故事版本', storyRemaking: '正在重新创作…',
+      storyEditDelete: '🗑 删除', storyEditImagine: '💭 想象', storyEditEmphasize: '✦ 强调', storyEditDetail: '🔍 更详细',
+      storyEditInstructionPlaceholder: '写下具体想怎么改（可选）',
+      storyEditSubmit: '重写', storyEditCancel: '取消', storyEditWorking: '正在重写…',
+      storyEditFailed: '修改失败，请稍后再试。',
     },
   };
 
@@ -1429,6 +1478,161 @@
     if (btn) btn.addEventListener('click', remakeStory);
   }
 
+  // ---------- 스토리 세부 수정(선택 → 삭제/상상/강조/더 자세히 → 지시 → 다시 쓰기) ----------
+  // Paul 피드백(2026-07-20): "일부 구간이나 전체를 마크하고 삭제, 상상, 강조, 더 자세히 등의 버튼을
+  // 클릭하고 세부 수정 지시를 한 후에 다시 쓰기 하면 좋겠어". .prose 안에서 텍스트를 마크(선택)하면
+  // 플로팅 툴바가 뜨고, 액션을 고르면 지시문 입력창으로 바뀐다. 실제 수정은 synthesize-combo.js의
+  // story-edit 모드가 세 언어 버전을 한 번에 받아 같은 부분을 동시에 고쳐서 언어 간 불일치를 막는다.
+  const STORY_EDIT_FACT_MUL = { delete: 1, emphasize: 1, detail: 0.92, imagine: 0.78 };
+  let storyEditPending = null; // { ids, text, factPct, rect } — 툴바가 떠 있는 동안의 선택 정보
+
+  function initStoryEditToolbar() {
+    const box = document.getElementById('story-edit-toolbar');
+    document.addEventListener('selectionchange', onStorySelectionChange);
+    document.addEventListener('mousedown', e => {
+      if (box.contains(e.target)) {
+        // 버튼을 누를 때 기본 포커스 이동으로 텍스트 선택이 풀리는 것을 막는다(입력창은 예외).
+        if (e.target.tagName !== 'TEXTAREA') e.preventDefault();
+        return;
+      }
+      if (box.style.display !== 'none') hideStoryEditToolbar();
+    });
+    box.addEventListener('click', onStoryEditToolbarClick);
+  }
+
+  function hideStoryEditToolbar() {
+    const box = document.getElementById('story-edit-toolbar');
+    box.style.display = 'none';
+    box.innerHTML = '';
+    delete box.dataset.mode;
+    storyEditPending = null;
+  }
+
+  function onStorySelectionChange() {
+    const box = document.getElementById('story-edit-toolbar');
+    // 지시문을 입력하는 중(compose 상태)에는 textarea 포커스 등으로 선택이 바뀌어도 안 닫히게.
+    if (box.dataset.mode === 'compose') return;
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0 || sel.isCollapsed) { hideStoryEditToolbar(); return; }
+    const text = sel.toString().trim();
+    if (!text || !state.selected.length) { hideStoryEditToolbar(); return; }
+    const anchorEl = sel.anchorNode && (sel.anchorNode.nodeType === 3 ? sel.anchorNode.parentElement : sel.anchorNode);
+    const proseEl = anchorEl && anchorEl.closest && anchorEl.closest('#synthesis .prose');
+    if (!proseEl || !proseEl.contains(sel.focusNode)) { hideStoryEditToolbar(); return; }
+
+    const r = sel.getRangeAt(0).getBoundingClientRect();
+    storyEditPending = {
+      ids: state.selected.slice(), text,
+      factPct: Number(proseEl.dataset.factPct) || 100,
+      rect: { left: r.left, top: r.top, bottom: r.bottom, width: r.width },
+    };
+    renderStoryEditPicker();
+  }
+
+  function renderStoryEditPicker() {
+    const box = document.getElementById('story-edit-toolbar');
+    const u = UI[LANG];
+    box.dataset.mode = 'pick';
+    box.innerHTML =
+      '<div class="se-quote">&ldquo;' + escapeHtml(storyEditPending.text.slice(0, 60)) + '&rdquo;</div>' +
+      '<div class="se-actions">' +
+      '<button type="button" data-action="delete">' + u.storyEditDelete + '</button>' +
+      '<button type="button" data-action="imagine">' + u.storyEditImagine + '</button>' +
+      '<button type="button" data-action="emphasize">' + u.storyEditEmphasize + '</button>' +
+      '<button type="button" data-action="detail">' + u.storyEditDetail + '</button>' +
+      '</div>';
+    box.style.display = 'block';
+    positionStoryEditToolbar();
+  }
+
+  function renderStoryEditComposer(action) {
+    const box = document.getElementById('story-edit-toolbar');
+    const u = UI[LANG];
+    box.dataset.mode = 'compose';
+    box.dataset.action = action;
+    box.innerHTML =
+      '<div class="se-compose">' +
+      '<textarea id="se-instruction" placeholder="' + escapeHtml(u.storyEditInstructionPlaceholder) + '"></textarea>' +
+      '<div class="se-compose-btns">' +
+      '<button type="button" class="se-btn-cancel" data-se-cancel>' + u.storyEditCancel + '</button>' +
+      '<button type="button" class="se-btn-submit" data-se-submit>' + u.storyEditSubmit + '</button>' +
+      '</div></div>';
+    positionStoryEditToolbar();
+    box.querySelector('#se-instruction').focus();
+  }
+
+  function positionStoryEditToolbar() {
+    const box = document.getElementById('story-edit-toolbar');
+    const r = storyEditPending && storyEditPending.rect;
+    if (!r) return;
+    const bw = box.offsetWidth, bh = box.offsetHeight;
+    let left = r.left + r.width / 2 - bw / 2;
+    left = Math.max(10, Math.min(left, window.innerWidth - bw - 10));
+    let top = r.top - bh - 10;
+    if (top < 10) top = r.bottom + 10; // 화면 위쪽에 붙으면 선택 아래로 뒤집기
+    box.style.left = left + 'px';
+    box.style.top = top + 'px';
+  }
+
+  function onStoryEditToolbarClick(e) {
+    const actionBtn = e.target.closest('[data-action]');
+    if (actionBtn && storyEditPending) { renderStoryEditComposer(actionBtn.dataset.action); return; }
+    if (e.target.closest('[data-se-cancel]')) {
+      hideStoryEditToolbar();
+      window.getSelection().removeAllRanges();
+      return;
+    }
+    if (e.target.closest('[data-se-submit]')) runStoryEdit();
+  }
+
+  async function runStoryEdit() {
+    const box = document.getElementById('story-edit-toolbar');
+    const pending = storyEditPending;
+    const action = box.dataset.action;
+    if (!pending || !action) return;
+    const instruction = (box.querySelector('#se-instruction') || {}).value || '';
+    const u = UI[LANG];
+    box.querySelectorAll('button, textarea').forEach(el2 => { el2.disabled = true; });
+    const submitBtn = box.querySelector('[data-se-submit]');
+    if (submitBtn) submitBtn.textContent = u.storyEditWorking;
+
+    try {
+      const base = await getTrilingualCardText(pending.ids);
+      if (JSON.stringify(state.selected) !== JSON.stringify(pending.ids)) return; // 그 사이 선택이 바뀌었으면 버림
+      const r = await fetch('/api/synthesize-combo', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          mode: 'story-edit', action, instruction, selectedText: pending.text, currentLang: LANG,
+          text: { ko: base.ko.story, en: base.en.story, zh: base.zh.story },
+        }),
+      });
+      const d = await r.json();
+      if (!d.edited) throw new Error('no-edit');
+      if (JSON.stringify(state.selected) !== JSON.stringify(pending.ids)) return;
+
+      const mul = STORY_EDIT_FACT_MUL[action] != null ? STORY_EDIT_FACT_MUL[action] : 1;
+      const factPct = Math.max(15, Math.round(pending.factPct * mul));
+      state.storyOverride = {
+        ids: pending.ids, factPct, level: 'edited',
+        text: {
+          ko: { title: base.ko.title, story: d.edited.ko, era: base.ko.era },
+          en: { title: base.en.title, story: d.edited.en, era: base.en.era },
+          zh: { title: base.zh.title, story: d.edited.zh, era: base.zh.era },
+        },
+      };
+      hideStoryEditToolbar();
+      window.getSelection().removeAllRanges();
+      renderSynthesis();
+    } catch (e) {
+      // insertAdjacentHTML을 쓰는 이유: innerHTML += 는 기존 노드를 통째로 재파싱해서 날려버려,
+      // 위에서 잡아둔 submitBtn 참조가 끊어지고 "다시 쓰는 중…" 표시가 영영 안 돌아온다.
+      box.insertAdjacentHTML('beforeend', '<div class="se-error">' + escapeHtml(u.storyEditFailed) + '</div>');
+      box.querySelectorAll('button, textarea').forEach(el2 => { el2.disabled = false; });
+      if (submitBtn) submitBtn.textContent = u.storyEditSubmit;
+      positionStoryEditToolbar();
+    }
+  }
+
   // 단일 단어라도 항상 같은 글 대신, 사실은 유지하되 에세이답게 다시 쓴 버전을 만든다.
   // 클릭할 때마다 상상력 비중(light/medium/heavy)을 직전과 다르게 순환해서 매번 다른 느낌이 나오게 함.
   // 카드로 만들기는 이 결과(state.storyOverride)를 그대로 가져다 쓰고, 카드의 "스타일 다시 만들기"는
@@ -1482,6 +1686,7 @@
   }
 
   function renderSynthesis() {
+    hideStoryEditToolbar(); // 스토리가 바뀌면 이전 선택에 붙어있던 세부수정 툴바는 더 이상 유효하지 않음
     const el = document.getElementById('synthesis');
     document.getElementById('sky-hint').style.opacity = state.selected.length ? '0' : '1';
     document.getElementById('sky-deselect').style.display = state.selected.length ? 'inline-block' : 'none';
@@ -1519,7 +1724,7 @@
     if (override) {
       el.innerHTML = '<div class="synth-title">' + title + '</div>' +
         factBarHtml(override.factPct) +
-        '<div class="prose" style="margin-top:20px;">' + override.text[LANG].story + '</div>' +
+        '<div class="prose" data-fact-pct="' + override.factPct + '" style="margin-top:20px;">' + override.text[LANG].story + '</div>' +
         '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsSynth + '</span>' +
         sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>' +
         storyRemakeBtnHtml() + cardMakeBtnHtml();
@@ -1551,7 +1756,7 @@
 
     el.innerHTML = '<div class="synth-title">' + title + '</div>' +
       factBarHtml(shownScore) +
-      '<div class="prose" style="margin-top:20px;">' + paragraph + '</div>' +
+      '<div class="prose" data-fact-pct="' + Math.round(shownScore) + '" style="margin-top:20px;">' + paragraph + '</div>' +
       '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsSynth + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>' +
       storyRemakeBtnHtml() + cardMakeBtnHtml();
@@ -1608,7 +1813,7 @@
     h += '<div><span class="badge t-place">' + UI[LANG].badgeComboStory + '</span></div>';
     h += '<div class="headword">' + combo.title + '</div>';
     h += factBarHtml(shownScore);
-    h += '<div class="prose">' + storyText + '</div>';
+    h += '<div class="prose" data-fact-pct="' + Math.round(shownScore) + '">' + storyText + '</div>';
     h += '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsCurated + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>';
     h += storyRemakeBtnHtml();
@@ -1634,7 +1839,7 @@
     h += '</div>';
     h += '<div class="headword">' + n.label + '</div>';
     h += factBarHtml(shownScore);
-    h += '<div class="prose">' + storyText + '</div>';
+    h += '<div class="prose" data-fact-pct="' + Math.round(shownScore) + '">' + storyText + '</div>';
     if (!override && n.status === 'ask') {
       const oq = D.openQuestions.find(q => q.node === n.id);
       h += '<div class="ask-ribbon">' + UI[LANG].askRibbonPrefix + (oq ? ' — "' + oq.q + '"' : '') + '</div>';
@@ -2796,7 +3001,7 @@
   window.addEventListener('resize', resize);
   document.body.classList.toggle('lang-zh', LANG === 'zh');
   renderStaticText();
-  resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop();
+  resize(); initParticles(); renderSynthesis(); renderFeed(); stepLoop(); initStoryEditToolbar();
   fetchRemoteThoughts();
   loadGuestbook();
 })();
