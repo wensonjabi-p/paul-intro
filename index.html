@@ -2541,8 +2541,11 @@
     const restyleBtn = document.getElementById('cm-restyle-btn');
     if (restyleBtn) { restyleBtn.disabled = true; restyleBtn.textContent = UI[LANG].cardRestyling; }
 
-    const usedPalettes = currentCardState.cardSets.map(s => s.style.paletteId);
-    const lastSet = currentCardState.cardSets[currentCardState.cardSets.length - 1];
+    // 이미지 카드 세트는 팔레트 풀을 공유하지 않음(글 카드와 완전히 분리된 개념) — 여기서 안 걸러내면
+    // 이미지 카드에서 쓴 팔레트까지 "이미 썼음"으로 잘못 세서 글 카드 다시 만들기의 선택지가 부당하게 줄어든다.
+    const textSets = currentCardState.cardSets.filter(s => s.kind !== 'ai-image');
+    const usedPalettes = textSets.map(s => s.style.paletteId);
+    const lastSet = textSets[textSets.length - 1];
     const lastStyle = lastSet ? lastSet.style : { paletteId: DEFAULT_CARD_PALETTE, layout: DEFAULT_CARD_LAYOUT, doodleSeed: 0 };
     const unusedPalettes = CARD_PALETTES.map(p => p.id).filter(id => !usedPalettes.includes(id));
     const paletteId = unusedPalettes.length
