@@ -6,8 +6,8 @@
    {imageUrl:null} 반환 — 클라이언트가 "생성 실패" 처리로 자연스럽게 넘어간다.
    이 파일이 Vercel Hobby 플랜 서버리스 함수 12개 한도의 마지막 자리 — 앞으로는 새 파일 대신
    기존 파일에 action/mode로 얹을 것. */
-const { put } = require('@vercel/blob');
-const { stripModelArtifacts } = require('./_lib');
+const { put, del } = require('@vercel/blob');
+const { stripModelArtifacts, kvPushJSON, kvListAll, kvReplaceAll, isValidSession } = require('./_lib');
 
 // 화풍 프리셋 30종(2026-07-19, Paul 요청 — 기본 스타일을 고르기 전에 다양하게 실제로 만들어서 보여줄 것).
 // directive는 영어 화풍 지시어로 이미지 프롬프트에 그대로 녹여 씀. label은 나중에 클라이언트 선택 UI에 쓸 한국어 이름.
@@ -140,16 +140,77 @@ async function runReplicate(token, prompt) {
   return { ok: true, url: out };
 }
 
+// 카드 보관함(saved-cards:meta) — Paul 요청: "생성했던 카드(글, 그림) 선택해서 서버에 보관... 관리자
+// 페이지에서 볼 수 있게". 저장은 방명록·생각 기록과 같은 패턴으로 누구나(로그인 없이) 할 수 있고,
+// 목록 조회·삭제는 admin.html 전용이라 관리자 세션이 필요하다.
+async function saveCard(body) {
+  const { dataUrl, kind, lang, ids, label } = body || {};
+  if (!dataUrl || !/^data:image\/png;base64,/.test(dataUrl)) return { ok: false, status: 400, error: 'no image' };
+  const buf = Buffer.from(dataUrl.slice(dataUrl.indexOf(',') + 1), 'base64');
+  const filename = 'saved-cards/' + Date.now() + '-' + Math.random().toString(36).slice(2, 8) + '.png';
+  const blob = await put(filename, buf, { access: 'public', contentType: 'image/png', storeId: process.env.BLOB_PUBLIC_STORE_ID });
+  const record = {
+    id: 'card-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8),
+    url: blob.url,
+    kind: kind === 'ai-image' ? 'ai-image' : 'doodle',
+    lang: ['ko', 'en', 'zh'].includes(lang) ? lang : 'ko',
+    ids: Array.isArray(ids) ? ids.slice(0, 10).map(String) : [],
+    label: String(label || '').slice(0, 120),
+    createdAt: Date.now(),
+  };
+  await kvPushJSON('saved-cards:meta', record);
+  return { ok: true, card: record };
+}
+
 module.exports = async (req, res) => {
-  // 클라이언트(또는 스타일 선택 UI)가 화풍 목록을 조회할 수 있게 — 인증 불필요, 정적 목록만 반환.
-  if (req.method === 'GET') return res.status(200).json({ styles: STYLE_PRESETS.map(s => ({ id: s.id, label: s.label })), defaultStyleId: DEFAULT_STYLE_ID });
+  if (req.method === 'GET') {
+    // ?saved=1 — 관리자 카드 보관함 목록(로그인 필요). 그 외엔 화풍 목록(공개, 스타일 선택 UI용).
+    if (req.query && req.query.saved === '1') {
+      if (!isValidSession(req.headers.cookie)) return res.status(401).json({ error: 'login required' });
+      try {
+        const all = await kvListAll('saved-cards:meta');
+        return res.status(200).json({ cards: all.sort((a, b) => b.createdAt - a.createdAt) });
+      } catch (e) {
+        return res.status(503).json({ error: 'storage not ready: ' + e.message });
+      }
+    }
+    return res.status(200).json({ styles: STYLE_PRESETS.map(s => ({ id: s.id, label: s.label })), defaultStyleId: DEFAULT_STYLE_ID });
+  }
+
+  if (req.method === 'DELETE') {
+    if (!isValidSession(req.headers.cookie)) return res.status(401).json({ error: 'login required' });
+    let delBody = req.body;
+    if (typeof delBody === 'string') { try { delBody = JSON.parse(delBody); } catch (e) { delBody = {}; } }
+    const { id } = delBody || {};
+    try {
+      const all = await kvListAll('saved-cards:meta');
+      const target = all.find(c => c.id === id);
+      await kvReplaceAll('saved-cards:meta', all.filter(c => c.id !== id));
+      if (target && target.url) { try { await del(target.url); } catch (e) {} }
+      return res.status(200).json({ ok: true });
+    } catch (e) {
+      return res.status(503).json({ error: 'storage not ready: ' + e.message });
+    }
+  }
+
   if (req.method !== 'POST') return res.status(405).json({ error: 'method' });
+
+  let body = req.body;
+  if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = {}; } }
+
+  if (body && body.action === 'save-card') {
+    try {
+      const result = await saveCard(body);
+      return res.status(result.ok ? 200 : (result.status || 500)).json(result.ok ? { ok: true, card: result.card } : { error: result.error });
+    } catch (e) {
+      return res.status(503).json({ error: 'storage not ready: ' + e.message });
+    }
+  }
+
   const anthropicKey = process.env.ANTHROPIC_API_KEY;
   const replicateToken = process.env.REPLICATE_API_TOKEN;
   if (!anthropicKey || !replicateToken) return res.status(200).json({ imageUrl: null, reason: 'not-configured' });
 
-  let body = req.body;
-  if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = {}; } }
   const { story, mood, debug, styleId } = body || {};
   if (!story || !String(story).trim()) return res.status(200).json({ imageUrl: null });
 
