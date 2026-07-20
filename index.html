@@ -259,11 +259,6 @@
     font-size: 12px; padding: 7px 10px; border-radius: 14px; cursor: pointer; max-width: 160px;
   }
   .cm-style-select:focus { outline: none; border-color: var(--accent-dim); }
-  .cm-set-edit-select {
-    background: var(--bg-soft); border: 1px solid var(--line); color: var(--ink); font-family: inherit;
-    font-size: 11.5px; padding: 5px 8px; border-radius: 12px; cursor: pointer; max-width: 170px;
-  }
-  .cm-set-edit-select:focus { outline: none; border-color: var(--accent-dim); }
   .cm-set-edit-btn {
     background: none; border: 1px solid var(--line); color: var(--muted); font-family: inherit;
     font-size: 11.5px; padding: 5px 12px; border-radius: 12px; cursor: pointer; transition: all 0.2s;
@@ -621,6 +616,11 @@
 <script src="data.js"></script>
 <script src="data.en.js"></script>
 <script src="data.zh.js"></script>
+<!-- 여러 장 카드를 한 번에 다운로드할 때 zip으로 묶기 위함 — iOS Safari 등은 setTimeout으로 지연시킨
+     두 번째 다운로드부터는 "사용자 동작으로 직접 트리거되지 않았다"며 조용히 막아버린다(Paul 피드백:
+     "사진 여러장 선택 후 다운로드... 버그"). 여러 파일을 하나의 zip으로 묶으면 다운로드가 한 번만
+     트리거되어 이 문제를 피할 수 있다. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
 (function () {
   const UI = {
@@ -681,6 +681,7 @@
       cardMakeImageBtnFirst: '🖼️ 이미지 카드 만들기', cardMakeImageBtnMore: '🖼️ 다른 이미지로 추가로 만들기',
       cardStyleSelectTitle: '화풍 직접 고르기 (비워두면 랜덤)', cardStyleRandomOption: '🎲 랜덤 화풍',
       cardProtagonistSelectTitle: '주인공 표현 방식', cardImageEditBtn: '✎ 이 그림 수정', cardImageEditing: '다시 그리는 중…',
+      cardImageEditSubmit: '다시 그리기',
       cardGeneratingImage: n => '이미지를 그리는 중… ' + n + '초 (첫 시도는 좀 걸릴 수 있어요)',
       cardImageFailed: '이미지 생성 실패 — 잠시 후 다시 시도해주세요',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
@@ -762,6 +763,7 @@
       cardMakeImageBtnFirst: '🖼️ Make an image card', cardMakeImageBtnMore: '🖼️ Make another with a different image',
       cardStyleSelectTitle: 'Pick a style directly (leave blank for random)', cardStyleRandomOption: '🎲 Random style',
       cardProtagonistSelectTitle: 'Protagonist style', cardImageEditBtn: '✎ Edit this image', cardImageEditing: 'Redrawing…',
+      cardImageEditSubmit: 'Redraw',
       cardGeneratingImage: n => 'Painting the image… ' + n + 's (the first try may take a bit)',
       cardImageFailed: 'Image generation failed — please try again in a moment',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
@@ -841,6 +843,7 @@
       cardMakeImageBtnFirst: '🖼️ 生成图片卡片', cardMakeImageBtnMore: '🖼️ 用另一张图片再做一张',
       cardStyleSelectTitle: '直接选择画风（留空则随机）', cardStyleRandomOption: '🎲 随机画风',
       cardProtagonistSelectTitle: '主人公表现方式', cardImageEditBtn: '✎ 修改这张图', cardImageEditing: '正在重新绘制…',
+      cardImageEditSubmit: '重新绘制',
       cardGeneratingImage: n => '正在生成图片… ' + n + ' 秒（第一次可能要等一会儿）',
       cardImageFailed: '图片生成失败——请稍后重试',
       cardLangLabel: { ko: '한국어', en: 'English', zh: '中文' },
@@ -1383,6 +1386,47 @@
     spiral: () => [spiralPts(75, 75, 2.4, 52)],
     weave: () => [wavePts(12, 138, 75, 30, 0, 22), wavePts(12, 138, 75, 30, Math.PI, 22)],
     arch: () => [archPts(75, 108, 55, 0, Math.PI), archPts(75, 108, 38, 0, Math.PI), archPts(75, 108, 22, 0, Math.PI)],
+    // 아래 7개는 예전엔 전부 하나의 'box'(네모) 모티프로 뭉뚱그려져 있던 15개 서로 무관한 단어(소금,
+    // 커피, 와인, 개, 겨울 등)를 각자 뜻에 맞게 나눈 것 — Paul 피드백(2026-07-20): "대부분이 그냥 네모
+    // 모양이나 동그라미로 표현됨. 단어의 의미에 맞도록 조정".
+    crystal: () => [ // 소금·돌소금 — 결정(광물) 모양
+      [[75, 20], [105, 55], [92, 120], [58, 120], [45, 55], [75, 20]],
+      [[45, 55], [105, 55]], [[75, 20], [75, 120]],
+    ],
+    bean: () => [ // 노니·커피 — 열매/원두 두 알
+      circlePts(55, 60, 20, 12), [[55, 44], [55, 76]],
+      circlePts(95, 90, 20, 12), [[95, 74], [95, 106]],
+    ],
+    plank: () => [ // 흑단·스크랩·목재 — 쌓인 판자
+      [[24, 50], [126, 50], [126, 66], [24, 66], [24, 50]],
+      [[24, 78], [126, 78], [126, 94], [24, 94], [24, 78]],
+      [[24, 106], [126, 106], [126, 122], [24, 122], [24, 106]],
+    ],
+    bottle: () => [ // 와인·맥주 — 병 실루엣
+      [[64, 20], [64, 38], [50, 60], [50, 122], [100, 122], [100, 60], [86, 38], [86, 20], [64, 20]],
+      [[64, 20], [86, 20]],
+    ],
+    bag: () => [ // 배낭 — 가방 몸통+어깨끈+주머니선
+      [[40, 60], [40, 122], [110, 122], [110, 60], [95, 44], [55, 44], [40, 60]],
+      [[55, 44], [55, 28], [95, 28], [95, 44]],
+      [[55, 80], [95, 80]],
+    ],
+    dog: () => [ // 개 — 옆모습 실루엣(등·머리·귀)+다리 4개+꼬리
+      [[30, 92], [30, 60], [50, 46], [70, 46], [78, 36], [92, 40], [88, 54], [104, 60], [110, 92]],
+      [[36, 92], [36, 116]], [[58, 92], [58, 116]], [[82, 92], [82, 116]], [[104, 92], [104, 116]],
+      [[110, 92], [122, 100]],
+    ],
+    snowflake: () => { // 겨울·추위 — 6갈래 눈결정
+      const cx = 75, cy = 75, arms = [];
+      for (let i = 0; i < 6; i++) {
+        const a = (i / 6) * Math.PI * 2;
+        arms.push([[cx, cy], [cx + Math.cos(a) * 45, cy + Math.sin(a) * 45]]);
+        const mx = cx + Math.cos(a) * 28, my = cy + Math.sin(a) * 28;
+        const perpA = a + Math.PI / 2;
+        arms.push([[mx - Math.cos(perpA) * 10, my - Math.sin(perpA) * 10], [mx, my], [mx + Math.cos(perpA) * 10, my + Math.sin(perpA) * 10]]);
+      }
+      return arms;
+    },
   };
 
   const NODE_MOTIF = {
@@ -1403,17 +1447,62 @@
     ecoventure: 'plant', plogging: 'plant',
     trust: 'heart', luxury: 'heart', loneliness: 'heart',
     war: 'flag', battlefield: 'flag', caution: 'flag', chance: 'flag', failure: 'flag', poverty: 'flag',
-    salt: 'box', rocksalt: 'box', noni: 'box', coffee: 'box', ebony: 'box', scrap: 'box', timber: 'box',
-    wine: 'box', backpack: 'box', beer: 'box', dog: 'box', navy: 'box', winter: 'box', cold: 'box', malaria: 'box',
+    // 예전엔 이 아래 단어 전부가 'box'(네모) 하나로 뭉뚱그려져 있었다 — 이제 뜻에 맞게 나눠 놓음
+    // (Paul 피드백: "대부분이 그냥 네모 모양이나 동그라미로 표현됨. 단어의 의미에 맞도록 조정").
+    // malaria·islam은 억지로 끼워 맞추기보다 아래 다양화된 추상 낙서 폴백으로 넘어가게 뺐다.
+    salt: 'crystal', rocksalt: 'crystal',
+    noni: 'bean', coffee: 'bean',
+    ebony: 'plank', scrap: 'plank', timber: 'plank',
+    wine: 'bottle', beer: 'bottle',
+    backpack: 'bag', dog: 'dog', navy: 'boat',
+    winter: 'snowflake', cold: 'snowflake',
     tokyo: 'pin', seoul: 'pin', shanghai: 'pin', hangzhou: 'pin', dublin: 'pin', vienna: 'pin', prague: 'pin',
-    croatia: 'pin', cambodia: 'pin', pakistan: 'pin', ireland: 'pin', saitama: 'pin', masan: 'pin', jinhae: 'pin', islam: 'pin',
+    croatia: 'pin', cambodia: 'pin', pakistan: 'pin', ireland: 'pin', saitama: 'pin', masan: 'pin', jinhae: 'pin',
   };
 
-  function doodleAbstractScribble(rand) {
+  // 매핑된 뼈대가 없는 단어(주로 새로 생기는 동적 키워드, 또는 억지로 끼워 맞추지 않기로 한 malaria·islam
+  // 같은 단어)는 이 추상 낙서로 대체된다. 예전엔 항상 중심점 둘레에 점을 찍는 방식 하나뿐이라 대부분
+  // 뭉툭한 동그라미처럼 보였다(Paul 피드백: "이해할 수 없는 단어라면 더 다양한 형태로 표현될 수 있도록").
+  // 단어별로 서로 다른 "형태 계열"(방사형 폭발·지그재그·나선·흩어진 점무리·파도·기존 블롭)을 단어
+  // 해시로 결정론적으로 골라서(같은 단어는 항상 같은 계열, "다시 그리기"를 눌러도 계열은 안 바뀜) 훨씬
+  // 다양하게 보이게 했다.
+  function scribbleBlob(rand) {
     const cx = 75, cy = 68, pts = [];
     const n = 7 + Math.floor(rand() * 3);
     for (let i = 0; i <= n; i++) { const a = (i / n) * Math.PI * 2.4; const r = 16 + rand() * 28; pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r * 0.75]); }
     return [pts];
+  }
+  function scribbleZigzag(rand) {
+    const pts = []; const n = 6 + Math.floor(rand() * 3);
+    for (let i = 0; i <= n; i++) {
+      pts.push([24 + (102 / n) * i, i % 2 === 0 ? 44 + rand() * 16 : 92 + rand() * 16]);
+    }
+    return [pts];
+  }
+  function scribbleSpiralVaried(rand) {
+    return [spiralPts(75, 72, 1.6 + rand() * 1.6, 30 + rand() * 20)];
+  }
+  function scribbleCluster(rand) {
+    const strokes = []; const n = 4 + Math.floor(rand() * 3);
+    for (let i = 0; i < n; i++) strokes.push(circlePts(40 + rand() * 70, 40 + rand() * 70, 8 + rand() * 14, 10));
+    return strokes;
+  }
+  function scribbleRadial(rand) {
+    const cx = 75, cy = 72, strokes = []; const n = 6 + Math.floor(rand() * 4);
+    for (let i = 0; i < n; i++) {
+      const a = (i / n) * Math.PI * 2 + rand() * 0.3;
+      const r0 = 10 + rand() * 6, r1 = 32 + rand() * 20;
+      strokes.push([[cx + Math.cos(a) * r0, cy + Math.sin(a) * r0], [cx + Math.cos(a) * r1, cy + Math.sin(a) * r1]]);
+    }
+    return strokes;
+  }
+  function scribbleWaveVaried(rand) {
+    return [wavePts(14, 136, 74, 14 + rand() * 16, rand() * Math.PI * 2, 12 + rand() * 14)];
+  }
+  const SCRIBBLE_FAMILIES = [scribbleBlob, scribbleZigzag, scribbleSpiralVaried, scribbleCluster, scribbleRadial, scribbleWaveVaried];
+  function doodleAbstractScribble(rand, id) {
+    const family = SCRIBBLE_FAMILIES[hashStr(String(id || '')) % SCRIBBLE_FAMILIES.length];
+    return family(rand);
   }
   function doodleHandTremor(pts, rand, wobbleAmt, bowAmt) {
     const bowDirX = ditJitter(rand, 1), bowDirY = ditJitter(rand, 1);
@@ -1449,7 +1538,7 @@
     idsArr.forEach((id, i) => {
       const motifKey = NODE_MOTIF[id];
       const fn = motifKey && DOODLE_MOTIFS[motifKey];
-      const strokes = fn ? fn() : doodleAbstractScribble(rand);
+      const strokes = fn ? fn() : doodleAbstractScribble(rand, id);
       const off = i === 0 ? [0, 0] : [(i % 2 === 0 ? 1 : -1) * 16, i * 9];
       allStrokes = allStrokes.concat(strokes.map(s => s.map(p => [p[0] + off[0], p[1] + off[1]])));
     });
@@ -1567,17 +1656,17 @@
       }
       const optBtn = e.target.closest('[data-se-option]');
       if (optBtn) {
-        panel.querySelectorAll('.se-opt').forEach(b => b.classList.toggle('selected', b === optBtn));
-        panel.dataset.selectedOption = optBtn.dataset.seOption;
+        // 여러 개를 동시에 고를 수 있게 배타적 선택 대신 각자 독립적으로 토글(Paul 피드백: "다중 선택 가능하도록").
+        optBtn.classList.toggle('selected');
         const submitBtn = panel.querySelector('[data-se-option-submit]');
-        if (submitBtn) submitBtn.disabled = false;
+        if (submitBtn) submitBtn.disabled = !panel.querySelector('.se-opt.selected');
         return;
       }
       if (e.target.closest('[data-se-option-submit]')) {
-        const action = panel.dataset.selectedOption;
-        if (!action) return;
+        const actions = Array.from(panel.querySelectorAll('.se-opt.selected')).map(b => b.dataset.seOption);
+        if (!actions.length) return;
         const ta = panel.querySelector('#se-instruction');
-        submitStoryEdit(action, ta ? ta.value : '', null);
+        submitStoryEdit(actions, ta ? ta.value : '', null);
       }
     });
   }
@@ -1589,7 +1678,6 @@
     const proseEl = document.querySelector('#synthesis .prose');
     const currentText = proseEl ? proseEl.textContent : '';
     panel.style.display = 'block';
-    panel.dataset.selectedOption = '';
     if (kind === 'manual') renderManualEditPanel(panel, currentText);
     else renderOptionsEditPanel(panel);
   }
@@ -1623,9 +1711,12 @@
     panel.innerHTML = h;
   }
 
-  async function submitStoryEdit(action, instruction, manualText) {
+  async function submitStoryEdit(actionOrActions, instruction, manualText) {
     const ids = state.selected.slice();
     if (!ids.length) return;
+    // '직접 수정'은 항상 단일 'manual', '옵션으로 수정'은 여러 개를 동시에 고를 수 있어 배열로 받는다
+    // (Paul 피드백: "다중 선택 가능하도록").
+    const actions = Array.isArray(actionOrActions) ? actionOrActions : [actionOrActions];
     const panel = document.getElementById('story-edit-panel');
     const proseEl = document.querySelector('#synthesis .prose');
     const factPct = Number(proseEl && proseEl.dataset.factPct) || 100;
@@ -1642,14 +1733,15 @@
       if (manualText != null) text[LANG] = manualText; // '직접 수정'이면 지금 보고 있는 언어만 사용자가 새로 쓴 값으로 교체
       const r = await fetch('/api/synthesize-combo', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode: 'story-edit', action, instruction: instruction || '', selectedText: '', currentLang: LANG, text }),
+        body: JSON.stringify({ mode: 'story-edit', actions, instruction: instruction || '', currentLang: LANG, text }),
       });
       const d = await r.json();
       if (!d.edited) throw new Error('no-edit');
       if (JSON.stringify(state.selected) !== JSON.stringify(ids)) return;
 
-      const mul = STORY_EDIT_FACT_MUL[action] != null ? STORY_EDIT_FACT_MUL[action] : 1;
-      const newFactPct = Math.max(15, Math.round(factPct * mul));
+      // 여러 옵션을 동시에 골랐으면 사실기반 % 배율을 곱해서 누적 반영(각 옵션이 더한 상상력만큼 낮아짐).
+      const combinedMul = actions.reduce((p, a) => p * (STORY_EDIT_FACT_MUL[a] != null ? STORY_EDIT_FACT_MUL[a] : 1), 1);
+      const newFactPct = Math.max(15, Math.round(factPct * combinedMul));
       state.storyOverride = {
         ids, factPct: newFactPct, level: 'edited',
         text: {
@@ -2772,30 +2864,50 @@
     labelEl.className = 'cm-set-label';
     labelEl.textContent = label;
     labelRow.appendChild(labelEl);
-    // 이미지 카드에만 "이 그림 수정" 메뉴 — 같은 스토리·화풍·주인공 표현을 유지한 채 고른 지시를
-    // 더해 다시 그린다(Paul 요청, 2026-07-20).
+    // 이미지 카드에만 "이 그림 수정" 메뉴 — 같은 스토리·화풍·주인공 표현을 유지한 채 고른 지시(여러 개
+    // 동시 선택 가능, Paul 피드백: "다중 선택 가능하도록")를 더해 다시 그린다. 결과는 기존 그림을
+    // 덮어쓰지 않고 새 세트로 추가해서 이전 그림도 그대로 남는다(Paul 피드백: "이전 그림도 남아 있도록").
+    let editPanel = null;
     if (set.kind === 'ai-image') {
-      const editWrap = document.createElement('div');
-      editWrap.style.cssText = 'display:flex;align-items:center;gap:6px;';
-      const editSelect = document.createElement('select');
-      editSelect.className = 'cm-set-edit-select';
+      const editToggleBtn = document.createElement('button');
+      editToggleBtn.type = 'button'; editToggleBtn.className = 'cm-set-edit-btn'; editToggleBtn.textContent = UI[LANG].cardImageEditBtn;
+      labelRow.appendChild(editToggleBtn);
+
+      editPanel = document.createElement('div');
+      editPanel.className = 'story-edit-panel';
+      editPanel.style.display = 'none';
+      editPanel.style.margin = '14px 0 0';
+      let eh = '<div class="se-cats">';
       IMAGE_EDIT_OPTIONS.forEach(cat => {
-        const group = document.createElement('optgroup');
-        group.label = cat.label[LANG] || cat.label.ko;
-        cat.options.forEach(o => {
-          const opt = document.createElement('option');
-          opt.value = o.id;
-          opt.textContent = o.label[LANG] || o.label.ko;
-          group.appendChild(opt);
-        });
-        editSelect.appendChild(group);
+        eh += '<div class="se-cat"><div class="se-cat-title">' + escapeHtml(cat.label[LANG] || cat.label.ko) + '</div>' +
+          '<div class="se-cat-opts">' +
+          cat.options.map(o => '<button type="button" class="se-opt" data-img-opt="' + o.id + '">' + (o.label[LANG] || o.label.ko) + '</button>').join('') +
+          '</div></div>';
       });
-      editWrap.appendChild(editSelect);
-      const editBtn = document.createElement('button');
-      editBtn.type = 'button'; editBtn.className = 'cm-set-edit-btn'; editBtn.textContent = UI[LANG].cardImageEditBtn;
-      editBtn.addEventListener('click', () => regenerateImageWithEdit(set.setId, editSelect.value, editBtn));
-      editWrap.appendChild(editBtn);
-      labelRow.appendChild(editWrap);
+      eh += '</div><div class="se-panel-btns">' +
+        '<button type="button" class="se-btn-cancel" data-img-edit-close>' + UI[LANG].storyEditCancel + '</button>' +
+        '<button type="button" class="se-btn-submit" data-img-edit-submit disabled>' + UI[LANG].cardImageEditSubmit + '</button>' +
+        '</div>';
+      editPanel.innerHTML = eh;
+
+      editToggleBtn.addEventListener('click', () => {
+        editPanel.style.display = editPanel.style.display === 'none' ? 'block' : 'none';
+      });
+      editPanel.addEventListener('click', e => {
+        if (e.target.closest('[data-img-edit-close]')) { editPanel.style.display = 'none'; return; }
+        const optBtn = e.target.closest('[data-img-opt]');
+        if (optBtn) {
+          optBtn.classList.toggle('selected');
+          const submitBtn = editPanel.querySelector('[data-img-edit-submit]');
+          if (submitBtn) submitBtn.disabled = !editPanel.querySelector('.se-opt.selected');
+          return;
+        }
+        if (e.target.closest('[data-img-edit-submit]')) {
+          const editIds = Array.from(editPanel.querySelectorAll('.se-opt.selected')).map(b => b.dataset.imgOpt);
+          if (!editIds.length) return;
+          regenerateImageWithEdit(set, editIds, editPanel.querySelector('[data-img-edit-submit]'));
+        }
+      });
     }
     setEl.appendChild(labelRow);
     const row = document.createElement('div');
@@ -2833,6 +2945,7 @@
       row.appendChild(wrap);
     });
     setEl.appendChild(row);
+    if (editPanel) setEl.appendChild(editPanel);
     return setEl;
   }
 
@@ -2958,11 +3071,30 @@
     showToast(okCount ? UI[LANG].cardSavedServer(okCount) : UI[LANG].cardSaveServerFailed);
   }
 
-  function downloadSelectedCards() {
+  // 여러 장을 각자 개별 다운로드로 트리거하면(예전 방식: setTimeout으로 살짝 간격을 둠) iOS Safari
+  // 등 일부 브라우저는 클릭 이벤트 핸들러 밖에서(지연 후) 실행되는 두 번째 다운로드부터 "사용자
+  // 동작으로 직접 트리거되지 않았다"며 조용히 막아버린다 — Paul 피드백: "사진 여러장 선택 후 다운로드
+  // ... 버그". 2장 이상이면 zip 하나로 묶어서 다운로드를 한 번만 트리거하게 바꿨다.
+  async function downloadSelectedCards() {
     const items = selectedCardItems();
     if (!items.length) return;
-    // 여러 개를 한꺼번에 트리거하면 브라우저가 일부를 막을 수 있어 살짝 간격을 둔다.
-    items.forEach((it, i) => setTimeout(() => downloadCanvas(it.canvas, it.lang, it.slug), i * 260));
+    if (items.length === 1) { downloadCanvas(items[0].canvas, items[0].lang, items[0].slug); return; }
+    try {
+      const zip = new JSZip();
+      await Promise.all(items.map(async it => {
+        const blob = await canvasToBlob(it.canvas);
+        if (blob) zip.file('fragments-of-thought-' + it.slug + '-' + it.lang + '.png', blob);
+      }));
+      const zipBlob = await zip.generateAsync({ type: 'blob' });
+      const url = URL.createObjectURL(zipBlob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'fragments-of-thought-cards-' + Date.now() + '.zip';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
+    } catch (e) {
+      // JSZip 로드 실패 등 예외 상황이면 예전 방식(개별 다운로드)으로 폴백.
+      items.forEach((it, i) => setTimeout(() => downloadCanvas(it.canvas, it.lang, it.slug), i * 260));
+    }
   }
 
   // 체크된 카드 전부를 하나의 공유 시트로 — 예전엔 카드마다 있는 개별 공유 버튼만 있어서
@@ -3087,12 +3219,11 @@
   }
 
   // 이미 만든 이미지 카드를 손보는 메뉴(2026-07-20, Paul 요청) — 같은 스토리·팔레트·화풍·주인공 표현을
-  // 그대로 두고 고른 지시만 더해서 다시 그린다. 완전히 같은 픽셀을 고치는 게 아니라 재생성이라, 구도가
-  // 100% 그대로 유지되진 않을 수 있음 — 새로 생성된 그림으로 해당 세트를 통째로 교체한다.
-  async function regenerateImageWithEdit(setId, editId, btn) {
+  // 그대로 두고 고른 지시(여러 개 동시 선택 가능)만 더해서 다시 그린다. 완전히 같은 픽셀을 고치는 게
+  // 아니라 재생성이라 구도가 100% 그대로 유지되진 않을 수 있음 — 그래서 기존 세트를 덮어쓰지 않고
+  // 새 세트로 추가한다(Paul 피드백: "그림을 수정해도 이전 그림도 남아 있도록").
+  async function regenerateImageWithEdit(baseSet, editIds, btn) {
     if (!currentCardState) return;
-    const set = currentCardState.cardSets.find(s => s.setId === setId);
-    if (!set || set.kind !== 'ai-image') return;
     const originalLabel = btn.textContent;
     btn.disabled = true;
 
@@ -3101,7 +3232,7 @@
     tickProgress();
     const progressTimer = setInterval(tickProgress, 1000);
 
-    const palette = CARD_PALETTES.find(p => p.id === set.style.paletteId) || CARD_PALETTES.find(p => p.id === DEFAULT_CARD_PALETTE);
+    const palette = CARD_PALETTES.find(p => p.id === baseSet.style.paletteId) || CARD_PALETTES.find(p => p.id === DEFAULT_CARD_PALETTE);
     const moodText = palette.name + ' (배경 ' + palette.bg + ', 포인트 색 ' + palette.accent + ')';
     const storyText = (currentCardState.content[LANG] || currentCardState.content.ko).story;
 
@@ -3110,8 +3241,8 @@
       const r = await fetch('/api/generate-image', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          story: storyText, mood: moodText, styleId: set.style.styleId,
-          protagonistId: set.style.protagonistId || 'auto', editId,
+          story: storyText, mood: moodText, styleId: baseSet.style.styleId,
+          protagonistId: baseSet.style.protagonistId || 'auto', editIds,
         }),
       });
       const d = await r.json();
@@ -3130,11 +3261,10 @@
       return;
     }
 
-    const newStyle = Object.assign({}, set.style, { aiImage: img });
+    const newStyle = Object.assign({}, baseSet.style, { aiImage: img });
     const canvases = await buildCardCanvases(currentCardState.ids, currentCardState.content, newStyle, currentCardState.factPct);
     if (!currentCardState) return;
-    set.style = newStyle;
-    set.canvases = canvases;
+    currentCardState.cardSets.push({ setId: 'img-' + Date.now() + '-' + Math.floor(Math.random() * 1000), style: newStyle, canvases, kind: 'ai-image' });
     renderCardGallery();
   }
 

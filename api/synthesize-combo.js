@@ -97,14 +97,18 @@ const EDIT_TOOL = {
 };
 
 async function runStoryEdit(body, res, key) {
-  const { action, instruction, currentLang, text } = body || {};
-  const isManual = action === 'manual';
-  const guide = isManual ? null : EDIT_ACTION_GUIDE[action];
+  const { actions, instruction, currentLang, text } = body || {};
+  const actionList = Array.isArray(actions) ? actions.filter(Boolean) : [];
+  const isManual = actionList.length === 1 && actionList[0] === 'manual';
+  // 여러 옵션을 동시에 골랐으면(Paul 피드백: "다중 선택 가능하도록") 각 지시를 번호 매겨 나열해서 한
+  // 번의 다시쓰기에 전부 반영하게 한다.
+  const guides = isManual ? [] : actionList.map(a => EDIT_ACTION_GUIDE[a]).filter(Boolean);
   const cl = LANG_NAME[currentLang] ? currentLang : 'ko';
-  if ((!isManual && !guide) || !text || !text.ko || !text.en || !text.zh) return res.status(200).json({ edited: null });
+  if ((!isManual && !guides.length) || !text || !text.ko || !text.en || !text.zh) return res.status(200).json({ edited: null });
 
   // '직접 수정' — 사용자가 currentLang 버전 전체를 자기 손으로 새로 썼다. 그 언어는 한 글자도 건드리지
   // 말고, 나머지 두 언어를 이 새 내용에 맞춰 전체 다시 쓰게 한다(직역이 아니라 각 언어의 좋은 글로).
+  const guideText = guides.length > 1 ? guides.map((g, i) => `요청 ${i + 1}: ${g}`).join('\n') : `요청: ${guides[0]}`;
   const userMsg = isManual
     ? `[한국어]\n${text.ko}\n\n[English]\n${text.en}\n\n[中文]\n${text.zh}\n\n` +
       `사용자가 ${LANG_NAME[cl]} 버전 전체를 자기 손으로 직접 새로 썼습니다. 이 언어 버전은 사용자가 ` +
@@ -112,7 +116,7 @@ async function runStoryEdit(body, res, key) {
       `맞춰 전체를 자연스럽게 다시 쓰세요(직역이 아니라 그 언어의 좋은 글로).` +
       `\n\n세 언어 버전 모두 전체 문단을 반환해주세요.`
     : `[한국어]\n${text.ko}\n\n[English]\n${text.en}\n\n[中文]\n${text.zh}\n\n` +
-      `요청: ${guide}` +
+      guideText +
       (instruction && String(instruction).trim() ? `\n추가 지시사항: ${String(instruction).trim().slice(0, 400)}` : '') +
       `\n\n세 언어 버전 모두 전체 문단을 다시 반환해주세요.`;
 

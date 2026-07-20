@@ -263,12 +263,14 @@ module.exports = async (req, res) => {
   const replicateToken = process.env.REPLICATE_API_TOKEN;
   if (!anthropicKey || !replicateToken) return res.status(200).json({ imageUrl: null, reason: 'not-configured' });
 
-  const { story, mood, debug, styleId, protagonistId, editId } = body || {};
+  const { story, mood, debug, styleId, protagonistId, editIds } = body || {};
   if (!story || !String(story).trim()) return res.status(200).json({ imageUrl: null });
 
   const preset = STYLE_PRESETS.find(s => s.id === styleId) || STYLE_PRESETS.find(s => s.id === DEFAULT_STYLE_ID);
   const protagonistPreset = PROTAGONIST_PRESETS.find(p => p.id === protagonistId) || PROTAGONIST_PRESETS[0]; // 없으면 'auto'
-  const editDirective = IMAGE_EDIT_GUIDE[editId] || '';
+  // 여러 수정 옵션을 동시에 고를 수 있다(Paul 피드백: "다중 선택 가능하도록") — 각 지시를 이어붙인다.
+  const editDirective = (Array.isArray(editIds) ? editIds : [])
+    .map(id => IMAGE_EDIT_GUIDE[id]).filter(Boolean).join('; ');
 
   try {
     const promptResult = await writeImagePrompt(
