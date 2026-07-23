@@ -1,0 +1,177 @@
+:root {
+  --bg: #050419;
+  --bg-soft: #0f0d2a;
+  --ink: #e8e5dd;
+  --muted: #a8a4b8;
+  --faint: #6b6780;
+  --accent: #d4a24e;
+  --accent-dim: rgba(212, 162, 78, 0.45);
+  --line: rgba(232, 229, 221, 0.1);
+  --font-display: "Archivo Black", "Pretendard", -apple-system, sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 5vw;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+.site-header .logo {
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lang-toggle {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font: inherit;
+  font-size: 11px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.hero-block {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4vh 5vw 6vh;
+}
+
+.hero-block .eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.hero-block h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 52px);
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+
+.hero-block .lead {
+  color: var(--muted);
+  max-width: 560px;
+  font-size: clamp(15px, 1.5vw, 17px);
+}
+
+.doors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 5vw 8vh;
+}
+
+.door {
+  display: block;
+  padding: 22px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-soft);
+  transition: border-color 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.door:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.door .label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.door h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.door p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.site-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 5vw 48px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--faint);
+}
+
+.site-footer p + p {
+  margin-top: 8px;
+}
+
+.badge-soon {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  margin-left: 8px;
+  vertical-align: middle;
+}

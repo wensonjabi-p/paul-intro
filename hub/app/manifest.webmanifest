@@ -1,0 +1,18 @@
+{
+  "name": "TOPIK Coach",
+  "short_name": "TOPIK",
+  "description": "TOPIK I reading mock, streaks, and weak-spot SRS (staging MVP).",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050419",
+  "theme_color": "#050419",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
