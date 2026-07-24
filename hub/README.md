@@ -22,6 +22,8 @@ python3 -m http.server 8080
 ## Structure
 
 - `config/brand.json` — rename product/domain here later
+- `config/ops-links.json` — PM map URLs (sync with Notion); open **`/ops/`** for click-through dashboard
+- `../docs/ops-paul-workflow.md` — Notion DB schema for goals & schedule
 - `index.html` — Learn / Read / Teach / Shop
 - `app/` — TOPIK I MVP (mock + SRS tags + streak)
 - `blog/`, `teach/`, `shop/` — placeholders

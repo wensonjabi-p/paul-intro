@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>PM Map — TOPIK Coach (Paul)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/hub.css">
+  <link rel="stylesheet" href="./css/ops.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo">← Hub</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+    </div>
+  </header>
+
+  <div class="ops-wrap">
+    <section class="ops-intro hero-block" style="padding-top:0">
+      <p class="eyebrow">Paul only · noindex</p>
+      <h1 data-i18n="opsTitle">PM map &amp; links</h1>
+      <p class="lead" data-i18n="opsLead">Goals, progress, and one-click jumps to Notion, Google, Canva, GitHub, and deploy. Sync URLs in <code>hub/config/ops-links.json</code> with your Notion Map rows.</p>
+    </section>
+
+    <p class="ops-section-title" data-i18n="opsGlobal">Workspace shortcuts</p>
+    <nav class="ops-global" id="global-links" aria-label="Global links"></nav>
+
+    <p class="ops-section-title" data-i18n="opsMilestones">Milestones (schedule)</p>
+    <div id="milestones"></div>
+
+    <p class="ops-section-title" data-i18n="opsItems">Work items (progress)</p>
+    <div id="items"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p><a href="https://github.com/wensonjabi-p/paul-intro/blob/main/docs/ops-paul-workflow.md">Setup guide (Notion DB schema)</a></p>
+  </footer>
+
+  <script>
+    window.HubI18nExtra = {
+      en: {
+        opsTitle: "PM map & links",
+        opsLead: "Goals, progress, and one-click jumps to Notion, Google, Canva, GitHub, and deploy. Sync URLs in hub/config/ops-links.json with your Notion Map rows.",
+        opsGlobal: "Workspace shortcuts",
+        opsMilestones: "Milestones (schedule)",
+        opsItems: "Work items (progress)",
+      },
+      ko: {
+        opsTitle: "PM 맵 & 링크",
+        opsLead: "목표·진행률·Notion·Google·Canva·GitHub·배포로 바로 이동. Notion Map 행과 hub/config/ops-links.json URL을 맞춰 두세요.",
+        opsGlobal: "워크스페이스 바로가기",
+        opsMilestones: "마일스톤 (일정·목표)",
+        opsItems: "작업 항목 (진행)",
+      },
+    };
+  </script>
+  <script src="../js/i18n.js"></script>
+  <script src="./js/ops.js"></script>
+</body>
+</html>

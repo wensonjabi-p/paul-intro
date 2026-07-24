@@ -431,4 +431,26 @@ At 100 subscribers: **~$35/mo more** on Lemon Squeezy.
 
 ---
 
-*Next file to create when starting Phase 0: `hub/index.html` + `hub/config/brand.json`*
+## 11. PM Hub — Notion + click-through links (2026-07-24)
+
+**Paul workflow:** capture thoughts → structure in Notion → **Paul OK** → execute (GitHub/Docs/Canva) → reflect progress on Map rows.
+
+| Layer | Tool | Role |
+|-------|------|------|
+| Daily map | **Notion** (Map, Milestones, Inbox, Decisions) | Goals, schedule, status, URL fields for every app |
+| Click mirror | **`hub/ops/`** + **`hub/config/ops-links.json`** | Same links/progress when Notion is slow (VPN) |
+| Spec backup | **`docs/ops-paul-workflow.md`** | DB schema, weekly loop, Sheet columns |
+| Code truth | GitHub PRs | Linked from each Map row |
+
+**Setup:** duplicate Notion board → add URL properties per `docs/ops-paul-workflow.md` §2 → paste Notion/Sheet/Canva URLs into `ops-links.json` top-level `notion.*` and each `items[].links.*` → open `/ops/` on Vercel preview.
+
+**Phase 1 Pro checklist (after Paul OK on `phase-1-pro-lemon`):**
+- [ ] Lemon Squeezy product (test mode): $6.99/mo + $49/yr
+- [ ] Checkout URL in `brand.json` → `pricing.checkoutUrl`
+- [ ] Webhook endpoint (Vercel serverless or n8n) → store email/license
+- [ ] App reads Pro flag (license input v0 → account later)
+- [ ] One real test purchase + refund policy checked
+
+---
+
+*Phase 0 files: `hub/index.html`, `hub/config/brand.json`, `hub/config/ops-links.json`, `hub/ops/`*

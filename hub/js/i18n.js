@@ -63,9 +63,15 @@
     });
   }
 
+  function stringsFor(lang) {
+    const extra = window.HubI18nExtra || {};
+    return { ...STR.en, ...STR[lang], ...(extra.en || {}), ...(lang === "ko" ? extra.ko || {} : {}) };
+  }
+
   function t(key) {
     const lang = getLang();
-    return (STR[lang] && STR[lang][key]) || STR.en[key] || key;
+    const s = stringsFor(lang);
+    return s[key] || STR.en[key] || key;
   }
 
   function apply() {

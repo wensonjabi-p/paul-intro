@@ -9,6 +9,10 @@ const ASSETS = [
   "./icons/icon.svg",
   "../css/hub.css",
   "../js/i18n.js",
+  "../config/ops-links.json",
+  "../ops/index.html",
+  "../ops/css/ops.css",
+  "../ops/js/ops.js",
 ];
 
 self.addEventListener("install", (e) => {
