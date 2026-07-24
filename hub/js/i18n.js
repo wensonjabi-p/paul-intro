@@ -5,7 +5,7 @@
 
   const STR = {
     en: {
-      logo: "TOPIK Coach",
+      logo: "jabi.",
       eyebrow: "Staging hub · product name TBD",
       heroTitle: "Learn Korean for the real test.",
       heroLead:
@@ -25,19 +25,19 @@
       aboutPaul: "About Paul (identity) →",
       privacy: "Privacy",
       stagingNote: "This site is not linked from wensonjabi.com yet.",
-      // Onboarding
+      // Onboarding (jabi.)
       onboardingEyebrow: "How do you learn best?",
       onboardingTitle: "Pick your path",
       onboardingLead: "You can change this anytime in settings.",
-      modeExamTitle: "Exam Mode",
-      modeExamSub: "Test coming up. Focus me.",
-      modeJourneyTitle: "Journey Mode",
-      modeJourneySub: "Here for the long run. Keep it fun.",
-      modeBalancedTitle: "Balanced",
-      modeBalancedSub: "A bit of both.",
+      modeCatchTitle: "Catch Mode",
+      modeCatchSub: "Grab TOPIK tight. Weak spots first.",
+      modeMercyTitle: "Mercy Mode",
+      modeMercySub: "No rush. jabi. waits for you.",
+      modeGuideTitle: "Guide Mode",
+      modeGuideSub: "Balanced path. jabi. leads.",
     },
     ko: {
-      logo: "TOPIK Coach",
+      logo: "jabi.",
       eyebrow: "스테이징 허브 · 상품명 미정",
       heroTitle: "실전 TOPIK을 위한 한국어 학습.",
       heroLead:
@@ -57,16 +57,16 @@
       aboutPaul: "Paul 소개 (정체성) →",
       privacy: "개인정보",
       stagingNote: "아직 wensonjabi.com과 연결되지 않았습니다.",
-      // Onboarding
+      // Onboarding (jabi.)
       onboardingEyebrow: "어떻게 공부하는 게 가장 잘 맞나요?",
       onboardingTitle: "나의 학습 방식 선택",
       onboardingLead: "언제든지 설정에서 바꿀 수 있어요.",
-      modeExamTitle: "시험 모드",
-      modeExamSub: "시험이 다가와요. 집중적으로.",
-      modeJourneyTitle: "여정 모드",
-      modeJourneySub: "오래 함께하고 싶어요. 재미있게.",
-      modeBalancedTitle: "균형 모드",
-      modeBalancedSub: "둘 다 원해요.",
+      modeCatchTitle: "Catch 모드",
+      modeCatchSub: "TOPIK을 확실히 잡습니다. 약점부터.",
+      modeMercyTitle: "Mercy 모드",
+      modeMercySub: "서두르지 마세요. jabi.는 기다립니다.",
+      modeGuideTitle: "Guide 모드",
+      modeGuideSub: "균형 잡힌 길. jabi.가 인도합니다.",
     },
   };
 

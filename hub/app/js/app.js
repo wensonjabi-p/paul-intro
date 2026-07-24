@@ -76,38 +76,38 @@ function setMode(mode) {
   localStorage.setItem(MODE_KEY, mode);
 }
 
-// Mode-specific UI strings (light branch: same features, different skin)
+// Mode-specific UI strings (jabi. light branch)
 const MODE_UI = {
   en: {
-    exam: {
-      greeting: "Focus mode on. Let's drill your weak spots.",
+    catch: {
+      greeting: "Let's catch this TOPIK. Drill time.",
       ctaPrimary: "Start Mock Exam",
       ctaSecondary: "Review Weak Spots",
     },
-    journey: {
-      greeting: "Day {streak} of your Korean journey. Keep shining!",
+    mercy: {
+      greeting: "Day {streak}. jabi. never rushes you.",
       ctaPrimary: "Continue Streak",
       ctaSecondary: "Explore Weak Spots",
     },
-    balanced: {
-      greeting: "Ready to level up? Balance drills and discovery.",
+    guide: {
+      greeting: "Your guide knows the way. Forward.",
       ctaPrimary: "Today's Quest",
       ctaSecondary: "Review Focus Areas",
     },
   },
   ko: {
-    exam: {
-      greeting: "집중 모드 ON. 약점을 파고들어봐요.",
+    catch: {
+      greeting: "TOPIK을 잡아봅시다. 드릴 시작.",
       ctaPrimary: "모의고사 시작",
       ctaSecondary: "약점 복습",
     },
-    journey: {
-      greeting: "한국어 여정 {streak}일차. 계속 빛나세요!",
+    mercy: {
+      greeting: "{streak}일째. jabi.는 당신을 서두르지 않습니다.",
       ctaPrimary: "스트릭 이어가기",
       ctaSecondary: "약점 탐색",
     },
-    balanced: {
-      greeting: "레벨업 준비됐나요? 연습과 탐구의 균형.",
+    guide: {
+      greeting: "길잡이가 길을 압니다. 앞으로.",
       ctaPrimary: "오늘의 퀘스트",
       ctaSecondary: "집중 영역 복습",
     },
@@ -116,13 +116,13 @@ const MODE_UI = {
 
 const UI = {
   en: {
-    back: "← Hub",
+    back: "← jabi.",
     streak: "Streak",
     xp: "XP",
     level: "Level",
     srsDue: "Weak spots",
-    startMock: "Start reading mock",
-    reviewSrs: "Review weak tags",
+    startMock: "Start mock",
+    reviewSrs: "Review weak spots",
     noSrs: "No weak spots yet — take a mock.",
     finished: "Mock complete",
     score: "Score",
@@ -134,12 +134,12 @@ const UI = {
     changeMode: "Change mode",
   },
   ko: {
-    back: "← 허브",
+    back: "← jabi.",
     streak: "스트릭",
     xp: "XP",
     level: "레벨",
     srsDue: "약점",
-    startMock: "읽기 모의 시작",
+    startMock: "모의 시작",
     reviewSrs: "약점 태그 보기",
     noSrs: "아직 약점 없음 — 모의고사를 풀어보세요.",
     finished: "모의 완료",
@@ -199,7 +199,7 @@ function renderHome() {
   const mode = getMode();
   const greetingEl = document.getElementById("home-greeting");
   if (greetingEl) {
-    const raw = modeString(mode, "greeting") || modeString("balanced", "greeting");
+    const raw = modeString(mode, "greeting") || modeString("guide", "greeting");
     greetingEl.textContent = interpolate(raw, { streak: state.streak });
   }
 
