@@ -1,0 +1,32 @@
+---
+description: After Notion/Canva MCP is connected, auto-sync PM state and respect Paul OK gate
+globs:
+  - hub/**
+  - docs/**
+alwaysApply: true
+---
+
+# Paul ecosystem — MCP integrations
+
+## Auth status
+
+Check `hub/config/integrations.json`. If `mcp.notion.status` or `mcp.canva.status` is `needs_auth`, first direct Paul to `docs/cursor-integrations-ko.md` (Paul must OAuth in Cursor Desktop and/or Cloud Agents MCP menu). Cloud Agent cannot complete OAuth inside the VM.
+
+## When Notion MCP is available
+
+1. Parent page: URL in `integrations.json` → `paulNotionPage`.
+2. Keep `hub/config/ops-links.json` in sync with Notion Map row URLs (bidirectional).
+3. After meaningful code changes: update Notion item Status/Progress and GitHub link.
+4. Do **not** implement features marked `paulOk: false` in `ops-links.json` unless Paul explicitly approves in chat or Notion.
+
+## When Canva MCP is available
+
+Use `hub/config/brand.json` theme tokens. Prefer read/update existing Paul designs; no public marketing exports without review.
+
+## Google (Docs/Sheet)
+
+There is **no official Google MCP** in Cursor plugins. Primary queue: **Notion database**. If Paul adds `google.contentQueueSheet` to `ops-links.json`, treat Sheet as read-only reference unless a future API/webhook is added.
+
+## Single source for “what to do next”
+
+Paul review content: `docs/paul-review-ko.md`, `hub/ops/review.html`. Phase spec: `docs/wensonjabi-ecosystem-master-plan.md`.

@@ -1,0 +1,39 @@
+{
+  "updated": "2026-07-24",
+  "paulNotionPage": "https://app.notion.com/p/3a56d7c83f4481229fdde56471410908",
+  "mcp": {
+    "notion": {
+      "status": "needs_auth",
+      "url": "https://mcp.notion.com/mcp",
+      "plugin": "notion-workspace",
+      "requiredFor": ["pm_map", "inbox", "decisions", "content_queue_optional"]
+    },
+    "canva": {
+      "status": "needs_auth",
+      "url": "https://mcp.canva.com/mcp",
+      "plugin": "canva",
+      "requiredFor": ["brand_kit", "thumbnails", "social"]
+    },
+    "google": {
+      "status": "no_official_mcp",
+      "workaround": "notion_primary_or_ops_links",
+      "requiredFor": ["content_sheet", "longform_docs"]
+    }
+  },
+  "whenAuthenticated": {
+    "notion": [
+      "Create or update page under paulNotionPage: 한국어 생태계 — Paul PM",
+      "Create Ecosystem Map database with URLs synced to hub/config/ops-links.json",
+      "On task complete: update Status, Progress, link GitHub PR",
+      "Respect paulOk: no code for items until Paul OK in Notion or user says OK"
+    ],
+    "canva": [
+      "Read brand folder; align colors with hub/config/brand.json theme",
+      "Do not publish designs without Paul review"
+    ],
+    "google": [
+      "If contentQueueSheet URL in ops-links.json: Paul pastes updates; agent documents in Notion",
+      "Future: optional community Google MCP or Apps Script webhook"
+    ]
+  }
+}
