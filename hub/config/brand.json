@@ -4,8 +4,48 @@
     "ko": "TOPIK Coach"
   },
   "tagline": {
-    "en": "AI-first TOPIK I prep — weak spots only, optional live coaches.",
-    "ko": "AI 중심 TOPIK I 준비 — 약점만 반복, 강사 옵션은 선택."
+    "en": "The shortest path to TOPIK. AI finds your weak spots — you repeat only those.",
+    "ko": "TOPIK까지 가장 짧은 길. AI가 약점을 찾아내고, 당신은 그것만 반복합니다."
+  },
+  "positioning": {
+    "primary": "smart-prep",
+    "description": "AI-first TOPIK prep focused on weak-spot repetition. Not 'fun' first — 'fast and effective' first, with optional gamification to sustain motivation.",
+    "onboarding": {
+      "enabled": true,
+      "type": "light-branch",
+      "modes": [
+        {
+          "id": "exam",
+          "icon": "⏱️",
+          "title": { "en": "Exam Mode", "ko": "시험 모드" },
+          "subtitle": { "en": "Test coming up. Focus me.", "ko": "시험이 다가와요. 집중적으로." },
+          "description": { "en": "Mock exams first, tight SRS intervals, aggressive reminders.", "ko": "모의고사 우선, 짧은 SRS 간격, 적극적 리마인드." },
+          "homeGreeting": { "en": "D-{days} until your TOPIK. Let's drill.", "ko": "TOPIK D-{days}. 바로 시작해봐요." },
+          "ctaPrimary": { "en": "Start Mock Exam", "ko": "모의고사 시작" },
+          "ctaSecondary": { "en": "Review Weak Spots", "ko": "약점 복습" }
+        },
+        {
+          "id": "journey",
+          "icon": "🌟",
+          "title": { "en": "Journey Mode", "ko": "여정 모드" },
+          "subtitle": { "en": "Here for the long run. Keep it fun.", "ko": "오래 함께하고 싶어요. 재미있게." },
+          "description": { "en": "Streaks and XP first, relaxed SRS, gentle nudges.", "ko": "스트릭·XP 우선, 여유로운 SRS, 부드러운 독려." },
+          "homeGreeting": { "en": "Day {streak} of your Korean journey. Keep shining.", "ko": "한국어 여정 {streak}일차. 계속 빛나세요." },
+          "ctaPrimary": { "en": "Continue Streak", "ko": "스트릭 이어가기" },
+          "ctaSecondary": { "en": "Explore Weak Spots", "ko": "약점 탐색" }
+        },
+        {
+          "id": "balanced",
+          "icon": "⚖️",
+          "title": { "en": "Balanced", "ko": "균형 모드" },
+          "subtitle": { "en": "A bit of both.", "ko": "둘 다 원해요." },
+          "description": { "en": "Equal mix of mocks, streaks, and weak-spot review.", "ko": "모의고사·스트릭·약점 복습을 균형 있게." },
+          "homeGreeting": { "en": "Ready to level up? We'll balance drills and discovery.", "ko": "레벨업 준비됐나요? 연습과 탐구의 균형을 맞춰드릴게요." },
+          "ctaPrimary": { "en": "Today's Quest", "ko": "오늘의 퀘스트" },
+          "ctaSecondary": { "en": "Review Focus Areas", "ko": "집중 영역 복습" }
+        }
+      ]
+    }
   },
   "codename": "topik-coach",
   "domain": {
