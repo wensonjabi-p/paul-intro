@@ -1,4 +1,6 @@
 const LS_KEY = "topik-coach-v1";
+const MOCK_FILES = ["./data/mock-read-01.json", "./data/mock-read-02.json"];
+const SRS_PRACTICE_SIZE = 8;
 
 function defaultState() {
   return {
@@ -24,8 +26,12 @@ function saveState(state) {
   localStorage.setItem(LS_KEY, JSON.stringify(state));
 }
 
+function dateKey(d) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
 function todayKey() {
-  return new Date().toISOString().slice(0, 10);
+  return dateKey(new Date());
 }
 
 function bumpStreak(state) {
@@ -33,7 +39,7 @@ function bumpStreak(state) {
   if (state.lastStudyDate === today) return state;
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
-  const yKey = yesterday.toISOString().slice(0, 10);
+  const yKey = dateKey(yesterday);
   if (state.lastStudyDate === yKey) state.streak += 1;
   else state.streak = 1;
   state.lastStudyDate = today;
@@ -74,7 +80,7 @@ const UI = {
     xp: "XP",
     level: "Level",
     srsDue: "Weak spots",
-    startMock: "Start reading mock",
+    startMock: "Reading mocks",
     reviewSrs: "Review weak tags",
     noSrs: "No weak spots yet — take a mock.",
     finished: "Mock complete",
@@ -83,6 +89,7 @@ const UI = {
     next: "Next",
     finish: "See results",
     srsTitle: "Your weak-spot tags (SRS v0)",
+    practiceSrs: "Practice weak spots now",
     days: "days",
   },
   ko: {
@@ -91,7 +98,7 @@ const UI = {
     xp: "XP",
     level: "레벨",
     srsDue: "약점",
-    startMock: "읽기 모의 시작",
+    startMock: "읽기 모의고사",
     reviewSrs: "약점 태그 보기",
     noSrs: "아직 약점 없음 — 모의고사를 풀어보세요.",
     finished: "모의 완료",
@@ -100,6 +107,7 @@ const UI = {
     next: "다음",
     finish: "결과 보기",
     srsTitle: "약점 태그 (SRS v0)",
+    practiceSrs: "약점 바로 연습하기",
     days: "일",
   },
 };
@@ -110,14 +118,49 @@ function ui(key) {
 }
 
 let state = loadState();
-let mock = null;
+let mocks = [];
+let activeQuestions = [];
+let activeMockId = "";
 let qi = 0;
 let wrongTags = [];
 let wrongCount = 0;
 
-async function loadMock() {
-  const res = await fetch("./data/mock-read-01.json");
-  mock = await res.json();
+async function loadMocks() {
+  const results = await Promise.all(
+    MOCK_FILES.map((url) =>
+      fetch(url)
+        .then((r) => (r.ok ? r.json() : null))
+        .catch(() => null)
+    )
+  );
+  mocks = results.filter(Boolean);
+}
+
+function applyUiStrings() {
+  document.querySelectorAll("[data-ui]").forEach((el) => {
+    const k = el.getAttribute("data-ui");
+    if (k) el.textContent = ui(k);
+  });
+}
+
+function renderMockList() {
+  const box = document.getElementById("mock-list");
+  if (!box) return;
+  const lang = getLang();
+  box.innerHTML = "";
+  mocks.forEach((m, idx) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn";
+    btn.textContent = (m.title && (m.title[lang] || m.title.en)) || m.id;
+    btn.addEventListener("click", () => startMock(idx));
+    box.appendChild(btn);
+  });
+}
+
+function onLangSwitch() {
+  applyUiStrings();
+  renderMockList();
 }
 
 function renderHome() {
@@ -129,19 +172,16 @@ function renderHome() {
   document.getElementById("stat-streak").textContent = state.streak;
   document.getElementById("stat-xp").textContent = state.xp;
   document.getElementById("stat-level").textContent = levelFromXp(state.xp);
-  const tags = Object.keys(state.srs);
-  document.getElementById("stat-srs").textContent = tags.length;
+  document.getElementById("stat-srs").textContent = Object.keys(state.srs).length;
 
-  document.querySelectorAll("[data-ui]").forEach((el) => {
-    const k = el.getAttribute("data-ui");
-    if (k) el.textContent = ui(k);
-  });
+  renderMockList();
+  applyUiStrings();
 }
 
 function renderQuestion() {
-  const q = mock.questions[qi];
+  const q = activeQuestions[qi];
   const lang = getLang();
-  document.getElementById("qnum").textContent = `${qi + 1} / ${mock.questions.length}`;
+  document.getElementById("qnum").textContent = `${qi + 1} / ${activeQuestions.length}`;
   document.getElementById("qtext").textContent = q.prompt[lang] || q.prompt.en;
   const box = document.getElementById("choices");
   box.innerHTML = "";
@@ -156,7 +196,7 @@ function renderQuestion() {
 }
 
 function pick(index, btn) {
-  const q = mock.questions[qi];
+  const q = activeQuestions[qi];
   const correct = index === q.answer;
   document.querySelectorAll(".choice").forEach((b) => {
     b.disabled = true;
@@ -172,19 +212,19 @@ function pick(index, btn) {
   }
   setTimeout(() => {
     qi += 1;
-    if (qi >= mock.questions.length) finishMock();
+    if (qi >= activeQuestions.length) finishMock();
     else renderQuestion();
   }, 700);
 }
 
 function finishMock() {
-  const total = mock.questions.length;
+  const total = activeQuestions.length;
   const uniqueWrong = [...new Set(wrongTags)];
   addSrsTags(state, uniqueWrong);
   bumpStreak(state);
   addXp(state, 20);
   state.attempts.push({
-    mockId: mock.id,
+    mockId: activeMockId,
     at: new Date().toISOString(),
     wrong: uniqueWrong,
   });
@@ -197,14 +237,45 @@ function finishMock() {
   document.getElementById("result-tags").textContent = uniqueWrong.join(", ") || "—";
 }
 
-function startMock() {
+function beginQuiz(questions, mockId) {
+  activeQuestions = questions;
+  activeMockId = mockId;
   qi = 0;
   wrongTags = [];
   wrongCount = 0;
   document.getElementById("view-home").classList.add("hidden");
+  document.getElementById("view-srs").classList.add("hidden");
   document.getElementById("view-result").classList.add("hidden");
   document.getElementById("view-quiz").classList.remove("hidden");
   renderQuestion();
+}
+
+function startMock(idx) {
+  const m = mocks[idx];
+  if (!m || !m.questions || !m.questions.length) return;
+  beginQuiz(m.questions, m.id);
+}
+
+function weakTagQuestions() {
+  const weak = new Set(Object.keys(state.srs));
+  if (!weak.size) return [];
+  const all = mocks.flatMap((m) => m.questions || []);
+  return all.filter((q) => (q.tags || []).some((t) => weak.has(t)));
+}
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startSrsPractice() {
+  const pool = shuffle(weakTagQuestions()).slice(0, SRS_PRACTICE_SIZE);
+  if (!pool.length) return;
+  beginQuiz(pool, "srs-practice");
 }
 
 function showSrs() {
@@ -217,13 +288,15 @@ function showSrs() {
     const li = document.createElement("li");
     li.textContent = ui("noSrs");
     ul.appendChild(li);
-    return;
+  } else {
+    entries.forEach(([tag, meta]) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${tag}</strong> · misses ${meta.count} · review ${meta.nextReview}`;
+      ul.appendChild(li);
+    });
   }
-  entries.forEach(([tag, meta]) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<strong>${tag}</strong> · misses ${meta.count} · review ${meta.nextReview}`;
-    ul.appendChild(li);
-  });
+  const practiceBtn = document.getElementById("btn-practice-srs");
+  if (practiceBtn) practiceBtn.classList.toggle("hidden", weakTagQuestions().length === 0);
 }
 
 function toast(msg) {
@@ -234,12 +307,13 @@ function toast(msg) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await loadMock();
+  await loadMocks();
   renderHome();
-  document.getElementById("btn-start").addEventListener("click", startMock);
   document.getElementById("btn-srs").addEventListener("click", showSrs);
   document.getElementById("btn-home").addEventListener("click", renderHome);
   document.getElementById("btn-home2").addEventListener("click", renderHome);
+  const practiceBtn = document.getElementById("btn-practice-srs");
+  if (practiceBtn) practiceBtn.addEventListener("click", startSrsPractice);
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./sw.js").catch(() => {});
@@ -251,6 +325,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("lang-btn")) {
-    setTimeout(renderHome, 0);
+    setTimeout(onLangSwitch, 0);
   }
 });

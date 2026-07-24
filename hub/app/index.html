@@ -31,7 +31,8 @@
         <div class="stat"><div class="k" data-ui="level">Level</div><div class="v" id="stat-level">1</div></div>
         <div class="stat"><div class="k" data-ui="srsDue">Weak spots</div><div class="v" id="stat-srs">0</div></div>
       </div>
-      <button type="button" class="btn" id="btn-start" data-ui="startMock">Start reading mock</button>
+      <p class="k" data-ui="startMock" style="margin:18px 0 8px">Start reading mock</p>
+      <div id="mock-list" class="mock-list"></div>
       <button type="button" class="btn btn-ghost" id="btn-srs" data-ui="reviewSrs">Review weak tags</button>
     </section>
 
@@ -56,6 +57,7 @@
       <div class="quiz-card">
         <h2 data-ui="srsTitle">Weak-spot tags</h2>
         <ul class="srs-list" id="srs-items"></ul>
+        <button type="button" class="btn hidden" id="btn-practice-srs" data-ui="practiceSrs">Practice weak spots now</button>
         <button type="button" class="btn btn-ghost" id="btn-home2" data-ui="back">← Hub</button>
       </div>
     </section>

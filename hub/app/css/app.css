@@ -50,6 +50,13 @@
   margin-top: 4px;
 }
 
+.mock-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
 .btn {
   display: inline-block;
   font: inherit;

@@ -1,18 +1,17 @@
 const CACHE = "topik-coach-v1";
+// Scope defaults to the directory of this script (./app/), so only same-directory
+// assets are ever served from this cache — paths outside ./app/ are never intercepted.
 const ASSETS = [
   "./",
   "./index.html",
   "./css/app.css",
   "./js/app.js",
   "./data/mock-read-01.json",
+  "./data/mock-read-02.json",
   "./manifest.webmanifest",
   "./icons/icon.svg",
   "../css/hub.css",
   "../js/i18n.js",
-  "../config/ops-links.json",
-  "../ops/index.html",
-  "../ops/css/ops.css",
-  "../ops/js/ops.js",
 ];
 
 self.addEventListener("install", (e) => {
