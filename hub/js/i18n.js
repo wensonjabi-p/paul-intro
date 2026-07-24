@@ -6,10 +6,10 @@
   const STR = {
     en: {
       logo: "jabi.",
-      eyebrow: "Staging hub · product name TBD",
-      heroTitle: "Learn Korean for the real test.",
+      eyebrow: "jabi. · staging",
+      heroTitle: "Korean, caught gently.",
       heroLead:
-        "Gamified TOPIK I practice, AI weak-spot drills, optional live coaches. Built separately from wensonjabi.com until launch.",
+        "TOPIK I practice in three modes — Catch 🎯 drills hard, Mercy 🌟 never rushes you, Guide 🧭 leads the way. AI weak-spot review, optional live coaches. Separate from wensonjabi.com until launch.",
       doorLearn: "Learn",
       doorLearnTitle: "TOPIK I app",
       doorLearnDesc: "Mock reading, streaks, SRS on words & grammar you miss.",
@@ -38,10 +38,10 @@
     },
     ko: {
       logo: "jabi.",
-      eyebrow: "스테이징 허브 · 상품명 미정",
-      heroTitle: "실전 TOPIK을 위한 한국어 학습.",
+      eyebrow: "jabi. · 스테이징",
+      heroTitle: "한국어, 다정하게 잡다.",
       heroLead:
-        "TOPIK I 게임화 연습, AI 약점 반복, 선택형 라이브 코치. wensonjabi.com과 분리 개발 중입니다.",
+        "세 가지 모드의 TOPIK I 연습 — Catch 🎯는 몰아붙이고, Mercy 🌟는 서두르지 않고, Guide 🧭는 길을 안내합니다. AI 약점 복습, 선택형 라이브 코치. 출시 전까지 wensonjabi.com과 분리.",
       doorLearn: "Learn",
       doorLearnTitle: "TOPIK I 앱",
       doorLearnDesc: "읽기 모의, 스트릭, 틀린 단어·문법만 SRS.",
