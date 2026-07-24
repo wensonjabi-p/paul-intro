@@ -9,6 +9,17 @@ const LINK_LABELS = {
   local: "Open in hub",
 };
 
+const LINK_LABELS_KO = {
+  notion: "Notion",
+  github: "GitHub",
+  vercel: "배포",
+  googleDoc: "Google Doc",
+  googleSheet: "Sheet",
+  canva: "Canva",
+  lemonSqueezy: "Lemon Squeezy",
+  local: "허브에서 열기",
+};
+
 function lang() {
   return window.HubI18n && HubI18n.getLang() === "ko" ? "ko" : "en";
 }
@@ -23,17 +34,42 @@ function isHttpUrl(s) {
   return typeof s === "string" && /^https?:\/\//i.test(s);
 }
 
+function globalLabel(key, en, ko) {
+  return lang() === "ko" ? ko : en;
+}
+
+function renderPrimaryCta(data) {
+  const box = document.getElementById("primary-cta");
+  if (!box) return;
+  const notion = data.notion?.pmHomePage || data.notion?.workspaceHome;
+  const reviewLabel = window.HubI18n ? HubI18n.t("opsReviewCta") : "Review";
+  const notionLabel = window.HubI18n ? HubI18n.t("opsNotionCta") : "Notion";
+  box.innerHTML = "";
+  const review = document.createElement("a");
+  review.href = "./review.html";
+  review.textContent = "📋 " + reviewLabel;
+  box.appendChild(review);
+  if (isHttpUrl(notion)) {
+    const n = document.createElement("a");
+    n.href = notion;
+    n.target = "_blank";
+    n.rel = "noopener";
+    n.textContent = "📓 " + notionLabel;
+    box.appendChild(n);
+  }
+}
+
 function renderGlobal(data) {
   const box = document.getElementById("global-links");
   if (!box) return;
   const entries = [
-    ["Notion home", data.notion?.pmHomePage || data.notion?.workspaceHome],
-    ["Map DB", data.notion?.mapDatabase],
-    ["Milestones", data.notion?.milestonesDatabase],
-    ["Content Sheet", data.google?.contentQueueSheet],
-    ["Canva folder", data.canva?.brandFolder],
-    ["GitHub repo", data.github?.repo],
-    ["Workflow doc", "https://github.com/wensonjabi-p/paul-intro/blob/main/docs/ops-paul-workflow.md"],
+    [globalLabel("n", "Notion home", "Notion 홈"), data.notion?.pmHomePage || data.notion?.workspaceHome],
+    [globalLabel("m", "Map DB", "작업 표"), data.notion?.mapDatabase],
+    [globalLabel("ms", "Milestones", "마일스톤"), data.notion?.milestonesDatabase],
+    [globalLabel("s", "Content Sheet", "콘텐츠 Sheet"), data.google?.contentQueueSheet],
+    [globalLabel("c", "Canva folder", "Canva 폴더"), data.canva?.brandFolder],
+    [globalLabel("g", "GitHub repo", "GitHub"), data.github?.repo],
+    [globalLabel("d", "Review doc", "정리 문서"), "https://github.com/wensonjabi-p/paul-intro/blob/main/docs/paul-review-ko.md"],
   ];
   box.innerHTML = "";
   entries.forEach(([label, url]) => {
@@ -81,10 +117,11 @@ function renderItems(data) {
     card.dataset.status = item.status;
 
     const links = item.links || {};
+    const labels = lang() === "ko" ? LINK_LABELS_KO : LINK_LABELS;
     const linkHtml = Object.keys(LINK_LABELS)
       .map((key) => {
         const url = links[key];
-        const label = LINK_LABELS[key];
+        const label = labels[key];
         if (isHttpUrl(url)) {
           return `<a class="link-btn" href="${url}" target="_blank" rel="noopener">${label}</a>`;
         }
@@ -122,6 +159,7 @@ function renderItems(data) {
 async function init() {
   const res = await fetch("../config/ops-links.json");
   const data = await res.json();
+  renderPrimaryCta(data);
   renderGlobal(data);
   renderMilestones(data);
   renderItems(data);

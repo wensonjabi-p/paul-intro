@@ -1,0 +1,7 @@
+map_id,title_ko,phase,status,goal,github_url,notion_url
+phase-0-hub,스테이징 허브,0,doing,랜딩+앱 MVP PR/배포,https://github.com/wensonjabi-p/paul-intro/pull/2,
+phase-0-vercel,Vercel hub 배포,0,idea,Root Directory = hub,https://github.com/wensonjabi-p/paul-intro/blob/main/hub/README.md,
+phase-1-app-mvp,TOPIK I 앱,1,doing,모의+SRS+스트릭,https://github.com/wensonjabi-p/paul-intro/tree/cursor/hub-phase0-0f7e/hub/app,
+phase-1-pro-lemon,Pro 결제,1,idea,Phase 1 끝에 Lemon,,
+phase-2-content-loop,블로그 큐,2,idea,Reddit→영한 글,,
+brand-canva,브랜드·Canva,0,review,이름 미정·비주얼,,

@@ -2,12 +2,12 @@
   "version": 1,
   "updated": "2026-07-24",
   "notion": {
-    "workspaceHome": "",
+    "workspaceHome": "https://app.notion.com/p/3a56d7c83f4481229fdde56471410908",
     "mapDatabase": "",
     "milestonesDatabase": "",
     "inboxDatabase": "",
     "decisionsDatabase": "",
-    "pmHomePage": ""
+    "pmHomePage": "https://app.notion.com/p/3a56d7c83f4481229fdde56471410908"
   },
   "google": {
     "contentQueueSheet": "",
@@ -41,6 +41,28 @@
     }
   ],
   "items": [
+    {
+      "id": "paul-thought-review",
+      "title": { "en": "Thoughts review (Paul OK)", "ko": "생각 정리 확인 (Paul OK)" },
+      "phase": 0,
+      "area": "ops",
+      "goal": "Paul confirms §2 checklist before more build",
+      "status": "review",
+      "progress": 50,
+      "targetDate": "",
+      "paulOk": false,
+      "milestoneIds": ["milestone-phase-0"],
+      "links": {
+        "notion": "https://app.notion.com/p/3a56d7c83f4481229fdde56471410908",
+        "github": "https://github.com/wensonjabi-p/paul-intro/blob/main/docs/paul-review-ko.md",
+        "vercel": "",
+        "googleDoc": "",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "",
+        "local": "./review.html"
+      }
+    },
     {
       "id": "identity-wensonjabi",
       "title": { "en": "Paul identity site", "ko": "Paul 정체성 사이트" },
