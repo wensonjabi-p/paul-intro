@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "updated": "2026-07-24",
+  "notion": {
+    "workspaceHome": "https://app.notion.com/p/3a56d7c83f4481229fdde56471410908",
+    "mapDatabase": "",
+    "milestonesDatabase": "",
+    "inboxDatabase": "",
+    "decisionsDatabase": "",
+    "pmHomePage": "https://app.notion.com/p/3a56d7c83f4481229fdde56471410908"
+  },
+  "google": {
+    "contentQueueSheet": "",
+    "feedbackSheet": ""
+  },
+  "canva": {
+    "brandFolder": ""
+  },
+  "github": {
+    "repo": "https://github.com/wensonjabi-p/paul-intro",
+    "defaultBranch": "main"
+  },
+  "milestones": [
+    {
+      "id": "milestone-phase-0",
+      "title": { "en": "Phase 0 — Staging hub live", "ko": "Phase 0 — 스테이징 허브 공개" },
+      "phase": 0,
+      "targetDate": "",
+      "status": "active",
+      "successMetric": "Shareable hub URL; wensonjabi.com untouched; app mock works offline",
+      "mapItemIds": ["phase-0-hub", "phase-0-vercel"]
+    },
+    {
+      "id": "milestone-phase-1-beta",
+      "title": { "en": "Phase 1 — 5 beta users", "ko": "Phase 1 — 베타 5명" },
+      "phase": 1,
+      "targetDate": "",
+      "status": "planned",
+      "successMetric": "5 Zoom students: 1 mock + 3 SRS days",
+      "mapItemIds": ["phase-1-app-mvp", "phase-1-pro-lemon"]
+    }
+  ],
+  "items": [
+    {
+      "id": "paul-thought-review",
+      "title": { "en": "Thoughts review (Paul OK)", "ko": "생각 정리 확인 (Paul OK)" },
+      "phase": 0,
+      "area": "ops",
+      "goal": "Paul confirms §2 checklist before more build",
+      "status": "review",
+      "progress": 50,
+      "targetDate": "",
+      "paulOk": false,
+      "milestoneIds": ["milestone-phase-0"],
+      "links": {
+        "notion": "https://app.notion.com/p/3a56d7c83f4481229fdde56471410908",
+        "github": "https://github.com/wensonjabi-p/paul-intro/blob/main/docs/paul-review-ko.md",
+        "vercel": "",
+        "googleDoc": "",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "",
+        "local": "./review.html"
+      }
+    },
+    {
+      "id": "identity-wensonjabi",
+      "title": { "en": "Paul identity site", "ko": "Paul 정체성 사이트" },
+      "phase": 0,
+      "area": "brand",
+      "goal": "Identity only; no product nav until merge checklist",
+      "status": "live",
+      "progress": 100,
+      "targetDate": "",
+      "paulOk": true,
+      "milestoneIds": [],
+      "links": {
+        "notion": "",
+        "github": "https://github.com/wensonjabi-p/paul-intro/tree/main",
+        "vercel": "https://www.wensonjabi.com/",
+        "googleDoc": "",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "",
+        "local": "https://github.com/wensonjabi-p/paul-intro"
+      }
+    },
+    {
+      "id": "phase-0-hub",
+      "title": { "en": "Staging hub (hub/)", "ko": "스테이징 허브 (hub/)" },
+      "phase": 0,
+      "area": "hub",
+      "goal": "Landing + app MVP shell; PR merged or deploy preview",
+      "status": "doing",
+      "progress": 75,
+      "targetDate": "",
+      "paulOk": false,
+      "milestoneIds": ["milestone-phase-0"],
+      "links": {
+        "notion": "",
+        "github": "https://github.com/wensonjabi-p/paul-intro/pull/2",
+        "vercel": "",
+        "googleDoc": "",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "",
+        "local": "../"
+      }
+    },
+    {
+      "id": "phase-0-vercel",
+      "title": { "en": "Vercel project #2 (root hub/)", "ko": "Vercel 프로젝트 #2 (root hub/)" },
+      "phase": 0,
+      "area": "ops",
+      "goal": "Deploy preview URL in brand.json staging",
+      "status": "idea",
+      "progress": 0,
+      "targetDate": "",
+      "paulOk": false,
+      "milestoneIds": ["milestone-phase-0"],
+      "links": {
+        "notion": "",
+        "github": "https://github.com/wensonjabi-p/paul-intro/blob/main/hub/README.md",
+        "vercel": "",
+        "googleDoc": "",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "",
+        "local": "../README.md"
+      }
+    },
+    {
+      "id": "phase-0-ops-dashboard",
+      "title": { "en": "PM link dashboard (/ops)", "ko": "PM 링크 대시보드 (/ops)" },
+      "phase": 0,
+      "area": "ops",
+      "goal": "Click-through to Notion, GitHub, Google, Canva from one page",
+      "status": "beta",
+      "progress": 90,
+      "targetDate": "",
+      "paulOk": false,
+      "milestoneIds": ["milestone-phase-0"],
+      "links": {
+        "notion": "",
+        "github": "",
+        "vercel": "",
+        "googleDoc": "https://github.com/wensonjabi-p/paul-intro/blob/main/docs/ops-paul-workflow.md",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "",
+        "local": "../ops/"
+      }
+    },
+    {
+      "id": "phase-1-app-mvp",
+      "title": { "en": "TOPIK I app MVP", "ko": "TOPIK I 앱 MVP" },
+      "phase": 1,
+      "area": "app",
+      "goal": "Mock + SRS review UI + streak; beta with 5 students",
+      "status": "doing",
+      "progress": 35,
+      "targetDate": "",
+      "paulOk": false,
+      "milestoneIds": ["milestone-phase-1-beta"],
+      "links": {
+        "notion": "",
+        "github": "https://github.com/wensonjabi-p/paul-intro/tree/cursor/hub-phase0-0f7e/hub/app",
+        "vercel": "",
+        "googleDoc": "",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "",
+        "local": "../app/"
+      }
+    },
+    {
+      "id": "phase-1-pro-lemon",
+      "title": { "en": "Pro + Lemon Squeezy unlock", "ko": "Pro + Lemon Squeezy unlock" },
+      "phase": 1,
+      "area": "app",
+      "goal": "Test checkout → webhook → Pro flag in app",
+      "status": "idea",
+      "progress": 0,
+      "targetDate": "",
+      "paulOk": false,
+      "milestoneIds": ["milestone-phase-1-beta"],
+      "links": {
+        "notion": "",
+        "github": "https://github.com/wensonjabi-p/paul-intro/blob/main/docs/wensonjabi-ecosystem-master-plan.md",
+        "vercel": "",
+        "googleDoc": "",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "https://app.lemonsqueezy.com/",
+        "local": "../config/brand.json"
+      }
+    },
+    {
+      "id": "phase-2-content-loop",
+      "title": { "en": "Reddit → blog pipeline", "ko": "Reddit → 블로그 파이프라인" },
+      "phase": 2,
+      "area": "blog",
+      "goal": "Sheet queue + first EN/KO posts",
+      "status": "idea",
+      "progress": 0,
+      "targetDate": "",
+      "paulOk": false,
+      "milestoneIds": [],
+      "links": {
+        "notion": "",
+        "github": "https://github.com/wensonjabi-p/paul-intro/blob/main/docs/wensonjabi-ecosystem-master-plan.md",
+        "vercel": "",
+        "googleDoc": "",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "",
+        "local": "../blog/"
+      }
+    },
+    {
+      "id": "brand-canva",
+      "title": { "en": "Product brand & visuals", "ko": "상품 브랜드·비주얼" },
+      "phase": 0,
+      "area": "brand",
+      "goal": "Name TBD; Canva kit aligned with hub theme tokens",
+      "status": "review",
+      "progress": 10,
+      "targetDate": "",
+      "paulOk": false,
+      "milestoneIds": [],
+      "links": {
+        "notion": "",
+        "github": "https://github.com/wensonjabi-p/paul-intro/blob/main/hub/config/brand.json",
+        "vercel": "",
+        "googleDoc": "",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "",
+        "local": "../config/brand.json"
+      }
+    },
+    {
+      "id": "master-plan-doc",
+      "title": { "en": "Ecosystem master plan", "ko": "생태계 마스터 플랜" },
+      "phase": 0,
+      "area": "ops",
+      "goal": "Single spec for phases and locked decisions",
+      "status": "live",
+      "progress": 100,
+      "targetDate": "",
+      "paulOk": true,
+      "milestoneIds": [],
+      "links": {
+        "notion": "",
+        "github": "https://github.com/wensonjabi-p/paul-intro/blob/main/docs/wensonjabi-ecosystem-master-plan.md",
+        "vercel": "",
+        "googleDoc": "",
+        "googleSheet": "",
+        "canva": "",
+        "lemonSqueezy": "",
+        "local": "https://github.com/wensonjabi-p/paul-intro/blob/main/docs/wensonjabi-ecosystem-master-plan.md"
+      }
+    }
+  ]
+}

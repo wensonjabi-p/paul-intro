@@ -1,0 +1,78 @@
+{
+  "productName": {
+    "en": "jabi.",
+    "ko": "jabi."
+  },
+  "tagline": {
+    "en": "A merciful guide to catching your TOPIK.",
+    "ko": "자비롭게, 확실하게 당신의 TOPIK을 잡아드립니다."
+  },
+  "positioning": {
+    "primary": "smart-prep",
+    "description": "AI-first TOPIK prep focused on weak-spot repetition. Built on mercy (patience), grip (results), and guidance (direction).",
+    "onboarding": {
+      "enabled": true,
+      "type": "light-branch",
+      "modes": [
+        {
+          "id": "catch",
+          "icon": "🎯",
+          "title": { "en": "Catch Mode", "ko": "Catch 모드" },
+          "subtitle": { "en": "Grab TOPIK tight. Weak spots first.", "ko": "TOPIK을 확실히 잡습니다. 약점부터." },
+          "description": { "en": "Mock exams, tight SRS, aggressive drills.", "ko": "모의고사, 짧은 SRS 간격, 집중 드릴." },
+          "homeGreeting": { "en": "Let's catch this TOPIK. Drill time.", "ko": "TOPIK을 잡아봅시다. 드릴 시작." },
+          "ctaPrimary": { "en": "Start Mock Exam", "ko": "모의고사 시작" },
+          "ctaSecondary": { "en": "Review Weak Spots", "ko": "약점 복습" }
+        },
+        {
+          "id": "mercy",
+          "icon": "🌟",
+          "title": { "en": "Mercy Mode", "ko": "Mercy 모드" },
+          "subtitle": { "en": "No rush. jabi. waits for you.", "ko": "서두르지 마세요. jabi.는 기다립니다." },
+          "description": { "en": "Streaks, gentle pace, long-term joy.", "ko": "스트릭, 여유로운 속도, 오래가는 즐거움." },
+          "homeGreeting": { "en": "Day {streak}. jabi. never rushes you.", "ko": "{streak}일째. jabi.는 당신을 서두르지 않습니다." },
+          "ctaPrimary": { "en": "Continue Streak", "ko": "스트릭 이어가기" },
+          "ctaSecondary": { "en": "Explore Weak Spots", "ko": "약점 탐색" }
+        },
+        {
+          "id": "guide",
+          "icon": "🧭",
+          "title": { "en": "Guide Mode", "ko": "Guide 모드" },
+          "subtitle": { "en": "Balanced path. jabi. leads.", "ko": "균형 잡힌 길. jabi.가 인도합니다." },
+          "description": { "en": "Mocks + streaks + review, balanced.", "ko": "모의고사·스트릭·복습의 균형." },
+          "homeGreeting": { "en": "Your guide knows the way. Forward.", "ko": "길잡이가 길을 압니다. 앞으로." },
+          "ctaPrimary": { "en": "Today's Quest", "ko": "오늘의 퀘스트" },
+          "ctaSecondary": { "en": "Review Focus Areas", "ko": "집중 영역 복습" }
+        }
+      ]
+    }
+  },
+  "codename": "jabi",
+  "domain": {
+    "staging": "",
+    "production": "",
+    "identitySite": "https://www.wensonjabi.com/"
+  },
+  "theme": {
+    "bg": "#050419",
+    "bgSoft": "#0f0d2a",
+    "ink": "#e8e5dd",
+    "muted": "#a8a4b8",
+    "accent": "#D4A24E",
+    "accentDim": "rgba(212, 162, 78, 0.45)"
+  },
+  "links": {
+    "app": "./app/",
+    "blog": "./blog/",
+    "teach": "./teach/",
+    "shop": "./shop/",
+    "privacy": "./privacy.html",
+    "waitlist": "https://docs.google.com/forms/d/e/1FAIpQLSf-placeholder/viewform"
+  },
+  "pricing": {
+    "proMonthlyUsd": 6.99,
+    "proYearlyUsd": 49,
+    "checkoutProvider": "lemonsqueezy",
+    "checkoutUrl": ""
+  }
+}

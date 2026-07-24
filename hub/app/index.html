@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#050419">
+  <title>jabi. — TOPIK I</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/hub.css">
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <a href="../" class="logo-link" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <!-- Onboarding (first visit) -->
+    <section id="view-onboarding">
+      <div class="onboarding-header">
+        <p class="eyebrow" data-i18n="onboardingEyebrow">How do you learn best?</p>
+        <h1 data-i18n="onboardingTitle">Pick your path</h1>
+        <p class="lead" data-i18n="onboardingLead">You can change this anytime in settings.</p>
+      </div>
+      <div class="mode-grid">
+        <button type="button" class="mode-card" data-mode="catch">
+          <div class="mode-icon">🎯</div>
+          <h2 data-i18n="modeCatchTitle">Catch Mode</h2>
+          <p data-i18n="modeCatchSub">Grab TOPIK tight. Weak spots first.</p>
+        </button>
+        <button type="button" class="mode-card" data-mode="mercy">
+          <div class="mode-icon">🌟</div>
+          <h2 data-i18n="modeMercyTitle">Mercy Mode</h2>
+          <p data-i18n="modeMercySub">No rush. jabi. waits for you.</p>
+        </button>
+        <button type="button" class="mode-card" data-mode="guide">
+          <div class="mode-icon">🧭</div>
+          <h2 data-i18n="modeGuideTitle">Guide Mode</h2>
+          <p data-i18n="modeGuideSub">Balanced path. jabi. leads.</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- Home (after onboarding) -->
+    <section id="view-home" class="hidden">
+      <div class="greeting" id="home-greeting"></div>
+      <div class="stats">
+        <div class="stat"><div class="k" data-ui="streak">Streak</div><div class="v" id="stat-streak">0</div></div>
+        <div class="stat"><div class="k" data-ui="xp">XP</div><div class="v" id="stat-xp">0</div></div>
+        <div class="stat"><div class="k" data-ui="level">Level</div><div class="v" id="stat-level">1</div></div>
+        <div class="stat"><div class="k" data-ui="srsDue">Weak spots</div><div class="v" id="stat-srs">0</div></div>
+      </div>
+      <button type="button" class="btn" id="btn-start" data-ui="startMock">Start mock</button>
+      <button type="button" class="btn btn-ghost" id="btn-srs" data-ui="reviewSrs">Review weak spots</button>
+      <button type="button" class="btn btn-ghost" id="btn-mode" data-ui="changeMode">Change mode</button>
+    </section>
+
+    <!-- Quiz -->
+    <section id="view-quiz" class="hidden">
+      <div class="quiz-card">
+        <div class="qnum" id="qnum">1 / 10</div>
+        <pre id="qtext"></pre>
+        <div class="choices" id="choices"></div>
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section id="view-result" class="hidden">
+      <div class="quiz-card">
+        <h2 data-ui="finished">Mock complete</h2>
+        <p><span data-ui="score">Score</span>: <strong id="result-score"></strong></p>
+        <p id="result-tags" style="margin-top:12px;color:var(--muted);font-size:14px"></p>
+        <button type="button" class="btn" id="btn-home" data-ui="back">← jabi.</button>
+      </div>
+    </section>
+
+    <!-- SRS -->
+    <section id="view-srs" class="hidden">
+      <div class="quiz-card">
+        <h2 data-ui="srsTitle">Weak-spot tags</h2>
+        <ul class="srs-list" id="srs-items"></ul>
+        <button type="button" class="btn btn-ghost" id="btn-home2" data-ui="back">← jabi.</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="../js/i18n.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
