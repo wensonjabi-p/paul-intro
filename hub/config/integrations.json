@@ -15,8 +15,10 @@
       "requiredFor": ["brand_kit", "thumbnails", "social"]
     },
     "google": {
-      "status": "no_official_mcp",
-      "workaround": "notion_primary_or_ops_links",
+      "status": "configured_in_mcp_json",
+      "mcpServerName": "google-drive",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "workaround": "oauth_via_cursor_after_open_workspace",
       "requiredFor": ["content_sheet", "longform_docs"]
     }
   },

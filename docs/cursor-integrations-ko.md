@@ -7,13 +7,16 @@
 
 ## 0. 한 줄 요약
 
-| 앱 | Cursor 공식 MCP | Paul가 할 일 |
-|----|-----------------|--------------|
-| **Notion** | ✅ 있음 | 플러그인 + **Connect** (OAuth) |
-| **Canva** | ✅ 있음 | 플러그인 + **Connect** (OAuth) |
-| **Google** | ❌ 공식 없음 | Sheet/Docs URL을 `ops-links.json`에 넣거나, **Notion 표로 대체** |
+| 앱 | Cursor MCP | 설정 위치 |
+|----|------------|-----------|
+| **Notion** | `https://mcp.notion.com/mcp` | **repo `.cursor/mcp.json`** (이미 추가됨) |
+| **Canva** | `https://mcp.canva.com/mcp` |同上 |
+| **Google Drive** (Docs/Sheet 파일) | `https://drivemcp.googleapis.com/mcp/v1` |同上 |
 
-연결 후 채팅에 **`MCP 연결했어`** 라고만 보내면, 에이전트가 Notion 페이지·DB 생성부터 `ops-links.json` 동기화까지 진행합니다.
+**중요:** Cursor에서 **`paul-intro` 폴더를 워크스페이스로 열어야** 프로젝트 `.cursor/mcp.json` 이 적용됩니다.  
+(화면에 *No workspace folder open* 이면 MCP 파일이 비어 보일 수 있음 → **File → Open Folder → repo 루트**.)
+
+연결 후 각 서버 옆 **Login / Connect** 한 번씩 (OAuth). Canva는 플러그인으로 이미 되어 있으면 **중복**일 수 있음 — 하나만 켜도 됩니다.
 
 ---
 
