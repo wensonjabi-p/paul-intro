@@ -22,7 +22,16 @@
 
 ---
 
-## 2026-07-24
+## 2026-07-25 (later)
+
+### Cursor Agent
+- ✅ origin `cursor/hub-phase0-0f7e` pull 확인 (`855cadb`, main 대비 **17 commits**, PR #2 Draft)
+- ✅ repo와 PROGRESS.md 대체로 일치: jabi. brand.json, 3모드, mock-02, SRS 연습, Notion PM URL `Paul-PM-3a76…`
+- ⚠️ `hub/jabi-logo-preview.html` — DAILY-LOG에는 있으나 **repo에 파일 없음** (재생성 또는 Kimi 커밋 누락 확인)
+- ⚠️ 문서·manifest 일부仍 "TOPIK Coach" (Claude 정리 예정)
+- 🔄 다음: Paul **MCP Login** → 채팅 `MCP 연결했어`
+
+---
 
 ### 23:40 Kimi
 - jabi. 리브랜딩 완료: brand.json, app.js, i18n.js, index.html
