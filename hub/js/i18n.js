@@ -25,6 +25,16 @@
       aboutPaul: "About Paul (identity) →",
       privacy: "Privacy",
       stagingNote: "This site is not linked from wensonjabi.com yet.",
+      // Onboarding
+      onboardingEyebrow: "How do you learn best?",
+      onboardingTitle: "Pick your path",
+      onboardingLead: "You can change this anytime in settings.",
+      modeExamTitle: "Exam Mode",
+      modeExamSub: "Test coming up. Focus me.",
+      modeJourneyTitle: "Journey Mode",
+      modeJourneySub: "Here for the long run. Keep it fun.",
+      modeBalancedTitle: "Balanced",
+      modeBalancedSub: "A bit of both.",
     },
     ko: {
       logo: "TOPIK Coach",
@@ -47,6 +57,16 @@
       aboutPaul: "Paul 소개 (정체성) →",
       privacy: "개인정보",
       stagingNote: "아직 wensonjabi.com과 연결되지 않았습니다.",
+      // Onboarding
+      onboardingEyebrow: "어떻게 공부하는 게 가장 잘 맞나요?",
+      onboardingTitle: "나의 학습 방식 선택",
+      onboardingLead: "언제든지 설정에서 바꿀 수 있어요.",
+      modeExamTitle: "시험 모드",
+      modeExamSub: "시험이 다가와요. 집중적으로.",
+      modeJourneyTitle: "여정 모드",
+      modeJourneySub: "오래 함께하고 싶어요. 재미있게.",
+      modeBalancedTitle: "균형 모드",
+      modeBalancedSub: "둘 다 원해요.",
     },
   };
 

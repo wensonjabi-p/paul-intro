@@ -1,4 +1,5 @@
 const LS_KEY = "topik-coach-v1";
+const MODE_KEY = "tc-mode";
 
 function defaultState() {
   return {
@@ -67,6 +68,52 @@ function getLang() {
   return window.HubI18n && HubI18n.getLang() === "ko" ? "ko" : "en";
 }
 
+function getMode() {
+  return localStorage.getItem(MODE_KEY) || "";
+}
+
+function setMode(mode) {
+  localStorage.setItem(MODE_KEY, mode);
+}
+
+// Mode-specific UI strings (light branch: same features, different skin)
+const MODE_UI = {
+  en: {
+    exam: {
+      greeting: "Focus mode on. Let's drill your weak spots.",
+      ctaPrimary: "Start Mock Exam",
+      ctaSecondary: "Review Weak Spots",
+    },
+    journey: {
+      greeting: "Day {streak} of your Korean journey. Keep shining!",
+      ctaPrimary: "Continue Streak",
+      ctaSecondary: "Explore Weak Spots",
+    },
+    balanced: {
+      greeting: "Ready to level up? Balance drills and discovery.",
+      ctaPrimary: "Today's Quest",
+      ctaSecondary: "Review Focus Areas",
+    },
+  },
+  ko: {
+    exam: {
+      greeting: "집중 모드 ON. 약점을 파고들어봐요.",
+      ctaPrimary: "모의고사 시작",
+      ctaSecondary: "약점 복습",
+    },
+    journey: {
+      greeting: "한국어 여정 {streak}일차. 계속 빛나세요!",
+      ctaPrimary: "스트릭 이어가기",
+      ctaSecondary: "약점 탐색",
+    },
+    balanced: {
+      greeting: "레벨업 준비됐나요? 연습과 탐구의 균형.",
+      ctaPrimary: "오늘의 퀘스트",
+      ctaSecondary: "집중 영역 복습",
+    },
+  },
+};
+
 const UI = {
   en: {
     back: "← Hub",
@@ -84,6 +131,7 @@ const UI = {
     finish: "See results",
     srsTitle: "Your weak-spot tags (SRS v0)",
     days: "days",
+    changeMode: "Change mode",
   },
   ko: {
     back: "← 허브",
@@ -101,12 +149,23 @@ const UI = {
     finish: "결과 보기",
     srsTitle: "약점 태그 (SRS v0)",
     days: "일",
+    changeMode: "모드 변경",
   },
 };
 
 function ui(key) {
   const lang = getLang();
   return UI[lang][key] || UI.en[key];
+}
+
+function modeString(mode, key) {
+  const lang = getLang();
+  const m = MODE_UI[lang]?.[mode] || MODE_UI.en[mode];
+  return m?.[key] || "";
+}
+
+function interpolate(template, vars) {
+  return template.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? "");
 }
 
 let state = loadState();
@@ -120,11 +179,29 @@ async function loadMock() {
   mock = await res.json();
 }
 
+/* ---------- Views ---------- */
+
+function hideAllViews() {
+  ["view-home", "view-quiz", "view-result", "view-srs", "view-onboarding"].forEach((id) => {
+    document.getElementById(id)?.classList.add("hidden");
+  });
+}
+
+function showOnboarding() {
+  hideAllViews();
+  document.getElementById("view-onboarding")?.classList.remove("hidden");
+}
+
 function renderHome() {
-  document.getElementById("view-home").classList.remove("hidden");
-  document.getElementById("view-quiz").classList.add("hidden");
-  document.getElementById("view-result").classList.add("hidden");
-  document.getElementById("view-srs").classList.add("hidden");
+  hideAllViews();
+  document.getElementById("view-home")?.classList.remove("hidden");
+
+  const mode = getMode();
+  const greetingEl = document.getElementById("home-greeting");
+  if (greetingEl) {
+    const raw = modeString(mode, "greeting") || modeString("balanced", "greeting");
+    greetingEl.textContent = interpolate(raw, { streak: state.streak });
+  }
 
   document.getElementById("stat-streak").textContent = state.streak;
   document.getElementById("stat-xp").textContent = state.xp;
@@ -132,9 +209,15 @@ function renderHome() {
   const tags = Object.keys(state.srs);
   document.getElementById("stat-srs").textContent = tags.length;
 
+  // Mode-specific CTA labels
+  const btnStart = document.getElementById("btn-start");
+  const btnSrs = document.getElementById("btn-srs");
+  if (btnStart) btnStart.textContent = modeString(mode, "ctaPrimary") || ui("startMock");
+  if (btnSrs) btnSrs.textContent = modeString(mode, "ctaSecondary") || ui("reviewSrs");
+
   document.querySelectorAll("[data-ui]").forEach((el) => {
     const k = el.getAttribute("data-ui");
-    if (k) el.textContent = ui(k);
+    if (k && !el.getAttribute("data-mode-override")) el.textContent = ui(k);
   });
 }
 
@@ -233,13 +316,34 @@ function toast(msg) {
   setTimeout(() => el.classList.remove("show"), 2000);
 }
 
+/* ---------- Init ---------- */
+
 document.addEventListener("DOMContentLoaded", async () => {
   await loadMock();
-  renderHome();
-  document.getElementById("btn-start").addEventListener("click", startMock);
-  document.getElementById("btn-srs").addEventListener("click", showSrs);
-  document.getElementById("btn-home").addEventListener("click", renderHome);
-  document.getElementById("btn-home2").addEventListener("click", renderHome);
+
+  // Mode selection
+  document.querySelectorAll(".mode-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const mode = card.dataset.mode;
+      setMode(mode);
+      renderHome();
+      toast(`Mode: ${mode}`);
+    });
+  });
+
+  // Navigation
+  document.getElementById("btn-start")?.addEventListener("click", startMock);
+  document.getElementById("btn-srs")?.addEventListener("click", showSrs);
+  document.getElementById("btn-home")?.addEventListener("click", renderHome);
+  document.getElementById("btn-home2")?.addEventListener("click", renderHome);
+  document.getElementById("btn-mode")?.addEventListener("click", showOnboarding);
+
+  // First visit → onboarding; else → home
+  if (!getMode()) {
+    showOnboarding();
+  } else {
+    renderHome();
+  }
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./sw.js").catch(() => {});
@@ -251,6 +355,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("lang-btn")) {
-    setTimeout(renderHome, 0);
+    setTimeout(() => {
+      if (!getMode()) showOnboarding();
+      else renderHome();
+    }, 0);
   }
 });
