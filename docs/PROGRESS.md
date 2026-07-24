@@ -1,11 +1,13 @@
 # 진행 상황 인덱스 (PROGRESS)
 
-> **용도:** Claude · Cursor · Kimi 공용 상세 인덱스. Notion 허브(사람용 요약)와 짝을 이룸.
-> 작업을 끝내면 여기 해당 섹션 + Notion 허브 "작업 로그"를 같이 갱신할 것.
+> **용도:** Claude · Cursor · Kimi 공용 상세 인덱스 — 작업별 "상태". Notion 허브·[DAILY-LOG.md](DAILY-LOG.md)와 짝.
+> - 시간순 "흐름"(누가·언제·무엇)은 **[docs/DAILY-LOG.md](DAILY-LOG.md)** 에 append.
+> - 작업 "상태"가 바뀌면 여기 해당 섹션 갱신 + Notion 허브 미러.
 >
+> **상품명:** **jabi.** (2026-07-24 Paul 확정 · 자비/잡이/길잡이). 3모드 Catch🎯 / Mercy🌟 / Guide🧭.
 > **Notion 허브:** https://app.notion.com/p/Paul-PM-3a76d7c83f4480738ff0d07bfb6cadd8
 > **저장소 상태:** `hub/` 전체가 브랜치 `cursor/hub-phase0-0f7e`에만 있음. PR #2 (Draft, main 미merge).
-> **미푸시 로컬 커밋:** `66bfac3`(앱 버그수정·모의고사·SRS), `1a171b7`(Notion 링크 수정) — origin에 아직 없음.
+> **미푸시 로컬 커밋:** Kimi 4커밋(jabi.+3모드)은 병합으로 브랜치에 포함됨. Claude: `66bfac3`(버그수정·SRS) · `1a171b7`(Notion링크) · `27c0c44`(PROGRESS) · `7881ceb`(병합) · `53fe1f7`(랜딩 jabi.). origin이 병합에 전부 포함되어 **push는 fast-forward**(충돌 없음).
 
 ---
 
@@ -13,7 +15,7 @@
 
 - **무엇:** 랜딩(EN/KO) + 4개 문(Learn·Read·Teach·Shop) + placeholder(blog/teach/shop/privacy)
 - **파일:** `hub/index.html`, `hub/css/hub.css`, `hub/js/i18n.js`, `hub/README.md`, `hub/vercel.json`
-- **상태:** 코드 완료. Vercel 배포는 Paul 액션 대기(New Project → Root Directory = `hub`).
+- **상태:** 코드 완료 · 랜딩 jabi. 톤 적용(`53fe1f7`). Vercel 배포는 Paul 액션 대기(New Project → Root Directory = `hub`).
 - **링크:** [PR #2](https://github.com/wensonjabi-p/paul-intro/pull/2)
 - **다음:** Vercel 연결 → 미리보기 URL → `hub/config/brand.json` 의 `domain.staging` 채우기
 
@@ -26,8 +28,9 @@
   - 버그 수정 ②: 스트릭·SRS 날짜가 `toISOString()`(UTC) 기준이라 시차 큰 지역(항저우 UTC+8)에서 하루가 일찍/늦게 바뀌던 것 → 로컬 달력 날짜(`dateKey()`)로
   - 추가: 모의고사 2세트(`mock-read-02`), 홈 화면 모의 목록 동적화, "약점 바로 연습하기"(모든 모의에서 내 약점 태그와 겹치는 문제만 최대 8개 미니퀴즈)
   - 검증: 로컬 프리뷰에서 퀴즈 → 언어전환 → SRS 연습 전 과정 클릭 확인, 콘솔 에러 0
+  - **병합 (`7881ceb`)**: Kimi의 jabi. 리브랜딩 + 3모드 온보딩(Catch/Mercy/Guide, `MODE_KEY`)을 위 수정·기능과 3-way 병합 — 둘 다 보존, 온보딩→모드→퀴즈→언어전환→SRS 전 과정 브라우저 검증
 - **링크:** [PR #2](https://github.com/wensonjabi-p/paul-intro/pull/2)
-- **다음:** SRS 복습 UI 고도화(간격 반복), 듣기 문항, 모의 세트 추가
+- **다음:** SRS 복습 UI 고도화(간격 반복), 듣기 문항, 모의 세트 추가, Canva jabi. 로고
 
 ## 3. PM · ops 대시보드 & 링크 정리 — 진행 중
 
