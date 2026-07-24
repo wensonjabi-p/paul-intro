@@ -1,4 +1,5 @@
 const LS_KEY = "topik-coach-v1";
+const MODE_KEY = "tc-mode";
 const MOCK_FILES = ["./data/mock-read-01.json", "./data/mock-read-02.json"];
 const SRS_PRACTICE_SIZE = 8;
 
@@ -73,15 +74,61 @@ function getLang() {
   return window.HubI18n && HubI18n.getLang() === "ko" ? "ko" : "en";
 }
 
+function getMode() {
+  return localStorage.getItem(MODE_KEY) || "";
+}
+
+function setMode(mode) {
+  localStorage.setItem(MODE_KEY, mode);
+}
+
+// Mode-specific UI strings (jabi. light branch)
+const MODE_UI = {
+  en: {
+    catch: {
+      greeting: "Let's catch this TOPIK. Drill time.",
+      ctaPrimary: "Start Mock Exam",
+      ctaSecondary: "Review Weak Spots",
+    },
+    mercy: {
+      greeting: "Day {streak}. jabi. never rushes you.",
+      ctaPrimary: "Continue Streak",
+      ctaSecondary: "Explore Weak Spots",
+    },
+    guide: {
+      greeting: "Your guide knows the way. Forward.",
+      ctaPrimary: "Today's Quest",
+      ctaSecondary: "Review Focus Areas",
+    },
+  },
+  ko: {
+    catch: {
+      greeting: "TOPIK을 잡아봅시다. 드릴 시작.",
+      ctaPrimary: "모의고사 시작",
+      ctaSecondary: "약점 복습",
+    },
+    mercy: {
+      greeting: "{streak}일째. jabi.는 당신을 서두르지 않습니다.",
+      ctaPrimary: "스트릭 이어가기",
+      ctaSecondary: "약점 탐색",
+    },
+    guide: {
+      greeting: "길잡이가 길을 압니다. 앞으로.",
+      ctaPrimary: "오늘의 퀘스트",
+      ctaSecondary: "집중 영역 복습",
+    },
+  },
+};
+
 const UI = {
   en: {
-    back: "← Hub",
+    back: "← jabi.",
     streak: "Streak",
     xp: "XP",
     level: "Level",
     srsDue: "Weak spots",
     startMock: "Reading mocks",
-    reviewSrs: "Review weak tags",
+    reviewSrs: "Review weak spots",
     noSrs: "No weak spots yet — take a mock.",
     finished: "Mock complete",
     score: "Score",
@@ -91,9 +138,10 @@ const UI = {
     srsTitle: "Your weak-spot tags (SRS v0)",
     practiceSrs: "Practice weak spots now",
     days: "days",
+    changeMode: "Change mode",
   },
   ko: {
-    back: "← 허브",
+    back: "← jabi.",
     streak: "스트릭",
     xp: "XP",
     level: "레벨",
@@ -109,12 +157,23 @@ const UI = {
     srsTitle: "약점 태그 (SRS v0)",
     practiceSrs: "약점 바로 연습하기",
     days: "일",
+    changeMode: "모드 변경",
   },
 };
 
 function ui(key) {
   const lang = getLang();
   return UI[lang][key] || UI.en[key];
+}
+
+function modeString(mode, key) {
+  const lang = getLang();
+  const m = MODE_UI[lang]?.[mode] || MODE_UI.en[mode];
+  return m?.[key] || "";
+}
+
+function interpolate(template, vars) {
+  return template.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? "");
 }
 
 let state = loadState();
@@ -160,20 +219,44 @@ function renderMockList() {
 
 function onLangSwitch() {
   applyUiStrings();
-  renderMockList();
+  const visible = (id) => !document.getElementById(id).classList.contains("hidden");
+  // Refresh the CURRENT view's dynamic content in place — never yank the user
+  // out of an in-progress quiz just because they toggled the language.
+  if (visible("view-quiz")) renderQuestion();
+  else if (visible("view-srs")) showSrs();
+  else if (visible("view-home")) renderHome();
+}
+
+/* ---------- Views ---------- */
+
+function hideAllViews() {
+  ["view-home", "view-quiz", "view-result", "view-srs", "view-onboarding"].forEach((id) => {
+    document.getElementById(id)?.classList.add("hidden");
+  });
+}
+
+function showOnboarding() {
+  hideAllViews();
+  document.getElementById("view-onboarding")?.classList.remove("hidden");
 }
 
 function renderHome() {
-  document.getElementById("view-home").classList.remove("hidden");
-  document.getElementById("view-quiz").classList.add("hidden");
-  document.getElementById("view-result").classList.add("hidden");
-  document.getElementById("view-srs").classList.add("hidden");
+  hideAllViews();
+  document.getElementById("view-home")?.classList.remove("hidden");
+
+  const mode = getMode();
+  const greetingEl = document.getElementById("home-greeting");
+  if (greetingEl) {
+    const raw = modeString(mode, "greeting") || modeString("guide", "greeting");
+    greetingEl.textContent = interpolate(raw, { streak: state.streak });
+  }
 
   document.getElementById("stat-streak").textContent = state.streak;
   document.getElementById("stat-xp").textContent = state.xp;
   document.getElementById("stat-level").textContent = levelFromXp(state.xp);
   document.getElementById("stat-srs").textContent = Object.keys(state.srs).length;
 
+  // Mode flavour lives in the greeting above; the mock list is the primary CTA.
   renderMockList();
   applyUiStrings();
 }
@@ -306,14 +389,35 @@ function toast(msg) {
   setTimeout(() => el.classList.remove("show"), 2000);
 }
 
+/* ---------- Init ---------- */
+
 document.addEventListener("DOMContentLoaded", async () => {
   await loadMocks();
-  renderHome();
-  document.getElementById("btn-srs").addEventListener("click", showSrs);
-  document.getElementById("btn-home").addEventListener("click", renderHome);
-  document.getElementById("btn-home2").addEventListener("click", renderHome);
+
+  // Mode selection (onboarding)
+  document.querySelectorAll(".mode-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const mode = card.dataset.mode;
+      setMode(mode);
+      renderHome();
+      toast(`Mode: ${mode}`);
+    });
+  });
+
+  // Navigation (mocks are started from the mock list rendered in renderHome)
+  document.getElementById("btn-srs")?.addEventListener("click", showSrs);
+  document.getElementById("btn-home")?.addEventListener("click", renderHome);
+  document.getElementById("btn-home2")?.addEventListener("click", renderHome);
+  document.getElementById("btn-mode")?.addEventListener("click", showOnboarding);
   const practiceBtn = document.getElementById("btn-practice-srs");
   if (practiceBtn) practiceBtn.addEventListener("click", startSrsPractice);
+
+  // First visit → onboarding; else → home
+  if (!getMode()) {
+    showOnboarding();
+  } else {
+    renderHome();
+  }
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./sw.js").catch(() => {});
