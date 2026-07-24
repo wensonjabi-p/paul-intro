@@ -108,7 +108,7 @@ b0a9cb5 review.html + Notion URL in ops-links
 ## 6. Paul Notion & ops-links (partial)
 
 **Notion PM page (Paul provided):**  
-https://app.notion.com/p/3a56d7c83f4481229fdde56471410908  
+https://app.notion.com/p/Paul-PM-3a76d7c83f4480738ff0d07bfb6cadd8  
 
 Stored in `ops-links.json` → `notion.pmHomePage`, `notion.workspaceHome`.
 

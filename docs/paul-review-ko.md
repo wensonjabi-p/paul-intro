@@ -1,7 +1,7 @@
 # Paul — 지금까지 정리된 생각 (확인용)
 
 > **Paul이 할 일:** 아래를 읽고, 틀린 것만 알려 주세요. 맞으면 Notion에 복사해 두고 `/ops/review.html`에서도 같은 내용을 봅니다.  
-> **Notion 홈:** https://app.notion.com/p/3a56d7c83f4481229fdde56471410908
+> **Notion 홈:** https://app.notion.com/p/Paul-PM-3a76d7c83f4480738ff0d07bfb6cadd8
 
 ---
 

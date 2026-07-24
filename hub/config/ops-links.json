@@ -2,12 +2,12 @@
   "version": 1,
   "updated": "2026-07-24",
   "notion": {
-    "workspaceHome": "https://app.notion.com/p/3a56d7c83f4481229fdde56471410908",
+    "workspaceHome": "https://app.notion.com/p/Paul-PM-3a76d7c83f4480738ff0d07bfb6cadd8",
     "mapDatabase": "",
     "milestonesDatabase": "",
     "inboxDatabase": "",
     "decisionsDatabase": "",
-    "pmHomePage": "https://app.notion.com/p/3a56d7c83f4481229fdde56471410908"
+    "pmHomePage": "https://app.notion.com/p/Paul-PM-3a76d7c83f4480738ff0d07bfb6cadd8"
   },
   "google": {
     "contentQueueSheet": "",
@@ -53,7 +53,7 @@
       "paulOk": false,
       "milestoneIds": ["milestone-phase-0"],
       "links": {
-        "notion": "https://app.notion.com/p/3a56d7c83f4481229fdde56471410908",
+        "notion": "https://app.notion.com/p/Paul-PM-3a76d7c83f4480738ff0d07bfb6cadd8",
         "github": "https://github.com/wensonjabi-p/paul-intro/blob/main/docs/paul-review-ko.md",
         "vercel": "",
         "googleDoc": "",

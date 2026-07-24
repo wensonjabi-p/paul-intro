@@ -29,7 +29,7 @@
 3. **⌘⇧P** / **Ctrl+Shift+P** → **`Cursor Settings: Tools & MCP`**  
 4. 목록에서 **Notion** → **Connect** → 브라우저로 Notion 로그인 · 허용  
 5. Notion에서 **Paul PM 페이지**에 Integration 접근 허용 (처음 연결 시 Notion이 “페이지 선택” UI를 띄울 수 있음 →  
-   https://app.notion.com/p/3a56d7c83f4481229fdde56471410908 포함)
+   https://app.notion.com/p/Paul-PM-3a76d7c83f4480738ff0d07bfb6cadd8 포함)
 
 ### B. Cloud Agent (지금 이 대화 같은 원격 에이전트)
 
