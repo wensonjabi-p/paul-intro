@@ -17,7 +17,7 @@
 - **파일:** `hub/index.html`, `hub/css/hub.css`, `hub/js/i18n.js`, `hub/README.md`, `hub/vercel.json`
 - **상태:** 코드 완료 · 랜딩 jabi. 톤 적용(`53fe1f7`). Vercel 배포는 Paul 액션 대기(New Project → Root Directory = `hub`).
 - **링크:** [PR #2](https://github.com/wensonjabi-p/paul-intro/pull/2)
-- **다음:** Vercel 연결 → 미리보기 URL → `hub/config/brand.json` 의 `domain.staging` 채우기
+- **다음:** Vercel 연결 → 미리보기 URL → **`docs/claude-task-a-vercel-deploy.md` (Claude Task A)** · Cursor는 `app.js` SRS(B)만
 
 ## 2. TOPIK I 앱 MVP — 진행 중
 
@@ -52,7 +52,7 @@
 - **무엇:** Cursor PC에서 MCP 로그인 → 에이전트가 Notion/Canva/Drive 조작. `paulOk` 게이트.
 - **파일:** `.cursor/mcp.json`, `hub/config/integrations.json`, `docs/notion-sync-block.md`, `docs/cursor-integrations-ko.md`
 - **상태:** **2026-07-25 Paul PC** Notion · Google Drive · Canva MCP ON. Notion PM 허브·§5 페이지 Cursor 동기화 완료.
-- **다음:** §2 **`jabi. OK`** · Vercel URL · (선택) Map DB · Sheet/Canva URL
+- **다음:** §2 **`jabi. OK`** · Vercel URL → **Claude Task A** (`docs/claude-task-a-vercel-deploy.md`) · (선택) Map DB · Sheet/Canva URL
 
 ## 6. Phase 1 로드맵 (SRS UI · Lemon Pro · 베타 5명) — 예정
 
