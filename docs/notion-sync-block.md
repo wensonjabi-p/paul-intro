@@ -44,7 +44,7 @@ PR: https://github.com/wensonjabi-p/paul-intro/pull/2 · Branch: `cursor/hub-pha
 ## Paul 다음
 
 - [ ] **`jabi. OK`**
-- [ ] Vercel Root=`hub` → URL → `ops-links.json` / `brand.json`
+- [ ] Vercel Root=`hub` → URL → **Claude Task A** (`docs/claude-task-a-vercel-deploy.md`)
 - [ ] (선택) Sheet / Canva URL
 
 ---
