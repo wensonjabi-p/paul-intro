@@ -21,7 +21,7 @@
 ## 2. 이미 정해 둔 것 (✅ = Paul도 동의하면 OK)
 
 - [ ] **허브는 wensonjabi.com과 분리** — merge 체크리스트 전까지 본 사이트 안 건드림  
-- [ ] **상품 브랜드 이름은 아직 미정** — 코드만 임시 이름 **TOPIK Coach**, 나중에 `brand.json`에서 변경  
+- [ ] **상품 브랜드 jabi.** 확정 (Catch / Mercy / Guide) — `hub/config/brand.json`  
 - [ ] **블로그 영·한 병행**  
 - [ ] **앱 v1 = TOPIK I만** (듣기·읽기, L1–L2 밴드)  
 - [ ] **AI 중심 앱**, 강사는 **선택** (AI 리포트 → 1:1)  
@@ -31,8 +31,7 @@
 
 ## 3. 아직 안 정한 것 (나중에 OK)
 
-- 최종 **상품명·도메인** (예: topikcoach.app 등)  
-- **hub.wensonjabi.com** — 브랜드 확정 전엔 Vercel 미리보기 URL 먼저  
+- 최종 **도메인** (jabi. 전용 URL, Vercel staging 채우기)
 - Google **Sheet / Doc / Canva** 링크 (만들면 `hub/config/ops-links.json`에 붙임)  
 
 ---

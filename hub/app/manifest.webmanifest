@@ -1,7 +1,7 @@
 {
-  "name": "TOPIK Coach",
-  "short_name": "TOPIK",
-  "description": "TOPIK I reading mock, streaks, and weak-spot SRS (staging MVP).",
+  "name": "jabi.",
+  "short_name": "jabi.",
+  "description": "jabi. — TOPIK I prep with Catch, Mercy, and Guide modes.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

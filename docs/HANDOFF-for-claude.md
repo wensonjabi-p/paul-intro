@@ -12,7 +12,7 @@
 
 **Paul Bhang (BHANG SANGHOON)** — 한국어교원 2급, 항저우 대학 강의, Zoom 튜터(주 5–7, $20–30/hr, 대상: 한국 거주 영어권·영어 강사).
 
-**목표:** `wensonjabi.com` = **Paul 정체성만** 유지하고, 교육 제품(임시명 **TOPIK Coach**)은 **별도 hub**에서 TOPIK I 앱 + 블로그 + (나중) 강사·상점. AI-first, 게이미피케이션, 약점 SRS, Pro는 Lemon Squeezy, 1:1은 PayPal/Wise 직접.
+**목표:** `wensonjabi.com` = **Paul 정체성만** 유지하고, 교육 제품 **jabi.** 는 **별도 hub**에서 TOPIK I 앱 + 블로그 + (나중) 강사·상점.
 
 ---
 
@@ -38,7 +38,7 @@
   hub/config/integrations.json  MCP automation rules when connected
 ```
 
-**Codename in code:** `topik-coach` — rename via `brand.json` later.
+**Codename in code:** `jabi` (`brand.json`, folder `hub/`).
 
 ---
 

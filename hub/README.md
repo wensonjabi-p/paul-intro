@@ -1,4 +1,4 @@
-# TOPIK Coach Hub (staging)
+# jabi. Hub (staging)
 
 Separate from `wensonjabi.com` (paul-intro). Deploy as its own Vercel project.
 
