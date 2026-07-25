@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="jabi.">
-  <rect width="512" height="512" rx="112" fill="#FFE8C4"/>
   <g>
     <line x1="146" y1="165" x2="366" y2="165" stroke="#4A2410" stroke-width="84" stroke-linecap="round"/>
     <line x1="256" y1="194" x2="170" y2="282" stroke="#4A2410" stroke-width="76" stroke-linecap="round"/>
