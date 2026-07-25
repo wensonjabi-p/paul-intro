@@ -12,6 +12,12 @@
 
 ## 2026-07-25
 
+### Cursor
+- ✅ Paul PC **Notion · Google Drive · Canva MCP** 연결 확인 (워크스페이스 검색 OK)
+- ✅ Notion **PM 허브** + **§5 Cursor MCP** 페이지 동기화 (Phase 0 상태·작업 로그·MCP 완료 반영)
+- ✅ repo `docs/PROGRESS.md` §5 갱신
+- 🔄 Paul: `git pull origin cursor/hub-phase0-0f7e` (원격 `notion-sync-block` 등) · **`jabi. OK`** · Vercel
+
 ### Claude
 - ✅ Kimi 브랜치와 갈라짐 **병합 완료** (merge `7881ceb`): Kimi의 jabi.+3모드 + Claude의 버그수정 2개(언어토글 홈튕김·스트릭 UTC)·모의 2세트·SRS 연습을 **전부 보존**, 브라우저로 온보딩→모드→퀴즈→언어전환→SRS 전 과정 검증(콘솔 에러 0)
 - ✅ 랜딩(`hub/index.html`) jabi. 톤 적용 (`53fe1f7`) — hero "Korean, caught gently." + Catch/Mercy/Guide

@@ -47,12 +47,12 @@
 - **상태:** 문서 완성. Paul "§2 OK" 또는 정정 대기.
 - **다음:** §2 확정되면 Phase 1 진입
 
-## 5. Cursor MCP 연동 (Notion·Canva·Google) — Paul 액션 대기
+## 5. Cursor MCP 연동 (Notion·Canva·Google) — PC 연결 완료
 
-- **무엇:** Cursor에서 MCP 로그인하면 에이전트가 Notion/Canva를 직접 조작. `paulOk` 게이트 규칙 포함.
-- **파일:** `.cursor/mcp.json`, `.cursor/rules/paul-ecosystem-mcp.mdc`, `docs/cursor-integrations-ko.md`, `docs/windows-mcp-fix-ko.md`, `scripts/windows-setup-mcp.ps1`, `hub/config/integrations.json`
-- **상태:** 설정 파일 준비 완료. Paul OAuth 로그인 + 채팅 "MCP 연결했어" 대기(Cloud Agent는 대신 못 함).
-- **다음:** 연결되면 에이전트가 Notion에 Map DB 생성·동기화
+- **무엇:** Cursor PC에서 MCP 로그인 → 에이전트가 Notion/Canva/Drive 조작. `paulOk` 게이트.
+- **파일:** `.cursor/mcp.json`, `hub/config/integrations.json`, `docs/notion-sync-block.md`, `docs/cursor-integrations-ko.md`
+- **상태:** **2026-07-25 Paul PC** Notion · Google Drive · Canva MCP ON. Notion PM 허브·§5 페이지 Cursor 동기화 완료.
+- **다음:** §2 **`jabi. OK`** · Vercel URL · (선택) Map DB · Sheet/Canva URL
 
 ## 6. Phase 1 로드맵 (SRS UI · Lemon Pro · 베타 5명) — 예정
 
