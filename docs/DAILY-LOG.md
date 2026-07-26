@@ -12,6 +12,11 @@
 
 ## 2026-07-26
 
+### Claude (D1 큐 등록 -- 디자인 핸드오프 실행 갭 발견)
+- 확인: 디자인 목업 v2 핸드오프 문서(design-handoff-mockup-v2-ko.md)가 어제 DAILY-LOG에만 기록되고 cursor-work-queue-ko.md Next에는 등록 안 돼 있었음 -- 자동체인이 Now/Next 테이블만 읽어서 안 집힘. app.css 확인 결과 partner-glyph/mode-icon 등 아직 미변경.
+- 조치: cursor-work-queue-ko.md Now를 D1(디자인 리프레시 v2 적용)로 갱신, 차단 없음으로 표시.
+- 다음(Cursor): D1 -- design-handoff-mockup-v2-ko.md 우선순위표 1번(캐릭터 남색 배지)부터 순서대로 적용.
+
 ### Claude (디자인 목업 v2 핸드오프)
 - 홈/퀴즈/모드선택 3화면 목업(v2) 제작 -- Dribbble 남색배지 일러스트 x Finch 여백 x 카카오프렌즈 표정절제 블렌드. 20대 초반 여성 타겟, 아동용 교육 사이트 느낌 탈피 목표.
 - 핸드오프 스펙: [docs/design-handoff-mockup-v2-ko.md](design-handoff-mockup-v2-ko.md) -- 실제 app.css 클래스(.home-partner/.choice/.mode-card/.tab-bar 등) 기준 구체 CSS 스니펫 + 우선순위표.
