@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "allowlist": 1742,
+  "nikl_a": 894,
+  "tammy": 1670,
+  "tammy_soft": 1660,
+  "banks": {
+    "verified-listen-01.json": 35,
+    "verified-read-01.json": 95,
+    "verified-read-02.json": 62,
+    "verified-read-03.json": 80
+  },
+  "unique_oov": 219
+}

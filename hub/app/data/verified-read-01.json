@@ -1,0 +1,796 @@
+{
+  "id": "jabi-topik1-read-v1-01",
+  "title": {
+    "en": "jabi. Practice · Set 1",
+    "ko": "jabi. 연습 · 세트 1",
+    "zh": "jabi. 练习 · 套题 1"
+  },
+  "level": "TOPIK I",
+  "verified": true,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "sourceNote": "All items: Meaning→Look→Pair (hint.steps). Visual = clear nouns/verbs + Korean label. Grammar: 국립국어원 / beginner-app style.",
+  "questions": [
+    {
+      "id": "v1-01",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 알맞은 것을 고르십시오.\n\n저는 친구(    ) 같이 점심을 먹었어요.",
+        "en": "Choose the best word for the blank.\n\n저는 친구(    ) 같이 점심을 먹었어요.",
+        "zh": "请选择填入空格的最佳词语。\n\n저는 친구(    ) 같이 점심을 먹었어요."
+      },
+      "choices": [
+        "와",
+        "을",
+        "에",
+        "의"
+      ],
+      "answer": 0,
+      "answerText": "와",
+      "tags": [
+        "grammar:와/과"
+      ],
+      "hint": {
+        "ko": "「같이」= 함께. 앞에 “와/과”가 와요. 친구는 모음 끝 → 「와」. 짝: 친구와 같이 · 선생님과 같이.",
+        "en": "같이 means “together.” You need “with” before it. 와/과 ≈ “with” (like 하고). After a vowel sound (친구) → 와. Pair: 친구와 같이 · 선생님과 같이.",
+        "zh": "같이 = 一起。前面需要“和”。 와/과 ≈ “和”(像 하고)。친구 以元音结尾 → 와。 对比：친구와 같이 · 선생님과 같이。",
+        "visual": {
+          "emoji": [
+            "👥",
+            "🍽️"
+          ],
+          "en": "friend + lunch",
+          "ko": "친구·점심",
+          "zh": "朋友·午饭"
+        },
+        "steps": {
+          "en": [
+            "같이 means “together.” You need “with” before it.",
+            "와/과 ≈ “with” (like 하고). After a vowel sound (친구) → 와.",
+            "Pair: 친구와 같이 · 선생님과 같이."
+          ],
+          "zh": [
+            "같이 = 一起。前面需要“和”。",
+            "와/과 ≈ “和”(像 하고)。친구 以元音结尾 → 와。",
+            "对比：친구와 같이 · 선생님과 같이。"
+          ],
+          "ko": [
+            "「같이」= 함께. 앞에 “와/과”가 와요.",
+            "친구는 모음 끝 → 「와」.",
+            "짝: 친구와 같이 · 선생님과 같이."
+          ]
+        }
+      },
+      "why": {
+        "en": "친구와 같이 = with a friend. After 친구 (vowel end) → 와.",
+        "zh": "친구와 같이 = 和朋友一起。친구 元音结尾 → 와。",
+        "ko": "친구와 같이 = 친구하고 함께."
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not 을? 을 often marks the thing you do something to. Here you need “with” (같이), not an object marker.",
+          "zh": "为什么不是 을？을 常表示动作对象。这里要的是「一起」(같이)，不是对象。",
+          "ko": "왜 「을」이 아니에요? 「을」은 보통 대상을 표시해요. 여기는 「같이」(함께)가 필요해요."
+        },
+        "2": {
+          "en": "Why not 에? 에 is often “to / at (a place).” This blank is “with a friend,” not a place.",
+          "zh": "为什么不是 에？에 多表示地点/方向。这里是「和朋友」，不是地点。",
+          "ko": "왜 「에」가 아니에요? 「에」는 주로 장소예요. 여기는 친구와 함께예요."
+        },
+        "3": {
+          "en": "Why not 의? 의 is like “’s / of.” You need “with,” not possession.",
+          "zh": "为什么不是 의？의 是“的”。这里要的是「和…一起」，不是所属。",
+          "ko": "왜 「의」가 아니에요? 「의」는 ‘누구의’예요. 여기는 「함께」예요."
+        }
+      }
+    },
+    {
+      "id": "v1-02",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 알맞은 것을 고르십시오.\n\n이 가방은 저 가방보다 (    ).",
+        "en": "Choose the best word for the blank.\n\n이 가방은 저 가방보다 (    ).",
+        "zh": "请选择填入空格的最佳词语。\n\n이 가방은 저 가방보다 (    )."
+      },
+      "choices": [
+        "커요",
+        "커고",
+        "큰",
+        "크"
+      ],
+      "answer": 0,
+      "answerText": "커요",
+      "tags": [
+        "grammar:보다",
+        "vocab:형용사"
+      ],
+      "hint": {
+        "ko": "빈칸은 「크다」를 문장 끝으로. 「보다」 뒤 → 「커요」(명사 앞 「큰」 아님). 대비: 커요 (문장 끝) · 큰 가방 (명사 앞).",
+        "en": "Blank = size word 크다 (“is big”), finishing the sentence. After 보다 (“than”), pick a full ending: 커요 (not 큰 before a noun). Contrast: 커요 (sentence end) · 큰 가방 (before a noun).",
+        "zh": "空格是大小词 크다（大），并结束句子。 보다（比）后面用完整结尾 커요（不是名词前的 큰）。 对比：커요（句尾）· 큰 가방（名词前）。",
+        "visual": {
+          "kind": "size-compare",
+          "en": "big",
+          "ko": "크다",
+          "zh": "大"
+        },
+        "steps": {
+          "en": [
+            "Blank = size word 크다 (“is big”), finishing the sentence.",
+            "After 보다 (“than”), pick a full ending: 커요 (not 큰 before a noun).",
+            "Contrast: 커요 (sentence end) · 큰 가방 (before a noun)."
+          ],
+          "zh": [
+            "空格是大小词 크다（大），并结束句子。",
+            "보다（比）后面用完整结尾 커요（不是名词前的 큰）。",
+            "对比：커요（句尾）· 큰 가방（名词前）。"
+          ],
+          "ko": [
+            "빈칸은 「크다」를 문장 끝으로.",
+            "「보다」 뒤 → 「커요」(명사 앞 「큰」 아님).",
+            "대비: 커요 (문장 끝) · 큰 가방 (명사 앞)."
+          ]
+        }
+      },
+      "why": {
+        "en": "저 가방보다 커요 = bigger than that bag. 커요 ends the sentence.",
+        "zh": "저 가방보다 커요 = 比那个包大。커요 结束句子。",
+        "ko": "저 가방보다 커요."
+      },
+      "distractOrder": [
+        2,
+        1,
+        3
+      ],
+      "distractWhy": {
+        "2": {
+          "en": "Why not 큰? 큰 is used before a noun (큰 가방). Here the sentence ends — you need 커요 (is big).",
+          "zh": "为什么不是 큰？큰 用在名词前（큰 가방）。这里句子要结束，用 커요。",
+          "ko": "왜 「큰」이 아니에요? 「큰」은 명사 앞(큰 가방)이에요. 여기는 문장 끝 「커요」예요."
+        },
+        "1": {
+          "en": "Why not 커고? 커고 wants to continue the sentence (…and…). Here it stops — use 커요.",
+          "zh": "为什么不是 커고？커고 像要接着说。这里句子结束，用 커요。",
+          "ko": "왜 「커고」가 아니에요? 「커고」는 문장을 이어가요. 여기는 끝내는 「커요」예요."
+        },
+        "3": {
+          "en": "Why not 크? That’s only the start of the word. You need the full ending 커요.",
+          "zh": "为什么不是 크？那只是词干开头。要完整的 커요。",
+          "ko": "왜 「크」가 아니에요? 단어의 앞부분만이에요. 「커요」가 필요해요."
+        }
+      }
+    },
+    {
+      "id": "v1-03",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 알맞은 것을 고르십시오.\n\n선생님, 질문이 있어요. 지금 말씀드려도 (    )?",
+        "en": "Choose the best word for the blank.\n\n선생님, 질문이 있어요. 지금 말씀드려도 (    )?",
+        "zh": "请选择填入空格的最佳词语。\n\n선생님, 질문이 있어요. 지금 말씀드려도 (    )?"
+      },
+      "choices": [
+        "돼요",
+        "안 돼요",
+        "있어요",
+        "없어요"
+      ],
+      "answer": 0,
+      "answerText": "돼요",
+      "tags": [
+        "grammar:존댓말",
+        "grammar:요청"
+      ],
+      "hint": {
+        "ko": "허락을 물어요: “해도 돼요?” 「돼요」≈ 괜찮아요? (“안 돼요”가 아님). …아/어도 돼요? → 말씀드려도 돼요?",
+        "en": "You’re asking permission: “Is it OK if I…?” 돼요 here ≈ “OK / allowed?” (like 괜찮아요?). Not the “no” word. Pattern: …아/어도 돼요? → 말씀드려도 돼요?",
+        "zh": "你在请求允许：“可以吗？” 这里的 돼요 ≈ “可以吗？”(像 괜찮아요？)。不是“不行”。 句式：…아/어도 돼요? → 말씀드려도 돼요?",
+        "visual": {
+          "skip": true
+        },
+        "steps": {
+          "en": [
+            "You’re asking permission: “Is it OK if I…?”",
+            "돼요 here ≈ “OK / allowed?” (like 괜찮아요?). Not the “no” word.",
+            "Pattern: …아/어도 돼요? → 말씀드려도 돼요?"
+          ],
+          "zh": [
+            "你在请求允许：“可以吗？”",
+            "这里的 돼요 ≈ “可以吗？”(像 괜찮아요？)。不是“不行”。",
+            "句式：…아/어도 돼요? → 말씀드려도 돼요?"
+          ],
+          "ko": [
+            "허락을 물어요: “해도 돼요?”",
+            "「돼요」≈ 괜찮아요? (“안 돼요”가 아님).",
+            "…아/어도 돼요? → 말씀드려도 돼요?"
+          ]
+        }
+      },
+      "why": {
+        "en": "말씀드려도 돼요? ≈ May I speak? 돼요 = OK / allowed.",
+        "zh": "말씀드려도 돼요? ≈ 我可以说吗？돼요 = 可以。",
+        "ko": "말씀드려도 돼요? = 말해도 괜찮아요?"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not 안 돼요? It means “no / not OK.” You’re asking for permission (“May I…?”), so you want the “OK?” side: 돼요 — not the “no” word.",
+          "zh": "为什么不是 안 돼요？意思是“不行”。你在请求允许（“可以吗？”），要的是“可以？”一边：돼요，不是“不行”。",
+          "ko": "왜 「안 돼요」가 아니에요? 「안 돼요」는 “안 돼요(=싫어요/안 됨)”예요. 지금은 허락을 물어요(“해도 돼요?”) → 「돼요」."
+        },
+        "2": {
+          "en": "Why not 있어요? 있어요 = there is / have. This blank is “is it OK?”, not “is there?”.",
+          "zh": "为什么不是 있어요？있어요=有。这里是“可以吗？”，不是“有吗？”。",
+          "ko": "왜 「있어요」가 아니에요? 「있어요」는 “있다”예요. 여기는 “괜찮아요?”예요."
+        },
+        "3": {
+          "en": "Why not 없어요? 없어요 = there isn’t. You’re not talking about existence — you’re asking if speaking is OK.",
+          "zh": "为什么不是 없어요？없어요=没有。这里不是“有没有”，而是问可不可以说。",
+          "ko": "왜 「없어요」가 아니에요? 「없어요」는 “없다”예요. 여기는 말해도 되는지 물어요."
+        }
+      }
+    },
+    {
+      "id": "v1-04",
+      "type": "topic",
+      "prompt": {
+        "ko": "※ 다음은 무엇에 대한 이야기입니까?\n\n저는 매일 아침 여섯 시에 일어납니다. 그리고 운동을 합니다.",
+        "en": "What is this mainly about?\n\n저는 매일 아침 여섯 시에 일어납니다. 그리고 운동을 합니다.",
+        "zh": "请阅读并回答。\n\n저는 매일 아침 여섯 시에 일어납니다. 그리고 운동을 합니다."
+      },
+      "choices": [
+        "아침에 하는 일",
+        "주말 여행",
+        "학교 수업",
+        "병원 가기"
+      ],
+      "answer": 0,
+      "answerText": "아침에 하는 일",
+      "tags": [
+        "reading:주제",
+        "vocab:시간"
+      ],
+      "hint": {
+        "ko": "주제 = 글 전체 이야기. 보기: 아침·일어납니다·운동. 답: 아침에 하는 일.",
+        "en": "Topic = what the whole text is about. Look: 아침, 일어납니다, 운동 — morning wake-up and exercise. Match: 아침에 하는 일 (= what you do in the morning; not the word 운동 alone).",
+        "zh": "主题 = 整段在说什么。 看：아침、일어납니다、운동 — 早上起床和运动。 对应：아침에 하는 일（早上做的事，不是照抄 운동）。",
+        "visual": {
+          "emoji": [
+            "🌅",
+            "🛏️",
+            "🏃"
+          ],
+          "en": "morning · wake up · exercise",
+          "ko": "아침·일어나다·운동",
+          "zh": "早上·起床·运动"
+        },
+        "steps": {
+          "en": [
+            "Topic = what the whole text is about.",
+            "Look: 아침, 일어납니다, 운동 — morning wake-up and exercise.",
+            "Match: 아침에 하는 일 (paraphrase — not copying 운동)."
+          ],
+          "zh": [
+            "主题 = 整段在说什么。",
+            "看：아침、일어납니다、운동 — 早上起床和运动。",
+            "对应：아침에 하는 일（换说法，不是照抄 운동）。"
+          ],
+          "ko": [
+            "주제 = 글 전체 이야기.",
+            "보기: 아침·일어납니다·운동.",
+            "답: 아침에 하는 일 (글 말 그대로가 아님)."
+          ]
+        }
+      },
+      "why": {
+        "en": "Wakes up and exercises in the morning → topic = 아침에 하는 일 (what you do in the morning).",
+        "zh": "早上起床并运动 → 주제 = 아침에 하는 일。",
+        "ko": "아침에 일어나고 운동해요 → 아침에 하는 일."
+      },
+      "distractOrder": [
+        2,
+        1,
+        3
+      ],
+      "distractWhy": {
+        "2": {
+          "en": "Why not school class? The text is morning wake-up and exercise — not a classroom lesson.",
+          "zh": "为什么不是上课？文中是早上起床和运动，不是课堂。",
+          "ko": "왜 학교 수업이 아니에요? 아침·운동 이야기예요."
+        },
+        "1": {
+          "en": "Why not weekend trip? Nothing about travel — only what he does in the morning.",
+          "zh": "为什么不是周末旅行？没有旅行，只是早上做的事。",
+          "ko": "왜 주말 여행이 아니에요? 여행 이야기가 없어요. 아침에 하는 일이에요."
+        },
+        "3": {
+          "en": "Why not going to the hospital? No hospital — morning wake-up and exercise.",
+          "zh": "为什么不是去医院？没有医院，是起床和运动。",
+          "ko": "왜 병원 가기가 아니에요? 병원 말이 없어요."
+        }
+      }
+    },
+    {
+      "id": "v1-05",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 알맞은 것을 고르십시오.\n\n어제 도서관(    ) 책을 빌렸어요.",
+        "en": "Choose the best word for the blank.\n\n어제 도서관(    ) 책을 빌렸어요.",
+        "zh": "请选择填入空格的最佳词语。\n\n어제 도서관(    ) 책을 빌렸어요."
+      },
+      "choices": [
+        "에서",
+        "에",
+        "을",
+        "와"
+      ],
+      "answer": 0,
+      "answerText": "에서",
+      "tags": [
+        "grammar:에/에서",
+        "vocab:장소"
+      ],
+      "hint": {
+        "ko": "그 곳에서 책을 빌렸어요. 하는 곳 → 「에서」. 「에」는 주로 가는 곳. 짝: 도서관에서 빌렸어요 · 학교에 가요.",
+        "en": "You borrowed a book at a place. 에서 ≈ “at / in” for where an action happens. 에 is often “to / toward.” Pair: 도서관에서 빌렸어요 · 학교에 가요.",
+        "zh": "你在某个地方借了书。 에서 ≈ 做动作的地点“在”。에 多是“去/向”。 对比：도서관에서 빌렸어요 · 학교에 가요。",
+        "visual": {
+          "emoji": [
+            "📚",
+            "📖"
+          ],
+          "en": "library + book",
+          "ko": "도서관·책",
+          "zh": "图书馆·书"
+        },
+        "steps": {
+          "en": [
+            "You borrowed a book at a place.",
+            "에서 ≈ “at / in” for where an action happens. 에 is often “to / toward.”",
+            "Pair: 도서관에서 빌렸어요 · 학교에 가요."
+          ],
+          "zh": [
+            "你在某个地方借了书。",
+            "에서 ≈ 做动作的地点“在”。에 多是“去/向”。",
+            "对比：도서관에서 빌렸어요 · 학교에 가요。"
+          ],
+          "ko": [
+            "그 곳에서 책을 빌렸어요.",
+            "동작 장소 → 「에서」. 「에」는 주로 방향.",
+            "짝: 도서관에서 빌렸어요 · 학교에 가요."
+          ]
+        }
+      },
+      "why": {
+        "en": "도서관에서 빌렸어요 = borrowed at the library.",
+        "zh": "도서관에서 빌렸어요 = 在图书馆借了。",
+        "ko": "도서관에서 빌렸어요."
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not 에? 에 often = go to / be at. Here you did an action (borrowed) at the place → 에서.",
+          "zh": "为什么不是 에？에 多表示去/在。这里是在那里做了动作（借书）→ 에서。",
+          "ko": "왜 「에」가 아니에요? 가서가 아니라 그 곳에서 빌렸어요 → 「에서」."
+        },
+        "2": {
+          "en": "Why not 을? 을 marks an object (책을). The blank is the place, not the book.",
+          "zh": "为什么不是 을？을 是对象（책）。空格是地点，不是书。",
+          "ko": "왜 「을」이 아니에요? 「을」은 대상(책)이에요. 빈칸은 장소예요."
+        },
+        "3": {
+          "en": "Why not 와? 와 = with. You weren’t “with the library” — you borrowed there.",
+          "zh": "为什么不是 와？와=和。不是“和图书馆”，是在那里借。",
+          "ko": "왜 「와」가 아니에요? 「와」는 함께예요. 도서관에서 빌린 거예요."
+        }
+      }
+    },
+    {
+      "id": "v1-06",
+      "type": "notice",
+      "prompt": {
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[도서관 안내]\n여는 시간: 오전 9시 ~ 오후 6시\n쉬는 날: 월요일\n\n도서관은 언제 쉽니까?",
+        "en": "Read the following and answer.\n\n[도서관 안내]\n여는 시간: 오전 9시 ~ 오후 6시\n쉬는 날: 월요일\n\n도서관은 언제 쉽니까?\n\n→ When is the library closed?",
+        "zh": "请阅读并回答问题。\n\n[도서관 안내]\n여는 시간: 오전 9시 ~ 오후 6시\n쉬는 날: 월요일\n\n도서관은 언제 쉽니까?\n\n→ 图书馆哪天休息？"
+      },
+      "choices": [
+        "월요일",
+        "화요일",
+        "토요일",
+        "매일"
+      ],
+      "answer": 0,
+      "answerText": "월요일",
+      "tags": [
+        "reading:안내문",
+        "vocab:시간"
+      ],
+      "hint": {
+        "ko": "쉬는 날은 언제? 「쉬는 날」 줄을 보세요. 답: 월요일.",
+        "en": "Library notice: when is it closed? Look for 쉬는 날 (= closed day). Match: 월요일 (not 여는 시간).",
+        "zh": "图书馆告示：哪天休息？ 找「쉬는 날」(休息日)。 对应：월요일（不要和 여는 시간 搞混）。",
+        "visual": {
+          "emoji": [
+            "📚",
+            "🚫"
+          ],
+          "en": "library closed",
+          "ko": "도서관·쉼",
+          "zh": "图书馆·休息"
+        },
+        "steps": {
+          "en": [
+            "Library notice: when is it closed?",
+            "Look for 쉬는 날 (= closed day) on the sign.",
+            "Match: 월요일 (don’t mix with 여는 시간)."
+          ],
+          "zh": [
+            "图书馆告示：哪天休息？",
+            "找「쉬는 날」(休息日)。",
+            "对应：월요일（不要和 여는 시간 搞混）。"
+          ],
+          "ko": [
+            "쉬는 날은 언제?",
+            "「쉬는 날」 줄을 보세요.",
+            "답: 월요일."
+          ]
+        }
+      },
+      "why": {
+        "en": "쉬는 날: 월요일 → closed on Monday.",
+        "zh": "쉬는 날: 월요일 → 周一休息。",
+        "ko": "쉬는 날: 월요일 → 월요일."
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not Tuesday? 쉬는 날 is Monday — not Tuesday.",
+          "zh": "为什么不是周二？쉬는 날 是周一。",
+          "ko": "왜 화요일이 아니에요? 쉬는 날은 월요일이에요."
+        },
+        "2": {
+          "en": "Why not Saturday? The closed-day line says Monday.",
+          "zh": "为什么不是周六？休息日写的是周一。",
+          "ko": "왜 토요일이 아니에요? 쉬는 날은 월요일이에요."
+        },
+        "3": {
+          "en": "Why not every day? It closes on Monday, not every day.",
+          "zh": "为什么不是每天？只周一休息，不是每天。",
+          "ko": "왜 매일이 아니에요? 월요일만 쉬어요."
+        }
+      }
+    },
+    {
+      "id": "v1-07",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 알맞은 것을 고르십시오.\n\n비가 와서 우산이 (    ).",
+        "en": "Choose the best word for the blank.\n\n비가 와서 우산이 (    ).",
+        "zh": "请选择填入空格的最佳词语。\n\n비가 와서 우산이 (    )."
+      },
+      "choices": [
+        "필요해요",
+        "맛있어요",
+        "재미있어요",
+        "깨끗해요"
+      ],
+      "answer": 0,
+      "answerText": "필요해요",
+      "tags": [
+        "vocab:날씨",
+        "vocab:형용사"
+      ],
+      "hint": {
+        "ko": "비가 오면 무엇이 필요해요? 우산이 필요해요. 짝: 우산이 필요해요 · 물이 필요해요.",
+        "en": "It’s raining — what do you need? 우산이 필요해요 = need an umbrella. Pair: 우산이 필요해요 · 물이 필요해요.",
+        "zh": "下雨 — 你需要什么？ 우산이 필요해요 = 需要伞。 配对：우산이 필요해요 · 물이 필요해요。",
+        "visual": {
+          "emoji": [
+            "🌧️",
+            "☂️"
+          ],
+          "en": "rain + umbrella",
+          "ko": "비·우산",
+          "zh": "雨·伞"
+        },
+        "steps": {
+          "en": [
+            "It’s raining — what do you need?",
+            "우산이 필요해요 = need an umbrella.",
+            "Pair: 우산이 필요해요 · 물이 필요해요."
+          ],
+          "zh": [
+            "下雨 — 你需要什么？",
+            "우산이 필요해요 = 需要伞。",
+            "配对：우산이 필요해요 · 물이 필요해요。"
+          ],
+          "ko": [
+            "비가 오면 무엇이 필요해요?",
+            "우산이 필요해요.",
+            "짝: 우산이 필요해요 · 물이 필요해요."
+          ]
+        }
+      },
+      "why": {
+        "en": "비가 오면 우산이 필요해요 = need an umbrella.",
+        "zh": "비가 오면 우산이 필요해요 = 需要伞。",
+        "ko": "비가 오면 우산이 필요해요."
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not 맛있어요? That’s “tasty.” Rain → you need an umbrella, not food taste.",
+          "zh": "为什么不是 맛있어요？那是“好吃”。下雨需要伞，不是味道。",
+          "ko": "왜 「맛있어요」가 아니에요? 맛은 중요하지 않아요. 우산이 필요해요."
+        },
+        "2": {
+          "en": "Why not 재미있어요? That’s “fun.” The idea is need, not fun.",
+          "zh": "为什么不是 재미있어요？那是“有趣”。这里是需要，不是好玩。",
+          "ko": "왜 「재미있어요」가 아니에요? 재미가 아니라 필요해요."
+        },
+        "3": {
+          "en": "Why not 깨끗해요? That’s “clean.” Rain → need an umbrella.",
+          "zh": "为什么不是 깨끗해요？那是“干净”。下雨需要伞。",
+          "ko": "왜 「깨끗해요」가 아니에요? 깨끗한지 묻는 게 아니에요. 우산이 필요해요."
+        }
+      }
+    },
+    {
+      "id": "v1-08",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 알맞은 것을 고르십시오.\n\n학생들이 교실에 열 (    ) 있어요.",
+        "en": "Choose the best counter.\n\n학생들이 교실에 열 (    ) 있어요.",
+        "zh": "请选择填入空格的最佳词语。\n\n학생들이 교실에 열 (    ) 있어요."
+      },
+      "choices": [
+        "명",
+        "개",
+        "권",
+        "잔"
+      ],
+      "answer": 0,
+      "answerText": "명",
+      "tags": [
+        "grammar:단위",
+        "vocab:수"
+      ],
+      "hint": {
+        "ko": "학생 = 사람. 「명」으로 세요. 짝: 학생 열 명 · 사과 열 개.",
+        "en": "Counting students (= people). 명 = people counter. 개 = things, 권 = books. Pair: 학생 열 명 · 사과 열 개.",
+        "zh": "数学生（=人）。 명 = 人。개 = 物，권 = 书。 对比：학생 열 명 · 사과 열 개。",
+        "visual": {
+          "emoji": [
+            "👥"
+          ],
+          "en": "people",
+          "ko": "사람",
+          "zh": "人"
+        },
+        "steps": {
+          "en": [
+            "Counting students (= people).",
+            "명 = people counter. 개 = things, 권 = books.",
+            "Pair: 학생 열 명 · 사과 열 개."
+          ],
+          "zh": [
+            "数学生（=人）。",
+            "명 = 人。개 = 物，권 = 书。",
+            "对比：학생 열 명 · 사과 열 개。"
+          ],
+          "ko": [
+            "학생 = 사람.",
+            "「명」으로 세요.",
+            "짝: 학생 열 명 · 사과 열 개."
+          ]
+        }
+      },
+      "why": {
+        "en": "학생 열 명 = ten people. 명 for people.",
+        "zh": "학생 열 명 = 十个人。",
+        "ko": "학생 열 명 = 사람 열 명."
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not 개? 개 counts things. 학생 are people → 명.",
+          "zh": "为什么不是 개？개 数东西。学生是人 → 명。",
+          "ko": "왜 「개」가 아니에요? 「개」는 물건. 학생은 사람 → 「명」."
+        },
+        "2": {
+          "en": "Why not 권? 권 counts books. Here we count students (people).",
+          "zh": "为什么不是 권？권 数书。这里数的是学生。",
+          "ko": "왜 「권」이 아니에요? 「권」은 책. 여기는 사람이에요."
+        },
+        "3": {
+          "en": "Why not 잔? 잔 counts cups. Students need 명.",
+          "zh": "为什么不是 잔？잔 数杯。学生用 명。",
+          "ko": "왜 「잔」이 아니에요? 「잔」은 컵. 학생은 「명」."
+        }
+      }
+    },
+    {
+      "id": "v1-09",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 알맞은 것을 고르십시오.\n\n저는 고기를 (    ) 않아요. 채소를 좋아해요.",
+        "en": "Choose the best word for the blank.\n\n저는 고기를 (    ) 않아요. 채소를 좋아해요.",
+        "zh": "请选择填入空格的最佳词语。\n\n저는 고기를 (    ) 않아요. 채소를 좋아해요."
+      },
+      "choices": [
+        "먹지",
+        "먹고",
+        "먹어서",
+        "먹을"
+      ],
+      "answer": 0,
+      "answerText": "먹지",
+      "tags": [
+        "grammar:부정",
+        "vocab:음식"
+      ],
+      "hint": {
+        "ko": "「안 먹어요」가 필요해요. 「먹지 않아요」= 안 먹어요. 짝: 먹지 않아요 · 가지 않아요.",
+        "en": "You need “don’t eat.” 안 먹어요 ≈ 먹지 않아요. Pattern: verb + 지 않아요. Pair: 먹지 않아요 · 가지 않아요.",
+        "zh": "需要“不吃”。 안 먹어요 ≈ 먹지 않아요。结构：动词 + 지 않아요。 对比：먹지 않아요 · 가지 않아요。",
+        "visual": {
+          "emoji": [
+            "🥩",
+            "🥬"
+          ],
+          "en": "meat · vegetables",
+          "ko": "고기·채소",
+          "zh": "肉·蔬菜"
+        },
+        "steps": {
+          "en": [
+            "You need “don’t eat.”",
+            "안 먹어요 ≈ 먹지 않아요. Pattern: verb + 지 않아요.",
+            "Pair: 먹지 않아요 · 가지 않아요."
+          ],
+          "zh": [
+            "需要“不吃”。",
+            "안 먹어요 ≈ 먹지 않아요。结构：动词 + 지 않아요。",
+            "对比：먹지 않아요 · 가지 않아요。"
+          ],
+          "ko": [
+            "「안 먹어요」가 필요해요.",
+            "「먹지 않아요」= 안 먹어요.",
+            "짝: 먹지 않아요 · 가지 않아요."
+          ]
+        }
+      },
+      "why": {
+        "en": "먹지 않아요 = I don’t eat.",
+        "zh": "먹지 않아요 = 我不吃。",
+        "ko": "먹지 않아요 = 안 먹어요."
+      },
+      "distractOrder": [
+        1,
+        3,
+        2
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not 먹고? 먹고 continues (“eat and…”). For “don’t eat” you need 먹지 않아요.",
+          "zh": "为什么不是 먹고？먹고 是接着说。要“不吃”用 먹지 않아요。",
+          "ko": "왜 「먹고」가 아니에요? 「먹고」는 이어서 말해요. 「안 먹어요」는 「먹지 않아요」."
+        },
+        "3": {
+          "en": "Why not 먹을? That form often goes before a noun. Here: don’t eat → 먹지 않아요.",
+          "zh": "为什么不是 먹을？那常接名词。这里要“不吃”→ 먹지 않아요。",
+          "ko": "왜 「먹을」이 아니에요? 여기는 「먹지 않아요」(안 먹어요)예요."
+        },
+        "2": {
+          "en": "Why not 먹어서? That means “because (I) eat…”. You need “don’t eat.”",
+          "zh": "为什么不是 먹어서？那是“因为吃…”。这里要“不吃”。",
+          "ko": "왜 「먹어서」가 아니에요? 「때문에 먹어서」가 아니라 「안 먹어요」예요."
+        }
+      }
+    },
+    {
+      "id": "v1-10",
+      "type": "topic",
+      "prompt": {
+        "ko": "※ 밑줄 친 부분이 가리키는 것을 고르십시오.\n\n민수는 커피를 마셨습니다. 그리고 그것을 창가에 두었습니다.",
+        "en": "What does the underlined part refer to?\n\n민수는 커피를 마셨습니다. 그리고 그것을 창가에 두었습니다.",
+        "zh": "请选择划线部分指的是什么。\n\n민수는 커피를 마셨습니다. 그리고 그것을 창가에 두었습니다."
+      },
+      "underline": [
+        "그것"
+      ],
+      "choices": [
+        "커피(잔)",
+        "창가",
+        "민수",
+        "아침"
+      ],
+      "answer": 0,
+      "answerText": "커피(잔)",
+      "tags": [
+        "reading:지시어"
+      ],
+      "hint": {
+        "ko": "「그것」은 앞에서 말한 것. 무엇을 마셨어요? → 커피. 답: 그것 = 커피.",
+        "en": "그것 points back to a thing already named. Look at sentence 1: what did he drink? → 커피. Match: 그것 = 커피(잔).",
+        "zh": "그것 指前面说过的东西。 看第一句：他喝了什么？→ 커피。 对应：그것 = 커피(잔)。",
+        "visual": {
+          "emoji": [
+            "☕"
+          ],
+          "en": "coffee",
+          "ko": "커피",
+          "zh": "咖啡"
+        },
+        "steps": {
+          "en": [
+            "그것 points back to a thing already named.",
+            "Look at sentence 1: what did he drink? → 커피.",
+            "Match: 그것 = 커피(잔)."
+          ],
+          "zh": [
+            "그것 指前面说过的东西。",
+            "看第一句：他喝了什么？→ 커피。",
+            "对应：그것 = 커피(잔)。"
+          ],
+          "ko": [
+            "「그것」은 앞에서 말한 것.",
+            "무엇을 마셨어요? → 커피.",
+            "답: 그것 = 커피."
+          ]
+        }
+      },
+      "why": {
+        "en": "He drank coffee, then put “it” down → 그것 = the coffee.",
+        "zh": "喝了咖啡再放下 → 그것 = 咖啡。",
+        "ko": "커피를 마셨어요. 그것 = 커피."
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not 창가? 그것 is what he put down — the thing he drank (coffee), not the window place.",
+          "zh": "为什么不是 창가？그것 是他放下的东西——喝过的咖啡，不是窗边。",
+          "ko": "왜 창가가 아니에요? 「그것」은 마신 것(커피)이에요."
+        },
+        "2": {
+          "en": "Why not 민수? 그것 points to a thing, not the person.",
+          "zh": "为什么不是 민수？그것 指物，不是人。",
+          "ko": "왜 민수가 아니에요? 「그것」은 사람 이름이 아니에요."
+        },
+        "3": {
+          "en": "Why not 아침? Morning isn’t what he put by the window — the coffee is.",
+          "zh": "为什么不是 아침？放在窗边的不是早晨，是咖啡。",
+          "ko": "왜 아침이 아니에요? 창가에 둔 것은 커피예요."
+        }
+      }
+    }
+  ]
+}
