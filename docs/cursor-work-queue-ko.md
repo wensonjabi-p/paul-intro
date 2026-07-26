@@ -1,6 +1,7 @@
 # Cursor 작업 큐 (자동 체인)
 
-> **갱신:** 2026-07-26 · **Hub 도어 #1–#7 research-fill Done** · **Next = D1 디자인 리프레시 v2** · Hangul path **v5** 유지 · Vercel hub URL 대기  
+> **갱신:** 2026-07-27 · **D1 디자인 리프레시 v2 Done** · **Now = R1 콘텐츠·인터페이스 리뷰 수정** · Hub 도어 #1–#7 research-fill Done · Hangul path **v5** 유지 · Vercel hub URL 배포 완료  
+> **리서치·큐 소유권:** Next 발명 = **Claude만**. Cursor는 큐 비었다고 백로그를 만들지 않음 · 큐 항목 **구현 중** 범위 안 리서치만 자동 OK · 큐 비면 self-QA만. 상세 → [`claude-cursor-loop-ko.md`](claude-cursor-loop-ko.md) **§3-2**.  
 > **짝 문서:** [PROGRESS.md](PROGRESS.md) · [DAILY-LOG.md](DAILY-LOG.md) · **[research-teacher-select-content-fill-ko.md](research-teacher-select-content-fill-ko.md)** · **[research-geulmoeum-content-fill-ko.md](research-geulmoeum-content-fill-ko.md)** · **[research-jabi-games-ko.md](research-jabi-games-ko.md)** · **[research-topik2-content-fill-ko.md](research-topik2-content-fill-ko.md)** · **[research-topik1-content-fill-ko.md](research-topik1-content-fill-ko.md)** · **[research-basic-content-fill-ko.md](research-basic-content-fill-ko.md)** · **[research-hangul-content-fill-ko.md](research-hangul-content-fill-ko.md)** · **[research-english-aes-for-jabi-ko.md](research-english-aes-for-jabi-ko.md)** · [topik2-writing-axis-mapping-ko.md](topik2-writing-axis-mapping-ko.md) · [research-topik2-writing-scoring-papers-ko.md](research-topik2-writing-scoring-papers-ko.md)
 
 ---
@@ -11,7 +12,7 @@
 2. **예외(차단 — 자동 시작 금지):** Paul OK가 필요한 게이트 · 결제(Lemon) · Paul이 명시적으로 멈춤을 요청한 경우.
 3. **병렬 OK**인 항목은 체인과 독립으로 돌릴 수 있다. P0를 막지 않는다.
 4. Lemon / commit·push는 **Paul이 말하기 전까지** 큐에 넣지 않는다(아래 Stop 라인).
-5. **분담 (2026-07-26 Paul):** Cursor = 기본 프로그래밍·구현 · Claude = 이후 확인 / 리서치 / 기획만.
+5. **분담 (2026-07-26 Paul):** Cursor = 구현(큐 항목 범위 안 리서치 자동 OK) · Claude = Next 채움 / 확인 / 기획. 큐 비면 Cursor는 self-QA만([§3-2](claude-cursor-loop-ko.md#3-2-리서치큐-소유권-paul-확정--2026-07-26)).
 
 ---
 
@@ -19,7 +20,7 @@
 
 | # | 작업 | Agent / ID | 메모 |
 |---|------|------------|------|
-| **D1** | **디자인 리프레시 v2 적용** | 다음 자동 | `docs/design-handoff-mockup-v2-ko.md` 1순위부터 — 캐릭터 남색 배지(홈) → 퀴즈 A/B/C/D 뱃지 → 버튼 3D press → 모드카드 배지 → XP 바 → 탭바 아이콘. app.css/app.js 클래스 매핑 구체 CSS 포함, 차단 없음. |
+| **R1** | **콘텐츠·인터페이스 리뷰 수정** | 다음 자동 | `content-interface-review-2026-07-27-ko.md` — Basics 유닛 카드 디버그 블록 제거(1순위) → Hangul 퀴즈 choices 다국어화 → Hangul "종류" 필드 제거 → Basics 카운터 버그 → "음악" 오타 → 스텝배지 중복. 차단 없음. |
 
 ---
 
@@ -27,9 +28,12 @@
 
 | # | 작업 | 메모 |
 |---|------|------|
+| **D1** | **디자인 리프레시 v2** | `design-handoff-mockup-v2-ko.md` 1–6 · 남색 캐릭터 배지·STAGE 알약·색종이 · A/B/C/D 뱃지 · 3D press · 모드 원형 배지+추천 리본 · XP 유리질감(gold) · 탭 아이콘 · result-clear 미니 배지 · `hub.css`/`brand.json` navy 토큰 |
+| **QA1** | **Cursor self-QA pass** | Claude Next 비어 있음 → smoke 전면 · 글모음 `#deck=honorifics` stub CTA → Speed Quiz · geulmoeum smoke 가드 · **Claude Next 대기** |
 | **#7** | **선생님 선택 research-fill** | `research-teacher-select-content-fill-ko.md` · teach 리포트·좌석 · Hub/Me CTA · smoke OK |
 | **#6** | **글모음 research-fill** | `research-geulmoeum-content-fill-ko.md` · 6편 EN∥KO · Hub 도어 카피 · smoke OK |
 | **#5** | **Games research-fill polish** | `research-jabi-games-ko.md` · manifest v2 · Hub/Games 카피 · Dictation 16→20 · smoke OK |
+| **Hangul HW audit** | **Hanzi Writer×한글 전체 감사** | [`audit-hanzi-writer-hangul-ko.md`](audit-hanzi-writer-hangul-ko.md) · wrapper Hangul-safe · Y-up 문서화 · cache `20260727b` · **이전 부분 stroke verify 대체** |
 | **Hangul v5** | **획순 학습 후 path 재수정** | `hangul-stroke-shapes-learned-ko.md` · preview 묶음 · stub denylist · pilot 크롬 제거 · smoke v5 |
 | **#4** | **TOPIK II research-fill** | `research-topik2-content-fill-ko.md` · listen/read-03 · write +1 · 도어·형성채점 유지 · smoke OK |
 | **#3** | **TOPIK I research-fill** | `research-topik1-content-fill-ko.md` · listen-02 + read-04 · 도어·최종모의 카피 · smoke OK |
@@ -70,14 +74,17 @@
 
 | 소유 | 할 일 |
 |------|--------|
-| **Paul** | Canva: [`CANVA-BATCH-12-ko.md`](../hub/app/assets/chars/CANVA-BATCH-12-ko.md) 우선 **ㄴ nieun** 1–6 → `source/` · Vercel New Project Root=`hub` → URL · (선택) 커밋/푸시 · Hangul 획순 **수동 Trace QA** |
-| **Claude (리뷰/기획만)** | 획순 수동 채점 QA · 국어원 획순 대조 · **ㅈ 정식 데이터** 기획 · Task A (URL 후, docs만) |
+| **Paul** | Canva: [`CANVA-BATCH-12-ko.md`](../hub/app/assets/chars/CANVA-BATCH-12-ko.md) 우선 **ㄴ nieun** 1–6 → `source/` · Vercel New Project Root=`hub` → URL · (선택) 커밋/푸시 · Hangul 획순 **Hard refresh 후 ㄹㅂㅇㅋ Replay/Trace** ([감사 SoT](audit-hanzi-writer-hangul-ko.md)) |
+| **Claude (리뷰/기획만)** | 감사 문서 대조 · **ㅈ 정식 데이터** 기획 · Task A (URL 후, docs만) · **Next 큐 채움** |
 
 ---
 
 ## 상태 메모
 
+- **D1 디자인 리프레시 v2** = **완료** (2026-07-26) — `hub/app/css/app.css` + `index.html`/`app.js` · navy 토큰 `hub.css`/`brand.json` · `hub/app/data/**` 미터치.
+- **Cursor self-QA pass (QA1)** = **완료** (2026-07-26) — 게이트 당시 Next=Paul 게이트만 → smoke OK · 글모음 stub CTA 1건 수정.
+- **Now = 비어 있음** — Claude Next 대기 · Paul 게이트만 남음.
 - **#7 선생님 선택** = **완료** — [`research-teacher-select-content-fill-ko.md`](research-teacher-select-content-fill-ko.md) · `hub/teach/` · smoke `_smoke_teacher_select.js`. 가짜 강사 프로필 없음 · Phase 3 대시보드/결제 미배선.
-- **Hub research-fill 체인 #1–#7 = 완료 → pause.**
+- **Hub research-fill 체인 #1–#7 = 완료.** Lemon/commit Stop · Phase2 캘리브·N7b는 Paul 게이트.
 - **#5b Lemon** = 보류 · Hangul **v5** 유지 · Games/글모음 polish Done.
 - 앱 코드·커밋은 각 체인 태스크가 자기 범위에서만 수행. 이 문서는 **큐·규칙만** 담는다.

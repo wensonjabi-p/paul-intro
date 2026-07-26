@@ -10,6 +10,17 @@
 
 ---
 
+## 2026-07-27
+
+### Claude (콘텐츠·인터페이스 전수 리뷰)
+- Paul 요청: 커서가 만든 트랙 하나씩 화면·콘텐츠 확인, 애매한 한국어는 국립국어원 기준 대조.
+- 결과: [docs/content-interface-review-2026-07-27-ko.md](content-interface-review-2026-07-27-ko.md) -- Hangul/Basics 깊게, TOPIK I/II·Games·글모음·Teach는 랜딩+표본.
+- 핵심 발견(인터페이스): Basics 유닛 카드에 파일경로/문항ID/타입이 그대로 노출되는 디버그 블록(가장 시급) -- Hangul 레슨도 내부 kind/slug 필드 노출 -- Hangul 퀴즈 choices 15개+ 다국어 처리 안 됨(KO/ZH에서도 영어) -- Basics "0 filled" 카운터가 실제와 모순.
+- 콘텐츠: 표본 검증한 항목(7종성·연음규칙·평격경 삼중대립·이에요예요·은는vs이가·TOPIK II 54번 형식)은 전부 정확. "음악" 연음 예시 로마자 표기 "e-mak"만 오타(eu-mak이어야).
+- 오탐 정정: 캐릭터 선택 화면에서 ㄴ~ㅎ 카드가 빈 것은 버그 아님(아직 아트 없음, 정상) -- DOM 확인 결과 giyeok/nieun 이미지는 정상 로드.
+- 조치: cursor-work-queue-ko.md Now = R1(위 항목 우선순위 순으로 수정)로 등록.
+- 다음(Cursor): R1 -- Basics 디버그 블록 제거부터 순서대로.
+
 ## 2026-07-26
 
 ### Claude (Task A -- Vercel hub 스테이징 URL 배선)
