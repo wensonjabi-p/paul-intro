@@ -12,6 +12,12 @@
 
 ## 2026-07-26
 
+### Claude (Task A -- Vercel hub 스테이징 URL 배선)
+- Vercel 프로젝트 paul-intro-hub 생성 (Paul 계정, Root=hub). main 브랜치에는 hub/가 없어서(PR #2 미merge) 초기 import는 branch=main으로만 가능 -- 이후 Deploy Hook을 cursor/hub-phase0-0f7e에 만들어 트리거, 그 브랜치 빌드로 스테이징 URL 확보.
+- URL: https://paul-intro-hub-git-cursor-hub-pha-05ff42-wensonjabi-ps-projects.vercel.app -- jabi. 허브 랜딩 정상 로딩 확인.
+- 조치: brand.json domain.staging 채움, ops-links.json phase-0-hub/phase-0-vercel/phase-0-ops-dashboard/phase-1-app-mvp vercel 링크 채움, PROGRESS.md §1/§3 갱신.
+- 다음: Paul이 URL 클릭 확인. app.js SRS/듣기는 Cursor B 소유(미터치).
+
 ### Claude (D1 큐 등록 -- 디자인 핸드오프 실행 갭 발견)
 - 확인: 디자인 목업 v2 핸드오프 문서(design-handoff-mockup-v2-ko.md)가 어제 DAILY-LOG에만 기록되고 cursor-work-queue-ko.md Next에는 등록 안 돼 있었음 -- 자동체인이 Now/Next 테이블만 읽어서 안 집힘. app.css 확인 결과 partner-glyph/mode-icon 등 아직 미변경.
 - 조치: cursor-work-queue-ko.md Now를 D1(디자인 리프레시 v2 적용)로 갱신, 차단 없음으로 표시.
