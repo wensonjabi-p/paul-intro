@@ -1,0 +1,120 @@
+{
+  "id": "jabi-basic-v1-02",
+  "title": {
+    "en": "jabi. Basics · Unit 2 — Daily Life",
+    "ko": "jabi. 기초 · 2과 — 일상생활",
+    "zh": "jabi. 基础 · 第2课 — 日常生活"
+  },
+  "level": "Basic (pre-TOPIK)",
+  "verified": true,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "sourceNote": "DRAFT/PILOT — jabi. 원작. 세종학당 표준교육과정 '일상 행동' 주제만 참고, 문장·어휘 미차용. Cursor/Paul 검토 후 확정.",
+  "questions": [
+    {
+      "id": "basic-02-01",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 다음 대화를 완성하십시오.\n\n타완: 지금 뭐 해요?\n투이: 저는 지금 한국어를 (    ).",
+        "en": "Complete the dialogue.\n\nTawan: What are you doing now?\nThui: I'm (    ) Korean right now.",
+        "zh": "请完成对话。\n\n他万：你现在在做什么？\n翠：我现在在(    )韩语。"
+      },
+      "choices": ["공부해요", "운동해요", "요리해요", "청소해요"],
+      "answer": 0,
+      "answerText": "공부해요",
+      "tags": ["topic:일상", "vocab:일상동작"],
+      "hint": {
+        "ko": "「한국어를」 뒤에 어울리는 동작을 고르세요.",
+        "en": "Pick the action that fits with \"한국어를\" (Korean language).",
+        "zh": "选择与「한국어를」(韩语)搭配的动作。",
+        "visual": { "emoji": ["📚", "🇰🇷"], "en": "study + Korean", "ko": "공부·한국어", "zh": "学习·韩语" },
+        "steps": {
+          "en": ["한국어를 + [verb] — the object is \"Korean.\"", "You study a language: 공부해요.", "한국어를 공부해요 = \"studying Korean.\""],
+          "zh": ["한국어를 + [动词]——宾语是「韩语」。", "学习语言用 공부해요。", "한국어를 공부해요 = \"在学韩语\"。"],
+          "ko": ["한국어를 + [동사] — 목적어가 '한국어'예요.", "언어는 '공부하다'와 어울려요.", "한국어를 공부해요."]
+        }
+      },
+      "why": {
+        "en": "공부해요 (\"study\") is the verb that naturally takes \"language\" as its object.",
+        "zh": "공부해요(\"学习\")是自然搭配「语言」宾语的动词。",
+        "ko": "공부해요는 '언어'와 자연스럽게 어울리는 동사예요."
+      },
+      "distractOrder": [1, 2, 3],
+      "distractWhy": {
+        "1": { "en": "운동해요 (\"exercise\") doesn't take a language as its object.", "zh": "운동해요(\"运动\")不搭配语言宾语。", "ko": "운동해요는 언어와 안 어울려요." },
+        "2": { "en": "요리해요 (\"cook\") doesn't fit with \"Korean language.\"", "zh": "요리해요(\"做饭\")与「韩语」不符。", "ko": "요리해요는 한국어와 안 맞아요." },
+        "3": { "en": "청소해요 (\"clean\") doesn't fit with \"Korean language.\"", "zh": "청소해요(\"打扫\")与「韩语」不符。", "ko": "청소해요는 한국어와 안 맞아요." }
+      }
+    },
+    {
+      "id": "basic-02-02",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 다음 대화를 완성하십시오.\n\n치엔: 저녁에 보통 뭐 해요?\n마크: 저는 보통 집에서 (    ).",
+        "en": "Complete the dialogue.\n\nQian: What do you usually do in the evening?\nMark: I usually (    ) at home.",
+        "zh": "请完成对话。\n\n倩：晚上你一般做什么？\n马克：我一般在家(    )。"
+      },
+      "choices": ["쉬어요", "가요", "만나요", "사요"],
+      "answer": 0,
+      "answerText": "쉬어요",
+      "tags": ["topic:일상"],
+      "hint": {
+        "ko": "「집에서」와 자연스럽게 어울리는 동작을 고르세요.",
+        "en": "Pick the action that fits naturally with \"at home\" (집에서).",
+        "zh": "选择与「在家」(집에서)自然搭配的动作。",
+        "visual": { "emoji": ["🏠", "😌"], "en": "home + rest", "ko": "집·휴식", "zh": "家·休息" },
+        "steps": {
+          "en": ["집에서 = \"at home.\"", "가요/만나요 imply going somewhere or meeting someone — less natural for staying home.", "쉬어요 (\"rest\") fits staying home in the evening."],
+          "zh": ["집에서 = \"在家\"。", "가요/만나요 暗示去某处或见某人——和待在家不太搭。", "쉬어요(\"休息\")符合晚上待在家。"],
+          "ko": ["집에서 = 집 안에서.", "가요/만나요는 밖으로 나가는 느낌이에요.", "쉬어요가 집과 자연스러워요."]
+        }
+      },
+      "why": {
+        "en": "쉬어요 (\"rest\") is the natural fit for staying home in the evening.",
+        "zh": "쉬어요(\"休息\")最符合晚上待在家的语境。",
+        "ko": "쉬어요가 저녁에 집에 있는 상황과 자연스러워요."
+      },
+      "distractOrder": [1, 2, 3],
+      "distractWhy": {
+        "1": { "en": "가요 (\"go\") implies leaving, which conflicts with \"at home.\"", "zh": "가요(\"去\")暗示离开，与「在家」矛盾。", "ko": "가요는 나가는 느낌이라 '집에서'와 안 맞아요." },
+        "2": { "en": "만나요 (\"meet someone\") usually isn't done alone at home.", "zh": "만나요(\"见面\")通常不是独自在家做的事。", "ko": "만나요는 보통 혼자 집에서 하는 일이 아니에요." },
+        "3": { "en": "사요 (\"buy\") doesn't fit resting at home.", "zh": "사요(\"买\")与在家休息不符。", "ko": "사요는 집에서 쉬는 것과 안 맞아요." }
+      }
+    },
+    {
+      "id": "basic-02-03",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 다음 대화를 완성하십시오.\n\n선생님: 아침 몇 시에 일어나요?\n학생: 저는 아침 일곱 시에 (    ).",
+        "en": "Complete the dialogue.\n\nTeacher: What time do you get up in the morning?\nStudent: I (    ) at 7am.",
+        "zh": "请完成对话。\n\n老师：你早上几点起床？\n学生：我早上七点(    )。"
+      },
+      "choices": ["일어나요", "자요", "먹어요", "씻어요"],
+      "answer": 0,
+      "answerText": "일어나요",
+      "tags": ["topic:일상", "vocab:시간표현"],
+      "hint": {
+        "ko": "질문에 나온 동사를 그대로 대답에 써요.",
+        "en": "Echo the same verb the question used.",
+        "zh": "在回答中使用问题中出现的相同动词。",
+        "visual": { "emoji": ["⏰", "🙆"], "en": "wake up + time", "ko": "일어나다·시간", "zh": "起床·时间" },
+        "steps": {
+          "en": ["The question uses 일어나요 (\"get up\").", "A direct answer repeats the same verb.", "저는 일곱 시에 일어나요."],
+          "zh": ["问题用了 일어나요(\"起床\")。", "直接回答重复相同动词。", "저는 일곱 시에 일어나요。"],
+          "ko": ["질문에 일어나요가 있어요.", "대답도 같은 동사를 써요.", "저는 일곱 시에 일어나요."]
+        }
+      },
+      "why": {
+        "en": "Direct questions like this are typically answered with the same verb.",
+        "zh": "这类直接问题通常用相同动词回答。",
+        "ko": "이런 직접 질문은 보통 같은 동사로 대답해요."
+      },
+      "distractOrder": [1, 2, 3],
+      "distractWhy": {
+        "1": { "en": "자요 (\"sleep\") is the opposite action.", "zh": "자요(\"睡觉\")是相反的动作。", "ko": "자요는 반대되는 동작이에요." },
+        "2": { "en": "먹어요 (\"eat\") isn't what the question asked about.", "zh": "먹어요(\"吃\")不是问题询问的内容。", "ko": "먹어요는 질문과 안 맞아요." },
+        "3": { "en": "씻어요 (\"wash up\") isn't what the question asked about.", "zh": "씻어요(\"洗漱\")不是问题询问的内容。", "ko": "씻어요는 질문과 안 맞아요." }
+      }
+    }
+  ]
+}

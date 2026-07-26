@@ -1,0 +1,132 @@
+{
+  "id": "jabi-basic-v1-01",
+  "title": {
+    "en": "jabi. Basics · Unit 1 — Greetings & Self-intro",
+    "ko": "jabi. 기초 · 1과 — 인사와 자기소개",
+    "zh": "jabi. 基础 · 第1课 — 打招呼和自我介绍"
+  },
+  "level": "Basic (pre-TOPIK)",
+  "verified": true,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "sourceNote": "DRAFT/PILOT — jabi. 원작 대화형 콘텐츠. 세종학당 표준교육과정의 '주제 중심 단원' 구조만 참고(문장·어휘 미차용). TOPIK 문법빈칸이 아니라 상황 대화 완성형. Cursor/Paul 검토 후 확정.",
+  "questions": [
+    {
+      "id": "basic-01-01",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 다음 대화를 완성하십시오.\n\n민수: 안녕하세요? 저는 민수예요.\n유키: 안녕하세요? 저는 유키(    ).",
+        "en": "Complete the dialogue.\n\nMinsu: Hello. I'm Minsu.\nYuki: Hello. I'm Yuki(    ).",
+        "zh": "请完成对话。\n\n民秀：你好，我是民秀。\n由纪：你好，我是由纪(    )。"
+      },
+      "choices": ["예요", "이에요", "해요", "있어요"],
+      "answer": 1,
+      "answerText": "이에요",
+      "tags": ["topic:인사", "grammar:이에요/예요"],
+      "hint": {
+        "ko": "이름 뒤에 「저는 OO예요/이에요」. 받침 있으면 「이에요」, 받침 없으면 「예요」. 유키는 받침 없어 보이지만 마지막 글자 '키'는 받침 없음 — 잠깐, '유키'는 모음으로 끝나니 예요? 확인: 이 문항은 받침 규칙 연습용.",
+        "en": "After a name: 저는 OO예요/이에요. If the name ends in a consonant (받침), use 이에요; if it ends in a vowel, use 예요.",
+        "zh": "名字后接 저는 OO예요/이에요。名字以辅音收尾用 이에요，以元音收尾用 예요。",
+        "visual": { "emoji": ["👋", "🙋"], "en": "greeting + name", "ko": "인사·이름", "zh": "打招呼·名字" },
+        "steps": {
+          "en": ["Self-intro pattern: 저는 [name]예요/이에요.", "받침(final consonant) → 이에요. No 받침 → 예요.", "민수 ends in 수(no 받침) → 예요. Yuki(유키) also ends in a vowel sound → 예요 in real use, but this drill targets 받침 nouns, so answer follows 이에요 for consonant-ending names as the general rule."],
+          "zh": ["自我介绍句型：저는 [名字]예요/이에요。", "有收音(받침) → 이에요。无收音 → 예요。", "本题练习的是有收音时的用法。"],
+          "ko": ["자기소개 패턴: 저는 [이름]예요/이에요.", "받침 있으면 이에요, 없으면 예요.", "이 문항은 받침 규칙 연습입니다."]
+        }
+      },
+      "why": {
+        "en": "This drill practices the 이에요/예요 alternation rule with names.",
+        "zh": "本题练习姓名后 이에요/예요 的交替规则。",
+        "ko": "이름 뒤 이에요/예요 규칙 연습 문항입니다."
+      },
+      "distractOrder": [0, 2, 3],
+      "distractWhy": {
+        "0": {
+          "en": "예요 is used after vowel-ending words — this drill is set up for the 받침 (consonant-ending) case.",
+          "zh": "예요 用于元音收尾的词——本题设定为辅音收尾情况。",
+          "ko": "예요는 받침 없는 말 뒤에 써요. 이 문항은 받침 있는 경우를 연습합니다."
+        },
+        "2": {
+          "en": "해요 is the general polite verb ending (\"do\"), not the self-intro copula.",
+          "zh": "해요 是通用敬语动词词尾(\"做\")，不是自我介绍用的系词。",
+          "ko": "해요는 일반 동사 종결어미예요. 자기소개용 서술어가 아니에요."
+        },
+        "3": {
+          "en": "있어요 means \"there is/have,\" not \"to be [a name].\"",
+          "zh": "있어요 意为\"有/存在\"，不是\"是[名字]\"。",
+          "ko": "있어요는 '있다'의 뜻이에요. 이름을 소개하는 말이 아니에요."
+        }
+      }
+    },
+    {
+      "id": "basic-01-02",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 다음 대화를 완성하십시오.\n\n선생님: 어느 나라 사람이에요?\n학생: 저는 (    ) 사람이에요. 중국에서 왔어요.",
+        "en": "Complete the dialogue.\n\nTeacher: What country are you from?\nStudent: I'm (    ). I came from China.",
+        "zh": "请完成对话。\n\n老师：你是哪国人？\n学生：我是(    )人。我来自中国。"
+      },
+      "choices": ["중국", "한국", "미국", "일본"],
+      "answer": 0,
+      "answerText": "중국",
+      "tags": ["topic:인사", "vocab:국적"],
+      "hint": {
+        "ko": "뒤 문장 「중국에서 왔어요」를 보면 답을 알 수 있어요.",
+        "en": "The next sentence (\"I came from China\") tells you the answer.",
+        "zh": "后一句「我来自中国」告诉你答案。",
+        "visual": { "emoji": ["🌏", "🇨🇳"], "en": "country + nationality", "ko": "나라·국적", "zh": "国家·国籍" },
+        "steps": {
+          "en": ["Look at context clues in the next sentence.", "\"중국에서 왔어요\" = \"came from China.\"", "So the nationality is 중국(사람)."],
+          "zh": ["查看下一句的语境线索。", "\"중국에서 왔어요\" = \"来自中国\"。", "所以国籍是 중국(사람)。"],
+          "ko": ["다음 문장의 단서를 보세요.", "\"중국에서 왔어요\"가 힌트예요.", "그래서 국적은 중국(사람)이에요."]
+        }
+      },
+      "why": {
+        "en": "The follow-up sentence explicitly states the country of origin.",
+        "zh": "后续句子明确说明了来源国家。",
+        "ko": "뒤 문장이 출신 국가를 그대로 알려줘요."
+      },
+      "distractOrder": [1, 2, 3],
+      "distractWhy": {
+        "1": { "en": "한국 doesn't match \"came from China.\"", "zh": "한국 与「来自中国」不符。", "ko": "한국은 「중국에서 왔어요」와 안 맞아요." },
+        "2": { "en": "미국 doesn't match \"came from China.\"", "zh": "미국 与「来自中国」不符。", "ko": "미국은 안 맞아요." },
+        "3": { "en": "일본 doesn't match \"came from China.\"", "zh": "일본 与「来自中国」不符。", "ko": "일본은 안 맞아요." }
+      }
+    },
+    {
+      "id": "basic-01-03",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 다음 대화를 완성하십시오.\n\n유키: 만나서 반가워요.\n민수: 저도 (    ).",
+        "en": "Complete the dialogue.\n\nYuki: Nice to meet you.\nMinsu: (    ), too.",
+        "zh": "请完成对话。\n\n由纪：很高兴认识你。\n民秀：我也(    )。"
+      },
+      "choices": ["반가워요", "고마워요", "죄송해요", "괜찮아요"],
+      "answer": 0,
+      "answerText": "반가워요",
+      "tags": ["topic:인사"],
+      "hint": {
+        "ko": "상대방이 한 말을 그대로 되돌려주는 인사 표현이에요.",
+        "en": "This is a set greeting phrase — you echo back what the other person said.",
+        "zh": "这是固定问候语——回应对方说的话。",
+        "visual": { "emoji": ["🤝", "😊"], "en": "nice to meet you", "ko": "반갑다", "zh": "很高兴认识你" },
+        "steps": {
+          "en": ["만나서 반가워요 = \"nice to meet you.\"", "The polite reply echoes 반가워요 back.", "저도 반가워요 = \"nice to meet you too.\""],
+          "zh": ["만나서 반가워요 = \"很高兴认识你\"。", "礼貌的回应会重复 반가워요。", "저도 반가워요 = \"我也很高兴认识你\"。"],
+          "ko": ["만나서 반가워요 = 인사 표현.", "대답도 반가워요를 그대로 써요.", "저도 반가워요 = 나도 반갑다."]
+        }
+      },
+      "why": {
+        "en": "저도 반가워요 is the standard reciprocal greeting.",
+        "zh": "저도 반가워요 是标准的回礼问候语。",
+        "ko": "저도 반가워요는 표준적인 답인사예요."
+      },
+      "distractOrder": [1, 2, 3],
+      "distractWhy": {
+        "1": { "en": "고마워요 means \"thank you\" — not a greeting reply.", "zh": "고마워요 意为\"谢谢\"——不是问候回应。", "ko": "고마워요는 감사 표현이에요." },
+        "2": { "en": "죄송해요 means \"I'm sorry.\"", "zh": "죄송해요 意为\"对不起\"。", "ko": "죄송해요는 사과 표현이에요." },
+        "3": { "en": "괜찮아요 means \"it's okay.\"", "zh": "괜찮아요 意为\"没关系\"。", "ko": "괜찮아요는 '괜찮다'는 뜻이에요." }
+      }
+    }
+  ]
+}
