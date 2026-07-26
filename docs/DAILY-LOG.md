@@ -12,6 +12,14 @@
 
 ## 2026-07-26
 
+### Claude (한글 획순 배선)
+- ✅ **13자모 stroke 데이터 완성** — ㄱ 최초 방향 오류(세로획 반대쪽) 발견·수정, 렌더링된 SVG path를 Python 소스와 직접 대조해 검증 → `hub/app/assets/chars/strokes/jamo-strokes-13.json`.
+- ✅ **hangul-02·04 모듈 배선** — Cursor의 `track-manifest.json`/`hangul.js` 스캐폴딩에 `type:"trace"` 모듈 추가, Hanzi Writer 위젯 실제 렌더링(클릭→퀴즈 모드). ㅈ(데이터 없음)는 "준비 중" 폴백으로 자연 처리. 브라우저 검증 완료(콘솔 에러 0).
+- ✅ **기초수업 콘텐츠 초안 2과** (인사·일상생활, jabi. 원작, 기존 blank 스키마 재사용) → `hub/app/data/draft-basic-unit0{1,2}.json`
+- ✅ **TOPIK II 작문 채점 리서치** — 54번이 쓰기 100점 중 50점 최대 비중 확인, 3축(내용/구조/언어사용) 정성 피드백형 AI 채점 프롬프트 제안(숫자 점수 대신) → `docs/research-topik2-writing-grading-ko.md`
+- 🔄 다음: 나머지 lessons(모음·경음·받침 등)에도 stroke/콘텐츠 확장은 Paul 확인 후
+
+
 ### Cursor
 - ✅ **안내문 TOPIK I 어휘 하향** — `v3-03` 병원: 내과/접수 → 약국·식당·화장실; 질문 한국어 유지(EN/ZH). `v1-06` 휴관일→쉬는 날. README 어휘 규칙.
 - ✅ **대비 표기** — 반댓말·시제·같은 패턴 모두 `A · B` (≠/↔ 금지).
