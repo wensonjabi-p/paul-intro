@@ -1,5 +1,21 @@
 node_modules/
 .vercel/
+.env
+.env.*
+!.env.example
 scripts/llm-keys.local.ps1
 tmp-click/
 hub/app/data/local/
+
+# Local experiments / caches (not product)
+backtest_kospi_signal.py
+backtest_out.txt
+__pycache__/
+scripts/__pycache__/
+*.pyc
+
+# Character pipeline: trials, pick dumps, Canva raw exports
+hub/app/assets/chars/source/_trial_*
+hub/app/assets/chars/source/_pick/
+hub/app/assets/chars/source/7_26 */
+hub/app/assets/chars/source/이전 */
