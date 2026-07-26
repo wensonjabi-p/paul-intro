@@ -1,0 +1,253 @@
+{
+  "id": "jabi-hangul-v0",
+  "version": 0,
+  "status": "scaffold",
+  "updated": "2026-07-26",
+  "title": {
+    "en": "Hangul read & write",
+    "ko": "한글 읽기·쓰기",
+    "zh": "韩文字母读写"
+  },
+  "lead": {
+    "en": "Scaffold only — lesson shells 00–17. No body text, audio, or stroke practice yet.",
+    "ko": "스캐폴딩만 — 00–17 레슨 껍데기. 본문·오디오·획순 연습은 아직 없음.",
+    "zh": "仅骨架 — 00–17 课壳。正文、音频、笔顺练习尚未接入。"
+  },
+  "sourcePolicy": {
+    "note": "Sejong structure (unit order / grouping method) only — no official wording or audio. Original jabi. content TBD.",
+    "research": [
+      "docs/research-hangul-track-implementation-ko.md",
+      "docs/research-next-tracks-ko.md"
+    ]
+  },
+  "schema": {
+    "lesson": {
+      "id": "hangul-NN",
+      "order": 0,
+      "slug": "kebab-case",
+      "kind": "intro | vowels | consonants | aspirated | tense | diphthong | batchim | liaison | practice | survival",
+      "title": "{ en, ko, zh }",
+      "jamoPreview": ["optional jamo chars for learn units"],
+      "groups": ["optional subgroups e.g. ㄴㅁㄹ — structure only"],
+      "status": "scaffold | draft | ready",
+      "modules": "empty until content — intro / learn / drill / task later"
+    },
+    "srsTagHint": "Future wrong answers may use jamo:* tags (e.g. jamo:ㄹ) — not wired yet"
+  },
+  "lessons": [
+    {
+      "id": "hangul-00",
+      "order": 0,
+      "slug": "preview",
+      "kind": "intro",
+      "title": { "en": "00 · Preview", "ko": "00 · 예비과", "zh": "00 · 预备" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-01",
+      "order": 1,
+      "slug": "basic-vowels",
+      "kind": "vowels",
+      "title": { "en": "01 · Basic vowels", "ko": "01 · 기본 모음", "zh": "01 · 基本元音" },
+      "jamoPreview": ["ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅡ", "ㅣ", "ㅔ", "ㅐ"],
+      "groups": [
+        { "id": "vowel-a", "jamo": ["ㅏ", "ㅓ", "ㅗ", "ㅜ"] },
+        { "id": "vowel-b", "jamo": ["ㅡ", "ㅣ", "ㅔ", "ㅐ"] }
+      ],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-02",
+      "order": 2,
+      "slug": "basic-consonants",
+      "kind": "consonants",
+      "title": { "en": "02 · Basic consonants", "ko": "02 · 기본 자음", "zh": "02 · 基本辅音" },
+      "jamoPreview": ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅈ"],
+      "groups": [
+        { "id": "cons-soft", "jamo": ["ㄴ", "ㅁ", "ㄹ"] },
+        { "id": "cons-stop", "jamo": ["ㄱ", "ㄷ", "ㅂ"] },
+        { "id": "cons-fric", "jamo": ["ㅅ", "ㅈ"] }
+      ],
+      "status": "draft",
+      "modules": [
+        {
+          "type": "trace",
+          "status": "pilot",
+          "dataUrl": "../assets/chars/strokes/jamo-strokes-13.json",
+          "note": "ㅈ has no stroke data yet (jabi. partner roster excludes it, but literacy still needs it — gap flagged in strokes/README.md)"
+        }
+      ]
+    },
+    {
+      "id": "hangul-03",
+      "order": 3,
+      "slug": "practice-1",
+      "kind": "practice",
+      "title": { "en": "03 · Practice 1", "ko": "03 · 연습활용 1", "zh": "03 · 练习活用 1" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-04",
+      "order": 4,
+      "slug": "aspirated",
+      "kind": "aspirated",
+      "title": { "en": "04 · Aspirated", "ko": "04 · 격음(거센소리)", "zh": "04 · 送气音" },
+      "jamoPreview": ["ㅋ", "ㅌ", "ㅍ", "ㅊ"],
+      "groups": [{ "id": "aspirated-all", "jamo": ["ㅋ", "ㅌ", "ㅍ", "ㅊ"] }],
+      "status": "draft",
+      "modules": [
+        { "type": "trace", "status": "pilot", "dataUrl": "../assets/chars/strokes/jamo-strokes-13.json" }
+      ]
+    },
+    {
+      "id": "hangul-05",
+      "order": 5,
+      "slug": "tense",
+      "kind": "tense",
+      "title": { "en": "05 · Tense", "ko": "05 · 경음(된소리)", "zh": "05 · 紧音" },
+      "jamoPreview": ["ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ"],
+      "groups": [{ "id": "tense-all", "jamo": ["ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ"] }],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-06",
+      "order": 6,
+      "slug": "practice-2",
+      "kind": "practice",
+      "title": { "en": "06 · Practice 2", "ko": "06 · 연습활용 2", "zh": "06 · 练习活用 2" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-07",
+      "order": 7,
+      "slug": "diphthong-1",
+      "kind": "diphthong",
+      "title": { "en": "07 · Diphthongs 1", "ko": "07 · 이중모음 1", "zh": "07 · 双元音 1" },
+      "jamoPreview": ["ㅑ", "ㅕ", "ㅛ", "ㅠ"],
+      "groups": [{ "id": "dip-y", "jamo": ["ㅑ", "ㅕ", "ㅛ", "ㅠ"] }],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-08",
+      "order": 8,
+      "slug": "diphthong-2",
+      "kind": "diphthong",
+      "title": { "en": "08 · Diphthongs 2", "ko": "08 · 이중모음 2", "zh": "08 · 双元音 2" },
+      "jamoPreview": ["ㅘ", "ㅝ", "ㅟ", "ㅢ"],
+      "groups": [{ "id": "dip-w", "jamo": ["ㅘ", "ㅝ", "ㅟ", "ㅢ"] }],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-09",
+      "order": 9,
+      "slug": "practice-3",
+      "kind": "practice",
+      "title": { "en": "09 · Practice 3", "ko": "09 · 연습활용 3", "zh": "09 · 练习活用 3" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-10",
+      "order": 10,
+      "slug": "batchim-1",
+      "kind": "batchim",
+      "title": { "en": "10 · Finals 1", "ko": "10 · 받침 1", "zh": "10 · 收音 1" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-11",
+      "order": 11,
+      "slug": "batchim-2",
+      "kind": "batchim",
+      "title": { "en": "11 · Finals 2", "ko": "11 · 받침 2", "zh": "11 · 收音 2" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-12",
+      "order": 12,
+      "slug": "practice-4",
+      "kind": "practice",
+      "title": { "en": "12 · Practice 4", "ko": "12 · 연습활용 4", "zh": "12 · 练习活用 4" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-13",
+      "order": 13,
+      "slug": "double-batchim",
+      "kind": "batchim",
+      "title": { "en": "13 · Double finals", "ko": "13 · 겹받침", "zh": "13 · 双收音" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-14",
+      "order": 14,
+      "slug": "liaison",
+      "kind": "liaison",
+      "title": { "en": "14 · Liaison", "ko": "14 · 연음", "zh": "14 · 连音" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-15",
+      "order": 15,
+      "slug": "practice-5",
+      "kind": "practice",
+      "title": { "en": "15 · Practice 5", "ko": "15 · 연습활용 5", "zh": "15 · 练习活用 5" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-16",
+      "order": 16,
+      "slug": "survival-1",
+      "kind": "survival",
+      "title": { "en": "16 · Survival phrases 1", "ko": "16 · 표현 1", "zh": "16 · 生存表达 1" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    },
+    {
+      "id": "hangul-17",
+      "order": 17,
+      "slug": "survival-2",
+      "kind": "survival",
+      "title": { "en": "17 · Survival phrases 2", "ko": "17 · 표현 2", "zh": "17 · 生存表达 2" },
+      "jamoPreview": [],
+      "groups": [],
+      "status": "scaffold",
+      "modules": []
+    }
+  ]
+}

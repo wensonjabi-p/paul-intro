@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>jabi. — Hangul (scaffold)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/hub.css">
+  <link rel="stylesheet" href="./hangul.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="hangul-page">
+    <p class="eyebrow" data-i18n="hangulEyebrow">Track scaffold</p>
+    <h1 id="hangul-title">Hangul read &amp; write</h1>
+    <p class="lead" id="hangul-lead">Scaffold only — lesson shells 00–17.</p>
+    <p class="hangul-meta" id="hangul-meta"></p>
+
+    <nav class="hangul-nav" aria-label="Hangul nav">
+      <a href="../../" data-i18n="hangulBackHub">← Hub</a>
+      <a href="../basic/">Basics →</a>
+      <a href="../topik2/">TOPIK II →</a>
+      <a href="../" data-i18n="hangulBackTopik">TOPIK I app →</a>
+    </nav>
+
+    <p id="hangul-error" class="hangul-error hidden" role="alert"></p>
+    <ul class="hangul-list" id="hangul-list"></ul>
+  </main>
+
+  <script src="../../js/i18n.js"></script>
+  <script src="../js/vendor/hanzi-writer.min.js"></script>
+  <script src="./hangul.js"></script>
+</body>
+</html>
