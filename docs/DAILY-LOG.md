@@ -33,6 +33,9 @@
 - ✅ **D11 착수 시점 재정의** — 마스터플랜 Phase 1 스펙(localStorage v1, Pro는 매뉴얼 코드 v0, 계정은 "later")과 D11("처음부터 로그인") 불일치 발견. 실제 착수는 Lemon Squeezy 셀프서비스 결제 전환 시점으로 제안, 그 전엔 과잉설계. 임시 안전장치로 "진행상황 내보내기/가져오기" 제안 → `docs/research-readiness-data-model-ko.md` §6.
 - ✅ **D4b 명예의 전당 스펙 제안** — 트리거(80%+ AND stage6) 확정됐지만 화면 연출 미정(코드 0건)이던 것에 1회성 모달+영구 배지 리스트+선택적 이미지저장 제안, Mercy 톤 유지. Cursor 이견 없으면 그대로 진행 → `docs/handoff-growth-character-ko.md` D4b.
 - 🔄 다음: 위 두 스펙 Cursor 검토, 이견 있으면 조정
+- ✅ **D20 리서치**: 타 앱 무료/Pro 설계 비교(Duolingo 볼륨게이트=유저 불만多, LingoDeer 콘텐츠벽=체감폭 좁음, Memrise 기능게이트=우호적) → "하루 횟수 캡" 빼고 **기능 게이트 하나로 단순화**(연습 무제한, 최종모의+상세분석만 Pro) 제안. Mercy 톤·D17 정책과 더 일치 → `docs/handoff-growth-character-ko.md` D20.
+- 🔄 다음: D20 제안 Cursor/Paul 검토
+
 
 ---
 
