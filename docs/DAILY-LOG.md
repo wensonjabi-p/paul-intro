@@ -18,7 +18,11 @@
 - ⚠️ 발견: Canva **그리드 생성은 아이템이 단계 간 누적 안 됨**(6칸 중 4번째 칸에서 이전 아이템 사라짐, 2회 재현) → 프로덕션은 자비 로고처럼 **단계별 단독 고해상도 생성 후 추적** 방식으로 가야 함
 - ✅ **파일 형식 webp → svg로 변경** (Paul 승인) — `hub/app/assets/chars/README.md`에 반영, 이유·Cursor 이의제기 여지 기록. `<img>` 태그 로딩 방식은 동일해서 Cursor 앱 코드 변경 불필요.
 - ✅ Canva "jabi App Icon Design" 스레드에 확정 스펙(13 로스터·6단계·스타일락) 레퍼런스 노트 게시 — 앞으로 이 스레드에서 계속 생성할 때 기준
-- 🔄 다음: Cursor가 webp→svg에 이견 없으면, giyeok 최종 프로덕션(SVG) → Paul 확인 → 나머지 12개 로스터 일괄
+- 🔄 다음: Cursor **SVG OK** (이견 없음) → giyeok 최종 프로덕션 SVG → Paul 확인 → 나머지 12개 로스터 단계별 단독 생성
+- ✅ `scripts/trace-character-multi.py` 프로덕션 트레이서 — 반점 노이즈 제거(open-close 모폴로지) + 색상 병합 버그 수정(외곽선 레이어 색을 전체 실루엣 평균이 아니라 외곽선 전용 픽셀로 계산하도록). ㄱ 1단계(베이비) SVG 검증 완료.
+- ⚠️ **브라우저 자동화 비효율 확인** — Canva 스레드 무거워질수록 스크린샷·타이핑 실패, Paul Chrome 창이 비가시 상태(`hasFocus:false`)면 스크린샷 자체 불가. **앞으로 캐릭터 생성+추적은 Cursor의 Canva MCP+터미널로 넘기는 게 맞음**(Claude는 스크린샷 없이 못 하는 작업이라 구조적으로 비효율).
+- ✅ 리서치(WebSearch/WebFetch, 로그인 불필요): TOPIK 접수(한국 topik.go.kr vs 중국 NEEA topik.neea.edu.cn, 회차별 접수기간이라 하드코딩 금지) + Lemon Squeezy(상품 설정 자체는 5분, 단 신원인증·계좌연결·세금서류는 Paul이 미리 해둬야 정산 뚫림) → `docs/research-registration-lemon-ko.md`
+- 🔄 다음: Vercel Task A는 Paul `jabi. OK`+URL 대기 중(미착수)
 
 ---
 
@@ -34,7 +38,11 @@
 - ✅ **Task B-2** — 홈 「오늘 복습 N」 바로 시작 + 결과 CTA(남은 복습/약점 보기)
 - ✅ **정책:** 공식=`local/` 참고만 · 앱=`verified-read` 원작만 로드 (공식 언플러그)
 - ✅ **퀴즈 UX:** 제출·힌트 버튼 + 힌트/오답 횟수 → 결과 화면 학습 패턴 스냅샷 (`state.learner`)
-- ✅ **성장·i18n·과금 설계 합의 완료** (D1–D22) — `docs/handoff-growth-character-ko.md` · 캐릭터 6단·ㅈ=자비 · 탭 홈/연습/나 · 로그인 · 읽기+듣기 · ZH 전부 · Pro 잠정(팬티까지 체험) · 구현은 Paul 「시작」 후
+- ✅ **QA 반영:** `verified-read-01` 쉬운 KO+EN `hint`/`why` · v1-03 보기 교체 · v1-04 지문 축소 · 앱 힌트 항상 한·영 동시 · QA에 hint/why KO·EN 표시 + `why_too_hard` 칩
+- ✅ **QA 관리 앱 MVP:** `hub/ops/qa/` · 코드 `QA-PAUL`
+- ✅ **Cursor 골격 확장:** 듣기·최종모의·코치 CTA·무료캡·ZH
+- 🔄 **다음:** 세트2·3·듣기도 같은 hint/why 형식으로 정리 · QA 재검수
+- ✅ **설계 D1–D22** — `docs/handoff-growth-character-ko.md`
 
 ### Claude
 - ⏳ **Task A 대기** — Paul `jabi. OK` + Vercel URL → `docs/claude-task-a-vercel-deploy.md` 실행 (Cursor는 A 안 함)
