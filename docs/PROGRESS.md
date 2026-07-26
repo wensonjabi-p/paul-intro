@@ -17,20 +17,20 @@
 - **파일:** `hub/index.html`, `hub/css/hub.css`, `hub/js/i18n.js`, `hub/README.md`, `hub/vercel.json`
 - **상태:** 코드 완료 · 랜딩 jabi. 톤 적용(`53fe1f7`). Vercel 배포는 Paul 액션 대기(New Project → Root Directory = `hub`).
 - **링크:** [PR #2](https://github.com/wensonjabi-p/paul-intro/pull/2)
-- **다음:** Vercel 연결 → 미리보기 URL → **`docs/claude-task-a-vercel-deploy.md` (Claude Task A)** · Cursor는 `app.js` SRS(B)만
+- **다음:** Vercel 연결 → 미리보기 URL → **`docs/claude-task-a-vercel-deploy.md` (Claude Task A)** · Cursor **SRS v1 데모** (`hub/app/docs/SRS-DEMO-ko.md`) ✅
 
-## 2. TOPIK I 앱 MVP — 진행 중
+## 2. TOPIK I 앱 MVP — 진행 중 (UX·어휘 정비 일시 중단)
 
-- **무엇:** 읽기 모의고사, streak/XP/level, 틀린 태그 → SRS v0, PWA(sw/manifest), localStorage 키 `topik-coach-v1`
-- **파일:** `hub/app/index.html`, `hub/app/js/app.js`, `hub/app/css/app.css`, `hub/app/data/mock-read-01.json`, `hub/app/data/mock-read-02.json`, `hub/app/sw.js`
-- **최근 작업 (Claude · 로컬 커밋 `66bfac3` · push 대기):**
-  - 버그 수정 ①: 언어 토글(EN/KO)이 퀴즈/결과/SRS 도중 무조건 홈으로 튕겨 진행 중 답안을 날리던 것 → 화면 유지하며 문구만 갱신
-  - 버그 수정 ②: 스트릭·SRS 날짜가 `toISOString()`(UTC) 기준이라 시차 큰 지역(항저우 UTC+8)에서 하루가 일찍/늦게 바뀌던 것 → 로컬 달력 날짜(`dateKey()`)로
-  - 추가: 모의고사 2세트(`mock-read-02`), 홈 화면 모의 목록 동적화, "약점 바로 연습하기"(모든 모의에서 내 약점 태그와 겹치는 문제만 최대 8개 미니퀴즈)
-  - 검증: 로컬 프리뷰에서 퀴즈 → 언어전환 → SRS 연습 전 과정 클릭 확인, 콘솔 에러 0
-  - **병합 (`7881ceb`)**: Kimi의 jabi. 리브랜딩 + 3모드 온보딩(Catch/Mercy/Guide, `MODE_KEY`)을 위 수정·기능과 3-way 병합 — 둘 다 보존, 온보딩→모드→퀴즈→언어전환→SRS 전 과정 브라우저 검증
+- **무엇:** 읽기 모의고사, streak/XP/level, 틀린 태그 → SRS v0, PWA, localStorage `topik-coach-v1` · 성장형 캐릭터(설계 D1–D22)
+- **파일:** `hub/app/*`, `hub/app/data/verified-read-*.json`, `verified-listen-01.json`, `hub/app/data/vocab/`, `docs/handoff-growth-character-ko.md`
+- **최근 (Cursor · 2026-07-26):**
+  - 문항: 안내문 어휘 하향 · 대비 표기 `·` · 한국어 stem 고정 · underline · 번역 UX · 도움말 스택 · KO UI 순화 · v1-04 패러프레이즈
+  - 어휘: Guide∩1671≈589 추출 · 정책 **NIKL A ∪ (1671−추상)** · JAEM 참고 canvas만
+  - Claude 트랙: giyeok SVG 파일럿 · webp→svg · 브라우저 Canva 자동화 비권장
+- **상태:** allowlist v1 완료. UX 큰 변경은 일시 중단. Paul 대기: `jabi. OK` + Vercel URL (Claude Task A) · SVG OK.
+- **어휘:** `hub/app/data/vocab/vocab-allowlist.json` (~1742) · OOV `bank-oov-report.json`
 - **링크:** [PR #2](https://github.com/wensonjabi-p/paul-intro/pull/2)
-- **다음:** SRS 복습 UI 고도화(간격 반복), 듣기 문항, 모의 세트 추가, Canva jabi. 로고
+- **다음 (우선순위):** ① OOV 콘텐츠 단어 검토·문항 하향 ② (Paul) Vercel/Task A ③ 캐릭터 SVG ④ 일일미션 스펙(allowlist 이후)
 
 ## 3. PM · ops 대시보드 & 링크 정리 — 진행 중
 

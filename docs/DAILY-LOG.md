@@ -12,6 +12,20 @@
 
 ## 2026-07-26
 
+### Cursor
+- ✅ **안내문 TOPIK I 어휘 하향** — `v3-03` 병원: 내과/접수 → 약국·식당·화장실; 질문 한국어 유지(EN/ZH). `v1-06` 휴관일→쉬는 날. README 어휘 규칙.
+- ✅ **대비 표기** — 반댓말·시제·같은 패턴 모두 `A · B` (≠/↔ 금지).
+- ✅ **문제 본문 한국어 고정** + `underline[]`(그곳/그것) · 번역 버튼은 지시문 옆, L1만 표시(지문 미반복), 라벨 EN/译/×, **UI 언어** 기준.
+- ✅ **도움말 누적** — 단계 교체→스택(점선 구분) · 끝 토스트.
+- ✅ **한국어 UI 순화** — 연속 학습·경험치·도움말·붙잡기/천천히/길잡이 · 성장 단계 아기·바지·장화…
+- ✅ **어휘 패러프레이즈** — v1-04 선지 「아침에 하는 일」「병원 가기」.
+- ✅ **어휘 소스 조사** — Guide∩1671≈589 추출 · 정책=국립국어원 A ∪ (1671−추상) · `hub/app/data/vocab/` · canvas `topik1-vocab-sources`.
+- ✅ **JAEM→jabi canvas** — 일일미션/목표맵만 참고(라이브 코호트·II 금지).
+- ✅ **vocab allowlist** — NIKL A(~894) ∪ (1671−hard) → `vocab-allowlist.json` (~1742) · OOV 리포트.
+- ✅ **OOV 표현 하향(일부)** — 반팔→티셔츠, 목적지→어디에 가요, 소속/상관없다/동작장소 등 why·힌트 순화.
+- ✅ **giyeok-6 SVG** — Canva 풀히어로(`raw-hero-4`) 추적 · **Paul OK**.
+- 🔄 **다음:** Canva에서 ㄱ stage 2–5 단독 PNG → `source/giyeok-2..5.png` → 추적. 프롬프트는 `hub/app/assets/chars/README.md`.
+- ⏸️ Paul 대기: Vercel Task A · §2 OK.
 ### Claude
 - ✅ `docs/handoff-growth-character-ko.md` 업데이트(Q1–D22) 확인 — 6단계 아이템 순서·13개 로스터가 내가 독자적으로 설계한 것과 일치함을 확인
 - ✅ ㄱ(giyeok) 파일럿: 6단계 아이템 장착 데모(베이비→팬티→부츠→무기→방패→왕관) Canva 생성 + 전체 장착 히어로 폼 실제 SVG 추적 성공(다중 색상 트레이서 `scripts/trace-multicolor-demo.py`, 커밋 `e507ffe`)
@@ -40,8 +54,6 @@
 - ✅ **다음 트랙 리서치**: TOPIK II·한글 읽기쓰기·기초수업(세종학당 표준교육과정 참고) → `docs/research-next-tracks-ko.md`. **한글 읽기·쓰기를 최우선 제안** — 기존 자음 캐릭터 13개 시스템과 거의 그대로 겹침(신규는 획순 트레이싱 UX·모음 캐릭터뿐), TOPIK II는 쓰기(작문) 채점 엔진이 아예 새로 필요해 부담 가장 큼 → 가장 나중 제안.
 - 🔄 다음: 트랙 순서(한글→기초→TOPIK II) Paul 확인, "세종학당 파일" 있으면 공유 요청
 
-
-
 ---
 
 ## 2026-07-25
@@ -56,10 +68,9 @@
 - ✅ **Task B-2** — 홈 「오늘 복습 N」 바로 시작 + 결과 CTA(남은 복습/약점 보기)
 - ✅ **정책:** 공식=`local/` 참고만 · 앱=`verified-read` 원작만 로드 (공식 언플러그)
 - ✅ **퀴즈 UX:** 제출·힌트 버튼 + 힌트/오답 횟수 → 결과 화면 학습 패턴 스냅샷 (`state.learner`)
-- ✅ **QA 반영:** `verified-read-01` 쉬운 KO+EN `hint`/`why` · v1-03 보기 교체 · v1-04 지문 축소 · 앱 힌트 항상 한·영 동시 · QA에 hint/why KO·EN 표시 + `why_too_hard` 칩
-- ✅ **QA 관리 앱 MVP:** `hub/ops/qa/` · 코드 `QA-PAUL`
-- ✅ **Cursor 골격 확장:** 듣기·최종모의·코치 CTA·무료캡·ZH
-- 🔄 **다음:** 세트2·3·듣기도 같은 hint/why 형식으로 정리 · QA 재검수
+- ✅ **힌트 로직 고정:** Meaning→Look→Pair (`hint.steps`) · 국립국어원/초급앱 받침 가르침 · v3-01 이에요/예요 재작성 · 문법 빈칸 일괄
+- ✅ **시각:** 명사·명확 동사 + 한국어 라벨 항상 · 메타 아이콘 제거
+- 🔄 **다음:** 읽기·듣기 주제형도 steps 템플릿 확장 · Paul QA
 - ✅ **설계 D1–D22** — `docs/handoff-growth-character-ko.md`
 
 ### Claude

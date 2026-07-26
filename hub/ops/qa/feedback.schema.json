@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "jabi-qa-feedback-v1",
+  "title": "jabi. content QA feedback",
+  "description": "Human review labels for questions/hints. AI proposes patches; Paul approves before bank write.",
+  "type": "object",
+  "required": ["version", "items"],
+  "properties": {
+    "version": { "const": 1 },
+    "exportedAt": { "type": "string", "format": "date-time" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "at", "bankFile", "questionId", "targets", "reasons"],
+        "properties": {
+          "id": { "type": "string" },
+          "at": { "type": "string", "format": "date-time" },
+          "bankFile": { "type": "string" },
+          "questionId": { "type": "string" },
+          "skill": { "type": "string", "enum": ["reading", "listening", "unknown"] },
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["prompt", "choices", "answer", "why", "hint", "tags", "script", "other"]
+            }
+          },
+          "reasons": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "wrong_answer",
+                "bad_distractor",
+                "ambiguous",
+                "hint_too_strong",
+                "hint_useless",
+                "why_wrong",
+                "why_too_hard",
+                "tag_wrong",
+                "level_mismatch",
+                "not_original_risk",
+                "typo",
+                "audio_script_mismatch",
+                "other"
+              ]
+            }
+          },
+          "note": { "type": "string" },
+          "snapshot": { "type": "object" }
+        }
+      }
+    }
+  }
+}

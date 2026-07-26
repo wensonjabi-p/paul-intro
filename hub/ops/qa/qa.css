@@ -1,0 +1,94 @@
+.qa-badge {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: "Space Mono", monospace;
+}
+
+.qa-main h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.qa-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.field.inline {
+  margin-bottom: 0;
+  min-width: 220px;
+}
+
+.qa-progress {
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip.on {
+  border-color: var(--accent);
+  color: var(--ink);
+  background: rgba(212, 162, 78, 0.15);
+}
+
+#qa-note {
+  font: inherit;
+  color: var(--ink);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  resize: vertical;
+  width: 100%;
+}
+
+#qa-choices .choice {
+  pointer-events: none;
+}
+
+#qa-choices .choice.correct-key {
+  border-color: var(--accent);
+}
+
+#qa-why.hint-box {
+  white-space: normal;
+}
+
+.qa-bi {
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.qa-bi strong {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  margin-right: 4px;
+}
+

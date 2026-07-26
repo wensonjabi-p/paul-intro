@@ -18,7 +18,7 @@
 |------|--------|------|
 | `hub/app` 퀴즈·SRS·성장 UI·온보딩·i18n zh·듣기 뱅크 | **Cursor** | 에셋 없어도 자리·state 먼저 |
 | **Notion PM 허브 동기** | **Cursor** (`user-notion` MCP · ready) | Claude 브라우저 스크린샷 방식 종료 |
-| 자음 캐릭터 **Canva→추적→SVG** | **Claude** | `trace-character-multi` 파이프 · ㄱ 6단→12 로스터 |
+| 자음 캐릭터 **Canva→추적→SVG** | **Cursor** (Paul 승인 2026-07-26 이어서) · Claude 병행 OK | `trace-character-multi` · ㄱ stage1 있음 → 2–6 |
 | 자비(ㅈ) 가이드 비주얼 | **Claude** | 파트너 목록 밖 |
 | Vercel 배포 Task A | **Claude** | Paul `jabi. OK` + 로그인 시 |
 | **문항 QA 관리 앱** `hub/ops/qa/` | **Cursor** | 인간 라벨 → JSON → AI 제안 → Paul 승인 후 뱅크 반영 |
@@ -48,9 +48,11 @@
 ### 캐릭터 제작 파이프라인 (Claude · 진행 중)
 
 1. **파일럿 `giyeok`:** stage **1–6** · 형식 **`.svg`** (webp 폐기 · Paul 승인 2026-07-26)  
+   - Canva AI 스레드: https://www.canva.com/ai/thread/7c6a61cb-c08d-40b2-b985-72fe4bbdf379  
 2. Canva **그리드는 컨셉용만** (아이템 누적 불안정) → 프로덕션은 **단계별 단독 생성 → 추적**  
 3. **Paul 확인** 후 나머지 12 자음 일괄  
-4. Cursor: `<img src="….svg">` 동일 로딩 · **성장 점수 ≠ 준비도 %**
+4. Cursor: `<img src="….svg">` 동일 로딩 · **성장 점수 ≠ 준비도 %**  
+5. ⚠️ Cursor Canva MCP ≠ AI thread. 스레드 작업은 브라우저 로그인 또는 PNG export 후 추적.
 
 **Claude 주의:** 4단 실루엣·webp 폐기. 6단 아이템 + svg.
 
