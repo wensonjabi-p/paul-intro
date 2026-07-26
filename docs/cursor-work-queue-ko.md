@@ -1,6 +1,6 @@
 # Cursor 작업 큐 (자동 체인)
 
-> **갱신:** 2026-07-27 · **D1 디자인 리프레시 v2 Done** · **Now = R1 콘텐츠·인터페이스 리뷰 수정** · Hub 도어 #1–#7 research-fill Done · Hangul path **v5** 유지 · Vercel hub URL 배포 완료  
+> **갱신:** 2026-07-27 · **R1 Done (재검증 완료)** · **Now = R2 TOPIK II 디버그 노출 제거** · Sibling handoff 5건 전부 Done · Hub 도어 #1–#7 research-fill Done · Vercel hub URL 배포 완료  
 > **리서치·큐 소유권:** Next 발명 = **Claude만**. Cursor는 큐 비었다고 백로그를 만들지 않음 · 큐 항목 **구현 중** 범위 안 리서치만 자동 OK · 큐 비면 self-QA만. 상세 → [`claude-cursor-loop-ko.md`](claude-cursor-loop-ko.md) **§3-2**.  
 > **짝 문서:** [PROGRESS.md](PROGRESS.md) · [DAILY-LOG.md](DAILY-LOG.md) · **[research-teacher-select-content-fill-ko.md](research-teacher-select-content-fill-ko.md)** · **[research-geulmoeum-content-fill-ko.md](research-geulmoeum-content-fill-ko.md)** · **[research-jabi-games-ko.md](research-jabi-games-ko.md)** · **[research-topik2-content-fill-ko.md](research-topik2-content-fill-ko.md)** · **[research-topik1-content-fill-ko.md](research-topik1-content-fill-ko.md)** · **[research-basic-content-fill-ko.md](research-basic-content-fill-ko.md)** · **[research-hangul-content-fill-ko.md](research-hangul-content-fill-ko.md)** · **[research-english-aes-for-jabi-ko.md](research-english-aes-for-jabi-ko.md)** · [topik2-writing-axis-mapping-ko.md](topik2-writing-axis-mapping-ko.md) · [research-topik2-writing-scoring-papers-ko.md](research-topik2-writing-scoring-papers-ko.md)
 
@@ -20,7 +20,23 @@
 
 | # | 작업 | Agent / ID | 메모 |
 |---|------|------------|------|
-| **R1** | **콘텐츠·인터페이스 리뷰 수정** | 다음 자동 | `content-interface-review-2026-07-27-ko.md` — Basics 유닛 카드 디버그 블록 제거(1순위) → Hangul 퀴즈 choices 다국어화 → Hangul "종류" 필드 제거 → Basics 카운터 버그 → "음악" 오타 → 스텝배지 중복. 차단 없음. |
+| **R2** | **TOPIK II 유닛 카드 디버그 노출 제거** | 다음 자동 | `content-interface-review-2026-07-27-ko.md` §0 — R1이 Basics만 고쳤는데 `hub/app/topik2/` 14개 유닛 전부(Listening/Reading/Writing)에 같은 SECTION/BANK/ITEMS 디버그 블록이 그대로 남아있음(R1 재검증 중 발견). `NOTE`·"Practice these items →" 버튼은 정상이니 그대로 유지, 저 3블록만 제거. 차단 없음. |
+
+---
+
+## Sibling handoff (다음 Cursor 레인 — Claude Next 아님)
+
+> Paul offline 자동 모드용. Claude가 Next를 채우기 전까지 sibling이 집을 수 있는 **구현 슬라이스** 제안.
+
+| 우선 | 작업 | 범위 | 메모 |
+|------|------|------|------|
+| ~~**1**~~ | ~~**Hangul stroke tube 미학 polish**~~ | ~~`hub/app/hangul/` + stroke CSS/HW wrapper~~ | **Done 2026-07-27** — `BUFFER_RES=18` + simplify · cache `20260727c` · stage 가이드·clear 톤 · smoke OK |
+| ~~**1**~~ | ~~**Basics grammar deepen**~~ | ~~`draft-basic-unit0*.json` grammarCards~~ | **Done 2026-07-27** — 01 `eunneun-iga` · 02 `e-eseo` · 05 복습 · trap+글모음 링크 · UI kind/trap/related |
+| ~~**1**~~ | ~~**Theme→game 잔여**~~ | ~~cloze / particle (+ bingo cosmetics)~~ | **데이터 Done** · **UI Done** — speed+cloze+particle+**dictation+listen-match+telephone+word-scramble** theme 필터 · bingo는 top-level `themes` 메타 없음 → UX 스킵 · Particle Snap CTA는 ask-paul #9 |
+| ~~**1**~~ | ~~**dictation money-banking**~~ | ~~`dictation-beginner.json`~~ | **Done 2026-07-27** — +10 banking/intermediate (d-31–40) · 합계 40 · 초급 30 유지 · manifest v11 |
+| ~~**1**~~ | ~~**telephone + scramble money-banking**~~ | ~~`telephone-beginner.json` · `word-scramble-beginner.json`~~ | **Done 2026-07-27** — 각 +10 banking (tel/ws-36–45) · 합계 45 · 초급 35 유지 · manifest v13 · hangul.js 무변경 |
+| ~~**1**~~ | ~~**cosmetics→dictation gap**~~ | ~~`dictation-beginner.json`~~ | **Done 2026-07-27** — +8 cosmetics (d-41–48) · 합계 48 · shopping/snack/transit/banking 유지 · manifest v16 |
+| — | *(Claude Next 대기)* | — | invent Next 금지 · Theme UX 잔여 게임 Done |
 
 ---
 
@@ -28,6 +44,13 @@
 
 | # | 작업 | 메모 |
 |---|------|------|
+| **ThemeUX4** | **Bingo Board theme 필터** | bingo `themes` 메타(기존 item tags) · speed-quiz 칩 복제 · localStorage · 5×5 부족 시 3×3 자동 · 새 lemma 없음 · CTA 미배선 · invent Next 없음 |
+| **ThemeUX3** | **Dictation + Listen Match + Telephone + Word Scramble theme 필터** | speed-quiz 패턴 복제 · 기존 themes/tags만 · localStorage · ask-paul #9 CTA 미배선 · bingo 스킵(themes 메타 없음) → ThemeUX4에서 보완 · invent Next 없음 |
+| **ThemeUX2** | **Cloze + Particle theme 필터** | speed-quiz 패턴 복제 · 뱅크 themes/tags만 · localStorage · ask-paul #9 CTA 미배선 · invent Next 없음 |
+| **ThemeUX1** | **Speed Quiz theme 필터** | 뱅크 themes/tags 칩 · 문항 태그 · ask-paul #9 CTA 미배선 · invent Next 없음 |
+| **Tube1** | **Hangul stroke tube 미학** | `gen-jamo-strokes-gulim.py` 조인트 스무딩 · HW outline/drawing 톤 · practice stage 가이드+clear · medians/획순 유지 · `20260727c` · smoke OK |
+| **Grammar1** | **Basics grammar deepen** | 01 은/는↔이/가 · 02 에↔에서 · 05 위치 복습 · `trap`/`related` UI · 글모음 역링크 · invent Next 없음 |
+| **R1** | **콘텐츠·인터페이스 리뷰 수정** | [`content-interface-review-2026-07-27-ko.md`](content-interface-review-2026-07-27-ko.md) · Basics 디버그 블록 제거 · filled=뱅크 기준 · Hangul kind/slug 제거 · step pill 중복 제거 · check choices `{en,ko,zh}` 64개 · `e-mak`→`eu-mak` · smoke hangul OK |
 | **D1** | **디자인 리프레시 v2** | `design-handoff-mockup-v2-ko.md` 1–6 · 남색 캐릭터 배지·STAGE 알약·색종이 · A/B/C/D 뱃지 · 3D press · 모드 원형 배지+추천 리본 · XP 유리질감(gold) · 탭 아이콘 · result-clear 미니 배지 · `hub.css`/`brand.json` navy 토큰 |
 | **QA1** | **Cursor self-QA pass** | Claude Next 비어 있음 → smoke 전면 · 글모음 `#deck=honorifics` stub CTA → Speed Quiz · geulmoeum smoke 가드 · **Claude Next 대기** |
 | **#7** | **선생님 선택 research-fill** | `research-teacher-select-content-fill-ko.md` · teach 리포트·좌석 · Hub/Me CTA · smoke OK |
@@ -74,16 +97,18 @@
 
 | 소유 | 할 일 |
 |------|--------|
-| **Paul** | Canva: [`CANVA-BATCH-12-ko.md`](../hub/app/assets/chars/CANVA-BATCH-12-ko.md) 우선 **ㄴ nieun** 1–6 → `source/` · Vercel New Project Root=`hub` → URL · (선택) 커밋/푸시 · Hangul 획순 **Hard refresh 후 ㄹㅂㅇㅋ Replay/Trace** ([감사 SoT](audit-hanzi-writer-hangul-ko.md)) |
-| **Claude (리뷰/기획만)** | 감사 문서 대조 · **ㅈ 정식 데이터** 기획 · Task A (URL 후, docs만) · **Next 큐 채움** |
+| **Paul** | Canva: [`CANVA-BATCH-12-ko.md`](../hub/app/assets/chars/CANVA-BATCH-12-ko.md) 우선 **ㄴ nieun** 1–6 → `source/` · Vercel New Project Root=`hub` → URL · (선택) 커밋/푸시 · Hangul 획순 **Hard refresh 후 ㄹㅂㅇㅋ Replay/Trace** ([감사 SoT](audit-hanzi-writer-hangul-ko.md)) · **R1 spot-check:** Basics 유닛 펼침(디버그 없음) · Hangul KO 모드 퀴즈 선택지 |
+| **Claude (리뷰/기획만)** | 감사 문서 대조 · **ㅈ 정식 데이터** 기획 · Task A (URL 후, docs만) · **Next 큐 채움** (Theme UX cloze/particle 칩 Done · invent 금지) |
 
 ---
 
 ## 상태 메모
 
+- **R1 콘텐츠·인터페이스 리뷰** = **완료** (2026-07-27) — Basics 디버그 제거 · Hangul kind/slug·step pill · choices i18n · eu-mak · filled 카운터.
+- **Tube1 stroke tube 미학** = **완료** (2026-07-27) — buffer res↑ + simplify · practice 가이드/clear · cache `20260727c` · 획순 median 유지.
 - **D1 디자인 리프레시 v2** = **완료** (2026-07-26) — `hub/app/css/app.css` + `index.html`/`app.js` · navy 토큰 `hub.css`/`brand.json` · `hub/app/data/**` 미터치.
 - **Cursor self-QA pass (QA1)** = **완료** (2026-07-26) — 게이트 당시 Next=Paul 게이트만 → smoke OK · 글모음 stub CTA 1건 수정.
-- **Now = 비어 있음** — Claude Next 대기 · Paul 게이트만 남음.
+- **Now = 비어 있음** — Theme UX (speed+cloze+particle+dictation+listen-match+telephone+scramble 필터) Done · bingo themes 메타 없어 UX 스킵 · Claude Next / Paul 게이트 유지.
 - **#7 선생님 선택** = **완료** — [`research-teacher-select-content-fill-ko.md`](research-teacher-select-content-fill-ko.md) · `hub/teach/` · smoke `_smoke_teacher_select.js`. 가짜 강사 프로필 없음 · Phase 3 대시보드/결제 미배선.
 - **Hub research-fill 체인 #1–#7 = 완료.** Lemon/commit Stop · Phase2 캘리브·N7b는 Paul 게이트.
 - **#5b Lemon** = 보류 · Hangul **v5** 유지 · Games/글모음 polish Done.

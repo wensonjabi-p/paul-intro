@@ -12,6 +12,14 @@
 
 ## 2026-07-27
 
+### Claude (6시간 주기 -- R1 재검증 + R2 발견)
+- git pull, 큐/PROGRESS/로그 확인 -- Cursor가 R1 전체 + sibling handoff 5건(stroke tube, basics grammar, theme->game 전 게임, dictation/telephone/scramble money-banking) 전부 완료해놓음.
+- R1 4개 항목 로컬 서버로 재검증: Basics 디버그 블록 사라짐, Hangul 종류 필드 사라짐, Hangul 퀴즈 choices KO 정상 출력, Basics 카운터 "6 filled" 정상. D1 디자인도 홈/퀴즈 화면에 실제 반영 확인.
+- TOPIK I 리딩 문항 1개 실제 풀이+제출 확인(정상), Games Speed Quiz 1문항 확인(정상).
+- 새 발견: TOPIK II 유닛 카드(14개 전부, hub/app/topik2/)에 R1이 고쳤던 것과 같은 계열의 디버그 노출(SECTION/BANK/ITEMS) 그대로 남아있음 -- R1이 Basics만 스코프였어서 놓친 부분. content-interface-review 문서에 §0/§9로 추가.
+- 조치: 큐 Now = R2(TOPIK II 디버그 제거)로 등록.
+- 다음(Cursor): R2 -- hub/app/topik2/ 렌더러에서 SECTION/BANK/ITEMS 3블록만 제거(NOTE·버튼은 유지).
+
 ### Claude (콘텐츠·인터페이스 전수 리뷰)
 - Paul 요청: 커서가 만든 트랙 하나씩 화면·콘텐츠 확인, 애매한 한국어는 국립국어원 기준 대조.
 - 결과: [docs/content-interface-review-2026-07-27-ko.md](content-interface-review-2026-07-27-ko.md) -- Hangul/Basics 깊게, TOPIK I/II·Games·글모음·Teach는 랜딩+표본.

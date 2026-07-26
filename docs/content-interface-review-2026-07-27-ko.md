@@ -2,6 +2,46 @@
 
 > 로컬 서버로 최신 working tree(미커밋 포함)를 띄워 트랙별 실제 화면을 확인하고, 근거 데이터 파일을 대조했습니다. 애매한 한국어 발음/표기는 표준발음법 연음 규칙 기준으로 확인. 시간 제약상 Hangul·Basics는 깊게, TOPIK I/II·Games·글모음·선생님 선택은 랜딩 화면 + 표본 콘텐츠 위주로 확인했습니다 — "확인 안 됨" 항목은 아래 8번 참고.
 
+> **추가(같은 날 후속 주기):** R1 배포 후 재검증 + 범위 밖이었던 TOPIK I/II 인터랙션 표본 확인. R1 4개 수정 전부 실제 반영 확인(§9), TOPIK II에서 Basics와 같은 계열의 새 버그 발견(§0).
+
+---
+
+## 0. (신규) TOPIK II 유닛 카드에도 동일 디버그 노출 — R1과 같은 버그, 다른 트랙
+
+**어디:** `hub/app/topik2/` — Basics(1-1)에서 고친 것과 **완전히 같은 패턴**이 TOPIK II 14개 유닛 전부에 남아있습니다. R1은 Basics만 고쳤고 TOPIK II는 범위 밖이라 못 봤던 부분(원 리뷰 8번 참고)에서 실제로 터진 케이스입니다.
+
+Listening 01 예:
+```
+SECTION
+listening · listen · listening-01
+
+BANK
+./draft-listen-01.json · 4 Q · jabi-topik2-listen-v0-01
+
+ITEMS
+t2-l01-01 · listening
+t2-l01-02 · listening
+...
+```
+
+Writing 54 예:
+```
+SECTION
+writing · write-54 · writing-54
+
+BANK
+./draft-write-54.json · 3 Q · jabi-topik2-write-54-v0
+
+ITEMS
+t2-w54-01 · write-essay
+t2-w54-02 · write-essay
+t2-w54-03 · write-essay
+```
+
+`NOTE` 필드(실제 설명 텍스트)와 "Practice these items →" 버튼은 정상 — `SECTION`/`BANK`/`ITEMS` 세 블록만 내부 디버그입니다. Listening 1개, Writing 1개로 표본 확인했고 나머지 12개 유닛도 같은 렌더러라 동일할 것으로 추정.
+
+**제안:** Basics R1과 같은 방식으로 `hub/app/topik2/` 렌더러에서 이 세 블록 제거.
+
 ---
 
 ## 1. 인터페이스 — 우선순위 높음
@@ -136,8 +176,24 @@ Hangul/Basics 레슨 상세에서 같은 스텝(예: "2 · 배우기") 안에 �
 
 ## 7. 범위 밖 — 시간 제약으로 얕게만 확인
 
-- TOPIK I/II 실제 퀴즈 진행 화면(문항 하나씩 풀이 UX)은 온보딩·랜딩만 확인, 문항 단위 인터랙션은 전수 확인 못 함.
+- ~~TOPIK I 실제 퀴즈 진행 화면~~ → §9에서 확인함(정상).
 - TOPIK II 듣기/읽기 뱅크(01~04) 문항 자체의 언어 난이도는 랜덤 표본만 봄.
-- 게임 8종의 실제 플레이 인터랙션(정답 판정 로직 등)은 미확인.
+- 게임 8종 중 Speed Quiz만 실제 플레이 확인(§9, 정상) — 나머지 7종은 미확인.
+- TOPIK II 쓰기(51~54) 실제 제출→형성점수 피드백 흐름은 화면 구조만 확인, 제출까지는 안 해봄.
 
 이 부분들은 Cursor가 QA 패스에서 이어서 보거나, 다음 Claude 주기에서 표본을 넓혀 확인 예정입니다.
+
+---
+
+## 9. (신규) R1 배포 후 재검증 결과 — 전부 정상 반영
+
+로컬 서버로 R1 이후 최신 working tree를 다시 띄워 4개 항목 전부 실제로 확인:
+
+- **1-1 Basics 디버그 블록** → 사라짐. "8 practice questions" + "Practice dialogue →" 버튼만 남음.
+- **1-2 Hangul "종류" 필드** → 사라짐.
+- **1-3 Hangul 퀴즈 choices 다국어화** → KO 모드에서 "파열음 ㄱㄷㅂ" / "부드러운·비음 쪽" / "격음 ㅋㅌㅍㅊ" / "모음"으로 정상 출력(이전엔 Stops/Soft-nasal-ish/Aspirated/Vowels 영어 고정).
+- **1-4 Basics 카운터** → "6 units (6 filled)"로 정상.
+
+추가로 D1(디자인 리프레시)도 실제 반영 확인 — 홈 화면 남색 캐릭터 배지, 퀴즈 A/B/C/D 원형 뱃지, 탭바 이모지 아이콘 전부 스펙대로 나옴. TOPIK I 리딩 문항 1개를 실제로 풀어 제출까지 확인(정답 처리 정상, 다음 문항으로 이동). Games Speed Quiz 1문항 확인(한↔영 혼합 유형 정상, 콘텐츠 정확).
+
+이 과정에서 TOPIK II에 R1과 같은 계열의 새 버그를 발견 → 위 §0 참고, 큐에 R2로 등록.
