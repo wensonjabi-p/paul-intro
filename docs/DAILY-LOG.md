@@ -35,6 +35,11 @@
 - 🔄 다음: 위 두 스펙 Cursor 검토, 이견 있으면 조정
 - ✅ **D20 리서치**: 타 앱 무료/Pro 설계 비교(Duolingo 볼륨게이트=유저 불만多, LingoDeer 콘텐츠벽=체감폭 좁음, Memrise 기능게이트=우호적) → "하루 횟수 캡" 빼고 **기능 게이트 하나로 단순화**(연습 무제한, 최종모의+상세분석만 Pro) 제안. Mercy 톤·D17 정책과 더 일치 → `docs/handoff-growth-character-ko.md` D20.
 - 🔄 다음: D20 제안 Cursor/Paul 검토
+- ✅ **코드 직접 수정(Paul 요청, Cursor는 이미지 작업 중)** — 3건 전부 브라우저 검증 완료, **미커밋**(app.js가 HEAD 대비 2000줄+ 차이나서 제 것만 분리 불가): ①캐릭터 아트 연결(`charArtSrc()`, 온보딩·홈 화면에 img+onerror 폴백, 아트 없는 자음은 자동 텍스트로) ②`estimateReadiness()`에 `attemptCount` 추가, 등록 CTA는 3회 이상 시도부터만(`MIN_ATTEMPTS_FOR_REGISTER`) ③퀴즈 화면에 "← jabi." 이탈 버튼(`persistSession()`+`goTab("home")`, 기존 세션 재개 로직 그대로 활용, 데이터 손실 없음 확인).
+- ⚠️ **Cursor 정리 요청**: `backtest_kospi_signal.py`/`backtest_out.txt`(무관 파일) · `scripts/__pycache__/` · `hub/app/assets/chars/source/`의 한글 이름 임시폴더·`_trial_*` 이미지들 → gitignore 추가 또는 삭제 권장. 나머지 미커밋 파일들(data/*.json, scripts/*.py, .env.example 등)은 그냥 커밋해도 됨.
+- ✅ **다음 트랙 리서치**: TOPIK II·한글 읽기쓰기·기초수업(세종학당 표준교육과정 참고) → `docs/research-next-tracks-ko.md`. **한글 읽기·쓰기를 최우선 제안** — 기존 자음 캐릭터 13개 시스템과 거의 그대로 겹침(신규는 획순 트레이싱 UX·모음 캐릭터뿐), TOPIK II는 쓰기(작문) 채점 엔진이 아예 새로 필요해 부담 가장 큼 → 가장 나중 제안.
+- 🔄 다음: 트랙 순서(한글→기초→TOPIK II) Paul 확인, "세종학당 파일" 있으면 공유 요청
+
 
 
 ---
