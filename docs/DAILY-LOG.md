@@ -23,6 +23,16 @@
 - ⚠️ **브라우저 자동화 비효율 확인** — Canva 스레드 무거워질수록 스크린샷·타이핑 실패, Paul Chrome 창이 비가시 상태(`hasFocus:false`)면 스크린샷 자체 불가. **앞으로 캐릭터 생성+추적은 Cursor의 Canva MCP+터미널로 넘기는 게 맞음**(Claude는 스크린샷 없이 못 하는 작업이라 구조적으로 비효율).
 - ✅ 리서치(WebSearch/WebFetch, 로그인 불필요): TOPIK 접수(한국 topik.go.kr vs 중국 NEEA topik.neea.edu.cn, 회차별 접수기간이라 하드코딩 금지) + Lemon Squeezy(상품 설정 자체는 5분, 단 신원인증·계좌연결·세금서류는 Paul이 미리 해둬야 정산 뚫림) → `docs/research-registration-lemon-ko.md`
 - 🔄 다음: Vercel Task A는 Paul `jabi. OK`+URL 대기 중(미착수)
+- ✅ `.gitignore` 보안 수정 push (`c8cd941`) — `scripts/llm-keys.local.ps1` 무시 항목 복원
+- ✅ Claude/Cursor 작업 분담 확정(Paul 요청) — Claude는 웹리서치·Vercel URL 연동·스펙 확정·브랜치 충돌 병합만, 나머지는 Cursor 기본값. 코드로 안 남음, `docs/DAILY-LOG.md`/Paul 대화 참고.
+- ✅ 리서치+제안: **DB 필요성 + TOPIK 응시 판단 기준 + 성장 시각화** → `docs/research-readiness-data-model-ko.md`. 핵심 발견: 지금 앱은 100% localStorage, 백엔드 DB 전무(D11 계정·동기화 미착수) — `attempt_log`/`mock_attempts` 시계열 테이블 없인 D3(오답 개선 추이)·D2(준비도 공식) 둘 다 계산 불가능. Supabase 도입 + "최종 간이 모의 3회 중 2회 80%+" 판정 공식 제안.
+- 🔄 다음: 위 문서 Paul/Cursor 검토 → D11 착수 시점 논의
+- ✅ **정정**: 위 DB 리서치 중 "시계열 없이 계산 불가능" 부분 정정 — Cursor가 이미 `state.attempts`/`state.readinessLog`/`tagStrengthRows()`로 로컬 추이·강약 계산 구현 완료(가중 공식: 최근3회×0.65+마지막×0.35). DB 필요성은 유효하나 시급성 낮춤, D11/결제 시점으로 좁혀서 재정의.
+- ✅ **UX 리뷰**: 로컬 서버로 온보딩→퀴즈→분석 실제로 걸어봄(중국어 UI) → `docs/ux-review-onboarding-flow-ko.md`. **🔴 발견 1**: 연습 세트 1회(10문항)만 풀어도 "준비도 90%, TOPIK 등록하기" CTA가 즉시 뜸 — `estimateReadiness()`가 표본 수 게이트 없음, 최소 시도 횟수 제한 제안. **🔴 발견 2**: `app.js`에 `assets/chars/` 참조 0건 — giyeok SVG 6단계 다 있는데 온보딩·홈·프로필 어디에도 캐릭터 이미지 안 보임(텍스트만). 그 외: 성장 속도 너무 빠름(1세트만에 stage1→2), 오답 태그 raw ID 노출(`grammar:와/과`), 퀴즈 중 이탈 경로 없음. 잘 되는 것: 오답별 맞춤 설명, 힌트 1단계, 중국어 로컬라이제이션, Mercy 톤 일관성.
+- 🔄 다음: 위 두 발견(등록 CTA 타이밍, 캐릭터 아트 미연결) Cursor 코드 반영 검토
+- ✅ **D11 착수 시점 재정의** — 마스터플랜 Phase 1 스펙(localStorage v1, Pro는 매뉴얼 코드 v0, 계정은 "later")과 D11("처음부터 로그인") 불일치 발견. 실제 착수는 Lemon Squeezy 셀프서비스 결제 전환 시점으로 제안, 그 전엔 과잉설계. 임시 안전장치로 "진행상황 내보내기/가져오기" 제안 → `docs/research-readiness-data-model-ko.md` §6.
+- ✅ **D4b 명예의 전당 스펙 제안** — 트리거(80%+ AND stage6) 확정됐지만 화면 연출 미정(코드 0건)이던 것에 1회성 모달+영구 배지 리스트+선택적 이미지저장 제안, Mercy 톤 유지. Cursor 이견 없으면 그대로 진행 → `docs/handoff-growth-character-ko.md` D4b.
+- 🔄 다음: 위 두 스펙 Cursor 검토, 이견 있으면 조정
 
 ---
 
