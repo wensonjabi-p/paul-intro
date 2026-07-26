@@ -5,6 +5,7 @@
     "ㄱ": "giyeok", "ㄴ": "nieun", "ㄷ": "digeut", "ㄹ": "rieul", "ㅁ": "mieum",
     "ㅂ": "bieup", "ㅅ": "siot", "ㅇ": "ieung", "ㅊ": "chieut", "ㅋ": "kieuk",
     "ㅌ": "tieut", "ㅍ": "pieup", "ㅎ": "hieut",
+    "ㄲ": "ssanggiyeok", "ㄸ": "ssangdigeut", "ㅃ": "ssangbieup", "ㅆ": "ssangsiot",
   };
   let strokeDataCache = null;
   let strokeDataPromise = null;
