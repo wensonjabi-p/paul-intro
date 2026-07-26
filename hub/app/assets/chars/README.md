@@ -1,7 +1,26 @@
 # 자음 캐릭터 에셋 계약
 
-Owner: **Claude** (생성) → **Cursor** (앱 연결).  
+Owner: **Cursor + Claude** (생성은 **이 Canva AI 스레드** 기준) → 앱 연결 Cursor.  
 파이프라인: **한 캐릭터로 검증 → Paul 확인 → 나머지 일괄**.
+
+**Canva AI 스레드 (원본 작업장):**  
+https://www.canva.com/ai/thread/7c6a61cb-c08d-40b2-b985-72fe4bbdf379  
+(= “jabi App Icon Design” · 스타일락·13 로스터·6단계 노트 있음)
+
+⚠️ Cursor **Canva MCP는 일반 디자인만** 다룸. `/ai/thread/` 는 MCP로 안 열림 → 브라우저 로그인 세션 또는 스레드에서 **단계별 PNG 내보내기 → `trace-character-multi.py`** 로 진행.
+
+**파일럿 진행 (ㄱ giyeok):**
+- ✅ `char-giyeok-1.svg` + `source/giyeok-1.png` (베이비)
+- ✅ `char-giyeok-2.svg` … `5.svg` + `source/giyeok-2.png` … `5.png` ← Canva 드롭에서 고른 뒤 추적 (2026-07-26)
+- ✅ `char-giyeok-6.svg` + `source/giyeok-6.png` ← 풀히어로 · **Paul OK 2026-07-26**
+- 🔄 **다음:** Paul이 `_check.html`에서 2–5 확인 → OK면 앱 연결 / 나머지 자음 일괄  
+  재생성 가이드: [`CANVA-STAGE-2-5-ko.md`](./CANVA-STAGE-2-5-ko.md)  
+- 미리보기: `hub/app/assets/chars/_check.html`
+
+### Canva 요약 (자세한 건 CANVA-STAGE-2-5-ko.md)
+
+스레드: https://www.canva.com/ai/thread/7c6a61cb-c08d-40b2-b985-72fe4bbdf379  
+ㄱ만 · 한 장씩 · 그리드 금지 · 아이템 누적 · 저장명 `giyeok-2.png`…`giyeok-5.png` → `source/` → 채팅 **넣었어**
 
 ## 성장 = 6단계 아이템 장착 (확정)
 
