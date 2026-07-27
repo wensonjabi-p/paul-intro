@@ -12,6 +12,15 @@
 
 ## 2026-07-27
 
+### Claude (채점 원칙 개정 -- AI 참고점수 노출 + N10 검증데이터 파이프라인 스펙)
+- Paul 피드백: "AI는 절대 채점 금지" 원칙이 과했다는 지적 -- 조형익(2025) 논문의 실제 결론은 "AI 단독 즉시배포 시기상조, AI보조+검증 모델"이었지 영구 금지가 아니었음. jabi의 계획(학습자 실제 TOPIK 성적 제공 -> 지속 검증)은 그 논문의 전문가패널 대조보다 강한 검증 기준(실제 시험결과)이라는 점에 동의, 원칙 개정.
+- AskUserQuestion 2문항으로 확정: (1) AI 참고점수를 N9부터 바로 노출, 규칙기반 점수 옆에 별도 표시 (2) 실제 TOPIK 성적 제출(검증데이터 핵심) 기능도 지금 같이 스펙 작성.
+- spec-topik2-ai-coaching-layer-ko.md 개정: TOOL 스키마에 languageScore(0~100, 언어축 한정 AI 참고점수) 추가, UI에 "언어 82 · AI 참고 76" 식 별도 배지 표시(규칙기반 값은 덮어쓰지 않음), "AI 채점 절대금지" 문구를 "AI 참고점수는 노출하되 검증 전까지 대표점수는 규칙기반 유지"로 수정.
+- spec-topik2-calibration-data-ko.md 신규 작성(N10) -- 계정 없이 localStorage 익명 uid로 다회 기록 연결, 코칭 로그(숫자만, 원문 텍스트 미저장 -- 프라이버시 최소화 설계), 실제 TOPIK 성적 제출 폼+API(api/topik2-official-score.js) 신규. 분석·재보정 로직은 이번 스코프 아님(로깅 파이프라인만) -- 열린 질문(보존기간·개인정보처리방침·원문저장여부·재보정 시점)은 Paul 확인 필요로 명시.
+- cursor-work-queue-ko.md Next에 N10 큐잉(N9 이후 착수 권장, 차단 없음).
+- 링크 안 열리는 문제 확인: 이 세션 작업 디렉터리가 paul-intro가 아니라 DebateChamber라 상대경로 링크가 깨짐 -- 이후 절대경로로 안내하기로.
+- hub/app/**, api/** 미편집.
+
 ### Claude (callClaude 오류 추가 정정 + N9 -- TOPIK2 AI 코칭 레이어 스펙 + 큐잉)
 - 추가 정정: "jabi의 CLAUDE.md에 이미 있는 레벨별 코칭 차등"이라는 서술도 callClaude와 같은 원인(DebateChamber CLAUDE.md 오염)으로 확인 -- paul-intro 저장소엔 CLAUDE.md 파일 자체가 없고 topik2.js에 level 분기 코드도 없음(grep 확인). research-genai-korean-writing-pedagogy-ko.md, research-ai-korean-writing-synthesis-ko.md 2건 추가 정정.
 - Paul에게 AskUserQuestion 4문항으로 확인: (1) 범위 Q51~54 전체 (2) 인프라 서버리스 프록시 (3) Tier 2는 나중 (4) 최소 버전(문법·표현 코칭)부터.

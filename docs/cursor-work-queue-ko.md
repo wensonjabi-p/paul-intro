@@ -568,7 +568,8 @@
 | 순번 | 항목 | 범위 | 차단? |
 |------|------|------|-------|
 | **N8** | **쓰기 54번 trait 가중치 재조정 (66/15/19)** | 스펙대로 `draft-write-54.json` `scoring.traits.weight` 변경 + 회귀 확인. 리서치 완료, 추가 조사 불필요 -- [`spec-topik2-write54-trait-reweight-ko.md`](spec-topik2-write54-trait-reweight-ko.md) 그대로 구현 | **차단 없음 -- Paul 승인 완료(2026-07-27 "좋아 반영해")** |
-| **N9** | **TOPIK2 쓰기(51~54) AI 코칭 레이어 신규 구축** | `api/topik2-coach.js` 신규(기존 `api/_polish.js` 패턴 재사용) + `topik2.js`에 AI 코칭 버튼/패널 추가. 리서치·설계 완료, 스펙대로 구현 -- [`spec-topik2-ai-coaching-layer-ko.md`](spec-topik2-ai-coaching-layer-ko.md) 그대로 구현. N8과 독립적, 순서 무관하나 N8 먼저 권장(스코프 작음) | **차단 없음 -- Paul 승인 완료(2026-07-27 AskUserQuestion 4문항)** |
+| **N9** | **TOPIK2 쓰기(51~54) AI 코칭 레이어 신규 구축** | `api/topik2-coach.js` 신규(기존 `api/_polish.js` 패턴 재사용) + `topik2.js`에 AI 코칭 버튼/패널 + AI 참고점수(languageScore) 배지 추가. 스펙 개정 완료(AI 참고점수 노출 포함), 그대로 구현 -- [`spec-topik2-ai-coaching-layer-ko.md`](spec-topik2-ai-coaching-layer-ko.md) | **차단 없음 -- Paul 승인 완료(2026-07-27 AskUserQuestion, 채점 원칙 개정 반영)** |
+| **N10** | **TOPIK2 채점 검증 데이터 파이프라인** | 익명 uid(localStorage) + 코칭 로그(`kvPushJSON`) + 실제 TOPIK 성적 제출 폼/API 신규. N9 완료 후 이어서(N9의 응답 구조에 로깅 훅 추가) -- [`spec-topik2-calibration-data-ko.md`](spec-topik2-calibration-data-ko.md) 그대로 구현. 분석·재보정은 이번 스코프 아님(로깅만) | **차단 없음 -- Paul 승인 완료(2026-07-27 AskUserQuestion), N9 이후 착수 권장** |
 | — | **쓰기 Phase 2 캘리브** | 샘플 채점셋으로 가중·임계 조정 · 게이밍 테스트 (N8 이후 잔여 스코프) | **Paul 샘플/OK** |
 | **N7b** | **12자음 Canva→SVG (글자별)** | Paul PNG → 추적·`_check` | **Paul Canva 게이트** |
 | — | **Stop** | Lemon 전 정지 · commit/push는 Paul 요청 전 정지 · Vercel 프로젝트 생성은 Paul | **차단** |
