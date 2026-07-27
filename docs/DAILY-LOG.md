@@ -10,6 +10,14 @@
 
 ---
 
+## 2026-07-28
+
+### Claude (파인튜닝 1-1 완료 -- 캐릭터 성장 페이스, 직접 코드수정+라이브검증)
+- Paul "1번 진행하고 하나씩 물어보면서 진행하자" 지시. 목표 페이스 확인(AskUserQuestion) -> 15~20세트로 stage1->6 확정.
+- 원인 특정: hub/app/js/app.js finishMock()이 문항당XP(10/7/4)+세트클리어보너스(+20)를 주는데 STAGE_XP_FLOORS(100,250,450,700,1000)가 그대로라 10문항 세트 1개(~110XP)로 stage2(100) 돌파. path-progress.js(Hangul/Basics/TOPIK II 공용, 스킬당 flat 10XP)는 별개 시스템이라 이 버그 없음 -- 그쪽은 안 건드림.
+- Cursor가 app.js를 동시 편집 중(N16 관련, 다른 라인대) 확인 후 STAGE_XP_FLOORS 상수 한 줄(주석 포함 5줄)만 안전하게 분리 수정: [0,220,550,1000,1450,1900]. 로컬 서버로 라이브 검증("220 XP to stage 2" 표시 확인) 후 git show HEAD 기반 안전 스플라이스로 이 변경분만 커밋+푸시(Cursor의 다른 미커밋 라인은 작업트리에 그대로 보존).
+- 부수 확인: Cursor의 N16 온보딩 작업이 이미 상당 부분 구현됨 확인(공통 "WELCOME - A few basics (once) - Shared across Hangul, Basics, and TOPIK" 화면 실측), MIN_ATTEMPTS_FOR_REGISTER=3 상수도 이미 존재 -- 로드맵 1-2(준비도 게이팅)는 Cursor가 이미 손댔을 가능성 있어 다음 확인 필요.
+
 ## 2026-07-27
 
 ### Claude (충돌 확인 후 대기 결정 + 전체 로드맵 정리)
