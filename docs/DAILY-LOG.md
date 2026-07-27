@@ -12,6 +12,10 @@
 
 ## 2026-07-27
 
+### Claude (충돌 확인 후 대기 결정 + 전체 로드맵 정리)
+- Paul "너가 직접 진행해"(UIUX) 지시 확인 중 N14/N15/N16을 Cursor가 이미 실시간 구현 중임을 발견(basic.js slideIndex/lessonState, topik2.js unitIsDeferred/appendSectionHeader, app.js renderExamPlanPrompt) -- 직접 편집 시 충돌 위험 있어 AskUserQuestion으로 확인, Paul이 "Cursor가 마저 끝내게 둠" 선택. Claude는 완료 후 라이브검증+코드리뷰 역할 유지.
+- docs/roadmap-next-steps-ko.md 신규 작성 -- 오늘 전체 작업(TOPIK2 캘리브레이션·13편 AI리서치·UX개편) 종합해 우선순위 정리: (1)파인튜닝 필요 항목 5개(캐릭터 성장속도·준비도 게이팅·쓰기Phase2캘리브·N9프롬프트튜닝·Basics문법카드세분화) (2)Tier2 미착수 항목 3개 (3)Paul게이트 대기 3개 (4)하지않기로 확정된 것 4개 (5)백그라운드 sibling체인.
+
 ### Claude (328개 파일 일괄 커밋·푸시 + TOPIK II 재검토 -> 3탭 구조 재설계 확정 + N14-16 재큐잉)
 - Paul 승인으로 그동안 커밋된 적 없던 328개 파일(TOPIK II/Basics/Games 8종/Blog/Teach/한글아트에셋/어휘데이터/QA스크립트 전체) 일괄 커밋+푸시 완료 -- 데이터 유실 위험 해소.
 - 큐 드리프트 발견: 이전에 큐잉한 N11/N12/N13(UI/UX 스펙)이 Cursor의 로컬 큐 편집이 먼저 잡히면서 자리 없이 "Claude 작성 중" 플레이스홀더로 덮여 있었음. 또한 "N11"이 과거 이력(Notion sync)에 이미 쓰인 번호라 충돌 확인 -- N14/N15/N16으로 재번호 부여.
