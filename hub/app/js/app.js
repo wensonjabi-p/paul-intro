@@ -14,8 +14,11 @@ const LISTEN_FILES = [
 const FINAL_MOCK_FILE = "./data/verified-read-03.json";
 const SRS_PRACTICE_SIZE = 8;
 const FREE_STAGE_CAP = 2; // pants — D20 provisional
-/** XP floors for character stages 1–6 (matches syncCharStageFromXp). */
-const STAGE_XP_FLOORS = [0, 100, 250, 450, 700, 1000];
+/** XP floors for character stages 1–6 (matches syncCharStageFromXp).
+ * Paced for ~15-20 ten-question practice sets (~110 XP/set incl. the
+ * finishMock() +20 clear bonus) to reach stage 6 — Paul-confirmed pace,
+ * 2026-07-28 (previous floors let a single set jump stage 1→2). */
+const STAGE_XP_FLOORS = [0, 220, 550, 1000, 1450, 1900];
 const GOAL_SUGGEST_PCT = 25;
 const REGISTER_ASK_PCT = 80;
 // A single lucky mock shouldn't trigger a "go register" nudge — require a few scored attempts first.
