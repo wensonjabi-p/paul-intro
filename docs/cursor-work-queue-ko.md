@@ -14,6 +14,7 @@
 3. **병렬 OK**인 항목은 체인과 독립으로 돌릴 수 있다. P0를 막지 않는다.
 4. Lemon / commit·push는 **Paul이 말하기 전까지** 큐에 넣지 않는다(아래 Stop 라인).
 5. **분담 (2026-07-26 Paul):** Cursor = 구현(큐 항목 범위 안 리서치 자동 OK) · Claude = Next 채움 / 확인 / 기획. 큐 비면 Cursor는 self-QA만([§3-2](claude-cursor-loop-ko.md#3-2-리서치큐-소유권-paul-확정--2026-07-26)).
+6. **⚠️ 우선순위 재지정 (2026-07-27 Paul):** 어휘 테마 팩 sibling-handoff 체인(아래 "Sibling handoff" 섹션)이 Next를 무시하고 계속 자동 진행되고 있음을 Paul이 지적. **Next(N8→N9→N10)가 sibling-handoff보다 항상 우선한다** — Next에 미완료 항목이 있으면 sibling-handoff 체인은 일시 정지하고 Next부터 처리할 것. Next가 완전히 빌 때만 sibling-handoff 재개.
 
 ---
 

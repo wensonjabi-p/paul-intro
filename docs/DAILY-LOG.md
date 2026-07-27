@@ -12,6 +12,14 @@
 
 ## 2026-07-27
 
+### Claude (트랙 UX 개편 제안서 -- 실사용 감사 + 3편 병렬 학술리서치 + 큐 우선순위 재지정)
+- Paul이 이전에 정리했다는 UI/UX 개선사항(Basics/Hangul PPT식 흐름, TOPIK II가 TOPIK I과 다른 패턴, Basic info 온보딩 배치)이 왜 반영 안 됐는지 질문 -> DAILY-LOG/큐/PROGRESS/메모리 전수 검색했으나 기록 전무 확인, Cursor에게 지시가 실제로 전달된 적이 없었음을 확인.
+- Paul의 메타 질문("Cursor가 지금 하는 작업이 우선순위 맞냐")에 답변: Cursor가 Next(N8/N9/N10 대기 중)를 무시하고 sibling-handoff 어휘 테마팩 체인(advice~warn-caution까지 이어짐)을 계속 돌고 있음을 확인. 큐 규칙에 "Next가 sibling-handoff보다 항상 우선" 명시 추가.
+- 로컬 서버로 TOPIK I/TOPIK II/Basics/Hangul/Games 직접 조작하며 실측: (1) Basics 유닛 상세가 SKILL STEPS 라벨(Intro->Teach->Dialogue->Practice->Checkpoint)만 있고 실제로는 전부 한 페이지 긴 스크롤로 렌더링됨 확인 (2) TOPIK I(Practice 탭=평평한 목록) vs TOPIK II(00~13 번호+원형배지 타임라인, 비기능 스캐폴딩 항목 섞임) vs Basics(유사 타임라인) vs Games(개별 카드) 4가지 다른 패턴 확인 (3) localStorage 초기화 후 Hangul/Basics를 먼저 열면 온보딩이 아예 안 뜨고 TOPIK I 진입 시에만 트리거됨 확인, "Me" 탭엔 개별 항목 수정 불가한 "Redo onboarding"(전체 재실행)만 있고 다른 트랙엔 설정 화면 자체가 없음 확인.
+- 3개 병렬 리서치 에이전트로 국문+영문+Google Scholar 학술근거 수집: 마이크로러닝/청킹(Sweller CLT, worked-example effect, Bloom mastery learning, Sanchez&Wiley 2009 스크롤연구, 도현미·김민정 2022, 배재홍·신호영 2020) / 온보딩 배치(Adamczyk&Bailey 2004 CHI 인터럽션비용, Bol et al 2018 privacy calculus, Ko&Kim 2025 국내 몰입연구, NN/g, Duolingo 1회성 온보딩 관행) / 트랙간 일관성(Nielsen 휴리스틱#4, SDT 유능감, 이보경·두경일 2015, Kejun Liu 2024, Duolingo 알파벳트랙 패스통합 사례). 각 에이전트 모두 학술근거와 업계참고자료를 명확히 구분하고 근거 얇은 부분 정직하게 고지.
+- docs/proposal-ux-overhaul-tracks-ko.md 신규 작성 -- 3개 문제(PPT흐름 부재/트랙간 불일치/온보딩 배치) 각각 실측+학술근거+구체 제안, 우선순위표, Paul 확인 필요 4개 질문. Paul 승인 전까지 스펙/큐잉 안 함(문서만).
+- hub/app/** 미편집(리뷰만).
+
 ### Claude (채점 원칙 개정 -- AI 참고점수 노출 + N10 검증데이터 파이프라인 스펙)
 - Paul 피드백: "AI는 절대 채점 금지" 원칙이 과했다는 지적 -- 조형익(2025) 논문의 실제 결론은 "AI 단독 즉시배포 시기상조, AI보조+검증 모델"이었지 영구 금지가 아니었음. jabi의 계획(학습자 실제 TOPIK 성적 제공 -> 지속 검증)은 그 논문의 전문가패널 대조보다 강한 검증 기준(실제 시험결과)이라는 점에 동의, 원칙 개정.
 - AskUserQuestion 2문항으로 확정: (1) AI 참고점수를 N9부터 바로 노출, 규칙기반 점수 옆에 별도 표시 (2) 실제 TOPIK 성적 제출(검증데이터 핵심) 기능도 지금 같이 스펙 작성.
