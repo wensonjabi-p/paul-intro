@@ -695,7 +695,9 @@
 | **N10** | ~~**채점 검증 데이터 파이프라인**~~ | ~~uid · coaching-log · official-score~~ | **Done 2026-07-27** — [`spec-topik2-calibration-data-ko.md`](spec-topik2-calibration-data-ko.md) · `jabi_uid` · coach body에 uid/questionId/ruleBasedLanguageScore · `kvPushJSON('topik2:coaching-log')` · `api/topik2-official-score.js` + 트랙 하단 opt-in 폼 · 원문 미저장 · 보존기간/개인정보 방침은 Paul 열린 질문 유지 |
 | — | **쓰기 Phase 2 캘리브** | 샘플 채점셋으로 가중·임계 조정 · 게이밍 테스트 (N8 이후 잔여 스코프) | **Paul 샘플/OK** |
 | **N7b** | **12자음 Canva→SVG (글자별)** | Paul PNG → 추적·`_check` | **Paul Canva 게이트** |
-| — | *(Claude)* **UI/UX 스펙 작성 중** | Basics/Hangul PPT식 흐름 · TOPIK II≠I 패턴 · Basic info 배치 — 큐 미등록이었음 → Claude가 스펙 문서화 후 Next에 넣음 | **Claude 소유 · Cursor는 스펙 착지 전 invent 금지** |
+| **N14** | **Basics 유닛 상세 — 슬라이드형(PPT식) 흐름 개편 (파일럿)** | `hub/app/basic/basic.js`의 `renderDetail()`을 슬라이드 상태머신으로 교체. `bank.steps[]`(이미 5단계로 쪼개져 있음) 그대로 재사용 -- [`spec-basics-ppt-slide-flow-ko.md`](spec-basics-ppt-slide-flow-ko.md) 그대로 구현. Hangul은 스코프 아님 | **차단 없음 -- Paul 승인 완료** |
+| **N15** | **TOPIK II를 TOPIK I 형식(Home/Practice/Me 3탭)으로 전면 재구성** | [`spec-topik2-topik1-format-detailed-ko.md`](spec-topik2-topik1-format-detailed-ko.md) 옵션 B 확정(2026-07-27 재확인) -- 캐릭터 위젯→Home 탭, 목록(섹션그룹핑+00/13 분리)→Practice 탭, 파트너변경+N10 성적입력→Me 탭 신설. 기존 [`spec-topik2-unit-list-unify-ko.md`](spec-topik2-unit-list-unify-ko.md)(목록만 개선하는 옵션 A)는 이 문서로 대체됨 | **차단 없음 -- Paul 승인 완료(옵션 B, AskUserQuestion)** |
+| **N16** | **온보딩 분리 — 공통정보 hub 레벨 1회 + TOPIK 응시질문은 진도기반 컨텍스트 노출** | `state.profile`을 hub 공유 localStorage로 이동, TOPIK 응시 질문을 온보딩에서 제거하고 "내 페이지"(N15의 Me 탭)에서 준비도 임계치 도달 시 노출 -- [`spec-onboarding-relocate-ko.md`](spec-onboarding-relocate-ko.md) 그대로 구현. N15의 Me 탭 신설과 맞물리므로 N15 이후 착수 권장 | **차단 없음 -- Paul 승인 완료** |
 | — | **Stop** | Lemon 전 정지 · commit/push는 Paul 요청 전 정지 · Vercel 프로젝트 생성은 Paul | **차단** |
 
 ---

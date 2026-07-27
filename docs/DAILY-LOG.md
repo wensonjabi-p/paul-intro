@@ -12,6 +12,14 @@
 
 ## 2026-07-27
 
+### Claude (328개 파일 일괄 커밋·푸시 + TOPIK II 재검토 -> 3탭 구조 재설계 확정 + N14-16 재큐잉)
+- Paul 승인으로 그동안 커밋된 적 없던 328개 파일(TOPIK II/Basics/Games 8종/Blog/Teach/한글아트에셋/어휘데이터/QA스크립트 전체) 일괄 커밋+푸시 완료 -- 데이터 유실 위험 해소.
+- 큐 드리프트 발견: 이전에 큐잉한 N11/N12/N13(UI/UX 스펙)이 Cursor의 로컬 큐 편집이 먼저 잡히면서 자리 없이 "Claude 작성 중" 플레이스홀더로 덮여 있었음. 또한 "N11"이 과거 이력(Notion sync)에 이미 쓰인 번호라 충돌 확인 -- N14/N15/N16으로 재번호 부여.
+- Paul 지시로 TOPIK II 라이브 재검토: SpecPartner가 새로 넣은 캐릭터/XP 위젯이 목록 화면 맨 위에 얹혀 TOPIK I(Home/Practice/Me 3탭 분리)과의 구조 격차가 기존 N12 스펙(목록만 개선) 작성 시점보다 커졌음을 확인.
+- docs/spec-topik2-topik1-format-detailed-ko.md 신규 작성 -- 옵션 A(목록만 개선) vs 옵션 B(Home/Practice/Me 3탭 전면 재구성) 비교, AskUserQuestion으로 확인 -> 옵션 B 확정.
+- cursor-work-queue-ko.md Next 재정비: N14(Basics PPT슬라이드) · N15(TOPIK II 3탭 재구성, 기존 목록전용 스펙 대체) · N16(온보딩분리, N15 Me탭과 연계) 큐잉. N8/N9/N10은 Cursor가 이미 Done 처리한 것 확인(코드로 직접 검증 -- write-54 가중치 0.66/0.15/0.19 반영됨, api/topik2-coach.js·api/topik2-official-score.js 스펙대로 구현 확인).
+- hub/app/** 미편집(리뷰·큐 정리만).
+
 ### Cursor (SpecPartner-4 · 설정 · Paul 승인)
 - ✅ Me 「설정」: 모국어·응시지역·학습량·하루시간 드롭다운 즉시 저장.
 - ✅ 트랙별 학습 짝 다시 고르기(한글/기초/TOPIK I/II) · XP 유지 · 시트 피커 · 온보딩 전체 리셋 버튼 유지.
