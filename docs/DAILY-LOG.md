@@ -12,6 +12,14 @@
 
 ## 2026-07-27
 
+### Claude (callClaude 오류 추가 정정 + N9 -- TOPIK2 AI 코칭 레이어 스펙 + 큐잉)
+- 추가 정정: "jabi의 CLAUDE.md에 이미 있는 레벨별 코칭 차등"이라는 서술도 callClaude와 같은 원인(DebateChamber CLAUDE.md 오염)으로 확인 -- paul-intro 저장소엔 CLAUDE.md 파일 자체가 없고 topik2.js에 level 분기 코드도 없음(grep 확인). research-genai-korean-writing-pedagogy-ko.md, research-ai-korean-writing-synthesis-ko.md 2건 추가 정정.
+- Paul에게 AskUserQuestion 4문항으로 확인: (1) 범위 Q51~54 전체 (2) 인프라 서버리스 프록시 (3) Tier 2는 나중 (4) 최소 버전(문법·표현 코칭)부터.
+- 인프라 조사 중 이 저장소(paul-intro)에 이미 실사용 중인 Anthropic API 서버리스 패턴 발견: api/_polish.js·api/polish-thought.js·api/generate-followup.js -- claude-sonnet-5 모델, tool-use 구조화출력, 키 부재시 조용한 폴백, 재시도 1회. 새 인프라 설계 불필요, 기존 패턴 그대로 재사용 가능(ANTHROPIC_API_KEY도 이미 설정돼 있을 가능성 높음).
+- docs/spec-topik2-ai-coaching-layer-ko.md 신규 작성 -- api/topik2-coach.js 초안 코드(기존 패턴 그대로 복제) + topik2.js 변경 지점 + 회귀체크리스트. write-blank(51/52)·write-short(53)·write-essay(54) 전 유형 커버. AI는 코칭·설명 전용이며 표시 점수(trait bar)에 영향 금지 명시 -- 조형익(2025) 논문의 "최신모델도 AI단독채점 신뢰도 무의미" 발견을 근거로 인용.
+- cursor-work-queue-ko.md Next에 N9 큐잉(차단 없음, Paul 승인 완료 명시, N8과 독립).
+- hub/app/**, api/** 미편집 -- 실제 구현은 Cursor 담당.
+
 ### Claude (한국어 AI 논문 모음 10편 병렬 리서치 + callClaude 오류 정정 + 마스터 종합)
 - Paul 지시: "한국어 AI 논문 모음" 폴더 잔여 10편(개인화복습·작문피드백·문법오류교정·초급말하기·읽기자료·프랑스인발음·세종AI선생님·논설문AI프로그램·쓰기평가활용·에세이자동채점XAI, 총 226~282쪽)을 병렬 에이전트 10개로 각각 리서치 -> research-*-ko.md 작성 -> 카테고리별 폴더(쓰기평가-채점/쓰기교수법-피드백/챗봇-수업설계/개인화-복습시스템/읽기/문법오류교정-NLP/발음-음성학) 이동. 전부 완료.
 - 리서치 중 중대 오류 발견·정정: 오늘 작성한 문서 다수가 "jabi가 이미 규칙기반+생성형 AI(`callClaude`) 하이브리드 코칭을 구현 중"이라고 서술했는데, 이는 이 세션에 함께 떠 있던 완전히 무관한 다른 프로젝트(DebateChamber)의 실제 함수명을 jabi 코드로 착각해 끌어온 오류. hub/app/** 전수 grep으로 재확인 -> jabi에는 생성형 AI 호출이 전혀 없음(topik2.js는 "AI writing coach not wired for this unit yet" 플레이스홀더만 존재). 9개 문서(신규 6개+기존 3개) 전부 "이미 구현 중" -> "아직 없음, 다음에 만들어야 할 기능"으로 정정. N8(54번 trait 재조정) 스펙 자체는 실제 코드를 직접 읽고 검증한 내용이라 이 오류와 무관, 그대로 유효.
