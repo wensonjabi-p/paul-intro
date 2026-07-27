@@ -12,6 +12,20 @@
 
 ## 2026-07-27
 
+### Claude (Paul 육안 QA 반영 + 섹터 캐릭터 스펙)
+- Paul이 획순 로스터 스크린샷으로 4개 지적: ㅈ 획순에서 아예 빠짐(캐릭터 파트너 제외와 혼동됐던 부분) -- ㅍ 모양 불명확 -- ㅎ 비율 -- ㄲㄸㅃㅆ 세로 과다.
+- scripts/gen-jamo-strokes-gulim.py 수정 후 재생성, PNG 렌더로 4개 전부 직접 확인: ㅈ 실제 데이터 추가(ㅊ의 모자 뺀 부분 재사용) -- ㅍ 바닥바를 올려 발이 보이게(밀폐 상자처럼 안 보이게) -- ㅎ 모자 두께/길이 키움 -- 쌍자음 세로 길이 줄이고 두께 키움(750→300, half_w 상향). jamo-strokes-13/tense.json 갱신, README "다음 단계"에 hangul.js 쪽 배선 지시 작성(ROSTER_13을 파트너선택용/획순연습용 분리 필요 -- 안 그러면 ㅈ가 캐릭터 선택 화면에도 새서 나옴).
+- Paul 추가 지시 3건 수신:
+  1) 난이도/언어는 최초 로그인 1회만 묻고 이후 설정에서 변경 가능해야 함.
+  2) 캐릭터는 섹터(트랙)마다 하나씩 고르고 그 안에서 독립 성장.
+  3) "나" 페이지에 명예의 전당 -- 섹터별 키운 캐릭터 전시, 최고 레벨 강조.
+  코드 확인 결과 캐릭터 성장 시스템이 지금 TOPIK I 하나에만 있음(한글/기초/TOPIK II엔 없음) -- 리팩터가 아니라 기능 확장. docs/spec-partner-per-sector-hall-of-fame-ko.md로 기획 작성(데이터 모델·화면·단계별 순서).
+  4) TOPIK II는 먼저 TOPIK I 형식/UX로 맞추라는 지시도 받음 -- Cursor가 TOPIK II 작업 시 TOPIK I을 기준 삼도록 SpecPartner 항목에 메모.
+  5) 쓰기 채점 캘리브레이션용 가상 학습자 샘플 3명 만들어서 정리하는 작업은 별도로 진행 중(다음 커밋).
+- ㄴ 캐릭터: Paul이 "확인 없이 계속 만들어서 채워라" 승인 -- 다른 작업 없을 때 Canva 스레드 이어서 진행 예정.
+- 조치: 큐 Now에 S1jieut(hangul.js 로스터 분리) + SpecPartner(섹터 캐릭터 스펙) 등록.
+- 다음(Cursor): S1jieut 먼저(작음), 이어서 SpecPartner §4 순서대로(TOPIK II partner 시스템 우선).
+
 ### Claude (6시간 주기 -- R1 재검증 + R2 발견)
 - git pull, 큐/PROGRESS/로그 확인 -- Cursor가 R1 전체 + sibling handoff 5건(stroke tube, basics grammar, theme->game 전 게임, dictation/telephone/scramble money-banking) 전부 완료해놓음.
 - R1 4개 항목 로컬 서버로 재검증: Basics 디버그 블록 사라짐, Hangul 종류 필드 사라짐, Hangul 퀴즈 choices KO 정상 출력, Basics 카운터 "6 filled" 정상. D1 디자인도 홈/퀴즈 화면에 실제 반영 확인.
