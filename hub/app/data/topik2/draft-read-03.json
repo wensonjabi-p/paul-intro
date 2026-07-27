@@ -1,0 +1,284 @@
+{
+  "id": "jabi-topik2-read-v0-03",
+  "title": {
+    "en": "jabi. TOPIK II · Reading bank 3 (research fill)",
+    "ko": "jabi. TOPIK II · 읽기 뱅크 3 (연구 보강)",
+    "zh": "jabi. TOPIK II · 阅读题库3（研究补强）"
+  },
+  "level": "TOPIK II Reading",
+  "skill": "reading",
+  "kind": "read",
+  "verified": false,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "sourceNote": "Research fill — original intermediate items (purpose · order · content · blank). Official TOPIK II reading shapes only. No official items/wording. MCQ only; no Lemon/AI. See docs/research-topik2-content-fill-ko.md.",
+  "research": [
+    "docs/research-topik2-content-fill-ko.md"
+  ],
+  "questions": [
+    {
+      "id": "t2-r03-01",
+      "type": "purpose",
+      "prompt": {
+        "ko": "※ 다음 글의 목적으로 가장 알맞은 것을 고르십시오.\n\n안녕하세요. 동아리 회장 김하늘입니다. 이번 주 토요일 오후에 신입 회원 환영회를 엽니다. 장소는 학생회관 201호이고, 간단한 간식과 자기소개 시간을 준비했습니다. 참석 여부를 목요일까지 단체 채팅방에 남겨 주세요.",
+        "en": "※ Choose the main purpose of the text.\n\nHello. I'm Kim Haneul, the club president. This Saturday afternoon we will hold a welcome meeting for new members in Student Hall room 201, with light snacks and time for introductions. Please reply in the group chat by Thursday whether you will attend.",
+        "zh": "※ 选择这段文字的主要目的。\n\n大家好。我是社团会长金하늘。本周六下午在学生会馆201号室举办迎新会，准备了简单茶点和自我介绍时间。请在周四前在群聊里回复是否出席。"
+      },
+      "choices": [
+        "환영회 참석 여부를 기한 안에 알려 달라고 요청하려고",
+        "동아리를 해산한다고 알리려고",
+        "시험 일정을 바꾸자고 설득하려고",
+        "기숙사 규칙을 비판하려고"
+      ],
+      "answer": 0,
+      "answerText": "환영회 참석 여부를 기한 안에 알려 달라고 요청하려고",
+      "tags": [
+        "topik2:read",
+        "reading:목적",
+        "genre:notice"
+      ],
+      "hint": {
+        "ko": "마지막 문장의 요청을 보세요.",
+        "en": "Look at the request in the last sentence.",
+        "zh": "看最后一句的请求。",
+        "steps": {
+          "en": [
+            "Purpose: what does the writer want readers to do?",
+            "Event info + RSVP by Thursday in the chat.",
+            "Reject club dissolution or dorm criticism."
+          ],
+          "zh": [
+            "目的：作者要读者做什么？",
+            "活动信息 + 周四前群聊回复。",
+            "排除解散社团或批评宿舍。"
+          ],
+          "ko": [
+            "글의 목적 = 독자 행동.",
+            "목요일까지 참석 회신.",
+            "해산·기숙사 비판은 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Main ask: RSVP for the welcome meeting by Thursday.",
+        "zh": "主要请求：周四前回复是否参加迎新会。",
+        "ko": "환영회 참석 여부를 목요일까지 회신해 달라는 목적."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not dissolve the club? The text invites people to a welcome event.",
+          "zh": "为什么不是解散？在办迎新会。",
+          "ko": "왜 해산이 아니에요? 환영회를 연대요."
+        },
+        "2": {
+          "en": "Why not change exams? No exam schedule is discussed.",
+          "zh": "为什么不是改考试？没谈考试。",
+          "ko": "왜 시험 일정이 아니에요? 시험 이야기가 없어요."
+        },
+        "3": {
+          "en": "Why not criticize dorm rules? Topic is a club meeting RSVP.",
+          "zh": "为什么不是批评宿舍？主题是社团迎新回复。",
+          "ko": "왜 기숙사 비판이 아니에요? 동아리 안내예요."
+        }
+      }
+    },
+    {
+      "id": "t2-r03-02",
+      "type": "order",
+      "prompt": {
+        "ko": "※ 다음 문장을 순서대로 맞게 배열한 것을 고르십시오.\n\n(가) 그래서 많은 회사가 유연 근무제를 도입하고 있다.\n(나) 출퇴근 혼잡과 장시간 근무는 직원 피로를 키운다.\n(다) 다만 업무 경계가 흐려지지 않도록 규칙이 필요하다.\n(라) 유연 근무는 이동 시간을 줄여 집중을 돕는 면도 있다.",
+        "en": "※ Choose the best order of the sentences.\n\n(가) So many companies are introducing flexible work.\n(나) Commute crowds and long hours increase employee fatigue.\n(다) But rules are needed so work–life boundaries do not blur.\n(라) Flexible work can also cut travel time and help focus.",
+        "zh": "※ 选择句子的正确顺序。\n\n(가) 因此许多公司引入弹性工作制。\n(나) 通勤拥堵和长时间工作加重员工疲劳。\n(다) 但需要规则以免工作生活边界模糊。\n(라) 弹性工作也能减少通勤、帮助专注。"
+      },
+      "choices": [
+        "(나)-(가)-(라)-(다)",
+        "(가)-(나)-(다)-(라)",
+        "(라)-(다)-(나)-(가)",
+        "(다)-(라)-(가)-(나)"
+      ],
+      "answer": 0,
+      "answerText": "(나)-(가)-(라)-(다)",
+      "tags": [
+        "topik2:read",
+        "reading:배열",
+        "topic:work"
+      ],
+      "hint": {
+        "ko": "문제 → 대응 → 장점 → 한계 순으로 이어지는지 보세요.",
+        "en": "Check problem → response → benefit → limit flow.",
+        "zh": "看是否按问题→对策→优点→局限展开。",
+        "steps": {
+          "en": [
+            "Order: start with the fatigue problem (나).",
+            "Then ‘그래서’ companies adopt flex (가).",
+            "Benefit (라) then caveat (다)."
+          ],
+          "zh": [
+            "顺序：先疲劳问题(나)。",
+            "再“그래서”引入弹性(가)。",
+            "优点(라) → 注意点(다)。"
+          ],
+          "ko": [
+            "문제(나)로 시작.",
+            "「그래서」(가).",
+            "장점(라) → 한계(다)."
+          ]
+        }
+      },
+      "why": {
+        "en": "Problem (나) → so flex work (가) → benefit (라) → caveat (다).",
+        "zh": "问题(나)→因此弹性(가)→优点(라)→局限(다)。",
+        "ko": "피로 문제(나) → 그래서 도입(가) → 장점(라) → 규칙 필요(다)."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not start with (가)? ‘그래서’ needs a prior problem.",
+          "zh": "为什么不以(가)开头？“그래서”需要先有问题。",
+          "ko": "왜 (가) 시작이 아니에요? 「그래서」 앞 원인이 필요해요."
+        },
+        "2": {
+          "en": "Why not benefit-first? The causal chain starts from fatigue.",
+          "zh": "为什么不先优点？因果从疲劳开始。",
+          "ko": "왜 장점 먼저가 아니에요? 원인부터예요."
+        },
+        "3": {
+          "en": "Why not caveat-first? Limits come after introducing flex work.",
+          "zh": "为什么不先局限？限制应在引入之后。",
+          "ko": "왜 한계 먼저가 아니에요? 도입 뒤에 나와요."
+        }
+      }
+    },
+    {
+      "id": "t2-r03-03",
+      "type": "inference",
+      "prompt": {
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n시립 도서관은 다음 달부터 평일 야간 개관을 오후 9시에서 오후 10시로 연장한다. 주말 운영 시간은 바꾸지 않는다. 야간 연장은 시험 기간인 두 달만 시범 운영하며, 이용자 수와 안전 요원을 검토한 뒤 정식 도입 여부를 결정한다.\n\n이 글의 내용과 같은 것을 고르십시오.",
+        "en": "Read and choose what matches.\n\nFrom next month the city library will extend weekday night hours from 9 p.m. to 10 p.m. Weekend hours stay the same. The night extension is a two-month pilot during exam season; after reviewing visitors and security staff, they will decide on permanent adoption.",
+        "zh": "阅读并选择与文章一致的一项。\n\n市立图书馆下月起平日夜间开放从晚9延至晚10。周末不变。夜间延长仅考试季两个月试点，考察人流与安保后再决定是否正式实行。"
+      },
+      "choices": [
+        "평일 야간 연장은 당분간 시범이며 주말 시간은 그대로다",
+        "주말도 오후 10시까지로 바꾼다",
+        "야간 연장은 이미 영구 확정됐다",
+        "시험 기간과 관계없이 1년 내내 연장한다"
+      ],
+      "answer": 0,
+      "answerText": "평일 야간 연장은 당분간 시범이며 주말 시간은 그대로다",
+      "tags": [
+        "topik2:read",
+        "reading:내용일치",
+        "genre:notice"
+      ],
+      "hint": {
+        "ko": "평일/주말, 시범/정식 결정을 구분하세요.",
+        "en": "Separate weekday vs weekend and pilot vs permanent.",
+        "zh": "区分平日/周末、试点/正式。",
+        "steps": {
+          "en": [
+            "Facts: weekday 9→10; weekend unchanged.",
+            "Two-month pilot in exam season; decision later.",
+            "Match: temporary pilot + weekends same."
+          ],
+          "zh": [
+            "事实：平日9→10；周末不变。",
+            "考试季两个月试点，之后再定。",
+            "对应：暂时试点 + 周末不变。"
+          ],
+          "ko": [
+            "평일만 연장 · 주말 유지.",
+            "두 달 시범.",
+            "영구·주말 연장 보기는 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Weekday night pilot only; weekends unchanged; permanent decision later.",
+        "zh": "仅平日夜间试点；周末不变；正式与否稍后决定。",
+        "ko": "평일 야간 시범 · 주말 불변 · 정식은 검토 후."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not change weekends? The text says weekend hours stay the same.",
+          "zh": "为什么不是改周末？写明周末不变。",
+          "ko": "왜 주말 변경이 아니에요? 주말은 그대로예요."
+        },
+        "2": {
+          "en": "Why not already permanent? It is a pilot; formal adoption comes after review.",
+          "zh": "为什么不是已永久？是试点，审查后再定。",
+          "ko": "왜 영구가 아니에요? 시범 운영이에요."
+        },
+        "3": {
+          "en": "Why not year-round? Only two months during exam season.",
+          "zh": "为什么不是全年？只考试季两个月。",
+          "ko": "왜 1년 내내가 아니에요? 두 달 시범이에요."
+        }
+      }
+    },
+    {
+      "id": "t2-r03-04",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 말로 가장 알맞은 것을 고르십시오.\n\n회의에서는 반대 의견도 존중해야 한다. 한 가지 주장만 반복하면 (    ).",
+        "en": "※ Choose the best wording for the blank.\n\nMeetings should respect opposing views. If you only repeat one claim, (    ).",
+        "zh": "※ 选择填入空格的最佳词语。\n\n会议也应尊重反对意见。若只重复一种主张，就会(    )。"
+      },
+      "choices": [
+        "논의가 깊어지기 어렵다",
+        "모두가 즉시 동의한다",
+        "결정이 자동으로 난다",
+        "시간이 전혀 필요하지 않다"
+      ],
+      "answer": 0,
+      "answerText": "논의가 깊어지기 어렵다",
+      "tags": [
+        "topik2:read",
+        "reading:문맥",
+        "skill:inference"
+      ],
+      "hint": {
+        "ko": "「반대 존중」과 대비되는 결과를 고르세요.",
+        "en": "Pick the result that contrasts with respecting dissent.",
+        "zh": "选与“尊重反对”对照的结果。",
+        "steps": {
+          "en": [
+            "Context: one-sided talk blocks deep discussion.",
+            "Blank needs a negative process result.",
+            "Reject instant agreement or zero-time myths."
+          ],
+          "zh": [
+            "语境：一边倒妨碍深入讨论。",
+            "空格要负面过程结果。",
+            "排除立刻同意或零耗时。"
+          ],
+          "ko": [
+            "한쪽만 반복 → 논의 약화.",
+            "즉시 동의는 아님.",
+            "논의 깊어지기 어려움을 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Repeating one claim only makes deeper discussion hard.",
+        "zh": "只重复一种主张难以深入讨论。",
+        "ko": "한 주장만 반복하면 논의가 깊어지기 어렵다."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not instant agreement? The text values opposing views.",
+          "zh": "为什么不是立刻同意？文章强调反对意见。",
+          "ko": "왜 즉시 동의가 아니에요? 반대를 존중하래요."
+        },
+        "2": {
+          "en": "Why not automatic decisions? No such claim is made.",
+          "zh": "为什么不是自动决定？文中无此说。",
+          "ko": "왜 자동 결정이 아니에요? 그런 내용이 없어요."
+        },
+        "3": {
+          "en": "Why not “no time needed”? Meetings still need discussion time.",
+          "zh": "为什么不是不需要时间？会议仍需讨论。",
+          "ko": "왜 시간 불필요가 아니에요? 논의가 필요해요."
+        }
+      }
+    }
+  ]
+}

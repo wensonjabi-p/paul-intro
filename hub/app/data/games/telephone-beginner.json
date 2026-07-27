@@ -1,0 +1,7679 @@
+{
+  "id": "telephone-beginner",
+  "version": 63,
+  "level": "beginner-elementary",
+  "lang": "ko",
+  "mode": "telephone",
+  "modes": [
+    "recall",
+    "distort"
+  ],
+  "defaults": {
+    "mode": "recall",
+    "showMs": 3500,
+    "passSteps": 3
+  },
+  "audio": {
+    "mode": "tts",
+    "lang": "ko-KR",
+    "note": "MVP uses Web Speech API speechSynthesis. Quality varies by OS/browser. Not recorded human audio."
+  },
+  "timer": {
+    "punish": false,
+    "note": "Brief hide delay only. Soft UX — no fail-on-time."
+  },
+  "scoring": {
+    "soft": true,
+    "full": 0.88,
+    "partial": 0.55,
+    "note": "Normalized Hangul similarity. Soft tiers: full / almost / miss."
+  },
+  "source": "original-jabi",
+  "copyright": "Original beginner phrases for jabi Telephone (전화게임), plus intermediate money-banking, public-workplace, health-clinic, school-class, travel-lodging, weather-season, digital-comms, family-relations, hobby-culture, emotion-mood, sports-exercise, nature-environment, restaurant-cooking, clothes-shopping, music-arts, media-news, celebration-holiday, time-appointment, home-chores, and body-parts/directions-location/furniture-room/fruit-market/kitchen-tableware/office-stationery/post-mail/animals-pets/vehicles-driving/city-places/pantry-ingredients/bathroom-hygiene/jobs-occupations/countries-nationality/daily-routine/size-quantity/temperature-senses/colors-shapes/accessories-belongings/electricity-appliances/building-facilities/movement-actions/requests-favors/thoughts-plans/speech-talk/change-progress/comparison-degree/cause-reason/problem-solution/opinion-judgment/habits-lifestyle / rules-permission crossfill. Not scraped from Duolingo, Speechling, Bida/KoreaXin, or any third-party bank. Orthography follows NIKL/Sejong survival 해요체 norms. No hotel/hospital/pharmacy/bank/telecom/app/school/sports/restaurant/clothing/music/media/celebration/calendar/furniture/cookware/stationery/courier/pet/car/taxi/store/salon/hygiene/airline/embassy-brand names. Classroom whisper-game soft adaptation for solo offline play.",
+  "themes": [
+    "daily",
+    "cafe",
+    "shopping",
+    "cosmetics",
+    "banking",
+    "workplace",
+    "clinic",
+    "school",
+    "travel",
+    "weather",
+    "digital",
+    "family",
+    "hobby",
+    "emotion",
+    "sports",
+    "nature",
+    "restaurant",
+    "fruit",
+    "intermediate",
+    "clothes",
+    "music",
+    "media",
+    "celebration",
+    "time",
+    "chores",
+    "body",
+    "direction",
+    "furniture",
+    "kitchen",
+    "stationery",
+    "mail",
+    "pets",
+    "driving",
+    "places",
+    "pantry",
+    "bathroom",
+    "jobs",
+    "country",
+    "routine",
+    "size",
+    "senses",
+    "color",
+    "accessories",
+    "electric",
+    "building",
+    "motion",
+    "favor",
+    "think",
+    "speech",
+    "change",
+    "compare",
+    "reason",
+    "problem",
+    "opinion",
+    "habit",
+    "rules",
+    "friends",
+    "personality",
+    "apology",
+    "success",
+    "advice",
+    "encourage",
+    "promise",
+    "refuse",
+    "complain"
+  ],
+  "items": [
+    {
+      "id": "tel-01",
+      "text": "오늘 학교에 가요",
+      "gloss": {
+        "en": "I'm going to school today",
+        "ko": "오늘 등교",
+        "zh": "今天去学校"
+      },
+      "tags": [
+        "daily"
+      ]
+    },
+    {
+      "id": "tel-02",
+      "text": "물 한 잔 주세요",
+      "gloss": {
+        "en": "One glass of water, please",
+        "ko": "물 부탁",
+        "zh": "请给我一杯水"
+      },
+      "tags": [
+        "cafe"
+      ]
+    },
+    {
+      "id": "tel-03",
+      "text": "내일 만나자",
+      "gloss": {
+        "en": "Let's meet tomorrow",
+        "ko": "약속",
+        "zh": "明天见面吧"
+      },
+      "tags": [
+        "friend"
+      ]
+    },
+    {
+      "id": "tel-04",
+      "text": "가방이 어디에 있어요",
+      "gloss": {
+        "en": "Where is the bag?",
+        "ko": "위치",
+        "zh": "包在哪里？"
+      },
+      "tags": [
+        "question"
+      ]
+    },
+    {
+      "id": "tel-05",
+      "text": "저는 한국어를 배워요",
+      "gloss": {
+        "en": "I am learning Korean",
+        "ko": "학습",
+        "zh": "我在学韩语"
+      },
+      "tags": [
+        "study"
+      ]
+    },
+    {
+      "id": "tel-06",
+      "text": "날씨가 좋아요",
+      "gloss": {
+        "en": "The weather is nice",
+        "ko": "날씨",
+        "zh": "天气很好"
+      },
+      "tags": [
+        "daily"
+      ]
+    },
+    {
+      "id": "tel-07",
+      "text": "커피 마시러 갈까요",
+      "gloss": {
+        "en": "Shall we go for coffee?",
+        "ko": "제안",
+        "zh": "去喝咖啡吗？"
+      },
+      "tags": [
+        "cafe"
+      ]
+    },
+    {
+      "id": "tel-08",
+      "text": "친구를 기다려요",
+      "gloss": {
+        "en": "I'm waiting for a friend",
+        "ko": "기다림",
+        "zh": "在等朋友"
+      },
+      "tags": [
+        "friend"
+      ]
+    },
+    {
+      "id": "tel-09",
+      "text": "문을 닫아 주세요",
+      "gloss": {
+        "en": "Please close the door",
+        "ko": "부탁",
+        "zh": "请关门"
+      },
+      "tags": [
+        "request"
+      ]
+    },
+    {
+      "id": "tel-10",
+      "text": "시간이 없어요",
+      "gloss": {
+        "en": "I don't have time",
+        "ko": "바쁨",
+        "zh": "没时间"
+      },
+      "tags": [
+        "daily"
+      ]
+    },
+    {
+      "id": "tel-11",
+      "text": "도서관에서 공부해요",
+      "gloss": {
+        "en": "I study at the library",
+        "ko": "공부 장소",
+        "zh": "在图书馆学习"
+      },
+      "tags": [
+        "study"
+      ]
+    },
+    {
+      "id": "tel-12",
+      "text": "점심을 먹었어요",
+      "gloss": {
+        "en": "I ate lunch",
+        "ko": "식사",
+        "zh": "吃了午饭"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "tel-13",
+      "text": "전화 번호를 알려 주세요",
+      "gloss": {
+        "en": "Please tell me your phone number",
+        "ko": "연락처",
+        "zh": "请告诉我电话号码"
+      },
+      "tags": [
+        "request"
+      ]
+    },
+    {
+      "id": "tel-14",
+      "text": "비가 와요",
+      "gloss": {
+        "en": "It's raining",
+        "ko": "날씨",
+        "zh": "下雨了"
+      },
+      "tags": [
+        "daily"
+      ]
+    },
+    {
+      "id": "tel-15",
+      "text": "책을 읽어요",
+      "gloss": {
+        "en": "I'm reading a book",
+        "ko": "독서",
+        "zh": "在看书"
+      },
+      "tags": [
+        "study"
+      ]
+    },
+    {
+      "id": "tel-16",
+      "text": "집에 가고 싶어요",
+      "gloss": {
+        "en": "I want to go home",
+        "ko": "바람",
+        "zh": "想回家"
+      },
+      "tags": [
+        "daily"
+      ]
+    },
+    {
+      "id": "tel-17",
+      "text": "오늘 숙제가 많아요",
+      "gloss": {
+        "en": "There's a lot of homework today",
+        "ko": "숙제",
+        "zh": "今天作业很多"
+      },
+      "tags": [
+        "study"
+      ]
+    },
+    {
+      "id": "tel-18",
+      "text": "사과 두 개 주세요",
+      "gloss": {
+        "en": "Two apples, please",
+        "ko": "쇼핑",
+        "zh": "请给我两个苹果"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "tel-19",
+      "text": "영화 보러 가요",
+      "gloss": {
+        "en": "I'm going to see a movie",
+        "ko": "여가",
+        "zh": "去看电影"
+      },
+      "tags": [
+        "leisure"
+      ]
+    },
+    {
+      "id": "tel-20",
+      "text": "천천히 말해 주세요",
+      "gloss": {
+        "en": "Please speak slowly",
+        "ko": "부탁",
+        "zh": "请说慢一点"
+      },
+      "tags": [
+        "request"
+      ]
+    },
+    {
+      "id": "tel-21",
+      "text": "지하철에서 환승해요",
+      "gloss": {
+        "en": "I transfer on the subway",
+        "ko": "환승",
+        "zh": "在地铁换乘"
+      },
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "tel-22",
+      "text": "머리가 아파요",
+      "gloss": {
+        "en": "I have a headache",
+        "ko": "증상",
+        "zh": "头疼"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "tel-23",
+      "text": "김밥 한 줄 주세요",
+      "gloss": {
+        "en": "One roll of gimbap, please",
+        "ko": "간식",
+        "zh": "请给我一卷紫菜包饭"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "tel-24",
+      "text": "카드로 결제할게요",
+      "gloss": {
+        "en": "I'll pay by card",
+        "ko": "결제",
+        "zh": "我用卡结账"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "tel-25",
+      "text": "오늘 할인해요",
+      "gloss": {
+        "en": "There's a discount today",
+        "ko": "쇼핑",
+        "zh": "今天打折"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "tel-26",
+      "text": "공원에서 산책해요",
+      "gloss": {
+        "en": "I take a walk in the park",
+        "ko": "여가",
+        "zh": "在公园散步"
+      },
+      "tags": [
+        "leisure"
+      ]
+    },
+    {
+      "id": "tel-27",
+      "text": "다음 정류장에서 내려요",
+      "gloss": {
+        "en": "I get off at the next stop",
+        "ko": "교통",
+        "zh": "下一站下车"
+      },
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "tel-28",
+      "text": "약국에서 약을 사요",
+      "gloss": {
+        "en": "I buy medicine at the pharmacy",
+        "ko": "병원",
+        "zh": "在药店买药"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "tel-29",
+      "text": "로션 하나 주세요",
+      "gloss": {
+        "en": "One lotion, please",
+        "ko": "화장품",
+        "zh": "请给我一瓶乳液"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "tel-30",
+      "text": "피부가 건조해요",
+      "gloss": {
+        "en": "My skin is dry",
+        "ko": "피부",
+        "zh": "皮肤很干"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "tel-31",
+      "text": "크림을 얼굴에 발라요",
+      "gloss": {
+        "en": "I apply cream to my face",
+        "ko": "바르다",
+        "zh": "把面霜涂在脸上"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "tel-32",
+      "text": "립스틱 있어요",
+      "gloss": {
+        "en": "Do you have lipstick?",
+        "ko": "화장품",
+        "zh": "有口红吗？"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "tel-33",
+      "text": "샴푸 얼마예요",
+      "gloss": {
+        "en": "How much is the shampoo?",
+        "ko": "가격",
+        "zh": "洗发水多少钱？"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "tel-34",
+      "text": "비누로 손을 씻어요",
+      "gloss": {
+        "en": "I wash my hands with soap",
+        "ko": "위생",
+        "zh": "用肥皂洗手"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "tel-35",
+      "text": "화장품 코너가 어디에 있어요",
+      "gloss": {
+        "en": "Where is the cosmetics section?",
+        "ko": "길 묻기",
+        "zh": "化妆品区在哪里？"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "tel-36",
+      "text": "계좌 번호를 확인해요",
+      "gloss": {
+        "en": "I check the account number",
+        "ko": "계좌",
+        "zh": "我核对账号"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-37",
+      "text": "월급을 이체했어요",
+      "gloss": {
+        "en": "I transferred my salary",
+        "ko": "이체",
+        "zh": "我转了工资"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-38",
+      "text": "입금이 확인됐어요",
+      "gloss": {
+        "en": "The deposit was confirmed",
+        "ko": "입금",
+        "zh": "入账确认了"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-39",
+      "text": "은행에서 출금해요",
+      "gloss": {
+        "en": "I withdraw money at the bank",
+        "ko": "출금",
+        "zh": "在银行取款"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-40",
+      "text": "잔액이 부족해요",
+      "gloss": {
+        "en": "The balance is insufficient",
+        "ko": "잔액",
+        "zh": "余额不够"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-41",
+      "text": "수수료가 붙어요",
+      "gloss": {
+        "en": "A fee applies",
+        "ko": "수수료",
+        "zh": "要收手续费"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-42",
+      "text": "현금으로 낼게요",
+      "gloss": {
+        "en": "I'll pay in cash",
+        "ko": "현금",
+        "zh": "我用现金付"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-43",
+      "text": "공항에서 환전해요",
+      "gloss": {
+        "en": "I exchange currency at the airport",
+        "ko": "환전",
+        "zh": "在机场换钱"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-44",
+      "text": "통장을 가져왔어요",
+      "gloss": {
+        "en": "I brought my bankbook",
+        "ko": "통장",
+        "zh": "我带了存折"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-45",
+      "text": "송금을 부탁해요",
+      "gloss": {
+        "en": "Please send a remittance",
+        "ko": "송금",
+        "zh": "请帮我汇款"
+      },
+      "tags": [
+        "banking",
+        "intermediate",
+        "request"
+      ]
+    },
+    {
+      "id": "tel-46",
+      "text": "서류를 챙겼어요",
+      "gloss": {
+        "en": "I packed the documents",
+        "ko": "서류",
+        "zh": "我带好了文件"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-47",
+      "text": "서류를 제출해요",
+      "gloss": {
+        "en": "I submit the documents",
+        "ko": "제출",
+        "zh": "我提交文件"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-48",
+      "text": "여기서 발급해요",
+      "gloss": {
+        "en": "They issue it here",
+        "ko": "발급",
+        "zh": "在这里发放"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-49",
+      "text": "증명서가 필요해요",
+      "gloss": {
+        "en": "I need a certificate",
+        "ko": "증명서",
+        "zh": "需要证明书"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-50",
+      "text": "민원을 넣었어요",
+      "gloss": {
+        "en": "I filed a public request",
+        "ko": "민원",
+        "zh": "我提交了公务申请"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-51",
+      "text": "담당자에게 연락해요",
+      "gloss": {
+        "en": "I contact the person in charge",
+        "ko": "담당자",
+        "zh": "我联系负责人"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-52",
+      "text": "부서로 옮겼어요",
+      "gloss": {
+        "en": "I moved to another department",
+        "ko": "부서",
+        "zh": "我调到了别的部门"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-53",
+      "text": "아침에 출근해요",
+      "gloss": {
+        "en": "I go to work in the morning",
+        "ko": "출근",
+        "zh": "早上上班"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-54",
+      "text": "늦게 퇴근해요",
+      "gloss": {
+        "en": "I leave work late",
+        "ko": "퇴근",
+        "zh": "下班很晚"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-55",
+      "text": "연차를 써요",
+      "gloss": {
+        "en": "I take annual leave",
+        "ko": "연차",
+        "zh": "我请年假"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-56",
+      "text": "검사를 받아요",
+      "gloss": {
+        "en": "I get a medical test",
+        "ko": "검사",
+        "zh": "我做检查"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-57",
+      "text": "입원이 필요해요",
+      "gloss": {
+        "en": "Hospitalization is needed",
+        "ko": "입원",
+        "zh": "需要住院"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-58",
+      "text": "증상이 심해요",
+      "gloss": {
+        "en": "The symptoms are severe",
+        "ko": "증상",
+        "zh": "症状很重"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-59",
+      "text": "진료를 예약해요",
+      "gloss": {
+        "en": "I book a consultation",
+        "ko": "진료",
+        "zh": "我预约诊疗"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-60",
+      "text": "처방을 받아요",
+      "gloss": {
+        "en": "I get a prescription",
+        "ko": "처방",
+        "zh": "我拿处方"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-61",
+      "text": "접수를 마쳐요",
+      "gloss": {
+        "en": "I finish check-in",
+        "ko": "접수",
+        "zh": "我办完挂号"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-62",
+      "text": "진찰이 끝났어요",
+      "gloss": {
+        "en": "The examination is over",
+        "ko": "진찰",
+        "zh": "诊察结束了"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-63",
+      "text": "약사에게 물어요",
+      "gloss": {
+        "en": "I ask the pharmacist",
+        "ko": "약사",
+        "zh": "我问药剂师"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-64",
+      "text": "수업을 들어요",
+      "gloss": {
+        "en": "I attend class",
+        "ko": "수업",
+        "zh": "我听课"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-65",
+      "text": "숙제가 어려워요",
+      "gloss": {
+        "en": "Homework is hard",
+        "ko": "숙제",
+        "zh": "作业很难"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-66",
+      "text": "시험 잘 보세요",
+      "gloss": {
+        "en": "Good luck on the exam",
+        "ko": "시험",
+        "zh": "考试加油"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-67",
+      "text": "강의가 시작돼요",
+      "gloss": {
+        "en": "The lecture is starting",
+        "ko": "강의",
+        "zh": "讲义开始了"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-68",
+      "text": "등록이 늦었어요",
+      "gloss": {
+        "en": "Enrollment was late",
+        "ko": "등록",
+        "zh": "注册晚了"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-69",
+      "text": "학기 말에 봐요",
+      "gloss": {
+        "en": "See you at the end of the semester",
+        "ko": "학기",
+        "zh": "学期末见"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-70",
+      "text": "성적이 좋아요",
+      "gloss": {
+        "en": "Grades are good",
+        "ko": "성적",
+        "zh": "成绩很好"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-71",
+      "text": "교실이 어디예요",
+      "gloss": {
+        "en": "Where is the classroom?",
+        "ko": "교실",
+        "zh": "教室在哪里"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-72",
+      "text": "과제를 내야 해요",
+      "gloss": {
+        "en": "I have to turn in the assignment",
+        "ko": "과제",
+        "zh": "得交课题"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-73",
+      "text": "수강해요",
+      "gloss": {
+        "en": "I'm taking the course",
+        "ko": "수강",
+        "zh": "我在选课听课"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-74",
+      "text": "숙소가 어디예요",
+      "gloss": {
+        "en": "Where is the lodging?",
+        "ko": "숙소",
+        "zh": "住处在哪里"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-75",
+      "text": "숙박이 필요해요",
+      "gloss": {
+        "en": "I need an overnight stay",
+        "ko": "숙박",
+        "zh": "我需要住宿"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-76",
+      "text": "여행지를 정해요",
+      "gloss": {
+        "en": "I decide the destination",
+        "ko": "여행지",
+        "zh": "我定目的地"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-77",
+      "text": "여권을 주세요",
+      "gloss": {
+        "en": "Passport, please",
+        "ko": "여권",
+        "zh": "请给护照"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-78",
+      "text": "관광할까요",
+      "gloss": {
+        "en": "Shall we go sightseeing?",
+        "ko": "관광",
+        "zh": "去观光吗"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-79",
+      "text": "관광지가 붐벼요",
+      "gloss": {
+        "en": "The tourist spot is crowded",
+        "ko": "관광지",
+        "zh": "景点很挤"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-80",
+      "text": "항공권을 보여 주세요",
+      "gloss": {
+        "en": "Please show the airline ticket",
+        "ko": "항공권",
+        "zh": "请出示机票"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-81",
+      "text": "체크인할까요",
+      "gloss": {
+        "en": "Shall we check in?",
+        "ko": "체크인",
+        "zh": "办理入住吗"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-82",
+      "text": "체크아웃해요",
+      "gloss": {
+        "en": "I check out",
+        "ko": "체크아웃",
+        "zh": "我退房"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-83",
+      "text": "안내소로 가요",
+      "gloss": {
+        "en": "I go to the information desk",
+        "ko": "안내소",
+        "zh": "我去问讯处"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-84",
+      "text": "계절이 바뀌어요",
+      "gloss": {
+        "en": "The season is changing",
+        "ko": "계절",
+        "zh": "季节在变"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-85",
+      "text": "기온이 낮아요",
+      "gloss": {
+        "en": "The temperature is low",
+        "ko": "기온",
+        "zh": "气温很低"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-86",
+      "text": "하늘이 맑아요",
+      "gloss": {
+        "en": "The sky is clear",
+        "ko": "맑다",
+        "zh": "天空很晴朗"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-87",
+      "text": "날이 흐려요",
+      "gloss": {
+        "en": "The day is cloudy",
+        "ko": "흐리다",
+        "zh": "天阴了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-88",
+      "text": "비가 와요",
+      "gloss": {
+        "en": "It's raining",
+        "ko": "비",
+        "zh": "下雨了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-89",
+      "text": "눈이 와요",
+      "gloss": {
+        "en": "It's snowing",
+        "ko": "눈",
+        "zh": "下雪了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-90",
+      "text": "바람이 세요",
+      "gloss": {
+        "en": "The wind is strong",
+        "ko": "바람",
+        "zh": "风很大"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-91",
+      "text": "안개가 껴요",
+      "gloss": {
+        "en": "Fog is setting in",
+        "ko": "안개",
+        "zh": "起雾了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-92",
+      "text": "태풍이 와요",
+      "gloss": {
+        "en": "A typhoon is coming",
+        "ko": "태풍",
+        "zh": "台风来了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-93",
+      "text": "일기예보를 봐요",
+      "gloss": {
+        "en": "I check the weather forecast",
+        "ko": "일기예보",
+        "zh": "我看天气预报"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-94",
+      "text": "와이파이가 돼요",
+      "gloss": {
+        "en": "The Wi-Fi works",
+        "ko": "와이파이",
+        "zh": "无线网能用"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-95",
+      "text": "지금 충전해요",
+      "gloss": {
+        "en": "I'm charging now",
+        "ko": "충전",
+        "zh": "我现在充电"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-96",
+      "text": "앱을 깔아요",
+      "gloss": {
+        "en": "I install an app",
+        "ko": "앱",
+        "zh": "我装应用"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-97",
+      "text": "문자를 보내요",
+      "gloss": {
+        "en": "I send a text",
+        "ko": "문자",
+        "zh": "我发短信"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-98",
+      "text": "인터넷이 느려요",
+      "gloss": {
+        "en": "The internet is slow",
+        "ko": "인터넷",
+        "zh": "网很慢"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-99",
+      "text": "휴대폰을 찾아요",
+      "gloss": {
+        "en": "I look for my phone",
+        "ko": "휴대폰",
+        "zh": "我找手机"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-100",
+      "text": "배터리가 없어요",
+      "gloss": {
+        "en": "There's no battery left",
+        "ko": "배터리",
+        "zh": "没电了"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-101",
+      "text": "데이터가 부족해요",
+      "gloss": {
+        "en": "I'm short on data",
+        "ko": "데이터",
+        "zh": "流量不够"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-102",
+      "text": "통화를 걸어요",
+      "gloss": {
+        "en": "I make a call",
+        "ko": "통화",
+        "zh": "我打电话"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-103",
+      "text": "알림을 켜요",
+      "gloss": {
+        "en": "I turn on notifications",
+        "ko": "알림",
+        "zh": "我打开通知"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-104",
+      "text": "가족과 여행해요",
+      "gloss": {
+        "en": "I travel with my family",
+        "ko": "가족",
+        "zh": "我和家人旅行"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-105",
+      "text": "부모님이 오셔요",
+      "gloss": {
+        "en": "My parents are coming (honorific)",
+        "ko": "부모님",
+        "zh": "父母来了（敬语）"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-106",
+      "text": "형제가 두 명이에요",
+      "gloss": {
+        "en": "I have two siblings",
+        "ko": "형제",
+        "zh": "有两个兄弟姐妹"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-107",
+      "text": "친척을 만나요",
+      "gloss": {
+        "en": "I meet relatives",
+        "ko": "친척",
+        "zh": "我见亲戚"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-108",
+      "text": "결혼을 준비해요",
+      "gloss": {
+        "en": "I prepare for marriage",
+        "ko": "결혼",
+        "zh": "我准备结婚"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-109",
+      "text": "남편이 늦어요",
+      "gloss": {
+        "en": "My husband is late",
+        "ko": "남편",
+        "zh": "丈夫迟到了"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-110",
+      "text": "아내와 산책해요",
+      "gloss": {
+        "en": "I take a walk with my wife",
+        "ko": "아내",
+        "zh": "和妻子散步"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-111",
+      "text": "딸이 웃어요",
+      "gloss": {
+        "en": "My daughter smiles",
+        "ko": "딸",
+        "zh": "女儿在笑"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-112",
+      "text": "동생을 도와요",
+      "gloss": {
+        "en": "I help my younger sibling",
+        "ko": "동생",
+        "zh": "我帮弟弟/妹妹"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-113",
+      "text": "관계가 나빠요",
+      "gloss": {
+        "en": "The relationship is bad",
+        "ko": "관계",
+        "zh": "关系不好"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-114",
+      "text": "문화가 궁금해요",
+      "gloss": {
+        "en": "I'm curious about the culture",
+        "ko": "문화",
+        "zh": "我对文化好奇"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-115",
+      "text": "공연 표를 사요",
+      "gloss": {
+        "en": "I buy a performance ticket",
+        "ko": "공연",
+        "zh": "我买演出票"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-116",
+      "text": "전시를 추천해요",
+      "gloss": {
+        "en": "I recommend the exhibition",
+        "ko": "전시",
+        "zh": "我推荐展览"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-117",
+      "text": "작품이 예뻐요",
+      "gloss": {
+        "en": "The piece is pretty",
+        "ko": "작품",
+        "zh": "作品很好看"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-118",
+      "text": "여가에 쉬어요",
+      "gloss": {
+        "en": "I rest in my free time",
+        "ko": "여가",
+        "zh": "闲暇时我休息"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-119",
+      "text": "미술관이 멀어요",
+      "gloss": {
+        "en": "The art museum is far",
+        "ko": "미술관",
+        "zh": "美术馆很远"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-120",
+      "text": "박물관을 둘러요",
+      "gloss": {
+        "en": "I look around the museum",
+        "ko": "박물관",
+        "zh": "我逛博物馆"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-121",
+      "text": "독서를 시작해요",
+      "gloss": {
+        "en": "I start reading",
+        "ko": "독서",
+        "zh": "我开始阅读"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-122",
+      "text": "연극을 볼래요",
+      "gloss": {
+        "en": "I want to see a play / Want to see a play?",
+        "ko": "연극",
+        "zh": "想看话剧"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-123",
+      "text": "관심이 커요",
+      "gloss": {
+        "en": "My interest is growing",
+        "ko": "관심",
+        "zh": "兴趣变大了"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-124",
+      "text": "감정이 커요",
+      "gloss": {
+        "en": "Feelings grow strong",
+        "ko": "감정",
+        "zh": "感情变大了"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-125",
+      "text": "기분이 좋아요",
+      "gloss": {
+        "en": "I'm in a good mood",
+        "ko": "기분",
+        "zh": "心情很好"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-126",
+      "text": "기뻐요",
+      "gloss": {
+        "en": "I'm glad",
+        "ko": "기쁘다",
+        "zh": "高兴"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-127",
+      "text": "슬퍼요",
+      "gloss": {
+        "en": "I'm sad",
+        "ko": "슬프다",
+        "zh": "悲伤"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-128",
+      "text": "화났어요",
+      "gloss": {
+        "en": "I got angry",
+        "ko": "화나다",
+        "zh": "生气了"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-129",
+      "text": "걱정돼요",
+      "gloss": {
+        "en": "I'm worried",
+        "ko": "걱정",
+        "zh": "担心"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-130",
+      "text": "긴장돼요",
+      "gloss": {
+        "en": "I get nervous",
+        "ko": "긴장",
+        "zh": "紧张"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-131",
+      "text": "실망했어요",
+      "gloss": {
+        "en": "I was disappointed",
+        "ko": "실망",
+        "zh": "失望了"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-132",
+      "text": "부끄러워요",
+      "gloss": {
+        "en": "I'm shy / embarrassed",
+        "ko": "부끄럽다",
+        "zh": "害羞"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-133",
+      "text": "외로워요",
+      "gloss": {
+        "en": "I feel lonely",
+        "ko": "외롭다",
+        "zh": "寂寞"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-134",
+      "text": "스포츠 봐요",
+      "gloss": {
+        "en": "I watch sports",
+        "ko": "스포츠",
+        "zh": "看体育"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-135",
+      "text": "경기가 있어요",
+      "gloss": {
+        "en": "There's a match",
+        "ko": "경기",
+        "zh": "有比赛"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-136",
+      "text": "선수를 응원해요",
+      "gloss": {
+        "en": "I cheer for the athlete",
+        "ko": "선수",
+        "zh": "为选手加油"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-137",
+      "text": "연습해요",
+      "gloss": {
+        "en": "I practice",
+        "ko": "연습",
+        "zh": "练习"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-138",
+      "text": "팀이 좋아요",
+      "gloss": {
+        "en": "I like the team",
+        "ko": "팀",
+        "zh": "喜欢队伍"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-139",
+      "text": "경기장 가요",
+      "gloss": {
+        "en": "I go to the stadium",
+        "ko": "경기장",
+        "zh": "去赛场"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-140",
+      "text": "수영해요",
+      "gloss": {
+        "en": "I swim",
+        "ko": "수영",
+        "zh": "游泳"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-141",
+      "text": "축구해요",
+      "gloss": {
+        "en": "I play soccer",
+        "ko": "축구",
+        "zh": "踢足球"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-142",
+      "text": "농구해요",
+      "gloss": {
+        "en": "I play basketball",
+        "ko": "농구",
+        "zh": "打篮球"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-143",
+      "text": "체력 키워요",
+      "gloss": {
+        "en": "I build stamina",
+        "ko": "체력",
+        "zh": "增强体力"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-144",
+      "text": "자연 좋아요",
+      "gloss": {
+        "en": "Nature is nice",
+        "ko": "자연",
+        "zh": "自然很好"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-145",
+      "text": "환경 지켜요",
+      "gloss": {
+        "en": "I protect the environment",
+        "ko": "환경",
+        "zh": "保护环境"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-146",
+      "text": "산 가요",
+      "gloss": {
+        "en": "I go to the mountain",
+        "ko": "산",
+        "zh": "去山"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-147",
+      "text": "강 보여요",
+      "gloss": {
+        "en": "I can see the river",
+        "ko": "강",
+        "zh": "看得见河"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-148",
+      "text": "바다 가요",
+      "gloss": {
+        "en": "I go to the sea",
+        "ko": "바다",
+        "zh": "去海边"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-149",
+      "text": "숲 걸어요",
+      "gloss": {
+        "en": "I walk in the forest",
+        "ko": "숲",
+        "zh": "走林间"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-150",
+      "text": "나무 가꿔요",
+      "gloss": {
+        "en": "I tend the trees",
+        "ko": "나무",
+        "zh": "照料树"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-151",
+      "text": "꽃 사요",
+      "gloss": {
+        "en": "I buy flowers",
+        "ko": "꽃",
+        "zh": "买花"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-152",
+      "text": "동물 봐요",
+      "gloss": {
+        "en": "I watch animals",
+        "ko": "동물",
+        "zh": "看动物"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-153",
+      "text": "공원 쉬어요",
+      "gloss": {
+        "en": "I rest at the park",
+        "ko": "공원",
+        "zh": "在公园休息"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-154",
+      "text": "식당 가요",
+      "gloss": {
+        "en": "I go to a restaurant",
+        "ko": "식당",
+        "zh": "去餐厅"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-155",
+      "text": "메뉴 봐요",
+      "gloss": {
+        "en": "I look at the menu",
+        "ko": "메뉴",
+        "zh": "看菜单"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-156",
+      "text": "주문 해요",
+      "gloss": {
+        "en": "I place an order",
+        "ko": "주문",
+        "zh": "点餐"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-157",
+      "text": "음식 맛있어요",
+      "gloss": {
+        "en": "The food is delicious",
+        "ko": "맛있다",
+        "zh": "饭菜好吃"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-158",
+      "text": "요리 해요",
+      "gloss": {
+        "en": "I cook",
+        "ko": "요리",
+        "zh": "做菜"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-159",
+      "text": "식사 해요",
+      "gloss": {
+        "en": "I have a meal",
+        "ko": "식사",
+        "zh": "用餐"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-160",
+      "text": "배 고파요",
+      "gloss": {
+        "en": "I’m hungry",
+        "ko": "배고프다",
+        "zh": "饿了"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-161",
+      "text": "반찬 짜요",
+      "gloss": {
+        "en": "The side dish is salty",
+        "ko": "반찬·짜다",
+        "zh": "小菜咸"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-162",
+      "text": "계산 해요",
+      "gloss": {
+        "en": "I pay the bill",
+        "ko": "계산",
+        "zh": "结账"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-163",
+      "text": "손님 많아요",
+      "gloss": {
+        "en": "There are many customers",
+        "ko": "손님",
+        "zh": "客人很多"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-164",
+      "text": "옷 입어요",
+      "gloss": {
+        "en": "I put on clothes",
+        "ko": "입다",
+        "zh": "穿衣服"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-165",
+      "text": "신발 벗어요",
+      "gloss": {
+        "en": "I take off shoes",
+        "ko": "벗다",
+        "zh": "脱鞋"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-166",
+      "text": "바지 길어요",
+      "gloss": {
+        "en": "The pants are long",
+        "ko": "바지",
+        "zh": "裤子长"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-167",
+      "text": "치마 예뻐요",
+      "gloss": {
+        "en": "The skirt is pretty",
+        "ko": "치마",
+        "zh": "裙子好看"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-168",
+      "text": "사이즈 맞아요",
+      "gloss": {
+        "en": "The size fits",
+        "ko": "사이즈·맞다",
+        "zh": "尺码合适"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-169",
+      "text": "색깔 골라요",
+      "gloss": {
+        "en": "I choose a color",
+        "ko": "색깔",
+        "zh": "选颜色"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-170",
+      "text": "환불 해요",
+      "gloss": {
+        "en": "I get a refund",
+        "ko": "환불",
+        "zh": "退款"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-171",
+      "text": "세탁소 가요",
+      "gloss": {
+        "en": "I go to the laundry",
+        "ko": "세탁소",
+        "zh": "去洗衣店"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-172",
+      "text": "코트 입어요",
+      "gloss": {
+        "en": "I put on a coat",
+        "ko": "코트",
+        "zh": "穿大衣"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-173",
+      "text": "옷 비싸요",
+      "gloss": {
+        "en": "Clothes are expensive",
+        "ko": "옷",
+        "zh": "衣服贵"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-174",
+      "text": "노래 불러요",
+      "gloss": {
+        "en": "I sing a song",
+        "ko": "부르다",
+        "zh": "唱歌"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-175",
+      "text": "그림 그려요",
+      "gloss": {
+        "en": "I draw a picture",
+        "ko": "그리다",
+        "zh": "画画"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-176",
+      "text": "예술 좋아요",
+      "gloss": {
+        "en": "I like art",
+        "ko": "예술",
+        "zh": "喜欢艺术"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-177",
+      "text": "악기 배워요",
+      "gloss": {
+        "en": "I learn an instrument",
+        "ko": "악기",
+        "zh": "学乐器"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-178",
+      "text": "연주 들어요",
+      "gloss": {
+        "en": "I listen to a performance",
+        "ko": "연주",
+        "zh": "听演奏"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-179",
+      "text": "감상 해요",
+      "gloss": {
+        "en": "I appreciate (music/art)",
+        "ko": "감상",
+        "zh": "欣赏"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-180",
+      "text": "가수 유명해요",
+      "gloss": {
+        "en": "The singer is famous",
+        "ko": "가수",
+        "zh": "歌手有名"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-181",
+      "text": "춤 배워요",
+      "gloss": {
+        "en": "I learn dance",
+        "ko": "춤",
+        "zh": "学跳舞"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-182",
+      "text": "배우 잘해요",
+      "gloss": {
+        "en": "The actor is good",
+        "ko": "배우",
+        "zh": "演员演得好"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-183",
+      "text": "무대 커요",
+      "gloss": {
+        "en": "The stage is big",
+        "ko": "무대",
+        "zh": "舞台大"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-184",
+      "text": "뉴스 들어요",
+      "gloss": {
+        "en": "I listen to the news",
+        "ko": "뉴스",
+        "zh": "听新闻"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-185",
+      "text": "신문 읽어요",
+      "gloss": {
+        "en": "I read the newspaper",
+        "ko": "신문",
+        "zh": "看报纸"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-186",
+      "text": "방송 시작돼요",
+      "gloss": {
+        "en": "The broadcast is starting",
+        "ko": "방송",
+        "zh": "播出开始"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-187",
+      "text": "기자 왔어요",
+      "gloss": {
+        "en": "The reporter came",
+        "ko": "기자",
+        "zh": "记者来了"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-188",
+      "text": "보도 확인해요",
+      "gloss": {
+        "en": "I check the news report",
+        "ko": "보도",
+        "zh": "核对报道"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-189",
+      "text": "텔레비전 봐요",
+      "gloss": {
+        "en": "I watch television",
+        "ko": "텔레비전",
+        "zh": "看电视"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-190",
+      "text": "라디오 들어요",
+      "gloss": {
+        "en": "I listen to the radio",
+        "ko": "라디오",
+        "zh": "听收音机"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-191",
+      "text": "프로그램 골라요",
+      "gloss": {
+        "en": "I choose a program",
+        "ko": "프로그램",
+        "zh": "选节目"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-192",
+      "text": "기사 써요",
+      "gloss": {
+        "en": "I write an article",
+        "ko": "기사",
+        "zh": "写报道"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-193",
+      "text": "제목 짧아요",
+      "gloss": {
+        "en": "The headline is short",
+        "ko": "제목",
+        "zh": "标题很短"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-194",
+      "text": "생일 축하해요",
+      "gloss": {
+        "en": "Happy birthday",
+        "ko": "생일",
+        "zh": "生日快乐"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-195",
+      "text": "축하해요",
+      "gloss": {
+        "en": "Congratulations",
+        "ko": "축하",
+        "zh": "祝贺"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-196",
+      "text": "선물 사요",
+      "gloss": {
+        "en": "I buy a gift",
+        "ko": "선물",
+        "zh": "买礼物"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-197",
+      "text": "명절이에요",
+      "gloss": {
+        "en": "It’s a traditional holiday",
+        "ko": "명절",
+        "zh": "是传统节日"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-198",
+      "text": "초대 받아요",
+      "gloss": {
+        "en": "I receive an invitation",
+        "ko": "초대",
+        "zh": "收到邀请"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-199",
+      "text": "파티 가요",
+      "gloss": {
+        "en": "I go to a party",
+        "ko": "파티",
+        "zh": "去派对"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-200",
+      "text": "케이크 잘라요",
+      "gloss": {
+        "en": "I cut the cake",
+        "ko": "케이크",
+        "zh": "切蛋糕"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-201",
+      "text": "휴가 내요",
+      "gloss": {
+        "en": "I take leave",
+        "ko": "휴가",
+        "zh": "请假休假"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-202",
+      "text": "모임 있어요",
+      "gloss": {
+        "en": "There is a gathering",
+        "ko": "모임",
+        "zh": "有聚会"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-203",
+      "text": "건배해요",
+      "gloss": {
+        "en": "Let’s toast",
+        "ko": "건배",
+        "zh": "干杯"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-204",
+      "text": "시간 없어요",
+      "gloss": {
+        "en": "No time",
+        "ko": "시간",
+        "zh": "没时间"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-205",
+      "text": "약속 있어요",
+      "gloss": {
+        "en": "I have an appointment",
+        "ko": "약속",
+        "zh": "有约"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-206",
+      "text": "친구 만나요",
+      "gloss": {
+        "en": "I meet a friend",
+        "ko": "만나다",
+        "zh": "见朋友"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-207",
+      "text": "잠깐 기다려요",
+      "gloss": {
+        "en": "Wait a moment",
+        "ko": "기다리다",
+        "zh": "稍等"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-208",
+      "text": "일찍 가요",
+      "gloss": {
+        "en": "I go early",
+        "ko": "일찍",
+        "zh": "早点去"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-209",
+      "text": "오 분만요",
+      "gloss": {
+        "en": "Just five minutes",
+        "ko": "분",
+        "zh": "只要五分钟"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-210",
+      "text": "세 시예요",
+      "gloss": {
+        "en": "It’s three o’clock",
+        "ko": "시",
+        "zh": "三点了"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-211",
+      "text": "무슨 요일이에요",
+      "gloss": {
+        "en": "What day is it?",
+        "ko": "요일",
+        "zh": "星期几？"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-212",
+      "text": "주말이에요",
+      "gloss": {
+        "en": "It’s the weekend",
+        "ko": "주말",
+        "zh": "是周末"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-213",
+      "text": "오후에 와요",
+      "gloss": {
+        "en": "Come in the afternoon",
+        "ko": "오후",
+        "zh": "下午来"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-214",
+      "text": "청소해요",
+      "gloss": {
+        "en": "I clean",
+        "ko": "청소",
+        "zh": "打扫"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-215",
+      "text": "빨래 많아요",
+      "gloss": {
+        "en": "Lots of laundry",
+        "ko": "빨래",
+        "zh": "要洗的衣服很多"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-216",
+      "text": "설거지해요",
+      "gloss": {
+        "en": "I do the dishes",
+        "ko": "설거지",
+        "zh": "洗碗"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-217",
+      "text": "부엌 더러워요",
+      "gloss": {
+        "en": "The kitchen is dirty",
+        "ko": "부엌",
+        "zh": "厨房很脏"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-218",
+      "text": "냉장고 비었어요",
+      "gloss": {
+        "en": "The fridge is empty",
+        "ko": "냉장고",
+        "zh": "冰箱空了"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-219",
+      "text": "문 닦아요",
+      "gloss": {
+        "en": "I wipe the door",
+        "ko": "닦다",
+        "zh": "擦门"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-220",
+      "text": "얼굴 씻어요",
+      "gloss": {
+        "en": "I wash my face",
+        "ko": "씻다",
+        "zh": "洗脸"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-221",
+      "text": "방 정리해요",
+      "gloss": {
+        "en": "I tidy the room",
+        "ko": "정리하다",
+        "zh": "整理房间"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-222",
+      "text": "수건 주세요",
+      "gloss": {
+        "en": "A towel, please",
+        "ko": "수건",
+        "zh": "请给我毛巾"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-223",
+      "text": "침대 정리해요",
+      "gloss": {
+        "en": "I make the bed",
+        "ko": "침대",
+        "zh": "整理床铺"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-224",
+      "text": "머리 무거워요",
+      "gloss": {
+        "en": "My head feels heavy",
+        "ko": "머리",
+        "zh": "头很沉"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-225",
+      "text": "손 더러워요",
+      "gloss": {
+        "en": "My hands are dirty",
+        "ko": "손",
+        "zh": "手很脏"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-226",
+      "text": "발 부어요",
+      "gloss": {
+        "en": "My feet are swollen",
+        "ko": "발",
+        "zh": "脚肿了"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-227",
+      "text": "얼굴 가려워요",
+      "gloss": {
+        "en": "My face itches",
+        "ko": "얼굴",
+        "zh": "脸很痒"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-228",
+      "text": "몸 가벼워요",
+      "gloss": {
+        "en": "My body feels light",
+        "ko": "몸",
+        "zh": "身体很轻"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-229",
+      "text": "팔 펴요",
+      "gloss": {
+        "en": "I stretch my arms",
+        "ko": "팔",
+        "zh": "伸胳膊"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-230",
+      "text": "다리 저려요",
+      "gloss": {
+        "en": "My legs are numb",
+        "ko": "다리",
+        "zh": "腿发麻"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-231",
+      "text": "목 만져요",
+      "gloss": {
+        "en": "I touch my neck",
+        "ko": "목",
+        "zh": "摸脖子"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-232",
+      "text": "입 다물어요",
+      "gloss": {
+        "en": "I close my mouth",
+        "ko": "입",
+        "zh": "闭嘴"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-233",
+      "text": "어깨 돌려요",
+      "gloss": {
+        "en": "I rotate my shoulders",
+        "ko": "어깨",
+        "zh": "转动肩膀"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-234",
+      "text": "앞 보여요",
+      "gloss": {
+        "en": "The front is visible",
+        "ko": "앞",
+        "zh": "前面看得见"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-235",
+      "text": "뒤 가요",
+      "gloss": {
+        "en": "I go back",
+        "ko": "뒤",
+        "zh": "往后走"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-236",
+      "text": "옆 앉아요",
+      "gloss": {
+        "en": "I sit beside",
+        "ko": "옆",
+        "zh": "坐旁边"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-237",
+      "text": "위 올려요",
+      "gloss": {
+        "en": "I put it on top",
+        "ko": "위",
+        "zh": "放上面"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-238",
+      "text": "아래 두어요",
+      "gloss": {
+        "en": "I place it below",
+        "ko": "아래",
+        "zh": "放下面"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-239",
+      "text": "왼쪽 도세요",
+      "gloss": {
+        "en": "Please turn left",
+        "ko": "왼쪽",
+        "zh": "请左转"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-240",
+      "text": "오른쪽 봐요",
+      "gloss": {
+        "en": "Look to the right",
+        "ko": "오른쪽",
+        "zh": "看右边"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-241",
+      "text": "근처 살아요",
+      "gloss": {
+        "en": "I live nearby",
+        "ko": "근처",
+        "zh": "住附近"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-242",
+      "text": "길 물어봐요",
+      "gloss": {
+        "en": "I ask the way",
+        "ko": "길",
+        "zh": "问路"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-243",
+      "text": "지도 펴요",
+      "gloss": {
+        "en": "I open the map",
+        "ko": "지도",
+        "zh": "摊开地图"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-244",
+      "text": "문 닫아요",
+      "gloss": {
+        "en": "I close the door",
+        "ko": "문",
+        "zh": "关门"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-245",
+      "text": "방 편해요",
+      "gloss": {
+        "en": "The room is comfortable",
+        "ko": "방",
+        "zh": "房间舒服"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-246",
+      "text": "가구 많아요",
+      "gloss": {
+        "en": "There is a lot of furniture",
+        "ko": "가구",
+        "zh": "家具多"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-247",
+      "text": "소파 쉬어요",
+      "gloss": {
+        "en": "I rest on the sofa",
+        "ko": "소파",
+        "zh": "沙发休息"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-248",
+      "text": "거울 봐요",
+      "gloss": {
+        "en": "I look in the mirror",
+        "ko": "거울",
+        "zh": "照镜子"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-249",
+      "text": "식탁 차려요",
+      "gloss": {
+        "en": "I set the dining table",
+        "ko": "식탁",
+        "zh": "摆餐桌"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-250",
+      "text": "책장 꽂아요",
+      "gloss": {
+        "en": "I put it on the bookshelf",
+        "ko": "책장",
+        "zh": "插书架"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-251",
+      "text": "거실 밝아요",
+      "gloss": {
+        "en": "The living room is bright",
+        "ko": "거실",
+        "zh": "客厅亮"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-252",
+      "text": "옷장 넣어요",
+      "gloss": {
+        "en": "I put it in the wardrobe",
+        "ko": "옷장",
+        "zh": "放衣柜"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-253",
+      "text": "창문 열어요",
+      "gloss": {
+        "en": "I open the window",
+        "ko": "창문",
+        "zh": "开窗"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-254",
+      "text": "과일 골라요",
+      "gloss": {
+        "en": "I pick fruit",
+        "ko": "과일",
+        "zh": "挑水果"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-255",
+      "text": "채소 싸요",
+      "gloss": {
+        "en": "Vegetables are cheap",
+        "ko": "채소",
+        "zh": "蔬菜便宜"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-256",
+      "text": "시장 가요",
+      "gloss": {
+        "en": "I go to the market",
+        "ko": "시장",
+        "zh": "去市场"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-257",
+      "text": "사과 깎아요",
+      "gloss": {
+        "en": "I peel an apple",
+        "ko": "사과",
+        "zh": "削苹果"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-258",
+      "text": "바나나 노래요",
+      "gloss": {
+        "en": "Bananas are yellow",
+        "ko": "바나나",
+        "zh": "香蕉黄"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-259",
+      "text": "포도 담아요",
+      "gloss": {
+        "en": "I put grapes in",
+        "ko": "포도",
+        "zh": "装葡萄"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-260",
+      "text": "수박 잘라요",
+      "gloss": {
+        "en": "I cut watermelon",
+        "ko": "수박",
+        "zh": "切西瓜"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-261",
+      "text": "딸기 골라요",
+      "gloss": {
+        "en": "I pick strawberries",
+        "ko": "딸기",
+        "zh": "挑草莓"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-262",
+      "text": "상자 넣어요",
+      "gloss": {
+        "en": "I put it in a box",
+        "ko": "상자",
+        "zh": "放箱子"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-263",
+      "text": "토마토 빨개요",
+      "gloss": {
+        "en": "The tomato is red",
+        "ko": "토마토",
+        "zh": "番茄红"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-264",
+      "text": "그릇 닦아요",
+      "gloss": {
+        "en": "I wipe the bowl",
+        "ko": "그릇",
+        "zh": "擦碗"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-265",
+      "text": "접시 쌓아요",
+      "gloss": {
+        "en": "I stack plates",
+        "ko": "접시",
+        "zh": "叠盘子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-266",
+      "text": "컵 담아요",
+      "gloss": {
+        "en": "I fill a cup",
+        "ko": "컵",
+        "zh": "装杯子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-267",
+      "text": "숟가락 주세요",
+      "gloss": {
+        "en": "Please give me a spoon",
+        "ko": "숟가락",
+        "zh": "请给勺子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-268",
+      "text": "젓가락 골라요",
+      "gloss": {
+        "en": "I pick chopsticks",
+        "ko": "젓가락",
+        "zh": "挑筷子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-269",
+      "text": "포크 꺼내요",
+      "gloss": {
+        "en": "I take out a fork",
+        "ko": "포크",
+        "zh": "拿叉子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-270",
+      "text": "쟁반 올려요",
+      "gloss": {
+        "en": "I put it on the tray",
+        "ko": "쟁반",
+        "zh": "放托盘"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-271",
+      "text": "프라이팬 부쳐요",
+      "gloss": {
+        "en": "I fry in a frying pan",
+        "ko": "프라이팬",
+        "zh": "平底锅煎"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-272",
+      "text": "주전자 넣어요",
+      "gloss": {
+        "en": "I put it in the kettle",
+        "ko": "주전자",
+        "zh": "放水壶"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-273",
+      "text": "도마 닦아요",
+      "gloss": {
+        "en": "I wipe the cutting board",
+        "ko": "도마",
+        "zh": "擦砧板"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-274",
+      "text": "펜 빌릴게요",
+      "gloss": {
+        "en": "I will borrow a pen",
+        "ko": "펜",
+        "zh": "借笔"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-275",
+      "text": "연필 깎아요",
+      "gloss": {
+        "en": "I sharpen the pencil",
+        "ko": "연필",
+        "zh": "削铅笔"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-276",
+      "text": "볼펜 찾아요",
+      "gloss": {
+        "en": "I look for a ballpoint pen",
+        "ko": "볼펜",
+        "zh": "找圆珠笔"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-277",
+      "text": "지우개 빌려요",
+      "gloss": {
+        "en": "I borrow an eraser",
+        "ko": "지우개",
+        "zh": "借橡皮"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-278",
+      "text": "공책 적어요",
+      "gloss": {
+        "en": "I write in the notebook",
+        "ko": "공책",
+        "zh": "记练习本"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-279",
+      "text": "종이 접어요",
+      "gloss": {
+        "en": "I fold the paper",
+        "ko": "종이",
+        "zh": "折纸"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-280",
+      "text": "가위 빌려요",
+      "gloss": {
+        "en": "I borrow scissors",
+        "ko": "가위",
+        "zh": "借剪刀"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-281",
+      "text": "풀 없어요",
+      "gloss": {
+        "en": "There is no glue",
+        "ko": "풀",
+        "zh": "没胶水"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-282",
+      "text": "필통 열어요",
+      "gloss": {
+        "en": "I open the pencil case",
+        "ko": "필통",
+        "zh": "开笔袋"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-283",
+      "text": "자 주세요",
+      "gloss": {
+        "en": "Please give me a ruler",
+        "ko": "자",
+        "zh": "请给尺子"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-284",
+      "text": "편지 읽어요",
+      "gloss": {
+        "en": "I read the letter",
+        "ko": "편지",
+        "zh": "读信"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-285",
+      "text": "소포 열어요",
+      "gloss": {
+        "en": "I open the parcel",
+        "ko": "소포",
+        "zh": "开包裹"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-286",
+      "text": "우표 골라요",
+      "gloss": {
+        "en": "I pick a stamp",
+        "ko": "우표",
+        "zh": "挑邮票"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-287",
+      "text": "우체국 가요",
+      "gloss": {
+        "en": "I go to the post office",
+        "ko": "우체국",
+        "zh": "去邮局"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-288",
+      "text": "주소 메모해요",
+      "gloss": {
+        "en": "I jot down the address",
+        "ko": "주소",
+        "zh": "记地址"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-289",
+      "text": "봉투 접어요",
+      "gloss": {
+        "en": "I fold the envelope",
+        "ko": "봉투",
+        "zh": "折信封"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-290",
+      "text": "엽서 사요",
+      "gloss": {
+        "en": "I buy a postcard",
+        "ko": "엽서",
+        "zh": "买明信片"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-291",
+      "text": "도착 확인해요",
+      "gloss": {
+        "en": "I check the arrival",
+        "ko": "도착",
+        "zh": "确认到达"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-292",
+      "text": "서류 부쳐요",
+      "gloss": {
+        "en": "I mail the documents",
+        "ko": "부치다",
+        "zh": "寄文件"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-293",
+      "text": "포장 끝났어요",
+      "gloss": {
+        "en": "The packing is done",
+        "ko": "포장",
+        "zh": "包装好了"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-294",
+      "text": "소 있어요",
+      "gloss": {
+        "en": "There is a cow",
+        "ko": "소",
+        "zh": "有牛"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-295",
+      "text": "돼지 커요",
+      "gloss": {
+        "en": "The pig is big",
+        "ko": "돼지",
+        "zh": "猪很大"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-296",
+      "text": "개 봐요",
+      "gloss": {
+        "en": "I look at the dog",
+        "ko": "개",
+        "zh": "看狗"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-297",
+      "text": "고양이 자요",
+      "gloss": {
+        "en": "The cat is sleeping",
+        "ko": "고양이",
+        "zh": "猫在睡"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-298",
+      "text": "새 날아요",
+      "gloss": {
+        "en": "A bird is flying",
+        "ko": "새",
+        "zh": "鸟在飞"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-299",
+      "text": "강아지 키워요",
+      "gloss": {
+        "en": "I keep a puppy",
+        "ko": "강아지",
+        "zh": "养小狗"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-300",
+      "text": "물고기 먹여요",
+      "gloss": {
+        "en": "I feed the fish",
+        "ko": "물고기",
+        "zh": "喂鱼"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-301",
+      "text": "토끼 뛰어요",
+      "gloss": {
+        "en": "The rabbit is hopping",
+        "ko": "토끼",
+        "zh": "兔子跳"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-302",
+      "text": "닭 울어요",
+      "gloss": {
+        "en": "The chicken is crowing",
+        "ko": "닭",
+        "zh": "鸡在叫"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-303",
+      "text": "말 타요",
+      "gloss": {
+        "en": "I ride a horse",
+        "ko": "말",
+        "zh": "骑马"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-304",
+      "text": "운전 연습해요",
+      "gloss": {
+        "en": "I practice driving",
+        "ko": "운전",
+        "zh": "练习开车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-305",
+      "text": "차 빌려요",
+      "gloss": {
+        "en": "I rent a car",
+        "ko": "자동차",
+        "zh": "租车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-306",
+      "text": "자전거 고쳐요",
+      "gloss": {
+        "en": "I fix the bicycle",
+        "ko": "자전거",
+        "zh": "修自行车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-307",
+      "text": "택시 기다려요",
+      "gloss": {
+        "en": "I wait for a taxi",
+        "ko": "택시",
+        "zh": "等出租车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-308",
+      "text": "횡단보도 멈춰요",
+      "gloss": {
+        "en": "I stop at the crosswalk",
+        "ko": "횡단보도",
+        "zh": "在人行横道停"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-309",
+      "text": "사고 피해요",
+      "gloss": {
+        "en": "I avoid an accident",
+        "ko": "사고",
+        "zh": "避开事故"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-310",
+      "text": "위험해요",
+      "gloss": {
+        "en": "It is dangerous",
+        "ko": "위험",
+        "zh": "危险"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-311",
+      "text": "조심해요",
+      "gloss": {
+        "en": "Be careful",
+        "ko": "조심하다",
+        "zh": "小心"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-312",
+      "text": "경찰 불러요",
+      "gloss": {
+        "en": "I call the police",
+        "ko": "경찰",
+        "zh": "叫警察"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-313",
+      "text": "길 막혀요",
+      "gloss": {
+        "en": "The road is jammed",
+        "ko": "막히다",
+        "zh": "路堵了"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-314",
+      "text": "도서관 넓어요",
+      "gloss": {
+        "en": "The library is spacious",
+        "ko": "도서관",
+        "zh": "图书馆宽敞"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-315",
+      "text": "슈퍼 닫아요",
+      "gloss": {
+        "en": "I close the supermarket",
+        "ko": "슈퍼마켓",
+        "zh": "关超市"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-316",
+      "text": "은행 옆이에요",
+      "gloss": {
+        "en": "It is next to the bank",
+        "ko": "은행(건물)",
+        "zh": "在银行旁边"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-317",
+      "text": "백화점 가요",
+      "gloss": {
+        "en": "I go to the department store",
+        "ko": "백화점",
+        "zh": "去百货商店"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-318",
+      "text": "미용실 붐벼요",
+      "gloss": {
+        "en": "The salon is crowded",
+        "ko": "미용실",
+        "zh": "美发店很挤"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-319",
+      "text": "서점 골라요",
+      "gloss": {
+        "en": "I pick (a book) at the bookstore",
+        "ko": "서점",
+        "zh": "在书店选"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-320",
+      "text": "영화관 가까워요",
+      "gloss": {
+        "en": "The cinema is nearby",
+        "ko": "영화관",
+        "zh": "电影院很近"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-321",
+      "text": "수영장 깊어요",
+      "gloss": {
+        "en": "The pool is deep",
+        "ko": "수영장",
+        "zh": "游泳池很深"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-322",
+      "text": "카페 조용해요",
+      "gloss": {
+        "en": "The cafe is quiet",
+        "ko": "카페",
+        "zh": "咖啡馆安静"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-323",
+      "text": "경찰서 열려요",
+      "gloss": {
+        "en": "The police station is open",
+        "ko": "경찰서",
+        "zh": "警察局开门"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-324",
+      "text": "쌀 샀어요",
+      "gloss": {
+        "en": "I bought rice",
+        "ko": "쌀",
+        "zh": "买了米"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-325",
+      "text": "밀가루 많아요",
+      "gloss": {
+        "en": "Lots of flour",
+        "ko": "밀가루",
+        "zh": "面粉很多"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-326",
+      "text": "소금 모자라요",
+      "gloss": {
+        "en": "Salt is short",
+        "ko": "소금",
+        "zh": "盐不够"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-327",
+      "text": "설탕 필요해요",
+      "gloss": {
+        "en": "I need sugar",
+        "ko": "설탕",
+        "zh": "需要糖"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-328",
+      "text": "기름 둘러요",
+      "gloss": {
+        "en": "I put oil (in the pan)",
+        "ko": "기름",
+        "zh": "倒油"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-329",
+      "text": "달걀 먹어요",
+      "gloss": {
+        "en": "I eat eggs",
+        "ko": "달걀",
+        "zh": "吃鸡蛋"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-330",
+      "text": "고기 구워요",
+      "gloss": {
+        "en": "I grill meat",
+        "ko": "고기",
+        "zh": "烤肉"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-331",
+      "text": "생선 신선해요",
+      "gloss": {
+        "en": "The fish is fresh",
+        "ko": "생선",
+        "zh": "鱼很新鲜"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-332",
+      "text": "빵 먹어요",
+      "gloss": {
+        "en": "I eat bread",
+        "ko": "빵",
+        "zh": "吃面包"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-333",
+      "text": "김치 곁들여요",
+      "gloss": {
+        "en": "I have kimchi with (rice)",
+        "ko": "김치",
+        "zh": "配泡菜"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-334",
+      "text": "화장실 이 층이에요",
+      "gloss": {
+        "en": "Restroom is on this floor",
+        "ko": "화장실",
+        "zh": "卫生间这层"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-335",
+      "text": "샤워 시원해요",
+      "gloss": {
+        "en": "Shower feels refreshing",
+        "ko": "샤워",
+        "zh": "淋浴清爽"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-336",
+      "text": "목욕 천천히 해요",
+      "gloss": {
+        "en": "I bathe slowly",
+        "ko": "목욕",
+        "zh": "慢慢泡澡"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-337",
+      "text": "세수하고 나와요",
+      "gloss": {
+        "en": "I come out after washing my face",
+        "ko": "세수",
+        "zh": "洗脸后出来"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-338",
+      "text": "칫솔 담가요",
+      "gloss": {
+        "en": "I soak the toothbrush",
+        "ko": "칫솔",
+        "zh": "泡牙刷"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-339",
+      "text": "치약 떨어졌어요",
+      "gloss": {
+        "en": "Toothpaste ran out",
+        "ko": "치약",
+        "zh": "牙膏没了"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-340",
+      "text": "휴지 꺼내요",
+      "gloss": {
+        "en": "I take out tissue",
+        "ko": "휴지",
+        "zh": "抽纸巾"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-341",
+      "text": "휴지통 가득해요",
+      "gloss": {
+        "en": "Trash can is full",
+        "ko": "휴지통",
+        "zh": "垃圾桶满了"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-342",
+      "text": "면도 잊었어요",
+      "gloss": {
+        "en": "I forgot to shave",
+        "ko": "면도",
+        "zh": "忘了剃须"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-343",
+      "text": "바닥 더러워요",
+      "gloss": {
+        "en": "The floor is dirty",
+        "ko": "더럽다",
+        "zh": "地板脏"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-344",
+      "text": "직업 뭐예요",
+      "gloss": {
+        "en": "What occupation?",
+        "ko": "직업",
+        "zh": "职业是？"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-345",
+      "text": "회사원으로 다녀요",
+      "gloss": {
+        "en": "I go as an office worker",
+        "ko": "회사원",
+        "zh": "当公司职员上班"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-346",
+      "text": "간호사 만나요",
+      "gloss": {
+        "en": "I meet a nurse",
+        "ko": "간호사",
+        "zh": "见护士"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-347",
+      "text": "선생님 기다려요",
+      "gloss": {
+        "en": "The teacher waits",
+        "ko": "선생님",
+        "zh": "老师在等"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-348",
+      "text": "요리사 만들어요",
+      "gloss": {
+        "en": "The cook makes (it)",
+        "ko": "요리사",
+        "zh": "厨师在做"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-349",
+      "text": "운전사 친절해요",
+      "gloss": {
+        "en": "The driver is kind",
+        "ko": "운전사",
+        "zh": "司机很亲切"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-350",
+      "text": "학생이에요",
+      "gloss": {
+        "en": "(I) am a student",
+        "ko": "학생",
+        "zh": "是学生"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-351",
+      "text": "가게에서 일해요",
+      "gloss": {
+        "en": "I work at a store",
+        "ko": "일하다",
+        "zh": "在店里工作"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-352",
+      "text": "직원 많아요",
+      "gloss": {
+        "en": "Many staff",
+        "ko": "직원",
+        "zh": "职员多"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-353",
+      "text": "사장 인사해요",
+      "gloss": {
+        "en": "The boss greets",
+        "ko": "사장",
+        "zh": "老板打招呼"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-354",
+      "text": "나라 한국이에요",
+      "gloss": {
+        "en": "(My) country is Korea",
+        "ko": "나라",
+        "zh": "国家是韩国"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-355",
+      "text": "외국 음식 좋아해요",
+      "gloss": {
+        "en": "I like foreign food",
+        "ko": "외국",
+        "zh": "喜欢外国食物"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-356",
+      "text": "외국인 도와줘요",
+      "gloss": {
+        "en": "Help a foreigner",
+        "ko": "외국인",
+        "zh": "帮助外国人"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-357",
+      "text": "국적 알려 주세요",
+      "gloss": {
+        "en": "Please tell nationality",
+        "ko": "국적",
+        "zh": "请告诉国籍"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-358",
+      "text": "고향에 가요",
+      "gloss": {
+        "en": "I go to hometown",
+        "ko": "고향",
+        "zh": "去家乡"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-359",
+      "text": "중국에서 살아요",
+      "gloss": {
+        "en": "I live in China",
+        "ko": "살다",
+        "zh": "住在中国"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-360",
+      "text": "일본어 어려워요",
+      "gloss": {
+        "en": "Japanese is hard",
+        "ko": "일본어",
+        "zh": "日语很难"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-361",
+      "text": "한국에서 태어났어요",
+      "gloss": {
+        "en": "Born in Korea",
+        "ko": "태어나다",
+        "zh": "在韩国出生"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-362",
+      "text": "해외에서 왔어요",
+      "gloss": {
+        "en": "Came from overseas",
+        "ko": "해외",
+        "zh": "从海外来"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-363",
+      "text": "유학생 만나요",
+      "gloss": {
+        "en": "Meet an international student",
+        "ko": "유학생",
+        "zh": "见留学生"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-364",
+      "text": "일곱 시에 일어나요",
+      "gloss": {
+        "en": "Get up at seven",
+        "ko": "일어나다",
+        "zh": "七点起床"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-365",
+      "text": "열 시에 자요",
+      "gloss": {
+        "en": "Sleep at ten",
+        "ko": "자다",
+        "zh": "十点睡"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-366",
+      "text": "아침 안 먹어요",
+      "gloss": {
+        "en": "Skip breakfast",
+        "ko": "아침",
+        "zh": "不吃早饭"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-367",
+      "text": "점심 빨리 먹어요",
+      "gloss": {
+        "en": "Eat lunch fast",
+        "ko": "점심",
+        "zh": "很快吃午饭"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-368",
+      "text": "저녁에 집에 와요",
+      "gloss": {
+        "en": "Come home in the evening",
+        "ko": "저녁",
+        "zh": "晚上回家"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-369",
+      "text": "밤에 음악 들어요",
+      "gloss": {
+        "en": "Listen to music at night",
+        "ko": "밤",
+        "zh": "晚上听音乐"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-370",
+      "text": "하루 짧아요",
+      "gloss": {
+        "en": "Day is short",
+        "ko": "하루",
+        "zh": "一天很短"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-371",
+      "text": "매일 운동해요",
+      "gloss": {
+        "en": "Exercise every day",
+        "ko": "매일",
+        "zh": "每天运动"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-372",
+      "text": "어제 일찍 잤어요",
+      "gloss": {
+        "en": "Slept early yesterday",
+        "ko": "어제",
+        "zh": "昨天早睡了"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-373",
+      "text": "내일 일찍 일어나요",
+      "gloss": {
+        "en": "Get up early tomorrow",
+        "ko": "내일",
+        "zh": "明天早起"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-374",
+      "text": "사진 커요",
+      "gloss": {
+        "en": "Photo is big",
+        "ko": "크다",
+        "zh": "照片很大"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-375",
+      "text": "단추 작아요",
+      "gloss": {
+        "en": "Button is small",
+        "ko": "작다",
+        "zh": "纽扣很小"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-376",
+      "text": "손님 많아요",
+      "gloss": {
+        "en": "Many customers",
+        "ko": "많다",
+        "zh": "客人很多"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-377",
+      "text": "선택 적어요",
+      "gloss": {
+        "en": "Few choices",
+        "ko": "적다",
+        "zh": "选择很少"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-378",
+      "text": "이야기 길어요",
+      "gloss": {
+        "en": "Story is long",
+        "ko": "길다",
+        "zh": "故事很长"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-379",
+      "text": "설명 짧아요",
+      "gloss": {
+        "en": "Explanation is short",
+        "ko": "짧다",
+        "zh": "说明很短"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-380",
+      "text": "돌 무거워요",
+      "gloss": {
+        "en": "Stone is heavy",
+        "ko": "무겁다",
+        "zh": "石头很重"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-381",
+      "text": "풍선 가벼워요",
+      "gloss": {
+        "en": "Balloon is light",
+        "ko": "가볍다",
+        "zh": "气球很轻"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-382",
+      "text": "탑 높아요",
+      "gloss": {
+        "en": "Tower is tall",
+        "ko": "높다",
+        "zh": "塔很高"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-383",
+      "text": "소파 낮아요",
+      "gloss": {
+        "en": "Sofa is low",
+        "ko": "낮다",
+        "zh": "沙发很低"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-384",
+      "text": "커피 써요",
+      "gloss": {
+        "en": "Coffee is bitter",
+        "ko": "쓰다(맛)",
+        "zh": "咖啡很苦"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-385",
+      "text": "천 부드러워요",
+      "gloss": {
+        "en": "Fabric is soft",
+        "ko": "부드럽다",
+        "zh": "布料很软"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-386",
+      "text": "국 뜨거워요",
+      "gloss": {
+        "en": "Soup is hot",
+        "ko": "뜨겁다",
+        "zh": "汤很烫"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-387",
+      "text": "바닥 차가워요",
+      "gloss": {
+        "en": "Floor is cold",
+        "ko": "차갑다",
+        "zh": "地板很冰"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-388",
+      "text": "차 따뜻해요",
+      "gloss": {
+        "en": "Tea is warm",
+        "ko": "따뜻하다",
+        "zh": "茶很暖"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-389",
+      "text": "그늘 시원해요",
+      "gloss": {
+        "en": "Shade is cool",
+        "ko": "시원하다",
+        "zh": "树荫很凉快"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-390",
+      "text": "창 밝아요",
+      "gloss": {
+        "en": "Window is bright",
+        "ko": "밝다",
+        "zh": "窗户很亮"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-391",
+      "text": "계단 어두워요",
+      "gloss": {
+        "en": "Stairs are dark",
+        "ko": "어둡다",
+        "zh": "楼梯很暗"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-392",
+      "text": "회의실 조용해요",
+      "gloss": {
+        "en": "Meeting room is quiet",
+        "ko": "조용하다",
+        "zh": "会议室很安静"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-393",
+      "text": "시장 시끄러워요",
+      "gloss": {
+        "en": "Market is noisy",
+        "ko": "시끄럽다",
+        "zh": "市场很吵"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-394",
+      "text": "사과 빨간색이에요",
+      "gloss": {
+        "en": "Apple is red",
+        "ko": "빨간색",
+        "zh": "苹果是红色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-395",
+      "text": "바다 파란색이에요",
+      "gloss": {
+        "en": "Sea is blue",
+        "ko": "파란색",
+        "zh": "大海是蓝色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-396",
+      "text": "지붕 회색이에요",
+      "gloss": {
+        "en": "Roof is gray",
+        "ko": "회색",
+        "zh": "屋顶是灰色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-397",
+      "text": "풍선 분홍색이에요",
+      "gloss": {
+        "en": "Balloon is pink",
+        "ko": "분홍색",
+        "zh": "气球是粉色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-398",
+      "text": "달 둥글어요",
+      "gloss": {
+        "en": "Moon is round",
+        "ko": "둥글다",
+        "zh": "月亮是圆的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-399",
+      "text": "카드 네모예요",
+      "gloss": {
+        "en": "Card is square",
+        "ko": "네모",
+        "zh": "卡片是方的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-400",
+      "text": "산 세모예요",
+      "gloss": {
+        "en": "Mountain is triangle",
+        "ko": "세모",
+        "zh": "山是三角形的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-401",
+      "text": "이 모양 고르세요",
+      "gloss": {
+        "en": "Choose this shape",
+        "ko": "모양",
+        "zh": "请选这个形状"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-402",
+      "text": "귀걸이 잃어버렸어요",
+      "gloss": {
+        "en": "Lost earrings",
+        "ko": "귀걸이",
+        "zh": "耳环丢了"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-403",
+      "text": "넥타이 매요",
+      "gloss": {
+        "en": "Put on a tie",
+        "ko": "넥타이",
+        "zh": "打领带"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-404",
+      "text": "모자 작아요",
+      "gloss": {
+        "en": "Hat is small",
+        "ko": "모자",
+        "zh": "帽子小"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-405",
+      "text": "양말 갈아신어요",
+      "gloss": {
+        "en": "Change socks",
+        "ko": "양말",
+        "zh": "换袜子"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-406",
+      "text": "장갑 두꺼워요",
+      "gloss": {
+        "en": "Gloves are thick",
+        "ko": "장갑",
+        "zh": "手套很厚"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-407",
+      "text": "안경 안 보여요",
+      "gloss": {
+        "en": "Can't find glasses",
+        "ko": "안경",
+        "zh": "眼镜找不到"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-408",
+      "text": "벨트 조여요",
+      "gloss": {
+        "en": "Tighten the belt",
+        "ko": "벨트",
+        "zh": "勒紧皮带"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-409",
+      "text": "반지 반짝여요",
+      "gloss": {
+        "en": "Ring sparkles",
+        "ko": "반지",
+        "zh": "戒指闪光"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-410",
+      "text": "에어컨 켜 둘까요",
+      "gloss": {
+        "en": "Leave AC on?",
+        "ko": "에어컨·켜다",
+        "zh": "空调一直开着？"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-411",
+      "text": "불 켜요",
+      "gloss": {
+        "en": "Turn on the light",
+        "ko": "불·켜다",
+        "zh": "开灯"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-412",
+      "text": "선풍기 켜 주세요",
+      "gloss": {
+        "en": "Turn on the fan please",
+        "ko": "선풍기·켜다",
+        "zh": "请开电风扇"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-413",
+      "text": "전기 아껴요",
+      "gloss": {
+        "en": "Save electricity",
+        "ko": "전기",
+        "zh": "节约用电"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-414",
+      "text": "엘리베이터 왔어요",
+      "gloss": {
+        "en": "Elevator arrived",
+        "ko": "엘리베이터",
+        "zh": "电梯来了"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-415",
+      "text": "계단 미끄러워요",
+      "gloss": {
+        "en": "Stairs are slippery",
+        "ko": "계단",
+        "zh": "楼梯很滑"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-416",
+      "text": "가스 껐어요",
+      "gloss": {
+        "en": "Turned off the gas",
+        "ko": "가스·끄다",
+        "zh": "关掉了煤气"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-417",
+      "text": "다리미 무거워요",
+      "gloss": {
+        "en": "Iron is heavy",
+        "ko": "다리미",
+        "zh": "熨斗很重"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-418",
+      "text": "복도 조용해요",
+      "gloss": {
+        "en": "Hallway is quiet",
+        "ko": "복도",
+        "zh": "走廊很安静"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-419",
+      "text": "층 확인해요",
+      "gloss": {
+        "en": "Check the floor",
+        "ko": "층",
+        "zh": "确认楼层"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-420",
+      "text": "베란다 닦아요",
+      "gloss": {
+        "en": "Wipe the veranda",
+        "ko": "베란다",
+        "zh": "擦阳台"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-421",
+      "text": "아파트 밝아요",
+      "gloss": {
+        "en": "Apartment is bright",
+        "ko": "아파트",
+        "zh": "公寓很亮"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-422",
+      "text": "호실 불러요",
+      "gloss": {
+        "en": "Call the unit number",
+        "ko": "호실",
+        "zh": "报房间号"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-423",
+      "text": "초인종 울려요",
+      "gloss": {
+        "en": "Doorbell rings",
+        "ko": "초인종",
+        "zh": "门铃响了"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-424",
+      "text": "로비 넓어요",
+      "gloss": {
+        "en": "Lobby is spacious",
+        "ko": "로비",
+        "zh": "大厅很宽敞"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-425",
+      "text": "현관 잠가요",
+      "gloss": {
+        "en": "Lock the foyer",
+        "ko": "현관",
+        "zh": "锁上玄关"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-426",
+      "text": "따라가요",
+      "gloss": {
+        "en": "Follow",
+        "ko": "따라가다",
+        "zh": "跟着走"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-427",
+      "text": "들어와요",
+      "gloss": {
+        "en": "Come in",
+        "ko": "들어오다",
+        "zh": "进来"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-428",
+      "text": "천천히 걸어요",
+      "gloss": {
+        "en": "Walk slowly",
+        "ko": "걷다",
+        "zh": "慢慢走"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-429",
+      "text": "빨리 뛰어요",
+      "gloss": {
+        "en": "Run quickly",
+        "ko": "뛰다",
+        "zh": "快跑"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-430",
+      "text": "잠깐 서요",
+      "gloss": {
+        "en": "Stand a moment",
+        "ko": "서다",
+        "zh": "稍站一下"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-431",
+      "text": "여기 앉아요",
+      "gloss": {
+        "en": "Sit here",
+        "ko": "앉다",
+        "zh": "坐这里"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-432",
+      "text": "짐을 들어요",
+      "gloss": {
+        "en": "Lift the bags",
+        "ko": "들다",
+        "zh": "提行李"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-433",
+      "text": "손을 잡아요",
+      "gloss": {
+        "en": "Hold hands",
+        "ko": "잡다",
+        "zh": "拉手"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-434",
+      "text": "시간 물어봐요",
+      "gloss": {
+        "en": "Ask the time",
+        "ko": "물어보다",
+        "zh": "问问时间"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-435",
+      "text": "이름 확인해요",
+      "gloss": {
+        "en": "Check the name",
+        "ko": "확인하다",
+        "zh": "核对名字"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-436",
+      "text": "소포 부탁해요",
+      "gloss": {
+        "en": "Ask favor with parcel",
+        "ko": "부탁하다",
+        "zh": "包裹拜托"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-437",
+      "text": "상자 도와주세요",
+      "gloss": {
+        "en": "Help with the box",
+        "ko": "도와주다",
+        "zh": "帮一下箱子"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-438",
+      "text": "자 빌려요",
+      "gloss": {
+        "en": "Borrow a ruler",
+        "ko": "빌리다",
+        "zh": "借尺子"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-439",
+      "text": "지금 괜찮아요",
+      "gloss": {
+        "en": "It's fine now",
+        "ko": "괜찮다",
+        "zh": "现在没关系"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-440",
+      "text": "지도 필요해요",
+      "gloss": {
+        "en": "Need a map",
+        "ko": "필요하다",
+        "zh": "需要地图"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-441",
+      "text": "컵 사용해요",
+      "gloss": {
+        "en": "Use the cup",
+        "ko": "사용하다",
+        "zh": "用杯子"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-442",
+      "text": "약속 믿어요",
+      "gloss": {
+        "en": "Trust the promise",
+        "ko": "믿다",
+        "zh": "相信约定"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-443",
+      "text": "여행 계획해요",
+      "gloss": {
+        "en": "Plan a trip",
+        "ko": "계획하다",
+        "zh": "计划旅行"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-444",
+      "text": "선택 생각해요",
+      "gloss": {
+        "en": "Think about the choice",
+        "ko": "생각하다",
+        "zh": "想想选择"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-445",
+      "text": "뜻 알아요",
+      "gloss": {
+        "en": "Know the meaning",
+        "ko": "알다",
+        "zh": "知道意思"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-446",
+      "text": "방법 몰라요",
+      "gloss": {
+        "en": "Do not know the method",
+        "ko": "모르다",
+        "zh": "不知道方法"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-447",
+      "text": "장소 기억해요",
+      "gloss": {
+        "en": "Remember the place",
+        "ko": "기억하다",
+        "zh": "记得地点"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-448",
+      "text": "내용 이해했어요",
+      "gloss": {
+        "en": "Understood the content",
+        "ko": "이해하다",
+        "zh": "听明白内容"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-449",
+      "text": "주제 결정해요",
+      "gloss": {
+        "en": "Decide the topic",
+        "ko": "결정하다",
+        "zh": "决定主题"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-450",
+      "text": "가격 질문해도 돼요",
+      "gloss": {
+        "en": "May ask about the price",
+        "ko": "질문하다",
+        "zh": "可以问价格"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-451",
+      "text": "순서 설명해 주세요",
+      "gloss": {
+        "en": "Please explain the order",
+        "ko": "설명하다",
+        "zh": "请说明顺序"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-452",
+      "text": "주소 말해요",
+      "gloss": {
+        "en": "Say the address",
+        "ko": "말하다",
+        "zh": "说地址"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-453",
+      "text": "주말 이야기해요",
+      "gloss": {
+        "en": "Talk about the weekend",
+        "ko": "이야기하다",
+        "zh": "聊周末"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-454",
+      "text": "조언 들어요",
+      "gloss": {
+        "en": "Listen to the advice",
+        "ko": "듣다",
+        "zh": "听忠告"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-455",
+      "text": "표지 읽어요",
+      "gloss": {
+        "en": "Read the cover",
+        "ko": "읽다",
+        "zh": "看封面"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-456",
+      "text": "이름 듣고 대답해요",
+      "gloss": {
+        "en": "Hear the name and answer",
+        "ko": "대답하다",
+        "zh": "听见名字就回答"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-457",
+      "text": "번호 알려 주세요",
+      "gloss": {
+        "en": "Please let me know the number",
+        "ko": "알리다",
+        "zh": "请告诉号码"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-458",
+      "text": "손님 늘었어요",
+      "gloss": {
+        "en": "Guests increased",
+        "ko": "늘다",
+        "zh": "客人变多了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-459",
+      "text": "소음 줄었어요",
+      "gloss": {
+        "en": "Noise decreased",
+        "ko": "줄다",
+        "zh": "噪音变少了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-460",
+      "text": "영화 시작해요",
+      "gloss": {
+        "en": "Start the movie",
+        "ko": "시작하다",
+        "zh": "电影开始"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-461",
+      "text": "공연 끝나요",
+      "gloss": {
+        "en": "Performance ends",
+        "ko": "끝나다",
+        "zh": "演出结束"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-462",
+      "text": "설명 계속해요",
+      "gloss": {
+        "en": "Continue the explanation",
+        "ko": "계속하다",
+        "zh": "继续说明"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-463",
+      "text": "알람 멈춰 주세요",
+      "gloss": {
+        "en": "Please stop the alarm",
+        "ko": "멈추다",
+        "zh": "请停闹钟"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-464",
+      "text": "목소리 변했어요",
+      "gloss": {
+        "en": "Voice changed",
+        "ko": "변하다",
+        "zh": "声音变了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-465",
+      "text": "번호 바뀌었어요",
+      "gloss": {
+        "en": "Number changed",
+        "ko": "바뀌다",
+        "zh": "号码换了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-466",
+      "text": "색 똑같아요",
+      "gloss": {
+        "en": "Colors are the same",
+        "ko": "똑같다",
+        "zh": "颜色一样"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-467",
+      "text": "소식 전혀 몰라요",
+      "gloss": {
+        "en": "I know no news at all",
+        "ko": "전혀",
+        "zh": "消息完全不知道"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-468",
+      "text": "시간 같아요",
+      "gloss": {
+        "en": "Times are the same",
+        "ko": "같다",
+        "zh": "时间一样"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-469",
+      "text": "맛 달라요",
+      "gloss": {
+        "en": "Taste is different",
+        "ko": "다르다",
+        "zh": "味道不同"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-470",
+      "text": "옷차림 비슷해요",
+      "gloss": {
+        "en": "Outfits are similar",
+        "ko": "비슷하다",
+        "zh": "穿着差不多"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-471",
+      "text": "색 비교해 보세요",
+      "gloss": {
+        "en": "Please compare colors",
+        "ko": "비교하다",
+        "zh": "请比较颜色"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-472",
+      "text": "물 더 주세요",
+      "gloss": {
+        "en": "More water please",
+        "ko": "더",
+        "zh": "请再给水"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-473",
+      "text": "역 가장 가까워요",
+      "gloss": {
+        "en": "Station is closest",
+        "ko": "가장",
+        "zh": "车站最近"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-474",
+      "text": "이유 물어요",
+      "gloss": {
+        "en": "I ask the reason",
+        "ko": "이유",
+        "zh": "问理由"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-475",
+      "text": "원인 알아요",
+      "gloss": {
+        "en": "I know the cause",
+        "ko": "원인",
+        "zh": "知道原因"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-476",
+      "text": "결과 확인해요",
+      "gloss": {
+        "en": "I check the result",
+        "ko": "결과",
+        "zh": "确认结果"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-477",
+      "text": "목적 달라요",
+      "gloss": {
+        "en": "Purpose is different",
+        "ko": "목적",
+        "zh": "目的不同"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-478",
+      "text": "방법 찾아요",
+      "gloss": {
+        "en": "I look for a method",
+        "ko": "방법",
+        "zh": "找方法"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-479",
+      "text": "과정 끝났어요",
+      "gloss": {
+        "en": "Process finished",
+        "ko": "과정",
+        "zh": "过程结束了"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-480",
+      "text": "순서 기억해요",
+      "gloss": {
+        "en": "I remember the order",
+        "ko": "순서",
+        "zh": "记顺序"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-481",
+      "text": "목표 보여 주세요",
+      "gloss": {
+        "en": "Please show the goal",
+        "ko": "목표",
+        "zh": "请给我看目标"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-482",
+      "text": "상황 바뀌었어요",
+      "gloss": {
+        "en": "Situation changed",
+        "ko": "상황",
+        "zh": "情况变了"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-483",
+      "text": "조건 좋아요",
+      "gloss": {
+        "en": "Conditions are good",
+        "ko": "조건",
+        "zh": "条件不错"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-484",
+      "text": "문제 커요",
+      "gloss": {
+        "en": "Problem is big",
+        "ko": "문제",
+        "zh": "问题很大"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-485",
+      "text": "해결 알아요",
+      "gloss": {
+        "en": "I know the solution",
+        "ko": "해결",
+        "zh": "知道解决办法"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-486",
+      "text": "실수 인정해요",
+      "gloss": {
+        "en": "I admit the mistake",
+        "ko": "실수",
+        "zh": "承认失误"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-487",
+      "text": "도움 커요",
+      "gloss": {
+        "en": "Help is big",
+        "ko": "도움",
+        "zh": "帮助很大"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-488",
+      "text": "경험 많아요",
+      "gloss": {
+        "en": "Lots of experience",
+        "ko": "경험",
+        "zh": "经验很多"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-489",
+      "text": "문 고쳐요",
+      "gloss": {
+        "en": "I fix the door",
+        "ko": "고치다",
+        "zh": "修门"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-490",
+      "text": "학생 칭찬해요",
+      "gloss": {
+        "en": "I praise the student",
+        "ko": "칭찬하다",
+        "zh": "称赞学生"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-491",
+      "text": "결과 비판하지 마세요",
+      "gloss": {
+        "en": "Do not criticize the result",
+        "ko": "비판하다",
+        "zh": "不要批评结果"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-492",
+      "text": "의견 많아요",
+      "gloss": {
+        "en": "Many opinions",
+        "ko": "의견",
+        "zh": "意见很多"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-493",
+      "text": "노력 중요해요",
+      "gloss": {
+        "en": "Effort is important",
+        "ko": "중요하다",
+        "zh": "努力很重要"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-494",
+      "text": "가게 추천해요",
+      "gloss": {
+        "en": "I recommend the shop",
+        "ko": "추천하다",
+        "zh": "推荐这家店"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-495",
+      "text": "평가 봐요",
+      "gloss": {
+        "en": "I look at the evaluation",
+        "ko": "평가",
+        "zh": "看评价"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-496",
+      "text": "답 확실해요",
+      "gloss": {
+        "en": "The answer is certain",
+        "ko": "확실하다",
+        "zh": "答案很确定"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-497",
+      "text": "설명 분명해요",
+      "gloss": {
+        "en": "The explanation is clear",
+        "ko": "분명하다",
+        "zh": "说明很清楚"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-498",
+      "text": "목표 포기하지 않아요",
+      "gloss": {
+        "en": "I do not give up the goal",
+        "ko": "포기하다",
+        "zh": "不放弃目标"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-499",
+      "text": "화 참아요",
+      "gloss": {
+        "en": "I hold back my anger",
+        "ko": "참다",
+        "zh": "忍住怒气"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-500",
+      "text": "습관 중요해요",
+      "gloss": {
+        "en": "Habits are important",
+        "ko": "습관",
+        "zh": "习惯很重要"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-501",
+      "text": "노력 아끼지 않아요",
+      "gloss": {
+        "en": "I do not spare effort",
+        "ko": "노력하다",
+        "zh": "不吝惜努力"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-502",
+      "text": "적응 빨라요",
+      "gloss": {
+        "en": "Adaptation is quick",
+        "ko": "적응하다",
+        "zh": "适应很快"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-503",
+      "text": "방학 기다려요",
+      "gloss": {
+        "en": "I wait for school vacation",
+        "ko": "방학",
+        "zh": "盼着学校假期"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-504",
+      "text": "동생 부지런해요",
+      "gloss": {
+        "en": "My younger sibling is diligent",
+        "ko": "부지런하다",
+        "zh": "弟弟/妹妹很勤快"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-505",
+      "text": "주말에 게을러요",
+      "gloss": {
+        "en": "I am lazy on weekends",
+        "ko": "게으르다",
+        "zh": "周末很懒"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-506",
+      "text": "반입 허용해요",
+      "gloss": {
+        "en": "They allow bringing items in",
+        "ko": "허용하다",
+        "zh": "允许携带入场"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-507",
+      "text": "헬멧 안전해요",
+      "gloss": {
+        "en": "A helmet is safe",
+        "ko": "안전하다",
+        "zh": "头盔很安全"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-508",
+      "text": "약속 지켜요",
+      "gloss": {
+        "en": "I keep the promise",
+        "ko": "지키다",
+        "zh": "守约"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-509",
+      "text": "표지판 어기지 않아요",
+      "gloss": {
+        "en": "I do not break the signs",
+        "ko": "어기다",
+        "zh": "不违反标志"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-510",
+      "text": "외출 허락해요",
+      "gloss": {
+        "en": "They allow going out",
+        "ko": "허락하다",
+        "zh": "允许外出"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-511",
+      "text": "흡연 금지해요",
+      "gloss": {
+        "en": "They prohibit smoking",
+        "ko": "금지하다",
+        "zh": "禁止吸烟"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-512",
+      "text": "손님께 예의 지켜요",
+      "gloss": {
+        "en": "I keep manners toward guests",
+        "ko": "예의",
+        "zh": "对客人守礼"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-513",
+      "text": "줄에 질서 지켜요",
+      "gloss": {
+        "en": "I keep order in line",
+        "ko": "질서",
+        "zh": "排队守秩序"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-514",
+      "text": "친구를 사귀어요",
+      "gloss": {
+        "en": "I make friends",
+        "ko": "사귀다",
+        "zh": "交朋友"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-515",
+      "text": "정말 반가워요",
+      "gloss": {
+        "en": "I am really glad to see you",
+        "ko": "반갑다",
+        "zh": "真的很高兴见你"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-516",
+      "text": "정이 가까워요",
+      "gloss": {
+        "en": "Our feelings are close",
+        "ko": "가깝다",
+        "zh": "感情很近"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-517",
+      "text": "함께 공부해요",
+      "gloss": {
+        "en": "We study together",
+        "ko": "함께",
+        "zh": "一起学习"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-518",
+      "text": "혼자 먹어요",
+      "gloss": {
+        "en": "I eat alone",
+        "ko": "혼자",
+        "zh": "一个人吃"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-519",
+      "text": "동아리에 가요",
+      "gloss": {
+        "en": "I go to the club",
+        "ko": "동아리",
+        "zh": "去社团"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-520",
+      "text": "이야기를 나눠요",
+      "gloss": {
+        "en": "We share a conversation",
+        "ko": "나누다",
+        "zh": "分享谈话"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-521",
+      "text": "주말에 놀아요",
+      "gloss": {
+        "en": "We hang out on the weekend",
+        "ko": "놀다",
+        "zh": "周末玩"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-522",
+      "text": "겸손을 배워요",
+      "gloss": {
+        "en": "I learn humility",
+        "ko": "겸손하다",
+        "zh": "学习谦虚"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-523",
+      "text": "엄격함이 필요해요",
+      "gloss": {
+        "en": "Strictness is needed",
+        "ko": "엄격하다",
+        "zh": "需要严格"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-524",
+      "text": "너무 소심해요",
+      "gloss": {
+        "en": "I am too timid",
+        "ko": "소심하다",
+        "zh": "太拘谨了"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-525",
+      "text": "용감하게 말해요",
+      "gloss": {
+        "en": "I speak bravely",
+        "ko": "용감하다",
+        "zh": "勇敢地说"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-526",
+      "text": "성격이 급해요",
+      "gloss": {
+        "en": "The personality is impatient",
+        "ko": "성격",
+        "zh": "性格很急"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-527",
+      "text": "친절을 기억해요",
+      "gloss": {
+        "en": "I remember the kindness",
+        "ko": "친절하다",
+        "zh": "记得那份亲切"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-528",
+      "text": "성실함이 보여요",
+      "gloss": {
+        "en": "Sincerity shows",
+        "ko": "성실하다",
+        "zh": "看得出认真"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-529",
+      "text": "꼼꼼함이 돋보여요",
+      "gloss": {
+        "en": "Thoroughness stands out",
+        "ko": "꼼꼼하다",
+        "zh": "细致很突出"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-530",
+      "text": "번거로움을 줄여요",
+      "gloss": {
+        "en": "I reduce the trouble",
+        "ko": "번거롭다",
+        "zh": "减少麻烦"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-531",
+      "text": "공손함이 보여요",
+      "gloss": {
+        "en": "Politeness shows",
+        "ko": "공손하다",
+        "zh": "看得出恭敬"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-532",
+      "text": "먼저 인사해요",
+      "gloss": {
+        "en": "I greet first",
+        "ko": "인사하다",
+        "zh": "先打招呼"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-533",
+      "text": "기다리기 불편해요",
+      "gloss": {
+        "en": "Waiting is inconvenient",
+        "ko": "불편하다",
+        "zh": "等着不方便"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-534",
+      "text": "미안함이 남아요",
+      "gloss": {
+        "en": "A feeling of sorry remains",
+        "ko": "미안하다",
+        "zh": "抱歉感还在"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-535",
+      "text": "죄송함이 커요",
+      "gloss": {
+        "en": "The apology feeling is strong",
+        "ko": "죄송하다",
+        "zh": "抱歉感很强"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-536",
+      "text": "사과를 전해요",
+      "gloss": {
+        "en": "I convey an apology",
+        "ko": "사과하다",
+        "zh": "转达道歉"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-537",
+      "text": "용서를 구해요",
+      "gloss": {
+        "en": "I ask for forgiveness",
+        "ko": "용서하다",
+        "zh": "请求原谅"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-538",
+      "text": "희망을 키워요",
+      "gloss": {
+        "en": "I grow hope",
+        "ko": "희망",
+        "zh": "培养希望"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-539",
+      "text": "기대가 커요",
+      "gloss": {
+        "en": "Expectations are high",
+        "ko": "기대하다",
+        "zh": "期待很大"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-540",
+      "text": "상을 자랑해요",
+      "gloss": {
+        "en": "I proudly show the award",
+        "ko": "자랑하다",
+        "zh": "炫耀奖项"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-541",
+      "text": "성과를 나눠요",
+      "gloss": {
+        "en": "I share the results",
+        "ko": "성과",
+        "zh": "分享成果"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-542",
+      "text": "성취를 축하해요",
+      "gloss": {
+        "en": "I congratulate the achievement",
+        "ko": "성취",
+        "zh": "祝贺成就"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-543",
+      "text": "바람을 적어요",
+      "gloss": {
+        "en": "I write down a wish",
+        "ko": "바라다",
+        "zh": "写下愿望"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-544",
+      "text": "성공이 보여요",
+      "gloss": {
+        "en": "Success shows",
+        "ko": "성공하다",
+        "zh": "看得出成功"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-545",
+      "text": "실패를 기록해요",
+      "gloss": {
+        "en": "I record the failure",
+        "ko": "실패하다",
+        "zh": "记录失败"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-546",
+      "text": "조언을 적어요",
+      "gloss": {
+        "en": "I write down the advice",
+        "ko": "조언",
+        "zh": "记下建议"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-547",
+      "text": "상담이 있어요",
+      "gloss": {
+        "en": "There is a consultation",
+        "ko": "상담",
+        "zh": "有咨询"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-548",
+      "text": "답변을 기다려요",
+      "gloss": {
+        "en": "I wait for a reply",
+        "ko": "답변",
+        "zh": "等待答复"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-549",
+      "text": "자리를 안내해요",
+      "gloss": {
+        "en": "I show them to their seats",
+        "ko": "안내하다",
+        "zh": "引导入座"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-550",
+      "text": "회의 제안을 받아요",
+      "gloss": {
+        "en": "I receive a meeting proposal",
+        "ko": "제안하다",
+        "zh": "收到会议提议"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-551",
+      "text": "가격 문의를 해요",
+      "gloss": {
+        "en": "I make a price inquiry",
+        "ko": "문의하다",
+        "zh": "询问价格"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-552",
+      "text": "충고를 기억해요",
+      "gloss": {
+        "en": "I remember the counsel",
+        "ko": "충고하다",
+        "zh": "记住忠告"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-553",
+      "text": "새 정보를 찾아요",
+      "gloss": {
+        "en": "I look for new information",
+        "ko": "정보",
+        "zh": "寻找新信息"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-554",
+      "text": "격려를 받아요",
+      "gloss": {
+        "en": "I receive encouragement",
+        "ko": "격려",
+        "zh": "得到鼓励"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-555",
+      "text": "위로가 필요해요",
+      "gloss": {
+        "en": "I need comfort",
+        "ko": "위로",
+        "zh": "需要安慰"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-556",
+      "text": "응원이 필요해요",
+      "gloss": {
+        "en": "I need cheering",
+        "ko": "응원",
+        "zh": "需要加油"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-557",
+      "text": "지지를 구해요",
+      "gloss": {
+        "en": "I look for support",
+        "ko": "지지",
+        "zh": "寻求支持"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-558",
+      "text": "후배를 격려해요",
+      "gloss": {
+        "en": "I encourage a junior",
+        "ko": "격려하다",
+        "zh": "鼓励后辈"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-559",
+      "text": "이웃을 배려해요",
+      "gloss": {
+        "en": "I am considerate of neighbors",
+        "ko": "배려하다",
+        "zh": "体贴邻居"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-560",
+      "text": "든든한 버팀이 있어요",
+      "gloss": {
+        "en": "There is a reliable support",
+        "ko": "든든하다",
+        "zh": "有可靠的依靠"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-561",
+      "text": "친구를 의지해요",
+      "gloss": {
+        "en": "I rely on a friend",
+        "ko": "의지하다",
+        "zh": "依靠朋友"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-562",
+      "text": "진실을 말해요",
+      "gloss": {
+        "en": "I tell the truth",
+        "ko": "진실",
+        "zh": "说出真相"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-563",
+      "text": "거짓말을 하지 않아요",
+      "gloss": {
+        "en": "I do not tell lies",
+        "ko": "거짓말",
+        "zh": "不说谎"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-564",
+      "text": "모임을 약속해요",
+      "gloss": {
+        "en": "I promise a meeting",
+        "ko": "약속하다",
+        "zh": "约定见面"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-565",
+      "text": "신뢰를 쌓아요",
+      "gloss": {
+        "en": "I build trust",
+        "ko": "신뢰",
+        "zh": "建立信任"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-566",
+      "text": "태도가 정직해요",
+      "gloss": {
+        "en": "The attitude is honest",
+        "ko": "정직하다",
+        "zh": "态度诚实"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-567",
+      "text": "상대를 속이지 않아요",
+      "gloss": {
+        "en": "I do not deceive the other person",
+        "ko": "속이다",
+        "zh": "不欺骗对方"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-568",
+      "text": "품질을 보장해요",
+      "gloss": {
+        "en": "I guarantee the quality",
+        "ko": "보장하다",
+        "zh": "保障品质"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-569",
+      "text": "의심이 풀려요",
+      "gloss": {
+        "en": "My doubt clears",
+        "ko": "의심",
+        "zh": "疑虑解开"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-570",
+      "text": "승낙이 필요해요",
+      "gloss": {
+        "en": "Consent is needed",
+        "ko": "승낙",
+        "zh": "需要允诺"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-571",
+      "text": "거부가 분명해요",
+      "gloss": {
+        "en": "The rejection is clear",
+        "ko": "거부",
+        "zh": "拒斥很明确"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-572",
+      "text": "회의를 거절해요",
+      "gloss": {
+        "en": "I decline the meeting",
+        "ko": "거절하다",
+        "zh": "拒绝会议"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-573",
+      "text": "제의를 수락해요",
+      "gloss": {
+        "en": "I accept the offer",
+        "ko": "수락하다",
+        "zh": "接受提议"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-574",
+      "text": "요청에 응해요",
+      "gloss": {
+        "en": "I respond to the request",
+        "ko": "응하다",
+        "zh": "响应请求"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-575",
+      "text": "계획을 승인해요",
+      "gloss": {
+        "en": "I approve the plan",
+        "ko": "승인하다",
+        "zh": "批准计划"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-576",
+      "text": "거절을 확인해요",
+      "gloss": {
+        "en": "I confirm the refusal",
+        "ko": "거절",
+        "zh": "确认拒绝"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-577",
+      "text": "수락이 빨라요",
+      "gloss": {
+        "en": "Acceptance is quick",
+        "ko": "수락",
+        "zh": "接受很快"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-578",
+      "text": "이의가 커요",
+      "gloss": {
+        "en": "The objection is big",
+        "ko": "이의",
+        "zh": "异议很大"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-579",
+      "text": "하소연이 길어요",
+      "gloss": {
+        "en": "The venting is long",
+        "ko": "하소연",
+        "zh": "诉苦很长"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-580",
+      "text": "항의를 전해요",
+      "gloss": {
+        "en": "I convey the protest",
+        "ko": "항의",
+        "zh": "转达抗议"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-581",
+      "text": "사고를 신고해요",
+      "gloss": {
+        "en": "I report the accident",
+        "ko": "신고하다",
+        "zh": "申报事故"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-582",
+      "text": "불만이 커요",
+      "gloss": {
+        "en": "The dissatisfaction is big",
+        "ko": "불만",
+        "zh": "不满很大"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-583",
+      "text": "시간을 따져요",
+      "gloss": {
+        "en": "I quibble over the time",
+        "ko": "따지다",
+        "zh": "计较时间"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-584",
+      "text": "불평이 줄어요",
+      "gloss": {
+        "en": "Complaints decrease",
+        "ko": "불평",
+        "zh": "抱怨减少"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "tel-585",
+      "text": "결정에 항의해요",
+      "gloss": {
+        "en": "I protest the decision",
+        "ko": "항의하다",
+        "zh": "抗议决定"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    }
+  ],
+  "note": "+8 complain-dissatisfaction telephone (tel-578–585, 2026-07-27): Prefer 이의·하소연 residual · Prefer-adjacent 항의·신고하다·불만·따지다 · 불평·항의하다. Skip 불평하다·제기하다·하소연하다·불만스럽다 (particle/dictation). Distinct from cloze/listen hosts (결정에 이의가 있어요·손님 항의가 쌓여요·고장을 바로 신고해요·불평을 줄이려고 해요·지연에 바로 항의해요…). NIKL/Sejong · 해요체 · no brand names. Suggest ThemeSm close only. Prior refuse tel-570–577 kept.",
+  "updated": "2026-07-27"
+}

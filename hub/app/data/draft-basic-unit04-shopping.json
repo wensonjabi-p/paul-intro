@@ -1,0 +1,636 @@
+{
+  "id": "jabi-basic-v1-04",
+  "title": {
+    "en": "jabi. Basics · Unit 4 — Shopping",
+    "ko": "jabi. 기초 · 4과 — 물건 사기",
+    "zh": "jabi. 基础 · 第4课 — 购物"
+  },
+  "level": "Basic (pre-TOPIK)",
+  "theme": "쇼핑",
+  "sourceNote": "PILOT — jabi. 원작. 세종한국어 4–5과 '물건 사기' 주제 압축(재고·요청·가격). 교재 문장 미차용.",
+  "objective": {
+    "en": "Ask for items, sizes/colors, try on, and price.",
+    "ko": "물건·사이즈·색깔·피팅·가격.",
+    "zh": "问商品、尺码/颜色、试穿、价格。"
+  },
+  "explain": {
+    "en": "Stock: 있어요/없어요. Point with 이거 + 얼마예요? Permission: …봐도 돼요? Size/color lines stay noun-heavy; grammar focus is existence + soft permission.",
+    "ko": "재고 있어요/없어요. 이거+얼마예요? 허락 …봐도 돼요? 사이즈·색은 명사 · 문법은 존재+허락.",
+    "zh": "库存있어요/없어요。이거问价。…봐도 돼요？表许可。"
+  },
+  "format": "duolingo-basic-v1",
+  "steps": [
+    {
+      "id": "intro",
+      "title": {
+        "en": "Skill intro",
+        "ko": "스킬 소개",
+        "zh": "技能介绍"
+      },
+      "body": {
+        "en": "Compress Sejong shopping 1–2 into one survival skill (TOPIK I: shopping).",
+        "ko": "세종 물건 사기 1–2를 생존 한 스킬로(TOPIK I: 쇼핑).",
+        "zh": "把世宗购物1–2压成一个生存技能（TOPIK I：购物）。"
+      }
+    },
+    {
+      "id": "teach",
+      "title": {
+        "en": "Teach · 있어요 · 돼요?",
+        "ko": "설명 · 있어요 · 돼요?",
+        "zh": "讲解 · 있어요 · 돼요?"
+      },
+      "body": {
+        "en": "있어요 asks if something exists/is available. 봐도 돼요? asks permission (돼다 soft). Pointing: 이거.",
+        "ko": "있어요=있는지. 봐도 돼요?=허락. 가리킴: 이거.",
+        "zh": "있어요问有没有。봐도 돼요？许可。指：이거。"
+      }
+    },
+    {
+      "id": "dialogue",
+      "title": {
+        "en": "Dialogue",
+        "ko": "대화",
+        "zh": "对话"
+      },
+      "body": {
+        "en": "Store scene — read, then drill.",
+        "ko": "가게 장면 — 읽고 드릴.",
+        "zh": "店内场景——读完再练。"
+      }
+    },
+    {
+      "id": "practice",
+      "title": {
+        "en": "Practice",
+        "ko": "연습",
+        "zh": "练习"
+      },
+      "body": {
+        "en": "Complete dialogues — tips don’t reveal the answer word first.",
+        "ko": "대화 완성 — 힌트는 정답 단어를 바로 주지 않음.",
+        "zh": "完成对话——提示不先泄露答案词。"
+      }
+    },
+    {
+      "id": "checkpoint",
+      "title": {
+        "en": "Checkpoint",
+        "ko": "체크포인트",
+        "zh": "关卡"
+      },
+      "body": {
+        "en": "Ask price of one item + one size or color line.",
+        "ko": "물건 가격 한 줄 + 사이즈/색 한 줄.",
+        "zh": "问一件价格+一句尺码或颜色。"
+      }
+    }
+  ],
+  "dialogue": {
+    "title": {
+      "en": "At the store",
+      "ko": "가게에서",
+      "zh": "在店里"
+    },
+    "lines": [
+      {
+        "who": "손님",
+        "ko": "이 티셔츠 있어요?"
+      },
+      {
+        "who": "직원",
+        "ko": "네, 있어요. 사이즈가 어떻게 되세요?"
+      },
+      {
+        "who": "손님",
+        "ko": "엠 사이즈요. 다른 색깔 있어요?"
+      },
+      {
+        "who": "직원",
+        "ko": "검정하고 흰색 있어요."
+      },
+      {
+        "who": "손님",
+        "ko": "이거 얼마예요?"
+      }
+    ]
+  },
+  "phrases": [
+    {
+      "ko": "이 티셔츠 있어요?",
+      "gloss": {
+        "en": "Do you have this T-shirt?",
+        "ko": "재고",
+        "zh": "有这件T恤吗"
+      }
+    },
+    {
+      "ko": "사이즈가 어떻게 되세요?",
+      "gloss": {
+        "en": "What size?",
+        "ko": "사이즈",
+        "zh": "要什么尺码"
+      }
+    },
+    {
+      "ko": "다른 색깔 있어요?",
+      "gloss": {
+        "en": "Other colors?",
+        "ko": "색깔",
+        "zh": "有其他颜色吗"
+      }
+    },
+    {
+      "ko": "한번 입어 봐도 돼요?",
+      "gloss": {
+        "en": "May I try it on?",
+        "ko": "피팅",
+        "zh": "可以试穿吗"
+      }
+    },
+    {
+      "ko": "이거 얼마예요?",
+      "gloss": {
+        "en": "How much is this?",
+        "ko": "가격",
+        "zh": "这个多少钱"
+      }
+    },
+    {
+      "ko": "너무 작아요 / 커요.",
+      "gloss": {
+        "en": "Too small / big.",
+        "ko": "핏",
+        "zh": "太小/太大"
+      }
+    },
+    {
+      "ko": "이거로 할게요.",
+      "gloss": {
+        "en": "I'll take this.",
+        "ko": "구매",
+        "zh": "就要这个"
+      }
+    },
+    {
+      "ko": "영수증 주세요.",
+      "gloss": {
+        "en": "Receipt, please.",
+        "ko": "영수증",
+        "zh": "请给收据"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "basic-04-01",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Ask stock.\n\n손님: 이 모자 (    )?",
+        "ko": "※ 재고.\n\n손님: 이 모자 (    )?",
+        "zh": "※ 库存。\n\n客人：이 모자 (    )？"
+      },
+      "choices": [
+        "있어요",
+        "공부해요",
+        "일어나요",
+        "포장이요"
+      ],
+      "answer": 0,
+      "answerText": "있어요",
+      "tags": [
+        "topic:쇼핑",
+        "grammar:있다"
+      ],
+      "hint": {
+        "ko": "있는지 묻기.",
+        "en": "Ask if available.",
+        "zh": "问是否有。",
+        "steps": {
+          "en": [
+            "Want item",
+            "있어요?"
+          ],
+          "ko": [
+            "물건",
+            "있어요?"
+          ],
+          "zh": [
+            "要商品",
+            "있어요?"
+          ]
+        }
+      },
+      "why": {
+        "en": "있어요 checks availability/stock.",
+        "ko": "있어요=재고·있는지.",
+        "zh": "있어요问库存。"
+      }
+    },
+    {
+      "id": "basic-04-02",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Size.\n\n직원: 사이즈가 어떻게 되세요?\n손님: (    ).",
+        "ko": "※ 사이즈.\n\n직원: 사이즈가 어떻게 되세요?\n손님: (    ).",
+        "zh": "※ 尺码。\n\n店员：要什么尺码？\n客人：(    )。"
+      },
+      "choices": [
+        "엠 사이즈요",
+        "아메리카노요",
+        "일곱 시요",
+        "안녕하세요"
+      ],
+      "answer": 0,
+      "answerText": "엠 사이즈요",
+      "tags": [
+        "topic:쇼핑"
+      ],
+      "hint": {
+        "ko": "사이즈 답.",
+        "en": "Give size.",
+        "zh": "回答尺码。",
+        "steps": {
+          "en": [
+            "Asked size",
+            "Answer M"
+          ],
+          "ko": [
+            "사이즈 질문",
+            "M 답"
+          ],
+          "zh": [
+            "问尺码",
+            "答M"
+          ]
+        }
+      },
+      "why": {
+        "en": "State size as a noun line the clerk can confirm.",
+        "ko": "사이즈를 명사로 말하기.",
+        "zh": "说出尺码。"
+      }
+    },
+    {
+      "id": "basic-04-03",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Color.\n\n손님: (    )?\n직원: 파랑하고 빨강 있어요.",
+        "ko": "※ 색깔.\n\n손님: (    )?\n직원: 파랑하고 빨강 있어요.",
+        "zh": "※ 颜色。\n\n客人：(    )?\n店员：有蓝和红。"
+      },
+      "choices": [
+        "다른 색깔 있어요",
+        "지금 뭐 해요",
+        "화장실 어디예요",
+        "샷 추가해 주세요"
+      ],
+      "answer": 0,
+      "answerText": "다른 색깔 있어요",
+      "tags": [
+        "topic:쇼핑"
+      ],
+      "hint": {
+        "ko": "색 옵션.",
+        "en": "Color options.",
+        "zh": "颜色选项。",
+        "steps": {
+          "en": [
+            "Want another color",
+            "다른 색깔"
+          ],
+          "ko": [
+            "다른 색",
+            "있어요?"
+          ],
+          "zh": [
+            "要其他色",
+            "있어요?"
+          ]
+        }
+      },
+      "why": {
+        "en": "다른 색깔 있어요? uses 있어요 for stock.",
+        "ko": "다른 색+있어요.",
+        "zh": "其他颜色+있어요。"
+      }
+    },
+    {
+      "id": "basic-04-04",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Price.\n\n손님: 이거 (    )?\n직원: 이만 원이에요.",
+        "ko": "※ 가격.\n\n손님: 이거 (    )?\n직원: 이만 원이에요.",
+        "zh": "※ 价钱。\n\n客人：이거 (    )?\n店员：이만 원이에요。"
+      },
+      "choices": [
+        "얼마예요",
+        "누구예요",
+        "어디예요",
+        "언제예요"
+      ],
+      "answer": 0,
+      "answerText": "얼마예요",
+      "tags": [
+        "topic:쇼핑"
+      ],
+      "hint": {
+        "ko": "가격.",
+        "en": "Price.",
+        "zh": "价格。",
+        "steps": {
+          "en": [
+            "Point at item",
+            "Ask price"
+          ],
+          "ko": [
+            "물건 가리킴",
+            "가격"
+          ],
+          "zh": [
+            "指商品",
+            "问价"
+          ]
+        }
+      },
+      "why": {
+        "en": "입어 봐도 돼요? = permission pattern.",
+        "ko": "입어 봐도 돼요?=허락.",
+        "zh": "试穿许可。"
+      }
+    },
+    {
+      "id": "basic-04-05",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Try on.\n\n손님: 한번 입어 봐도 (    )?",
+        "ko": "※ 피팅.\n\n손님: 한번 입어 봐도 (    )?",
+        "zh": "※ 试穿。\n\n客人：한번 입어 봐도 (    )？"
+      },
+      "choices": [
+        "돼요",
+        "사람이에요",
+        "포장이요",
+        "운동해요"
+      ],
+      "answer": 0,
+      "answerText": "돼요",
+      "tags": [
+        "topic:쇼핑"
+      ],
+      "hint": {
+        "ko": "허락 구하기.",
+        "en": "Ask permission.",
+        "zh": "请求许可。",
+        "steps": {
+          "en": [
+            "Want to try",
+            "돼요?"
+          ],
+          "ko": [
+            "입어 보기",
+            "돼요?"
+          ],
+          "zh": [
+            "想试穿",
+            "돼요?"
+          ]
+        }
+      },
+      "why": {
+        "en": "이거 points; 얼마예요? asks price.",
+        "ko": "이거+얼마예요?",
+        "zh": "这个多少钱。"
+      }
+    },
+    {
+      "id": "basic-04-06",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Fit.\n\n손님: 조금 (    ). 더 큰 거 있어요?",
+        "ko": "※ 핏.\n\n손님: 조금 (    ). 더 큰 거 있어요?",
+        "zh": "※ 合身。\n\n客人：有点 (    ). 有更大的吗？"
+      },
+      "choices": [
+        "작아요",
+        "감사해요만",
+        "일어나요",
+        "공부해요"
+      ],
+      "answer": 0,
+      "answerText": "작아요",
+      "tags": [
+        "topic:쇼핑"
+      ],
+      "hint": {
+        "ko": "작다.",
+        "en": "Small.",
+        "zh": "小。",
+        "steps": {
+          "en": [
+            "Needs bigger",
+            "작아요"
+          ],
+          "ko": [
+            "더 큰 거",
+            "작아요"
+          ],
+          "zh": [
+            "要更大",
+            "작아요"
+          ]
+        }
+      },
+      "why": {
+        "en": "없어요 = not available.",
+        "ko": "없어요=없음.",
+        "zh": "없어요=没有。"
+      }
+    },
+    {
+      "id": "basic-04-07",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Decide.\n\n손님: (    ).\n직원: 계산대로 오세요.",
+        "ko": "※ 결정.\n\n손님: (    ).\n직원: 계산대로 오세요.",
+        "zh": "※ 决定。\n\n客人：(    ).\n店员：请到收银台。"
+      },
+      "choices": [
+        "이거로 할게요",
+        "집이요",
+        "받침이요",
+        "운동이요"
+      ],
+      "answer": 0,
+      "answerText": "이거로 할게요",
+      "tags": [
+        "topic:쇼핑"
+      ],
+      "hint": {
+        "ko": "구매 결정.",
+        "en": "Purchase decision.",
+        "zh": "决定购买。",
+        "steps": {
+          "en": [
+            "Chosen item",
+            "이거로"
+          ],
+          "ko": [
+            "선택함",
+            "이거로"
+          ],
+          "zh": [
+            "已选",
+            "이거로"
+          ]
+        }
+      },
+      "why": {
+        "en": "Decision line: 이거로 할게요.",
+        "ko": "이거로 할게요=결정.",
+        "zh": "就这个。"
+      }
+    },
+    {
+      "id": "basic-04-08",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Receipt.\n\n손님: (    ).\n직원: 네, 여기요.",
+        "ko": "※ 영수증.\n\n손님: (    ).\n직원: 네, 여기요.",
+        "zh": "※ 收据。\n\n客人：(    ).\n店员：네, 여기요。"
+      },
+      "choices": [
+        "영수증 주세요",
+        "아메리카노 주세요만",
+        "일곱 시에 주세요",
+        "만나서 주세요"
+      ],
+      "answer": 0,
+      "answerText": "영수증 주세요",
+      "tags": [
+        "topic:쇼핑"
+      ],
+      "hint": {
+        "ko": "영수증 요청.",
+        "en": "Ask for receipt.",
+        "zh": "要收据。",
+        "steps": {
+          "en": [
+            "After pay",
+            "영수증"
+          ],
+          "ko": [
+            "결제 후",
+            "영수증"
+          ],
+          "zh": [
+            "付款后",
+            "收据"
+          ]
+        }
+      },
+      "why": {
+        "en": "영수증 주세요 — noun + 주세요 again.",
+        "ko": "영수증+주세요.",
+        "zh": "请给发票。"
+      }
+    }
+  ],
+  "verified": false,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "research": "docs/research-basic-content-fill-ko.md",
+  "grammarCards": [
+    {
+      "id": "isseoyo-opseoyo",
+      "kind": "contrast",
+      "title": {
+        "en": "있어요 ↔ 없어요",
+        "ko": "있어요 ↔ 없어요",
+        "zh": "있어요 ↔ 없어요"
+      },
+      "body": {
+        "en": "세종·국어원 pair: 있어요 = exists / is present / available / have. 없어요 = not. Same stem job, opposite polarity — stock (사이즈 있어요?), location, and belongings. Not the same as 이에요/예요 (naming “X is Y”).",
+        "ko": "세종·국어원 짝: 있어요=있다/있음·가능·소유. 없어요=없다. 같은 역할, 반대 극성 — 재고·위치·소지. 이에요/예요(「X는 Y이다」 정체)와 다름.",
+        "zh": "世宗/国语院成对：있어요=有/在/可买到；없어요=没有。同一职责、相反极性——库存、位置、所有。不同于이에요/예요（指认“X是Y”）。"
+      },
+      "examples": [
+        {
+          "ko": "사이즈 있어요?",
+          "gloss": {
+            "en": "Stock / available · 있어요",
+            "ko": "재고·가능 · 있어요",
+            "zh": "有库存 · 있어요"
+          }
+        },
+        {
+          "ko": "카드 없어요.",
+          "gloss": {
+            "en": "Don’t have · 없어요",
+            "ko": "없음 · 없어요",
+            "zh": "没有 · 없어요"
+          }
+        },
+        {
+          "ko": "이거 있어요?",
+          "gloss": {
+            "en": "Point + ask availability",
+            "ko": "가리킴+있어요?",
+            "zh": "指着问有没有"
+          }
+        }
+      ],
+      "trap": {
+        "en": "있어요 ≠ 이에요. “Is this a bag?” → 가방이에요? · “Do you have a bag?” → 가방 있어요?",
+        "ko": "있어요 ≠ 이에요. 「가방이에요?」=정체 · 「가방 있어요?」=있음/재고.",
+        "zh": "있어요 ≠ 이에요。问“是不是包”用이에요；问“有没有包”用있어요。"
+      },
+      "related": [
+        {
+          "href": "../../blog/#isseoyo-vs-opseoyo",
+          "label": {
+            "en": "글모음 · 있어요 vs 없어요 →",
+            "ko": "글모음 · 있어요 vs 없어요 →",
+            "zh": "글모음 · 있어요 vs 없어요 →"
+          }
+        }
+      ]
+    },
+    {
+      "id": "doeyo",
+      "title": {
+        "en": "… 봐도 돼요?",
+        "ko": "… 봐도 돼요?",
+        "zh": "… 봐도 돼요？"
+      },
+      "body": {
+        "en": "V-아/어 봐도 돼요? ≈ May I try …? Soft permission — common in shops (입어 봐도 돼요?).",
+        "ko": "V-아/어 봐도 돼요?=해도 될까요? 매장에서 자주.",
+        "zh": "…봐도 돼요？≈可以试试吗？"
+      },
+      "examples": [
+        {
+          "ko": "입어 봐도 돼요?",
+          "gloss": {
+            "en": "May I try it on?",
+            "ko": "입어 봐도 될까요?",
+            "zh": "可以试穿吗？"
+          }
+        },
+        {
+          "ko": "이거 얼마예요?",
+          "gloss": {
+            "en": "Point + price",
+            "ko": "가리킴+가격",
+            "zh": "这个多少钱"
+          }
+        }
+      ],
+      "trap": {
+        "en": "Permission ask ≠ stock ask. 입어 봐도 돼요? (may I) · 사이즈 있어요? (do you have).",
+        "ko": "허가 ≠ 재고. 입어 봐도 돼요?(해도 될까) · 사이즈 있어요?(있나).",
+        "zh": "许可≠库存。봐도 돼요？=可以吗；있어요？=有没有。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF4FF">
+  <title>jabi. — Telephone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/hub.css">
+  <link rel="stylesheet" href="./telephone.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="tel-page">
+    <p class="eyebrow" data-tel="eyebrow">Telephone</p>
+    <h1 data-tel="title">Whisper &amp; recall</h1>
+    <p class="lead" data-tel="lead">Classroom telephone — solo. See or hear a phrase, it “passes,” then type what you remember. Soft scoring.</p>
+
+    <nav class="tel-nav" aria-label="Telephone nav">
+      <a href="../" data-tel="backGames">← Games</a>
+      <a href="../../../" data-tel="backHub">Hub</a>
+    </nav>
+
+    <p class="tel-note" data-tel="note">Offline solo: no multiplayer. Optional distort mode shows corrupted Korean to repair. TTS quality varies by browser.</p>
+
+    <div class="tel-themes" aria-label="Theme filter">
+      <span class="tel-k" data-tel="themeFilter">Theme</span>
+      <div id="tel-theme-chips" class="tel-theme-chips" role="group" aria-label="Themes"></div>
+    </div>
+
+    <div class="tel-mode" role="group" aria-label="Play mode">
+      <button type="button" class="tel-mode-btn is-on" id="tel-mode-recall" data-mode="recall" data-tel="modeRecall">Recall</button>
+      <button type="button" class="tel-mode-btn" id="tel-mode-distort" data-mode="distort" data-tel="modeDistort">Distort</button>
+    </div>
+
+    <div class="tel-progress" aria-live="polite">
+      <span id="tel-progress-text">1 / 20</span>
+      <div class="tel-progress-bar" aria-hidden="true"><div id="tel-progress-fill"></div></div>
+    </div>
+
+    <section id="tel-stage" class="tel-stage" aria-labelledby="tel-phase-label">
+      <p id="tel-phase-label" class="tel-k" data-tel="phaseSeed">Seed phrase</p>
+      <p id="tel-gloss" class="tel-gloss muted" aria-live="polite"></p>
+      <p id="tel-item-tags" class="tel-item-tags" aria-hidden="true"></p>
+
+      <div id="tel-seed-panel" class="tel-seed-panel">
+        <p id="tel-seed" class="tel-seed" aria-live="polite"></p>
+        <div class="tel-pass" id="tel-pass" aria-hidden="true">
+          <span class="tel-pass-dot"></span>
+          <span class="tel-pass-dot"></span>
+          <span class="tel-pass-dot"></span>
+          <span id="tel-pass-label" class="tel-pass-label" data-tel="passing">Passing along…</span>
+        </div>
+      </div>
+
+      <div id="tel-distort-panel" class="tel-distort-panel hidden">
+        <p class="tel-k" data-tel="corruptLabel">Heard / corrupted</p>
+        <p id="tel-corrupt" class="tel-corrupt" aria-live="polite"></p>
+      </div>
+
+      <div class="tel-actions tel-actions--listen">
+        <button type="button" class="tel-btn tel-btn--sun" id="tel-play" data-tel="play">▶ Listen</button>
+        <button type="button" class="tel-btn tel-btn--ghost" id="tel-slow" data-tel="slow">Slow</button>
+        <button type="button" class="tel-btn tel-btn--ghost" id="tel-stop" data-tel="stop">Stop</button>
+        <button type="button" class="tel-btn tel-btn--ghost" id="tel-start-pass" data-tel="startPass">Pass →</button>
+      </div>
+
+      <div id="tel-type-panel" class="tel-type-panel hidden">
+        <label class="tel-input-label" for="tel-input" data-tel="yourAnswer">Your recall</label>
+        <textarea
+          id="tel-input"
+          class="tel-input"
+          rows="2"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          lang="ko"
+          enterkeyhint="done"
+          placeholder="한국어로 입력…"
+        ></textarea>
+        <div class="tel-actions">
+          <button type="button" class="tel-btn tel-btn--sun" id="tel-check" data-tel="check">Check</button>
+          <button type="button" class="tel-btn tel-btn--ghost" id="tel-skip" data-tel="skip">Skip</button>
+          <button type="button" class="tel-btn tel-btn--ghost" id="tel-reveal" data-tel="reveal">Give up</button>
+        </div>
+      </div>
+
+      <label class="tel-auto">
+        <input type="checkbox" id="tel-auto-next" checked>
+        <span data-tel="autoNext">Auto-advance on full match</span>
+      </label>
+    </section>
+
+    <section id="tel-feedback" class="tel-feedback hidden" aria-live="polite">
+      <p id="tel-feedback-status" class="tel-feedback-status"></p>
+      <p id="tel-sim" class="tel-sim muted"></p>
+      <p class="tel-k" data-tel="youWrote">You wrote</p>
+      <p id="tel-yours" class="tel-diff-line"></p>
+      <p class="tel-k" data-tel="correctIs">Original</p>
+      <p id="tel-correct" class="tel-correct-line"></p>
+      <p id="tel-explain" class="tel-explain muted"></p>
+      <div class="tel-actions">
+        <button type="button" class="tel-btn tel-btn--sun" id="tel-next" data-tel="next">Next →</button>
+        <button type="button" class="tel-btn tel-btn--ghost" id="tel-retry" data-tel="retry">Try again</button>
+      </div>
+    </section>
+
+    <section id="tel-done" class="tel-done hidden" aria-live="polite">
+      <h2 data-tel="doneTitle">Round complete</h2>
+      <p id="tel-score" class="tel-score"></p>
+      <div class="tel-actions">
+        <button type="button" class="tel-btn tel-btn--sun" id="tel-restart" data-tel="restart">Play again</button>
+        <a class="tel-btn tel-btn--ghost" href="../" data-tel="backGames">← Games</a>
+      </div>
+    </section>
+
+    <p id="tel-error" class="tel-error hidden" role="alert"></p>
+  </main>
+
+  <script src="../../../js/i18n.js"></script>
+  <script src="./telephone.js"></script>
+</body>
+</html>

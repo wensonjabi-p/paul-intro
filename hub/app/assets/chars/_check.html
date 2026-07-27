@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>chars roster check</title>
+  <style>
+    :root {
+      --bg: #12141a;
+      --panel: #1a1d26;
+      --ink: #f2f4f8;
+      --muted: #9aa3b5;
+      --ok: #3ecf8e;
+      --svg: #6ea8fe;
+      --png: #ffb020;
+      --miss: #3a4050;
+    }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      line-height: 1.45;
+    }
+    h1 { margin: 0 0 8px; font-size: 1.35rem; }
+    .lead { color: var(--muted); margin: 0 0 20px; max-width: 52rem; }
+    .lead a { color: #9ec1ff; }
+    .legend { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-bottom: 20px; font-size: 0.85rem; color: var(--muted); }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 6px; font-weight: 600; font-size: 0.75rem; }
+    .pill.ok { background: color-mix(in srgb, var(--ok) 25%, transparent); color: var(--ok); }
+    .pill.svg { background: color-mix(in srgb, var(--svg) 25%, transparent); color: var(--svg); }
+    .pill.png { background: color-mix(in srgb, var(--png) 25%, transparent); color: var(--png); }
+    .pill.miss { background: var(--miss); color: var(--muted); }
+    .roster { display: grid; gap: 16px; }
+    .card {
+      background: var(--panel);
+      border-radius: 14px;
+      padding: 14px 16px 18px;
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: baseline;
+    }
+    .card h2 .glyph { font-size: 1.4rem; }
+    .card h2 .meta { color: var(--muted); font-weight: 500; font-size: 0.85rem; }
+    .stages {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(110px, 1fr));
+      gap: 10px;
+    }
+    @media (max-width: 900px) {
+      .stages { grid-template-columns: repeat(3, minmax(100px, 1fr)); }
+    }
+    .stage {
+      background: #0e1016;
+      border-radius: 10px;
+      padding: 8px;
+      text-align: center;
+      min-height: 150px;
+    }
+    .stage .label { font-size: 0.72rem; color: var(--muted); margin-bottom: 6px; }
+    .stage img {
+      width: 100%;
+      max-width: 120px;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: contain;
+      background: #050608;
+      border-radius: 8px;
+    }
+    .stage .empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+      max-width: 120px;
+      margin: 0 auto;
+      border-radius: 8px;
+      background: #050608;
+      color: var(--muted);
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .err { color: #ff7b72; }
+  </style>
+</head>
+<body>
+  <h1>자음 캐릭터 로스터 체크</h1>
+  <p class="lead">
+    13 파트너(ㅈ 제외) × stage 1–6. 파일럿 ㄱ은 Paul OK.
+    배치 가이드: <a href="./CANVA-BATCH-12-ko.md">CANVA-BATCH-12-ko.md</a>
+    · 상태: <code>python scripts/trace-char-sources.py --status</code>
+  </p>
+  <div class="legend">
+    <span><span class="pill ok">OK</span> Paul 승인 SVG</span>
+    <span><span class="pill svg">svg</span> 추적됨 · OK 대기</span>
+    <span><span class="pill png">png</span> source만 · 추적 전</span>
+    <span><span class="pill miss">·</span> 미도착 (앱은 글리프 폴백)</span>
+  </div>
+  <div id="roster" class="roster">로딩…</div>
+
+  <script>
+    const STAGE_KEYS = ["baby", "pants", "boots", "weapon", "shield", "crown"];
+
+    function badge(paulOk, hasSvg, hasPng) {
+      if (paulOk && hasSvg) return '<span class="pill ok">OK</span>';
+      if (hasSvg) return '<span class="pill svg">svg</span>';
+      if (hasPng) return '<span class="pill png">png</span>';
+      return '<span class="pill miss">·</span>';
+    }
+
+    function stageCell(partner, n, hasSvg, hasPng, paulOk) {
+      const label = `${n} ${STAGE_KEYS[n - 1]} ` + badge(paulOk, hasSvg, hasPng);
+      let media;
+      if (hasSvg) {
+        media = `<img src="./char-${partner.id}-${n}.svg" alt="${partner.id}-${n}" />`;
+      } else if (hasPng) {
+        media = `<img src="./source/${partner.id}-${n}.png" alt="${partner.id}-${n} png" />`;
+      } else {
+        media = `<div class="empty" title="missing">${partner.glyph}</div>`;
+      }
+      return `<div class="stage"><div class="label">${label}</div>${media}</div>`;
+    }
+
+    async function probe(url) {
+      try {
+        const r = await fetch(url, { method: "HEAD", cache: "no-store" });
+        if (r.ok) return true;
+      } catch (_) {}
+      try {
+        const r = await fetch(url, { method: "GET", cache: "no-store" });
+        return r.ok;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    async function build() {
+      const root = document.getElementById("roster");
+      let manifest;
+      try {
+        manifest = await (await fetch("./manifest.json", { cache: "no-store" })).json();
+      } catch (e) {
+        root.innerHTML = `<p class="err">manifest.json 로드 실패: ${e}</p>`;
+        return;
+      }
+
+      const cards = [];
+      for (const p of manifest.partners || []) {
+        const paulOk = new Set(p.paulOkStages || []);
+        const cells = [];
+        for (let n = 1; n <= 6; n++) {
+          const [hasSvg, hasPng] = await Promise.all([
+            probe(`./char-${p.id}-${n}.svg`),
+            probe(`./source/${p.id}-${n}.png`),
+          ]);
+          cells.push(stageCell(p, n, hasSvg, hasPng, paulOk.has(n)));
+        }
+        cards.push(`
+          <section class="card" id="${p.id}">
+            <h2>
+              <span class="glyph">${p.glyph}</span>
+              <span>${p.id}</span>
+              <span class="meta">${p.status || ""} · ${p.weaponHint || ""}</span>
+            </h2>
+            <div class="stages">${cells.join("")}</div>
+          </section>
+        `);
+      }
+      root.innerHTML = cards.join("") || "<p>partners 없음</p>";
+    }
+
+    build();
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF4FF">
+  <title>jabi. — Bingo Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/hub.css">
+  <link rel="stylesheet" href="./bingo.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="bg-page">
+    <p class="eyebrow" data-bg="eyebrow">Bingo Board</p>
+    <h1 data-bg="title">Vocab bingo</h1>
+    <p class="lead" data-bg="lead">Hear or read the call, tap the matching Korean cell. Get a line — bingo!</p>
+
+    <nav class="bg-nav" aria-label="Bingo nav">
+      <a href="../" data-bg="backGames">← Games</a>
+      <a href="../../../" data-bg="backHub">Hub</a>
+    </nav>
+
+    <p class="bg-note" data-bg="note">Center FREE is already marked. Wrong taps do not mark. TTS quality varies by browser.</p>
+
+    <div class="bg-themes" aria-label="Theme filter">
+      <span class="bg-k" data-bg="themeFilter">Theme</span>
+      <div id="bg-theme-chips" class="bg-theme-chips" role="group" aria-label="Themes"></div>
+    </div>
+
+    <div class="bg-toolbar" role="group" aria-label="Board size">
+      <span class="bg-k" data-bg="sizeLabel">Size</span>
+      <button type="button" class="bg-chip is-on" id="bg-size-5" data-size="5">5×5</button>
+      <button type="button" class="bg-chip" id="bg-size-3" data-size="3">3×3</button>
+      <button type="button" class="bg-btn bg-btn--ghost" id="bg-new" data-bg="newBoard">New board</button>
+    </div>
+
+    <section class="bg-call" aria-labelledby="bg-call-label">
+      <p id="bg-call-label" class="bg-k" data-bg="callLabel">Call</p>
+      <p id="bg-call-gloss" class="bg-call-gloss" aria-live="polite"></p>
+      <p id="bg-call-meta" class="bg-call-meta muted"></p>
+      <div class="bg-actions">
+        <button type="button" class="bg-btn bg-btn--sun" id="bg-play" data-bg="play">▶ Listen</button>
+        <button type="button" class="bg-btn bg-btn--ghost" id="bg-slow" data-bg="slow">Slow</button>
+        <button type="button" class="bg-btn bg-btn--ghost" id="bg-skip" data-bg="skip">Skip call</button>
+      </div>
+      <p id="bg-hint" class="bg-hint" data-bg="tapHint">Tap the matching cell on the board →</p>
+    </section>
+
+    <div class="bg-progress" aria-live="polite">
+      <span id="bg-progress-text">1 / 24</span>
+      <div class="bg-progress-bar" aria-hidden="true"><div id="bg-progress-fill"></div></div>
+    </div>
+
+    <section class="bg-stage" aria-label="Bingo board">
+      <div id="bg-grid" class="bg-grid bg-grid--5" role="grid"></div>
+    </section>
+
+    <p id="bg-feedback" class="bg-feedback hidden" aria-live="polite"></p>
+
+    <section id="bg-done" class="bg-done hidden" aria-live="polite">
+      <h2 id="bg-done-title" data-bg="bingoTitle">Bingo!</h2>
+      <p id="bg-score" class="bg-score"></p>
+      <div class="bg-actions">
+        <button type="button" class="bg-btn bg-btn--sun" id="bg-restart" data-bg="playAgain">Play again</button>
+        <a class="bg-btn bg-btn--ghost" href="../" data-bg="backGames">← Games</a>
+      </div>
+    </section>
+
+    <p id="bg-error" class="bg-error hidden" role="alert"></p>
+  </main>
+
+  <script src="../../../js/i18n.js"></script>
+  <script src="./bingo.js"></script>
+</body>
+</html>

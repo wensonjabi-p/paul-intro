@@ -1,0 +1,166 @@
+{
+  "id": "jabi-basic-v0",
+  "version": 3,
+  "status": "pilot",
+  "updated": "2026-07-26",
+  "format": "duolingo-skill-path-v1",
+  "title": {
+    "en": "Basics (pre-TOPIK)",
+    "ko": "기초 수업",
+    "zh": "基础课程"
+  },
+  "lead": {
+    "en": "Duolingo-style skill path · Sejong/TOPIK survival themes · research-backed original dialogues for units 01–06.",
+    "ko": "듀오링고식 스킬 패스 · 세종·TOPIK 생존 주제 · 01–06 연구 근거 원작 대화.",
+    "zh": "多邻国式技能路径 · 世宗/TOPIK生存主题 · 01–06研究依据原创对话。"
+  },
+  "sourcePolicy": {
+    "note": "Sejong/TOPIK theme & grammar anchors only — no official wording. Original jabi. dialogue items.",
+    "research": [
+      "docs/research-basic-content-fill-ko.md",
+      "docs/research-korean-grammar-explain-ko.md",
+      "docs/research-next-tracks-ko.md"
+    ]
+  },
+  "schema": {
+    "unit": {
+      "id": "basic-NN",
+      "steps": "intro | teach | dialogue | practice | checkpoint",
+      "bankFile": "draft JSON with dialogue + phrases + questions"
+    }
+  },
+  "units": [
+    {
+      "id": "basic-01",
+      "order": 1,
+      "slug": "greetings",
+      "kind": "dialogue",
+      "title": {
+        "en": "01 · Greetings & self-intro",
+        "ko": "01 · 인사와 자기소개",
+        "zh": "01 · 打招呼和自我介绍"
+      },
+      "theme": "인사",
+      "objective": {
+        "en": "Greet, introduce yourself, say where you are from, reply to 만나서 반가워요.",
+        "ko": "인사·자기소개·국적·「만나서 반가워요」답하기.",
+        "zh": "打招呼、自我介绍、国籍，回应「만나서 반가워요」。"
+      },
+      "status": "pilot",
+      "bankFile": "../draft-basic-unit01-greetings.json",
+      "bankId": "jabi-basic-v1-01",
+      "questionCount": 8,
+      "pathLabel": "01"
+    },
+    {
+      "id": "basic-02",
+      "order": 2,
+      "slug": "daily-life",
+      "kind": "dialogue",
+      "title": {
+        "en": "02 · Daily life",
+        "ko": "02 · 일상생활",
+        "zh": "02 · 日常生活"
+      },
+      "theme": "일상",
+      "objective": {
+        "en": "Ask what someone is doing; say routines with time 에 and place 에서.",
+        "ko": "지금 하는 일 묻기 · 시간 에 · 동작 장소 에서로 루틴 말하기.",
+        "zh": "问正在做什么；用时间에、动作场所에서说日常。"
+      },
+      "status": "pilot",
+      "bankFile": "../draft-basic-unit02-daily-life.json",
+      "bankId": "jabi-basic-v1-02",
+      "questionCount": 8,
+      "pathLabel": "02"
+    },
+    {
+      "id": "basic-03",
+      "order": 3,
+      "slug": "cafe",
+      "kind": "dialogue",
+      "title": {
+        "en": "03 · At a café",
+        "ko": "03 · 카페에서",
+        "zh": "03 · 在咖啡馆"
+      },
+      "theme": "카페",
+      "objective": {
+        "en": "Order a drink, ask price, say take-out vs for-here, pay.",
+        "ko": "음료 주문·가격·포장/매장·결제.",
+        "zh": "点饮料、问价、外带/堂食、付款。"
+      },
+      "status": "pilot",
+      "bankFile": "../draft-basic-unit03-cafe.json",
+      "bankId": "jabi-basic-v1-03",
+      "questionCount": 8,
+      "pathLabel": "03"
+    },
+    {
+      "id": "basic-04",
+      "order": 4,
+      "slug": "shopping",
+      "kind": "dialogue",
+      "title": {
+        "en": "04 · Shopping",
+        "ko": "04 · 물건 사기",
+        "zh": "04 · 购物"
+      },
+      "theme": "쇼핑",
+      "objective": {
+        "en": "Ask for items, sizes/colors, try on, and price.",
+        "ko": "물건·사이즈·색깔·피팅·가격.",
+        "zh": "问商品、尺码/颜色、试穿、价格。"
+      },
+      "status": "pilot",
+      "bankFile": "../draft-basic-unit04-shopping.json",
+      "bankId": "jabi-basic-v1-04",
+      "questionCount": 8,
+      "pathLabel": "04"
+    },
+    {
+      "id": "basic-05",
+      "order": 5,
+      "slug": "directions",
+      "kind": "dialogue",
+      "title": {
+        "en": "05 · Places & directions",
+        "ko": "05 · 장소와 길 찾기",
+        "zh": "05 · 地点与问路"
+      },
+      "theme": "장소",
+      "objective": {
+        "en": "Ask where a place is; say 에 있어요; follow go-straight / turn.",
+        "ko": "어디인지 묻기 · 에 있어요 · 직진·회전 이해.",
+        "zh": "问路；说에 있어요；理解直行、转弯。"
+      },
+      "status": "pilot",
+      "bankFile": "../draft-basic-unit05-directions.json",
+      "bankId": "jabi-basic-v1-05",
+      "questionCount": 8,
+      "pathLabel": "05"
+    },
+    {
+      "id": "basic-06",
+      "order": 6,
+      "slug": "food",
+      "kind": "dialogue",
+      "title": {
+        "en": "06 · Food & restaurants",
+        "ko": "06 · 음식과 식당",
+        "zh": "06 · 食物与餐厅"
+      },
+      "theme": "음식",
+      "objective": {
+        "en": "Seat count, order food, say spice preference, ask for the check.",
+        "ko": "인원·주문·맵기·계산.",
+        "zh": "人数、点餐、辣度、结账。"
+      },
+      "status": "pilot",
+      "bankFile": "../draft-basic-unit06-food.json",
+      "bankId": "jabi-basic-v1-06",
+      "questionCount": 8,
+      "pathLabel": "06"
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "id": "jabi-topik2-v0",
+  "version": 4,
+  "status": "pilot",
+  "updated": "2026-07-27",
+  "title": {
+    "en": "TOPIK II",
+    "ko": "TOPIK II",
+    "zh": "TOPIK II"
+  },
+  "lead": {
+    "en": "Listen/read/write practice (4 listen + 4 read banks · write 51–54; listen/read-04 now 5Q). Formative writing score · MCQ listen/read. Not a full 104-item official mock. No Lemon / AI grading.",
+    "ko": "듣기·읽기·쓰기 연습(듣기/읽기 각 4뱅크 · 쓰기 51–54; listen/read-04는 5문항). 쓰기 형성 점수 · 듣기/읽기 MCQ. 풀 104문항 공식 모의 아님. Lemon/AI 채점 없음.",
+    "zh": "听读写练习（听/读各4库 · 写作51–54；listen/read-04现为5题）。写作形成性分数 · 听读MCQ。非完整104题官方模考。无 Lemon/AI 评分。"
+  },
+  "sourcePolicy": {
+    "note": "Official TOPIK II section structure only (listen/read/write Q51–54). No official items or wording. Original jabi. banks: listen-01..04, read-01..04, write 51–54. Writing formative scorer: docs/topik2-writing-axis-mapping-ko.md. Research fill: docs/research-topik2-content-fill-ko.md.",
+    "research": [
+      "docs/research-topik2-content-fill-ko.md",
+      "docs/research-next-tracks-ko.md",
+      "docs/research-topik2-writing-grading-ko.md",
+      "docs/topik2-writing-axis-mapping-ko.md",
+      "docs/research-english-aes-for-jabi-ko.md"
+    ]
+  },
+  "schema": {
+    "unit": {
+      "id": "topik2-NN",
+      "order": 0,
+      "slug": "kebab-case",
+      "kind": "intro | listen | read | write-51 | write-52 | write-53 | write-54 | mock",
+      "title": "{ en, ko, zh }",
+      "section": "overview | listening | reading | writing | mock",
+      "status": "scaffold | planned | pilot | ready",
+      "bankFile": "optional path when pilot content exists",
+      "modules": "empty until content — mcq / short-answer / essay / ai-coach later"
+    }
+  },
+  "units": [
+    {
+      "id": "topik2-00",
+      "order": 0,
+      "slug": "overview",
+      "kind": "intro",
+      "title": {
+        "en": "00 · Overview",
+        "ko": "00 · 구성 안내",
+        "zh": "00 · 概览"
+      },
+      "section": "overview",
+      "status": "scaffold",
+      "bankFile": "",
+      "bankId": "",
+      "questionCount": 0,
+      "modules": [
+        {
+          "type": "shell",
+          "status": "scaffold",
+          "body": {
+            "en": "Official TOPIK II ≈ Listening 50 + Writing 4 + Reading 50 (180 min / 300 pts). jabi. = short practice banks + formative writing score — not a timed full mock.",
+            "ko": "공식 TOPIK II ≈ 듣기50 + 쓰기4 + 읽기50 (180분 / 300점). jabi. = 짧은 연습 뱅크 + 쓰기 형성 점수 — 시간제한 풀모의 아님.",
+            "zh": "官方 TOPIK II ≈ 听力50 + 写作4 + 阅读50（180分钟/300分）。jabi. = 短练习库 + 写作形成性分 — 非限时全真模考。"
+          }
+        }
+      ],
+      "note": {
+        "en": "TOPIK II = Listening + Reading + Writing (51–54). Writing is the new engine vs TOPIK I.",
+        "ko": "TOPIK II = 듣기 + 읽기 + 쓰기(51–54). 쓰기 영역이 TOPIK I 대비 신규 엔진.",
+        "zh": "TOPIK II = 听力 + 阅读 + 写作(51–54)。写作相对 TOPIK I 为新引擎。"
+      }
+    },
+    {
+      "id": "topik2-listen",
+      "order": 1,
+      "slug": "listening-01",
+      "kind": "listen",
+      "title": {
+        "en": "01 · Listening · bank 1",
+        "ko": "01 · 듣기 · 뱅크 1",
+        "zh": "01 · 听力 · 题库1"
+      },
+      "section": "listening",
+      "status": "pilot",
+      "bankFile": "./draft-listen-01.json",
+      "bankId": "jabi-topik2-listen-v0-01",
+      "questionCount": 4,
+      "modules": [
+        "mcq",
+        "script-reveal"
+      ],
+      "note": {
+        "en": "4 original II-shape items (match · announcement · continuation · main idea). No audio — optional script.",
+        "ko": "원작 4문항(일치·안내·이어가기·중심). 오디오 없음 — 대본 선택.",
+        "zh": "原作4题（一致·广播·接续·主旨）。无音频—文稿可选。"
+      }
+    },
+    {
+      "id": "topik2-listen-02",
+      "order": 2,
+      "slug": "listening-02",
+      "kind": "listen",
+      "title": {
+        "en": "02 · Listening · bank 2",
+        "ko": "02 · 듣기 · 뱅크 2",
+        "zh": "02 · 听力 · 题库2"
+      },
+      "section": "listening",
+      "status": "pilot",
+      "bankFile": "./draft-listen-02.json",
+      "bankId": "jabi-topik2-listen-v0-02",
+      "questionCount": 4,
+      "modules": [
+        "mcq",
+        "script-reveal"
+      ],
+      "note": {
+        "en": "Bank 2: appointment change · museum hours · workplace offer · e-book main idea.",
+        "ko": "뱅크 2: 예약 변경 · 미술관 입장 · 업무 제안 · 전자책 중심.",
+        "zh": "题库2：改预约·美术馆入场·职场提议·电子书主旨。"
+      }
+    },
+    {
+      "id": "topik2-listen-03",
+      "order": 3,
+      "slug": "listening-03",
+      "kind": "listen",
+      "title": {
+        "en": "03 · Listening · bank 3",
+        "ko": "03 · 듣기 · 뱅크 3",
+        "zh": "03 · 听力 · 题库3"
+      },
+      "section": "listening",
+      "status": "pilot",
+      "bankFile": "./draft-listen-03.json",
+      "bankId": "jabi-topik2-listen-v0-03",
+      "questionCount": 4,
+      "modules": [
+        "mcq",
+        "script-reveal"
+      ],
+      "note": {
+        "en": "Research fill: attitude · next action · detail · purpose. No audio — optional script.",
+        "ko": "연구 보강: 태도·다음 행동·세부·목적. 오디오 없음 — 대본 선택.",
+        "zh": "研究补强：态度·下一步·细节·目的。无音频—文稿可选。"
+      }
+    },
+    {
+      "id": "topik2-listen-04",
+      "order": 4,
+      "slug": "listening-04",
+      "kind": "listen",
+      "title": {
+        "en": "04 · Listening · bank 4",
+        "ko": "04 · 듣기 · 뱅크 4",
+        "zh": "04 · 听力 · 题库4"
+      },
+      "section": "listening",
+      "status": "pilot",
+      "bankFile": "./draft-listen-04.json",
+      "bankId": "jabi-topik2-listen-v0-04",
+      "questionCount": 5,
+      "modules": [
+        "mcq",
+        "script-reveal"
+      ],
+      "note": {
+        "en": "Bank 4: library hours · pool parking · slide continuation · reading-club main idea · bus-fare match (+1).",
+        "ko": "뱅크 4: 열람실 시간 · 수영장 주차 · 슬라이드 이어가기 · 독서 모임 중심 · 버스 요금 일치(+1).",
+        "zh": "题库4：阅览室时间·泳池停车·幻灯接续·读书会主旨·公交票价一致(+1)。"
+      }
+    },
+    {
+      "id": "topik2-read",
+      "order": 5,
+      "slug": "reading-01",
+      "kind": "read",
+      "title": {
+        "en": "05 · Reading · bank 1",
+        "ko": "05 · 읽기 · 뱅크 1",
+        "zh": "05 · 阅读 · 题库1"
+      },
+      "section": "reading",
+      "status": "pilot",
+      "bankFile": "./draft-read-01.json",
+      "bankId": "jabi-topik2-read-v0-01",
+      "questionCount": 4,
+      "modules": [
+        "mcq"
+      ],
+      "note": {
+        "en": "4 original items (notice detail · title · match · context blank).",
+        "ko": "원작 4문항(안내 세부·제목·내용일치·문맥 빈칸).",
+        "zh": "原作4题（告示细节·标题·内容一致·语境填空）。"
+      }
+    },
+    {
+      "id": "topik2-read-02",
+      "order": 6,
+      "slug": "reading-02",
+      "kind": "read",
+      "title": {
+        "en": "06 · Reading · bank 2",
+        "ko": "06 · 읽기 · 뱅크 2",
+        "zh": "06 · 阅读 · 题库2"
+      },
+      "section": "reading",
+      "status": "pilot",
+      "bankFile": "./draft-read-02.json",
+      "bankId": "jabi-topik2-read-v0-02",
+      "questionCount": 4,
+      "modules": [
+        "mcq"
+      ],
+      "note": {
+        "en": "Bank 2: course signup · night market title · hybrid work match · public seat blank.",
+        "ko": "뱅크 2: 강좌 접수 · 야시장 제목 · 하이브리드 출근 일치 · 공공 자리 빈칸.",
+        "zh": "题库2：课程报名·夜市标题·混合办公一致·公共座位填空。"
+      }
+    },
+    {
+      "id": "topik2-read-03",
+      "order": 7,
+      "slug": "reading-03",
+      "kind": "read",
+      "title": {
+        "en": "07 · Reading · bank 3",
+        "ko": "07 · 읽기 · 뱅크 3",
+        "zh": "07 · 阅读 · 题库3"
+      },
+      "section": "reading",
+      "status": "pilot",
+      "bankFile": "./draft-read-03.json",
+      "bankId": "jabi-topik2-read-v0-03",
+      "questionCount": 4,
+      "modules": [
+        "mcq"
+      ],
+      "note": {
+        "en": "Research fill: purpose · sentence order · content match · context blank.",
+        "ko": "연구 보강: 목적·문장 배열·내용일치·문맥 빈칸.",
+        "zh": "研究补强：目的·句子排序·内容一致·语境填空。"
+      }
+    },
+    {
+      "id": "topik2-read-04",
+      "order": 8,
+      "slug": "reading-04",
+      "kind": "read",
+      "title": {
+        "en": "08 · Reading · bank 4",
+        "ko": "08 · 읽기 · 뱅크 4",
+        "zh": "08 · 阅读 · 题库4"
+      },
+      "section": "reading",
+      "status": "pilot",
+      "bankFile": "./draft-read-04.json",
+      "bankId": "jabi-topik2-read-v0-04",
+      "questionCount": 5,
+      "modules": [
+        "mcq"
+      ],
+      "note": {
+        "en": "Bank 4: cooking-class notice · used-goods title · cafeteria match · library blank · late-night bus news (+1).",
+        "ko": "뱅크 4: 요리 교실 · 중고 나눔 제목 · 구내식당 · 도서관 빈칸 · 심야 버스 뉴스(+1).",
+        "zh": "题库4：烹饪课·二手标题·食堂·图书馆填空·深夜公交新闻(+1)。"
+      }
+    },
+    {
+      "id": "topik2-write-51",
+      "order": 9,
+      "slug": "writing-51",
+      "kind": "write-51",
+      "title": {
+        "en": "09 · Writing · Q51",
+        "ko": "09 · 쓰기 · 51번",
+        "zh": "09 · 写作 · 第51题"
+      },
+      "section": "writing",
+      "status": "pilot",
+      "bankFile": "./draft-write-51.json",
+      "bankId": "jabi-topik2-write-51-v0",
+      "questionCount": 4,
+      "modules": [
+        "write-blank",
+        "stub-feedback"
+      ],
+      "note": {
+        "en": "4 original sentence blanks + formative cloze partial credit. Early tips do not leak model wording.",
+        "ko": "원작 빈칸 4 + 형성 클로즈 부분점수. 조기 tip은 모범 문구 비유출.",
+        "zh": "原作填空4题 + 形成性完形部分分。早期提示不泄露范例措辞。"
+      }
+    },
+    {
+      "id": "topik2-write-52",
+      "order": 10,
+      "slug": "writing-52",
+      "kind": "write-52",
+      "title": {
+        "en": "10 · Writing · Q52",
+        "ko": "10 · 쓰기 · 52번",
+        "zh": "10 · 写作 · 第52题"
+      },
+      "section": "writing",
+      "status": "pilot",
+      "bankFile": "./draft-write-52.json",
+      "bankId": "jabi-topik2-write-52-v0",
+      "questionCount": 4,
+      "modules": [
+        "write-blank",
+        "stub-feedback"
+      ],
+      "note": {
+        "en": "4 original blanks (cause-effect / conclusion / obligation / concession) + formative partial credit.",
+        "ko": "원작 빈칸 4(인과·결론·당위·양보) + 형성 부분점수.",
+        "zh": "原作填空4题（因果/结论/应当/让步）+ 形成性部分分。"
+      }
+    },
+    {
+      "id": "topik2-write-53",
+      "order": 11,
+      "slug": "writing-53",
+      "kind": "write-53",
+      "title": {
+        "en": "11 · Writing · Q53",
+        "ko": "11 · 쓰기 · 53번",
+        "zh": "11 · 写作 · 第53题"
+      },
+      "section": "writing",
+      "status": "pilot",
+      "bankFile": "./draft-write-53.json",
+      "bankId": "jabi-topik2-write-53-v0",
+      "questionCount": 3,
+      "modules": [
+        "write-short",
+        "stub-checklist"
+      ],
+      "note": {
+        "en": "3 short comps (~200–300 chars) + length/checklist formative continuum. Outline reveal optional. No AI.",
+        "ko": "단문 3(~200–300자) + 분량·체크리스트 형성 연속점수. 개요 공개는 선택. AI 없음.",
+        "zh": "短文3题（约200–300字）+ 篇幅/清单形成性连续分。提纲可选。无AI。"
+      }
+    },
+    {
+      "id": "topik2-write-54",
+      "order": 12,
+      "slug": "writing-54",
+      "kind": "write-54",
+      "title": {
+        "en": "12 · Writing · Q54",
+        "ko": "12 · 쓰기 · 54번",
+        "zh": "12 · 写作 · 第54题"
+      },
+      "section": "writing",
+      "status": "pilot",
+      "bankFile": "./draft-write-54.json",
+      "bankId": "jabi-topik2-write-54-v0",
+      "questionCount": 3,
+      "modules": [
+        "write-essay",
+        "stub-checklist"
+      ],
+      "note": {
+        "en": "3 opinion essays (~600–700 Hangul chars) + formative trait bars. No AI / Lemon grading.",
+        "ko": "논술 3(~600–700자) + 형성 trait 막대. AI/Lemon 채점 없음.",
+        "zh": "论述3题（约600–700韩文字符）+ 形成性 trait 条。无 AI/Lemon 评分。"
+      }
+    },
+    {
+      "id": "topik2-mock",
+      "order": 13,
+      "slug": "full-mock",
+      "kind": "mock",
+      "title": {
+        "en": "13 · Full mock (planned)",
+        "ko": "13 · 전체 모의 (예정)",
+        "zh": "13 · 全真模考（计划）"
+      },
+      "section": "mock",
+      "status": "planned",
+      "bankFile": "",
+      "bankId": "",
+      "questionCount": 0,
+      "modules": [],
+      "note": {
+        "en": "After section banks grow — timed full set (~104). Not started. Do not advertise as available.",
+        "ko": "영역 뱅크 확장 뒤 — 시간 제한 전체 세트(~104). 미착수. 이용 가능하다고 쓰지 말 것.",
+        "zh": "分区题库扩充后 — 限时全套（约104）。未开始。勿宣传为可用。"
+      }
+    }
+  ]
+}

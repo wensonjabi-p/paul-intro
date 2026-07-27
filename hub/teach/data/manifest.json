@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "trackId": "teacher-select",
+  "status": "pilot",
+  "title": {
+    "en": "Coach option",
+    "ko": "선생님 선택",
+    "zh": "教练选项"
+  },
+  "lead": {
+    "en": "AI-first practice. Optional vetted coaches get a short learner report — then direction or Q&A on Zoom.",
+    "ko": "앱이 먼저. 선택형 검증 선생님에게 짧은 학습 보고를 넘긴 뒤, Zoom으로 방향·질문을.",
+    "zh": "AI 练习优先。可选认证老师先看短学习报告，再在 Zoom 做方向或答疑。"
+  },
+  "verifyPolicy": {
+    "en": "Open seats require Korean language teacher certification (한국어교원 2급) or equivalent review before listing. No invented credentials.",
+    "ko": "열린 좌석은 한국어교원 2급(또는 동등 검증) 후에만 실명 노출. 자격·경력을 지어내지 않습니다.",
+    "zh": "空席须通过韩国语教员二级（或同等审核）后才公开实名。不编造资质。"
+  },
+  "copyright": "Pilot scaffold for jabi. teach door. Seats are slots + verified anchor only — not a marketplace of fabricated tutor profiles.",
+  "reportSchemaFile": "report-schema.json",
+  "seats": [
+    {
+      "id": "seat-paul",
+      "status": "anchor",
+      "displayName": {
+        "en": "Paul Bhang",
+        "ko": "Paul Bhang",
+        "zh": "Paul Bhang"
+      },
+      "role": {
+        "en": "Founding coach · optional live sessions",
+        "ko": "설립 코치 · 선택형 라이브",
+        "zh": "创始教练 · 可选直播"
+      },
+      "credentialClaim": {
+        "en": "한국어교원 2급 · Hangzhou university teaching · Zoom tutoring (public bio)",
+        "ko": "한국어교원 2급 · 항저우 대학 강의 · Zoom 튜터(공개 이력)",
+        "zh": "韩国语教员二级 · 杭州大学授课 · Zoom 辅导（公开履历）"
+      },
+      "focus": ["direction", "qna", "speaking"],
+      "booking": "mailto",
+      "mailtoSubject": "jabi. coach waitlist — Paul"
+    },
+    {
+      "id": "seat-open-a",
+      "status": "open",
+      "displayName": {
+        "en": "Seat A — open",
+        "ko": "좌석 A — 모집",
+        "zh": "席位 A — 空缺"
+      },
+      "role": {
+        "en": "Direction & weekly plan",
+        "ko": "공부 방향·주간 계획",
+        "zh": "方向与周计划"
+      },
+      "verifyFilter": {
+        "en": "한국어교원 2급+ · report-handoff training",
+        "ko": "한국어교원 2급 이상 · 리포트 핸드오프 교육",
+        "zh": "教员二级以上 · 报告交接培训"
+      },
+      "focus": ["direction", "qna"],
+      "booking": "waitlist",
+      "mailtoSubject": "jabi. coach waitlist — Seat A"
+    },
+    {
+      "id": "seat-open-b",
+      "status": "open",
+      "displayName": {
+        "en": "Seat B — open",
+        "ko": "좌석 B — 모집",
+        "zh": "席位 B — 空缺"
+      },
+      "role": {
+        "en": "Writing focus & short feedback",
+        "ko": "쓰기 초점·짧은 첨삭",
+        "zh": "写作焦点与短评"
+      },
+      "verifyFilter": {
+        "en": "한국어교원 2급+ · TOPIK writing familiarity",
+        "ko": "한국어교원 2급 이상 · TOPIK 쓰기 경험",
+        "zh": "教员二级以上 · 熟悉 TOPIK 写作"
+      },
+      "focus": ["writing", "direction"],
+      "booking": "waitlist",
+      "mailtoSubject": "jabi. coach waitlist — Seat B"
+    },
+    {
+      "id": "seat-waitlist",
+      "status": "waitlist",
+      "displayName": {
+        "en": "General waitlist",
+        "ko": "일반 대기열",
+        "zh": "总候补"
+      },
+      "role": {
+        "en": "Match when a verified seat opens",
+        "ko": "검증 좌석이 열리면 매칭",
+        "zh": "认证席位开放后匹配"
+      },
+      "verifyFilter": {
+        "en": "Same certification filter as open seats",
+        "ko": "열린 좌석과 동일 자격 필터",
+        "zh": "与空席相同资质筛选"
+      },
+      "focus": ["direction", "qna", "speaking", "writing"],
+      "booking": "mailto",
+      "mailtoSubject": "jabi. coach waitlist"
+    }
+  ],
+  "focusLabels": {
+    "direction": {
+      "en": "Study direction",
+      "ko": "공부 방향",
+      "zh": "学习方向"
+    },
+    "qna": {
+      "en": "Concept Q&A",
+      "ko": "개념 질문",
+      "zh": "概念答疑"
+    },
+    "speaking": {
+      "en": "Speaking",
+      "ko": "말하기",
+      "zh": "口语"
+    },
+    "writing": {
+      "en": "Writing",
+      "ko": "쓰기",
+      "zh": "写作"
+    }
+  }
+}

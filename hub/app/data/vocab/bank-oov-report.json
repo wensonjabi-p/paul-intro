@@ -1,0 +1,290 @@
+{
+  "allowlist_size": 1742,
+  "banks_scanned": [
+    "verified-listen-01.json",
+    "verified-read-01.json",
+    "verified-read-02.json",
+    "verified-read-03.json"
+  ],
+  "unique_oov_tokens": [
+    "갈",
+    "게",
+    "끝소리에",
+    "답",
+    "대비",
+    "대상",
+    "대상을",
+    "된",
+    "됨",
+    "둔",
+    "명사",
+    "모음",
+    "받침",
+    "받침이",
+    "볼",
+    "비교는",
+    "비교해요",
+    "쉼",
+    "앞부분만이에요",
+    "없음",
+    "완성해요",
+    "인사말이에요",
+    "자연스러워요",
+    "전체",
+    "제",
+    "주제",
+    "짝",
+    "채",
+    "추움",
+    "친",
+    "큰",
+    "표시해요",
+    "할",
+    "허락을"
+  ],
+  "unique_oov_count": 34,
+  "noise_likely_count": 20,
+  "noise_likely_sample": [
+    "끝소리에",
+    "대비",
+    "대상",
+    "대상을",
+    "명사",
+    "모음",
+    "받침",
+    "받침이",
+    "비교는",
+    "비교해요",
+    "앞부분만이에요",
+    "없음",
+    "완성해요",
+    "인사말이에요",
+    "자연스러워요",
+    "전체",
+    "주제",
+    "추움",
+    "표시해요",
+    "허락을"
+  ],
+  "content_review_count": 0,
+  "content_review_sample": [],
+  "review_priority_count": 0,
+  "review_priority_sample": [],
+  "oov_counts_by_bank": {
+    "verified-listen-01.json": 3,
+    "verified-read-01.json": 18,
+    "verified-read-02.json": 15,
+    "verified-read-03.json": 14
+  },
+  "oov_top_per_bank": {
+    "verified-listen-01.json": [
+      {
+        "token": "답",
+        "count": 7
+      },
+      {
+        "token": "볼",
+        "count": 4
+      },
+      {
+        "token": "할",
+        "count": 1
+      }
+    ],
+    "verified-read-01.json": [
+      {
+        "token": "큰",
+        "count": 6
+      },
+      {
+        "token": "짝",
+        "count": 5
+      },
+      {
+        "token": "명사",
+        "count": 3
+      },
+      {
+        "token": "답",
+        "count": 3
+      },
+      {
+        "token": "허락을",
+        "count": 2
+      },
+      {
+        "token": "모음",
+        "count": 1
+      },
+      {
+        "token": "대상을",
+        "count": 1
+      },
+      {
+        "token": "표시해요",
+        "count": 1
+      },
+      {
+        "token": "대비",
+        "count": 1
+      },
+      {
+        "token": "앞부분만이에요",
+        "count": 1
+      },
+      {
+        "token": "됨",
+        "count": 1
+      },
+      {
+        "token": "주제",
+        "count": 1
+      },
+      {
+        "token": "전체",
+        "count": 1
+      },
+      {
+        "token": "대상",
+        "count": 1
+      },
+      {
+        "token": "쉼",
+        "count": 1
+      },
+      {
+        "token": "게",
+        "count": 1
+      },
+      {
+        "token": "친",
+        "count": 1
+      },
+      {
+        "token": "둔",
+        "count": 1
+      }
+    ],
+    "verified-read-02.json": [
+      {
+        "token": "짝",
+        "count": 5
+      },
+      {
+        "token": "답",
+        "count": 3
+      },
+      {
+        "token": "비교는",
+        "count": 2
+      },
+      {
+        "token": "제",
+        "count": 2
+      },
+      {
+        "token": "대비",
+        "count": 2
+      },
+      {
+        "token": "게",
+        "count": 2
+      },
+      {
+        "token": "채",
+        "count": 2
+      },
+      {
+        "token": "비교해요",
+        "count": 1
+      },
+      {
+        "token": "추움",
+        "count": 1
+      },
+      {
+        "token": "주제",
+        "count": 1
+      },
+      {
+        "token": "전체",
+        "count": 1
+      },
+      {
+        "token": "자연스러워요",
+        "count": 1
+      },
+      {
+        "token": "인사말이에요",
+        "count": 1
+      },
+      {
+        "token": "된",
+        "count": 1
+      },
+      {
+        "token": "쉼",
+        "count": 1
+      }
+    ],
+    "verified-read-03.json": [
+      {
+        "token": "받침",
+        "count": 5
+      },
+      {
+        "token": "답",
+        "count": 4
+      },
+      {
+        "token": "짝",
+        "count": 3
+      },
+      {
+        "token": "갈",
+        "count": 3
+      },
+      {
+        "token": "대비",
+        "count": 3
+      },
+      {
+        "token": "제",
+        "count": 2
+      },
+      {
+        "token": "명사",
+        "count": 1
+      },
+      {
+        "token": "끝소리에",
+        "count": 1
+      },
+      {
+        "token": "받침이",
+        "count": 1
+      },
+      {
+        "token": "없음",
+        "count": 1
+      },
+      {
+        "token": "완성해요",
+        "count": 1
+      },
+      {
+        "token": "모음",
+        "count": 1
+      },
+      {
+        "token": "추움",
+        "count": 1
+      },
+      {
+        "token": "친",
+        "count": 1
+      }
+    ]
+  },
+  "note": "Surface hangul + light ending peel. noise_likely ≈ 활용형/조사 부착·힌트 메타어 (수동 리라이트 불필요). content_review / review_priority = 실제 검토 후보. Not a full morphological analyzer."
+}

@@ -1,0 +1,107 @@
+{
+  "id": "topik1-read-01",
+  "title": { "en": "TOPIK I Reading · Set 1", "ko": "TOPIK I 읽기 · 세트 1" },
+  "level": "TOPIK I",
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": {
+        "en": "Choose the best word for the blank.\n\n저는 매일 아침 7시에 (    ) 일어납니다.",
+        "ko": "빈칸에 알맞은 것을 고르세요.\n\n저는 매일 아침 7시에 (    ) 일어납니다."
+      },
+      "choices": ["일찍", "늦게", "가끔", "항상"],
+      "answer": 0,
+      "tags": ["vocab:시간", "grammar:부사"]
+    },
+    {
+      "id": "q2",
+      "prompt": {
+        "en": "Choose the correct particle.\n\n친구 (    ) 영화를 봤어요.",
+        "ko": "알맞은 조사를 고르세요.\n\n친구 (    ) 영화를 봤어요."
+      },
+      "choices": ["와", "을", "에", "로"],
+      "answer": 0,
+      "tags": ["grammar:와/과"]
+    },
+    {
+      "id": "q3",
+      "prompt": {
+        "en": "What is the opposite of '크다'?",
+        "ko": "'크다'의 반대말은?"
+      },
+      "choices": ["작다", "많다", "높다", "길다"],
+      "answer": 0,
+      "tags": ["vocab:형용사"]
+    },
+    {
+      "id": "q4",
+      "prompt": {
+        "en": "Choose the polite form.\n\n선생님, (    )?",
+        "ko": "존댓말로 알맞은 것을 고르세요.\n\n선생님, (    )?"
+      },
+      "choices": ["안녕", "안녕하세요", "안녕히", "잘 자"],
+      "answer": 1,
+      "tags": ["grammar:존댓말", "vocab:인사"]
+    },
+    {
+      "id": "q5",
+      "prompt": {
+        "en": "Fill in: 오늘 날씨가 (    ).",
+        "ko": "빈칸: 오늘 날씨가 (    )."
+      },
+      "choices": ["좋아요", "좋다", "좋은", "좋고"],
+      "answer": 0,
+      "tags": ["grammar:서술형", "vocab:날씨"]
+    },
+    {
+      "id": "q6",
+      "prompt": {
+        "en": "Which means 'library'?",
+        "ko": "'도서관'에 해당하는 영어는? (한국어 단어 고르기)"
+      },
+      "choices": ["도서관", "병원", "은행", "약국"],
+      "answer": 0,
+      "tags": ["vocab:장소"]
+    },
+    {
+      "id": "q7",
+      "prompt": {
+        "en": "Choose the correct past tense.\n\n어제 학교에 (    ).",
+        "ko": "과거형을 고르세요.\n\n어제 학교에 (    )."
+      },
+      "choices": ["갑니다", "갔어요", "가요", "가겠어요"],
+      "answer": 1,
+      "tags": ["grammar:과거", "vocab:학교"]
+    },
+    {
+      "id": "q8",
+      "prompt": {
+        "en": "What does '감사합니다' mean?",
+        "ko": "'감사합니다'의 뜻은?"
+      },
+      "choices": ["Thank you", "Sorry", "Hello", "Goodbye"],
+      "answer": 0,
+      "tags": ["vocab:인사"]
+    },
+    {
+      "id": "q9",
+      "prompt": {
+        "en": "Choose the counter for people.\n\n학생이 세 (    ) 있어요.",
+        "ko": "사람 수 단위를 고르세요.\n\n학생이 세 (    ) 있어요."
+      },
+      "choices": ["명", "개", "마리", "병"],
+      "answer": 0,
+      "tags": ["grammar:단위", "vocab:수"]
+    },
+    {
+      "id": "q10",
+      "prompt": {
+        "en": "Negative form: 저는 고기를 (    ).",
+        "ko": "부정문을 고르세요.\n\n저는 고기를 (    )."
+      },
+      "choices": ["먹어요", "먹지 않아요", "먹고", "먹을"],
+      "answer": 1,
+      "tags": ["grammar:부정", "vocab:음식"]
+    }
+  ]
+}

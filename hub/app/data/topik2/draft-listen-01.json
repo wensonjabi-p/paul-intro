@@ -1,0 +1,277 @@
+{
+  "id": "jabi-topik2-listen-v0-01",
+  "title": {
+    "en": "jabi. TOPIK II · Listening pilot 1",
+    "ko": "jabi. TOPIK II · 듣기 파일럿 1",
+    "zh": "jabi. TOPIK II · 听力试点 1"
+  },
+  "level": "TOPIK II Listening",
+  "skill": "listening",
+  "kind": "listen",
+  "verified": false,
+  "verifiedAt": "",
+  "source": "jabi-original",
+  "sourceNote": "PILOT — original intermediate dialogues/announcements. Official TOPIK II section shape only. No official items/wording. No audio yet — practice with optional script reveal. MCQ only; no Lemon/AI.",
+  "questions": [
+    {
+      "id": "t2-l01-01",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.\n(오디오 없음 — 필요하면 대본을 확인하세요.)",
+        "en": "※ Choose what matches what you heard.\n(No audio yet — reveal the script if needed.)",
+        "zh": "※ 选择与听到内容一致的一项。\n（暂无音频 — 需要时可查看文稿。）"
+      },
+      "script": {
+        "ko": "가: 회의가 왜 연기됐대요?\n나: 발표 자료에 오류가 있어서요. 내일 오전에 다시 하기로 했대요."
+      },
+      "choices": [
+        "회의가 내일 오전에 다시 열린다",
+        "회의가 오늘 오후에 열린다",
+        "자료가 이미 완성됐다",
+        "회의가 취소됐다"
+      ],
+      "answer": 0,
+      "answerText": "회의가 내일 오전에 다시 열린다",
+      "tags": ["topik2:listen", "listening:내용일치", "topic:workplace"],
+      "hint": {
+        "ko": "연기 이유와 새 일정을 들으세요.",
+        "en": "Listen for why it was postponed and the new time.",
+        "zh": "听推迟原因和新时间。",
+        "steps": {
+          "en": [
+            "What is the new meeting time?",
+            "나: 내일 오전에 다시 하기로 했대요.",
+            "Pick the choice that restates tomorrow morning — not cancel/today."
+          ],
+          "zh": [
+            "对应：新的会议时间。",
+            "나：내일 오전에 다시 하기로 했대요。",
+            "选复述明天上午的选项，不是取消/今天。"
+          ],
+          "ko": [
+            "새 회의 시간.",
+            "나: 내일 오전에 다시.",
+            "취소·오늘이 아닌 내일을 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "나 said they will redo it tomorrow morning → meeting resumes then.",
+        "zh": "对方说明天上午再开 → 会议改到那时。",
+        "ko": "내일 오전에 다시 하기로 했다 → 회의가 내일 오전."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not this afternoon? 나 said 내일 오전, not today.",
+          "zh": "为什么不是今天下午？说的是明天上午。",
+          "ko": "왜 오늘 오후가 아니에요? 「내일 오전」이에요."
+        },
+        "2": {
+          "en": "Why not finished materials? There was an error — materials are not ready.",
+          "zh": "为什么不是资料已完成？有错误，还没好。",
+          "ko": "왜 자료 완성이 아니에요? 오류가 있어서요."
+        },
+        "3": {
+          "en": "Why not canceled? It was postponed and rescheduled, not canceled.",
+          "zh": "为什么不是取消？是延期再开，不是取消。",
+          "ko": "왜 취소가 아니에요? 연기 후 다시 열어요."
+        }
+      }
+    },
+    {
+      "id": "t2-l01-02",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.",
+        "en": "※ Choose what matches what you heard.",
+        "zh": "※ 选择与听到内容一致的一项。"
+      },
+      "script": {
+        "ko": "안내방송입니다. 오늘 오후 세 시부터 도서관 열람실을 소독합니다. 그 시간에는 1층 로비에서만 공부할 수 있습니다."
+      },
+      "choices": [
+        "오후 3시 이후에는 열람실을 쓸 수 없다",
+        "도서관이 하루 종일 문을 닫는다",
+        "소독은 내일 오전에 한다",
+        "로비에서는 공부할 수 없다"
+      ],
+      "answer": 0,
+      "answerText": "오후 3시 이후에는 열람실을 쓸 수 없다",
+      "tags": ["topik2:listen", "listening:안내", "topic:campus"],
+      "hint": {
+        "ko": "소독 시간과 대체 장소를 들으세요.",
+        "en": "Listen for disinfection time and the alternate place.",
+        "zh": "听消毒时间和替代地点。",
+        "steps": {
+          "en": [
+            "Announcement: reading room closed for cleaning.",
+            "From 3 p.m. — study only in the 1F lobby.",
+            "Match: cannot use the reading room after 3."
+          ],
+          "zh": [
+            "广播：阅览室消毒关闭。",
+            "下午三点起只能在一楼大厅学习。",
+            "对应：三点后不能用阅览室。"
+          ],
+          "ko": [
+            "열람실 소독 안내.",
+            "오후 3시부터 로비만.",
+            "열람실 사용 불가를 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Disinfection from 3 p.m. → reading room unavailable; lobby only.",
+        "zh": "下午三点起消毒 → 阅览室不可用，只能大厅。",
+        "ko": "오후 3시부터 소독 → 열람실 불가, 로비만."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not closed all day? Only the reading room after 3 — not the whole library.",
+          "zh": "为什么不是全天关门？只是三点后阅览室。",
+          "ko": "왜 하루 종일 닫힘이 아니에요? 열람실만, 오후 3시부터예요."
+        },
+        "2": {
+          "en": "Why not tomorrow morning? The notice says today from 3 p.m.",
+          "zh": "为什么不是明天上午？说的是今天下午三点。",
+          "ko": "왜 내일이 아니에요? 「오늘 오후 세 시」예요."
+        },
+        "3": {
+          "en": "Why not “no studying in lobby”? The lobby is the alternate place.",
+          "zh": "为什么不是大厅不能学习？大厅是替代场所。",
+          "ko": "왜 로비 금지가 아니에요? 로비에서 공부하라고 해요."
+        }
+      }
+    },
+    {
+      "id": "t2-l01-03",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 이어지는 말로 가장 알맞은 것을 고르십시오.",
+        "en": "※ Choose the best next line.",
+        "zh": "※ 选择最合适的下一句。"
+      },
+      "script": {
+        "ko": "가: 이번 주말에 전시회 같이 갈래요?\n나: 좋은데요. 그런데 표는 어디서 사요?"
+      },
+      "choices": [
+        "인터넷으로 예매할 수 있어요",
+        "전시는 벌써 끝났어요",
+        "주말에는 박물관이 문을 닫아요",
+        "표가 필요 없어요"
+      ],
+      "answer": 0,
+      "answerText": "인터넷으로 예매할 수 있어요",
+      "tags": ["topik2:listen", "listening:이어가기", "speech-act:inform"],
+      "hint": {
+        "ko": "나: 표를 어디서 사는지 물었어요.",
+        "en": "나 asked where to buy tickets.",
+        "zh": "나在问票在哪里买。",
+        "steps": {
+          "en": [
+            "Continuation: answer “where do I buy tickets?”",
+            "Give a place/channel to purchase.",
+            "Reject endings that cancel the plan."
+          ],
+          "zh": [
+            "接话：回答“票在哪买”。",
+            "给出购买渠道。",
+            "不要选取消计划的句子。"
+          ],
+          "ko": [
+            "표 구매처에 답하기.",
+            "사는 방법을 말하세요.",
+            "계획 취소를 고르지 마세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Best reply tells where/how to buy tickets.",
+        "zh": "最佳接话是说明购票方式。",
+        "ko": "표 사는 곳을 알려 주는 답이 맞아요."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not “already ended”? That kills the plan; 나 still wants tickets.",
+          "zh": "为什么不是“已结束”？对方还想买票。",
+          "ko": "왜 끝남이 아니에요? 표를 사려 해요."
+        },
+        "2": {
+          "en": "Why not closed on weekends? They planned a weekend visit.",
+          "zh": "为什么不是周末关门？约的是周末。",
+          "ko": "왜 주말 휴관이 아니에요? 주말에 가기로 했어요."
+        },
+        "3": {
+          "en": "Why not “no ticket needed”? 나 asked where to buy one.",
+          "zh": "为什么不是“不用票”？对方在问哪里买。",
+          "ko": "왜 표 불필요가 아니에요? 사는 곳을 물었어요."
+        }
+      }
+    },
+    {
+      "id": "t2-l01-04",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 남자의 중심 내용으로 가장 알맞은 것을 고르십시오.",
+        "en": "※ Choose the man’s main point.",
+        "zh": "※ 选择男士的中心内容。"
+      },
+      "script": {
+        "ko": "남자: 요즘 재택근무가 늘면서 출퇴근 시간은 줄었지만, 일과 생활의 경계가 흐려져서 피곤하다는 사람들이 많습니다. 그래서 집에서도 근무 시작과 끝을 분명히 정하는 습관이 필요하다고 생각합니다."
+      },
+      "choices": [
+        "재택근무에서는 일과 생활의 경계를 지키는 것이 중요하다",
+        "모든 회사가 출퇴근을 다시 늘려야 한다",
+        "재택근무는 피곤하지 않다",
+        "출퇴근 시간이 늘어서 문제다"
+      ],
+      "answer": 0,
+      "answerText": "재택근무에서는 일과 생활의 경계를 지키는 것이 중요하다",
+      "tags": ["topik2:listen", "listening:중심내용", "topic:work"],
+      "hint": {
+        "ko": "문제가 무엇인지, 무엇이 필요하다고 했는지 보세요.",
+        "en": "Find the problem he names and the habit he recommends.",
+        "zh": "看他说的问题和建议的习惯。",
+        "steps": {
+          "en": [
+            "Main idea: blurred work–life boundary at home.",
+            "He recommends clear start/end times.",
+            "Pick the option about keeping boundaries."
+          ],
+          "zh": [
+            "主旨：居家办公边界模糊。",
+            "他建议明确上下班时间。",
+            "选“保持工作生活边界”的选项。"
+          ],
+          "ko": [
+            "경계가 흐려짐 = 문제.",
+            "시작·끝을 정하자.",
+            "경계 지키기 보기를 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Core claim: set clear work start/end at home to keep boundaries.",
+        "zh": "核心：在家也要明确上下班，守住边界。",
+        "ko": "집에서도 근무 시작·끝을 정해 경계를 지키자는 말."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not force commuting back? He did not argue for more commuting.",
+          "zh": "为什么不是恢复通勤？他没主张增加通勤。",
+          "ko": "왜 출퇴근 증가가 아니에요? 그런 주장이 없어요."
+        },
+        "2": {
+          "en": "Why not “not tiring”? He says many people feel tired.",
+          "zh": "为什么不是“不累”？他说很多人累。",
+          "ko": "왜 안 피곤이 아니에요? 피곤하다는 사람이 많대요."
+        },
+        "3": {
+          "en": "Why not longer commute? He said commute time decreased.",
+          "zh": "为什么不是通勤变长？他说通勤时间减少了。",
+          "ko": "왜 출퇴근 증가 문제가 아니에요? 출퇴근은 줄었대요."
+        }
+      }
+    }
+  ]
+}

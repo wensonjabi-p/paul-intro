@@ -1,0 +1,265 @@
+{
+  "id": "jabi-topik2-read-v0-02",
+  "title": {
+    "en": "jabi. TOPIK II · Reading pilot 2",
+    "ko": "jabi. TOPIK II · 읽기 파일럿 2",
+    "zh": "jabi. TOPIK II · 阅读试点 2"
+  },
+  "level": "TOPIK II Reading",
+  "skill": "reading",
+  "kind": "read",
+  "verified": false,
+  "verifiedAt": "",
+  "source": "jabi-original",
+  "sourceNote": "PILOT bank 2 — original intermediate notices/passages. Official TOPIK II reading shapes only (detail · topic · match · vocab-in-context). No official items/wording. MCQ only; no Lemon/AI.",
+  "questions": [
+    {
+      "id": "t2-r02-01",
+      "type": "notice",
+      "prompt": {
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[구민 센터 강좌 안내]\n· 접수 기간: 매월 1일 ~ 10일 (온라인만)\n· 개강: 매월 셋째 주 월요일\n· 수강료: 1강좌 3만 원 (재료비 별도)\n· 정원: 강좌당 20명 (선착순)\n\n수강 신청은 어떻게 합니까?",
+        "en": "Read and answer.\n\n[Community center courses]\n· Registration: 1st–10th each month (online only)\n· Classes start: third Monday each month\n· Fee: 30,000 won per course (materials extra)\n· Cap: 20 per course (first come)\n\nHow do you register?",
+        "zh": "阅读并回答。\n\n[社区中心课程]\n· 报名：每月1–10日（仅线上）\n· 开课：每月第三个星期一\n· 学费：每门3万韩元（材料另计）\n· 名额：每门20人（先到先得）\n\n如何报名？"
+      },
+      "choices": [
+        "매월 1일부터 10일까지 온라인으로 신청한다",
+        "센터 창구에서만 신청한다",
+        "개강 당일에 현장 등록한다",
+        "재료비만 내면 자동 등록된다"
+      ],
+      "answer": 0,
+      "answerText": "매월 1일부터 10일까지 온라인으로 신청한다",
+      "tags": ["topik2:read", "reading:세부", "genre:notice"],
+      "hint": {
+        "ko": "「접수 기간」과 「온라인만」을 함께 보세요.",
+        "en": "Look at registration period and “online only.”",
+        "zh": "看报名时间和“仅线上”。",
+        "steps": {
+          "en": [
+            "Detail: how/when to apply.",
+            "Find 접수 기간 + 온라인만.",
+            "Match: 1st–10th online each month."
+          ],
+          "zh": [
+            "细节：如何/何时报名。",
+            "找「접수 기간」+「온라인만」。",
+            "对应：每月1–10日线上。"
+          ],
+          "ko": [
+            "접수 방법·기간.",
+            "「온라인만」 줄.",
+            "1~10일 온라인을 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Registration is online only from the 1st to the 10th each month.",
+        "zh": "每月1–10日仅线上报名。",
+        "ko": "접수 = 매월 1~10일, 온라인만."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not counter only? The notice says online only.",
+          "zh": "为什么不是只柜台？写的是仅线上。",
+          "ko": "왜 창구만이 아니에요? 「온라인만」이에요."
+        },
+        "2": {
+          "en": "Why not register on opening day? Classes start then; signup is earlier.",
+          "zh": "为什么不是开课当天？开课是第三周周一，报名更早。",
+          "ko": "왜 개강 당일이 아니에요? 접수는 매월 초예요."
+        },
+        "3": {
+          "en": "Why not materials fee alone? Course fee is separate; materials are extra.",
+          "zh": "为什么不是只交材料费？学费另计，材料另算。",
+          "ko": "왜 재료비만 아니에요? 수강료가 따로 있어요."
+        }
+      }
+    },
+    {
+      "id": "t2-r02-02",
+      "type": "topic",
+      "prompt": {
+        "ko": "※ 다음 글의 제목으로 가장 알맞은 것을 고르십시오.\n\n야시장은 저녁에 먹거리와 공연을 한꺼번에 즐길 수 있어 관광객에게 인기가 높다. 그러나 소음과 쓰레기 문제로 주변 주민의 불만이 커지기도 한다. 따라서 운영 시간과 청소 규칙을 분명히 정하는 것이 필요하다.",
+        "en": "※ Choose the best title.\n\nNight markets are popular with tourists for food and shows at once. But noise and trash upset nearby residents. Clear hours and cleanup rules are needed.",
+        "zh": "※ 选择最合适的标题。\n\n夜市因一晚可享美食与演出受游客欢迎。但噪音和垃圾也引发居民不满。需要明确营业时间与清扫规则。"
+      },
+      "choices": [
+        "야시장의 매력과 관리의 과제",
+        "아침 시장의 역사",
+        "공연 티켓 예매 안내",
+        "관광객을 줄이는 방법"
+      ],
+      "answer": 0,
+      "answerText": "야시장의 매력과 관리의 과제",
+      "tags": ["topik2:read", "reading:제목", "topic:city"],
+      "hint": {
+        "ko": "장점과 주민 문제·대책이 모두 담겼는지 보세요.",
+        "en": "Check that the title covers appeal and the management issue.",
+        "zh": "标题要覆盖吸引力与管理问题。",
+        "steps": {
+          "en": [
+            "Topic: night markets attract tourists but need rules.",
+            "Title should include appeal + management challenge.",
+            "Reject morning markets or ticket booking."
+          ],
+          "zh": [
+            "主旨：夜市受欢迎，但要管理。",
+            "标题含魅力与管理课题。",
+            "排除早市或购票通知。"
+          ],
+          "ko": [
+            "인기 + 소음·쓰레기 과제.",
+            "둘 다 담은 제목.",
+            "아침 시장·티켓 안내는 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Passage balances tourist appeal and the need for clear operating rules.",
+        "zh": "文章兼顾游客吸引力与运营/清扫规则必要性。",
+        "ko": "매력과 주민 불만·규칙 필요를 함께 다룸."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not morning market history? The text is about night markets now.",
+          "zh": "为什么不是早市历史？谈的是现在的夜市。",
+          "ko": "왜 아침 시장이 아니에요? 야시장 이야기예요."
+        },
+        "2": {
+          "en": "Why not ticket booking? No event ticket info is given.",
+          "zh": "为什么不是购票？没有票务信息。",
+          "ko": "왜 티켓 안내가 아니에요? 예매 정보가 없어요."
+        },
+        "3": {
+          "en": "Why not reduce tourists? The text wants better management, not fewer visitors.",
+          "zh": "为什么不是减少游客？要的是管理，不是少人。",
+          "ko": "왜 관광객 감소가 아니에요? 규칙을 정하자는 말이에요."
+        }
+      }
+    },
+    {
+      "id": "t2-r02-03",
+      "type": "inference",
+      "prompt": {
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n지수는 지난주까지 재택근무를 했다. 이번 주부터는 주 2회만 사무실에 나가기로 했다. 동료들은 매일 출근하는 줄 알았지만, 지수는 회의가 있는 화요일과 목요일에만 간다고 설명했다.\n\n이 글의 내용과 같은 것을 고르십시오.",
+        "en": "Read and choose what matches the passage.\n\nJisoo worked fully remote until last week. From this week she goes to the office twice a week. Colleagues thought she would commute daily; she explained she goes only on meeting days — Tuesday and Thursday.",
+        "zh": "阅读并选择与文章一致的一项。\n\n智秀到上周为止全居家办公。从本周起一周只去办公室两次。同事以为她每天上班，她说明只在有会的周二、周四去。"
+      },
+      "choices": [
+        "지수는 화요일과 목요일에 사무실에 간다",
+        "지수는 이번 주에도 매일 재택만 한다",
+        "지수는 매일 사무실에 출근한다",
+        "동료들은 지수에게 출근 일정을 묻지 않았다"
+      ],
+      "answer": 0,
+      "answerText": "지수는 화요일과 목요일에 사무실에 간다",
+      "tags": ["topik2:read", "reading:내용일치", "topic:work"],
+      "hint": {
+        "ko": "이번 주부터 며칠, 어떤 요일에 나가는지 확인하세요.",
+        "en": "Check how many days and which weekdays she goes in.",
+        "zh": "确认本周起去几天、哪几天。",
+        "steps": {
+          "en": [
+            "Fact: twice a week from this week.",
+            "Days: Tuesday and Thursday (meeting days).",
+            "Match: office on Tue/Thu — not daily remote or daily commute."
+          ],
+          "zh": [
+            "核对：本周起一周两次。",
+            "日子：周二、周四。",
+            "对应：那两天去办公室。"
+          ],
+          "ko": [
+            "주 2회 출근.",
+            "화·목 회의 날.",
+            "화·목 사무실을 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "She goes in only Tuesday and Thursday for meetings.",
+        "zh": "她只在周二、周四因会议去办公室。",
+        "ko": "화요일·목요일에만 사무실에 감."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not fully remote this week? She started hybrid office days.",
+          "zh": "为什么不是本周仍全居家？已开始每周去两次。",
+          "ko": "왜 재택만이 아니에요? 주 2회 나가요."
+        },
+        "2": {
+          "en": "Why not daily office? Colleagues thought that, but she corrected them.",
+          "zh": "为什么不是每天上班？同事以为如此，她纠正了。",
+          "ko": "왜 매일 출근이 아니에요? 화·목만이에요."
+        },
+        "3": {
+          "en": "Why not “colleagues didn’t ask”? They assumed a schedule; she explained.",
+          "zh": "为什么不是同事没问？他们有误解，她说明了。",
+          "ko": "왜 질문이 없나요? 동료 오해를 설명했어요."
+        }
+      }
+    },
+    {
+      "id": "t2-r02-04",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 말로 가장 알맞은 것을 고르십시오.\n\n공공시설을 이용할 때는 다음 사람을 배려해야 한다. 자리를 오래 비우면서 물건을 남겨 두면 (    ).",
+        "en": "※ Choose the best word(s) for the blank.\n\nWhen using public facilities, consider the next person. If you leave belongings for a long time while away, (    ).",
+        "zh": "※ 选择填入空格的最佳词语。\n\n使用公共设施要考虑后来者。若长时间离开却占位留物，就会(    )。"
+      },
+      "choices": [
+        "다른 사람이 그 자리를 쓰지 못하게 된다",
+        "시설 이용료가 자동으로 할인된다",
+        "예약이 없어도 우선권이 생긴다",
+        "관리자가 반드시 칭찬한다"
+      ],
+      "answer": 0,
+      "answerText": "다른 사람이 그 자리를 쓰지 못하게 된다",
+      "tags": ["topik2:read", "reading:문맥", "skill:inference"],
+      "hint": {
+        "ko": "「배려」「비우면서 물건을 남겨 두면」 뒤의 결과를 고르세요.",
+        "en": "Continue from consideration / leaving items while away.",
+        "zh": "承接“照顾他人”“离开却留物”的结果。",
+        "steps": {
+          "en": [
+            "Context: hogging a seat blocks others.",
+            "Blank needs a negative social result, not a reward.",
+            "Pick “others cannot use that seat.”"
+          ],
+          "zh": [
+            "语境：占座 → 别人用不了。",
+            "空格要负面结果，不是奖励。",
+            "选“别人无法使用该座位”。"
+          ],
+          "ko": [
+            "자리 비움 + 물건 방치 → 방해.",
+            "할인·칭찬은 아님.",
+            "다른 사람 이용 불가를 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Leaving belongings while away keeps others from using the seat.",
+        "zh": "离开却留物会让别人无法使用座位。",
+        "ko": "물건을 남겨 두면 다른 사람이 자리를 못 씀."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not a fee discount? Cost is not discussed.",
+          "zh": "为什么不是自动打折？没谈费用。",
+          "ko": "왜 할인이 아니에요? 요금 이야기가 없어요."
+        },
+        "2": {
+          "en": "Why not priority without a reservation? The text warns against blocking seats.",
+          "zh": "为什么不是无预约优先？文章在警告占座。",
+          "ko": "왜 우선권이 아니에요? 배려를 말해요."
+        },
+        "3": {
+          "en": "Why not praise from staff? Leaving items is not praiseworthy here.",
+          "zh": "为什么不是管理员称赞？占座不是好事。",
+          "ko": "왜 칭찬이 아니에요? 다른 사람을 방해해요."
+        }
+      }
+    }
+  ]
+}

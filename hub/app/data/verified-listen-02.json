@@ -1,0 +1,425 @@
+{
+  "id": "jabi-topik1-listen-v1-02",
+  "title": {
+    "en": "jabi. Listening · Set 2 (response · place · topic)",
+    "ko": "jabi. 듣기 연습 2 (응답·장소·주제)",
+    "zh": "jabi. 听力 · 套题 2（应答·地点·主题）"
+  },
+  "level": "TOPIK I",
+  "skill": "listening",
+  "verified": true,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "sourceNote": "Research-fill #3. Official TOPIK I listening shapes only (response · place · topic · next action · detail match). Original scripts — no official items/audio. Hint: Meaning→Look early; Pair in why.",
+  "questions": [
+    {
+      "id": "l2-01",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 이어질 말로 알맞은 것을 고르십시오.\n(재생 버튼을 누르거나, 준비되면 대본을 확인하세요.)",
+        "en": "※ Choose what matches what you heard.",
+        "zh": "※ 选择与听到内容一致的一项。"
+      },
+      "script": {
+        "ko": "가: 민수 씨, 지금 뭐 해요?\n나: …"
+      },
+      "choices": [
+        "책을 읽어요.",
+        "네, 저는 학생이에요.",
+        "어제 갔어요.",
+        "비가 와요."
+      ],
+      "answer": 0,
+      "answerText": "책을 읽어요.",
+      "tags": [
+        "listening:응답",
+        "vocab:읽다"
+      ],
+      "hint": {
+        "ko": "응?」에 답.",
+        "en": "Response to “what are you doing now?” — present activity.",
+        "zh": "应答：回答“现在在做什么？”",
+        "visual": {
+          "emoji": [
+            "📖"
+          ],
+          "en": "book activity",
+          "ko": "책",
+          "zh": "书"
+        },
+        "steps": {
+          "en": [
+            "Response: answer “what are you doing now?”",
+            "Look for a present activity ending (-아요/어요), not past or weather.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "应答：回答“现在在做什么？”",
+            "找现在进行的活动结尾（-아요/어요），不是过去或天气。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "응답: 「지금 뭐 해요?」에 답.",
+            "지금 하는 일(-아요/어요). 과거·날씨 아님.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "지금 뭐 해요? + 책을 읽어요 = present activity with -아요/어요.",
+        "ko": "지금 뭐 해요? → 책을 읽어요(현재 -아요/어요).",
+        "zh": "正在读书：-아요/어요。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not “I am a student”? That answers who you are, not what you are doing now.",
+          "zh": "为什么不是“我是学生”？那是身份，不是正在做什么。",
+          "ko": "왜 「학생이에요」가 아니에요? 지금 하는 일이 아니에요."
+        },
+        "2": {
+          "en": "Why not past tense? The question is about now (지금).",
+          "zh": "为什么不是过去？问题是现在。",
+          "ko": "왜 과거가 아니에요? 「지금」이에요."
+        },
+        "3": {
+          "en": "Why not weather? The question is about 나’s activity.",
+          "zh": "为什么不是天气？问的是对方在做什么。",
+          "ko": "왜 날씨가 아니에요? 지금 하는 일이에요."
+        }
+      }
+    },
+    {
+      "id": "l2-02",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.",
+        "en": "※ Choose what matches what you heard.",
+        "zh": "※ 选择与听到内容一致的一项。"
+      },
+      "script": {
+        "ko": "가: 여기 메뉴 좀 주세요.\n나: 네, 잠시만요. 음료는 셀프예요."
+      },
+      "choices": [
+        "식당",
+        "은행",
+        "우체국",
+        "교실"
+      ],
+      "answer": 0,
+      "answerText": "식당",
+      "tags": [
+        "listening:장소",
+        "vocab:메뉴"
+      ],
+      "hint": {
+        "ko": "장소: 어디서 하는 말인가요?",
+        "en": "Place from menu/drink words.",
+        "zh": "地点：这段对话在哪里？",
+        "visual": {
+          "emoji": [
+            "🍽️",
+            "📋"
+          ],
+          "en": "meal · menu",
+          "ko": "식사·메뉴",
+          "zh": "用餐·菜单"
+        },
+        "steps": {
+          "en": [
+            "Place: where does this talk happen?",
+            "Listen for 메뉴 / 음료 — food-service words.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "地点：这段对话在哪里？",
+            "听 메뉴 / 음료 — 餐饮用语。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "장소: 어디서 하는 말인가요?",
+            "메뉴·음료 = 음식 관련.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Menu/drink cues point to a restaurant (식당), not another place type.",
+        "ko": "메뉴·음료 단서 → 식당.",
+        "zh": "菜单饮料→餐厅。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not bank? No money/account words — menu and drinks.",
+          "zh": "为什么不是银行？没有存款用语，是菜单和饮料。",
+          "ko": "왜 은행이 아니에요? 메뉴·음료예요."
+        },
+        "2": {
+          "en": "Why not post office? No mail/stamps — food service.",
+          "zh": "为什么不是邮局？没有邮票，是餐饮。",
+          "ko": "왜 우체국이 아니에요? 식사 장면이에요."
+        },
+        "3": {
+          "en": "Why not classroom? Teacher/lesson not mentioned — menu.",
+          "zh": "为什么不是教室？没有上课，是菜单。",
+          "ko": "왜 교실이 아니에요? 메뉴예요."
+        }
+      }
+    },
+    {
+      "id": "l2-03",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.",
+        "en": "※ Choose what matches what you heard.",
+        "zh": "※ 选择与听到内容一致的一项。"
+      },
+      "script": {
+        "ko": "가: 오늘 모임에 올 수 있어요?\n나: 미안해요. 오늘 일이 많아서 못 가요."
+      },
+      "choices": [
+        "모임에 못 감",
+        "모임에 감",
+        "일이 없음",
+        "내일에 만남"
+      ],
+      "answer": 0,
+      "answerText": "모임에 못 감",
+      "tags": [
+        "listening:주제",
+        "vocab:모임"
+      ],
+      "hint": {
+        "ko": "주제: 오늘 모임에 오나요?",
+        "en": "Topic: joining today’s meetup or not.",
+        "zh": "主题：对方今天能来聚会吗？",
+        "visual": {
+          "emoji": [
+            "👥",
+            "💼"
+          ],
+          "en": "people · work",
+          "ko": "사람들·일",
+          "zh": "人·工作"
+        },
+        "steps": {
+          "en": [
+            "Topic: can 나 join today’s meetup?",
+            "Listen after 미안해요 — busy with work, cannot go.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "主题：对方今天能来聚会吗？",
+            "听「미안해요」之后——事情多，去不了。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "주제: 오늘 모임에 오나요?",
+            "미안해요 → 일이 많아서 못 가요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "일이 많아서 못 가요 — reason + 못 (cannot) before 가다.",
+        "ko": "일이 많아서 못 가요=이유+못.",
+        "zh": "事多+못 가요＝去不了。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not “will go”? 나 said 못 가요.",
+          "zh": "为什么不是“会去”？对方说去不了。",
+          "ko": "왜 「감」이 아니에요? 「못 가요」."
+        },
+        "2": {
+          "en": "Why not “no work”? 나 has a lot of work today.",
+          "zh": "为什么不是“没工作”？对方说事情多。",
+          "ko": "왜 「일이 없음」이 아니에요? 일이 많아요."
+        },
+        "3": {
+          "en": "Why not meet tomorrow? Only today was refused — tomorrow not said.",
+          "zh": "为什么不是明天见？只说了今天去不了。",
+          "ko": "왜 내일이 아니에요? 오늘은 못 가요만 나왔어요."
+        }
+      }
+    },
+    {
+      "id": "l2-04",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.",
+        "en": "※ Choose what matches what you heard.",
+        "zh": "※ 选择与听到内容一致的一项。"
+      },
+      "script": {
+        "ko": "가: 가방이 무거워요. 좀 도와주세요.\n나: 네. 제가 들어 줄게요."
+      },
+      "choices": [
+        "가방을 들어 줌",
+        "가방을 사 줌",
+        "집에 감",
+        "사진을 찍음"
+      ],
+      "answer": 0,
+      "answerText": "가방을 들어 줌",
+      "tags": [
+        "listening:행동",
+        "vocab:도와주다"
+      ],
+      "hint": {
+        "ko": "다음 행동: 나가 뭘 할까요?",
+        "en": "Next action after “please help with the bag.”",
+        "zh": "接下来：对方会做什么？",
+        "visual": {
+          "emoji": [
+            "👜",
+            "🤝"
+          ],
+          "en": "bag · help",
+          "ko": "가방·도움",
+          "zh": "包·帮忙"
+        },
+        "steps": {
+          "en": [
+            "Next action: what will 나 do?",
+            "Hear 들어 줄게요 after offering help.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "接下来：对方会做什么？",
+            "听帮忙之后的 들어 줄게요。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "다음 행동: 나가 뭘 할까요?",
+            "도와주세요 → 들어 줄게요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "들어 줄게요 = help-offer -(아/어) 줄게요 (carry for someone).",
+        "ko": "들어 줄게요=도와줌 줄게요.",
+        "zh": "들어 줄게요＝帮你拿。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not buy a bag? Help is carrying, not shopping.",
+          "zh": "为什么不是买包？是帮忙拿，不是买。",
+          "ko": "왜 사 줌이 아니에요? 들어 줄게요."
+        },
+        "2": {
+          "en": "Why not go home? No 집 — they talk about the bag.",
+          "zh": "为什么不是回家？说的是包。",
+          "ko": "왜 집에 감이 아니에요? 가방이에요."
+        },
+        "3": {
+          "en": "Why not take a photo? Verb is 들다 (lift), not 찍다.",
+          "zh": "为什么不是拍照？动词是拿/提。",
+          "ko": "왜 사진이 아니에요? 들어 줄게요."
+        }
+      }
+    },
+    {
+      "id": "l2-05",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.",
+        "en": "※ Choose what matches what you heard.",
+        "zh": "※ 选择与听到内容一致的一项。"
+      },
+      "script": {
+        "ko": "가: 약국이 몇 층에 있어요?\n나: 2층에 있어요. 엘리베이터 옆에 있어요."
+      },
+      "choices": [
+        "2층 · 엘리베이터 옆",
+        "1층 · 계단 옆",
+        "3층 · 화장실 옆",
+        "지하 · 출구 옆"
+      ],
+      "answer": 0,
+      "answerText": "2층 · 엘리베이터 옆",
+      "tags": [
+        "listening:세부",
+        "vocab:약국"
+      ],
+      "hint": {
+        "ko": "세부: 층 + 옆 위치.",
+        "en": "Detail: floor number and what is beside it.",
+        "zh": "细节一致：楼层 + 旁边标志。",
+        "visual": {
+          "emoji": [
+            "💊",
+            "🛗"
+          ],
+          "en": "pharmacy · elevator",
+          "ko": "약국·엘리베이터",
+          "zh": "药房·电梯"
+        },
+        "steps": {
+          "en": [
+            "Detail check: floor + nearby landmark.",
+            "Listen for 몇 층 → number floor, then 옆에.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "细节核对：楼层 + 旁边标志。",
+            "听 몇 층 → 几楼，再听 옆에。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "세부 확인: 층 + 옆 위치.",
+            "몇 층? → 옆에 있어요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "2층 + next to elevator — floor noun + location 옆.",
+        "ko": "2층+엘리베이터 옆 위치.",
+        "zh": "关键信息：2层，电梯旁边。不要选楼梯或其它楼层。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not 1F by stairs? 나 said 2층 and elevator.",
+          "zh": "为什么不是1楼楼梯旁？说的是2楼电梯旁。",
+          "ko": "왜 1층·계단이 아니에요? 2층·엘리베이터."
+        },
+        "2": {
+          "en": "Why not 3F by restroom? Floor and landmark differ.",
+          "zh": "为什么不是3楼厕所旁？楼层和标志都不同。",
+          "ko": "왜 3층·화장실이 아니에요? 2층·엘리베이터."
+        },
+        "3": {
+          "en": "Why not basement by exit? 나 said second floor.",
+          "zh": "为什么不是地下出口旁？说的是2楼。",
+          "ko": "왜 지하가 아니에요? 2층이에요."
+        }
+      }
+    }
+  ]
+}

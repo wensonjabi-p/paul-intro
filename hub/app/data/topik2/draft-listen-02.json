@@ -1,0 +1,277 @@
+{
+  "id": "jabi-topik2-listen-v0-02",
+  "title": {
+    "en": "jabi. TOPIK II · Listening pilot 2",
+    "ko": "jabi. TOPIK II · 듣기 파일럿 2",
+    "zh": "jabi. TOPIK II · 听力试点 2"
+  },
+  "level": "TOPIK II Listening",
+  "skill": "listening",
+  "kind": "listen",
+  "verified": false,
+  "verifiedAt": "",
+  "source": "jabi-original",
+  "sourceNote": "PILOT bank 2 — original intermediate dialogues/announcements. Official TOPIK II section shape only. No official items/wording. No audio yet — optional script reveal. MCQ only; no Lemon/AI.",
+  "questions": [
+    {
+      "id": "t2-l02-01",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.\n(오디오 없음 — 필요하면 대본을 확인하세요.)",
+        "en": "※ Choose what matches what you heard.\n(No audio yet — reveal the script if needed.)",
+        "zh": "※ 选择与听到内容一致的一项。\n（暂无音频 — 需要时可查看文稿。）"
+      },
+      "script": {
+        "ko": "가: 내일 진료 예약이 오전 열 시인데, 혹시 오후로 바꿀 수 있을까요?\n나: 확인해 볼게요. 오후 두 시로 가능합니다. 문자로 안내해 드릴게요."
+      },
+      "choices": [
+        "진료 시간이 오후 두 시로 바뀐다",
+        "예약이 취소됐다",
+        "오전 열 시 예약을 그대로 둔다",
+        "문자는 보내지 않는다"
+      ],
+      "answer": 0,
+      "answerText": "진료 시간이 오후 두 시로 바뀐다",
+      "tags": ["topik2:listen", "listening:내용일치", "topic:daily"],
+      "hint": {
+        "ko": "원래 시간과 새로 잡힌 시간을 비교하세요.",
+        "en": "Compare the original time with the new one.",
+        "zh": "对比原定时间和新时间。",
+        "steps": {
+          "en": [
+            "What changed about the appointment time?",
+            "나: afternoon at 2 is possible + text confirmation.",
+            "Pick the choice that restates the new time — not cancel/keep morning."
+          ],
+          "zh": [
+            "对应：预约哪里变了？",
+            "나：下午两点可以 + 发短信。",
+            "选复述新时间的选项，不是取消/保留上午。"
+          ],
+          "ko": [
+            "예약 변경 내용.",
+            "나: 오후 두 시 가능.",
+            "취소·오전 유지가 아닌 새 시간을 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "나 moved the appointment to 2 p.m. and will text.",
+        "zh": "对方把预约改到下午两点并会发短信。",
+        "ko": "오후 두 시로 바꾸고 문자로 안내한다고 함."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not canceled? It was rescheduled, not canceled.",
+          "zh": "为什么不是取消？是改期，不是取消。",
+          "ko": "왜 취소가 아니에요? 시간을 바꿨어요."
+        },
+        "2": {
+          "en": "Why not keep 10 a.m.? They asked to move it and got 2 p.m.",
+          "zh": "为什么不是保留上午10点？已改到下午两点。",
+          "ko": "왜 오전 유지가 아니에요? 오후로 바꿨어요."
+        },
+        "3": {
+          "en": "Why not “no text”? 나 said they will send a text.",
+          "zh": "为什么不是不发短信？说了会发短信。",
+          "ko": "왜 문자 없음이 아니에요? 문자로 안내한대요."
+        }
+      }
+    },
+    {
+      "id": "t2-l02-02",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.",
+        "en": "※ Choose what matches what you heard.",
+        "zh": "※ 选择与听到内容一致的一项。"
+      },
+      "script": {
+        "ko": "안내방송입니다. 내일부터 미술관 특별전 기간에는 입장 마감이 평소보다 한 시간 앞당겨집니다. 평일·주말 모두 오후 다섯 시까지 입장할 수 있습니다."
+      },
+      "choices": [
+        "특별전 기간에는 오후 다섯 시까지 입장할 수 있다",
+        "미술관이 내일부터 문을 닫는다",
+        "입장 마감이 한 시간 늦춰진다",
+        "주말에만 특별전이 열린다"
+      ],
+      "answer": 0,
+      "answerText": "특별전 기간에는 오후 다섯 시까지 입장할 수 있다",
+      "tags": ["topik2:listen", "listening:안내", "topic:culture"],
+      "hint": {
+        "ko": "마감이 어떻게 바뀌는지, 몇 시까지인지 들으세요.",
+        "en": "Listen for how closing changes and until what time.",
+        "zh": "听闭馆怎么变、到几点。",
+        "steps": {
+          "en": [
+            "Announcement: earlier last entry during special exhibit.",
+            "Weekday and weekend — until 5 p.m.",
+            "Match: can enter until 5 during the special period."
+          ],
+          "zh": [
+            "广播：特展期间提前截止入场。",
+            "平日周末都到下午五点。",
+            "对应：特展期间可入场到五点。"
+          ],
+          "ko": [
+            "입장 마감이 앞당겨짐.",
+            "평일·주말 오후 다섯 시.",
+            "다섯 시까지 입장을 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "During the special exhibit, last entry is 5 p.m. every day.",
+        "zh": "特展期间每天入场截止到下午五点。",
+        "ko": "특별전 기간 평일·주말 모두 오후 다섯 시까지 입장."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not closed? Only last-entry time changes; the museum stays open.",
+          "zh": "为什么不是关门？只是入场截止提前，不是闭馆。",
+          "ko": "왜 휴관이 아니에요? 입장 마감만 앞당겨요."
+        },
+        "2": {
+          "en": "Why not later closing? The notice says one hour earlier, not later.",
+          "zh": "为什么不是延后？说的是提前一小时。",
+          "ko": "왜 늦춤이 아니에요? 「앞당겨집니다」예요."
+        },
+        "3": {
+          "en": "Why not weekends only? It says weekdays and weekends alike.",
+          "zh": "为什么不是仅周末？平日周末都适用。",
+          "ko": "왜 주말만이 아니에요? 평일·주말 모두예요."
+        }
+      }
+    },
+    {
+      "id": "t2-l02-03",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 이어지는 말로 가장 알맞은 것을 고르십시오.",
+        "en": "※ Choose the best next line.",
+        "zh": "※ 选择最合适的下一句。"
+      },
+      "script": {
+        "ko": "가: 보고서 초안은 다 썼는데, 표 자료가 아직 없어요.\n나: 그래요? 그럼 제가…"
+      },
+      "choices": [
+        "표는 제가 정리해서 보내 드릴게요",
+        "보고서는 내일 제출하지 맙시다",
+        "표는 필요 없으니 지우세요",
+        "초안을 처음부터 다시 쓰세요"
+      ],
+      "answer": 0,
+      "answerText": "표는 제가 정리해서 보내 드릴게요",
+      "tags": ["topik2:listen", "listening:이어가기", "speech-act:offer"],
+      "hint": {
+        "ko": "가: 표가 없다고 했어요. 나가 도울 말을 고르세요.",
+        "en": "가 said tables are missing. Pick how 나 can help.",
+        "zh": "가说还缺表格。选나能帮忙的话。",
+        "steps": {
+          "en": [
+            "Continuation: respond to “no table data yet.”",
+            "Offer to prepare/send the tables.",
+            "Reject lines that scrap the report or say tables are useless."
+          ],
+          "zh": [
+            "接话：回应“还没有表格”。",
+            "提出整理/发送表格。",
+            "不要选取消报告或说表格无用。"
+          ],
+          "ko": [
+            "표 자료 부족에 답하기.",
+            "표를 도와 주겠다는 말.",
+            "제출 포기·표 불필요는 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Best reply offers to prepare and send the missing tables.",
+        "zh": "最佳接话是主动整理并发送表格。",
+        "ko": "부족한 표를 정리해 보내겠다는 답이 맞아요."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not skip submission? They are finishing the draft, not abandoning it.",
+          "zh": "为什么不是不交？正在收尾，不是放弃。",
+          "ko": "왜 제출 포기가 아니에요? 초안은 이미 썼어요."
+        },
+        "2": {
+          "en": "Why not “no tables needed”? 가 said they still need the tables.",
+          "zh": "为什么不是不需要表格？对方说还缺。",
+          "ko": "왜 표 불필요가 아니에요? 표가 필요하다고 했어요."
+        },
+        "3": {
+          "en": "Why not rewrite from scratch? Only the tables are missing.",
+          "zh": "为什么不是重写？只缺表格。",
+          "ko": "왜 다시 쓰기가 아니에요? 표만 없어요."
+        }
+      }
+    },
+    {
+      "id": "t2-l02-04",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 여자의 중심 내용으로 가장 알맞은 것을 고르십시오.",
+        "en": "※ Choose the woman’s main point.",
+        "zh": "※ 选择女士的中心内容。"
+      },
+      "script": {
+        "ko": "여자: 전자책이 편리한 것은 분명합니다. 하지만 집중해서 오래 읽어야 할 때는 종이책이 더 도움이 된다는 연구가 있습니다. 그래서 목적에 따라 두 가지를 함께 쓰는 편이 낫다고 봅니다."
+      },
+      "choices": [
+        "독서 목적에 따라 전자책과 종이책을 함께 활용하는 것이 좋다",
+        "전자책은 전혀 쓸모가 없다",
+        "모든 사람은 종이책만 읽어야 한다",
+        "연구는 전자책만 추천한다"
+      ],
+      "answer": 0,
+      "answerText": "독서 목적에 따라 전자책과 종이책을 함께 활용하는 것이 좋다",
+      "tags": ["topik2:listen", "listening:중심내용", "topic:media"],
+      "hint": {
+        "ko": "장점만 말하는지, 둘을 어떻게 쓰자고 하는지 보세요.",
+        "en": "See whether she praises only one format or recommends both by purpose.",
+        "zh": "看她是只夸一种，还是按目的并用两种。",
+        "steps": {
+          "en": [
+            "Main idea: e-books are handy; paper helps deep focus.",
+            "Conclusion: use both depending on the purpose.",
+            "Reject “only paper” or “e-books useless.”"
+          ],
+          "zh": [
+            "主旨：电子书方便，纸书利于专注。",
+            "结论：按目的并用。",
+            "排除“只用纸书”或“电子书无用”。"
+          ],
+          "ko": [
+            "전자책 편리 + 종이책 집중.",
+            "목적에 따라 함께.",
+            "한쪽만 강요하는 보기는 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Core claim: use e-books and paper books together by reading purpose.",
+        "zh": "核心：按阅读目的并用电子书和纸书。",
+        "ko": "목적에 따라 전자책·종이책을 함께 쓰자는 말."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not “e-books useless”? She says they are clearly convenient.",
+          "zh": "为什么不是电子书无用？她说很方便。",
+          "ko": "왜 전자책 무용이 아니에요? 편리하다고 했어요."
+        },
+        "2": {
+          "en": "Why not paper only? She recommends both, not one format for everyone.",
+          "zh": "为什么不是只用纸书？她主张两者并用。",
+          "ko": "왜 종이책만이 아니에요? 둘을 함께 쓰자고 해요."
+        },
+        "3": {
+          "en": "Why not “studies recommend only e-books”? Studies mentioned favor paper for deep reading.",
+          "zh": "为什么不是研究只推电子书？提到的研究偏向纸书专注阅读。",
+          "ko": "왜 전자책만 추천이 아니에요? 집중 독서엔 종이책 연구예요."
+        }
+      }
+    }
+  ]
+}

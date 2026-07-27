@@ -1,0 +1,54 @@
+{
+  "id": "an-adj-verb",
+  "slug": "an-adj-verb",
+  "status": "pilot",
+  "level": "A1",
+  "tags": ["grammar:negation", "contrast:adj-verb"],
+  "sourceNote": "Original jabi. FAQ-style parallel reading on 안 + adjective vs 안 + verb. Slot rule aligned with 국립국어원 / 세종 learner grammar — not scraped from textbooks.",
+  "question": {
+    "en": "Is 안 the same before an adjective and before a verb?",
+    "ko": "안은 형용사 앞과 동사 앞에서 같나요?",
+    "zh": "안放在形容词前和动词前一样吗？"
+  },
+  "reading": {
+    "en": "Yes — one short word, same job: 안 negates the word that comes right after it. 국립국어원 / 세종 teach this as a slot rule, not as two different 안s.\n\nBefore an adjective (or adjective form): 안 매운 걸로요 (the not-spicy one) · 안 매워요 (it isn’t spicy). 안 sits in front of the descriptive word.\n\nBefore a verb: 안 먹어요 (I don’t eat / I’m not eating). Same 안, now the neighbor is an action.\n\nWhat beginners break: gluing 안 after the stem (*매운안*, *먹안어요*). Keep the order: 안 + word. Spacing stays open in writing: 안 매운 · 안 먹어요.\n\nSeparate from 못: 못 = can’t / unable. 안 = choose not to / is not. Food talk often needs both later; start with 안 + neighbor.\n\nPractice the pair in Basics Unit 6 (food order + spice preference).",
+    "ko": "네 — 짧은 말 하나, 역할은 같습니다. 안은 바로 뒤에 오는 말을 부정합니다. 국립국어원·세종은 이를 ‘자리 규칙’으로 가르칩니다. 안이 두 종류인 것이 아닙니다.\n\n형용사(또는 형 형태) 앞: 안 매운 걸로요 · 안 매워요. 안이 서술어·수식어 앞에 옵니다.\n\n동사 앞: 안 먹어요. 같은 안, 이웃만 동작입니다.\n\n초급이 깨는 곳: 어간 뒤에 붙이기(*매운안*, *먹안어요*). 순서는 항상 안 + 말. 띄어쓰기도 엽니다: 안 매운 · 안 먹어요.\n\n못과 구분: 못=할 수 없음 · 안=하지 않음/아님. 음식 대화에 둘 다 나오지만, 먼저 안+이웃부터.\n\n기초 6과(주문·맵기)에서 짝을 연습하세요.",
+    "zh": "一样——短短一个안，职责相同：否定紧跟在后面的词。国立国语院/世宗把它教成「位置规则」，不是两个不同的안。\n\n形容词（或形容词形）前：안 매운 걸로요（不辣的那个）· 안 매워요（不辣）。안在描写词前面。\n\n动词前：안 먹어요（不吃）。同一个안，邻居换成动作。\n\n初学者常错：把안粘在词干后面（*매운안*、*먹안어요*）。顺序永远是 안 + 词。书写也空格：안 매운 · 안 먹어요。\n\n与못分开记：못=不能；안=不（不做/不是）。点餐以后两种都会遇到，先练 안+邻居。\n\n在基础第6课（点餐、辣度）练这一对。"
+  },
+  "keyPoints": [
+    {
+      "en": "안 = one negator; it sits before the word it flips.",
+      "ko": "안 = 부정어 하나 · 뒤집을 말 앞에 둠.",
+      "zh": "안=一个否定词，放在被否定词前。"
+    },
+    {
+      "en": "Adj slot: 안 매운 / 안 매워요 · Verb slot: 안 먹어요.",
+      "ko": "형 자리: 안 매운/안 매워요 · 동사 자리: 안 먹어요.",
+      "zh": "形位：안 매운/안 매워요 · 动位：안 먹어요。"
+    },
+    {
+      "en": "Not *매운안* / *먹안어요*. 못 (can’t) is a different tool.",
+      "ko": "「매운안」「먹안어요」 아님. 못(못 함)은 다른 도구.",
+      "zh": "不是*매운안*/*먹안어요*。못（不能）是另一工具。"
+    }
+  ],
+  "examples": [
+    { "ko": "안 매운 걸로요.", "en": "The not-spicy one, please. (안 + adj)", "zh": "请给我不辣的。（안+形）" },
+    { "ko": "안 먹어요.", "en": "I don’t eat (it). (안 + verb)", "zh": "我不吃。（안+动）" },
+    { "ko": "안 매워요.", "en": "It isn’t spicy. (predicate adj, 안 still first)", "zh": "不辣。（谓语形，안仍在前）" }
+  ],
+  "checkQuestions": [
+    {
+      "q": { "en": "Where does 안 go with 매운 and 먹어요?", "ko": "매운·먹어요 앞에서 안 자리는?", "zh": "매운和먹어요前面，안放哪？" },
+      "a": { "en": "In front: 안 매운 · 안 먹어요.", "ko": "앞에: 안 매운 · 안 먹어요.", "zh": "在前：안 매운 · 안 먹어요。" }
+    }
+  ],
+  "practice": {
+    "href": "../app/basic/",
+    "label": { "en": "Basics Unit 6 · food + 안 →", "ko": "기초 6과 · 음식+안 →", "zh": "基础第6课 · 食物+안 →" }
+  },
+  "related": [
+    { "href": "../app/basic/", "label": { "en": "Basics Unit 6 (안+형↔안+V card)", "ko": "기초 6과 (안+형↔안+V 카드)", "zh": "基础第6课（안+形↔안+动卡）" } },
+    { "href": "./#isseoyo-vs-opseoyo", "label": { "en": "Related: 있어요 vs 없어요", "ko": "관련: 있어요 vs 없어요", "zh": "相关：있어요 vs 없어요" } }
+  ]
+}

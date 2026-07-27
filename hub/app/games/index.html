@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF4FF">
+  <title>jabi. — Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/hub.css">
+  <link rel="stylesheet" href="./games.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="games-page">
+    <p class="eyebrow" data-i18n="gamesEyebrow">Games</p>
+    <h1 data-i18n="gamesTitle">Play &amp; learn</h1>
+    <p class="lead" data-i18n="gamesLead">Short digital drills — dictation through telephone (research banks). Shop = board games &amp; merch later.</p>
+
+    <nav class="games-nav" aria-label="Games nav">
+      <a href="../../" data-i18n="gamesBackHub">← Hub</a>
+      <a href="../" data-i18n="gamesBackTopik">TOPIK I →</a>
+    </nav>
+
+    <p id="games-error" class="games-error hidden" role="alert"></p>
+    <ul class="games-grid" id="games-grid"></ul>
+  </main>
+
+  <script src="../../js/i18n.js"></script>
+  <script>
+    window.HubI18nExtra = {
+      en: {
+        gamesEyebrow: "Games",
+        gamesTitle: "Play & learn",
+        gamesLead: "Short digital drills — dictation through telephone (research banks). Shop = board games & merch later.",
+        gamesBackHub: "← Hub",
+        gamesBackTopik: "TOPIK I →",
+        gamesLive: "Play",
+        gamesSoon: "Soon",
+        gamesLoadFail: "Could not load games list.",
+      },
+      ko: {
+        gamesEyebrow: "게임",
+        gamesTitle: "플레이하며 배우기",
+        gamesLead: "짧은 디지털 드릴 — 받아쓰기부터 전화게임까지(연구 뱅크). 상점 = 보드·굿즈(나중).",
+        gamesBackHub: "← 허브",
+        gamesBackTopik: "TOPIK I →",
+        gamesLive: "시작",
+        gamesSoon: "예정",
+        gamesLoadFail: "게임 목록을 불러오지 못했습니다.",
+      },
+      zh: {
+        gamesEyebrow: "游戏",
+        gamesTitle: "边玩边学",
+        gamesLead: "短时数字练习 — 从听写到传话（研究题库）。商店 = 桌游与周边（稍后）。",
+        gamesBackHub: "← 中心",
+        gamesBackTopik: "TOPIK I →",
+        gamesLive: "开始",
+        gamesSoon: "即将",
+        gamesLoadFail: "无法加载游戏列表。",
+      },
+    };
+  </script>
+  <script src="./games.js"></script>
+</body>
+</html>

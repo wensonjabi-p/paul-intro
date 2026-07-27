@@ -1,0 +1,619 @@
+{
+  "id": "jabi-course-mapping",
+  "version": 1,
+  "updated": "2026-07-27",
+  "status": "phase-4-starter",
+  "note": "Phase 4 starter — pack ↔ Basics unit links with clear evidence only. Legacy pack basicsAlign slugs (unitNN-*) map to track-manifest basic-NN. clinic-basic omitted (empty basicsAlign). No TOPIK bank rewrite; topikHooks = pack topikBand markers only. Grow only when basicsAlign or unit objective clearly matches a theme.",
+  "schema": {
+    "linkId": "map:{packId}.{courseId}",
+    "courseKind": "basic | topik1 | topik2",
+    "courseId": "basic-NN from hub/app/data/basic/track-manifest.json",
+    "strength": "primary | secondary",
+    "senseIds": "all senseIds currently in the pack (pack-level bundle, not per-item course tags)",
+    "topikHooks": "pack-level topikBand only — no invented listen/read unit links"
+  },
+  "slugAlias": {
+    "unit01-greetings": "basic-01",
+    "unit02-daily-life": "basic-02",
+    "unit03-cafe": "basic-03",
+    "unit04-shopping": "basic-04",
+    "unit05-directions": "basic-05",
+    "unit06-food": "basic-06"
+  },
+  "trackRef": {
+    "basic": "hub/app/data/basic/track-manifest.json",
+    "basicUnits": [
+      {
+        "id": "basic-01",
+        "slug": "greetings"
+      },
+      {
+        "id": "basic-02",
+        "slug": "daily-life"
+      },
+      {
+        "id": "basic-03",
+        "slug": "cafe"
+      },
+      {
+        "id": "basic-04",
+        "slug": "shopping"
+      },
+      {
+        "id": "basic-05",
+        "slug": "directions"
+      },
+      {
+        "id": "basic-06",
+        "slug": "food"
+      }
+    ]
+  },
+  "links": [
+    {
+      "linkId": "map:drinks-order.basic-03",
+      "packId": "drinks-order",
+      "themeKey": "cafe",
+      "courseKind": "basic",
+      "courseId": "basic-03",
+      "courseSlug": "cafe",
+      "strength": "primary",
+      "evidence": "basicsAlign:unit03-cafe + unit objective 음료 주문",
+      "senseIds": [
+        "sns:물.1",
+        "sns:커피.1",
+        "sns:차.1",
+        "sns:주스.1",
+        "sns:우유.1",
+        "sns:잔.1",
+        "sns:콜라.1",
+        "sns:아이스.1",
+        "sns:온수.1",
+        "sns:시키다.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-beginner.json",
+        "basicsAlign": [
+          "unit03-cafe",
+          "unit06-food"
+        ],
+        "packTopikBand": "I"
+      }
+    },
+    {
+      "linkId": "map:drinks-order.basic-06",
+      "packId": "drinks-order",
+      "themeKey": "cafe",
+      "courseKind": "basic",
+      "courseId": "basic-06",
+      "courseSlug": "food",
+      "strength": "secondary",
+      "evidence": "basicsAlign:unit06-food (주문 패턴 공유)",
+      "senseIds": [
+        "sns:물.1",
+        "sns:커피.1",
+        "sns:차.1",
+        "sns:주스.1",
+        "sns:우유.1",
+        "sns:잔.1",
+        "sns:콜라.1",
+        "sns:아이스.1",
+        "sns:온수.1",
+        "sns:시키다.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-beginner.json",
+        "basicsAlign": [
+          "unit03-cafe",
+          "unit06-food"
+        ],
+        "packTopikBand": "I"
+      }
+    },
+    {
+      "linkId": "map:transit-ticket.basic-05",
+      "packId": "transit-ticket",
+      "themeKey": "transit",
+      "courseKind": "basic",
+      "courseId": "basic-05",
+      "courseSlug": "directions",
+      "strength": "primary",
+      "evidence": "basicsAlign:unit05-directions + 어디예요/에 타다 hooks",
+      "senseIds": [
+        "sns:버스.1",
+        "sns:지하철.1",
+        "sns:표.1",
+        "sns:정류장.1",
+        "sns:타다.1",
+        "sns:내리다.1",
+        "sns:환승.1",
+        "sns:출구.1",
+        "sns:늦다.1",
+        "sns:빠르다.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-beginner.json",
+        "basicsAlign": [
+          "unit05-directions"
+        ],
+        "packTopikBand": "I"
+      }
+    },
+    {
+      "linkId": "map:leisure-simple.basic-02",
+      "packId": "leisure-simple",
+      "themeKey": "leisure",
+      "courseKind": "basic",
+      "courseId": "basic-02",
+      "courseSlug": "daily-life",
+      "strength": "primary",
+      "evidence": "basicsAlign:unit02-daily-life",
+      "senseIds": [
+        "sns:영화.1",
+        "sns:극장.1",
+        "sns:보다.1",
+        "sns:음악.1",
+        "sns:사진.1",
+        "sns:같이.1",
+        "sns:산책.1",
+        "sns:운동.1",
+        "sns:게임.1",
+        "sns:취미.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-beginner.json",
+        "basicsAlign": [
+          "unit02-daily-life"
+        ],
+        "packTopikBand": "I"
+      }
+    },
+    {
+      "linkId": "map:snacks-street.basic-06",
+      "packId": "snacks-street",
+      "themeKey": "snack",
+      "courseKind": "basic",
+      "courseId": "basic-06",
+      "courseSlug": "food",
+      "strength": "primary",
+      "evidence": "basicsAlign:unit06-food",
+      "senseIds": [
+        "sns:과자.1",
+        "sns:아이스크림.1",
+        "sns:떡.1",
+        "sns:김밥.1",
+        "sns:달다.1",
+        "sns:맵다.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-beginner.json",
+        "basicsAlign": [
+          "unit06-food",
+          "unit04-shopping"
+        ],
+        "packTopikBand": "I"
+      }
+    },
+    {
+      "linkId": "map:snacks-street.basic-04",
+      "packId": "snacks-street",
+      "themeKey": "snack",
+      "courseKind": "basic",
+      "courseId": "basic-04",
+      "courseSlug": "shopping",
+      "strength": "secondary",
+      "evidence": "basicsAlign:unit04-shopping",
+      "senseIds": [
+        "sns:과자.1",
+        "sns:아이스크림.1",
+        "sns:떡.1",
+        "sns:김밥.1",
+        "sns:달다.1",
+        "sns:맵다.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-beginner.json",
+        "basicsAlign": [
+          "unit06-food",
+          "unit04-shopping"
+        ],
+        "packTopikBand": "I"
+      }
+    },
+    {
+      "linkId": "map:shopping-basics.basic-04",
+      "packId": "shopping-basics",
+      "themeKey": "shopping",
+      "courseKind": "basic",
+      "courseId": "basic-04",
+      "courseSlug": "shopping",
+      "strength": "primary",
+      "evidence": "basicsAlign:unit04-shopping",
+      "senseIds": [
+        "sns:싸다.1",
+        "sns:비싸다.1",
+        "sns:할인.1",
+        "sns:카드.1",
+        "sns:영수증.1",
+        "sns:교환.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-beginner.json",
+        "basicsAlign": [
+          "unit04-shopping"
+        ],
+        "packTopikBand": "I"
+      }
+    },
+    {
+      "linkId": "map:cosmetics-basic.basic-04",
+      "packId": "cosmetics-basic",
+      "themeKey": "cosmetics",
+      "courseKind": "basic",
+      "courseId": "basic-04",
+      "courseSlug": "shopping",
+      "strength": "primary",
+      "evidence": "basicsAlign:unit04-shopping",
+      "senseIds": [
+        "sns:화장품.1",
+        "sns:로션.1",
+        "sns:크림.1",
+        "sns:립스틱.1",
+        "sns:피부.1",
+        "sns:바르다.1",
+        "sns:샴푸.1",
+        "sns:비누.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-beginner.json",
+        "basicsAlign": [
+          "unit04-shopping"
+        ],
+        "packTopikBand": "I"
+      }
+    },
+    {
+      "linkId": "map:countries-nationality.basic-01",
+      "packId": "countries-nationality",
+      "themeKey": "country",
+      "courseKind": "basic",
+      "courseId": "basic-01",
+      "courseSlug": "greetings",
+      "strength": "primary",
+      "evidence": "unit01 objective 국적 · themeKey country",
+      "senseIds": [
+        "sns:나라.1",
+        "sns:외국.1",
+        "sns:외국인.1",
+        "sns:국적.1",
+        "sns:고향.1",
+        "sns:살다.1",
+        "sns:영어.1",
+        "sns:중국어.1",
+        "sns:일본어.1",
+        "sns:태어나다.1",
+        "sns:해외.1",
+        "sns:유학생.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-intermediate.json",
+        "basicsAlign": null,
+        "packTopikBand": "II-low"
+      }
+    },
+    {
+      "linkId": "map:daily-routine.basic-02",
+      "packId": "daily-routine",
+      "themeKey": "routine",
+      "courseKind": "basic",
+      "courseId": "basic-02",
+      "courseSlug": "daily-life",
+      "strength": "primary",
+      "evidence": "unit02 루틴 · themeKey routine",
+      "senseIds": [
+        "sns:일어나다.1",
+        "sns:자다.1",
+        "sns:아침.1",
+        "sns:점심.1",
+        "sns:저녁.1",
+        "sns:밤.1",
+        "sns:하루.1",
+        "sns:매일.1",
+        "sns:지금.1",
+        "sns:오늘.1",
+        "sns:어제.1",
+        "sns:내일.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-intermediate.json",
+        "basicsAlign": null,
+        "packTopikBand": "II-low"
+      }
+    },
+    {
+      "linkId": "map:clothes-shopping.basic-04",
+      "packId": "clothes-shopping",
+      "themeKey": "clothes",
+      "courseKind": "basic",
+      "courseId": "basic-04",
+      "courseSlug": "shopping",
+      "strength": "primary",
+      "evidence": "unit04 사이즈·색깔·옷 · themeKey clothes",
+      "senseIds": [
+        "sns:옷.1",
+        "sns:입다.1",
+        "sns:벗다.1",
+        "sns:바지.1",
+        "sns:치마.1",
+        "sns:신발.1",
+        "sns:사이즈.1",
+        "sns:색깔.1",
+        "sns:맞다.1",
+        "sns:환불.1",
+        "sns:세탁소.1",
+        "sns:코트.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-intermediate.json",
+        "basicsAlign": null,
+        "packTopikBand": "II-low"
+      }
+    },
+    {
+      "linkId": "map:directions-location.basic-05",
+      "packId": "directions-location",
+      "themeKey": "direction",
+      "courseKind": "basic",
+      "courseId": "basic-05",
+      "courseSlug": "directions",
+      "strength": "primary",
+      "evidence": "unit05 직진·좌우·위치 · themeKey direction",
+      "senseIds": [
+        "sns:앞.1",
+        "sns:뒤.1",
+        "sns:옆.1",
+        "sns:위.1",
+        "sns:아래.1",
+        "sns:왼쪽.1",
+        "sns:오른쪽.1",
+        "sns:근처.1",
+        "sns:사이.1",
+        "sns:건너편.1",
+        "sns:길.1",
+        "sns:지도.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-intermediate.json",
+        "basicsAlign": null,
+        "packTopikBand": "II-low"
+      }
+    },
+    {
+      "linkId": "map:restaurant-cooking.basic-06",
+      "packId": "restaurant-cooking",
+      "themeKey": "restaurant",
+      "courseKind": "basic",
+      "courseId": "basic-06",
+      "courseSlug": "food",
+      "strength": "primary",
+      "evidence": "unit06 식당 주문 · themeKey restaurant",
+      "senseIds": [
+        "sns:식당.1",
+        "sns:메뉴.1",
+        "sns:주문.1",
+        "sns:음식.1",
+        "sns:요리.1",
+        "sns:식사.1",
+        "sns:맛있다.1",
+        "sns:배고프다.1",
+        "sns:반찬.1",
+        "sns:계산.1",
+        "sns:손님.1",
+        "sns:짜다.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-intermediate.json",
+        "basicsAlign": null,
+        "packTopikBand": "II-low"
+      }
+    },
+    {
+      "linkId": "map:fruit-market.basic-06",
+      "packId": "fruit-market",
+      "themeKey": "fruit",
+      "courseKind": "basic",
+      "courseId": "basic-06",
+      "courseSlug": "food",
+      "strength": "primary",
+      "evidence": "식음료 생존 · themeKey fruit (Paul Phase4 example)",
+      "senseIds": [
+        "sns:과일.1",
+        "sns:채소.1",
+        "sns:시장.1",
+        "sns:사과.1",
+        "sns:바나나.1",
+        "sns:포도.1",
+        "sns:수박.1",
+        "sns:딸기.1",
+        "sns:오렌지.1",
+        "sns:토마토.1",
+        "sns:봉지.1",
+        "sns:상자.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-intermediate.json",
+        "basicsAlign": null,
+        "packTopikBand": "II-low"
+      }
+    },
+    {
+      "linkId": "map:kitchen-tableware.basic-06",
+      "packId": "kitchen-tableware",
+      "themeKey": "kitchen",
+      "courseKind": "basic",
+      "courseId": "basic-06",
+      "courseSlug": "food",
+      "strength": "primary",
+      "evidence": "식음료 생존 · themeKey kitchen (Paul Phase4 example)",
+      "senseIds": [
+        "sns:그릇.1",
+        "sns:접시.1",
+        "sns:컵.1",
+        "sns:숟가락.1",
+        "sns:젓가락.1",
+        "sns:포크.1",
+        "sns:칼.1",
+        "sns:냄비.1",
+        "sns:주전자.1",
+        "sns:도마.1",
+        "sns:쟁반.1",
+        "sns:프라이팬.1"
+      ],
+      "source": {
+        "packFile": "jabi-theme-packs-intermediate.json",
+        "basicsAlign": null,
+        "packTopikBand": "II-low"
+      }
+    }
+  ],
+  "topikHooks": [
+    {
+      "hookId": "topikBand:drinks-order",
+      "packId": "drinks-order",
+      "topikBand": "I",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:transit-ticket",
+      "packId": "transit-ticket",
+      "topikBand": "I",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:leisure-simple",
+      "packId": "leisure-simple",
+      "topikBand": "I",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:snacks-street",
+      "packId": "snacks-street",
+      "topikBand": "I",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:shopping-basics",
+      "packId": "shopping-basics",
+      "topikBand": "I",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:cosmetics-basic",
+      "packId": "cosmetics-basic",
+      "topikBand": "I",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:countries-nationality",
+      "packId": "countries-nationality",
+      "topikBand": "II-low",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:daily-routine",
+      "packId": "daily-routine",
+      "topikBand": "II-low",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:clothes-shopping",
+      "packId": "clothes-shopping",
+      "topikBand": "II-low",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:directions-location",
+      "packId": "directions-location",
+      "topikBand": "II-low",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:restaurant-cooking",
+      "packId": "restaurant-cooking",
+      "topikBand": "II-low",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:fruit-market",
+      "packId": "fruit-market",
+      "topikBand": "II-low",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    },
+    {
+      "hookId": "topikBand:kitchen-tableware",
+      "packId": "kitchen-tableware",
+      "topikBand": "II-low",
+      "evidence": "pack file topikBand field — not a bank/unit link",
+      "senseIds": [],
+      "note": "Optional light marker only. Do not treat as TOPIK bank senseIds attachment."
+    }
+  ],
+  "omitted": [
+    {
+      "packId": "clinic-basic",
+      "reason": "basicsAlign=[] — no clear Basics unit yet"
+    },
+    {
+      "packId": "size-quantity",
+      "reason": "unit04 mentions size but pack is adjective list, not shopping scene — defer"
+    },
+    {
+      "packId": "colors-shapes",
+      "reason": "unit04 mentions color but pack is color/shape list — defer"
+    },
+    {
+      "packId": "time-appointment",
+      "reason": "unit02 uses time particle; pack is clock/appointment — softer than daily-routine"
+    },
+    {
+      "packId": "city-places",
+      "reason": "facility list; unit05 is wayfinding — directions-location already covers"
+    },
+    {
+      "packId": "pantry-ingredients",
+      "reason": "cooking ingredients ≠ restaurant order scene — defer vs kitchen/fruit"
+    }
+  ],
+  "counts": {
+    "links": 15,
+    "primary": 13,
+    "secondary": 2,
+    "uniquePacks": 13,
+    "uniqueSensesLinked": 134,
+    "topikHooks": 13
+  }
+}
