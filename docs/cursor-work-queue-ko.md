@@ -567,7 +567,8 @@
 
 | 순번 | 항목 | 범위 | 차단? |
 |------|------|------|-------|
-| — | **쓰기 Phase 2 캘리브** | 샘플 채점셋으로 가중·임계 조정 · 게이밍 테스트 | **Paul 샘플/OK** |
+| **N8** | **쓰기 54번 trait 가중치 재조정 (66/15/19)** | 스펙대로 `draft-write-54.json` `scoring.traits.weight` 변경 + 회귀 확인. 리서치 완료, 추가 조사 불필요 -- [`spec-topik2-write54-trait-reweight-ko.md`](spec-topik2-write54-trait-reweight-ko.md) 그대로 구현 | **차단 없음 -- Paul 승인 완료(2026-07-27 "좋아 반영해")** |
+| — | **쓰기 Phase 2 캘리브** | 샘플 채점셋으로 가중·임계 조정 · 게이밍 테스트 (N8 이후 잔여 스코프) | **Paul 샘플/OK** |
 | **N7b** | **12자음 Canva→SVG (글자별)** | Paul PNG → 추적·`_check` | **Paul Canva 게이트** |
 | — | **Stop** | Lemon 전 정지 · commit/push는 Paul 요청 전 정지 · Vercel 프로젝트 생성은 Paul | **차단** |
 
