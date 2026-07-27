@@ -9,13 +9,52 @@
 </head>
 <body>
   <header class="site-header">
-    <a href="../" class="logo">← Hub</a>
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
   </header>
   <section class="hero-block">
-    <p class="eyebrow">Shop</p>
-    <h1>Games &amp; templates</h1>
-    <p class="lead">Phase 4 — learning games and Korean-culture Canva packs, linked from the app and blog.</p>
-    <p class="lead" style="margin-top:1rem">Payments: Lemon Squeezy (Pro app) + optional Gumroad for one-off packs.</p>
+    <p class="eyebrow" data-i18n="doorShop">Shop</p>
+    <h1 data-i18n="doorShopTitle">Merch &amp; boards</h1>
+    <p class="lead" data-i18n="shopLead">Board games, character goods, and Canva packs — later. Not the playable learning games.</p>
+    <p class="lead shop-gap" data-i18n="shopNotGames">Shop ≠ Games. Practice drills live under Learning Games.</p>
+    <p class="lead shop-gap"><a href="../app/games/" data-i18n="shopToGames">→ Learning Games</a></p>
+    <p class="lead shop-gap" data-i18n="shopLater">Commerce later — no checkout yet.</p>
   </section>
+  <style>
+    .shop-gap { margin-top: 1rem; }
+  </style>
+  <script src="../js/i18n.js"></script>
+  <script>
+    window.HubI18nExtra = {
+      en: {
+        shopLead: "Board games, character goods, and Canva packs — later. Not the playable learning games.",
+        shopNotGames: "Shop ≠ Games. Practice drills live under Learning Games.",
+        shopToGames: "→ Learning Games",
+        shopLater: "Commerce later — no checkout yet.",
+      },
+      ko: {
+        shopLead: "보드게임·캐릭터 굿즈·Canva 팩 — 나중에. 플레이용 학습 게임이 아닙니다.",
+        shopNotGames: "상점 ≠ 게임. 연습 드릴은 학습 게임에 있습니다.",
+        shopToGames: "→ 학습 게임",
+        shopLater: "커머스는 나중에 — 결제·체크아웃 없음.",
+      },
+      zh: {
+        shopLead: "桌游、角色周边与 Canva 素材包 — 稍后。不是可玩的学习游戏。",
+        shopNotGames: "商店 ≠ 游戏。练习在「学习游戏」里。",
+        shopToGames: "→ 学习游戏",
+        shopLater: "商业化稍后 — 暂无结账。",
+      },
+    };
+    if (window.HubI18n) {
+      document.querySelectorAll("[data-i18n]").forEach(function (el) {
+        var key = el.getAttribute("data-i18n");
+        if (key) el.textContent = window.HubI18n.t(key);
+      });
+    }
+  </script>
 </body>
 </html>

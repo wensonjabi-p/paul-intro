@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF4FF">
+  <title>jabi. — Word Scramble</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/hub.css">
+  <link rel="stylesheet" href="./scramble.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="ws-page">
+    <p class="eyebrow" data-ws="eyebrow">Word Scramble</p>
+    <h1 data-ws="title">Tap the order</h1>
+    <p class="lead" data-ws="lead">Scrambled Korean chunks — tap to rebuild the sentence. Soft pace bar, never punished by time.</p>
+
+    <nav class="ws-nav" aria-label="Word Scramble nav">
+      <a href="../" data-ws="backGames">← Games</a>
+      <a href="../../../" data-ws="backHub">Hub</a>
+    </nav>
+
+    <p class="ws-note" data-ws="note">Pace bar is feel only — empty bar does not fail the question. Tap a built token to undo.</p>
+
+    <div class="ws-themes" aria-label="Theme filter">
+      <span class="ws-k" data-ws="themeFilter">Theme</span>
+      <div id="ws-theme-chips" class="ws-theme-chips" role="group" aria-label="Themes"></div>
+    </div>
+
+    <div class="ws-progress" aria-live="polite">
+      <span id="ws-progress-text">1 / 20</span>
+      <div class="ws-progress-bar" aria-hidden="true"><div id="ws-progress-fill"></div></div>
+    </div>
+
+    <div class="ws-race" aria-hidden="true">
+      <div class="ws-race-meta">
+        <span data-ws="pace">Pace</span>
+        <span id="ws-race-label" class="ws-race-label"></span>
+      </div>
+      <div class="ws-race-track"><div id="ws-race-fill"></div></div>
+    </div>
+
+    <section class="ws-stage" aria-labelledby="ws-prompt-label">
+      <p id="ws-prompt-label" class="ws-k" data-ws="buildPrompt">Build the sentence</p>
+      <p id="ws-gloss" class="ws-gloss muted"></p>
+      <p id="ws-item-tags" class="ws-item-tags" aria-hidden="true"></p>
+
+      <div id="ws-answer" class="ws-answer" role="list" aria-live="polite" aria-label="Your sentence"></div>
+      <p id="ws-answer-hint" class="ws-answer-hint" data-ws="answerHint">Tap tokens below →</p>
+
+      <p class="ws-k" data-ws="poolLabel">Tokens</p>
+      <div id="ws-pool" class="ws-pool" role="group" aria-label="Scrambled tokens"></div>
+
+      <div class="ws-actions">
+        <button type="button" class="ws-btn ws-btn--sun" id="ws-check" data-ws="check">Check</button>
+        <button type="button" class="ws-btn ws-btn--ghost" id="ws-clear" data-ws="clear">Clear</button>
+        <button type="button" class="ws-btn ws-btn--ghost" id="ws-skip" data-ws="skip">Skip</button>
+        <button type="button" class="ws-btn ws-btn--ghost" id="ws-reveal" data-ws="reveal">Give up</button>
+      </div>
+
+      <label class="ws-auto">
+        <input type="checkbox" id="ws-auto-next" checked>
+        <span data-ws="autoNext">Auto-advance on correct</span>
+      </label>
+    </section>
+
+    <section id="ws-feedback" class="ws-feedback hidden" aria-live="polite">
+      <p id="ws-feedback-status" class="ws-feedback-status"></p>
+      <p class="ws-k" data-ws="youBuilt">You built</p>
+      <p id="ws-yours" class="ws-diff-line" lang="ko"></p>
+      <p class="ws-k" data-ws="correctIs">Correct order</p>
+      <p id="ws-correct" class="ws-correct-line" lang="ko"></p>
+      <div class="ws-actions">
+        <button type="button" class="ws-btn ws-btn--sun" id="ws-next" data-ws="next">Next →</button>
+        <button type="button" class="ws-btn ws-btn--ghost" id="ws-retry" data-ws="retry">Try again</button>
+      </div>
+    </section>
+
+    <section id="ws-done" class="ws-done hidden" aria-live="polite">
+      <h2 data-ws="doneTitle">Round complete</h2>
+      <p id="ws-score" class="ws-score"></p>
+      <div class="ws-actions">
+        <button type="button" class="ws-btn ws-btn--sun" id="ws-restart" data-ws="restart">Play again</button>
+        <a class="ws-btn ws-btn--ghost" href="../" data-ws="backGames">← Games</a>
+      </div>
+    </section>
+
+    <p id="ws-error" class="ws-error hidden" role="alert"></p>
+  </main>
+
+  <script src="../../../js/i18n.js"></script>
+  <script src="./scramble.js"></script>
+</body>
+</html>

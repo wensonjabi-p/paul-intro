@@ -1,0 +1,49 @@
+{
+  "id": "ayo-oyo",
+  "slug": "ayo-oyo",
+  "status": "pilot",
+  "level": "A1",
+  "tags": ["grammar:endings", "polite-present"],
+  "sourceNote": "Original jabi. FAQ-style parallel reading on -아요/-어요. Not scraped from textbooks or Reddit.",
+  "question": {
+    "en": "How do I choose between -아요 and -어요?",
+    "ko": "-아요와 -어요는 어떻게 고르나요?"
+  },
+  "reading": {
+    "en": "Both endings make everyday polite present speech (해요체). You attach them to a verb or adjective stem.\n\nA practical beginner rule: look at the last vowel in the stem. If it is a bright ㅏ or ㅗ, you often use -아요 (가다 → 가요). Otherwise you often use -어요 (먹다 → 먹어요, 쓰다 → 써요).\n\n하다 is special: it becomes 해요, not 하아요. Many textbooks teach this as a shortcut because 하다 verbs are everywhere.\n\nDo not mix -아요/-어요 with formal -습니다 in one short turn. Café talk, classmates, and most apps live in the -요 coat.\n\nOverlap and exceptions exist (irregular stems). Start with the vowel tip + the 하다 shortcut, then collect irregulars as you meet them in Basics Unit 2 drills.",
+    "ko": "둘 다 일상 공손 현재(해요체)입니다. 동사·형용사 어간에 붙입니다.\n\n초급 실용 규칙: 어간의 마지막 모음을 봅니다. 밝은 ㅏ·ㅗ이면 자주 -아요(가다 → 가요). 아니면 자주 -어요(먹다 → 먹어요, 쓰다 → 써요).\n\n하다만 특별합니다. 하아요가 아니라 해요. 하다 동사가 많아서 교재도 지름길로 가르칩니다.\n\n짧은 말차례 안에서 -아요/-어요와 격식 -습니다를 섞지 마세요. 카페·같은 반·앱은 대부분 -요 코트입니다.\n\n예외·불규칙은 있습니다. 모음 팁+하다 지름길부터 익힌 뒤, 기초 2과 드릴에서 하나씩 모으세요."
+  },
+  "keyPoints": [
+    {
+      "en": "ㅏ/ㅗ stem → often -아요; else often -어요.",
+      "ko": "어간 ㅏ/ㅗ → 자주 -아요 · 그 외 자주 -어요."
+    },
+    {
+      "en": "하다 → 해요 (memorize the shortcut).",
+      "ko": "하다 → 해요(지름길)."
+    },
+    {
+      "en": "Same polite coat as other -요 speech — not -습니다.",
+      "ko": "다른 -요와 같은 공손 코트 — -습니다와 섞지 않기."
+    }
+  ],
+  "examples": [
+    { "ko": "가요.", "en": "I go / I’m going. (가다)" },
+    { "ko": "먹어요.", "en": "I eat. (먹다)" },
+    { "ko": "공부해요.", "en": "I study. (하다 → 해요)" }
+  ],
+  "checkQuestions": [
+    {
+      "q": { "en": "What does 하다 become in polite present?", "ko": "하다의 공손 현재는?" },
+      "a": { "en": "해요.", "ko": "해요." }
+    }
+  ],
+  "practice": {
+    "href": "../app/basic/",
+    "label": { "en": "Basics Unit 2 · daily endings →", "ko": "기초 2과 · 일상 어미 →" }
+  },
+  "related": [
+    { "href": "./?id=yo-vs-seumnida", "label": { "en": "-요 vs -습니다", "ko": "요 vs 습니다" } },
+    { "href": "../app/games/speed-quiz/", "label": { "en": "Speed Quiz", "ko": "스피드 퀴즈" } }
+  ]
+}

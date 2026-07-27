@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "updated": "2026-07-26",
+  "note": "Partner roster = 13 consonants (ㅈ/jieut excluded = jabi. NPC). Growth art = 6 item stages. Files: char-{id}-{1..6}.svg · source/{id}-{1..6}.png",
+  "pipeline": {
+    "steps": [
+      "Canva AI thread: one stage PNG at a time (no grid)",
+      "Drop PNG into hub/app/assets/chars/source/{id}-{stage}.png",
+      "python scripts/trace-char-sources.py {id}",
+      "Open _check.html · Paul visual OK before next letter"
+    ],
+    "protectPaulOk": true,
+    "doNotOverwrite": ["giyeok"]
+  },
+  "stages": [
+    { "n": 1, "key": "baby", "ko": "베이비", "en": "baby", "item": null },
+    { "n": 2, "key": "pants", "ko": "팬티", "en": "pants", "item": "red briefs" },
+    { "n": 3, "key": "boots", "ko": "부츠", "en": "boots", "item": "navy boots" },
+    { "n": 4, "key": "weapon", "ko": "무기", "en": "weapon", "item": "jamo-shaped weapon" },
+    { "n": 5, "key": "shield", "ko": "방패", "en": "shield", "item": "round gold-rim shield" },
+    { "n": 6, "key": "crown", "ko": "왕관", "en": "crown", "item": "small crown" }
+  ],
+  "partners": [
+    {
+      "id": "giyeok",
+      "glyph": "ㄱ",
+      "weaponHint": "brown hook / shepherd crook (갈고리)",
+      "bodyHint": "thick rounded inverted-L",
+      "paulOkStages": [1, 2, 3, 4, 5, 6],
+      "batchPriority": 0,
+      "status": "pilot_done"
+    },
+    {
+      "id": "nieun",
+      "glyph": "ㄴ",
+      "weaponHint": "L-shaped shelf staff / corner cane",
+      "bodyHint": "thick rounded ㄴ (shelf / reverse-L)",
+      "paulOkStages": [],
+      "batchPriority": 1,
+      "status": "next_canva"
+    },
+    {
+      "id": "digeut",
+      "glyph": "ㄷ",
+      "weaponHint": "U-cradle staff / open box mace",
+      "bodyHint": "thick rounded ㄷ (open box / C on its side)",
+      "paulOkStages": [],
+      "batchPriority": 2,
+      "status": "queued"
+    },
+    {
+      "id": "rieul",
+      "glyph": "ㄹ",
+      "weaponHint": "zigzag staff / snake crook",
+      "bodyHint": "thick rounded ㄹ (stair / zigzag)",
+      "paulOkStages": [],
+      "batchPriority": 3,
+      "status": "queued"
+    },
+    {
+      "id": "mieum",
+      "glyph": "ㅁ",
+      "weaponHint": "square frame shield-staff",
+      "bodyHint": "thick rounded ㅁ (box)",
+      "paulOkStages": [],
+      "batchPriority": 4,
+      "status": "queued"
+    },
+    {
+      "id": "bieup",
+      "glyph": "ㅂ",
+      "weaponHint": "double-pillar staff",
+      "bodyHint": "thick rounded ㅂ (two pillars + top)",
+      "paulOkStages": [],
+      "batchPriority": 5,
+      "status": "queued"
+    },
+    {
+      "id": "siot",
+      "glyph": "ㅅ",
+      "weaponHint": "fork / V-prong staff",
+      "bodyHint": "thick rounded ㅅ (V / chevron)",
+      "paulOkStages": [],
+      "batchPriority": 6,
+      "status": "queued"
+    },
+    {
+      "id": "ieung",
+      "glyph": "ㅇ",
+      "weaponHint": "ring staff / hoop lance",
+      "bodyHint": "thick rounded ㅇ (ring / circle)",
+      "paulOkStages": [],
+      "batchPriority": 7,
+      "status": "queued"
+    },
+    {
+      "id": "chieut",
+      "glyph": "ㅊ",
+      "weaponHint": "trident / forked spear with top bar",
+      "bodyHint": "thick rounded ㅊ (ㅅ + top stroke)",
+      "paulOkStages": [],
+      "batchPriority": 8,
+      "status": "queued"
+    },
+    {
+      "id": "kieuk",
+      "glyph": "ㅋ",
+      "weaponHint": "hook staff with crossbar (ㅋ)",
+      "bodyHint": "thick rounded ㅋ (ㄱ + mid stroke)",
+      "paulOkStages": [],
+      "batchPriority": 9,
+      "status": "queued"
+    },
+    {
+      "id": "tieut",
+      "glyph": "ㅌ",
+      "weaponHint": "triple-bar staff",
+      "bodyHint": "thick rounded ㅌ (ㄷ + mid bar)",
+      "paulOkStages": [],
+      "batchPriority": 10,
+      "status": "queued"
+    },
+    {
+      "id": "pieup",
+      "glyph": "ㅍ",
+      "weaponHint": "H-frame staff / twin rail",
+      "bodyHint": "thick rounded ㅍ (two horizontals + stem)",
+      "paulOkStages": [],
+      "batchPriority": 11,
+      "status": "queued"
+    },
+    {
+      "id": "hieut",
+      "glyph": "ㅎ",
+      "weaponHint": "halo staff / hat-top mace",
+      "bodyHint": "thick rounded ㅎ (hat / o with top)",
+      "paulOkStages": [],
+      "batchPriority": 12,
+      "status": "queued"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "jieut",
+      "glyph": "ㅈ",
+      "reason": "jabi. guide NPC — not a student partner"
+    }
+  ]
+}

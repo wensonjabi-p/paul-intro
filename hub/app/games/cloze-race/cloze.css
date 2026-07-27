@@ -1,0 +1,475 @@
+/* Cloze Race — fill particles/endings · soft race bar */
+.hidden {
+  display: none !important;
+}
+
+.cloze-page {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 1.25rem 5vw 4rem;
+}
+
+.cloze-page .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+
+.cloze-page h1 {
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(26px, 5vw, 36px);
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.cloze-page .lead {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0 0 1rem;
+}
+
+.cloze-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 0.75rem;
+  font-size: 14px;
+}
+
+.cloze-nav a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cloze-note {
+  font-size: 12px;
+  color: var(--faint);
+  margin: 0 0 1.25rem;
+  line-height: 1.4;
+}
+
+.cloze-themes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 0 0 1rem;
+}
+
+.cloze-themes .cloze-k {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.cloze-theme-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cloze-theme-chip {
+  min-height: 34px;
+  padding: 5px 11px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.cloze-theme-chip:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+.cloze-theme-chip.is-on {
+  background: rgba(18, 197, 176, 0.16);
+  border-color: var(--accent-2, #12c5b0);
+}
+
+.cloze-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: -0.15rem 0 0.75rem;
+  min-height: 0;
+}
+
+.cloze-item-tags:empty {
+  display: none;
+}
+
+.cloze-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: rgba(20, 32, 51, 0.06);
+  border: 1px solid rgba(20, 32, 51, 0.08);
+}
+
+.cloze-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.75rem;
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.cloze-progress-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(20, 32, 51, 0.08);
+  overflow: hidden;
+}
+
+#cloze-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-2, #12c5b0), var(--accent, #ff8a14));
+  border-radius: inherit;
+  transition: width 0.25s ease;
+}
+
+.cloze-race {
+  margin-bottom: 1rem;
+}
+
+.cloze-race-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+
+.cloze-race-label {
+  font-family: "Space Mono", monospace;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--accent-2, #12c5b0);
+  font-weight: 700;
+}
+
+.cloze-race-label.is-calm {
+  color: var(--faint);
+}
+
+.cloze-race-track {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(20, 32, 51, 0.08);
+  overflow: hidden;
+}
+
+#cloze-race-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent, #ff8a14), var(--accent-2, #12c5b0));
+  border-radius: inherit;
+  transform-origin: left center;
+  transition: none;
+}
+
+#cloze-race-fill.is-draining {
+  transition: width linear;
+}
+
+.cloze-stage {
+  padding: 1.25rem 1.1rem;
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg-soft);
+  border-top: 3px solid var(--accent);
+}
+
+.cloze-k {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 6px;
+}
+
+.cloze-gloss {
+  font-size: 14px;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  min-height: 1.3em;
+}
+
+.cloze-sentence {
+  font-family: Nunito, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: clamp(22px, 5vw, 28px);
+  font-weight: 800;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0 0 1.1rem;
+  word-break: keep-all;
+}
+
+.cloze-blank {
+  display: inline-block;
+  min-width: 2.4em;
+  margin: 0 2px;
+  padding: 2px 8px;
+  border-bottom: 3px solid var(--accent, #ff8a14);
+  border-radius: 6px 6px 0 0;
+  background: rgba(255, 138, 20, 0.12);
+  color: var(--accent);
+  text-align: center;
+  font-weight: 900;
+  vertical-align: baseline;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cloze-blank.is-filled {
+  color: var(--ink);
+  background: rgba(18, 197, 176, 0.14);
+  border-bottom-color: var(--accent-2, #12c5b0);
+}
+
+.cloze-blank.is-ok {
+  background: rgba(34, 197, 94, 0.14);
+  border-bottom-color: var(--success, #22c55e);
+  color: var(--success, #22c55e);
+}
+
+.cloze-blank.is-bad {
+  background: rgba(255, 92, 108, 0.12);
+  border-bottom-color: var(--heart, #ff5c6c);
+  color: var(--heart, #ff5c6c);
+}
+
+.cloze-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.cloze-chip {
+  min-height: 44px;
+  min-width: 48px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-family: Nunito, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.cloze-chip:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+.cloze-chip.is-selected {
+  border-color: transparent;
+  background: var(--accent, #ff8a14);
+  color: var(--on-accent, #142033);
+}
+
+.cloze-chip:disabled {
+  opacity: 0.55;
+  cursor: default;
+  transform: none;
+}
+
+.cloze-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--ink);
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 44px;
+  transition: transform 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.cloze-btn:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+.cloze-btn:active {
+  transform: translateY(0);
+}
+
+.cloze-btn--sun {
+  background: var(--accent, #ff8a14);
+  border-color: transparent;
+  color: var(--on-accent, #142033);
+}
+
+.cloze-btn--sun:hover {
+  filter: brightness(1.05);
+  border-color: transparent;
+}
+
+.cloze-btn--ghost {
+  background: transparent;
+}
+
+.cloze-input-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+
+.cloze-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  font-size: 20px;
+  line-height: 1.4;
+  font-family: Nunito, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  color: var(--ink);
+  background: #fff;
+  min-height: 52px;
+}
+
+.cloze-input:focus {
+  outline: 2px solid var(--accent-2, #12c5b0);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.cloze-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.cloze-auto {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.cloze-feedback {
+  margin-top: 1rem;
+  padding: 1.15rem 1.1rem;
+  border-radius: 16px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+}
+
+.cloze-feedback.is-ok {
+  border-color: rgba(34, 197, 94, 0.45);
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.cloze-feedback.is-bad {
+  border-color: rgba(255, 92, 108, 0.35);
+  background: rgba(255, 92, 108, 0.06);
+}
+
+.cloze-feedback-status {
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.cloze-diff-line,
+.cloze-correct-line {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+  word-break: break-all;
+  font-family: Nunito, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+.cloze-correct-line {
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.cloze-done {
+  margin-top: 1.5rem;
+  padding: 1.5rem 1.2rem;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #fff 0%, rgba(126, 200, 255, 0.25) 100%);
+  border: 1.5px solid var(--line);
+  text-align: center;
+}
+
+.cloze-done h2 {
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 900;
+  margin: 0 0 8px;
+}
+
+.cloze-score {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.cloze-done .cloze-actions {
+  justify-content: center;
+}
+
+.cloze-error {
+  color: var(--heart, #ff5c6c);
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .cloze-actions .cloze-btn {
+    flex: 1 1 auto;
+  }
+
+  .cloze-chip {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .cloze-input {
+    font-size: 18px;
+  }
+}

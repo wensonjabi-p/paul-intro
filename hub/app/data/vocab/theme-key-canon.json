@@ -1,0 +1,1041 @@
+{
+  "id": "jabi-theme-key-canon",
+  "version": 1,
+  "frozenAt": "2026-07-27",
+  "status": "phase-0-frozen",
+  "policy": {
+    "newContent": "Use themeKey from entries with status frozen or frozen-legacy. Do not invent new keys without Paul OK.",
+    "rename": "Forbidden for any key already present in game themes[] / tags (progress, chips, smoke).",
+    "aliases": "Keep legacy tags; map via aliases[]. Prefer canonKey for new items.",
+    "metaTags": "Not theme packs — do not attach as Sense.themes primary."
+  },
+  "source": {
+    "gamesThemesUnion": 73,
+    "themeOrderSpeed": 59,
+    "beginnerPacks": 7,
+    "intermediatePacks": 65,
+    "chipLabelsFrom": "hub/app/games/*/i18n theme_* (speed primary; bingo/listen/tel for beginner-only)"
+  },
+  "themes": [
+    {
+      "themeKey": "shopping",
+      "status": "frozen",
+      "chip": {
+        "ko": "쇼핑",
+        "zh": "购物",
+        "en": "Shopping"
+      },
+      "packIds": [
+        "shopping-basics"
+      ],
+      "notes": "Beginner survival shopping. Garment mid pack uses themeKey clothes (not dual-tag by default)."
+    },
+    {
+      "themeKey": "snack",
+      "status": "frozen",
+      "chip": {
+        "ko": "간식",
+        "zh": "零食",
+        "en": "Snack"
+      },
+      "packIds": [
+        "snacks-street"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "transit",
+      "status": "frozen",
+      "chip": {
+        "ko": "교통",
+        "zh": "交通",
+        "en": "Transit"
+      },
+      "packIds": [
+        "transit-ticket"
+      ],
+      "notes": "Canon for new content. Legacy alias: transport (bingo/listen/tel/scramble)."
+    },
+    {
+      "themeKey": "housing",
+      "status": "frozen",
+      "chip": {
+        "ko": "주거",
+        "zh": "居住",
+        "en": "Housing"
+      },
+      "packIds": [
+        "housing-services"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "banking",
+      "status": "frozen",
+      "chip": {
+        "ko": "은행",
+        "zh": "银行",
+        "en": "Banking"
+      },
+      "packIds": [
+        "money-banking"
+      ],
+      "notes": "Bingo also has legacy money tag — not a separate pack key."
+    },
+    {
+      "themeKey": "workplace",
+      "status": "frozen",
+      "chip": {
+        "ko": "직장",
+        "zh": "职场",
+        "en": "Workplace"
+      },
+      "packIds": [
+        "public-workplace"
+      ],
+      "notes": "work-study pack has no 1:1 chip — see packOnly."
+    },
+    {
+      "themeKey": "clinic",
+      "status": "frozen",
+      "chip": {
+        "ko": "병원",
+        "zh": "医院",
+        "en": "Clinic"
+      },
+      "packIds": [
+        "clinic-basic",
+        "health-clinic"
+      ],
+      "notes": "beg+int share key; levelBand separates."
+    },
+    {
+      "themeKey": "school",
+      "status": "frozen",
+      "chip": {
+        "ko": "학교",
+        "zh": "学校",
+        "en": "School"
+      },
+      "packIds": [
+        "school-class"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "travel",
+      "status": "frozen",
+      "chip": {
+        "ko": "여행",
+        "zh": "旅游",
+        "en": "Travel"
+      },
+      "packIds": [
+        "travel-lodging"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "weather",
+      "status": "frozen",
+      "chip": {
+        "ko": "날씨",
+        "zh": "天气",
+        "en": "Weather"
+      },
+      "packIds": [
+        "weather-season"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "digital",
+      "status": "frozen",
+      "chip": {
+        "ko": "디지털",
+        "zh": "数码",
+        "en": "Digital"
+      },
+      "packIds": [
+        "digital-comms"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "family",
+      "status": "frozen",
+      "chip": {
+        "ko": "가족",
+        "zh": "家人",
+        "en": "Family"
+      },
+      "packIds": [
+        "family-relations"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "hobby",
+      "status": "frozen",
+      "chip": {
+        "ko": "취미",
+        "zh": "爱好",
+        "en": "Hobby"
+      },
+      "packIds": [
+        "hobby-culture"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "emotion",
+      "status": "frozen",
+      "chip": {
+        "ko": "감정",
+        "zh": "情绪",
+        "en": "Emotion"
+      },
+      "packIds": [
+        "emotion-mood"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "sports",
+      "status": "frozen",
+      "chip": {
+        "ko": "스포츠",
+        "zh": "体育",
+        "en": "Sports"
+      },
+      "packIds": [
+        "sports-exercise"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "nature",
+      "status": "frozen",
+      "chip": {
+        "ko": "자연",
+        "zh": "自然",
+        "en": "Nature"
+      },
+      "packIds": [
+        "nature-environment"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "restaurant",
+      "status": "frozen",
+      "chip": {
+        "ko": "식당",
+        "zh": "餐饮",
+        "en": "Restaurant"
+      },
+      "packIds": [
+        "restaurant-cooking"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "clothes",
+      "status": "frozen",
+      "chip": {
+        "ko": "옷",
+        "zh": "服装",
+        "en": "Clothes"
+      },
+      "packIds": [
+        "clothes-shopping"
+      ],
+      "notes": "Primary for clothes-shopping. Paul open: optional dual-tag shopping — default clothes only."
+    },
+    {
+      "themeKey": "music",
+      "status": "frozen",
+      "chip": {
+        "ko": "음악",
+        "zh": "音乐",
+        "en": "Music"
+      },
+      "packIds": [
+        "music-arts"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "media",
+      "status": "frozen",
+      "chip": {
+        "ko": "미디어",
+        "zh": "媒体",
+        "en": "Media"
+      },
+      "packIds": [
+        "media-news"
+      ],
+      "notes": "news-taste pack has no 1:1 chip — see packOnly."
+    },
+    {
+      "themeKey": "celebration",
+      "status": "frozen",
+      "chip": {
+        "ko": "축하",
+        "zh": "庆祝",
+        "en": "Celebration"
+      },
+      "packIds": [
+        "celebration-holiday"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "time",
+      "status": "frozen",
+      "chip": {
+        "ko": "시간",
+        "zh": "时间",
+        "en": "Time"
+      },
+      "packIds": [
+        "time-appointment"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "chores",
+      "status": "frozen",
+      "chip": {
+        "ko": "집안일",
+        "zh": "家务",
+        "en": "Chores"
+      },
+      "packIds": [
+        "home-chores"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "body",
+      "status": "frozen",
+      "chip": {
+        "ko": "신체",
+        "zh": "身体",
+        "en": "Body"
+      },
+      "packIds": [
+        "body-parts"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "direction",
+      "status": "frozen",
+      "chip": {
+        "ko": "방향",
+        "zh": "方向",
+        "en": "Direction"
+      },
+      "packIds": [
+        "directions-location"
+      ],
+      "notes": "Legacy plural tag directions (4 items) — alias only."
+    },
+    {
+      "themeKey": "furniture",
+      "status": "frozen",
+      "chip": {
+        "ko": "가구",
+        "zh": "家具",
+        "en": "Furniture"
+      },
+      "packIds": [
+        "furniture-room"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "fruit",
+      "status": "frozen",
+      "chip": {
+        "ko": "과일",
+        "zh": "水果",
+        "en": "Fruit"
+      },
+      "packIds": [
+        "fruit-market"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "kitchen",
+      "status": "frozen",
+      "chip": {
+        "ko": "주방",
+        "zh": "厨房",
+        "en": "Kitchen"
+      },
+      "packIds": [
+        "kitchen-tableware"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "stationery",
+      "status": "frozen",
+      "chip": {
+        "ko": "문구",
+        "zh": "文具",
+        "en": "Stationery"
+      },
+      "packIds": [
+        "office-stationery"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "mail",
+      "status": "frozen",
+      "chip": {
+        "ko": "우편",
+        "zh": "邮寄",
+        "en": "Mail"
+      },
+      "packIds": [
+        "post-mail"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "pets",
+      "status": "frozen",
+      "chip": {
+        "ko": "동물",
+        "zh": "动物",
+        "en": "Pets"
+      },
+      "packIds": [
+        "animals-pets"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "driving",
+      "status": "frozen",
+      "chip": {
+        "ko": "운전",
+        "zh": "驾驶",
+        "en": "Driving"
+      },
+      "packIds": [
+        "vehicles-driving"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "places",
+      "status": "frozen",
+      "chip": {
+        "ko": "장소",
+        "zh": "场所",
+        "en": "Places"
+      },
+      "packIds": [
+        "city-places"
+      ],
+      "notes": "≠ coarse tag place (bingo taxonomy)."
+    },
+    {
+      "themeKey": "pantry",
+      "status": "frozen",
+      "chip": {
+        "ko": "재료",
+        "zh": "食材",
+        "en": "Pantry"
+      },
+      "packIds": [
+        "pantry-ingredients"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "bathroom",
+      "status": "frozen",
+      "chip": {
+        "ko": "욕실",
+        "zh": "浴室",
+        "en": "Bathroom"
+      },
+      "packIds": [
+        "bathroom-hygiene"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "jobs",
+      "status": "frozen",
+      "chip": {
+        "ko": "직업",
+        "zh": "职业",
+        "en": "Jobs"
+      },
+      "packIds": [
+        "jobs-occupations"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "country",
+      "status": "frozen",
+      "chip": {
+        "ko": "국가",
+        "zh": "国家",
+        "en": "Country"
+      },
+      "packIds": [
+        "countries-nationality"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "routine",
+      "status": "frozen",
+      "chip": {
+        "ko": "일상",
+        "zh": "日常",
+        "en": "Routine"
+      },
+      "packIds": [
+        "daily-routine"
+      ],
+      "notes": "Legacy daily on telephone — alias/overlap; do not rename."
+    },
+    {
+      "themeKey": "size",
+      "status": "frozen",
+      "chip": {
+        "ko": "크기",
+        "zh": "大小",
+        "en": "Size"
+      },
+      "packIds": [
+        "size-quantity"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "senses",
+      "status": "frozen",
+      "chip": {
+        "ko": "감각",
+        "zh": "感觉",
+        "en": "Senses"
+      },
+      "packIds": [
+        "temperature-senses"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "color",
+      "status": "frozen",
+      "chip": {
+        "ko": "색깔",
+        "zh": "颜色",
+        "en": "Color"
+      },
+      "packIds": [
+        "colors-shapes"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "accessories",
+      "status": "frozen",
+      "chip": {
+        "ko": "소지품",
+        "zh": "随身",
+        "en": "Accessories"
+      },
+      "packIds": [
+        "accessories-belongings"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "electric",
+      "status": "frozen",
+      "chip": {
+        "ko": "전기",
+        "zh": "电器",
+        "en": "Electricity"
+      },
+      "packIds": [
+        "electricity-appliances"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "building",
+      "status": "frozen",
+      "chip": {
+        "ko": "건물",
+        "zh": "建筑",
+        "en": "Building"
+      },
+      "packIds": [
+        "building-facilities"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "motion",
+      "status": "frozen",
+      "chip": {
+        "ko": "동작",
+        "zh": "动作",
+        "en": "Motion"
+      },
+      "packIds": [
+        "movement-actions"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "favor",
+      "status": "frozen",
+      "chip": {
+        "ko": "부탁",
+        "zh": "拜托",
+        "en": "Favor"
+      },
+      "packIds": [
+        "requests-favors"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "think",
+      "status": "frozen",
+      "chip": {
+        "ko": "생각",
+        "zh": "想法",
+        "en": "Think"
+      },
+      "packIds": [
+        "thoughts-plans"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "speech",
+      "status": "frozen",
+      "chip": {
+        "ko": "대화",
+        "zh": "对话",
+        "en": "Speech"
+      },
+      "packIds": [
+        "speech-talk"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "change",
+      "status": "frozen",
+      "chip": {
+        "ko": "변화",
+        "zh": "变化",
+        "en": "Change"
+      },
+      "packIds": [
+        "change-progress"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "compare",
+      "status": "frozen",
+      "chip": {
+        "ko": "비교",
+        "zh": "比较",
+        "en": "Compare"
+      },
+      "packIds": [
+        "comparison-degree"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "reason",
+      "status": "frozen",
+      "chip": {
+        "ko": "이유",
+        "zh": "原因",
+        "en": "Reason"
+      },
+      "packIds": [
+        "cause-reason"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "problem",
+      "status": "frozen",
+      "chip": {
+        "ko": "문제",
+        "zh": "问题",
+        "en": "Problem"
+      },
+      "packIds": [
+        "problem-solution"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "opinion",
+      "status": "frozen",
+      "chip": {
+        "ko": "의견",
+        "zh": "意见",
+        "en": "Opinion"
+      },
+      "packIds": [
+        "opinion-judgment"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "habit",
+      "status": "frozen",
+      "chip": {
+        "ko": "습관",
+        "zh": "习惯",
+        "en": "Habit"
+      },
+      "packIds": [
+        "habits-lifestyle"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "rules",
+      "status": "frozen",
+      "chip": {
+        "ko": "규칙",
+        "zh": "规则",
+        "en": "Rules"
+      },
+      "packIds": [
+        "rules-permission"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "friends",
+      "status": "frozen",
+      "chip": {
+        "ko": "친구",
+        "zh": "朋友",
+        "en": "Friends"
+      },
+      "packIds": [
+        "friends-social"
+      ],
+      "notes": "Legacy typo tag friend (tel×2) — alias only."
+    },
+    {
+      "themeKey": "personality",
+      "status": "frozen",
+      "chip": {
+        "ko": "성격",
+        "zh": "性格",
+        "en": "Personality"
+      },
+      "packIds": [
+        "personality-character"
+      ],
+      "notes": null
+    },
+    {
+      "themeKey": "apology",
+      "status": "frozen",
+      "chip": {
+        "ko": "미안",
+        "zh": "抱歉",
+        "en": "Apology"
+      },
+      "packIds": [
+        "apology-politeness"
+      ],
+      "notes": "ThemeSm52a speed(+cloze) chip enable (2026-07-27). Distinct from favor 고맙다 · rules 예의 · friends · emotion · fruit 사과 · personality."
+    },
+    {
+      "themeKey": "success",
+      "status": "frozen",
+      "chip": {
+        "ko": "성공",
+        "zh": "成功",
+        "en": "Success"
+      },
+      "packIds": [
+        "success-challenge"
+      ],
+      "notes": "ThemeSm53a speed(+cloze) chip enable (2026-07-27). Distinct from habit 노력하다·포기하다 · reason 목표·결과 · problem 경험 · personality 자신감 · school 시험·성적 · think · emotion · apology."
+    },
+    {
+      "themeKey": "advice",
+      "status": "frozen",
+      "chip": {
+        "ko": "조언",
+        "zh": "建议",
+        "en": "Advice"
+      },
+      "packIds": [
+        "advice-counsel"
+      ],
+      "notes": "ThemeSm54b speed+cloze chip SHOW (2026-07-27). Distinct from opinion 추천하다·중요하다 · speech 대답하다·질문하다·알리다 · favor 물어보다·부탁하다 · think · problem · success · housing 문의(n)."
+    },
+    {
+      "themeKey": "encourage",
+      "status": "active",
+      "chip": {
+        "ko": "격려",
+        "zh": "鼓励",
+        "en": "Encourage"
+      },
+      "packIds": [
+        "encourage-support"
+      ],
+      "notes": "ThemeSm55a speed + ThemeSm55b cloze chip SHOW (2026-07-27). Distinct from advice 조언하다·제안하다·권하다 · favor 도와주다 · success 희망·기대하다 · opinion 칭찬하다 · emotion · friends · sports."
+    },
+    {
+      "themeKey": "promise",
+      "status": "active",
+      "chip": {
+        "ko": "약속",
+        "zh": "约定",
+        "en": "Promise"
+      },
+      "packIds": [
+        "promise-trust"
+      ],
+      "notes": "ThemeSm56a speed(+cloze) · ThemeSm56 bingo/listen Done (2026-07-27). Distinct from think 믿다 · rules 지키다·어기다 · time 약속(n) · personality 솔직하다 · favor 확인하다 · encourage 의지하다·안심하다 · advice · apology · success. Suggest particle/dictation(+tel/scramble) · ThemeSm56c chip SHOW."
+    },
+    {
+      "themeKey": "refuse",
+      "status": "active",
+      "chip": {
+        "ko": "거절",
+        "zh": "拒绝",
+        "en": "Refuse"
+      },
+      "packIds": [
+        "refuse-accept"
+      ],
+      "notes": "ThemeSm57a speed(+cloze) · bingo/listen Done (2026-07-27). Distinct from opinion 동의하다 · compare 반대 · rules 허락하다 · promise · favor 부탁하다 · advice 제안하다 · apology · speech 대답하다. Prefer 거절하다·수락하다·응하다·승인하다 bingo/listen Done · Suggest particle/dictation."
+    },
+    {
+      "themeKey": "complain",
+      "status": "active",
+      "chip": {
+        "ko": "불만",
+        "zh": "不满",
+        "en": "Complain"
+      },
+      "packIds": [
+        "complain-dissatisfaction"
+      ],
+      "notes": "ThemeSm58 close Done (2026-07-27). 전 8 chip SHOW KO 불만 / ZH 不满 / EN Complain. Distinct from emotion 걱정 · housing 불편 · problem 문제 · opinion 비판하다 · compare 반대 · refuse · apology. Pack+speed+cloze+bingo/listen+particle/dictation(+tel/scramble) Done · complain-dissatisfaction 스윕 닫힘."
+    },
+    {
+      "themeKey": "warn",
+      "status": "active",
+      "chip": {
+        "ko": "경고",
+        "zh": "警告",
+        "en": "Warn"
+      },
+      "packIds": [
+        "warn-caution"
+      ],
+      "notes": "Pack+speed+cloze+bingo/listen Done (2026-07-27). ThemeSm chip not enabled yet. Distinct from rules 안전하다·금지하다 · driving 위험·조심하다 · problem · emotion 걱정·불안 · complain · refuse · health. Prefer 경고하다·주의하다·위험하다·피하다 bingo/listen Done · Suggest particle/dictation."
+    },
+    {
+      "themeKey": "cafe",
+      "status": "frozen",
+      "chip": {
+        "ko": "카페",
+        "zh": "咖啡",
+        "en": "Cafe"
+      },
+      "packIds": [
+        "drinks-order"
+      ],
+      "notes": "Phase-0 default: drinks-order → cafe (basicsAlign unit03-cafe). Paul may later prefer shopping-adjacent dual tag — do not rename existing cafe tags."
+    },
+    {
+      "themeKey": "cosmetics",
+      "status": "frozen",
+      "chip": {
+        "ko": "화장품",
+        "zh": "美妆",
+        "en": "Cosmetics"
+      },
+      "packIds": [
+        "cosmetics-basic"
+      ],
+      "notes": "In several game themes[]; not in speed THEME_ORDER yet (chip enable optional)."
+    },
+    {
+      "themeKey": "leisure",
+      "status": "frozen",
+      "chip": {
+        "ko": "여가",
+        "zh": "休闲",
+        "en": "Leisure"
+      },
+      "packIds": [
+        "leisure-simple"
+      ],
+      "notes": "Beginner pack; sparse tags (≈6). Not in speed THEME_ORDER."
+    }
+  ],
+  "aliases": [
+    {
+      "alias": "transport",
+      "canonKey": "transit",
+      "notes": "Legacy bingo/listen/tel/scramble theme; same chip family 교통/交通."
+    },
+    {
+      "alias": "directions",
+      "canonKey": "direction",
+      "notes": "Plural typo/legacy (4 tags)."
+    },
+    {
+      "alias": "friend",
+      "canonKey": "friends",
+      "notes": "Singular typo on telephone (2 tags)."
+    },
+    {
+      "alias": "money",
+      "canonKey": "banking",
+      "notes": "Bingo-only money chip; pack is money-banking → banking."
+    },
+    {
+      "alias": "daily",
+      "canonKey": "routine",
+      "notes": "Telephone-only; overlaps daily-routine."
+    }
+  ],
+  "packOnly": [
+    {
+      "packId": "public-life",
+      "themeKey": null,
+      "notes": "Early intermediate pack; crossfill notes say no dedicated chip. Keep pack id; do not invent themeKey without Paul."
+    },
+    {
+      "packId": "work-study",
+      "themeKey": null,
+      "notes": "Distinct from workplace (public-workplace). No 1:1 themeKey yet."
+    },
+    {
+      "packId": "news-taste",
+      "themeKey": null,
+      "notes": "Distinct from media-news. No 1:1 themeKey yet."
+    }
+  ],
+  "metaOrCoarse": [
+    {
+      "key": "intermediate",
+      "role": "meta-bucket",
+      "chip": {
+        "ko": "중급",
+        "zh": "中级",
+        "en": "Mid"
+      },
+      "notes": "Mass co-tag on mid items; not a pack theme. Keep; do not use as Sense.themes sole theme."
+    },
+    {
+      "key": "basic",
+      "role": "coarse",
+      "chip": {
+        "ko": "기초",
+        "zh": "基础",
+        "en": "Basic"
+      },
+      "notes": "Early bingo/scramble taxonomy."
+    },
+    {
+      "key": "food",
+      "role": "coarse-legacy",
+      "chip": {
+        "ko": "음식",
+        "zh": "饮食",
+        "en": "Food"
+      },
+      "notes": "Overlaps cafe/restaurant/snack. Frozen as legacy tag only — new drinks→cafe, dining→restaurant, street→snack."
+    },
+    {
+      "key": "object",
+      "role": "coarse",
+      "notes": "High-volume particle/bingo taxonomy (~450+), not a pack."
+    },
+    {
+      "key": "place",
+      "role": "coarse",
+      "notes": "≠ places (city-places). Singular coarse tag."
+    },
+    {
+      "key": "people",
+      "role": "coarse",
+      "notes": "Early bingo/listen taxonomy."
+    },
+    {
+      "key": "lang",
+      "role": "coarse",
+      "notes": "Bingo-only sparse."
+    },
+    {
+      "key": "services",
+      "role": "coarse",
+      "notes": "Bingo-only sparse; not housing-services pack key."
+    }
+  ],
+  "paulOpen": [
+    {
+      "id": "drinks-order-primary",
+      "question": "drinks-order 정본 키를 cafe로 확정할지, shopping 이중 태그/별도 drinks 키를 둘지?",
+      "defaultUsed": "cafe",
+      "blocksPhase0": false
+    },
+    {
+      "id": "transit-vs-transport",
+      "question": "레거시 transport 태그를 점진적으로 transit으로 맞출지, 칩만 통합하고 태그는 병존할지?",
+      "defaultUsed": "transit canon + transport alias (no mass rename)",
+      "blocksPhase0": false
+    },
+    {
+      "id": "pack-only-three",
+      "question": "public-life / work-study / news-taste에 전용 themeKey·칩을 만들지, intermediate 메타만 쓸지?",
+      "defaultUsed": "packOnly (no new key)",
+      "blocksPhase0": false
+    },
+    {
+      "id": "clothes-vs-shopping",
+      "question": "clothes-shopping 신규 문항을 clothes만 칠지 shopping도 이중 칠지?",
+      "defaultUsed": "clothes primary (shopping-basics stays shopping)",
+      "blocksPhase0": false
+    }
+  ],
+  "counts": {
+    "frozenThemeKeys": 61,
+    "aliases": 5,
+    "packOnly": 3,
+    "metaOrCoarse": 8,
+    "packsMappedToThemeKey": 62,
+    "packsWithoutThemeKey": 3
+  }
+}

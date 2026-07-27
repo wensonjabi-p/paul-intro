@@ -1,3 +1,38 @@
+## TOPIK I 연습 (2026-07-26 · research-fill #3)
+
+- **뱅크:** `verified-read-01..04.json` (읽기 36Q) · `verified-listen-01..02.json` (듣기 10Q) · 전부 `jabi-original` · hint.steps/why/distractWhy.
+- **유형:** blank · topic · notice · purpose · content · order · listening(응답·장소·주제·행동·일치).
+- **엔진:** `hub/app/js/app.js` — MOCK/LISTEN 로드 · SRS 퀘스트(오답 태그) · 최종 UI = 읽기 세트 3 대용(풀 70Q 아님).
+- **제외:** `click-topik-*.json` (CLIcK · I–II 혼합) — 메인 Practice 미연결.
+- **허브 문:** TOPIK I = 읽기·듣기·퀘스트. 리서치: `docs/research-topik1-content-fill-ko.md`.
+- **힌트 UX:** `docs/research-hint-ux-ko.md` — 조기 Match:/답: 금지 유지.
+
+## 한글 트랙 스캐폴딩 (2026-07-26)
+
+- **매니페스트:** `hangul/track-manifest.json` v1 · track `pilot` — 레슨 00–17 전부 최소 본문(objective / explain / examples / task). hangul-02/04/05에 `type:trace`. 상단 획순 로스터는 매니페스트와 별도로 13+경음 전부 노출.
+- **UI:** `hub/app/hangul/` — 레슨 열면 모듈 렌더 + **획순 연습**(상단·레슨 내). 오디오·퀴즈 엔진 연동은 아직.
+- **허브 문:** `hub/index.html` → Hangul door. 앱 Practice에 링크 stub.
+- **저작권:** 세종학당은 단원 순서·그룹 방법론만 참고. 본문은 jabi. 원작 최소 콘텐츠.
+
+## 기초 수업 트랙 (2026-07-26 · content fill C2)
+
+- **매니페스트:** `basic/track-manifest.json` v1 · track `pilot` — 파일럿 1–2과 + 03–06 planned(카페·쇼핑·길찾기·음식) 실제목·목표.
+- **파일럿 뱅크:** `draft-basic-unit01-greetings.json` · `draft-basic-unit02-daily-life.json` (각 6문항 + objective/explain/phrases, 원작 대화형).
+- **UI:** `hub/app/basic/` — 단원 노트 + MCQ 대화 연습 플레이어. TOPIK `app.js` 미연결.
+- **허브 문:** Basics door. 앱 Practice 링크 stub.
+
+## TOPIK II 트랙 (2026-07-26 · research-fill #4)
+
+- **매니페스트:** `topik2/track-manifest.json` v2 — 00 overview · listen/read **01–03 pilot** · write 51–54 pilot · full mock planned.
+- **뱅크:** `draft-listen-01..03` · `draft-read-01..03` · `draft-write-51..54` (원작 · 형성 채점 필드 유지).
+- **리서치:** `docs/research-topik2-content-fill-ko.md` · 축 매핑 · 영어 AES 문서.
+- **UI:** `hub/app/topik2/` — MCQ(듣기·읽기) + 쓰기 형성 점수 플레이어. 듣기 오디오 미연결(대본 공개). AI/Lemon 없음.
+- **허브 문:** TOPIK II = 듣기·읽기·쓰기 연습 · 형성 점수(공식 아님).
+- **스모크:** `node scripts/_smoke_topik2_listen_read.js` · `node scripts/_smoke_topik2_scoring.js`.
+- **Lemon:** 결제 stub 없음 — #5b 보류.
+
+---
+
 ## 해설·힌트 규칙 (2026-07-26 · 로직 고정)
 
 근거: **국립국어원**(이에요/예요 = 받침 있는 체언 → 이에요, 없으면 예요) + 초급 앱/블로그(Sol’s, MyKoreanLesson, KoreanClass101) = **뜻 → 끝소리 보기 → 형태 → 짝 예**.
@@ -29,7 +64,7 @@
 
 | 관계 | 표기 | 예 |
 |------|------|-----|
-| **반댓말** | `A + 상황 · B + 상황` (`≠`/`↔` 쓰지 않음) | `추워요 + 코트 · 더워요 + 반팔` |
+| **반댓말** | `A + 상황 · B + 상황` (`≠`/`↔` 쓰지 않음) | `추워요 + 코트 · 더워요 + 티셔츠` |
 | **시제·자리·높임 대비** | 라벨 + `·` | `갔어요 + 지난주 · 가요 + 지금` · `커요 (문장 끝) · 큰 가방 (명사 앞)` |
 | **좋은 예 둘** | `·` (또는 짧은 짝) | `생일이에요 · 학교예요` · `닫아 주세요 · 도와 주세요` |
 | **오답 의미** | Pair에 넣지 않음 → 소거/`distractWhy` | `왜 맛있어요? 비 → 우산이 필요해요` |

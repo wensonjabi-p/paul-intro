@@ -36,12 +36,8 @@
 
 ## 다음 단계
 
-1. **(Cursor)** `hub/app/hangul/hangul.js` 로스터 배선 — `jamo-strokes-13.json`에 `jieut`(ㅈ) 실제 데이터가 생겼으므로:
-   - 획순 연습 로스터(`ROSTER_13`, 지금 13개)에 `{ glyph: "ㅈ", id: "jieut" }` 추가 — 위치는 ㅅ 다음이 자연스러움.
-   - **주의:** `ROSTER_13`은 캐릭터 파트너 선택 화면에서도 재사용됨(`자음 짝 고르기`). ㅈ는 파트너 목록에는 여전히 없어야 함(자비/길잡이라 파트너 아님). 따라서 이 배열을 그대로 늘리면 파트너 화면에도 ㅈ가 나와버림 — **배열을 분리**해야 함: 파트너 선택용(`ROSTER_PARTNERS`, 13개 그대로) vs 획순 연습용(`ROSTER_STROKE`, 14개, ㅈ 포함) 별도로 두고 각 화면에서 맞는 배열 참조.
-   - `STROKE_STUB_IDS`에서 `"ji"` 제거(더 이상 JSON에 없음 — 그대로 둬도 no-op이지만 정리 차원).
-   - 50번 줄 주석("ㅈ excluded... ji stub is not usable")도 위 분리 설명으로 갱신.
-   - ㅉ(쌍지읒)는 이 작업 이후 스트레치 — jieut 데이터를 `giyeok→ssanggiyeok`과 같은 방식(옆으로 축소 복제)으로 만들면 됨.
-2. Hangul 페이지에서 새로 고친 ㅍ·ㅎ·ㄲㄸㅃㅆ·ㅈ Replay·Trace 육안 재확인(Paul).
+1. ~~**(Cursor) `hangul.js` 로스터 배선**~~ **Done 2026-07-27** — `ROSTER_PARTNERS`(13, ㅈ 없음) vs `ROSTER_STROKE`(14, ㅅ 다음 ㅈ/`jieut`) 분리 · 획순 허브는 `ROSTER_STROKE` · `STROKE_STUB_IDS`에서 `ji` 제거 · 파트너 온보딩은 `app.js` 13목록 유지(ㅈ=자비 가이드).
+2. Hangul 페이지에서 새로 고친 ㅍ·ㅎ·ㄲㄸㅃㅆ·**ㅈ** Replay·Trace 육안 재확인(Paul).
 3. 나머지 ㄹ·ㅂ·ㅇ·ㅋ Replay·Trace 수동 확인(진행 중이던 항목, 이번 수정과 별개).
-4. (선택) TOPIK `app.js`에 `type: "trace"` 문제 타입 — 지금은 Hangul 트랙만.
+4. (선택) ㅉ(쌍지읒) — jieut를 옆으로 축소 복제(`giyeok→ssanggiyeok` 방식).
+5. (선택) TOPIK `app.js`에 `type: "trace"` 문제 타입 — 지금은 Hangul 트랙만.

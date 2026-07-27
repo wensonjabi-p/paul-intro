@@ -60,8 +60,10 @@
 
 ## 다음 결정 필요
 
-- Paul: "세종학당 파일"이 실제로 있다면 공유 — 있으면 위 리서치를 더 구체화 가능
-- 위 순서(한글→기초→TOPIK II) 확정 여부
+- ~~위 순서(한글→기초→TOPIK II) 확정 여부~~ → **2026-07-26 Cursor 채택** (`docs/PROGRESS.md` §7 · Paul 「순서 정하고 하나씩」 위임)
+- ~~TOPIK II 착수 게이트~~ → **2026-07-26 Paul 「토픽 II 진행」** → Cursor scaffold 완료 (`hub/app/topik2/` · `data/topik2/track-manifest.json`). Lemon은 계속 보류.
+- Paul: "세종학당 파일"이 실제로 있다면 공유 — 있으면 위 리서치를 더 구체화 가능 *(입문 구조는 `research-hangul-track-implementation-ko.md`에 반영됨)*
 - 한글 트랙 착수 시 모음 캐릭터 디자인도 필요(현재 자음 13개만 있음) — Cursor 캐릭터 파이프라인에 추가 예정 항목
+- **분담:** 획순 UI·ㅣ/ㅇ/ㄱ 파일럿·13자모 stroke 배선 = **Claude 전담**. Cursor = 스캐폴딩·그 외 비획순 항목.
 
 *Sources: 세종학당재단(ksif.or.kr), 누리 세종학당(nuri.iksi.or.kr), 국립국어원, LingoDeer Hangul 가이드, TOPIK II 쓰기 영역 안내(topiklab.com)*

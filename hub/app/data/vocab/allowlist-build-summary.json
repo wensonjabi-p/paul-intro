@@ -5,10 +5,12 @@
   "tammy": 1670,
   "tammy_soft": 1660,
   "banks": {
-    "verified-listen-01.json": 35,
-    "verified-read-01.json": 95,
-    "verified-read-02.json": 62,
-    "verified-read-03.json": 80
+    "verified-listen-01.json": 3,
+    "verified-read-01.json": 18,
+    "verified-read-02.json": 15,
+    "verified-read-03.json": 14
   },
-  "unique_oov": 219
+  "unique_oov": 34,
+  "noise_likely": 20,
+  "content_review": 0
 }

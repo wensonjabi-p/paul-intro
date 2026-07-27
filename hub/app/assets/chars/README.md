@@ -11,16 +11,32 @@ https://www.canva.com/ai/thread/7c6a61cb-c08d-40b2-b985-72fe4bbdf379
 
 **파일럿 진행 (ㄱ giyeok):**
 - ✅ `char-giyeok-1.svg` + `source/giyeok-1.png` (베이비)
-- ✅ `char-giyeok-2.svg` … `5.svg` + `source/giyeok-2.png` … `5.png` ← Canva 드롭에서 고른 뒤 추적 (2026-07-26)
+- ✅ `char-giyeok-2.svg` … `5.svg` + `source/giyeok-2.png` … `5.png` ← Paul **넣었어**(최종 Canva PNG) → Cursor `trace-giyeok-sources.py` 추적 (2026-07-26)
 - ✅ `char-giyeok-6.svg` + `source/giyeok-6.png` ← 풀히어로 · **Paul OK 2026-07-26**
-- 🔄 **다음:** Paul이 `_check.html`에서 2–5 확인 → OK면 앱 연결 / 나머지 자음 일괄  
-  재생성 가이드: [`CANVA-STAGE-2-5-ko.md`](./CANVA-STAGE-2-5-ko.md)  
-- 미리보기: `hub/app/assets/chars/_check.html`
+- ✅ **stage 3–5 Paul OK** (2026-07-26 · `_check.html` 시각 승인) → 파일럿 ㄱ **1–6 전부 Paul OK**
 
-### Canva 요약 (자세한 건 CANVA-STAGE-2-5-ko.md)
+### “나머지 12 자음 일괄”이란?
+
+파트너 **13마리**(ㅈ 제외) − 파일럿 ㄱ = **남은 12자**.  
+한 글자당 Canva **stage 1–6 PNG** → `source/{id}-{n}.png` → `trace-char-sources.py` → `char-{id}-{n}.svg`.  
+**≠** Cursor가 오늘 72장 아트를 발명하는 것. **≠** 획순(stroke).
+
+| 슬라이스 | Owner | 상태 |
+|----------|-------|------|
+| `manifest.json` · 배치 추적 · `_check.html` 로스터 · ㄴ/ㄷ 워크시트 | **Cursor** | ✅ 2026-07-26 |
+| Canva PNG (자음별 1–6) · `_check` Paul OK | **Paul** | ★ **지금=ㄴ nieun** (`CANVA-BATCH-12-ko.md`) |
+| 앱 로드 `char-{id}-{stage}.svg` + 글리프 폴백 | **Cursor** (이미 `app.js`) | ✅ |
+
+- 배치 가이드: [`CANVA-BATCH-12-ko.md`](./CANVA-BATCH-12-ko.md)  
+- ㄱ 재생성 참고: [`CANVA-STAGE-2-5-ko.md`](./CANVA-STAGE-2-5-ko.md)  
+- 미리보기: [`_check.html`](./_check.html) · 메타: [`manifest.json`](./manifest.json)  
+- 추적: `python scripts/trace-char-sources.py nieun` · `--status` · giyeok는 기본 **보호(덮어쓰기 금지)**
+
+### Canva 요약
 
 스레드: https://www.canva.com/ai/thread/7c6a61cb-c08d-40b2-b985-72fe4bbdf379  
-ㄱ만 · 한 장씩 · 그리드 금지 · 아이템 누적 · 저장명 `giyeok-2.png`…`giyeok-5.png` → `source/` → 채팅 **넣었어**
+**지금 ㄴ:** [`CANVA-BATCH-12-ko.md`](./CANVA-BATCH-12-ko.md) 워크시트 A · 저장 `nieun-1.png`…`nieun-6.png` → `source/` → **넣었어**  
+ㄱ 아카이브: [`CANVA-STAGE-2-5-ko.md`](./CANVA-STAGE-2-5-ko.md) · [`CANVA-PASTE-WORKSHEET-ko.md`](./CANVA-PASTE-WORKSHEET-ko.md)
 
 ## 성장 = 6단계 아이템 장착 (확정)
 
@@ -44,7 +60,7 @@ char-{id}-{stage}.svg   # stage = 1..6
 ```
 
 예: `char-giyeok-1.svg` … `char-giyeok-6.svg`  
-(메타: `chars/manifest.json`에 stage 라벨·아이템 목록 권장)
+(메타: [`manifest.json`](./manifest.json) — stage 라벨·무기 힌트·paulOk·배치 우선순위)
 
 **왜 webp 대신 svg인가 (Claude 제안 → Paul 승인, 2026-07-26):**
 - 자비 로고(`hub/app/icons/`)를 만들 때 이미 검증함 — 32px 파비콘부터 512px까지 한 파일로 전부 선명, 파일 크기도 훨씬 작음(자비 마크 3KB). raster는 해상도별로 여러 장 내보내야 함.
@@ -70,10 +86,10 @@ char-{id}-{stage}.svg   # stage = 1..6
 
 **제외:** `jieut` **ㅈ** = **자비(jabi.)** — 선생님·친구·조교. 학생 파트너 선택 목록에 넣지 않음. 완성형 가이드 NPC.
 
-## 파일럿
+## 파일럿 → 일괄
 
-1. **첫 캐릭터:** `giyeok` (ㄱ) — stage 1–6  
-2. Paul 확인 후 나머지 id 일괄 (같은 아이템 스택 + 자음별 몸통·무기)
+1. ✅ **첫 캐릭터:** `giyeok` (ㄱ) — stage 1–6 Paul OK  
+2. 🔄 나머지 12 id — Paul Canva(우선 ㄴ·ㄷ) → Cursor 추적. 가짜 SVG 일괄 생성 금지.
 
 ## 앱 연결 시 주의 (Cursor)
 

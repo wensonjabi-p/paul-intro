@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>jabi. — TOPIK II</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/hub.css">
+  <link rel="stylesheet" href="./topik2.css?v=20260727a">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="topik2-page">
+    <p class="eyebrow" data-i18n="topik2Eyebrow">Track pilot</p>
+    <h1 id="topik2-title">TOPIK II</h1>
+    <p class="lead" id="topik2-lead">Listen/read/write pilots (short banks).</p>
+    <p class="topik2-meta" id="topik2-meta"></p>
+
+    <section id="topik2-growth" class="topik2-growth hidden" aria-label="Partner growth" hidden>
+      <div class="topik2-partner" id="topik2-partner">
+        <div class="topik2-partner-glyph-wrap">
+          <div class="topik2-partner-glyph" id="topik2-partner-glyph">·</div>
+          <span class="topik2-partner-pill" id="topik2-partner-pill">STAGE 1</span>
+        </div>
+        <div class="topik2-partner-meta">
+          <div class="topik2-partner-name" id="topik2-partner-name">—</div>
+          <div class="topik2-partner-stage" id="topik2-partner-stage"></div>
+        </div>
+      </div>
+      <div class="topik2-xp" aria-label="XP">
+        <div class="topik2-xp-top">
+          <span class="k">XP</span>
+          <span id="topik2-xp-label">0</span>
+        </div>
+        <div class="topik2-xp-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="topik2-xp-bar">
+          <div class="topik2-xp-fill" id="topik2-xp-fill"></div>
+        </div>
+        <p class="topik2-xp-hint" id="topik2-xp-hint"></p>
+      </div>
+      <div class="topik2-stage-chips" id="topik2-stage-chips" aria-label="Stages"></div>
+    </section>
+
+    <section id="topik2-partner-pick" class="topik2-partner-pick hidden" hidden aria-modal="true" role="dialog" aria-labelledby="topik2-partner-pick-title">
+      <p class="eyebrow" id="topik2-partner-pick-eyebrow">Partner</p>
+      <h2 id="topik2-partner-pick-title">Choose your jamo</h2>
+      <p class="lead" id="topik2-partner-pick-lead">One partner for TOPIK II. ㅈ is jabi. (guide) — not a partner.</p>
+      <div class="topik2-jamo-grid" id="topik2-jamo-grid"></div>
+    </section>
+
+    <nav class="topik2-nav" aria-label="TOPIK II nav">
+      <a href="../../" data-i18n="topik2BackHub">← Hub</a>
+      <a href="../basic/" data-i18n="topik2BackBasic">Basics →</a>
+      <a href="../hangul/" data-i18n="topik2BackHangul">Hangul →</a>
+      <a href="../" data-i18n="topik2BackTopik1">TOPIK I app →</a>
+    </nav>
+
+    <section id="topik2-player" class="topik2-player hidden" hidden>
+      <div class="topik2-player-head">
+        <h2 id="topik2-player-title">Writing pilot</h2>
+        <button type="button" id="topik2-player-close" class="topik2-player-close">Close</button>
+      </div>
+      <p id="topik2-player-meta" class="topik2-player-meta"></p>
+      <p id="topik2-player-disclaimer" class="topik2-disclaimer topik2-disclaimer--sticky" data-i18n="topik2FormativeDisclaimer">연습용 형성 점수 · 공식 TOPIK 아님</p>
+      <p id="topik2-player-hint" class="topik2-player-hint">Type one formal written answer for the blank, then Check. Model stays hidden until you opt in.</p>
+      <pre id="topik2-player-prompt" class="topik2-player-prompt"></pre>
+      <div id="topik2-script-wrap" class="topik2-script-wrap" hidden>
+        <button type="button" id="topik2-script-toggle" class="topik2-reveal-btn">Show script</button>
+        <pre id="topik2-player-script" class="topik2-player-script" hidden></pre>
+      </div>
+      <div id="topik2-choices" class="topik2-choices" hidden></div>
+      <div id="topik2-input-wrap">
+        <label for="topik2-player-input">Your answer</label>
+        <input id="topik2-player-input" class="topik2-player-input" type="text" autocomplete="off" spellcheck="true">
+      </div>
+      <div id="topik2-text-wrap" hidden>
+        <label for="topik2-player-textarea">Your composition</label>
+        <textarea id="topik2-player-textarea" class="topik2-player-textarea" rows="8" spellcheck="true"></textarea>
+        <p id="topik2-char-count" class="topik2-char-count" hidden></p>
+      </div>
+      <div class="topik2-player-actions">
+        <button type="button" id="topik2-player-check" class="topik2-practice-btn">제출</button>
+        <button type="button" id="topik2-player-next" class="topik2-practice-btn topik2-practice-btn--ghost" hidden>Next item →</button>
+      </div>
+      <div id="topik2-player-feedback" class="topik2-feedback" hidden></div>
+    </section>
+
+    <p id="topik2-error" class="topik2-error hidden" role="alert"></p>
+    <ul class="topik2-list" id="topik2-list"></ul>
+
+    <section id="topik2-official" class="topik2-official" hidden>
+      <h2 class="topik2-official-title" id="topik2-official-title">실제 TOPIK 성적</h2>
+      <p class="topik2-official-lead" id="topik2-official-lead">실제 TOPIK 시험을 보셨나요? 결과를 알려주시면 jabi의 채점 정확도를 계속 검증하는 데 도움이 됩니다.</p>
+      <p class="topik2-official-privacy" id="topik2-official-privacy">완전 익명으로 저장되며, 채점 정확도 검증 목적으로만 사용됩니다.</p>
+      <form id="topik2-official-form" class="topik2-official-form">
+        <label class="topik2-official-field">
+          <span id="topik2-official-level-label">급수</span>
+          <select id="topik2-official-level" name="level">
+            <option value="">—</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </label>
+        <label class="topik2-official-field">
+          <span id="topik2-official-score-label">쓰기 점수 (선택)</span>
+          <input id="topik2-official-score" name="writingScore" type="number" min="0" max="100" inputmode="numeric" placeholder="0–100">
+        </label>
+        <label class="topik2-official-field">
+          <span id="topik2-official-date-label">응시일 (선택)</span>
+          <input id="topik2-official-date" name="examDate" type="date">
+        </label>
+        <div class="topik2-official-actions">
+          <button type="submit" class="topik2-practice-btn" id="topik2-official-submit">제출</button>
+          <button type="button" class="topik2-practice-btn topik2-practice-btn--ghost" id="topik2-official-later">나중에</button>
+        </div>
+      </form>
+      <p class="topik2-official-thanks" id="topik2-official-thanks" hidden></p>
+    </section>
+  </main>
+
+  <script src="../../js/i18n.js"></script>
+  <script src="./topik2.js?v=20260727a"></script>
+</body>
+</html>

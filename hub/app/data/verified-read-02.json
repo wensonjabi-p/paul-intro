@@ -1,15 +1,15 @@
 {
   "id": "jabi-topik1-read-v1-02",
   "title": {
-    "en": "jabi. Practice · Set 2",
-    "ko": "jabi. 연습 · 세트 2",
-    "zh": "jabi. 练习 · 套题 2"
+    "en": "jabi. Reading · Set 2 (grammar · notice · topic)",
+    "ko": "jabi. 읽기 연습 2 (문법·안내·주제)",
+    "zh": "jabi. 阅读 · 套题 2（语法·告示·主题）"
   },
   "level": "TOPIK I",
   "verified": true,
   "verifiedAt": "2026-07-26",
   "source": "jabi-original",
-  "sourceNote": "All items: Meaning→Look→Pair (hint.steps). Visual = clear nouns/verbs + Korean label. Grammar: 국립국어원 / beginner-app style.",
+  "sourceNote": "All items: Meaning→Look→Pair (hint.steps). Visual = clear nouns/verbs + Korean label. Grammar: 국립국어원 / beginner-app style. Research-fill #3: titles aligned to TOPIK I section labels; official format only.",
   "questions": [
     {
       "id": "v2-01",
@@ -64,9 +64,9 @@
         }
       },
       "why": {
-        "en": "학교에서 집까지 = from school to home.",
-        "zh": "학교에서 집까지 = 从学校到家。",
-        "ko": "학교에서 집까지."
+        "en": "A에서 B까지 = from A to B (path endpoints).",
+        "ko": "학교에서 집까지=에서~까지.",
+        "zh": "A에서 B까지：从学校到家。에서标起点。"
       },
       "distractOrder": [
         2,
@@ -74,15 +74,15 @@
         3
       ],
       "distractWhy": {
-        "2": {
-          "en": "Why not 와? 와 = with. Here it’s from–to (학교에서 …까지), so 에서.",
-          "zh": "为什么不是 와？와=和。这里是从…到…，用 에서。",
-          "ko": "왜 「와」가 아니에요? 「와」는 함께. 여기는 「에서 …까지」."
-        },
         "1": {
           "en": "Why not 을? That’s an object marker. The blank is the starting place.",
           "zh": "为什么不是 을？那是对象。空格是起点。",
           "ko": "왜 「을」이 아니에요? 빈칸은 출발 장소예요."
+        },
+        "2": {
+          "en": "Why not 와? 와 = with. Here it’s from–to (학교에서 …까지), so 에서.",
+          "zh": "为什么不是 와？와=和。这里是从…到…，用 에서。",
+          "ko": "왜 「와」가 아니에요? 「와」는 함께. 여기는 「에서 …까지」."
         },
         "3": {
           "en": "Why not 이? That often marks the subject. You need “from (school).”",
@@ -111,40 +111,41 @@
         "grammar:보다"
       ],
       "hint": {
-        "ko": "두 사과를 비교해요. 「보다」= ~보다 더. 짝: 사과보다 더 달아요.",
-        "en": "Comparing two apples: this one is sweeter. 보다 ≈ “than.” Pattern: A보다 더 ~. Pair: 사과보다 더 달아요 · 저보다 커요.",
-        "zh": "比较两个苹果：这个更甜。 보다 ≈ “比”。A보다 더 ~。 对比：사과보다 더 달아요 · 저보다 커요。",
+        "ko": "「달아요」= 맛이 달다(단 음식). 두 사과를 비교해요. 「A보다 더 ~」.",
+        "en": "달아요 = tastes sweet (think desserts). Comparing two apples. Pattern: A보다 더 ~.",
+        "zh": "달아요 = 甜（想想甜点）。比较两个苹果。句式：A보다 더 ~。",
         "visual": {
           "emoji": [
-            "🍎",
-            "🍎"
+            "🍰",
+            "🍭",
+            "🍬"
           ],
-          "en": "apple · apple",
-          "ko": "사과·사과",
-          "zh": "苹果·苹果"
+          "en": "sweet · dessert",
+          "ko": "달다·단맛",
+          "zh": "甜·甜点"
         },
         "steps": {
           "en": [
-            "Comparing two apples: this one is sweeter.",
-            "보다 ≈ “than.” Pattern: A보다 더 ~.",
-            "Pair: 사과보다 더 달아요 · 저보다 커요."
+            "달아요 = sweet (like candy or dessert).",
+            "You compare two apples — look for the “than” pattern: A보다 더 ~.",
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
-            "比较两个苹果：这个更甜。",
-            "보다 ≈ “比”。A보다 더 ~。",
-            "对比：사과보다 더 달아요 · 저보다 커요。"
+            "달아요 = 甜（像甜点）。",
+            "比较两个苹果 — 找“比”的句式：A보다 더 ~。",
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
-            "두 사과를 비교해요.",
-            "「보다」= ~보다 더.",
-            "짝: 사과보다 더 달아요."
+            "「달아요」= 단맛(사탕·디저트).",
+            "두 사과 비교 → 「A보다 더 ~」 자리를 보세요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "저 사과보다 더 달아요 = sweeter than that apple.",
-        "zh": "저 사과보다 더 달아요 = 比那个苹果更甜。",
-        "ko": "저 사과보다 더 달아요."
+        "en": "보다 + 더 + adjective: sweeter than that apple.",
+        "ko": "보다 더 달아요=비교.",
+        "zh": "比较：A보다 더 달아요＝比那个更甜。"
       },
       "distractOrder": [
         1,
@@ -170,85 +171,6 @@
       }
     },
     {
-      "id": "v2-03",
-      "type": "notice",
-      "prompt": {
-        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[버스 안내]\n출발: 시청\n도착: 공항\n요금: 1,500원\n\n이 버스는 어디로 갑니까?",
-        "en": "Read the following and answer.\n\n[버스 안내]\n출발: 시청\n도착: 공항\n요금: 1,500원\n\n이 버스는 어디로 갑니까?\n\n→ Where does this bus go?",
-        "zh": "请阅读并回答问题。\n\n[버스 안내]\n출발: 시청\n도착: 공항\n요금: 1,500원\n\n이 버스는 어디로 갑니까?\n\n→ 这班车去哪里？"
-      },
-      "choices": [
-        "공항",
-        "시청",
-        "학교",
-        "병원"
-      ],
-      "answer": 0,
-      "answerText": "공항",
-      "tags": [
-        "reading:안내문",
-        "vocab:교통"
-      ],
-      "hint": {
-        "ko": "버스는 어디로? 「도착」을 보세요. 답: 공항.",
-        "en": "Bus notice: where does it go? Look at 도착 (= arrival / goes to). 출발 = start only. Match: 공항.",
-        "zh": "公交告示：去哪里？ 看「도착」(到达)。「출발」只是出发。 对应：공항。",
-        "visual": {
-          "emoji": [
-            "🚌",
-            "✈️"
-          ],
-          "en": "bus · airport",
-          "ko": "버스·공항",
-          "zh": "公交·机场"
-        },
-        "steps": {
-          "en": [
-            "Bus notice: where does it go?",
-            "Look at 도착 (= arrival / goes to). 출발 = start only.",
-            "Match: 공항."
-          ],
-          "zh": [
-            "公交告示：去哪里？",
-            "看「도착」(到达)。「출발」只是出发。",
-            "对应：공항。"
-          ],
-          "ko": [
-            "버스는 어디로?",
-            "「도착」을 보세요.",
-            "답: 공항."
-          ]
-        }
-      },
-      "why": {
-        "en": "도착: 공항 → the bus goes to the airport.",
-        "zh": "도착: 공항 → 去机场。",
-        "ko": "도착: 공항 → 공항으로 가요."
-      },
-      "distractOrder": [
-        1,
-        2,
-        3
-      ],
-      "distractWhy": {
-        "1": {
-          "en": "Why not 시청? That’s the start (출발). The question asks where it goes → 도착 = 공항.",
-          "zh": "为什么不是 시청？那是出发地。问的是去哪 → 도착=공항。",
-          "ko": "왜 시청이 아니에요? 시청은 출발. 도착은 공항."
-        },
-        "2": {
-          "en": "Why not school? The notice doesn’t mention school — arrival is the airport.",
-          "zh": "为什么不是学校？告示没写学校，到达是机场。",
-          "ko": "왜 학교가 아니에요? 안내문에 공항만 도착이에요."
-        },
-        "3": {
-          "en": "Why not hospital? Not on the notice — arrival is the airport.",
-          "zh": "为什么不是医院？告示没有，到达是机场。",
-          "ko": "왜 병원이 아니에요? 도착은 공항이에요."
-        }
-      }
-    },
-    {
       "id": "v2-04",
       "type": "blank",
       "prompt": {
@@ -268,40 +190,41 @@
         "grammar:요청"
       ],
       "hint": {
-        "ko": "부탁하는 말이에요. 「~아/어 주세요」. 짝: 닫아 주세요 · 도와 주세요.",
-        "en": "You’re asking someone to do something. ~아/어 주세요 ≈ “please …”. Pair: 닫아 주세요 · 도와 주세요.",
-        "zh": "你在拜托别人做事。 ~아/어 주세요 ≈ “请…”。 对比：닫아 주세요 · 도와 주세요。",
+        "ko": "「닫다」= 문을 닫다(닫아요). 부탁할 때 「~아/어 주세요」.",
+        "en": "닫다 = to close (a door). Soft request ending: ~아/어 주세요 ≈ please …",
+        "zh": "닫다 = 关（门）。拜托别人：~아/어 주세요 ≈ 请…",
         "visual": {
           "emoji": [
             "🚪",
+            "🔒",
             "🥶"
           ],
-          "en": "door · cold",
-          "ko": "문·추움",
-          "zh": "门·冷"
+          "en": "close the door · cold",
+          "ko": "닫다·문·추움",
+          "zh": "关门·冷"
         },
         "steps": {
           "en": [
-            "You’re asking someone to do something.",
-            "~아/어 주세요 ≈ “please …”.",
-            "Pair: 닫아 주세요 · 도와 주세요."
+            "닫다 = close (the door). It’s cold, so you want the door closed.",
+            "You’re asking politely — look for the ~아/어 + please request ending.",
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
-            "你在拜托别人做事。",
-            "~아/어 주세요 ≈ “请…”。",
-            "对比：닫아 주세요 · 도와 주세요。"
+            "닫다 = 关（门）。很冷，所以想关门。",
+            "礼貌拜托别人 → 找 ~아/어 + 请… 的请求结尾。",
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
-            "부탁하는 말이에요.",
-            "「~아/어 주세요」.",
-            "짝: 닫아 주세요 · 도와 주세요."
+            "「닫다」= 문을 닫다. 추워서 문을 닫고 싶어요.",
+            "부탁할 때 쓰는 ~아/어 + 청유 끝을 찾으세요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "문을 닫아 주세요 = please close the door.",
-        "zh": "문을 닫아 주세요 = 请关门。",
-        "ko": "문을 닫아 주세요."
+        "en": "닫다 + 아/어 주세요 = please close (verb first, then soft request).",
+        "ko": "닫아 주세요=동사+주세요.",
+        "zh": "请关上：닫다+주세요。"
       },
       "distractOrder": [
         1,
@@ -362,25 +285,25 @@
         "steps": {
           "en": [
             "You’re asking where something is.",
-            "어디에 ≈ “where?” (place).",
-            "Pair: 어디에 있어요? · 화장실이 어디에 있어요?"
+            "Look for the place question word (where + location particle).",
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "你在问在哪里。",
-            "어디에 ≈ “哪里？”",
-            "对比：어디에 있어요?"
+            "找地点疑问词（哪里 + 助词）。",
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "장소를 물어요.",
-            "「어디에」.",
-            "짝: 어디에 있어요?"
+            "장소 의문사(어디 + 조사)를 찾으세요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "화장실이 어디에 있어요? = Where is the bathroom?",
-        "zh": "화장실이 어디에 있어요? = 洗手间在哪里？",
-        "ko": "화장실이 어디에 있어요?"
+        "en": "어디에 있어요? = where + existence location pattern.",
+        "ko": "어디에 있어요?=위치.",
+        "zh": "어디에 있어요？"
       },
       "distractOrder": [
         1,
@@ -402,84 +325,6 @@
           "en": "Why not 얼마를? That’s “how much.” Place question → 어디에.",
           "zh": "为什么不是 얼마를？那是“多少钱”。地点用 어디에。",
           "ko": "왜 「얼마를」이 아니에요? 장소는 「어디에」."
-        }
-      }
-    },
-    {
-      "id": "v2-06",
-      "type": "topic",
-      "prompt": {
-        "ko": "※ 다음은 무엇에 대한 이야기입니까?\n\n제 취미는 요리입니다. 주말마다 집에서 한국 음식을 만듭니다. 친구들도 제 음식을 좋아합니다.",
-        "en": "What is this text mainly about?\n\n제 취미는 요리입니다. 주말마다 집에서 한국 음식을 만듭니다. 친구들도 제 음식을 좋아합니다.",
-        "zh": "请阅读并回答。\n\n제 취미는 요리입니다. 주말마다 집에서 한국 음식을 만듭니다. 친구들도 제 음식을 좋아합니다."
-      },
-      "choices": [
-        "취미(요리)",
-        "직장",
-        "여행 계획",
-        "시험 공부"
-      ],
-      "answer": 0,
-      "answerText": "취미(요리)",
-      "tags": [
-        "reading:주제",
-        "vocab:취미"
-      ],
-      "hint": {
-        "ko": "주제 = 글 전체. 첫 줄: 취미·요리. 답: 취미(요리).",
-        "en": "Topic = what the whole text is about. Look at line 1: 취미 + 요리 — cooking hobby. Match: 취미(요리).",
-        "zh": "主题 = 整段在说什么。 看第一句：취미 + 요리。 对应：취미(요리)。",
-        "visual": {
-          "emoji": [
-            "🍳"
-          ],
-          "en": "cooking",
-          "ko": "요리",
-          "zh": "做饭"
-        },
-        "steps": {
-          "en": [
-            "Topic = what the whole text is about.",
-            "Look at line 1: 취미 + 요리 — cooking hobby.",
-            "Match: 취미(요리)."
-          ],
-          "zh": [
-            "主题 = 整段在说什么。",
-            "看第一句：취미 + 요리。",
-            "对应：취미(요리)。"
-          ],
-          "ko": [
-            "주제 = 글 전체.",
-            "첫 줄: 취미·요리.",
-            "답: 취미(요리)."
-          ]
-        }
-      },
-      "why": {
-        "en": "Hobby is cooking → topic = 취미(요리).",
-        "zh": "爱好是料理 → 취미(요리)。",
-        "ko": "취미는 요리예요 → 취미(요리)."
-      },
-      "distractOrder": [
-        1,
-        2,
-        3
-      ],
-      "distractWhy": {
-        "1": {
-          "en": "Why not job? The first line says hobby is cooking — not work.",
-          "zh": "为什么不是工作？第一句说爱好是料理。",
-          "ko": "왜 직장이 아니에요? 취미(요리) 이야기예요."
-        },
-        "2": {
-          "en": "Why not travel plan? The text is about cooking at home, not a trip.",
-          "zh": "为什么不是旅行计划？说的是在家做饭。",
-          "ko": "왜 여행 계획이 아니에요? 요리 취미예요."
-        },
-        "3": {
-          "en": "Why not exam study? Nothing about tests — hobby cooking.",
-          "zh": "为什么不是考试学习？没有考试，是料理爱好。",
-          "ko": "왜 시험 공부가 아니에요? 취미 요리예요."
         }
       }
     },
@@ -519,25 +364,25 @@
         "steps": {
           "en": [
             "Father “is” at the company — polite form for adults.",
-            "계세요 ≈ polite “is / are (there).” 있어요 is plainer.",
-            "Contrast: 아버지께서 계세요 · 책이 있어요."
+            "Prefer the honorific ‘be / stay’ over plain 있어요.",
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "爸爸“在”公司 — 对长辈用敬语。",
-            "계세요 ≈ 敬语“在”。있어요 更随便。",
-            "对比：아버지께서 계세요 · 책이 있어요。"
+            "比起随便的 있어요，选敬语“在”。",
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
-            "아버지께 「있다」→ 「계세요」.",
-            "「있어요」보다 「계세요」.",
-            "대비: 아버지께서 계세요 · 책이 있어요."
+            "아버지께 「있다」를 높여 말해요.",
+            "평서 「있어요」보다 높임 존재를 고르세요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "아버지는 회사에 계세요 = Father is at the company (honorific).",
-        "zh": "아버지는 회사에 계세요 = 爸爸在公司（敬语）。",
-        "ko": "아버지는 회사에 계세요."
+        "en": "계세요 is honorific “to be” for father — not 있어요.",
+        "ko": "계세요=높임 있다(아버지).",
+        "zh": "계세요＝敬语在。"
       },
       "distractOrder": [
         1,
@@ -566,9 +411,9 @@
       "id": "v2-08",
       "type": "blank",
       "prompt": {
-        "ko": "※ 빈칸에 들어갈 알맞은 것을 고르십시오.\n\n이 책은 재미있(    ). 그래서 친구에게 추천했어요.",
-        "en": "Choose the best ending.\n\n이 책은 재미있(    ). 그래서 친구에게 추천했어요.",
-        "zh": "请选择填入空格的最佳词语。\n\n이 책은 재미있(    ). 그래서 친구에게 추천했어요."
+        "ko": "※ 빈칸에 들어갈 알맞은 것을 고르십시오.\n\n이 책은 재미있(    ). 그래서 친구에게 말해 주었어요.",
+        "en": "Choose the best ending.\n\n이 책은 재미있(    ). 그래서 친구에게 말해 주었어요.",
+        "zh": "请选择填入空格的最佳词语。\n\n이 책은 재미있(    ). 그래서 친구에게 말해 주었어요."
       },
       "choices": [
         "어요",
@@ -583,39 +428,40 @@
         "vocab:형용사"
       ],
       "hint": {
-        "ko": "문장을 끝내요: 재미있어요. 「어요」로 끝. 대비: 재미있어요 (문장 끝) · 재미있고 … (이어서).",
-        "en": "The sentence ends here: “This book is interesting.” Full polite ending 어요 → 재미있어요. Contrast: 재미있어요 (sentence end) · 재미있고 … (continue).",
-        "zh": "句子在这里结束：“这本书有趣。” 完整礼貌结尾 어요 → 재미있어요。 对比：재미있어요（句尾）· 재미있고…（继续）。",
+        "ko": "친구에게 말해 주다 ≈ 알리다/권하다. 문장 끝은 「어요」로 닫아요.",
+        "en": "말해 주다 ≈ tell / recommend to a friend. The first sentence ends with polite 어요.",
+        "zh": "말해 주다 ≈ 告诉/推荐给朋友。第一句要用礼貌结尾 어요 收住。",
         "visual": {
           "emoji": [
-            "📖"
+            "👥",
+            "💬"
           ],
-          "en": "book",
-          "ko": "책",
-          "zh": "书"
+          "en": "tell a friend",
+          "ko": "친구에게 말하다",
+          "zh": "告诉朋友"
         },
         "steps": {
           "en": [
-            "The sentence ends here: “This book is interesting.”",
-            "Full polite ending 어요 → 재미있어요.",
-            "Contrast: 재미있어요 (sentence end) · 재미있고 … (continue)."
+            "Hard idea: 말해 주다 ≈ tell / recommend to a friend (not just “book”).",
+            "The first sentence ends here — you need a full polite ending, not a connector.",
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
-            "句子在这里结束：“这本书有趣。”",
-            "完整礼貌结尾 어요 → 재미있어요。",
-            "对比：재미있어요（句尾）· 재미있고…（继续）。"
+            "难的是「말해 주다」≈ 告诉/推荐给朋友（不只是“书”）。",
+            "第一句在这里结束 → 要完整礼貌结尾，不要连接词。",
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
-            "문장을 끝내요: 재미있어요.",
-            "「어요」로 끝.",
-            "대비: 재미있어요 (문장 끝) · 재미있고 … (이어서)."
+            "어려운 뜻: 「말해 주다」≈ 친구에게 알리다/권하다 (책이 핵심 아님).",
+            "첫 문장을 끝내요 → 이어서가 아니라 마침 어미.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "이 책은 재미있어요 = This book is interesting.",
-        "zh": "이 책은 재미있어요 = 这本书有趣。",
-        "ko": "이 책은 재미있어요."
+        "en": "은/는 topic on 이 책 + 재미있어요.",
+        "ko": "이 책은=주제 은/는.",
+        "zh": "这本书：은/는。"
       },
       "distractOrder": [
         1,
@@ -692,9 +538,9 @@
         }
       },
       "why": {
-        "en": "물이 세 병 = three bottles of water.",
-        "zh": "물이 세 병 = 三瓶水。",
-        "ko": "물이 세 병 있어요."
+        "en": "병 counter for bottles after native number 세.",
+        "ko": "세 병=병 수.",
+        "zh": "数瓶装水用병：물이 세 병＝三瓶。"
       },
       "distractOrder": [
         1,
@@ -720,6 +566,163 @@
       }
     },
     {
+      "id": "v2-03",
+      "type": "notice",
+      "prompt": {
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[버스]\n출발: 시청\n도착: 공항\n요금: 1,500원\n\n이 버스는 어디로 갑니까?",
+        "en": "Read the following and answer.\n\n[버스]\n출발: 시청\n도착: 공항\n요금: 1,500원\n\n이 버스는 어디로 갑니까?\n\n→ Where does this bus go?",
+        "zh": "请阅读并回答问题。\n\n[버스]\n출발: 시청\n도착: 공항\n요금: 1,500원\n\n이 버스는 어디로 갑니까?\n\n→ 这班车去哪里？"
+      },
+      "choices": [
+        "공항",
+        "시청",
+        "학교",
+        "병원"
+      ],
+      "answer": 0,
+      "answerText": "공항",
+      "tags": [
+        "reading:글",
+        "vocab:교통"
+      ],
+      "hint": {
+        "ko": "어려운 말: 「출발」(시작)·「도착」(끝나는 곳). 어디로 가냐면 「도착」줄을 보세요.",
+        "en": "Hard words: 출발 = start/depart, 도착 = arrive/destination. For “where does it go?”, read the 도착 line.",
+        "zh": "难词：출발=出发，도착=到达。问去哪里 → 看「도착」那一行。",
+        "visual": {
+          "emoji": [
+            "🚌",
+            "📋"
+          ],
+          "en": "bus notice · start / arrive",
+          "ko": "버스 안내·출발/도착",
+          "zh": "公交告示·出发/到达"
+        },
+        "steps": {
+          "en": [
+            "Hard words on the notice: 출발 (start) vs 도착 (arrive).",
+            "The question asks where the bus goes — look at the 도착 line, not 출발.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "告示难词：출발（出发）vs 도착（到达）。",
+            "问去哪里 → 看「도착」行，不要看「출발」。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "어려운 말: 「출발」=시작, 「도착」=끝나는 곳.",
+            "「어디로 갑니까?」→ 「도착」줄을 보세요 (「출발」아님).",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "도착 cue: destination is the airport — match 공항.",
+        "ko": "도착 장소=공항.",
+        "zh": "看「도착」行：到达地是机场，不是出发地。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not 시청? That’s the start (출발). The question asks where it goes → 도착 = 공항.",
+          "zh": "为什么不是 시청？那是出发地。问的是去哪 → 도착=공항。",
+          "ko": "왜 시청이 아니에요? 시청은 출발. 도착은 공항."
+        },
+        "2": {
+          "en": "Why not school? The notice doesn’t mention school — arrival is the airport.",
+          "zh": "为什么不是学校？告示没写学校，到达是机场。",
+          "ko": "왜 학교가 아니에요? 글에 공항만 도착이에요."
+        },
+        "3": {
+          "en": "Why not hospital? Not on the notice — arrival is the airport.",
+          "zh": "为什么不是医院？告示没有，到达是机场。",
+          "ko": "왜 병원이 아니에요? 도착은 공항이에요."
+        }
+      }
+    },
+    {
+      "id": "v2-06",
+      "type": "topic",
+      "prompt": {
+        "ko": "※ 다음은 무엇에 대한 이야기입니까?\n\n제 취미는 요리입니다. 주말마다 집에서 한국 음식을 만듭니다. 친구들도 제 음식을 좋아합니다.",
+        "en": "What is this text mainly about?\n\n제 취미는 요리입니다. 주말마다 집에서 한국 음식을 만듭니다. 친구들도 제 음식을 좋아합니다.",
+        "zh": "请阅读并回答。\n\n제 취미는 요리입니다. 주말마다 집에서 한국 음식을 만듭니다. 친구들도 제 음식을 좋아합니다."
+      },
+      "choices": [
+        "취미(요리)",
+        "직장",
+        "여행 계획",
+        "시험 공부"
+      ],
+      "answer": 0,
+      "answerText": "취미(요리)",
+      "tags": [
+        "reading:주제",
+        "vocab:취미"
+      ],
+      "hint": {
+        "ko": "주제 = 글 전체.",
+        "en": "Topic = what the whole text is about. Look at line 1: 취미 + 요리 — cooking hobby..",
+        "zh": "主题 = 整段在说什么。 看第一句：취미 + 요리。。",
+        "visual": {
+          "emoji": [
+            "🍳"
+          ],
+          "en": "cooking",
+          "ko": "요리",
+          "zh": "做饭"
+        },
+        "steps": {
+          "en": [
+            "Topic = what the whole text is about.",
+            "Look at line 1: 취미 + 요리 — cooking hobby.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "主题 = 整段在说什么。",
+            "看第一句：취미 + 요리。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "주제 = 글 전체.",
+            "첫 줄: 취미·요리.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Topic of the hobby sentence is 취미 (요리).",
+        "ko": "주제=취미(요리).",
+        "zh": "全文话题＝爱好（烹饪），不是工作或旅行。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not job? The first line says hobby is cooking — not work.",
+          "zh": "为什么不是工作？第一句说爱好是料理。",
+          "ko": "왜 직장이 아니에요? 취미(요리) 이야기예요."
+        },
+        "2": {
+          "en": "Why not travel plan? The text is about cooking at home, not a trip.",
+          "zh": "为什么不是旅行计划？说的是在家做饭。",
+          "ko": "왜 여행 계획이 아니에요? 요리 취미예요."
+        },
+        "3": {
+          "en": "Why not exam study? Nothing about tests — hobby cooking.",
+          "zh": "为什么不是考试学习？没有考试，是料理爱好。",
+          "ko": "왜 시험 공부가 아니에요? 취미 요리예요."
+        }
+      }
+    },
+    {
       "id": "v2-10",
       "type": "topic",
       "prompt": {
@@ -739,9 +742,9 @@
         "reading:내용일치"
       ],
       "hint": {
-        "ko": "글과 같은 것만. 「은행도 쉽니다」. 답: 은행이 쉽니다.",
-        "en": "Pick only what the text says. Look: 은행도 쉽니다. Match: 은행이 쉽니다 (others contradict).",
-        "zh": "只选原文有的。 看：은행도 쉽니다。 对应：은행이 쉽니다（其余矛盾）。",
+        "ko": "글과 같은 것만.",
+        "en": "Pick only what the text says. Look: 은행도 쉽니다..",
+        "zh": "只选原文有的。 看：은행도 쉽니다。。",
         "visual": {
           "emoji": [
             "🏪",
@@ -756,24 +759,24 @@
           "en": [
             "Pick only what the text says.",
             "Look: 은행도 쉽니다.",
-            "Match: 은행이 쉽니다 (others contradict)."
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "只选原文有的。",
             "看：은행도 쉽니다。",
-            "对应：은행이 쉽니다（其余矛盾）。"
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "글과 같은 것만.",
             "「은행도 쉽니다」.",
-            "답: 은행이 쉽니다."
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "Text: 은행도 쉽니다 → matches “은행이 쉽니다”.",
-        "zh": "原文：은행도 쉽니다 → 与“은행이 쉽니다”一致。",
-        "ko": "은행이 쉽니다 = 글과 같아요."
+        "en": "Text 은행도 쉽니다 matches the closed-bank choice (도 “also”).",
+        "ko": "은행도 쉽니다=은행 휴무(도).",
+        "zh": "文中写银行也休息 → 选与此一致的一项。"
       },
       "distractOrder": [
         1,

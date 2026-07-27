@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>jabi. — Hangul (scaffold)</title>
+  <title>jabi. — Hangul</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/hub.css">
-  <link rel="stylesheet" href="./hangul.css">
+  <link rel="stylesheet" href="../css/partner-sector.css?v=20260727a">
+  <link rel="stylesheet" href="./hangul.css?v=20260727f">
 </head>
 <body>
   <header class="site-header">
@@ -22,24 +23,60 @@
   </header>
 
   <main class="hangul-page">
-    <p class="eyebrow" data-i18n="hangulEyebrow">Track scaffold</p>
+    <p class="eyebrow" data-i18n="hangulEyebrow">Hangul skill path</p>
     <h1 id="hangul-title">Hangul read &amp; write</h1>
-    <p class="lead" id="hangul-lead">Scaffold only — lesson shells 00–17.</p>
+    <p class="lead" id="hangul-lead">Sejong 00–17 · research-backed content · stroke practice live.</p>
     <p class="hangul-meta" id="hangul-meta"></p>
+    <p class="path-xp" id="hangul-xp" aria-live="polite"></p>
+
+    <section id="hangul-growth" class="ps-growth hidden" aria-label="Partner growth" hidden>
+      <div class="ps-partner">
+        <div class="ps-partner-glyph-wrap">
+          <div class="ps-partner-glyph" id="hangul-partner-glyph">·</div>
+          <span class="ps-partner-pill" id="hangul-partner-pill">STAGE 1</span>
+        </div>
+        <div class="ps-partner-meta">
+          <div class="ps-partner-name" id="hangul-partner-name">—</div>
+          <div class="ps-partner-stage" id="hangul-partner-stage"></div>
+        </div>
+      </div>
+      <div class="ps-xp" aria-label="XP">
+        <div class="ps-xp-top">
+          <span class="k">XP</span>
+          <span id="hangul-partner-xp-label">0</span>
+        </div>
+        <div class="ps-xp-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="hangul-partner-xp-bar">
+          <div class="ps-xp-fill" id="hangul-partner-xp-fill"></div>
+        </div>
+        <p class="ps-xp-hint" id="hangul-partner-xp-hint"></p>
+      </div>
+      <div class="ps-stage-chips" id="hangul-partner-chips" aria-label="Stages"></div>
+    </section>
+
+    <section id="hangul-partner-pick" class="ps-partner-pick hidden" hidden aria-modal="true" role="dialog" aria-labelledby="hangul-partner-pick-title">
+      <p class="eyebrow" id="hangul-partner-pick-eyebrow">Partner</p>
+      <h2 id="hangul-partner-pick-title">Choose your jamo</h2>
+      <p class="lead" id="hangul-partner-pick-lead">One partner for Hangul. ㅈ is jabi. (guide) — not a partner.</p>
+      <div class="ps-jamo-grid" id="hangul-jamo-grid"></div>
+    </section>
 
     <nav class="hangul-nav" aria-label="Hangul nav">
       <a href="../../" data-i18n="hangulBackHub">← Hub</a>
-      <a href="../basic/">Basics →</a>
-      <a href="../topik2/">TOPIK II →</a>
+      <a href="../basic/" data-i18n="hangulBackBasic">Basics →</a>
+      <a href="../topik2/" data-i18n="hangulBackTopik2">TOPIK II →</a>
       <a href="../" data-i18n="hangulBackTopik">TOPIK I app →</a>
     </nav>
+
+    <section class="hangul-stroke-hub" id="hangul-stroke-hub" aria-label="Stroke practice"></section>
 
     <p id="hangul-error" class="hangul-error hidden" role="alert"></p>
     <ul class="hangul-list" id="hangul-list"></ul>
   </main>
 
   <script src="../../js/i18n.js"></script>
+  <script src="../js/path-progress.js?v=20260727a"></script>
+  <script src="../js/partner-sector.js?v=20260727a"></script>
   <script src="../js/vendor/hanzi-writer.min.js"></script>
-  <script src="./hangul.js"></script>
+  <script src="./hangul.js?v=20260727g"></script>
 </body>
 </html>

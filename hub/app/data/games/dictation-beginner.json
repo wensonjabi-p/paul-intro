@@ -1,0 +1,9057 @@
+{
+  "id": "dictation-beginner",
+  "version": 66,
+  "level": "beginner",
+  "lang": "ko",
+  "research": "docs/research-jabi-games-ko.md",
+  "audio": {
+    "mode": "tts",
+    "lang": "ko-KR",
+    "note": "MVP uses Web Speech API speechSynthesis. Quality varies by OS/browser. Not recorded human audio. Optional future: per-item audioUrl."
+  },
+  "source": "original-jabi",
+  "copyright": "Original jabi. phrases for TTS dictation. Beginner shopping/snack/transit/cosmetics plus intermediate money-banking, public-workplace, health-clinic, school-class, travel-lodging, weather-season, digital-comms, family-relations, hobby-culture, emotion-mood, sports-exercise, nature-environment, restaurant-cooking, clothes-shopping, music-arts, media-news, celebration-holiday, time-appointment, home-chores, body-parts, directions-location, furniture-room, fruit-market, kitchen-tableware, office-stationery, post-mail, animals-pets, vehicles-driving, city-places, and pantry-ingredients/bathroom-hygiene/jobs-occupations/countries-nationality/daily-routine/size-quantity/temperature-senses/colors-shapes/accessories-belongings/electricity-appliances/building-facilities/movement-actions/requests-favors/thoughts-plans/speech-talk/change-progress/comparison-degree/cause-reason/problem-solution/opinion-judgment/habits-lifestyle / rules-permission/complain-dissatisfaction crossfill. Not scraped from Speechling, Bida/KoreaXin, or any third-party list. Orthography follows NIKL/Sejong survival 해요체 norms. No hotel/hospital/pharmacy/bank/telecom/app/agency/school/sports/restaurant/clothing/music/media/celebration/calendar/map-app/furniture/grocery/cookware/stationery/courier/pet/car/taxi/store/salon/hygiene/airline/embassy-brand names.",
+  "themes": [
+    "shopping",
+    "snack",
+    "transit",
+    "banking",
+    "cosmetics",
+    "workplace",
+    "clinic",
+    "school",
+    "travel",
+    "weather",
+    "digital",
+    "family",
+    "hobby",
+    "emotion",
+    "sports",
+    "nature",
+    "restaurant",
+    "fruit",
+    "intermediate",
+    "clothes",
+    "music",
+    "media",
+    "celebration",
+    "time",
+    "chores",
+    "body",
+    "direction",
+    "furniture",
+    "kitchen",
+    "stationery",
+    "mail",
+    "pets",
+    "driving",
+    "places",
+    "pantry",
+    "bathroom",
+    "jobs",
+    "country",
+    "routine",
+    "size",
+    "senses",
+    "color",
+    "accessories",
+    "electric",
+    "building",
+    "motion",
+    "favor",
+    "think",
+    "speech",
+    "change",
+    "compare",
+    "reason",
+    "problem",
+    "opinion",
+    "habit",
+    "rules",
+    "friends",
+    "personality",
+    "apology",
+    "success",
+    "advice",
+    "encourage",
+    "promise",
+    "refuse",
+    "complain"
+  ],
+  "items": [
+    {
+      "id": "d-01",
+      "text": "얼마예요",
+      "roman": "eolmayeyo",
+      "gloss": {
+        "en": "How much is it?",
+        "ko": "가격",
+        "zh": "多少钱？"
+      },
+      "tags": [
+        "shopping",
+        "question"
+      ]
+    },
+    {
+      "id": "d-02",
+      "text": "영수증 주세요",
+      "roman": "yeongsujeung juseyo",
+      "gloss": {
+        "en": "Receipt, please",
+        "ko": "영수증",
+        "zh": "请给我收据"
+      },
+      "tags": [
+        "shopping",
+        "request"
+      ]
+    },
+    {
+      "id": "d-03",
+      "text": "카드로 결제할게요",
+      "roman": "kadeuro gyeoljehalgeyo",
+      "gloss": {
+        "en": "I will pay by card",
+        "ko": "결제",
+        "zh": "我用卡付"
+      },
+      "tags": [
+        "shopping",
+        "survival"
+      ]
+    },
+    {
+      "id": "d-04",
+      "text": "조금 비싸요",
+      "roman": "jogeum bissayo",
+      "gloss": {
+        "en": "It is a bit expensive",
+        "ko": "가격",
+        "zh": "有点贵"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "d-05",
+      "text": "이 가방이 싸요",
+      "roman": "i gabangi ssayo",
+      "gloss": {
+        "en": "This bag is cheap",
+        "ko": "쇼핑",
+        "zh": "这个包便宜"
+      },
+      "tags": [
+        "shopping",
+        "particle"
+      ]
+    },
+    {
+      "id": "d-06",
+      "text": "오늘 할인해요",
+      "roman": "oneul harinhaeyo",
+      "gloss": {
+        "en": "There is a discount today",
+        "ko": "할인",
+        "zh": "今天打折"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "d-07",
+      "text": "사이즈 교환할 수 있어요",
+      "roman": "saijeu gyohwanhal su isseoyo",
+      "gloss": {
+        "en": "Can I exchange the size?",
+        "ko": "교환",
+        "zh": "可以换尺码吗"
+      },
+      "tags": [
+        "shopping",
+        "question"
+      ]
+    },
+    {
+      "id": "d-08",
+      "text": "과자 하나 주세요",
+      "roman": "gwaja hana juseyo",
+      "gloss": {
+        "en": "One snack, please",
+        "ko": "간식 주문",
+        "zh": "请给我一包零食"
+      },
+      "tags": [
+        "snack",
+        "request"
+      ]
+    },
+    {
+      "id": "d-09",
+      "text": "김밥 두 줄 주세요",
+      "roman": "gimbap du jul juseyo",
+      "gloss": {
+        "en": "Two rolls of gimbap, please",
+        "ko": "김밥",
+        "zh": "请给我两卷紫菜包饭"
+      },
+      "tags": [
+        "snack",
+        "request"
+      ]
+    },
+    {
+      "id": "d-10",
+      "text": "아이스크림 먹을래요",
+      "roman": "aiseukeurim meogeullaeyo",
+      "gloss": {
+        "en": "I want ice cream / Want some ice cream?",
+        "ko": "간식",
+        "zh": "想吃冰淇淋"
+      },
+      "tags": [
+        "snack"
+      ]
+    },
+    {
+      "id": "d-11",
+      "text": "떡이 달아요",
+      "roman": "tteogi darayo",
+      "gloss": {
+        "en": "The rice cake is sweet",
+        "ko": "맛",
+        "zh": "年糕很甜"
+      },
+      "tags": [
+        "snack"
+      ]
+    },
+    {
+      "id": "d-12",
+      "text": "조금 매워요",
+      "roman": "jogeum maewoyo",
+      "gloss": {
+        "en": "It is a bit spicy",
+        "ko": "맛",
+        "zh": "有点辣"
+      },
+      "tags": [
+        "snack"
+      ]
+    },
+    {
+      "id": "d-13",
+      "text": "이 케이크가 너무 달아요",
+      "roman": "i keikeuga neomu darayo",
+      "gloss": {
+        "en": "This cake is too sweet",
+        "ko": "간식",
+        "zh": "这蛋糕太甜了"
+      },
+      "tags": [
+        "snack"
+      ]
+    },
+    {
+      "id": "d-14",
+      "text": "물 주세요",
+      "roman": "mul juseyo",
+      "gloss": {
+        "en": "Water, please",
+        "ko": "부탁",
+        "zh": "请给我水"
+      },
+      "tags": [
+        "shopping",
+        "request"
+      ]
+    },
+    {
+      "id": "d-15",
+      "text": "맛있어요",
+      "roman": "masisseoyo",
+      "gloss": {
+        "en": "It is delicious",
+        "ko": "음식",
+        "zh": "好吃"
+      },
+      "tags": [
+        "snack",
+        "food"
+      ]
+    },
+    {
+      "id": "d-16",
+      "text": "지하철을 타요",
+      "roman": "jihacheoreul tayo",
+      "gloss": {
+        "en": "I take the subway",
+        "ko": "교통",
+        "zh": "坐地铁"
+      },
+      "tags": [
+        "transit"
+      ]
+    },
+    {
+      "id": "d-17",
+      "text": "지하철로 가요",
+      "roman": "jihacheollo gayo",
+      "gloss": {
+        "en": "I go by subway",
+        "ko": "교통",
+        "zh": "我坐地铁去"
+      },
+      "tags": [
+        "transit"
+      ]
+    },
+    {
+      "id": "d-18",
+      "text": "이 버스 시청에 가요",
+      "roman": "i beoseu sicheonge gayo",
+      "gloss": {
+        "en": "Does this bus go to City Hall? / This bus goes to City Hall",
+        "ko": "버스 노선",
+        "zh": "这班公交去市政府"
+      },
+      "tags": [
+        "transit",
+        "question"
+      ]
+    },
+    {
+      "id": "d-19",
+      "text": "다음 정류장에서 내려요",
+      "roman": "daeum jeongnyujangeseo naeryeoyo",
+      "gloss": {
+        "en": "I get off at the next stop",
+        "ko": "하차",
+        "zh": "我在下一站下车"
+      },
+      "tags": [
+        "transit"
+      ]
+    },
+    {
+      "id": "d-20",
+      "text": "여기서 버스를 타세요",
+      "roman": "yeogiseo beoseureul taseyo",
+      "gloss": {
+        "en": "Please take the bus here",
+        "ko": "승차",
+        "zh": "请在这里坐公交"
+      },
+      "tags": [
+        "transit",
+        "request"
+      ]
+    },
+    {
+      "id": "d-21",
+      "text": "여기서 환승하세요",
+      "roman": "yeogiseo hwanseunghaseyo",
+      "gloss": {
+        "en": "Please transfer here",
+        "ko": "환승",
+        "zh": "请在这里换乘"
+      },
+      "tags": [
+        "transit"
+      ]
+    },
+    {
+      "id": "d-22",
+      "text": "삼 번 출구로 나가세요",
+      "roman": "sam beon chulguro nagaseyo",
+      "gloss": {
+        "en": "Please go out exit 3",
+        "ko": "출구",
+        "zh": "请从3号出口出去"
+      },
+      "tags": [
+        "transit"
+      ]
+    },
+    {
+      "id": "d-23",
+      "text": "표 어디에 사요",
+      "roman": "pyo eodie sayo",
+      "gloss": {
+        "en": "Where do I buy a ticket?",
+        "ko": "표",
+        "zh": "票在哪里买"
+      },
+      "tags": [
+        "transit",
+        "shopping"
+      ]
+    },
+    {
+      "id": "d-24",
+      "text": "버스가 늦어요",
+      "roman": "beoseuga neujeoyo",
+      "gloss": {
+        "en": "The bus is late",
+        "ko": "교통",
+        "zh": "公交晚了"
+      },
+      "tags": [
+        "transit"
+      ]
+    },
+    {
+      "id": "d-25",
+      "text": "지하철이 더 빨라요",
+      "roman": "jihacheoli deo ppallayo",
+      "gloss": {
+        "en": "The subway is faster",
+        "ko": "교통",
+        "zh": "地铁更快"
+      },
+      "tags": [
+        "transit"
+      ]
+    },
+    {
+      "id": "d-26",
+      "text": "종점에서 내려요",
+      "roman": "jongjeomeseo naeryeoyo",
+      "gloss": {
+        "en": "I get off at the last stop",
+        "ko": "하차",
+        "zh": "我在终点下车"
+      },
+      "tags": [
+        "transit"
+      ]
+    },
+    {
+      "id": "d-27",
+      "text": "카드로 낼게요",
+      "roman": "kadeuro naelgeyo",
+      "gloss": {
+        "en": "I will pay by card",
+        "ko": "결제",
+        "zh": "我用卡付"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "d-28",
+      "text": "왼쪽으로 가세요",
+      "roman": "oenjjogeuro gaseyo",
+      "gloss": {
+        "en": "Please go left",
+        "ko": "길 안내",
+        "zh": "请往左走"
+      },
+      "tags": [
+        "transit",
+        "directions"
+      ]
+    },
+    {
+      "id": "d-29",
+      "text": "화장실이 어디에 있어요",
+      "roman": "hwajangsiri eodie isseoyo",
+      "gloss": {
+        "en": "Where is the restroom?",
+        "ko": "길 묻기",
+        "zh": "洗手间在哪里"
+      },
+      "tags": [
+        "transit",
+        "question"
+      ]
+    },
+    {
+      "id": "d-30",
+      "text": "감사합니다",
+      "roman": "gamsahamnida",
+      "gloss": {
+        "en": "Thank you (after purchase / ride)",
+        "ko": "고마움",
+        "zh": "谢谢"
+      },
+      "tags": [
+        "shopping",
+        "greeting"
+      ]
+    },
+    {
+      "id": "d-31",
+      "text": "새 계좌를 열었어요",
+      "roman": "sae gyejwareul yeoreosseoyo",
+      "gloss": {
+        "en": "I opened a new account",
+        "ko": "계좌",
+        "zh": "我开了新账户"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-32",
+      "text": "지금 이체할게요",
+      "roman": "jigeum ichehalgeyo",
+      "gloss": {
+        "en": "I will transfer now",
+        "ko": "이체",
+        "zh": "我现在转账"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-33",
+      "text": "입금이 아직 안 됐어요",
+      "roman": "ipgeumi ajik an dwaesseoyo",
+      "gloss": {
+        "en": "The deposit has not gone through yet",
+        "ko": "입금",
+        "zh": "还没入账"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-34",
+      "text": "오후에 출금하러 가요",
+      "roman": "ohue chulgeumhareo gayo",
+      "gloss": {
+        "en": "I am going to withdraw this afternoon",
+        "ko": "출금",
+        "zh": "下午去取款"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-35",
+      "text": "잔액이 부족해요",
+      "roman": "janaegi bujokhaeyo",
+      "gloss": {
+        "en": "The balance is insufficient",
+        "ko": "잔액",
+        "zh": "余额不够"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-36",
+      "text": "수수료가 얼마예요",
+      "roman": "susuryoga eolmayeyo",
+      "gloss": {
+        "en": "How much is the fee?",
+        "ko": "수수료",
+        "zh": "手续费多少"
+      },
+      "tags": [
+        "banking",
+        "intermediate",
+        "question"
+      ]
+    },
+    {
+      "id": "d-37",
+      "text": "현금이 필요해요",
+      "roman": "hyeongeumi piryohaeyo",
+      "gloss": {
+        "en": "I need cash",
+        "ko": "현금",
+        "zh": "需要现金"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-38",
+      "text": "환전하고 싶어요",
+      "roman": "hwanjeonhago sipeoyo",
+      "gloss": {
+        "en": "I want to exchange currency",
+        "ko": "환전",
+        "zh": "想换钱"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-39",
+      "text": "해외로 송금해요",
+      "roman": "haeoero songgeumhaeyo",
+      "gloss": {
+        "en": "I send money overseas",
+        "ko": "송금",
+        "zh": "往海外汇款"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-40",
+      "text": "하루 한도를 확인해요",
+      "roman": "haru handoreul hwaginhaeyo",
+      "gloss": {
+        "en": "I check the daily limit",
+        "ko": "한도",
+        "zh": "确认每日额度"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-41",
+      "text": "화장품을 살게요",
+      "roman": "hwajangpumeul salgeyo",
+      "gloss": {
+        "en": "I will buy cosmetics",
+        "ko": "화장품",
+        "zh": "我要买化妆品"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "d-42",
+      "text": "로션이 필요해요",
+      "roman": "rosyeoni piryohaeyo",
+      "gloss": {
+        "en": "I need lotion",
+        "ko": "로션",
+        "zh": "需要乳液"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "d-43",
+      "text": "이 크림이 좋아요",
+      "roman": "i keurimi joayo",
+      "gloss": {
+        "en": "This cream is good",
+        "ko": "크림",
+        "zh": "这个面霜不错"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "d-44",
+      "text": "립스틱이 예뻐요",
+      "roman": "ripseutigi yeppeoyo",
+      "gloss": {
+        "en": "The lipstick is pretty",
+        "ko": "립스틱",
+        "zh": "口红好看"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "d-45",
+      "text": "피부가 촉촉해요",
+      "roman": "pibuga chokchokhaeyo",
+      "gloss": {
+        "en": "My skin feels moisturized",
+        "ko": "피부",
+        "zh": "皮肤很滋润"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "d-46",
+      "text": "로션을 손에 발라요",
+      "roman": "rosyeoneul sone barayo",
+      "gloss": {
+        "en": "I put lotion on my hands",
+        "ko": "바르다",
+        "zh": "把手乳涂在手上"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "d-47",
+      "text": "샴푸를 두 개 주세요",
+      "roman": "syampeureul du gae juseyo",
+      "gloss": {
+        "en": "Two shampoos, please",
+        "ko": "샴푸",
+        "zh": "请给我两瓶洗发水"
+      },
+      "tags": [
+        "cosmetics",
+        "request"
+      ]
+    },
+    {
+      "id": "d-48",
+      "text": "비누 어디 있어요",
+      "roman": "binu eodi isseoyo",
+      "gloss": {
+        "en": "Where is the soap?",
+        "ko": "비누",
+        "zh": "肥皂在哪里"
+      },
+      "tags": [
+        "cosmetics",
+        "question"
+      ]
+    },
+    {
+      "id": "d-49",
+      "text": "서류를 확인해요",
+      "roman": "seoryureul hwaginhaeyo",
+      "gloss": {
+        "en": "I check the documents",
+        "ko": "서류",
+        "zh": "我核对文件"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-50",
+      "text": "내일까지 제출해요",
+      "roman": "naeilkkaji jechulhaeyo",
+      "gloss": {
+        "en": "I submit by tomorrow",
+        "ko": "제출",
+        "zh": "明天前提交"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-51",
+      "text": "여기서 발급받아요",
+      "roman": "yeogiseo balgeupbadayo",
+      "gloss": {
+        "en": "I get it issued here",
+        "ko": "발급",
+        "zh": "在这里领取发放件"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-52",
+      "text": "증명서가 없어요",
+      "roman": "jeungmyeongseoga eopseoyo",
+      "gloss": {
+        "en": "I do not have a certificate",
+        "ko": "증명서",
+        "zh": "没有证明书"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-53",
+      "text": "민원을 접수해요",
+      "roman": "minwoneul jeopsuhaeyo",
+      "gloss": {
+        "en": "I file a public request",
+        "ko": "민원",
+        "zh": "受理公务申请"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-54",
+      "text": "담당자를 만나요",
+      "roman": "damdangjareul mannayo",
+      "gloss": {
+        "en": "I meet the person in charge",
+        "ko": "담당자",
+        "zh": "见负责人"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-55",
+      "text": "같은 부서예요",
+      "roman": "gateun buseoyeyo",
+      "gloss": {
+        "en": "We are in the same department",
+        "ko": "부서",
+        "zh": "是同一部门"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-56",
+      "text": "내일 출근해요",
+      "roman": "naeil chulgeunhaeyo",
+      "gloss": {
+        "en": "I go to work tomorrow",
+        "ko": "출근",
+        "zh": "明天上班"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-57",
+      "text": "빨리 퇴근해요",
+      "roman": "ppalli toegeunhaeyo",
+      "gloss": {
+        "en": "I leave work early",
+        "ko": "퇴근",
+        "zh": "早点下班"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-58",
+      "text": "연차가 남아요",
+      "roman": "yeonchaga namayo",
+      "gloss": {
+        "en": "I have annual leave left",
+        "ko": "연차",
+        "zh": "年假还剩"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-59",
+      "text": "통장을 보여 주세요",
+      "roman": "tongjangeul boyeo juseyo",
+      "gloss": {
+        "en": "Please show your passbook",
+        "ko": "통장",
+        "zh": "请出示存折"
+      },
+      "tags": [
+        "banking",
+        "intermediate",
+        "request"
+      ]
+    },
+    {
+      "id": "d-60",
+      "text": "비밀번호를 바꿔요",
+      "roman": "bimilbeonhoreul bakkwoyo",
+      "gloss": {
+        "en": "I change the password",
+        "ko": "비밀번호",
+        "zh": "我改密码"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-61",
+      "text": "이번 달 출장이에요",
+      "roman": "ibeon dal chuljangieyo",
+      "gloss": {
+        "en": "I have a business trip this month",
+        "ko": "출장",
+        "zh": "这个月出差"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-62",
+      "text": "서명이 필요해요",
+      "roman": "seomyeongi piryohaeyo",
+      "gloss": {
+        "en": "A signature is needed",
+        "ko": "서명",
+        "zh": "需要签名"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-63",
+      "text": "피 검사를 해요",
+      "roman": "pi geomsareul haeyo",
+      "gloss": {
+        "en": "I get a blood test",
+        "ko": "검사",
+        "zh": "我验血"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-64",
+      "text": "이틀 입원해요",
+      "roman": "iteul ibwonhaeyo",
+      "gloss": {
+        "en": "I stay in the hospital for two days",
+        "ko": "입원",
+        "zh": "住院两天"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-65",
+      "text": "증상을 말해요",
+      "roman": "jeungsangeul malhaeyo",
+      "gloss": {
+        "en": "I describe the symptoms",
+        "ko": "증상",
+        "zh": "我说症状"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-66",
+      "text": "진료가 끝났어요",
+      "roman": "jillyoga kkeutnasseoyo",
+      "gloss": {
+        "en": "The consultation is finished",
+        "ko": "진료",
+        "zh": "诊疗结束了"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-67",
+      "text": "처방을 받을게요",
+      "roman": "cheobangeul badeulgeyo",
+      "gloss": {
+        "en": "I will get a prescription",
+        "ko": "처방",
+        "zh": "我去拿处方"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-68",
+      "text": "먼저 접수해요",
+      "roman": "meonjeo jeopsuhaeyo",
+      "gloss": {
+        "en": "I check in first",
+        "ko": "접수",
+        "zh": "我先挂号"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-69",
+      "text": "진찰받으러 가요",
+      "roman": "jinchalbadeureo gayo",
+      "gloss": {
+        "en": "I go for an examination",
+        "ko": "진찰",
+        "zh": "我去诊察"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-70",
+      "text": "통증이 심해요",
+      "roman": "tongjeungi simhaeyo",
+      "gloss": {
+        "en": "The pain is severe",
+        "ko": "통증",
+        "zh": "疼痛很重"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-71",
+      "text": "약을 복용해요",
+      "roman": "yageul bogyonghaeyo",
+      "gloss": {
+        "en": "I take the medicine",
+        "ko": "복용",
+        "zh": "我服药"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-72",
+      "text": "회복이 느려요",
+      "roman": "hoebogi neuryeoyo",
+      "gloss": {
+        "en": "Recovery is slow",
+        "ko": "회복",
+        "zh": "恢复很慢"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-73",
+      "text": "수업이 끝났어요",
+      "roman": "sueobi kkeutnasseoyo",
+      "gloss": {
+        "en": "Class is over",
+        "ko": "수업",
+        "zh": "下课了"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-74",
+      "text": "숙제를 다 했어요",
+      "roman": "sukjereul da haesseoyo",
+      "gloss": {
+        "en": "I finished all the homework",
+        "ko": "숙제",
+        "zh": "作业都做完了"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-75",
+      "text": "시험을 준비해요",
+      "roman": "siheomeul junbihaeyo",
+      "gloss": {
+        "en": "I prepare for the exam",
+        "ko": "시험",
+        "zh": "我准备考试"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-76",
+      "text": "강의가 취소됐어요",
+      "roman": "ganguiga chwisodoeeosseoyo",
+      "gloss": {
+        "en": "The lecture was canceled",
+        "ko": "강의",
+        "zh": "讲义取消了"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-77",
+      "text": "등록부터 해요",
+      "roman": "deungnokbuteo haeyo",
+      "gloss": {
+        "en": "I start with enrollment",
+        "ko": "등록",
+        "zh": "我先注册"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-78",
+      "text": "학기가 바뀌어요",
+      "roman": "hakgiga bakkwieoyo",
+      "gloss": {
+        "en": "The semester is changing",
+        "ko": "학기",
+        "zh": "学期换了"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-79",
+      "text": "교실로 가요",
+      "roman": "gyosillo gayo",
+      "gloss": {
+        "en": "I go to the classroom",
+        "ko": "교실",
+        "zh": "我去教室"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-80",
+      "text": "출석을 체크해요",
+      "roman": "chulseogeul chekeuhaeyo",
+      "gloss": {
+        "en": "I check attendance",
+        "ko": "출석",
+        "zh": "我核对出勤"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-81",
+      "text": "과제를 제출해요",
+      "roman": "gwajereul jechulhaeyo",
+      "gloss": {
+        "en": "I submit the assignment",
+        "ko": "과제",
+        "zh": "我提交课题"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-82",
+      "text": "수강을 신청해요",
+      "roman": "sugangeul sincheonghaeyo",
+      "gloss": {
+        "en": "I apply to take the course",
+        "ko": "수강",
+        "zh": "我申请选课"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-83",
+      "text": "숙소가 넓어요",
+      "roman": "suksoga neolbeoyo",
+      "gloss": {
+        "en": "The lodging is spacious",
+        "ko": "숙소",
+        "zh": "住处很宽敞"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-84",
+      "text": "숙박을 연장해요",
+      "roman": "sukbageul yeonjanghaeyo",
+      "gloss": {
+        "en": "I extend the stay",
+        "ko": "숙박",
+        "zh": "我延长住宿"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-85",
+      "text": "여행지가 예뻐요",
+      "roman": "yeohaengjiga yeppeoyo",
+      "gloss": {
+        "en": "The destination is pretty",
+        "ko": "여행지",
+        "zh": "目的地很漂亮"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-86",
+      "text": "여권을 꺼내요",
+      "roman": "yeogwoneul kkeonaeyo",
+      "gloss": {
+        "en": "I take out my passport",
+        "ko": "여권",
+        "zh": "我拿出护照"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-87",
+      "text": "관광이 시작돼요",
+      "roman": "gwangwangi sijakdoeyo",
+      "gloss": {
+        "en": "Sightseeing is starting",
+        "ko": "관광",
+        "zh": "观光开始了"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-88",
+      "text": "관광지가 유명해요",
+      "roman": "gwangwangjiga yumyeonghaeyo",
+      "gloss": {
+        "en": "The tourist spot is famous",
+        "ko": "관광지",
+        "zh": "景点很有名"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-89",
+      "text": "항공권을 찾았어요",
+      "roman": "hanggonggwoneul chajasseoyo",
+      "gloss": {
+        "en": "I found the airline ticket",
+        "ko": "항공권",
+        "zh": "我找到了机票"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-90",
+      "text": "체크인이 늦어요",
+      "roman": "chekeuini neujeoyo",
+      "gloss": {
+        "en": "Check-in is late",
+        "ko": "체크인",
+        "zh": "入住晚了"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-91",
+      "text": "열한 시에 체크아웃해요",
+      "roman": "yeolhan sie chekeuauthaeyo",
+      "gloss": {
+        "en": "I check out at eleven",
+        "ko": "체크아웃",
+        "zh": "十一点退房"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-92",
+      "text": "안내소에서 물어요",
+      "roman": "annaesoeeseo mureoyo",
+      "gloss": {
+        "en": "I ask at the information desk",
+        "ko": "안내소",
+        "zh": "我在问讯处问"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-93",
+      "text": "날씨가 따뜻해요",
+      "roman": "nalssiga ttatteuthaeyo",
+      "gloss": {
+        "en": "The weather is warm",
+        "ko": "날씨",
+        "zh": "天气很暖和"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-94",
+      "text": "계절이 바뀌어요",
+      "roman": "gyejeori bakkwieoyo",
+      "gloss": {
+        "en": "The season is changing",
+        "ko": "계절",
+        "zh": "季节在变"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-95",
+      "text": "기온이 올라요",
+      "roman": "gioni ollayo",
+      "gloss": {
+        "en": "The temperature is going up",
+        "ko": "기온",
+        "zh": "气温在上升"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-96",
+      "text": "하늘이 맑아요",
+      "roman": "haneuri malgayo",
+      "gloss": {
+        "en": "The sky is clear",
+        "ko": "맑다",
+        "zh": "天空很晴朗"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-97",
+      "text": "오후에 흐려요",
+      "roman": "ohue heuryeoyo",
+      "gloss": {
+        "en": "It gets cloudy in the afternoon",
+        "ko": "흐리다",
+        "zh": "下午阴了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-98",
+      "text": "비가 와요",
+      "roman": "biga wayo",
+      "gloss": {
+        "en": "It's raining",
+        "ko": "비",
+        "zh": "下雨了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-99",
+      "text": "안개가 껴요",
+      "roman": "angaega kkyeoyo",
+      "gloss": {
+        "en": "Fog is setting in",
+        "ko": "안개",
+        "zh": "起雾了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-100",
+      "text": "태풍이 지나가요",
+      "roman": "taepungi jinagayo",
+      "gloss": {
+        "en": "The typhoon is passing",
+        "ko": "태풍",
+        "zh": "台风过去了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-101",
+      "text": "장마가 길어요",
+      "roman": "jangmaga gireoyo",
+      "gloss": {
+        "en": "The rainy season is long",
+        "ko": "장마",
+        "zh": "梅雨期很长"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-102",
+      "text": "일기예보를 봐요",
+      "roman": "ilgiboyoreul bwayo",
+      "gloss": {
+        "en": "I check the weather forecast",
+        "ko": "일기예보",
+        "zh": "我看天气预报"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-103",
+      "text": "와이파이를 켜요",
+      "roman": "waipaireul kyeoyo",
+      "gloss": {
+        "en": "I turn on the Wi-Fi",
+        "ko": "와이파이",
+        "zh": "我打开无线网"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-104",
+      "text": "지금 충전해요",
+      "roman": "jigeum chungjeonhaeyo",
+      "gloss": {
+        "en": "I'm charging now",
+        "ko": "충전",
+        "zh": "我现在充电"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-105",
+      "text": "앱을 열어요",
+      "roman": "ebeul yeoreoyo",
+      "gloss": {
+        "en": "I open the app",
+        "ko": "앱",
+        "zh": "我打开应用"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-106",
+      "text": "문자를 받아요",
+      "roman": "munjareul badayo",
+      "gloss": {
+        "en": "I receive a text",
+        "ko": "문자",
+        "zh": "我收到短信"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-107",
+      "text": "인터넷을 끊어요",
+      "roman": "inteoneseul kkeuneoyo",
+      "gloss": {
+        "en": "I disconnect the internet",
+        "ko": "인터넷",
+        "zh": "我断开网络"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-108",
+      "text": "휴대폰을 꺼요",
+      "roman": "hyudaeponeul kkeoyo",
+      "gloss": {
+        "en": "I turn off my phone",
+        "ko": "휴대폰",
+        "zh": "我关掉手机"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-109",
+      "text": "배터리를 아껴요",
+      "roman": "baeteorireul akkyeoyo",
+      "gloss": {
+        "en": "I conserve the battery",
+        "ko": "배터리",
+        "zh": "我省着电池用"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-110",
+      "text": "데이터를 켜요",
+      "roman": "deiteoreul kyeoyo",
+      "gloss": {
+        "en": "I turn on mobile data",
+        "ko": "데이터",
+        "zh": "我打开流量"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-111",
+      "text": "통화를 걸어요",
+      "roman": "tonghwareul georeoyo",
+      "gloss": {
+        "en": "I make a call",
+        "ko": "통화",
+        "zh": "我打电话"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-112",
+      "text": "알림을 켜요",
+      "roman": "allimeul kyeoyo",
+      "gloss": {
+        "en": "I turn on notifications",
+        "ko": "알림",
+        "zh": "我打开通知"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-113",
+      "text": "가족이 모여요",
+      "roman": "gajogi moyeoyo",
+      "gloss": {
+        "en": "The family gathers",
+        "ko": "가족",
+        "zh": "家人聚在一起"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-114",
+      "text": "부모님을 존경해요",
+      "roman": "bumonimeul jongyeonghaeyo",
+      "gloss": {
+        "en": "I respect my parents",
+        "ko": "부모님",
+        "zh": "我尊敬父母"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-115",
+      "text": "형제를 소개해요",
+      "roman": "hyeongjereul sogaehaeyo",
+      "gloss": {
+        "en": "I introduce my siblings",
+        "ko": "형제",
+        "zh": "我介绍兄弟姐妹"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-116",
+      "text": "친척 집에 가요",
+      "roman": "chincheok jibe gayo",
+      "gloss": {
+        "en": "I go to a relative's house",
+        "ko": "친척",
+        "zh": "我去亲戚家"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-117",
+      "text": "결혼을 해요",
+      "roman": "gyeolhoneul haeyo",
+      "gloss": {
+        "en": "We get married / I marry",
+        "ko": "결혼",
+        "zh": "我结婚"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-118",
+      "text": "남편과 살아요",
+      "roman": "nampyeongwa sarayo",
+      "gloss": {
+        "en": "I live with my husband",
+        "ko": "남편",
+        "zh": "我和丈夫一起住"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-119",
+      "text": "아내가 요리해요",
+      "roman": "anaega yorihaeyo",
+      "gloss": {
+        "en": "My wife cooks",
+        "ko": "아내",
+        "zh": "妻子做饭"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-120",
+      "text": "아들을 불러요",
+      "roman": "adeureul bulleoyo",
+      "gloss": {
+        "en": "I call my son",
+        "ko": "아들",
+        "zh": "我叫儿子"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-121",
+      "text": "딸을 안아요",
+      "roman": "ttareul anayo",
+      "gloss": {
+        "en": "I hug my daughter",
+        "ko": "딸",
+        "zh": "我抱女儿"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-122",
+      "text": "관계가 좋아요",
+      "roman": "gwangyega joayo",
+      "gloss": {
+        "en": "The relationship is good",
+        "ko": "관계",
+        "zh": "关系很好"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-123",
+      "text": "문화를 즐겨요",
+      "roman": "munhwareul jeulgyeoyo",
+      "gloss": {
+        "en": "I enjoy culture",
+        "ko": "문화",
+        "zh": "我享受文化"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-124",
+      "text": "공연을 예약해요",
+      "roman": "gongyeoneul yeyakhaeyo",
+      "gloss": {
+        "en": "I book a performance",
+        "ko": "공연",
+        "zh": "我预约演出"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-125",
+      "text": "전시가 열려요",
+      "roman": "jeonsiga yeollyeoyo",
+      "gloss": {
+        "en": "An exhibition is open / opening",
+        "ko": "전시",
+        "zh": "展览开着"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-126",
+      "text": "작품을 고르세요",
+      "roman": "jakpumeul goreuseyo",
+      "gloss": {
+        "en": "Please choose a piece",
+        "ko": "작품",
+        "zh": "请选作品"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-127",
+      "text": "여가가 필요해요",
+      "roman": "yeogaga piryohaeyo",
+      "gloss": {
+        "en": "I need leisure time",
+        "ko": "여가",
+        "zh": "需要闲暇"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-128",
+      "text": "미술관에서 쉬어요",
+      "roman": "misulgwaneseo swieoyo",
+      "gloss": {
+        "en": "I rest at the art museum",
+        "ko": "미술관",
+        "zh": "我在美术馆休息"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-129",
+      "text": "박물관이 커요",
+      "roman": "bangmulgwani keoyo",
+      "gloss": {
+        "en": "The museum is big",
+        "ko": "박물관",
+        "zh": "博物馆很大"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-130",
+      "text": "축제를 기다려요",
+      "roman": "chukjereul gidaryeoyo",
+      "gloss": {
+        "en": "I wait for the festival",
+        "ko": "축제",
+        "zh": "我等庆典"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-131",
+      "text": "연극을 연습해요",
+      "roman": "yeongeugeul yeonseuphaeyo",
+      "gloss": {
+        "en": "I rehearse a play",
+        "ko": "연극",
+        "zh": "我排练话剧"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-132",
+      "text": "관심이 생겼어요",
+      "roman": "gwansimi saenggyeosseoyo",
+      "gloss": {
+        "en": "I've become interested",
+        "ko": "관심",
+        "zh": "产生了兴趣"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-133",
+      "text": "감정을 이해해요",
+      "roman": "gamjeongeul ihaehaeyo",
+      "gloss": {
+        "en": "I understand feelings",
+        "ko": "감정",
+        "zh": "我理解感情"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-134",
+      "text": "기분이 편해요",
+      "roman": "gibuni pyeonhaeyo",
+      "gloss": {
+        "en": "I feel at ease",
+        "ko": "기분",
+        "zh": "心情很舒服"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-135",
+      "text": "기쁜 하루예요",
+      "roman": "gippeun haruyeyo",
+      "gloss": {
+        "en": "It's a glad day",
+        "ko": "기쁘다",
+        "zh": "是高兴的一天"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-136",
+      "text": "슬픈 이야기예요",
+      "roman": "seulpeun iyagiyeyo",
+      "gloss": {
+        "en": "It's a sad story",
+        "ko": "슬프다",
+        "zh": "是悲伤的故事"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-137",
+      "text": "화를 참아요",
+      "roman": "hwareul chamayo",
+      "gloss": {
+        "en": "I hold back my anger",
+        "ko": "화나다",
+        "zh": "我忍住怒气"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-138",
+      "text": "걱정이 줄어요",
+      "roman": "geokjeongi jureoyo",
+      "gloss": {
+        "en": "My worry lessens",
+        "ko": "걱정",
+        "zh": "担心减轻了"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-139",
+      "text": "긴장하지 마요",
+      "roman": "ginjanghaji mayo",
+      "gloss": {
+        "en": "Don't be nervous",
+        "ko": "긴장",
+        "zh": "别紧张"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-140",
+      "text": "실망하지 않아요",
+      "roman": "silmanghaji anayo",
+      "gloss": {
+        "en": "I'm not disappointed",
+        "ko": "실망",
+        "zh": "我不失望"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-141",
+      "text": "행복을 나눠요",
+      "roman": "haengbogeul nanwoyo",
+      "gloss": {
+        "en": "I share happiness",
+        "ko": "행복",
+        "zh": "我分享幸福"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-142",
+      "text": "불안해요",
+      "roman": "buranhaeyo",
+      "gloss": {
+        "en": "I feel anxious",
+        "ko": "불안",
+        "zh": "我不安"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-143",
+      "text": "스포츠가 재밌어요",
+      "roman": "seupocheuga jaemisseoyo",
+      "gloss": {
+        "en": "Sports are fun",
+        "ko": "스포츠",
+        "zh": "体育很有趣"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-144",
+      "text": "경기를 기다려요",
+      "roman": "gyeonggireul gidaryeoyo",
+      "gloss": {
+        "en": "I wait for the match",
+        "ko": "경기",
+        "zh": "我等比赛"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-145",
+      "text": "선수가 많아요",
+      "roman": "seonsuga manayo",
+      "gloss": {
+        "en": "There are many athletes",
+        "ko": "선수",
+        "zh": "选手很多"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-146",
+      "text": "연습을 마쳐요",
+      "roman": "yeonseubeul machyeoyo",
+      "gloss": {
+        "en": "I finish practice",
+        "ko": "연습",
+        "zh": "我结束练习"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-147",
+      "text": "팀에 들어가요",
+      "roman": "time deureogayo",
+      "gloss": {
+        "en": "I join the team",
+        "ko": "팀",
+        "zh": "我进队"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-148",
+      "text": "경기장이 커요",
+      "roman": "gyeonggijangi keoyo",
+      "gloss": {
+        "en": "The stadium is big",
+        "ko": "경기장",
+        "zh": "赛场很大"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-149",
+      "text": "수영을 배워요",
+      "roman": "suyeongeul baewoyo",
+      "gloss": {
+        "en": "I learn swimming",
+        "ko": "수영",
+        "zh": "我学游泳"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-150",
+      "text": "축구가 좋아요",
+      "roman": "chukguga joayo",
+      "gloss": {
+        "en": "Soccer is good",
+        "ko": "축구",
+        "zh": "足球很好"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-151",
+      "text": "농구가 빨라요",
+      "roman": "nongguga ppallayo",
+      "gloss": {
+        "en": "Basketball is fast",
+        "ko": "농구",
+        "zh": "篮球很快"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-152",
+      "text": "체력이 생겨요",
+      "roman": "chemyeogi saenggyeoyo",
+      "gloss": {
+        "en": "I gain stamina",
+        "ko": "체력",
+        "zh": "体力产生了"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-153",
+      "text": "자연이 좋아요",
+      "roman": "jayeoni joayo",
+      "gloss": {
+        "en": "Nature is nice",
+        "ko": "자연",
+        "zh": "自然很好"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-154",
+      "text": "환경을 지켜요",
+      "roman": "hwangyeongeul jikyeoyo",
+      "gloss": {
+        "en": "I protect the environment",
+        "ko": "환경",
+        "zh": "我保护环境"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-155",
+      "text": "산에 가요",
+      "roman": "sane gayo",
+      "gloss": {
+        "en": "I go to the mountain",
+        "ko": "산",
+        "zh": "我去山"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-156",
+      "text": "강이 보여요",
+      "roman": "gangi boyeoyo",
+      "gloss": {
+        "en": "I can see the river",
+        "ko": "강",
+        "zh": "看得见河"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-157",
+      "text": "바다에 가요",
+      "roman": "badae gayo",
+      "gloss": {
+        "en": "I go to the sea",
+        "ko": "바다",
+        "zh": "我去海边"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-158",
+      "text": "숲이 커요",
+      "roman": "supi keoyo",
+      "gloss": {
+        "en": "The forest is big",
+        "ko": "숲",
+        "zh": "森林很大"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-159",
+      "text": "나무가 커요",
+      "roman": "namuga keoyo",
+      "gloss": {
+        "en": "The tree is big",
+        "ko": "나무",
+        "zh": "树很大"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-160",
+      "text": "꽃을 사요",
+      "roman": "kkocheul sayo",
+      "gloss": {
+        "en": "I buy flowers",
+        "ko": "꽃",
+        "zh": "我买花"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-161",
+      "text": "동물을 봐요",
+      "roman": "dongmureul bwayo",
+      "gloss": {
+        "en": "I watch animals",
+        "ko": "동물",
+        "zh": "我看动物"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-162",
+      "text": "공원에 가요",
+      "roman": "gongwone gayo",
+      "gloss": {
+        "en": "I go to the park",
+        "ko": "공원",
+        "zh": "我去公园"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-163",
+      "text": "식당에 가요",
+      "roman": "sikdange gayo",
+      "gloss": {
+        "en": "I go to a restaurant",
+        "ko": "식당",
+        "zh": "我去餐厅"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-164",
+      "text": "메뉴를 봐요",
+      "roman": "menyureul bwayo",
+      "gloss": {
+        "en": "I look at the menu",
+        "ko": "메뉴",
+        "zh": "我看菜单"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-165",
+      "text": "주문을 해요",
+      "roman": "jumuneul haeyo",
+      "gloss": {
+        "en": "I place an order",
+        "ko": "주문",
+        "zh": "我点餐"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-166",
+      "text": "음식이 맛있어요",
+      "roman": "eumsigi masisseoyo",
+      "gloss": {
+        "en": "The food is delicious",
+        "ko": "맛있다",
+        "zh": "饭菜很好吃"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-167",
+      "text": "요리를 해요",
+      "roman": "yorireul haeyo",
+      "gloss": {
+        "en": "I cook",
+        "ko": "요리",
+        "zh": "我做菜"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-168",
+      "text": "식사를 해요",
+      "roman": "siksareul haeyo",
+      "gloss": {
+        "en": "I have a meal",
+        "ko": "식사",
+        "zh": "我用餐"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-169",
+      "text": "배가 고파요",
+      "roman": "baega gopayo",
+      "gloss": {
+        "en": "I’m hungry",
+        "ko": "배고프다",
+        "zh": "我饿了"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-170",
+      "text": "반찬이 짜요",
+      "roman": "banchani jjayo",
+      "gloss": {
+        "en": "The side dish is salty",
+        "ko": "반찬·짜다",
+        "zh": "小菜很咸"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-171",
+      "text": "계산을 해요",
+      "roman": "gyesaneul haeyo",
+      "gloss": {
+        "en": "I pay the bill",
+        "ko": "계산",
+        "zh": "我结账"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-172",
+      "text": "손님이 와요",
+      "roman": "sonnimi wayo",
+      "gloss": {
+        "en": "A customer comes",
+        "ko": "손님",
+        "zh": "客人来了"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-173",
+      "text": "옷을 입어요",
+      "roman": "oseul ibeoyo",
+      "gloss": {
+        "en": "I put on clothes",
+        "ko": "입다",
+        "zh": "我穿衣服"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-174",
+      "text": "신발을 벗어요",
+      "roman": "sinbareul beoseoyo",
+      "gloss": {
+        "en": "I take off my shoes",
+        "ko": "벗다",
+        "zh": "我脱鞋"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-175",
+      "text": "바지가 길어요",
+      "roman": "bajiga gireoyo",
+      "gloss": {
+        "en": "The pants are long",
+        "ko": "바지",
+        "zh": "裤子很长"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-176",
+      "text": "치마가 예뻐요",
+      "roman": "chimaga yeppeoyo",
+      "gloss": {
+        "en": "The skirt is pretty",
+        "ko": "치마",
+        "zh": "裙子好看"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-177",
+      "text": "사이즈가 맞아요",
+      "roman": "saijeuga majayo",
+      "gloss": {
+        "en": "The size fits",
+        "ko": "사이즈·맞다",
+        "zh": "尺码合适"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-178",
+      "text": "색깔을 골라요",
+      "roman": "saekkareul gollayo",
+      "gloss": {
+        "en": "I choose a color",
+        "ko": "색깔",
+        "zh": "我选颜色"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-179",
+      "text": "환불을 해요",
+      "roman": "hwanbureul haeyo",
+      "gloss": {
+        "en": "I get a refund",
+        "ko": "환불",
+        "zh": "我退款"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-180",
+      "text": "세탁소에 가요",
+      "roman": "setaksoue gayo",
+      "gloss": {
+        "en": "I go to the laundry",
+        "ko": "세탁소",
+        "zh": "我去洗衣店"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-181",
+      "text": "코트를 입어요",
+      "roman": "koteureul ibeoyo",
+      "gloss": {
+        "en": "I put on a coat",
+        "ko": "코트",
+        "zh": "我穿大衣"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-182",
+      "text": "옷이 비싸요",
+      "roman": "osi bissayo",
+      "gloss": {
+        "en": "The clothes are expensive",
+        "ko": "옷",
+        "zh": "衣服很贵"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-183",
+      "text": "노래를 불러요",
+      "roman": "noraereul bulleoyo",
+      "gloss": {
+        "en": "I sing a song",
+        "ko": "부르다",
+        "zh": "我唱歌"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-184",
+      "text": "그림을 그려요",
+      "roman": "geurimeul geuryeoyo",
+      "gloss": {
+        "en": "I draw a picture",
+        "ko": "그리다",
+        "zh": "我画画"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-185",
+      "text": "예술이 좋아요",
+      "roman": "yesuri joayo",
+      "gloss": {
+        "en": "I like art",
+        "ko": "예술",
+        "zh": "我喜欢艺术"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-186",
+      "text": "악기를 배워요",
+      "roman": "akgireul baewoyo",
+      "gloss": {
+        "en": "I learn an instrument",
+        "ko": "악기",
+        "zh": "我学乐器"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-187",
+      "text": "연주를 들어요",
+      "roman": "yeonjureul deureoyo",
+      "gloss": {
+        "en": "I listen to a performance",
+        "ko": "연주",
+        "zh": "我听演奏"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-188",
+      "text": "감상을 해요",
+      "roman": "gamsangeul haeyo",
+      "gloss": {
+        "en": "I appreciate (music/art)",
+        "ko": "감상",
+        "zh": "我欣赏"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-189",
+      "text": "가수가 유명해요",
+      "roman": "gasuga yumyeonghaeyo",
+      "gloss": {
+        "en": "The singer is famous",
+        "ko": "가수",
+        "zh": "歌手很有名"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-190",
+      "text": "춤을 배워요",
+      "roman": "chumeul baewoyo",
+      "gloss": {
+        "en": "I learn dance",
+        "ko": "춤",
+        "zh": "我学跳舞"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-191",
+      "text": "배우가 잘해요",
+      "roman": "baeuga jalhaeyo",
+      "gloss": {
+        "en": "The actor is good",
+        "ko": "배우",
+        "zh": "演员演得好"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-192",
+      "text": "무대에 올라가요",
+      "roman": "mudaee ollagayo",
+      "gloss": {
+        "en": "I go up on stage",
+        "ko": "무대",
+        "zh": "我上台"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-193",
+      "text": "뉴스를 들어요",
+      "roman": "nyuseureul deureoyo",
+      "gloss": {
+        "en": "I listen to the news",
+        "ko": "뉴스",
+        "zh": "我听新闻"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-194",
+      "text": "신문을 읽어요",
+      "roman": "sinmuneul ilgeoyo",
+      "gloss": {
+        "en": "I read the newspaper",
+        "ko": "신문",
+        "zh": "我看报纸"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-195",
+      "text": "방송이 시작돼요",
+      "roman": "bangsongi sijakdoeyo",
+      "gloss": {
+        "en": "The broadcast is starting",
+        "ko": "방송",
+        "zh": "播出开始了"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-196",
+      "text": "기자가 질문해요",
+      "roman": "gijaga jilmunhaeyo",
+      "gloss": {
+        "en": "The reporter asks a question",
+        "ko": "기자",
+        "zh": "记者提问"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-197",
+      "text": "보도를 확인해요",
+      "roman": "bodoreul hwaginhaeyo",
+      "gloss": {
+        "en": "I check the news report",
+        "ko": "보도",
+        "zh": "我核对报道"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-198",
+      "text": "텔레비전을 봐요",
+      "roman": "tellebijeoneul bwayo",
+      "gloss": {
+        "en": "I watch television",
+        "ko": "텔레비전",
+        "zh": "我看电视"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-199",
+      "text": "라디오를 들어요",
+      "roman": "radioreul deureoyo",
+      "gloss": {
+        "en": "I listen to the radio",
+        "ko": "라디오",
+        "zh": "我听收音机"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-200",
+      "text": "프로그램을 골라요",
+      "roman": "peurogeuraemeul gollayo",
+      "gloss": {
+        "en": "I choose a program",
+        "ko": "프로그램",
+        "zh": "我选节目"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-201",
+      "text": "기사를 써요",
+      "roman": "gisareul sseoyo",
+      "gloss": {
+        "en": "I write an article",
+        "ko": "기사",
+        "zh": "我写报道"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-202",
+      "text": "제목을 봐요",
+      "roman": "jemogeul bwayo",
+      "gloss": {
+        "en": "I look at the headline",
+        "ko": "제목",
+        "zh": "我看标题"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-203",
+      "text": "생일을 축하해요",
+      "roman": "saengireul chukhahaeyo",
+      "gloss": {
+        "en": "Happy birthday / I celebrate the birthday",
+        "ko": "생일",
+        "zh": "祝贺生日"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-204",
+      "text": "축하해요",
+      "roman": "chukhahaeyo",
+      "gloss": {
+        "en": "Congratulations",
+        "ko": "축하",
+        "zh": "祝贺"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-205",
+      "text": "선물을 사요",
+      "roman": "seonmureul sayo",
+      "gloss": {
+        "en": "I buy a gift",
+        "ko": "선물",
+        "zh": "我买礼物"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-206",
+      "text": "명절에 모여요",
+      "roman": "myeongjeore moyeoyo",
+      "gloss": {
+        "en": "We gather on traditional holidays",
+        "ko": "명절",
+        "zh": "过节时聚在一起"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-207",
+      "text": "친구를 초대해요",
+      "roman": "chingureul chodaehaeyo",
+      "gloss": {
+        "en": "I invite a friend",
+        "ko": "초대",
+        "zh": "我邀请朋友"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-208",
+      "text": "파티를 해요",
+      "roman": "patireul haeyo",
+      "gloss": {
+        "en": "We have a party",
+        "ko": "파티",
+        "zh": "我们办派对"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-209",
+      "text": "케이크를 잘라요",
+      "roman": "keikeureul jallayo",
+      "gloss": {
+        "en": "I cut the cake",
+        "ko": "케이크",
+        "zh": "我切蛋糕"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-210",
+      "text": "휴가를 내요",
+      "roman": "hyugareul naeyo",
+      "gloss": {
+        "en": "I take leave / vacation",
+        "ko": "휴가",
+        "zh": "我请假休假"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-211",
+      "text": "모임이 있어요",
+      "roman": "moimi isseoyo",
+      "gloss": {
+        "en": "There is a gathering",
+        "ko": "모임",
+        "zh": "有聚会"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-212",
+      "text": "다 같이 건배해요",
+      "roman": "da gachi geonbaehaeyo",
+      "gloss": {
+        "en": "Let’s all make a toast",
+        "ko": "건배",
+        "zh": "大家一起干杯"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-213",
+      "text": "시간이 없어요",
+      "roman": "sigani eopseoyo",
+      "gloss": {
+        "en": "I don’t have time",
+        "ko": "시간",
+        "zh": "我没时间"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-214",
+      "text": "약속을 잡아요",
+      "roman": "yaksogeul jabayo",
+      "gloss": {
+        "en": "I make an appointment",
+        "ko": "약속",
+        "zh": "我约时间"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-215",
+      "text": "친구를 만나요",
+      "roman": "chingureul mannayo",
+      "gloss": {
+        "en": "I meet a friend",
+        "ko": "만나다",
+        "zh": "我见朋友"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-216",
+      "text": "여기서 기다려요",
+      "roman": "yeogiseo gidaryeoyo",
+      "gloss": {
+        "en": "I wait here",
+        "ko": "기다리다",
+        "zh": "我在这里等"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-217",
+      "text": "일찍 나가요",
+      "roman": "iljjik nagayo",
+      "gloss": {
+        "en": "I go out early",
+        "ko": "일찍",
+        "zh": "我早点出门"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-218",
+      "text": "오 분만 기다려요",
+      "roman": "o bunman gidaryeoyo",
+      "gloss": {
+        "en": "I’ll wait just five minutes",
+        "ko": "분",
+        "zh": "我只等五分钟"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-219",
+      "text": "지금 세 시예요",
+      "roman": "jigeum se siyeyo",
+      "gloss": {
+        "en": "It’s three o’clock now",
+        "ko": "시",
+        "zh": "现在三点"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-220",
+      "text": "요일이 뭐예요",
+      "roman": "yoiri mwoyeyo",
+      "gloss": {
+        "en": "What day of the week is it?",
+        "ko": "요일",
+        "zh": "今天星期几？"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-221",
+      "text": "주말에 쉬어요",
+      "roman": "jumare swieoyo",
+      "gloss": {
+        "en": "I rest on the weekend",
+        "ko": "주말",
+        "zh": "我周末休息"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-222",
+      "text": "오후에 만나요",
+      "roman": "ohue mannayo",
+      "gloss": {
+        "en": "Let’s meet in the afternoon",
+        "ko": "오후",
+        "zh": "下午见"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-223",
+      "text": "청소가 끝났어요",
+      "roman": "cheongsoga kkeutnasseoyo",
+      "gloss": {
+        "en": "The cleaning is finished",
+        "ko": "청소",
+        "zh": "打扫结束了"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-224",
+      "text": "빨래를 개요",
+      "roman": "ppallaereul gaeyo",
+      "gloss": {
+        "en": "I fold the laundry",
+        "ko": "빨래",
+        "zh": "我叠衣服"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-225",
+      "text": "설거지를 도와요",
+      "roman": "seolgeojireul dowayo",
+      "gloss": {
+        "en": "I help with the dishes",
+        "ko": "설거지",
+        "zh": "我帮着洗碗"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-226",
+      "text": "부엌에서 일해요",
+      "roman": "bueogeseo ilhaeyo",
+      "gloss": {
+        "en": "I work in the kitchen",
+        "ko": "부엌",
+        "zh": "我在厨房干活"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-227",
+      "text": "우유를 냉장고에 넣어요",
+      "roman": "uyureul naengjanggoe neoheoyo",
+      "gloss": {
+        "en": "I put the milk in the fridge",
+        "ko": "냉장고",
+        "zh": "我把牛奶放进冰箱"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-228",
+      "text": "문을 닦아요",
+      "roman": "muneul dakkayo",
+      "gloss": {
+        "en": "I wipe the door",
+        "ko": "닦다",
+        "zh": "我擦门"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-229",
+      "text": "채소를 씻어요",
+      "roman": "chaesoreul ssiseoyo",
+      "gloss": {
+        "en": "I wash the vegetables",
+        "ko": "씻다",
+        "zh": "我洗蔬菜"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-230",
+      "text": "책상을 정리해요",
+      "roman": "chaeksangeul jeongnihaeyo",
+      "gloss": {
+        "en": "I tidy the desk",
+        "ko": "정리하다",
+        "zh": "我整理书桌"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-231",
+      "text": "수건이 필요해요",
+      "roman": "sugoni piryohaeyo",
+      "gloss": {
+        "en": "I need a towel",
+        "ko": "수건",
+        "zh": "我需要毛巾"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-232",
+      "text": "침대가 커요",
+      "roman": "chimdaega keoyo",
+      "gloss": {
+        "en": "The bed is big",
+        "ko": "침대",
+        "zh": "床很大"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-233",
+      "text": "머리를 감아요",
+      "roman": "meorireul gamayo",
+      "gloss": {
+        "en": "I wash my hair",
+        "ko": "머리",
+        "zh": "我洗头"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-234",
+      "text": "손을 들어요",
+      "roman": "soneul deureoyo",
+      "gloss": {
+        "en": "I raise my hand",
+        "ko": "손",
+        "zh": "我举手"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-235",
+      "text": "발이 부어요",
+      "roman": "bari bueoyo",
+      "gloss": {
+        "en": "My feet are swollen",
+        "ko": "발",
+        "zh": "脚肿了"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-236",
+      "text": "얼굴을 가려요",
+      "roman": "eolgureul garyeoyo",
+      "gloss": {
+        "en": "I cover my face",
+        "ko": "얼굴",
+        "zh": "我捂住脸"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-237",
+      "text": "몸을 펴요",
+      "roman": "momeul pyeoyo",
+      "gloss": {
+        "en": "I stretch my body",
+        "ko": "몸",
+        "zh": "我伸展身体"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-238",
+      "text": "팔이 아파요",
+      "roman": "pari apayo",
+      "gloss": {
+        "en": "My arm hurts",
+        "ko": "팔",
+        "zh": "胳膊疼"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-239",
+      "text": "다리를 뻗어요",
+      "roman": "darireul ppeodeoyo",
+      "gloss": {
+        "en": "I stretch my legs",
+        "ko": "다리",
+        "zh": "我伸腿"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-240",
+      "text": "목이 뻐근해요",
+      "roman": "mogi ppeogeunhaeyo",
+      "gloss": {
+        "en": "My neck feels stiff",
+        "ko": "목",
+        "zh": "脖子酸胀"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-241",
+      "text": "입을 다물어요",
+      "roman": "ibeul damureoyo",
+      "gloss": {
+        "en": "I close my mouth",
+        "ko": "입",
+        "zh": "我闭上嘴"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-242",
+      "text": "어깨를 돌려요",
+      "roman": "eokkaereul dollyeoyo",
+      "gloss": {
+        "en": "I rotate my shoulders",
+        "ko": "어깨",
+        "zh": "我转动肩膀"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-243",
+      "text": "앞에 서 있어요",
+      "roman": "ape seo isseoyo",
+      "gloss": {
+        "en": "I am standing in front",
+        "ko": "앞",
+        "zh": "我站在前面"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-244",
+      "text": "뒤로 가요",
+      "roman": "dwiro gayo",
+      "gloss": {
+        "en": "I go to the back",
+        "ko": "뒤",
+        "zh": "我往后走"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-245",
+      "text": "옆에 앉아요",
+      "roman": "yeope anjayo",
+      "gloss": {
+        "en": "I sit beside",
+        "ko": "옆",
+        "zh": "我坐旁边"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-246",
+      "text": "위에 올려요",
+      "roman": "wie ollyeoyo",
+      "gloss": {
+        "en": "I put it on top",
+        "ko": "위",
+        "zh": "我放上面"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-247",
+      "text": "아래에 두어요",
+      "roman": "arae dueoyo",
+      "gloss": {
+        "en": "I place it below",
+        "ko": "아래",
+        "zh": "我放下面"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-248",
+      "text": "왼쪽으로 돌아요",
+      "roman": "oenjjogeuro dorayo",
+      "gloss": {
+        "en": "I turn to the left",
+        "ko": "왼쪽",
+        "zh": "我往左转"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-249",
+      "text": "오른쪽을 봐요",
+      "roman": "oreunjjogeul bwayo",
+      "gloss": {
+        "en": "I look to the right",
+        "ko": "오른쪽",
+        "zh": "我看右边"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-250",
+      "text": "근처에 살아요",
+      "roman": "geuncheoe sarayo",
+      "gloss": {
+        "en": "I live nearby",
+        "ko": "근처",
+        "zh": "我住附近"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-251",
+      "text": "길을 물어봐요",
+      "roman": "gireul mureobwayo",
+      "gloss": {
+        "en": "I ask for the way",
+        "ko": "길",
+        "zh": "我问路"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-252",
+      "text": "지도를 펴요",
+      "roman": "jidoreul pyeoyo",
+      "gloss": {
+        "en": "I open the map",
+        "ko": "지도",
+        "zh": "我摊开地图"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-253",
+      "text": "문을 닫아 주세요",
+      "roman": "muneul dada juseyo",
+      "gloss": {
+        "en": "Please close the door",
+        "ko": "문",
+        "zh": "请关门"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-254",
+      "text": "제 방은 편해요",
+      "roman": "je bangeun pyeonhaeyo",
+      "gloss": {
+        "en": "My room is comfortable",
+        "ko": "방",
+        "zh": "我的房间很舒服"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-255",
+      "text": "가구가 많아요",
+      "roman": "gaguga manayo",
+      "gloss": {
+        "en": "There is a lot of furniture",
+        "ko": "가구",
+        "zh": "家具很多"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-256",
+      "text": "소파에서 쉬어요",
+      "roman": "sopaeeseo swieoyo",
+      "gloss": {
+        "en": "I rest on the sofa",
+        "ko": "소파",
+        "zh": "我在沙发上休息"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-257",
+      "text": "거울을 봐요",
+      "roman": "geoureul bwayo",
+      "gloss": {
+        "en": "I look in the mirror",
+        "ko": "거울",
+        "zh": "我照镜子"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-258",
+      "text": "식탁에 차려요",
+      "roman": "siktage charyeoyo",
+      "gloss": {
+        "en": "I set the meal on the dining table",
+        "ko": "식탁",
+        "zh": "我摆到餐桌上"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-259",
+      "text": "책장에 꽂아요",
+      "roman": "chaekjange kkojayo",
+      "gloss": {
+        "en": "I put it on the bookshelf",
+        "ko": "책장",
+        "zh": "我插在书架上"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-260",
+      "text": "거실은 밝아요",
+      "roman": "geosireun balgayo",
+      "gloss": {
+        "en": "The living room is bright",
+        "ko": "거실",
+        "zh": "客厅很亮"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-261",
+      "text": "창문을 열어요",
+      "roman": "changmuneul yeoreoyo",
+      "gloss": {
+        "en": "I open the window",
+        "ko": "창문",
+        "zh": "我开窗"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-262",
+      "text": "옷장에 넣어요",
+      "roman": "otjange neoeoyo",
+      "gloss": {
+        "en": "I put it in the wardrobe",
+        "ko": "옷장",
+        "zh": "我放进衣柜"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-263",
+      "text": "과일을 골라요",
+      "roman": "gwaireul gollayo",
+      "gloss": {
+        "en": "I pick fruit",
+        "ko": "과일",
+        "zh": "我挑水果"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-264",
+      "text": "채소가 싸요",
+      "roman": "chaesoga ssayo",
+      "gloss": {
+        "en": "The vegetables are cheap",
+        "ko": "채소",
+        "zh": "蔬菜很便宜"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-265",
+      "text": "시장에 가요",
+      "roman": "sijange gayo",
+      "gloss": {
+        "en": "I go to the market",
+        "ko": "시장",
+        "zh": "我去市场"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-266",
+      "text": "사과를 깎아요",
+      "roman": "sagwareul kkakkayo",
+      "gloss": {
+        "en": "I peel an apple",
+        "ko": "사과",
+        "zh": "我削苹果"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-267",
+      "text": "바나나가 노래요",
+      "roman": "bananaga noraeyo",
+      "gloss": {
+        "en": "The bananas are yellow",
+        "ko": "바나나",
+        "zh": "香蕉是黄色的"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-268",
+      "text": "포도를 담아요",
+      "roman": "podoreul damayo",
+      "gloss": {
+        "en": "I put grapes in",
+        "ko": "포도",
+        "zh": "我装葡萄"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-269",
+      "text": "수박을 잘라요",
+      "roman": "subageul jallayo",
+      "gloss": {
+        "en": "I cut the watermelon",
+        "ko": "수박",
+        "zh": "我切西瓜"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-270",
+      "text": "딸기를 골라요",
+      "roman": "ttalgireul gollayo",
+      "gloss": {
+        "en": "I pick strawberries",
+        "ko": "딸기",
+        "zh": "我挑草莓"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-271",
+      "text": "상자에 넣어요",
+      "roman": "sangjae neoeoyo",
+      "gloss": {
+        "en": "I put it in a box",
+        "ko": "상자",
+        "zh": "我放进箱子"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-272",
+      "text": "토마토가 빨개요",
+      "roman": "tomatoga ppalgaeyo",
+      "gloss": {
+        "en": "The tomato is red",
+        "ko": "토마토",
+        "zh": "番茄是红色的"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-273",
+      "text": "그릇을 닦아요",
+      "roman": "geureuseul dakkayo",
+      "gloss": {
+        "en": "I wipe the bowl",
+        "ko": "그릇",
+        "zh": "我擦碗"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-274",
+      "text": "접시를 쌓아요",
+      "roman": "jeopsireul ssahayo",
+      "gloss": {
+        "en": "I stack the plates",
+        "ko": "접시",
+        "zh": "我叠盘子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-275",
+      "text": "컵에 물을 담아요",
+      "roman": "keobe mureul damayo",
+      "gloss": {
+        "en": "I pour water into a cup",
+        "ko": "컵",
+        "zh": "我往杯子里倒水"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-276",
+      "text": "숟가락을 주세요",
+      "roman": "sutgarageul juseyo",
+      "gloss": {
+        "en": "Please give me a spoon",
+        "ko": "숟가락",
+        "zh": "请给我勺子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-277",
+      "text": "젓가락을 골라요",
+      "roman": "jeotgarageul gollayo",
+      "gloss": {
+        "en": "I pick chopsticks",
+        "ko": "젓가락",
+        "zh": "我挑筷子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-278",
+      "text": "포크를 꺼내요",
+      "roman": "pokeureul kkeonaeyo",
+      "gloss": {
+        "en": "I take out a fork",
+        "ko": "포크",
+        "zh": "我拿出叉子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-279",
+      "text": "쟁반에 올려요",
+      "roman": "jaengbane ollyeoyo",
+      "gloss": {
+        "en": "I put it on the tray",
+        "ko": "쟁반",
+        "zh": "我放到托盘上"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-280",
+      "text": "프라이팬에 부쳐요",
+      "roman": "peuraipaene bucheoyo",
+      "gloss": {
+        "en": "I fry it in a frying pan",
+        "ko": "프라이팬",
+        "zh": "我用平底锅煎"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-281",
+      "text": "주전자에 물을 넣어요",
+      "roman": "jugeonjae mureul neoeoyo",
+      "gloss": {
+        "en": "I put water in the kettle",
+        "ko": "주전자",
+        "zh": "我往水壶里加水"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-282",
+      "text": "도마를 닦아요",
+      "roman": "domareul dakkayo",
+      "gloss": {
+        "en": "I wipe the cutting board",
+        "ko": "도마",
+        "zh": "我擦砧板"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-283",
+      "text": "펜을 빌릴게요",
+      "roman": "peneul billilgeyo",
+      "gloss": {
+        "en": "I will borrow a pen",
+        "ko": "펜",
+        "zh": "我借支笔"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-284",
+      "text": "연필을 깎아요",
+      "roman": "yeonpireul kkakkayo",
+      "gloss": {
+        "en": "I sharpen the pencil",
+        "ko": "연필",
+        "zh": "我削铅笔"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-285",
+      "text": "볼펜을 찾아요",
+      "roman": "bolpeneul chajayo",
+      "gloss": {
+        "en": "I look for a ballpoint pen",
+        "ko": "볼펜",
+        "zh": "我找圆珠笔"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-286",
+      "text": "지우개를 빌려요",
+      "roman": "jiugaeleul billyeoyo",
+      "gloss": {
+        "en": "I borrow an eraser",
+        "ko": "지우개",
+        "zh": "我借橡皮"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-287",
+      "text": "공책에 적어요",
+      "roman": "gongchaege jeogeoyo",
+      "gloss": {
+        "en": "I write it in the notebook",
+        "ko": "공책",
+        "zh": "我记在练习本上"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-288",
+      "text": "종이를 접어요",
+      "roman": "jongireul jeobeoyo",
+      "gloss": {
+        "en": "I fold the paper",
+        "ko": "종이",
+        "zh": "我折纸"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-289",
+      "text": "가위를 빌려요",
+      "roman": "gawireul billyeoyo",
+      "gloss": {
+        "en": "I borrow scissors",
+        "ko": "가위",
+        "zh": "我借剪刀"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-290",
+      "text": "풀이 없어요",
+      "roman": "puri eopseoyo",
+      "gloss": {
+        "en": "There is no glue",
+        "ko": "풀",
+        "zh": "没有胶水"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-291",
+      "text": "필통을 열어요",
+      "roman": "piltongeul yeoreoyo",
+      "gloss": {
+        "en": "I open the pencil case",
+        "ko": "필통",
+        "zh": "我打开笔袋"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-292",
+      "text": "자를 주세요",
+      "roman": "jareul juseyo",
+      "gloss": {
+        "en": "Please give me a ruler",
+        "ko": "자",
+        "zh": "请给我尺子"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-293",
+      "text": "편지를 읽어요",
+      "roman": "pyeonjireul ilgeoyo",
+      "gloss": {
+        "en": "I read the letter",
+        "ko": "편지",
+        "zh": "我读信"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-294",
+      "text": "소포를 열어요",
+      "roman": "soporeul yeoreoyo",
+      "gloss": {
+        "en": "I open the parcel",
+        "ko": "소포",
+        "zh": "我打开包裹"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-295",
+      "text": "우표를 골라요",
+      "roman": "uporeul gollayo",
+      "gloss": {
+        "en": "I pick a stamp",
+        "ko": "우표",
+        "zh": "我挑邮票"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-296",
+      "text": "우체국으로 가요",
+      "roman": "uchegugeuro gayo",
+      "gloss": {
+        "en": "I go to the post office",
+        "ko": "우체국",
+        "zh": "我去邮局"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-297",
+      "text": "주소를 메모해요",
+      "roman": "jusoreul memohaeyo",
+      "gloss": {
+        "en": "I jot down the address",
+        "ko": "주소",
+        "zh": "我记下地址"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-298",
+      "text": "봉투를 접어요",
+      "roman": "bongtureul jeobeoyo",
+      "gloss": {
+        "en": "I fold the envelope",
+        "ko": "봉투",
+        "zh": "我折信封"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-299",
+      "text": "엽서를 사요",
+      "roman": "yeopseoreul sayo",
+      "gloss": {
+        "en": "I buy a postcard",
+        "ko": "엽서",
+        "zh": "我买明信片"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-300",
+      "text": "도착을 확인해요",
+      "roman": "dochageul hwaginhaeyo",
+      "gloss": {
+        "en": "I check the arrival",
+        "ko": "도착",
+        "zh": "我确认到达"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-301",
+      "text": "서류를 부쳐요",
+      "roman": "seoryureul bucheoyo",
+      "gloss": {
+        "en": "I mail the documents",
+        "ko": "부치다",
+        "zh": "我寄文件"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-302",
+      "text": "포장이 끝났어요",
+      "roman": "pojangi kkeutnasseoyo",
+      "gloss": {
+        "en": "The packing is done",
+        "ko": "포장",
+        "zh": "包装好了"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-303",
+      "text": "논 옆에 소가 있어요",
+      "roman": "non yeope soga isseoyo",
+      "gloss": {
+        "en": "There is a cow beside the rice field",
+        "ko": "소",
+        "zh": "稻田旁边有牛"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-304",
+      "text": "농장에 돼지가 커요",
+      "roman": "nongjange dwaejiga keoyo",
+      "gloss": {
+        "en": "The pigs on the farm are big",
+        "ko": "돼지",
+        "zh": "农场的猪很大"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-305",
+      "text": "개가 문을 봐요",
+      "roman": "gaega muneul bwayo",
+      "gloss": {
+        "en": "The dog looks at the door",
+        "ko": "개",
+        "zh": "狗看着门"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-306",
+      "text": "고양이가 자요",
+      "roman": "goyangiga jayo",
+      "gloss": {
+        "en": "The cat is sleeping",
+        "ko": "고양이",
+        "zh": "猫在睡觉"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-307",
+      "text": "새가 날아요",
+      "roman": "saega narayo",
+      "gloss": {
+        "en": "A bird is flying",
+        "ko": "새",
+        "zh": "鸟在飞"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-308",
+      "text": "강아지를 키워요",
+      "roman": "gangajireul kiwoyo",
+      "gloss": {
+        "en": "I keep a puppy",
+        "ko": "강아지",
+        "zh": "我养小狗"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-309",
+      "text": "물고기를 먹여요",
+      "roman": "mulgogireul meogyeoyo",
+      "gloss": {
+        "en": "I feed the fish",
+        "ko": "물고기",
+        "zh": "我喂鱼"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-310",
+      "text": "토끼가 뛰어요",
+      "roman": "tokkiga ttwieoyo",
+      "gloss": {
+        "en": "The rabbit is hopping",
+        "ko": "토끼",
+        "zh": "兔子在跳"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-311",
+      "text": "닭이 울어요",
+      "roman": "dalgi ureoyo",
+      "gloss": {
+        "en": "The chicken is crowing",
+        "ko": "닭",
+        "zh": "鸡在叫"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-312",
+      "text": "말을 타요",
+      "roman": "mareul tayo",
+      "gloss": {
+        "en": "I ride a horse",
+        "ko": "말",
+        "zh": "我骑马"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-313",
+      "text": "운전을 연습해요",
+      "roman": "unjeoneul yeonseuphaeyo",
+      "gloss": {
+        "en": "I practice driving",
+        "ko": "운전",
+        "zh": "我练习开车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-314",
+      "text": "자동차 열쇠를 찾아요",
+      "roman": "jadongcha yeolsoereul chajayo",
+      "gloss": {
+        "en": "I look for the car key",
+        "ko": "자동차",
+        "zh": "我找车钥匙"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-315",
+      "text": "자전거를 빌려요",
+      "roman": "jajeongeoreul billyeoyo",
+      "gloss": {
+        "en": "I borrow a bicycle",
+        "ko": "자전거",
+        "zh": "我借自行车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-316",
+      "text": "택시를 기다려요",
+      "roman": "taeksireul gidaryeoyo",
+      "gloss": {
+        "en": "I wait for a taxi",
+        "ko": "택시",
+        "zh": "我等出租车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-317",
+      "text": "횡단보도 앞에서 멈춰요",
+      "roman": "hoengdanbodo apeseo meomchwoyo",
+      "gloss": {
+        "en": "I stop in front of the crosswalk",
+        "ko": "횡단보도",
+        "zh": "我在人行横道前停下"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-318",
+      "text": "사고를 피해요",
+      "roman": "sagoreul pihaeyo",
+      "gloss": {
+        "en": "I avoid an accident",
+        "ko": "사고",
+        "zh": "我避开事故"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-319",
+      "text": "위험이 보여요",
+      "roman": "wiheomi boyeoyo",
+      "gloss": {
+        "en": "I see danger",
+        "ko": "위험",
+        "zh": "我看到危险"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-320",
+      "text": "조심해서 건너요",
+      "roman": "josimhaeseo geonneoyo",
+      "gloss": {
+        "en": "I cross carefully",
+        "ko": "조심하다",
+        "zh": "我小心过马路"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-321",
+      "text": "주차장을 찾아요",
+      "roman": "juchajangeul chajayo",
+      "gloss": {
+        "en": "I look for a parking lot",
+        "ko": "주차장",
+        "zh": "我找停车场"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-322",
+      "text": "길이 많이 막혀요",
+      "roman": "giri mani makhyeoyo",
+      "gloss": {
+        "en": "The road is very jammed",
+        "ko": "막히다",
+        "zh": "路很堵"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-323",
+      "text": "도서관이 넓어요",
+      "roman": "doseogwani neolbeoyo",
+      "gloss": {
+        "en": "The library is spacious",
+        "ko": "도서관",
+        "zh": "图书馆很宽敞"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-324",
+      "text": "슈퍼마켓 문을 닫아요",
+      "roman": "syupeomakes muneul dadayo",
+      "gloss": {
+        "en": "I close the supermarket door",
+        "ko": "슈퍼마켓",
+        "zh": "我关超市门"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-325",
+      "text": "은행 옆에 서요",
+      "roman": "eunhaeng yeope seoyo",
+      "gloss": {
+        "en": "I stand next to the bank",
+        "ko": "은행(건물)",
+        "zh": "我站在银行旁边"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-326",
+      "text": "백화점으로 가요",
+      "roman": "baekhwajeomeuro gayo",
+      "gloss": {
+        "en": "I go to the department store",
+        "ko": "백화점",
+        "zh": "我去百货商店"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-327",
+      "text": "미용실이 붐벼요",
+      "roman": "miyongsiri bumbyeoyo",
+      "gloss": {
+        "en": "The hair salon is crowded",
+        "ko": "미용실",
+        "zh": "美发店很挤"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-328",
+      "text": "서점 책을 골라요",
+      "roman": "seojeom chaegeul gollayo",
+      "gloss": {
+        "en": "I pick a book at the bookstore",
+        "ko": "서점",
+        "zh": "我在书店选书"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-329",
+      "text": "영화관이 가까워요",
+      "roman": "yeonghwagwani gakkawoyo",
+      "gloss": {
+        "en": "The movie theater is nearby",
+        "ko": "영화관",
+        "zh": "电影院很近"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-330",
+      "text": "수영장이 깊어요",
+      "roman": "suyeongjangi gipeoyo",
+      "gloss": {
+        "en": "The pool is deep",
+        "ko": "수영장",
+        "zh": "游泳池很深"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-331",
+      "text": "카페가 조용해요",
+      "roman": "kapega joyonghaeyo",
+      "gloss": {
+        "en": "The cafe is quiet",
+        "ko": "카페",
+        "zh": "咖啡馆很安静"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-332",
+      "text": "경찰서가 열려요",
+      "roman": "gyeongchalseoga yeollyeoyo",
+      "gloss": {
+        "en": "The police station is open",
+        "ko": "경찰서",
+        "zh": "警察局开门了"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-333",
+      "text": "오늘 쌀을 샀어요",
+      "roman": "oneul ssareul sasseoyo",
+      "gloss": {
+        "en": "I bought rice today",
+        "ko": "쌀",
+        "zh": "今天我买了大米"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-334",
+      "text": "밀가루가 많아요",
+      "roman": "milgaruga manayo",
+      "gloss": {
+        "en": "There is a lot of flour",
+        "ko": "밀가루",
+        "zh": "面粉很多"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-335",
+      "text": "소금이 조금 모자라요",
+      "roman": "sogeumi jogeum mojarayo",
+      "gloss": {
+        "en": "We're a little short on salt",
+        "ko": "소금",
+        "zh": "盐有点不够"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-336",
+      "text": "설탕이 필요해요",
+      "roman": "seoltangi piryohaeyo",
+      "gloss": {
+        "en": "I need sugar",
+        "ko": "설탕",
+        "zh": "需要糖"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-337",
+      "text": "팬에 기름을 둘러요",
+      "roman": "paene gireumeul dulleoyo",
+      "gloss": {
+        "en": "I put oil in the pan",
+        "ko": "기름",
+        "zh": "我往锅里倒油"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-338",
+      "text": "아침에 달걀을 먹어요",
+      "roman": "achime dalgyareul meogeoyo",
+      "gloss": {
+        "en": "I eat eggs in the morning",
+        "ko": "달걀",
+        "zh": "早上我吃鸡蛋"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-339",
+      "text": "저녁에 고기를 구워요",
+      "roman": "jeonyeoge gogireul guwoyo",
+      "gloss": {
+        "en": "I grill meat for dinner",
+        "ko": "고기",
+        "zh": "晚上我烤肉"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-340",
+      "text": "생선이 신선해요",
+      "roman": "saengseoni sinseonhaeyo",
+      "gloss": {
+        "en": "The fish is fresh",
+        "ko": "생선",
+        "zh": "鱼很新鲜"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-341",
+      "text": "아침에 빵을 먹어요",
+      "roman": "achime ppangeul meogeoyo",
+      "gloss": {
+        "en": "I eat bread in the morning",
+        "ko": "빵",
+        "zh": "早上我吃面包"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-342",
+      "text": "밥에 김치를 곁들여요",
+      "roman": "babe gimchireul gyeotdeuryeoyo",
+      "gloss": {
+        "en": "I have kimchi with rice",
+        "ko": "김치",
+        "zh": "我配米饭吃泡菜"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-343",
+      "text": "화장실이 이 층에 있어요",
+      "roman": "hwajangsiri i cheunge isseoyo",
+      "gloss": {
+        "en": "The restroom is on this floor",
+        "ko": "화장실",
+        "zh": "卫生间在这层"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-344",
+      "text": "샤워가 시원해요",
+      "roman": "syawoga siwonhaeyo",
+      "gloss": {
+        "en": "The shower feels refreshing",
+        "ko": "샤워",
+        "zh": "淋浴很清爽"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-345",
+      "text": "목욕을 천천히 해요",
+      "roman": "mogyogeul cheoncheonhi haeyo",
+      "gloss": {
+        "en": "I take a bath slowly",
+        "ko": "목욕",
+        "zh": "我慢慢泡澡"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-346",
+      "text": "세수하고 나와요",
+      "roman": "sesuhago nawayo",
+      "gloss": {
+        "en": "I come out after washing my face",
+        "ko": "세수",
+        "zh": "我洗完脸出来"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-347",
+      "text": "칫솔을 물에 담가요",
+      "roman": "chitsoreul mure damgayo",
+      "gloss": {
+        "en": "I soak the toothbrush in water",
+        "ko": "칫솔",
+        "zh": "我把牙刷泡在水里"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-348",
+      "text": "치약이 다 떨어졌어요",
+      "roman": "chiyagi da tteoreojyeosseoyo",
+      "gloss": {
+        "en": "The toothpaste has completely run out",
+        "ko": "치약",
+        "zh": "牙膏全用完了"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-349",
+      "text": "휴지를 꺼내요",
+      "roman": "hyujireul kkeonaeyo",
+      "gloss": {
+        "en": "I take out some tissue",
+        "ko": "휴지",
+        "zh": "我抽出纸巾"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-350",
+      "text": "휴지통이 가득해요",
+      "roman": "hyujitongi gadeukhaeyo",
+      "gloss": {
+        "en": "The trash can is full",
+        "ko": "휴지통",
+        "zh": "垃圾桶满了"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-351",
+      "text": "면도를 잊었어요",
+      "roman": "myeonodoreul ijeosseoyo",
+      "gloss": {
+        "en": "I forgot to shave",
+        "ko": "면도",
+        "zh": "我忘了刮胡子"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-352",
+      "text": "바닥이 더러워요",
+      "roman": "badagi deoreowoyo",
+      "gloss": {
+        "en": "The floor is dirty",
+        "ko": "더럽다",
+        "zh": "地板很脏"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-353",
+      "text": "직업이 뭐예요",
+      "roman": "jigeobi mwoyeyo",
+      "gloss": {
+        "en": "What is your occupation?",
+        "ko": "직업",
+        "zh": "你的职业是什么？"
+      },
+      "tags": [
+        "jobs",
+        "intermediate",
+        "question"
+      ]
+    },
+    {
+      "id": "d-354",
+      "text": "회사원으로 다녀요",
+      "roman": "hoesawoneuro danyeoyo",
+      "gloss": {
+        "en": "I go (to work) as an office worker",
+        "ko": "회사원",
+        "zh": "我以公司职员身份上班"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-355",
+      "text": "간호사를 만나요",
+      "roman": "ganhosareul mannayo",
+      "gloss": {
+        "en": "I meet a nurse",
+        "ko": "간호사",
+        "zh": "我见护士"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-356",
+      "text": "선생님이 기다려요",
+      "roman": "seonsaengnimi gidaryeoyo",
+      "gloss": {
+        "en": "The teacher is waiting",
+        "ko": "선생님",
+        "zh": "老师在等"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-357",
+      "text": "요리사가 만들어요",
+      "roman": "yorisaga mandeureoyo",
+      "gloss": {
+        "en": "The cook makes (food)",
+        "ko": "요리사",
+        "zh": "厨师在做"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-358",
+      "text": "운전사가 친절해요",
+      "roman": "unjeonsaga chinjeolhaeyo",
+      "gloss": {
+        "en": "The driver is kind",
+        "ko": "운전사",
+        "zh": "司机很亲切"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-359",
+      "text": "저는 학생이에요",
+      "roman": "jeoneun haksaengieyo",
+      "gloss": {
+        "en": "I am a student",
+        "ko": "학생",
+        "zh": "我是学生"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-360",
+      "text": "가게에서 일해요",
+      "roman": "gageeseo ilhaeyo",
+      "gloss": {
+        "en": "I work at a store",
+        "ko": "일하다",
+        "zh": "我在店里工作"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-361",
+      "text": "직원이 많아요",
+      "roman": "jigwoni manayo",
+      "gloss": {
+        "en": "There are many employees",
+        "ko": "직원",
+        "zh": "职员很多"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-362",
+      "text": "사장이 인사해요",
+      "roman": "sajangi insahaeyo",
+      "gloss": {
+        "en": "The boss greets (us)",
+        "ko": "사장",
+        "zh": "老板打招呼"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-363",
+      "text": "제 나라는 한국이에요",
+      "roman": "je naraneun hangugieyo",
+      "gloss": {
+        "en": "My country is Korea",
+        "ko": "나라",
+        "zh": "我的国家是韩国"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-364",
+      "text": "외국 음식을 좋아해요",
+      "roman": "oeguk eumsigeul joahaeyo",
+      "gloss": {
+        "en": "I like foreign food",
+        "ko": "외국",
+        "zh": "我喜欢外国食物"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-365",
+      "text": "외국인을 도와줘요",
+      "roman": "oegugineul dowajwoyo",
+      "gloss": {
+        "en": "I help a foreigner",
+        "ko": "외국인",
+        "zh": "我帮助外国人"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-366",
+      "text": "국적을 알려 주세요",
+      "roman": "gukjeogeul allyeo juseyo",
+      "gloss": {
+        "en": "Please tell me (your) nationality",
+        "ko": "국적",
+        "zh": "请告诉我国籍"
+      },
+      "tags": [
+        "country",
+        "intermediate",
+        "request"
+      ]
+    },
+    {
+      "id": "d-367",
+      "text": "고향에 가요",
+      "roman": "gohange gayo",
+      "gloss": {
+        "en": "I go to my hometown",
+        "ko": "고향",
+        "zh": "我去家乡"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-368",
+      "text": "중국에서 살아요",
+      "roman": "junggugeseo sarayo",
+      "gloss": {
+        "en": "I live in China",
+        "ko": "살다",
+        "zh": "我住在中国"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-369",
+      "text": "일본어가 어려워요",
+      "roman": "ilboneoga eoryeowoyo",
+      "gloss": {
+        "en": "Japanese is hard",
+        "ko": "일본어",
+        "zh": "日语很难"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-370",
+      "text": "한국에서 태어났어요",
+      "roman": "hangugeseo taeeonasseoyo",
+      "gloss": {
+        "en": "I was born in Korea",
+        "ko": "태어나다",
+        "zh": "我在韩国出生"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-371",
+      "text": "해외에서 왔어요",
+      "roman": "haeoeseo wasseoyo",
+      "gloss": {
+        "en": "I came from overseas",
+        "ko": "해외",
+        "zh": "我从海外来"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-372",
+      "text": "유학생을 만나요",
+      "roman": "yuhaksaengeul mannayo",
+      "gloss": {
+        "en": "I meet an international student",
+        "ko": "유학생",
+        "zh": "我见留学生"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-373",
+      "text": "일곱 시에 일어나요",
+      "roman": "ilgop sie ireonayo",
+      "gloss": {
+        "en": "I get up at seven",
+        "ko": "일어나다",
+        "zh": "我七点起床"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-374",
+      "text": "열 시에 자요",
+      "roman": "yeol sie jayo",
+      "gloss": {
+        "en": "I sleep at ten",
+        "ko": "자다",
+        "zh": "我十点睡"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-375",
+      "text": "아침을 안 먹어요",
+      "roman": "achimeul an meogeoyo",
+      "gloss": {
+        "en": "I do not eat breakfast",
+        "ko": "아침",
+        "zh": "我不吃早饭"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-376",
+      "text": "점심을 빨리 먹어요",
+      "roman": "jeomsimeul ppalli meogeoyo",
+      "gloss": {
+        "en": "I eat lunch quickly",
+        "ko": "점심",
+        "zh": "我很快吃午饭"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-377",
+      "text": "저녁에 집에 와요",
+      "roman": "jeonyeoge jibe wayo",
+      "gloss": {
+        "en": "I come home in the evening",
+        "ko": "저녁",
+        "zh": "晚上回家"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-378",
+      "text": "밤에 음악을 들어요",
+      "roman": "bame eumageul deureoyo",
+      "gloss": {
+        "en": "I listen to music at night",
+        "ko": "밤",
+        "zh": "晚上听音乐"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-379",
+      "text": "하루가 짧아요",
+      "roman": "haruga jjalbayo",
+      "gloss": {
+        "en": "The day is short",
+        "ko": "하루",
+        "zh": "一天很短"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-380",
+      "text": "매일 운동해요",
+      "roman": "maeil undonghaeyo",
+      "gloss": {
+        "en": "I exercise every day",
+        "ko": "매일",
+        "zh": "我每天运动"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-381",
+      "text": "어제 일찍 잤어요",
+      "roman": "eoje iljjik jasseoyo",
+      "gloss": {
+        "en": "I slept early yesterday",
+        "ko": "어제",
+        "zh": "昨天早睡了"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-382",
+      "text": "내일 일찍 일어나요",
+      "roman": "naeil iljjik ireonayo",
+      "gloss": {
+        "en": "I get up early tomorrow",
+        "ko": "내일",
+        "zh": "明天早起"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-383",
+      "text": "사진이 커요",
+      "roman": "sajini keoyo",
+      "gloss": {
+        "en": "The photo is big",
+        "ko": "크다",
+        "zh": "照片很大"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-384",
+      "text": "단추가 작아요",
+      "roman": "danchuga jagayo",
+      "gloss": {
+        "en": "The button is small",
+        "ko": "작다",
+        "zh": "纽扣很小"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-385",
+      "text": "손님이 많아요",
+      "roman": "sonnimi manayo",
+      "gloss": {
+        "en": "There are many customers",
+        "ko": "많다",
+        "zh": "客人很多"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-386",
+      "text": "선택이 적어요",
+      "roman": "seontaegi jeogeoyo",
+      "gloss": {
+        "en": "There are few choices",
+        "ko": "적다",
+        "zh": "选择很少"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-387",
+      "text": "이야기가 길어요",
+      "roman": "iyagiga gireoyo",
+      "gloss": {
+        "en": "The story is long",
+        "ko": "길다",
+        "zh": "故事很长"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-388",
+      "text": "설명이 짧아요",
+      "roman": "seolmyeongi jjalbayo",
+      "gloss": {
+        "en": "The explanation is short",
+        "ko": "짧다",
+        "zh": "说明很短"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-389",
+      "text": "돌이 무거워요",
+      "roman": "dori mugeowoyo",
+      "gloss": {
+        "en": "The stone is heavy",
+        "ko": "무겁다",
+        "zh": "石头很重"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-390",
+      "text": "풍선이 가벼워요",
+      "roman": "pungseoni gabyeowoyo",
+      "gloss": {
+        "en": "The balloon is light",
+        "ko": "가볍다",
+        "zh": "气球很轻"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-391",
+      "text": "탑이 높아요",
+      "roman": "tabi nopayo",
+      "gloss": {
+        "en": "The tower is tall",
+        "ko": "높다",
+        "zh": "塔很高"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-392",
+      "text": "소파가 낮아요",
+      "roman": "sopaga najayo",
+      "gloss": {
+        "en": "The sofa is low",
+        "ko": "낮다",
+        "zh": "沙发很低"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-393",
+      "text": "커피가 써요",
+      "roman": "keopiga sseoyo",
+      "gloss": {
+        "en": "The coffee is bitter",
+        "ko": "쓰다(맛)",
+        "zh": "咖啡很苦"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-394",
+      "text": "천이 부드러워요",
+      "roman": "cheoni budeureowoyo",
+      "gloss": {
+        "en": "The fabric is soft",
+        "ko": "부드럽다",
+        "zh": "布料很软"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-395",
+      "text": "국이 뜨거워요",
+      "roman": "gugi tteugeowoyo",
+      "gloss": {
+        "en": "The soup is hot",
+        "ko": "뜨겁다",
+        "zh": "汤很烫"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-396",
+      "text": "바닥이 차가워요",
+      "roman": "badagi chagawoyo",
+      "gloss": {
+        "en": "The floor is cold",
+        "ko": "차갑다",
+        "zh": "地板很冰"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-397",
+      "text": "차가 따뜻해요",
+      "roman": "chaga ttatteuthaeyo",
+      "gloss": {
+        "en": "The tea is warm",
+        "ko": "따뜻하다",
+        "zh": "茶很暖"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-398",
+      "text": "그늘이 시원해요",
+      "roman": "geuneuri siwonhaeyo",
+      "gloss": {
+        "en": "The shade is cool",
+        "ko": "시원하다",
+        "zh": "树荫很凉快"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-399",
+      "text": "창이 밝아요",
+      "roman": "changi balgayo",
+      "gloss": {
+        "en": "The window is bright",
+        "ko": "밝다",
+        "zh": "窗户很亮"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-400",
+      "text": "계단이 어두워요",
+      "roman": "gyedani eoduwoyo",
+      "gloss": {
+        "en": "The stairs are dark",
+        "ko": "어둡다",
+        "zh": "楼梯很暗"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-401",
+      "text": "회의실이 조용해요",
+      "roman": "hoeisiri joyonghaeyo",
+      "gloss": {
+        "en": "The meeting room is quiet",
+        "ko": "조용하다",
+        "zh": "会议室很安静"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-402",
+      "text": "시장이 시끄러워요",
+      "roman": "sijangi sikkeureowoyo",
+      "gloss": {
+        "en": "The market is noisy",
+        "ko": "시끄럽다",
+        "zh": "市场很吵"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-403",
+      "text": "사과가 빨간색이에요",
+      "roman": "sagwaga ppalgansaegieyo",
+      "gloss": {
+        "en": "The apple is red",
+        "ko": "빨간색",
+        "zh": "苹果是红色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-404",
+      "text": "바다가 파란색이에요",
+      "roman": "badaga paransaegieyo",
+      "gloss": {
+        "en": "The sea is blue",
+        "ko": "파란색",
+        "zh": "大海是蓝色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-405",
+      "text": "병이 노란색이에요",
+      "roman": "byeongi noransaegieyo",
+      "gloss": {
+        "en": "The bottle is yellow",
+        "ko": "노란색",
+        "zh": "瓶子是黄色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-406",
+      "text": "잔디가 초록색이에요",
+      "roman": "jandiga choroksaegieyo",
+      "gloss": {
+        "en": "The grass is green",
+        "ko": "초록색",
+        "zh": "草地是绿色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-407",
+      "text": "컵이 하얀색이에요",
+      "roman": "keobi hayansaegieyo",
+      "gloss": {
+        "en": "The cup is white",
+        "ko": "하얀색",
+        "zh": "杯子是白色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-408",
+      "text": "신발이 검은색이에요",
+      "roman": "sinbari geomeunsaegieyo",
+      "gloss": {
+        "en": "The shoes are black",
+        "ko": "검은색",
+        "zh": "鞋子是黑色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-409",
+      "text": "지붕이 회색이에요",
+      "roman": "jibungi hoesaegieyo",
+      "gloss": {
+        "en": "The roof is gray",
+        "ko": "회색",
+        "zh": "屋顶是灰色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-410",
+      "text": "풍선이 분홍색이에요",
+      "roman": "pungseoni bunhongsaegieyo",
+      "gloss": {
+        "en": "The balloon is pink",
+        "ko": "분홍색",
+        "zh": "气球是粉色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-411",
+      "text": "산이 세모예요",
+      "roman": "sani semoyeyo",
+      "gloss": {
+        "en": "The mountain is a triangle",
+        "ko": "세모",
+        "zh": "山是三角形的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-412",
+      "text": "이 모양을 고르세요",
+      "roman": "i moyangeul goreuseyo",
+      "gloss": {
+        "en": "Please choose this shape",
+        "ko": "모양",
+        "zh": "请选这个形状"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-413",
+      "text": "귀걸이를 잃어버렸어요",
+      "roman": "gwigeorireul ireobeoryeosseoyo",
+      "gloss": {
+        "en": "I lost the earrings",
+        "ko": "귀걸이",
+        "zh": "耳环丢了"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-414",
+      "text": "넥타이를 매요",
+      "roman": "nektaireul maeyo",
+      "gloss": {
+        "en": "I put on a tie",
+        "ko": "넥타이",
+        "zh": "我打领带"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-415",
+      "text": "모자가 작아요",
+      "roman": "mojaga jagayo",
+      "gloss": {
+        "en": "The hat is small",
+        "ko": "모자",
+        "zh": "帽子小"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-416",
+      "text": "양말을 갈아신어요",
+      "roman": "yangmareul garasineoyo",
+      "gloss": {
+        "en": "I change my socks",
+        "ko": "양말",
+        "zh": "我换袜子"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-417",
+      "text": "장갑이 두꺼워요",
+      "roman": "jangami dukkeowoyo",
+      "gloss": {
+        "en": "The gloves are thick",
+        "ko": "장갑",
+        "zh": "手套很厚"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-418",
+      "text": "안경이 안 보여요",
+      "roman": "angyeongi an boyeoyo",
+      "gloss": {
+        "en": "I can't find the glasses",
+        "ko": "안경",
+        "zh": "眼镜找不到了"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-419",
+      "text": "지갑을 주머니에 넣어요",
+      "roman": "jigabeul jumeonie neoheoyo",
+      "gloss": {
+        "en": "I put the wallet in my pocket",
+        "ko": "지갑",
+        "zh": "我把钱包放进口袋"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-420",
+      "text": "벨트를 조여요",
+      "roman": "belteureul joyeoyo",
+      "gloss": {
+        "en": "I tighten the belt",
+        "ko": "벨트",
+        "zh": "我勒紧皮带"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-421",
+      "text": "목도리가 따뜻해요",
+      "roman": "mokdoriga ttatteuthaeyo",
+      "gloss": {
+        "en": "The scarf is warm",
+        "ko": "목도리",
+        "zh": "围巾很暖"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-422",
+      "text": "반지가 반짝여요",
+      "roman": "banjiga banjjagyeoyo",
+      "gloss": {
+        "en": "The ring sparkles",
+        "ko": "반지",
+        "zh": "戒指闪闪发光"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-423",
+      "text": "에어컨을 켜 둘까요",
+      "roman": "eeokeoneul kyeo dulkkaayo",
+      "gloss": {
+        "en": "Shall I leave the AC on?",
+        "ko": "에어컨·켜다",
+        "zh": "空调要一直开着吗？"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-424",
+      "text": "선풍기를 켜 주세요",
+      "roman": "seonpunggireul kyeo juseyo",
+      "gloss": {
+        "en": "Please turn on the fan",
+        "ko": "선풍기·켜다",
+        "zh": "请打开电风扇"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-425",
+      "text": "불을 켜요",
+      "roman": "bureul kyeoyo",
+      "gloss": {
+        "en": "I turn on the light",
+        "ko": "불·켜다",
+        "zh": "我开灯"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-426",
+      "text": "전기를 아껴요",
+      "roman": "jeongireul akkyeoyo",
+      "gloss": {
+        "en": "I save electricity",
+        "ko": "전기",
+        "zh": "我节约用电"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-427",
+      "text": "엘리베이터가 왔어요",
+      "roman": "ellibeiteoga wasseoyo",
+      "gloss": {
+        "en": "The elevator arrived",
+        "ko": "엘리베이터",
+        "zh": "电梯来了"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-428",
+      "text": "계단이 미끄러워요",
+      "roman": "gyedani mikkeureowoyo",
+      "gloss": {
+        "en": "The stairs are slippery",
+        "ko": "계단",
+        "zh": "楼梯很滑"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-429",
+      "text": "수도를 아껴요",
+      "roman": "sudoreul akkyeoyo",
+      "gloss": {
+        "en": "I save tap water",
+        "ko": "수도",
+        "zh": "我节约自来水"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-430",
+      "text": "가스를 껐어요",
+      "roman": "gaseureul kkeosseoyo",
+      "gloss": {
+        "en": "I turned off the gas",
+        "ko": "가스·끄다",
+        "zh": "我关掉了煤气"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-431",
+      "text": "전자레인지를 켜요",
+      "roman": "jeonjareinjireul kyeoyo",
+      "gloss": {
+        "en": "I turn on the microwave",
+        "ko": "전자레인지·켜다",
+        "zh": "我打开微波炉"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-432",
+      "text": "다리미가 무거워요",
+      "roman": "darimiga mugeowoyo",
+      "gloss": {
+        "en": "The iron is heavy",
+        "ko": "다리미",
+        "zh": "熨斗很重"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-433",
+      "text": "복도가 조용해요",
+      "roman": "bokdoga joyonghaeyo",
+      "gloss": {
+        "en": "The hallway is quiet",
+        "ko": "복도",
+        "zh": "走廊很安静"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-434",
+      "text": "층을 확인해요",
+      "roman": "cheungeul hwaginhaeyo",
+      "gloss": {
+        "en": "I check the floor",
+        "ko": "층",
+        "zh": "我确认楼层"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-435",
+      "text": "베란다를 닦아요",
+      "roman": "berandareul dakkayo",
+      "gloss": {
+        "en": "I wipe the veranda",
+        "ko": "베란다",
+        "zh": "我擦阳台"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-436",
+      "text": "아파트가 밝아요",
+      "roman": "apateuga balgayo",
+      "gloss": {
+        "en": "The apartment is bright",
+        "ko": "아파트",
+        "zh": "公寓很亮"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-437",
+      "text": "건물이 높아요",
+      "roman": "geonmuri nopayo",
+      "gloss": {
+        "en": "The building is tall",
+        "ko": "건물",
+        "zh": "楼很高"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-438",
+      "text": "입구가 막혔어요",
+      "roman": "ipguga makhyeosseoyo",
+      "gloss": {
+        "en": "The entrance is blocked",
+        "ko": "입구",
+        "zh": "入口堵住了"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-439",
+      "text": "현관을 잠가요",
+      "roman": "hyeongwaneul jamgayo",
+      "gloss": {
+        "en": "I lock the foyer door",
+        "ko": "현관",
+        "zh": "我锁上玄关"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-440",
+      "text": "호실을 불러요",
+      "roman": "hosireul bulleoyo",
+      "gloss": {
+        "en": "I call out the unit number",
+        "ko": "호실",
+        "zh": "我报房间号"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-441",
+      "text": "초인종이 울려요",
+      "roman": "choinjongi ullyeoyo",
+      "gloss": {
+        "en": "The doorbell rings",
+        "ko": "초인종",
+        "zh": "门铃响了"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-442",
+      "text": "로비가 넓어요",
+      "roman": "robiga neolbeoyo",
+      "gloss": {
+        "en": "The lobby is spacious",
+        "ko": "로비",
+        "zh": "大厅很宽敞"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-443",
+      "text": "형을 따라가요",
+      "roman": "hyeongeul ttaragayo",
+      "gloss": {
+        "en": "I follow my older brother",
+        "ko": "따라가다",
+        "zh": "我跟着哥哥走"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-444",
+      "text": "교실로 들어와요",
+      "roman": "gyosillo deureowayo",
+      "gloss": {
+        "en": "Come into the classroom",
+        "ko": "들어오다",
+        "zh": "进教室来"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-445",
+      "text": "천천히 걸어요",
+      "roman": "cheoncheonhi georeoyo",
+      "gloss": {
+        "en": "Walk slowly",
+        "ko": "걷다",
+        "zh": "慢慢走"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-446",
+      "text": "빨리 뛰어요",
+      "roman": "ppalli ttwieoyo",
+      "gloss": {
+        "en": "Run quickly",
+        "ko": "뛰다",
+        "zh": "快跑"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-447",
+      "text": "줄에 서요",
+      "roman": "jure seoyo",
+      "gloss": {
+        "en": "Stand in line",
+        "ko": "서다",
+        "zh": "排队站着"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-448",
+      "text": "앞에 앉아요",
+      "roman": "ape anjayo",
+      "gloss": {
+        "en": "Sit in front",
+        "ko": "앉다",
+        "zh": "坐前面"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-449",
+      "text": "이불에 누워요",
+      "roman": "ibure nuwoyo",
+      "gloss": {
+        "en": "Lie down on the blanket",
+        "ko": "눕다",
+        "zh": "躺在被子上"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-450",
+      "text": "산길을 올라요",
+      "roman": "sangireul ollayo",
+      "gloss": {
+        "en": "I climb the mountain path",
+        "ko": "오르다",
+        "zh": "上山路"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-451",
+      "text": "짐을 들어요",
+      "roman": "jimeul deureoyo",
+      "gloss": {
+        "en": "I lift the luggage",
+        "ko": "들다",
+        "zh": "我提行李"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-452",
+      "text": "손을 잡아요",
+      "roman": "soneul jabayo",
+      "gloss": {
+        "en": "I hold (someone's) hand",
+        "ko": "잡다",
+        "zh": "我拉手"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-453",
+      "text": "시간을 물어봐요",
+      "roman": "siganeul mureobwayo",
+      "gloss": {
+        "en": "I ask the time",
+        "ko": "물어보다",
+        "zh": "我问问时间"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-454",
+      "text": "이름을 확인해요",
+      "roman": "ireumeul hwaginhaeyo",
+      "gloss": {
+        "en": "I check the name",
+        "ko": "확인하다",
+        "zh": "我核对名字"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-455",
+      "text": "소포를 부탁해요",
+      "roman": "soporeul butakaeyo",
+      "gloss": {
+        "en": "I ask you to handle the parcel",
+        "ko": "부탁하다",
+        "zh": "包裹拜托你了"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-456",
+      "text": "상자를 도와주세요",
+      "roman": "sangjareul dowajuseyo",
+      "gloss": {
+        "en": "Please help with the box",
+        "ko": "도와주다",
+        "zh": "请帮一下这个箱子"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-457",
+      "text": "자를 빌려요",
+      "roman": "jareul billyeoyo",
+      "gloss": {
+        "en": "I borrow a ruler",
+        "ko": "빌리다",
+        "zh": "我借尺子"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-458",
+      "text": "지금은 괜찮아요",
+      "roman": "jigeumeun gwaenchanayo",
+      "gloss": {
+        "en": "As for now, it's fine",
+        "ko": "괜찮다",
+        "zh": "现在没关系"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-459",
+      "text": "배려가 고마워요",
+      "roman": "baeryeoga gomawoyo",
+      "gloss": {
+        "en": "The consideration is appreciated",
+        "ko": "고맙다",
+        "zh": "感谢这份体贴"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-460",
+      "text": "지도가 필요해요",
+      "roman": "jidoga piryohaeyo",
+      "gloss": {
+        "en": "I need a map",
+        "ko": "필요하다",
+        "zh": "我需要地图"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-461",
+      "text": "컵을 사용해요",
+      "roman": "keobeul sayonghaeyo",
+      "gloss": {
+        "en": "I use the cup",
+        "ko": "사용하다",
+        "zh": "我用杯子"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-462",
+      "text": "순서를 바꿔요",
+      "roman": "sunseoreul bakkwoyo",
+      "gloss": {
+        "en": "I change the order",
+        "ko": "바꾸다",
+        "zh": "我换顺序"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-463",
+      "text": "약속을 믿어요",
+      "roman": "yaksogeul mideoyo",
+      "gloss": {
+        "en": "I trust the promise",
+        "ko": "믿다",
+        "zh": "我相信约定"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-464",
+      "text": "여행을 계획해요",
+      "roman": "yeohaengeul gyehoekhaeyo",
+      "gloss": {
+        "en": "I plan a trip",
+        "ko": "계획하다",
+        "zh": "我计划旅行"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-465",
+      "text": "선택을 더 생각해요",
+      "roman": "seontaekeul deo saenggakhaeyo",
+      "gloss": {
+        "en": "I think about the choice more",
+        "ko": "생각하다",
+        "zh": "选择我再想想"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-466",
+      "text": "뜻을 알아요",
+      "roman": "tteuseul arayo",
+      "gloss": {
+        "en": "I know the meaning",
+        "ko": "알다",
+        "zh": "意思我知道"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-467",
+      "text": "방법을 아직 몰라요",
+      "roman": "bangbeobeul ajik mollayo",
+      "gloss": {
+        "en": "I still do not know the method",
+        "ko": "모르다",
+        "zh": "方法我还不知道"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-468",
+      "text": "장소를 기억해요",
+      "roman": "jangsoreul gieokhaeyo",
+      "gloss": {
+        "en": "I remember the place",
+        "ko": "기억하다",
+        "zh": "我记得地点"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-469",
+      "text": "장갑을 집에 잊었어요",
+      "roman": "janggabeul jibe ijeosseoyo",
+      "gloss": {
+        "en": "I forgot the gloves at home",
+        "ko": "잊다",
+        "zh": "我把手套忘在家里了"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-470",
+      "text": "내용을 이해했어요",
+      "roman": "naeyongeul ihaehaesseoyo",
+      "gloss": {
+        "en": "I understood the content",
+        "ko": "이해하다",
+        "zh": "内容我听明白了"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-471",
+      "text": "주제를 먼저 결정해요",
+      "roman": "jujereul meonjeo gyeoljeonghaeyo",
+      "gloss": {
+        "en": "We decide the topic first",
+        "ko": "결정하다",
+        "zh": "我们先决定主题"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-472",
+      "text": "메뉴를 천천히 골라도 돼요",
+      "roman": "menyureul cheoncheonhi gollado dwaeyo",
+      "gloss": {
+        "en": "You may take your time picking the menu",
+        "ko": "고르다",
+        "zh": "菜单可以慢慢挑"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-473",
+      "text": "가격을 질문해도 돼요",
+      "roman": "gagyeogeul jilmunhaedo dwaeyo",
+      "gloss": {
+        "en": "May I ask about the price",
+        "ko": "질문하다",
+        "zh": "价格我可以问吗"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-474",
+      "text": "순서를 다시 설명해 주세요",
+      "roman": "sunseoreul dasi seolmyeonghae juseyo",
+      "gloss": {
+        "en": "Please explain the order again",
+        "ko": "설명하다",
+        "zh": "请再说明一下顺序"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-475",
+      "text": "주소를 천천히 말해요",
+      "roman": "jusoreul cheoncheonhi malhaeyo",
+      "gloss": {
+        "en": "I say the address slowly",
+        "ko": "말하다",
+        "zh": "地址我说得慢一点"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-476",
+      "text": "주말을 이야기해요",
+      "roman": "jumareul iyagihaeyo",
+      "gloss": {
+        "en": "We talk about the weekend",
+        "ko": "이야기하다",
+        "zh": "我们聊周末"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-477",
+      "text": "조언을 잘 들어요",
+      "roman": "joeooneul jal deureoyo",
+      "gloss": {
+        "en": "I listen carefully to the advice",
+        "ko": "듣다",
+        "zh": "忠告我认真听"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-478",
+      "text": "표지를 먼저 읽어요",
+      "roman": "pyojireul meonjeo ilgeoyo",
+      "gloss": {
+        "en": "I read the cover first",
+        "ko": "읽다",
+        "zh": "我先看封面"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-479",
+      "text": "이름을 듣고 대답해요",
+      "roman": "ireumeul deutgo daedaphaeyo",
+      "gloss": {
+        "en": "I hear the name and answer",
+        "ko": "대답하다",
+        "zh": "听见名字我就回答"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-480",
+      "text": "가족을 소개해 줄게요",
+      "roman": "gajogeul sogaehae julgeyo",
+      "gloss": {
+        "en": "I will introduce my family",
+        "ko": "소개하다",
+        "zh": "我来介绍一下家人"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-481",
+      "text": "번호를 빨리 알려 주세요",
+      "roman": "beonhoreul ppalli allyeo juseyo",
+      "gloss": {
+        "en": "Please let me know the number soon",
+        "ko": "알리다",
+        "zh": "请尽快告诉号码"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-482",
+      "text": "소식을 듣고 연락해요",
+      "roman": "sosigeul deutgo yeollakhaeyo",
+      "gloss": {
+        "en": "I hear the news and get in touch",
+        "ko": "연락하다",
+        "zh": "听说消息就联系"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-483",
+      "text": "손님이 주말에 늘었어요",
+      "roman": "sonnimi jumare neureosseoyo",
+      "gloss": {
+        "en": "Guests increased on the weekend",
+        "ko": "늘다",
+        "zh": "周末客人变多了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-484",
+      "text": "소음이 밤에 줄었어요",
+      "roman": "soeumi bame jureosseoyo",
+      "gloss": {
+        "en": "The noise decreased at night",
+        "ko": "줄다",
+        "zh": "夜里噪音变少了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-485",
+      "text": "영화를 일곱 시에 시작해요",
+      "roman": "yeonghwareul ilgop sie sijakhaeyo",
+      "gloss": {
+        "en": "We start the movie at seven",
+        "ko": "시작하다",
+        "zh": "电影七点开始"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-486",
+      "text": "공연이 곧 끝나요",
+      "roman": "gongyeoni got kkeunnayo",
+      "gloss": {
+        "en": "The performance ends soon",
+        "ko": "끝나다",
+        "zh": "演出马上结束"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-487",
+      "text": "설명을 조금 더 계속해요",
+      "roman": "seolmyeongeul jogeum deo gyesokhaeyo",
+      "gloss": {
+        "en": "I continue the explanation a bit more",
+        "ko": "계속하다",
+        "zh": "说明我再继续一点"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-488",
+      "text": "알람을 잠깐 멈춰 주세요",
+      "roman": "allameul jamkkan meomchwo juseyo",
+      "gloss": {
+        "en": "Please pause the alarm for a moment",
+        "ko": "멈추다",
+        "zh": "请把闹钟停一下"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-489",
+      "text": "목소리가 조금 변했어요",
+      "roman": "moksoriga jogeum byeonhaesseoyo",
+      "gloss": {
+        "en": "The voice changed a little",
+        "ko": "변하다",
+        "zh": "声音稍微变了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-490",
+      "text": "번호가 새로 바뀌었어요",
+      "roman": "beonhoga saero bakkwieosseoyo",
+      "gloss": {
+        "en": "The number was switched to a new one",
+        "ko": "바뀌다",
+        "zh": "号码换成新的了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-491",
+      "text": "여름이 벌써 지나갔어요",
+      "roman": "yeoreumi beolsseo jinagasseoyo",
+      "gloss": {
+        "en": "Summer already passed",
+        "ko": "지나다",
+        "zh": "夏天已经过去了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-492",
+      "text": "숙제가 아직 남았어요",
+      "roman": "sukjega ajik namasseoyo",
+      "gloss": {
+        "en": "Homework is still left",
+        "ko": "남다",
+        "zh": "作业还剩着"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-493",
+      "text": "두 색이 똑같아요",
+      "roman": "du saegi ttokgatayo",
+      "gloss": {
+        "en": "The two colors are exactly the same",
+        "ko": "똑같다",
+        "zh": "两种颜色一模一样"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-494",
+      "text": "소식을 전혀 못 들었어요",
+      "roman": "sosigeul jeonhyeo mot deureosseoyo",
+      "gloss": {
+        "en": "I did not hear any news at all",
+        "ko": "전혀",
+        "zh": "消息我完全没听到"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-495",
+      "text": "시간이 같아요",
+      "roman": "sigani gatayo",
+      "gloss": {
+        "en": "The times are the same",
+        "ko": "같다",
+        "zh": "时间一样"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-496",
+      "text": "맛이 달라요",
+      "roman": "masi dallayo",
+      "gloss": {
+        "en": "The taste is different",
+        "ko": "다르다",
+        "zh": "味道不一样"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-497",
+      "text": "옷차림이 비슷해요",
+      "roman": "otcharimi biseuthaeyo",
+      "gloss": {
+        "en": "The outfits are similar",
+        "ko": "비슷하다",
+        "zh": "穿着差不多"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-498",
+      "text": "색을 비교해 보세요",
+      "roman": "saegeul bigyohae boseyo",
+      "gloss": {
+        "en": "Please compare the colors",
+        "ko": "비교하다",
+        "zh": "请比较一下颜色"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-499",
+      "text": "물을 더 주세요",
+      "roman": "mureul deo juseyo",
+      "gloss": {
+        "en": "Please give me more water",
+        "ko": "더",
+        "zh": "请再给点水"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-500",
+      "text": "역이 가장 가까워요",
+      "roman": "yeogi gajang gakkawoyo",
+      "gloss": {
+        "en": "The station is the closest",
+        "ko": "가장",
+        "zh": "车站最近"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-501",
+      "text": "지하철이 훨씬 편해요",
+      "roman": "jihacheori hwolssin pyeonhaeyo",
+      "gloss": {
+        "en": "The subway is much more convenient",
+        "ko": "훨씬",
+        "zh": "地铁方便得多"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-502",
+      "text": "키 차이가 조금 있어요",
+      "roman": "ki chaiga jogeum isseoyo",
+      "gloss": {
+        "en": "There is a small height difference",
+        "ko": "차이",
+        "zh": "身高有一点差别"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-503",
+      "text": "관련이 많아요",
+      "roman": "gwallyeoni manayo",
+      "gloss": {
+        "en": "There are many connections",
+        "ko": "관련",
+        "zh": "相关的很多"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-504",
+      "text": "효과가 느려요",
+      "roman": "hyogwaga neuryeoyo",
+      "gloss": {
+        "en": "The effect is slow",
+        "ko": "효과",
+        "zh": "效果来得慢"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-505",
+      "text": "이유를 물어요",
+      "roman": "iyureul mureoyo",
+      "gloss": {
+        "en": "I ask the reason",
+        "ko": "이유",
+        "zh": "我问理由"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-506",
+      "text": "원인을 알아요",
+      "roman": "wonineul arayo",
+      "gloss": {
+        "en": "I know the cause",
+        "ko": "원인",
+        "zh": "我知道原因"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-507",
+      "text": "결과를 확인해요",
+      "roman": "gyeolgwareul hwaginhaeyo",
+      "gloss": {
+        "en": "I check the result",
+        "ko": "결과",
+        "zh": "我确认结果"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-508",
+      "text": "목적이 달라요",
+      "roman": "mokjeogi dallayo",
+      "gloss": {
+        "en": "The purpose is different",
+        "ko": "목적",
+        "zh": "目的不一样"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-509",
+      "text": "방법을 찾아요",
+      "roman": "bangbeobeul chajayo",
+      "gloss": {
+        "en": "I look for a method",
+        "ko": "방법",
+        "zh": "我找方法"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-510",
+      "text": "과정이 끝났어요",
+      "roman": "gwajeongi kkeunnasseoyo",
+      "gloss": {
+        "en": "The process finished",
+        "ko": "과정",
+        "zh": "过程结束了"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-511",
+      "text": "순서를 기억해요",
+      "roman": "sunseoreul gieokhaeyo",
+      "gloss": {
+        "en": "I remember the order",
+        "ko": "순서",
+        "zh": "我记顺序"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-512",
+      "text": "목표를 보여 주세요",
+      "roman": "mokpyoreul boyeo juseyo",
+      "gloss": {
+        "en": "Please show me the goal",
+        "ko": "목표",
+        "zh": "请给我看目标"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-513",
+      "text": "상황이 바뀌었어요",
+      "roman": "sanghwangi bakkwieosseoyo",
+      "gloss": {
+        "en": "The situation changed",
+        "ko": "상황",
+        "zh": "情况变了"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-514",
+      "text": "조건이 좋아요",
+      "roman": "jogeoni joayo",
+      "gloss": {
+        "en": "The conditions are good",
+        "ko": "조건",
+        "zh": "条件不错"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-515",
+      "text": "문제가 커요",
+      "roman": "munjega keoyo",
+      "gloss": {
+        "en": "The problem is big",
+        "ko": "문제",
+        "zh": "问题很大"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-516",
+      "text": "해결을 알아요",
+      "roman": "haegyeoreul arayo",
+      "gloss": {
+        "en": "I know the solution",
+        "ko": "해결",
+        "zh": "我知道解决办法"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-517",
+      "text": "실수를 인정해요",
+      "roman": "silsureul injeonghaeyo",
+      "gloss": {
+        "en": "I admit the mistake",
+        "ko": "실수",
+        "zh": "我承认失误"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-518",
+      "text": "어려움이 있어요",
+      "roman": "eoryeoumi isseoyo",
+      "gloss": {
+        "en": "There is difficulty",
+        "ko": "어려움",
+        "zh": "有困难"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-519",
+      "text": "도움이 커요",
+      "roman": "doumi keoyo",
+      "gloss": {
+        "en": "The help is big",
+        "ko": "도움",
+        "zh": "帮助很大"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-520",
+      "text": "경험이 많아요",
+      "roman": "gyeongheomi manayo",
+      "gloss": {
+        "en": "There is a lot of experience",
+        "ko": "경험",
+        "zh": "经验很多"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-521",
+      "text": "선택이 중요해요",
+      "roman": "seontaegi jungyohaeyo",
+      "gloss": {
+        "en": "The choice is important",
+        "ko": "선택",
+        "zh": "选择很重要"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-522",
+      "text": "문을 고쳐요",
+      "roman": "muneul gochyeoyo",
+      "gloss": {
+        "en": "I fix the door",
+        "ko": "고치다",
+        "zh": "我修门"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-523",
+      "text": "학생을 칭찬해요",
+      "roman": "haksaengeul chingchanhaeyo",
+      "gloss": {
+        "en": "I praise the student",
+        "ko": "칭찬하다",
+        "zh": "我称赞学生"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-524",
+      "text": "결과를 비판하지 마세요",
+      "roman": "gyeolgwareul bipanhaji maseyo",
+      "gloss": {
+        "en": "Please do not criticize the result",
+        "ko": "비판하다",
+        "zh": "请不要批评结果"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-525",
+      "text": "의견이 많아요",
+      "roman": "uigyeoni manayo",
+      "gloss": {
+        "en": "There are many opinions",
+        "ko": "의견",
+        "zh": "意见很多"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-526",
+      "text": "동의가 없어요",
+      "roman": "donguiga eopseoyo",
+      "gloss": {
+        "en": "There is no agreement",
+        "ko": "동의하다",
+        "zh": "没有同意"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-527",
+      "text": "노력이 중요해요",
+      "roman": "noryeogi jungyohaeyo",
+      "gloss": {
+        "en": "Effort is important",
+        "ko": "중요하다",
+        "zh": "努力很重要"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-528",
+      "text": "가게를 추천해요",
+      "roman": "gagereul chucheonhaeyo",
+      "gloss": {
+        "en": "I recommend the shop",
+        "ko": "추천하다",
+        "zh": "我推荐这家店"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-529",
+      "text": "평가를 봐요",
+      "roman": "pyeonggareul bwayo",
+      "gloss": {
+        "en": "I look at the evaluation",
+        "ko": "평가",
+        "zh": "我看评价"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-530",
+      "text": "강의가 흥미로워요",
+      "roman": "ganguga heungmirowoyo",
+      "gloss": {
+        "en": "The lecture is interesting",
+        "ko": "흥미롭다",
+        "zh": "讲座很有趣"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-531",
+      "text": "번호가 틀려요",
+      "roman": "beonhoga teullyeoyo",
+      "gloss": {
+        "en": "The number is wrong",
+        "ko": "틀리다",
+        "zh": "号码错了"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-532",
+      "text": "기준을 잘 판단해요",
+      "roman": "gijuneul jal pandanhaeyo",
+      "gloss": {
+        "en": "I judge the standard carefully",
+        "ko": "판단하다",
+        "zh": "我好好判断标准"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-533",
+      "text": "목표를 포기하지 않아요",
+      "roman": "mokpyoreul pogihaji anayo",
+      "gloss": {
+        "en": "I do not give up the goal",
+        "ko": "포기하다",
+        "zh": "我不放弃目标"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-534",
+      "text": "화를 참아요",
+      "roman": "hwareul chamayo",
+      "gloss": {
+        "en": "I hold back my anger",
+        "ko": "참다",
+        "zh": "我忍住怒气"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-535",
+      "text": "습관이 중요해요",
+      "roman": "seupgwani jungyohaeyo",
+      "gloss": {
+        "en": "Habits are important",
+        "ko": "습관",
+        "zh": "习惯很重要"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-536",
+      "text": "노력을 아끼지 않아요",
+      "roman": "noryeogeul akkiji anayo",
+      "gloss": {
+        "en": "I do not spare effort",
+        "ko": "노력하다",
+        "zh": "我不吝惜努力"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-537",
+      "text": "키보드가 익숙해요",
+      "roman": "kibodeuga iksukhaeyo",
+      "gloss": {
+        "en": "I am used to the keyboard",
+        "ko": "익숙하다",
+        "zh": "我对键盘很熟悉"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-538",
+      "text": "이름이 낯설어요",
+      "roman": "ireumi natseoreoyo",
+      "gloss": {
+        "en": "The name feels unfamiliar",
+        "ko": "낯설다",
+        "zh": "名字很陌生"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-539",
+      "text": "적응이 빨라요",
+      "roman": "jeogeungi ppallayo",
+      "gloss": {
+        "en": "Adaptation is quick",
+        "ko": "적응하다",
+        "zh": "适应很快"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-540",
+      "text": "휴식을 가져요",
+      "roman": "hyusigeul gajyeoyo",
+      "gloss": {
+        "en": "I take a rest",
+        "ko": "휴식",
+        "zh": "我休息一下"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-541",
+      "text": "방학을 기다려요",
+      "roman": "banghageul gidaryeoyo",
+      "gloss": {
+        "en": "I wait for school vacation",
+        "ko": "방학",
+        "zh": "我盼着学校假期"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-542",
+      "text": "생활이 단순해요",
+      "roman": "saenghwari dansunhaeyo",
+      "gloss": {
+        "en": "Life is simple",
+        "ko": "생활",
+        "zh": "生活很简单"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-543",
+      "text": "반입을 허용해요",
+      "roman": "banibeul heoyonghaeyo",
+      "gloss": {
+        "en": "They allow bringing items in",
+        "ko": "허용하다",
+        "zh": "允许携带入场"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-544",
+      "text": "헬멧이 안전해요",
+      "roman": "helmeti anjeonhaeyo",
+      "gloss": {
+        "en": "A helmet is safe",
+        "ko": "안전하다",
+        "zh": "头盔很安全"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-545",
+      "text": "규칙을 확인해요",
+      "roman": "gyuchigeul hwaginhaeyo",
+      "gloss": {
+        "en": "I check the rules",
+        "ko": "규칙",
+        "zh": "我确认规则"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-546",
+      "text": "약속을 지켜요",
+      "roman": "yaksogeul jikyeoyo",
+      "gloss": {
+        "en": "I keep the promise",
+        "ko": "지키다",
+        "zh": "我守约"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-547",
+      "text": "표지판을 어기지 않아요",
+      "roman": "pyojipaneul eogiji anayo",
+      "gloss": {
+        "en": "I do not break the signs",
+        "ko": "어기다",
+        "zh": "我不违反标志"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-548",
+      "text": "외출을 허락해요",
+      "roman": "oechureul heorakhaeyo",
+      "gloss": {
+        "en": "They allow going out",
+        "ko": "허락하다",
+        "zh": "允许外出"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-549",
+      "text": "흡연을 금지해요",
+      "roman": "heubyeoneul geumjihaeyo",
+      "gloss": {
+        "en": "They prohibit smoking",
+        "ko": "금지하다",
+        "zh": "禁止吸烟"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-550",
+      "text": "선택이 자유로워요",
+      "roman": "seontaegi jayurowoyo",
+      "gloss": {
+        "en": "The choice is free",
+        "ko": "자유",
+        "zh": "选择很自由"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-551",
+      "text": "의무를 기억해요",
+      "roman": "uimureul gieokhaeyo",
+      "gloss": {
+        "en": "I remember the duty",
+        "ko": "의무",
+        "zh": "我记得义务"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-552",
+      "text": "법이 중요해요",
+      "roman": "beobi jungyohaeyo",
+      "gloss": {
+        "en": "The law is important",
+        "ko": "법",
+        "zh": "法律很重要"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-553",
+      "text": "친구를 사귀어요",
+      "roman": "chingureul sagwieoyo",
+      "gloss": {
+        "en": "I make friends",
+        "ko": "사귀다",
+        "zh": "交朋友"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-554",
+      "text": "친구가 많아요",
+      "roman": "chinguga manayo",
+      "gloss": {
+        "en": "There are many friends",
+        "ko": "친구",
+        "zh": "朋友很多"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-555",
+      "text": "사이는 친해요",
+      "roman": "saineun chinhaeyo",
+      "gloss": {
+        "en": "As for the relationship, it is close",
+        "ko": "친하다",
+        "zh": "关系很熟"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-556",
+      "text": "하루를 함께 보내요",
+      "roman": "harureul hamkke bonaeyo",
+      "gloss": {
+        "en": "We spend the day together",
+        "ko": "함께",
+        "zh": "一起度过一天"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-557",
+      "text": "점심을 혼자 먹어요",
+      "roman": "jeomsimeul honja meogeoyo",
+      "gloss": {
+        "en": "I eat lunch alone",
+        "ko": "혼자",
+        "zh": "一个人吃午饭"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-558",
+      "text": "사람들이 모여요",
+      "roman": "saramdeuri moyeoyo",
+      "gloss": {
+        "en": "People gather",
+        "ko": "모이다",
+        "zh": "人们聚集"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-559",
+      "text": "동아리가 있어요",
+      "roman": "dongariga isseoyo",
+      "gloss": {
+        "en": "There is a club",
+        "ko": "동아리",
+        "zh": "有社团"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-560",
+      "text": "소식을 나눠요",
+      "roman": "sosigeul nanwoyo",
+      "gloss": {
+        "en": "We share news",
+        "ko": "나누다",
+        "zh": "分享消息"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-561",
+      "text": "카드를 같이 놀아요",
+      "roman": "kadeureul gachi norayo",
+      "gloss": {
+        "en": "We play cards together",
+        "ko": "놀다",
+        "zh": "一起玩牌"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-562",
+      "text": "방문이 즐거워요",
+      "roman": "bangmuni jeulgeowoyo",
+      "gloss": {
+        "en": "The visit is pleasant",
+        "ko": "방문",
+        "zh": "拜访很愉快"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-563",
+      "text": "겸손을 배워요",
+      "roman": "gyeomsoneul baewoyo",
+      "gloss": {
+        "en": "I learn humility",
+        "ko": "겸손하다",
+        "zh": "学习谦虚"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-564",
+      "text": "엄격함이 필요해요",
+      "roman": "eomgyeokami piryohaeyo",
+      "gloss": {
+        "en": "Strictness is needed",
+        "ko": "엄격하다",
+        "zh": "需要严格"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-565",
+      "text": "성격이 급해요",
+      "roman": "seonggyeogi geuphaeyo",
+      "gloss": {
+        "en": "The personality is impatient",
+        "ko": "성격",
+        "zh": "性格很急"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-566",
+      "text": "친절을 기억해요",
+      "roman": "chinjeoreul gieokhaeyo",
+      "gloss": {
+        "en": "I remember the kindness",
+        "ko": "친절하다",
+        "zh": "记得那份亲切"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-567",
+      "text": "성실함이 보여요",
+      "roman": "seongsilhami boyeoyo",
+      "gloss": {
+        "en": "Sincerity shows",
+        "ko": "성실하다",
+        "zh": "看得出认真"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-568",
+      "text": "활발함은 장점이에요",
+      "roman": "hwalbalhameun jangjeomieyo",
+      "gloss": {
+        "en": "As for liveliness, it is a strength",
+        "ko": "활발하다",
+        "zh": "活泼是优点"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-569",
+      "text": "솔직함을 좋아해요",
+      "roman": "soljikameul joahaeyo",
+      "gloss": {
+        "en": "I like frankness",
+        "ko": "솔직하다",
+        "zh": "喜欢坦率"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-570",
+      "text": "자신감이 필요해요",
+      "roman": "jasingami piryohaeyo",
+      "gloss": {
+        "en": "Confidence is needed",
+        "ko": "자신감",
+        "zh": "需要自信"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-571",
+      "text": "다정함을 느껴요",
+      "roman": "dajeonghameul neukkyeoyo",
+      "gloss": {
+        "en": "I feel the warmth",
+        "ko": "다정하다",
+        "zh": "感受到温柔"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-572",
+      "text": "꼼꼼함이 돋보여요",
+      "roman": "kkomkkomhami dotboyeoyo",
+      "gloss": {
+        "en": "Thoroughness stands out",
+        "ko": "꼼꼼하다",
+        "zh": "细致很突出"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-573",
+      "text": "번거로움을 줄여요",
+      "roman": "beongeoroum-eul juryeoyo",
+      "gloss": {
+        "en": "I reduce the trouble",
+        "ko": "번거롭다",
+        "zh": "减少麻烦"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-574",
+      "text": "공손함이 보여요",
+      "roman": "gongsonhami boyeoyo",
+      "gloss": {
+        "en": "Politeness shows",
+        "ko": "공손하다",
+        "zh": "看得出恭敬"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-575",
+      "text": "미안함이 남아요",
+      "roman": "mianhami namayo",
+      "gloss": {
+        "en": "A feeling of sorry remains",
+        "ko": "미안하다",
+        "zh": "抱歉感还在"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-576",
+      "text": "죄송함이 커요",
+      "roman": "joesonghami keoyo",
+      "gloss": {
+        "en": "The apology feeling is strong",
+        "ko": "죄송하다",
+        "zh": "抱歉感很强"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-577",
+      "text": "사과를 전해요",
+      "roman": "sagwareul jeonhaeyo",
+      "gloss": {
+        "en": "I convey an apology",
+        "ko": "사과하다",
+        "zh": "转达道歉"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-578",
+      "text": "용서를 구해요",
+      "roman": "yongseoreul guhaeyo",
+      "gloss": {
+        "en": "I ask for forgiveness",
+        "ko": "용서하다",
+        "zh": "请求原谅"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-579",
+      "text": "실례를 줄여요",
+      "roman": "sillyereul juryeoyo",
+      "gloss": {
+        "en": "I reduce rudeness",
+        "ko": "실례하다",
+        "zh": "减少失礼"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-580",
+      "text": "감사를 전해요",
+      "roman": "gamsareul jeonhaeyo",
+      "gloss": {
+        "en": "I convey thanks",
+        "ko": "감사하다",
+        "zh": "转达感谢"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-581",
+      "text": "덕분을 기억해요",
+      "roman": "deokbuneul gieokhaeyo",
+      "gloss": {
+        "en": "I remember the favor (owing to)",
+        "ko": "덕분",
+        "zh": "记得这份多亏"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-582",
+      "text": "수고를 알아요",
+      "roman": "sugoreul arayo",
+      "gloss": {
+        "en": "I recognize the hard work",
+        "ko": "수고하다",
+        "zh": "知道您辛苦了"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-583",
+      "text": "희망을 키워요",
+      "roman": "huimang-eul kiwoyo",
+      "gloss": {
+        "en": "I grow hope",
+        "ko": "희망",
+        "zh": "培养希望"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-584",
+      "text": "기대가 커요",
+      "roman": "gidaega keoyo",
+      "gloss": {
+        "en": "Expectations are high",
+        "ko": "기대하다",
+        "zh": "期待很大"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-585",
+      "text": "성취를 축하해요",
+      "roman": "seongchwireul chukhahaeyo",
+      "gloss": {
+        "en": "I congratulate the achievement",
+        "ko": "성취",
+        "zh": "祝贺成就"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-586",
+      "text": "바람을 적어요",
+      "roman": "baram-eul jeogeoyo",
+      "gloss": {
+        "en": "I write down a wish",
+        "ko": "바라다",
+        "zh": "写下愿望"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-587",
+      "text": "성공이 보여요",
+      "roman": "seonggongi boyeoyo",
+      "gloss": {
+        "en": "Success shows",
+        "ko": "성공하다",
+        "zh": "看得出成功"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-588",
+      "text": "실패를 기록해요",
+      "roman": "silpaereul girokhaeyo",
+      "gloss": {
+        "en": "I record the failure",
+        "ko": "실패하다",
+        "zh": "记录失败"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-589",
+      "text": "기회를 찾아요",
+      "roman": "gihoereul chajayo",
+      "gloss": {
+        "en": "I look for an opportunity",
+        "ko": "기회",
+        "zh": "寻找机会"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-590",
+      "text": "도전을 즐겨요",
+      "roman": "dojeoneul jeulgyeoyo",
+      "gloss": {
+        "en": "I enjoy the challenge",
+        "ko": "도전하다",
+        "zh": "享受挑战"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-591",
+      "text": "합격을 축하해요",
+      "roman": "hapgyeogeul chukhahaeyo",
+      "gloss": {
+        "en": "I congratulate the pass",
+        "ko": "합격하다",
+        "zh": "祝贺合格"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-592",
+      "text": "불합격이 남아요",
+      "roman": "bulhapgyeogi namayo",
+      "gloss": {
+        "en": "The rejection remains",
+        "ko": "불합격",
+        "zh": "不合格还在"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-593",
+      "text": "조언을 적어요",
+      "roman": "joeooneul jeogeoyo",
+      "gloss": {
+        "en": "I write down the advice",
+        "ko": "조언",
+        "zh": "记下建议"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-594",
+      "text": "상담이 있어요",
+      "roman": "sangdami isseoyo",
+      "gloss": {
+        "en": "There is a consultation",
+        "ko": "상담",
+        "zh": "有咨询"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-595",
+      "text": "짧은 조언을 구해요",
+      "roman": "jjalbeun joeoneul guhaeyo",
+      "gloss": {
+        "en": "I look for brief advice",
+        "ko": "조언하다",
+        "zh": "寻求简短建议"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-596",
+      "text": "회의 제안을 받아요",
+      "roman": "hoeui jeaneul badayo",
+      "gloss": {
+        "en": "I receive a meeting proposal",
+        "ko": "제안하다",
+        "zh": "收到会议提议"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-597",
+      "text": "상담을 예약해요",
+      "roman": "sangdameul yeyakhaeyo",
+      "gloss": {
+        "en": "I book a consultation",
+        "ko": "상담하다",
+        "zh": "预约咨询"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-598",
+      "text": "가격 문의를 해요",
+      "roman": "gagyeok munireul haeyo",
+      "gloss": {
+        "en": "I make a price inquiry",
+        "ko": "문의하다",
+        "zh": "询问价格"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-599",
+      "text": "짧은 휴식을 권해요",
+      "roman": "jjalbeun hyusigeul gwonhaeyo",
+      "gloss": {
+        "en": "I urge a short rest",
+        "ko": "권하다",
+        "zh": "劝短暂休息"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-600",
+      "text": "충고를 기억해요",
+      "roman": "chunggoreul gieokhaeyo",
+      "gloss": {
+        "en": "I remember the counsel",
+        "ko": "충고하다",
+        "zh": "记住忠告"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-601",
+      "text": "새 정보를 찾아요",
+      "roman": "sae jeongboreul chajayo",
+      "gloss": {
+        "en": "I look for new information",
+        "ko": "정보",
+        "zh": "寻找新信息"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-602",
+      "text": "출발 시간을 알려 줘요",
+      "roman": "chulbal siganeul allyeo jwoyo",
+      "gloss": {
+        "en": "Please let me know the departure time",
+        "ko": "알려주다",
+        "zh": "请告知出发时间"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-603",
+      "text": "격려를 받아요",
+      "roman": "gyeongnyeoreul badayo",
+      "gloss": {
+        "en": "I receive encouragement",
+        "ko": "격려",
+        "zh": "得到鼓励"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-604",
+      "text": "위로가 필요해요",
+      "roman": "wiroga piryohaeyo",
+      "gloss": {
+        "en": "I need comfort",
+        "ko": "위로",
+        "zh": "需要安慰"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-605",
+      "text": "격려를 전해요",
+      "roman": "gyeongnyeoreul jeonhaeyo",
+      "gloss": {
+        "en": "I pass on encouragement",
+        "ko": "격려하다",
+        "zh": "传达鼓励"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-606",
+      "text": "위로를 들어요",
+      "roman": "wiroreul deureoyo",
+      "gloss": {
+        "en": "I hear words of comfort",
+        "ko": "위로",
+        "zh": "听到安慰"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-607",
+      "text": "후배를 격려해요",
+      "roman": "hubaereul gyeongnyeohaeyo",
+      "gloss": {
+        "en": "I encourage a junior",
+        "ko": "격려하다",
+        "zh": "鼓励后辈"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-608",
+      "text": "실망한 친구를 위로해요",
+      "roman": "silmanghan chingureul wirohaeyo",
+      "gloss": {
+        "en": "I comfort a disappointed friend",
+        "ko": "위로하다",
+        "zh": "安慰失望的朋友"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-609",
+      "text": "이웃을 배려해요",
+      "roman": "iuseul baeryeohaeyo",
+      "gloss": {
+        "en": "I am considerate of neighbors",
+        "ko": "배려하다",
+        "zh": "体贴邻居"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-610",
+      "text": "든든한 버팀이 있어요",
+      "roman": "deundeunhan beotimi isseoyo",
+      "gloss": {
+        "en": "There is a reliable support",
+        "ko": "든든하다",
+        "zh": "有可靠的依靠"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-611",
+      "text": "소식을 듣고 안심해요",
+      "roman": "sosigeul deutgo ansimhaeyo",
+      "gloss": {
+        "en": "I feel at ease after hearing the news",
+        "ko": "안심하다",
+        "zh": "听到消息后放心"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-612",
+      "text": "친구를 의지해요",
+      "roman": "chingureul uijihaeyo",
+      "gloss": {
+        "en": "I rely on a friend",
+        "ko": "의지하다",
+        "zh": "依靠朋友"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-613",
+      "text": "진실을 말해요",
+      "roman": "jinsireul malhaeyo",
+      "gloss": {
+        "en": "I tell the truth",
+        "ko": "진실",
+        "zh": "说出真相"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-614",
+      "text": "거짓말을 하지 않아요",
+      "roman": "geojinmareul haji anayo",
+      "gloss": {
+        "en": "I do not tell lies",
+        "ko": "거짓말",
+        "zh": "不说谎"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-615",
+      "text": "진실이 중요해요",
+      "roman": "jinsiri jungyohaeyo",
+      "gloss": {
+        "en": "Truth is important",
+        "ko": "진실",
+        "zh": "真相很重要"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-616",
+      "text": "거짓말이 싫어요",
+      "roman": "geojinmari silheoyo",
+      "gloss": {
+        "en": "I dislike lies",
+        "ko": "거짓말",
+        "zh": "讨厌谎话"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-617",
+      "text": "모임을 약속해요",
+      "roman": "moimeul yaksokhaeyo",
+      "gloss": {
+        "en": "I promise a meeting",
+        "ko": "약속하다",
+        "zh": "约定见面"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-618",
+      "text": "동료를 신뢰해요",
+      "roman": "dongnyoreul sinroehaeyo",
+      "gloss": {
+        "en": "I trust a colleague",
+        "ko": "신뢰하다",
+        "zh": "信任同事"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-619",
+      "text": "선택을 확신해요",
+      "roman": "seontaekeul hwaksinahaeyo",
+      "gloss": {
+        "en": "I am sure of the choice",
+        "ko": "확신하다",
+        "zh": "确信选择"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-620",
+      "text": "소식을 의심해요",
+      "roman": "sosigeul uisimhaeyo",
+      "gloss": {
+        "en": "I doubt the news",
+        "ko": "의심하다",
+        "zh": "怀疑消息"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-621",
+      "text": "정직한 사람을 만나요",
+      "roman": "jeongjikan sarameul mannayo",
+      "gloss": {
+        "en": "I meet an honest person",
+        "ko": "정직하다",
+        "zh": "见到诚实的人"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-622",
+      "text": "능력을 증명해요",
+      "roman": "neungnyeogeul jeungmyeonghaeyo",
+      "gloss": {
+        "en": "I prove my ability",
+        "ko": "증명하다",
+        "zh": "证明能力"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-623",
+      "text": "승낙이 필요해요",
+      "roman": "seungnagi piryohaeyo",
+      "gloss": {
+        "en": "Consent is needed",
+        "ko": "승낙",
+        "zh": "需要允诺"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-624",
+      "text": "거부가 분명해요",
+      "roman": "geobuga bunmyeonghaeyo",
+      "gloss": {
+        "en": "The rejection is clear",
+        "ko": "거부",
+        "zh": "拒斥很明确"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-625",
+      "text": "회의를 거절해요",
+      "roman": "hoeireul geojeolhaeyo",
+      "gloss": {
+        "en": "I decline the meeting",
+        "ko": "거절하다",
+        "zh": "拒绝会议"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-626",
+      "text": "제의를 수락해요",
+      "roman": "jeeireul surakhaeyo",
+      "gloss": {
+        "en": "I accept the offer",
+        "ko": "수락하다",
+        "zh": "接受提议"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-627",
+      "text": "결과를 받아들여요",
+      "roman": "gyeolgwareul badadeuryeoyo",
+      "gloss": {
+        "en": "I accept the result",
+        "ko": "받아들이다",
+        "zh": "接受结果"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-628",
+      "text": "칭찬을 사양해요",
+      "roman": "chingchaneul sayanghaeyo",
+      "gloss": {
+        "en": "I politely decline the praise",
+        "ko": "사양하다",
+        "zh": "婉拒称赞"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-629",
+      "text": "역할을 승낙해요",
+      "roman": "yeokhareul seungnakhaeyo",
+      "gloss": {
+        "en": "I consent to the role",
+        "ko": "승낙하다",
+        "zh": "答应角色"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-630",
+      "text": "요구를 거부해요",
+      "roman": "yogureul geobuhaeyo",
+      "gloss": {
+        "en": "I reject the demand",
+        "ko": "거부하다",
+        "zh": "拒斥要求"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-631",
+      "text": "승낙을 확인해요",
+      "roman": "seungnageul hwaginhaeyo",
+      "gloss": {
+        "en": "I confirm the consent",
+        "ko": "승낙",
+        "zh": "确认允诺"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-632",
+      "text": "계획을 승인해요",
+      "roman": "gyehoegeul seunginahaeyo",
+      "gloss": {
+        "en": "I approve the plan",
+        "ko": "승인하다",
+        "zh": "批准计划"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-633",
+      "text": "이의가 커요",
+      "roman": "iuiga keoyo",
+      "gloss": {
+        "en": "The objection is big",
+        "ko": "이의",
+        "zh": "异议很大"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-634",
+      "text": "하소연이 길어요",
+      "roman": "hasoyeoni gireoyo",
+      "gloss": {
+        "en": "The venting is long",
+        "ko": "하소연",
+        "zh": "诉苦很长"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-635",
+      "text": "가격을 불평해요",
+      "roman": "gagyeogeul bulpyeonghaeyo",
+      "gloss": {
+        "en": "I complain about the price",
+        "ko": "불평하다",
+        "zh": "抱怨价格"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-636",
+      "text": "항의를 전해요",
+      "roman": "hanguireul jeonhaeyo",
+      "gloss": {
+        "en": "I convey the protest",
+        "ko": "항의",
+        "zh": "转达抗议"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-637",
+      "text": "사고를 신고해요",
+      "roman": "sagoreul singohaeyo",
+      "gloss": {
+        "en": "I report the accident",
+        "ko": "신고하다",
+        "zh": "申报事故"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-638",
+      "text": "시간을 따져요",
+      "roman": "siganeul ttajyeoyo",
+      "gloss": {
+        "en": "I quibble over the time",
+        "ko": "따지다",
+        "zh": "计较时间"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-639",
+      "text": "안건을 제기해요",
+      "roman": "angeoneul jegihaeyo",
+      "gloss": {
+        "en": "I raise the agenda item",
+        "ko": "제기하다",
+        "zh": "提出议题"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-640",
+      "text": "고민을 하소연해요",
+      "roman": "gomineul hasoyeonhaeyo",
+      "gloss": {
+        "en": "I vent my worries",
+        "ko": "하소연하다",
+        "zh": "诉说烦恼"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-641",
+      "text": "품질이 불만스러워요",
+      "roman": "pumjiri bulmanseureowoyo",
+      "gloss": {
+        "en": "The quality is unsatisfactory",
+        "ko": "불만스럽다",
+        "zh": "质量让人不满意"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "d-642",
+      "text": "불만이 커요",
+      "roman": "bulmani keoyo",
+      "gloss": {
+        "en": "The dissatisfaction is big",
+        "ko": "불만",
+        "zh": "不满很大"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    }
+  ],
+  "note": "+10 complain-dissatisfaction dictation (d-633–642, 2026-07-27): Prefer 이의·하소연 residual · 불평하다·항의·신고하다·따지다·제기하다·하소연하다·불만스럽다·불만. Skip 불평(n)·항의하다 → tel Prefer-adjacent. Distinct from cloze/listen hosts · problem/opinion/apology/refuse/emotion. NIKL/Sejong · 해요체 · no brand names. Suggest ThemeSm close only (전 8 complain chip). Prior refuse d-623–632 kept.",
+  "updated": "2026-07-27"
+}

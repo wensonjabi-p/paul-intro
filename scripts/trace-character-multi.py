@@ -9,6 +9,9 @@ colours). Extends trace_character.py's 2-colour pipeline with:
     multicolor demo trace)
   - high-res downscale + connected-component cleanup so soft AI edges don't
     inflate SVG path data 5–10× (giyeok-3 was ~45KB of outline noise)
+  - black-bg knock-out that PRESERVES the black outline (dilate fills, then
+    flood only unprotected near-black) so navy boots stay a separate layer
+    instead of becoming the silhouette colour (regression on giyeok-5)
 
 Run:  python scripts/trace-character-multi.py <source.png> <out.svg>
 """
@@ -65,36 +68,98 @@ def keep_large_components(mask, min_pixels):
     return out
 
 
-def knock_out_bg(a, white_thresh=245, black_thresh=25):
-    """Treat near-white OR near-black corner-connected pixels as transparent.
+def keep_largest_n(mask, n, min_pixels):
+    """Keep the n largest connected components (each at least min_pixels)."""
+    h, w = mask.shape
+    visited = np.zeros_like(mask, dtype=bool)
+    comps = []
+    for y in range(h):
+        for x in range(w):
+            if not mask[y, x] or visited[y, x]:
+                continue
+            stack = [(y, x)]
+            visited[y, x] = True
+            comp = []
+            while stack:
+                cy, cx = stack.pop()
+                comp.append((cy, cx))
+                for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    ny, nx = cy + dy, cx + dx
+                    if 0 <= ny < h and 0 <= nx < w and mask[ny, nx] and not visited[ny, nx]:
+                        visited[ny, nx] = True
+                        stack.append((ny, nx))
+            if len(comp) >= min_pixels:
+                comps.append(comp)
+    comps.sort(key=len, reverse=True)
+    out = np.zeros_like(mask, dtype=bool)
+    for comp in comps[:n]:
+        for cy, cx in comp:
+            out[cy, cx] = True
+    return out
+
+
+def knock_out_bg(a, white_thresh=245, black_thresh=25, outline_pad=None):
+    """Knock out solid white/black BACKGROUND without eating the black outline.
 
     Canva mascot exports are often on solid black; some AI PNGs use white.
+    A naive edge-flood through near-black also erases the character outline
+    (it is the same near-black and is connected to the canvas). That left navy
+    boots as the darkest cluster, so the silhouette path painted in navy and
+    boots merged into the outline (seen on giyeok-5).
+
+    Fix: dilate non-black/non-white fills, protect near-black inside that halo
+    (outline + AA), and only flood-remove near-black/white outside it.
     """
     h, w = a.shape[:2]
     rgb = a[..., :3].astype(int)
-    near_white = (rgb.min(axis=2) >= white_thresh) & (a[..., 3] > 128)
-    near_black = (rgb.max(axis=2) <= black_thresh) & (a[..., 3] > 128)
-    bg = near_white | near_black
-    if not bg.any():
+    opaque = a[..., 3] > 128
+    near_white = (rgb.min(axis=2) >= white_thresh) & opaque
+    near_black = (rgb.max(axis=2) <= black_thresh) & opaque
+    if not (near_white.any() or near_black.any()):
         return a
+
+    # Fills: green body, red briefs, navy boots, gold rim, brown staff, …
+    colored = opaque & ~near_white & ~near_black
+    if outline_pad is None:
+        # ~3.5% of long side covers thick Canva outlines after downscale.
+        outline_pad = max(7, min(41, int(round(max(h, w) * 0.035)) | 1))
+    if outline_pad % 2 == 0:
+        outline_pad += 1
+
+    protect = np.zeros((h, w), dtype=bool)
+    if colored.any():
+        protect = (
+            np.array(
+                Image.fromarray((colored.astype(np.uint8) * 255)).filter(
+                    ImageFilter.MaxFilter(outline_pad)
+                )
+            )
+            > 128
+        )
+
     from collections import deque
+
+    edge_bg = near_white | near_black
     vis = np.zeros((h, w), dtype=bool)
     q = deque()
     for x in range(w):
         for y in (0, h - 1):
-            if bg[y, x] and not vis[y, x]:
+            if edge_bg[y, x] and not vis[y, x]:
                 vis[y, x] = True
                 q.append((y, x))
     for y in range(h):
         for x in (0, w - 1):
-            if bg[y, x] and not vis[y, x]:
+            if edge_bg[y, x] and not vis[y, x]:
                 vis[y, x] = True
                 q.append((y, x))
     while q:
         y, x = q.popleft()
         for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             ny, nx = y + dy, x + dx
-            if 0 <= ny < h and 0 <= nx < w and bg[ny, nx] and not vis[ny, nx]:
+            if not (0 <= ny < h and 0 <= nx < w) or vis[ny, nx]:
+                continue
+            # Stop at fill-adjacent near-black (true outline).
+            if (near_white[ny, nx] or near_black[ny, nx]) and not protect[ny, nx]:
                 vis[ny, nx] = True
                 q.append((ny, nx))
     out = a.copy()
@@ -113,8 +178,9 @@ def load_for_trace(src):
         scale = MAX_TRACE_SIDE / long_side
         im = im.resize((max(1, round(w * scale)), max(1, round(h * scale))), Image.Resampling.LANCZOS)
         a = knock_out_bg(np.array(im.convert("RGBA")))
-    # Adaptive kernel: ~0.6% of long side, odd, clamped
-    denoise_px = max(3, min(9, int(round(max(a.shape[:2]) * 0.006)) | 1))
+    # Lighter denoise than before (0.4% / max 5) — heavy open-close blurred
+    # the black outline into a soft silhouette, especially on stage 5.
+    denoise_px = max(3, min(5, int(round(max(a.shape[:2]) * 0.004)) | 1))
     return a, denoise_px
 
 
@@ -124,9 +190,11 @@ def trace_character(src, min_cluster_frac=0.006, merge_dist=35):
     solid = a[..., 3] > 128
     solid = denoise(solid, denoise_px)
 
-    # Drop leftover bg speckles
+    # Drop leftover near-white speckles only. Do NOT drop lum<=25 — that is
+    # the black outline we just preserved in knock_out_bg (dropping it made
+    # navy boots become the darkest cluster / silhouette colour).
     lum = 0.299 * rgb[..., 0] + 0.587 * rgb[..., 1] + 0.114 * rgb[..., 2]
-    solid &= ~(((lum >= 245) | (lum <= 25)) & (a[..., 3] > 128))
+    solid &= ~((lum >= 245) & (a[..., 3] > 128))
     solid = denoise(solid, denoise_px)
     min_comp = max(40, int(solid.sum() * MIN_COMPONENT_FRAC))
     solid = keep_large_components(solid, min_comp)
@@ -151,7 +219,24 @@ def trace_character(src, min_cluster_frac=0.006, merge_dist=35):
         raise SystemExit(f"no colour clusters found in {src}")
 
     lum_fn = lambda c: 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]
+
+    def is_navy_boot(c):
+        """Dark blue-ish fill (boots), not pure outline charcoal."""
+        r, g, b = c
+        L = lum_fn(c)
+        return L > 20 and L < 55 and b >= r + 10 and b > 30
+
+    # Absorb near-black AA / dither clusters into the outline key so we don't
+    # paint a second soft charcoal layer on top of the silhouette (looks blurry).
+    # Keep distinct navy boots.
     outline_key = min(cluster_keys, key=lum_fn)
+    cluster_keys = [
+        k
+        for k in cluster_keys
+        if k == outline_key or lum_fn(k) >= 28 or is_navy_boot(k)
+    ]
+    if outline_key not in cluster_keys:
+        cluster_keys.insert(0, outline_key)
 
     # Assign every solid pixel to its NEAREST surviving cluster (not a fixed
     # radius) so merged/dropped near-duplicate shades don't leave gaps.
@@ -170,13 +255,34 @@ def trace_character(src, min_cluster_frac=0.006, merge_dist=35):
     # averaging over the whole silhouette would dilute it toward the fill colour.
     outline_idx = cluster_keys.index(outline_key)
     outline_only = solid & (nearest == outline_idx)
-    layers = [(avg_hex(outline_only), denoise(solid, denoise_px))]
+    outline_hex = avg_hex(outline_only)
+    # Safety: if the darkest cluster is navy/charcoal boots (blue-ish, not
+    # near-black), paint the silhouette in fixed charcoal so boots can still
+    # appear as their own layer colour instead of washing the whole outline.
+    or_, og, ob = (int(outline_hex[i : i + 2], 16) for i in (1, 3, 5))
+    if lum_fn((or_, og, ob)) > 18 and ob >= or_ + 5:
+        outline_hex = "#0A1218"
+    layers = [(outline_hex, denoise(solid, denoise_px))]
     claimed = outline_only
     for i, key in enumerate(cluster_keys):
         if i == outline_idx:
             continue
-        m = denoise(solid & (nearest == i) & ~claimed, denoise_px)
+        m = solid & (nearest == i) & ~claimed
+        # Navy boots: keep only blue-ish mid-dark pixels so outline AA doesn't
+        # dilute the boot fill toward near-black (looks merged on black BG).
+        if is_navy_boot(key):
+            pr, pg, pb = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+            pl = 0.299 * pr + 0.587 * pg + 0.114 * pb
+            m &= (pb >= pr + 8) & (pb > 28) & (pl > 22) & (pl < 58)
+        m = denoise(m, denoise_px)
         m = keep_large_components(m, max(30, min_comp // 2))
+        # Boots sit on the feet — drop navy-tinted outline AA islands higher up,
+        # then keep only the two largest foot blobs.
+        if is_navy_boot(key) and m.any() and solid.any():
+            sy = np.nonzero(solid)[0]
+            y_cut = sy.min() + 0.62 * (sy.max() - sy.min())
+            m = m & (np.arange(m.shape[0])[:, None] >= y_cut)
+            m = keep_largest_n(m, 2, max(40, min_comp // 2))
         if m.sum() < 80:
             continue
         layers.append((avg_hex(m), m))

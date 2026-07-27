@@ -1,0 +1,265 @@
+{
+  "id": "jabi-topik2-read-v0-01",
+  "title": {
+    "en": "jabi. TOPIK II · Reading pilot 1",
+    "ko": "jabi. TOPIK II · 읽기 파일럿 1",
+    "zh": "jabi. TOPIK II · 阅读试点 1"
+  },
+  "level": "TOPIK II Reading",
+  "skill": "reading",
+  "kind": "read",
+  "verified": false,
+  "verifiedAt": "",
+  "source": "jabi-original",
+  "sourceNote": "PILOT — original intermediate notices/passages. Official TOPIK II reading shapes only (detail · topic · inference · vocab-in-context). No official items/wording. MCQ only; no Lemon/AI.",
+  "questions": [
+    {
+      "id": "t2-r01-01",
+      "type": "notice",
+      "prompt": {
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[시립 체육관 안내]\n· 평일 운영: 오전 6시 ~ 오후 10시\n· 주말 운영: 오전 8시 ~ 오후 8시\n· 매주 월요일 휴관\n· 수영장 정기 점검: 매월 첫째 주 수요일 오후\n\n수영장을 이용할 수 없는 날은 언제입니까?",
+        "en": "Read and answer.\n\n[City gym notice]\n· Weekdays: 6 a.m.–10 p.m.\n· Weekends: 8 a.m.–8 p.m.\n· Closed every Monday\n· Pool maintenance: first Wednesday afternoon each month\n\nWhen is the pool unavailable?",
+        "zh": "阅读并回答。\n\n[市立体育馆告示]\n· 平日：早6–晚10\n· 周末：早8–晚8\n· 每周一休息\n· 泳池定期检修：每月第一个星期三下午\n\n哪天不能使用泳池？"
+      },
+      "choices": [
+        "매월 첫째 주 수요일 오후",
+        "매주 화요일",
+        "주말 오전 6시",
+        "평일 오후 9시"
+      ],
+      "answer": 0,
+      "answerText": "매월 첫째 주 수요일 오후",
+      "tags": ["topik2:read", "reading:세부", "genre:notice"],
+      "hint": {
+        "ko": "「수영장 정기 점검」 줄을 보세요.",
+        "en": "Look at the pool maintenance line.",
+        "zh": "看泳池定期检修那一行。",
+        "steps": {
+          "en": [
+            "Detail question: when is the pool closed for checks?",
+            "Find 수영장 정기 점검.",
+            "Match: first Wednesday afternoon each month."
+          ],
+          "zh": [
+            "细节：泳池何时检修关闭？",
+            "找「수영장 정기 점검」。",
+            "对应：每月第一个星期三下午。"
+          ],
+          "ko": [
+            "수영장 점검 날.",
+            "「정기 점검」 줄.",
+            "매월 첫째 주 수요일 오후."
+          ]
+        }
+      },
+      "why": {
+        "en": "Pool maintenance = first Wednesday afternoon each month.",
+        "zh": "泳池检修 = 每月第一个星期三下午。",
+        "ko": "수영장 정기 점검 = 매월 첫째 주 수요일 오후."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not every Tuesday? The gym closes Mondays; pool check is Wednesday.",
+          "zh": "为什么不是每周二？闭馆是周一，检修是周三。",
+          "ko": "왜 화요일이 아니에요? 점검은 수요일이에요."
+        },
+        "2": {
+          "en": "Why not weekend 6 a.m.? Weekends open at 8 a.m.; not a pool-only ban.",
+          "zh": "为什么不是周末早6？周末8点开门，不是泳池专用关闭。",
+          "ko": "왜 주말 6시가 아니에요? 주말은 8시 개장이에요."
+        },
+        "3": {
+          "en": "Why not weekday 9 p.m.? Weekdays run until 10 p.m.",
+          "zh": "为什么不是平日晚9？平日开到晚10。",
+          "ko": "왜 평일 9시가 아니에요? 평일은 10시까지예요."
+        }
+      }
+    },
+    {
+      "id": "t2-r01-02",
+      "type": "topic",
+      "prompt": {
+        "ko": "※ 다음 글의 제목으로 가장 알맞은 것을 고르십시오.\n\n최근 많은 도시에서 공유 자전거를 도입하고 있다. 짧은 거리는 자동차 대신 자전거를 이용하면 교통 체증을 줄이고 공기 오염도 낮출 수 있다. 다만 주차 공간을 충분히 마련하지 않으면 인도를 막는 문제가 생긴다. 따라서 편리함과 함께 관리 체계를 함께 고민해야 한다.",
+        "en": "※ Choose the best title.\n\nMany cities are introducing shared bikes. Using bikes for short trips can cut congestion and pollution. But without enough parking, bikes block sidewalks. Convenience must come with a management system.",
+        "zh": "※ 选择最合适的标题。\n\n许多城市引入共享单车。短途用自行车可减轻拥堵和污染。但车位不足会占用人行道。便利须与管理同步。"
+      },
+      "choices": [
+        "공유 자전거의 효과와 관리의 필요성",
+        "자동차를 완전히 없애는 방법",
+        "인도 공사의 역사",
+        "자전거 경주 대회 안내"
+      ],
+      "answer": 0,
+      "answerText": "공유 자전거의 효과와 관리의 필요성",
+      "tags": ["topik2:read", "reading:제목", "topic:city"],
+      "hint": {
+        "ko": "장점과 문제·대책이 모두 나오는지 보세요.",
+        "en": "Check that the title covers benefits and the management issue.",
+        "zh": "标题要覆盖好处和管理问题。",
+        "steps": {
+          "en": [
+            "Topic: shared bikes help, but need management.",
+            "Title should include both upside and the parking problem.",
+            "Reject titles about races or removing all cars."
+          ],
+          "zh": [
+            "主旨：共享单车有益，但要管理。",
+            "标题要含好处与停车问题。",
+            "排除赛车或完全取消汽车。"
+          ],
+          "ko": [
+            "효과 + 관리 필요.",
+            "둘 다 담은 제목.",
+            "경주·자동차 금지는 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Passage balances benefits and the need for parking/management.",
+        "zh": "文章兼顾好处与停车/管理必要性。",
+        "ko": "효과와 관리(주차) 문제를 함께 다룸."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not eliminate cars? The text only suggests bikes for short trips.",
+          "zh": "为什么不是取消汽车？只说短途用车。",
+          "ko": "왜 자동차 제거가 아니에요? 짧은 거리 대체를 말해요."
+        },
+        "2": {
+          "en": "Why not sidewalk history? Sidewalks appear only as a parking problem.",
+          "zh": "为什么不是人行道历史？只作为停车问题出现。",
+          "ko": "왜 인도 역사가 아니에요? 주차 문제만 나와요."
+        },
+        "3": {
+          "en": "Why not a race notice? No event information is given.",
+          "zh": "为什么不是赛事通知？没有活动信息。",
+          "ko": "왜 대회 안내가 아니에요? 행사 정보가 없어요."
+        }
+      }
+    },
+    {
+      "id": "t2-r01-03",
+      "type": "inference",
+      "prompt": {
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n민수는 지난달까지 카페에서 주말마다 아르바이트를 했다. 이번 달부터는 졸업 논문을 써야 해서 일을 그만두었다. 친구들은 다시 일할 계획이 있냐고 물었지만, 민수는 우선 논문에 집중하고 싶다고만 대답했다.\n\n이 글의 내용과 같은 것을 고르십시오.",
+        "en": "Read and choose what matches the passage.\n\nMinsu worked weekends at a café until last month. This month he quit to write his graduation thesis. Friends asked if he would work again; he only said he wants to focus on the thesis first.",
+        "zh": "阅读并选择与文章一致的一项。\n\n民秀到上个月为止周末在咖啡店打工。从这个月起为写毕业论文辞职。朋友问是否再打工，他只说想先专心论文。"
+      },
+      "choices": [
+        "민수는 이번 달에 아르바이트를 하지 않는다",
+        "민수는 이번 달에도 카페에서 일한다",
+        "민수는 논문을 이미 끝냈다",
+        "친구들은 민수에게 일을 권하지 않았다"
+      ],
+      "answer": 0,
+      "answerText": "민수는 이번 달에 아르바이트를 하지 않는다",
+      "tags": ["topik2:read", "reading:내용일치", "topic:campus"],
+      "hint": {
+        "ko": "그만둔 시기와 이유를 확인하세요.",
+        "en": "Check when he quit and why.",
+        "zh": "确认辞职时间和原因。",
+        "steps": {
+          "en": [
+            "Fact check: work until last month; quit this month.",
+            "Reason: thesis first.",
+            "Match: he is not working this month."
+          ],
+          "zh": [
+            "核对：干到上个月，这个月辞职。",
+            "原因：先写论文。",
+            "对应：这个月不打工。"
+          ],
+          "ko": [
+            "지난달까지 일함 → 이번 달 그만둠.",
+            "논문 우선.",
+            "이번 달 일 안 함을 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "He quit this month for the thesis → not working now.",
+        "zh": "这个月为论文辞职 → 现在不打工。",
+        "ko": "이번 달부터 그만둠 → 아르바이트 안 함."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not still at the café? He quit this month.",
+          "zh": "为什么不是仍在咖啡店？这个月已辞职。",
+          "ko": "왜 이번 달에도 일이 아니에요? 그만두었어요."
+        },
+        "2": {
+          "en": "Why not thesis finished? He still needs to write it.",
+          "zh": "为什么不是论文已完成？还要写。",
+          "ko": "왜 논문 완료가 아니에요? 써야 해요."
+        },
+        "3": {
+          "en": "Why not “friends didn’t ask”? They asked about working again.",
+          "zh": "为什么不是朋友没劝？他们问了是否再打工。",
+          "ko": "왜 친구 질문이 없나요? 다시 일할지 물었어요."
+        }
+      }
+    },
+    {
+      "id": "t2-r01-04",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 말로 가장 알맞은 것을 고르십시오.\n\n새로운 정책을 도입할 때는 부작용을 미리 살펴야 한다. 좋은 의도라도 현장의 상황을 무시하면 (    ).",
+        "en": "※ Choose the best word(s) for the blank.\n\nWhen introducing a new policy, check side effects early. Even with good intentions, ignoring on-the-ground conditions (    ).",
+        "zh": "※ 选择填入空格的最佳词语。\n\n推行新政要先看副作用。即使初衷好，若忽视现场情况就会(    )。"
+      },
+      "choices": [
+        "예상과 다른 결과가 나타날 수 있다",
+        "반드시 성공한다",
+        "비용이 전혀 들지 않는다",
+        "모두가 바로 찬성한다"
+      ],
+      "answer": 0,
+      "answerText": "예상과 다른 결과가 나타날 수 있다",
+      "tags": ["topik2:read", "reading:문맥", "skill:inference"],
+      "hint": {
+        "ko": "앞문장의 「부작용」「무시하면」과 이어지는 결과를 고르세요.",
+        "en": "Continue from “side effects” / “if you ignore the field.”",
+        "zh": "承接“副作用”“若忽视现场”的结果。",
+        "steps": {
+          "en": [
+            "Context: ignoring reality → unintended outcomes.",
+            "Blank needs a cautious result, not guaranteed success.",
+            "Pick “results may differ from expectations.”"
+          ],
+          "zh": [
+            "语境：忽视现实 → 意外结果。",
+            "空格要谨慎结果，不是必胜。",
+            "选“可能出现与预期不同的结果”。"
+          ],
+          "ko": [
+            "무시하면 → 부작용 가능.",
+            "성공 보장은 아님.",
+            "예상과 다른 결과 보기를 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Ignoring field conditions can produce unexpected results.",
+        "zh": "忽视现场可能导致意外结果。",
+        "ko": "현장 무시 → 예상과 다른 결과 가능."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not “always succeeds”? The sentence warns about side effects.",
+          "zh": "为什么不是“必胜”？句子在警告副作用。",
+          "ko": "왜 반드시 성공이 아니에요? 부작용을 경계해요."
+        },
+        "2": {
+          "en": "Why not “no cost”? Cost is not discussed.",
+          "zh": "为什么不是“零成本”？没谈费用。",
+          "ko": "왜 비용 0이 아니에요? 비용 이야기가 없어요."
+        },
+        "3": {
+          "en": "Why not “everyone agrees”? The text does not claim instant approval.",
+          "zh": "为什么不是“人人赞成”？文中无此断言。",
+          "ko": "왜 전원 찬성이 아니에요? 그런 내용이 없어요."
+        }
+      }
+    }
+  ]
+}

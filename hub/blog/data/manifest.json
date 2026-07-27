@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "trackId": "geulmoeum",
+  "title": { "en": "Text collection", "ko": "글모음" },
+  "status": "pilot",
+  "updated": "2026-07-27",
+  "note": "Learner-question → short EN∥KO parallel readings. Original jabi. copy. Reddit pipeline not wired.",
+  "copyright": "Original parallel texts for jabi. Question patterns inspired by common learner FAQs — not scraped from Reddit, blogs, or textbooks.",
+  "posts": [
+    {
+      "id": "yo-vs-seumnida",
+      "file": "yo-vs-seumnida.json",
+      "level": "A2",
+      "tags": ["grammar:honorifics", "speech-level"]
+    },
+    {
+      "id": "eunneun-iga",
+      "file": "eunneun-iga.json",
+      "level": "A2",
+      "tags": ["grammar:particles"]
+    },
+    {
+      "id": "ayo-oyo",
+      "file": "ayo-oyo.json",
+      "level": "A1",
+      "tags": ["grammar:endings", "polite-present"]
+    },
+    {
+      "id": "e-vs-eseo",
+      "file": "e-vs-eseo.json",
+      "level": "A1",
+      "tags": ["grammar:particles", "location"]
+    },
+    {
+      "id": "no-the-in-korean",
+      "file": "no-the-in-korean.json",
+      "level": "A1",
+      "tags": ["grammar:articles", "contrast:en"]
+    },
+    {
+      "id": "two-number-systems",
+      "file": "two-number-systems.json",
+      "level": "A1",
+      "tags": ["vocab:numbers"]
+    },
+    {
+      "id": "isseoyo-vs-opseoyo",
+      "file": "isseoyo-vs-opseoyo.json",
+      "level": "A1",
+      "tags": ["grammar:existence"]
+    },
+    {
+      "id": "when-banmal",
+      "file": "when-banmal.json",
+      "level": "A2",
+      "tags": ["grammar:honorifics", "speech-level"]
+    },
+    {
+      "id": "an-adj-verb",
+      "file": "an-adj-verb.json",
+      "level": "A1",
+      "tags": ["grammar:negation", "contrast:adj-verb"]
+    }
+  ]
+}

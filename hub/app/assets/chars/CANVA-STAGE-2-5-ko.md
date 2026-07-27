@@ -1,5 +1,7 @@
 # Canva에서 ㄱ(giyeok) stage 2–5 만들기 — Paul용 상세 가이드
 
+> **짧게 복붙만 하려면:** [`CANVA-PASTE-WORKSHEET-ko.md`](./CANVA-PASTE-WORKSHEET-ko.md) (stage 3–5 순차 체크리스트)
+
 > **목표:** 앱용 PNG 4장 (`giyeok-2` … `giyeok-5`)  
 > **이미 완료:** stage1 베이비 · stage6 풀히어로 (Paul OK)  
 > **작업장:** https://www.canva.com/ai/thread/7c6a61cb-c08d-40b2-b985-72fe4bbdf379  

@@ -1,0 +1,10153 @@
+{
+  "id": "word-scramble-beginner",
+  "version": 63,
+  "level": "beginner-elementary",
+  "lang": "ko",
+  "mode": "word-scramble",
+  "timer": {
+    "seconds": 20,
+    "punish": false,
+    "note": "Soft pace bar only — empty bar never fails the item. Tap still works after calm."
+  },
+  "source": "original-jabi",
+  "copyright": "Original scramble sentences for jabi Word Scramble, plus intermediate money-banking, public-workplace, health-clinic, school-class, travel-lodging, weather-season, digital-comms, family-relations, hobby-culture, emotion-mood, sports-exercise, nature-environment, restaurant-cooking, clothes-shopping, music-arts, media-news, celebration-holiday, time-appointment, home-chores, and body-parts/directions-location/furniture-room/fruit-market/kitchen-tableware/office-stationery/post-mail/animals-pets/vehicles-driving/city-places/pantry-ingredients/bathroom-hygiene/jobs-occupations/countries-nationality/daily-routine/size-quantity/temperature-senses/colors-shapes/accessories-belongings/electricity-appliances/building-facilities/movement-actions/requests-favors/thoughts-plans/speech-talk/change-progress/comparison-degree/cause-reason/problem-solution/opinion-judgment/habits-lifestyle / rules-permission crossfill. Tokens are word-order / chunk units. Not scraped from Duolingo, Busuu, Speechling, Bida/KoreaXin, or any third-party bank. Orthography follows NIKL/Sejong survival 해요체 norms. No hotel/bank/telecom/app/clinic/school/sports/restaurant/clothing/music/media/celebration/calendar/furniture/cookware/stationery/courier/pet/car/taxi/store/salon/hygiene/airline/embassy-brand names.",
+  "themes": [
+    "basic",
+    "cafe",
+    "shopping",
+    "cosmetics",
+    "clinic",
+    "banking",
+    "workplace",
+    "school",
+    "travel",
+    "weather",
+    "digital",
+    "family",
+    "hobby",
+    "emotion",
+    "sports",
+    "nature",
+    "restaurant",
+    "fruit",
+    "intermediate",
+    "clothes",
+    "music",
+    "media",
+    "celebration",
+    "time",
+    "chores",
+    "body",
+    "direction",
+    "furniture",
+    "kitchen",
+    "stationery",
+    "mail",
+    "pets",
+    "driving",
+    "places",
+    "pantry",
+    "bathroom",
+    "jobs",
+    "country",
+    "routine",
+    "size",
+    "senses",
+    "color",
+    "accessories",
+    "electric",
+    "building",
+    "motion",
+    "favor",
+    "think",
+    "speech",
+    "change",
+    "compare",
+    "reason",
+    "problem",
+    "opinion",
+    "habit",
+    "rules",
+    "friends",
+    "personality",
+    "apology",
+    "success",
+    "advice",
+    "encourage",
+    "promise",
+    "refuse",
+    "complain"
+  ],
+  "items": [
+    {
+      "id": "ws-01",
+      "tokens": [
+        "저는",
+        "학생",
+        "입니다"
+      ],
+      "full": "저는 학생입니다",
+      "gloss": {
+        "en": "I am a student",
+        "ko": "자기소개",
+        "zh": "我是学生"
+      },
+      "tags": [
+        "basic",
+        "intro"
+      ]
+    },
+    {
+      "id": "ws-02",
+      "tokens": [
+        "이름이",
+        "뭐예요"
+      ],
+      "full": "이름이 뭐예요",
+      "gloss": {
+        "en": "What is your name?",
+        "ko": "이름 묻기",
+        "zh": "你叫什么名字？"
+      },
+      "tags": [
+        "basic",
+        "question"
+      ]
+    },
+    {
+      "id": "ws-03",
+      "tokens": [
+        "물",
+        "주세요"
+      ],
+      "full": "물 주세요",
+      "gloss": {
+        "en": "Water, please",
+        "ko": "부탁",
+        "zh": "请给我水"
+      },
+      "tags": [
+        "cafe",
+        "request"
+      ]
+    },
+    {
+      "id": "ws-04",
+      "tokens": [
+        "커피",
+        "한",
+        "잔",
+        "주세요"
+      ],
+      "full": "커피 한 잔 주세요",
+      "gloss": {
+        "en": "One coffee, please",
+        "ko": "카페 주문",
+        "zh": "请给我一杯咖啡"
+      },
+      "tags": [
+        "cafe",
+        "request"
+      ]
+    },
+    {
+      "id": "ws-05",
+      "tokens": [
+        "학교에",
+        "가요"
+      ],
+      "full": "학교에 가요",
+      "gloss": {
+        "en": "I go to school",
+        "ko": "장소 · 방향",
+        "zh": "我去学校"
+      },
+      "tags": [
+        "place",
+        "basic"
+      ]
+    },
+    {
+      "id": "ws-06",
+      "tokens": [
+        "집에서",
+        "공부해요"
+      ],
+      "full": "집에서 공부해요",
+      "gloss": {
+        "en": "I study at home",
+        "ko": "동작 장소",
+        "zh": "我在家学习"
+      },
+      "tags": [
+        "place",
+        "basic"
+      ]
+    },
+    {
+      "id": "ws-07",
+      "tokens": [
+        "친구를",
+        "만나요"
+      ],
+      "full": "친구를 만나요",
+      "gloss": {
+        "en": "I meet a friend",
+        "ko": "만남",
+        "zh": "我见朋友"
+      },
+      "tags": [
+        "basic",
+        "object"
+      ]
+    },
+    {
+      "id": "ws-08",
+      "tokens": [
+        "오늘",
+        "날씨가",
+        "좋아요"
+      ],
+      "full": "오늘 날씨가 좋아요",
+      "gloss": {
+        "en": "The weather is nice today",
+        "ko": "날씨",
+        "zh": "今天天气很好"
+      },
+      "tags": [
+        "basic"
+      ]
+    },
+    {
+      "id": "ws-09",
+      "tokens": [
+        "책을",
+        "읽어요"
+      ],
+      "full": "책을 읽어요",
+      "gloss": {
+        "en": "I read a book",
+        "ko": "일상",
+        "zh": "我读书"
+      },
+      "tags": [
+        "basic",
+        "object"
+      ]
+    },
+    {
+      "id": "ws-10",
+      "tokens": [
+        "버스를",
+        "타요"
+      ],
+      "full": "버스를 타요",
+      "gloss": {
+        "en": "I take the bus",
+        "ko": "교통",
+        "zh": "我坐公交"
+      },
+      "tags": [
+        "basic",
+        "transport"
+      ]
+    },
+    {
+      "id": "ws-11",
+      "tokens": [
+        "화장실이",
+        "어디에",
+        "있어요"
+      ],
+      "full": "화장실이 어디에 있어요",
+      "gloss": {
+        "en": "Where is the restroom?",
+        "ko": "길 묻기",
+        "zh": "洗手间在哪里？"
+      },
+      "tags": [
+        "directions",
+        "question"
+      ]
+    },
+    {
+      "id": "ws-12",
+      "tokens": [
+        "천천히",
+        "말해",
+        "주세요"
+      ],
+      "full": "천천히 말해 주세요",
+      "gloss": {
+        "en": "Please speak slowly",
+        "ko": "요청",
+        "zh": "请说慢一点"
+      },
+      "tags": [
+        "survival",
+        "request"
+      ]
+    },
+    {
+      "id": "ws-13",
+      "tokens": [
+        "다시",
+        "한",
+        "번",
+        "말해",
+        "주세요"
+      ],
+      "full": "다시 한 번 말해 주세요",
+      "gloss": {
+        "en": "Please say it again",
+        "ko": "요청",
+        "zh": "请再说一遍"
+      },
+      "tags": [
+        "survival",
+        "request"
+      ]
+    },
+    {
+      "id": "ws-14",
+      "tokens": [
+        "만나서",
+        "반가워요"
+      ],
+      "full": "만나서 반가워요",
+      "gloss": {
+        "en": "Nice to meet you",
+        "ko": "첫 만남",
+        "zh": "很高兴认识你"
+      },
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "id": "ws-15",
+      "tokens": [
+        "이거",
+        "얼마예요"
+      ],
+      "full": "이거 얼마예요",
+      "gloss": {
+        "en": "How much is this?",
+        "ko": "가격",
+        "zh": "这个多少钱？"
+      },
+      "tags": [
+        "shopping",
+        "question"
+      ]
+    },
+    {
+      "id": "ws-16",
+      "tokens": [
+        "내일",
+        "영화를",
+        "봐요"
+      ],
+      "full": "내일 영화를 봐요",
+      "gloss": {
+        "en": "I watch a movie tomorrow",
+        "ko": "일정",
+        "zh": "我明天看电影"
+      },
+      "tags": [
+        "basic",
+        "time"
+      ]
+    },
+    {
+      "id": "ws-17",
+      "tokens": [
+        "사과를",
+        "샀어요"
+      ],
+      "full": "사과를 샀어요",
+      "gloss": {
+        "en": "I bought an apple",
+        "ko": "쇼핑 · 과거",
+        "zh": "我买了苹果"
+      },
+      "tags": [
+        "shopping",
+        "past"
+      ]
+    },
+    {
+      "id": "ws-18",
+      "tokens": [
+        "한국어를",
+        "배워요"
+      ],
+      "full": "한국어를 배워요",
+      "gloss": {
+        "en": "I learn Korean",
+        "ko": "학습",
+        "zh": "我学韩语"
+      },
+      "tags": [
+        "basic",
+        "study"
+      ]
+    },
+    {
+      "id": "ws-19",
+      "tokens": [
+        "엄마가",
+        "요리를",
+        "해요"
+      ],
+      "full": "엄마가 요리를 해요",
+      "gloss": {
+        "en": "Mom cooks",
+        "ko": "주격 · 목적격",
+        "zh": "妈妈做饭"
+      },
+      "tags": [
+        "basic",
+        "family"
+      ]
+    },
+    {
+      "id": "ws-20",
+      "tokens": [
+        "비가",
+        "와서",
+        "집에",
+        "있어요"
+      ],
+      "full": "비가 와서 집에 있어요",
+      "gloss": {
+        "en": "It's raining, so I'm at home",
+        "ko": "이유 · 장소",
+        "zh": "因为下雨所以在家"
+      },
+      "tags": [
+        "weather",
+        "cause"
+      ]
+    },
+    {
+      "id": "ws-21",
+      "tokens": [
+        "주스",
+        "두",
+        "잔",
+        "주세요"
+      ],
+      "full": "주스 두 잔 주세요",
+      "gloss": {
+        "en": "Two juices, please",
+        "ko": "카페",
+        "zh": "请给我两杯果汁"
+      },
+      "tags": [
+        "cafe",
+        "request"
+      ]
+    },
+    {
+      "id": "ws-22",
+      "tokens": [
+        "다음",
+        "정류장에서",
+        "내려요"
+      ],
+      "full": "다음 정류장에서 내려요",
+      "gloss": {
+        "en": "I get off at the next stop",
+        "ko": "교통",
+        "zh": "下一站下车"
+      },
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "ws-23",
+      "tokens": [
+        "머리가",
+        "아파요"
+      ],
+      "full": "머리가 아파요",
+      "gloss": {
+        "en": "I have a headache",
+        "ko": "증상",
+        "zh": "头疼"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "ws-24",
+      "tokens": [
+        "김밥",
+        "한",
+        "줄",
+        "주세요"
+      ],
+      "full": "김밥 한 줄 주세요",
+      "gloss": {
+        "en": "One roll of gimbap, please",
+        "ko": "간식",
+        "zh": "请给我一卷紫菜包饭"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "ws-25",
+      "tokens": [
+        "카드로",
+        "낼게요"
+      ],
+      "full": "카드로 낼게요",
+      "gloss": {
+        "en": "I'll pay by card",
+        "ko": "결제",
+        "zh": "我用卡付"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "ws-26",
+      "tokens": [
+        "오늘",
+        "할인해요"
+      ],
+      "full": "오늘 할인해요",
+      "gloss": {
+        "en": "There's a discount today",
+        "ko": "쇼핑",
+        "zh": "今天打折"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "ws-27",
+      "tokens": [
+        "공원에서",
+        "산책해요"
+      ],
+      "full": "공원에서 산책해요",
+      "gloss": {
+        "en": "I walk in the park",
+        "ko": "여가",
+        "zh": "在公园散步"
+      },
+      "tags": [
+        "leisure"
+      ]
+    },
+    {
+      "id": "ws-28",
+      "tokens": [
+        "영수증",
+        "주세요"
+      ],
+      "full": "영수증 주세요",
+      "gloss": {
+        "en": "Receipt, please",
+        "ko": "쇼핑",
+        "zh": "请给我收据"
+      },
+      "tags": [
+        "shopping",
+        "request"
+      ]
+    },
+    {
+      "id": "ws-29",
+      "tokens": [
+        "로션",
+        "하나",
+        "주세요"
+      ],
+      "full": "로션 하나 주세요",
+      "gloss": {
+        "en": "One lotion, please",
+        "ko": "화장품",
+        "zh": "请给我一瓶乳液"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "ws-30",
+      "tokens": [
+        "피부가",
+        "건조해요"
+      ],
+      "full": "피부가 건조해요",
+      "gloss": {
+        "en": "My skin is dry",
+        "ko": "피부",
+        "zh": "皮肤很干"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "ws-31",
+      "tokens": [
+        "크림을",
+        "발라요"
+      ],
+      "full": "크림을 발라요",
+      "gloss": {
+        "en": "I apply cream",
+        "ko": "바르다",
+        "zh": "涂面霜"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "ws-32",
+      "tokens": [
+        "립스틱",
+        "있어요"
+      ],
+      "full": "립스틱 있어요",
+      "gloss": {
+        "en": "Do you have lipstick?",
+        "ko": "화장품",
+        "zh": "有口红吗？"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "ws-33",
+      "tokens": [
+        "샴푸",
+        "얼마예요"
+      ],
+      "full": "샴푸 얼마예요",
+      "gloss": {
+        "en": "How much is the shampoo?",
+        "ko": "가격",
+        "zh": "洗发水多少钱？"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "ws-34",
+      "tokens": [
+        "비누로",
+        "손을",
+        "씻어요"
+      ],
+      "full": "비누로 손을 씻어요",
+      "gloss": {
+        "en": "I wash my hands with soap",
+        "ko": "위생",
+        "zh": "用肥皂洗手"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "ws-35",
+      "tokens": [
+        "화장품",
+        "코너가",
+        "어디에",
+        "있어요"
+      ],
+      "full": "화장품 코너가 어디에 있어요",
+      "gloss": {
+        "en": "Where is the cosmetics section?",
+        "ko": "길 묻기",
+        "zh": "化妆品区在哪里？"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "ws-36",
+      "tokens": [
+        "계좌를",
+        "확인해요"
+      ],
+      "full": "계좌를 확인해요",
+      "gloss": {
+        "en": "I check the account",
+        "ko": "계좌",
+        "zh": "我核对账户"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-37",
+      "tokens": [
+        "지금",
+        "이체할게요"
+      ],
+      "full": "지금 이체할게요",
+      "gloss": {
+        "en": "I will transfer now",
+        "ko": "이체",
+        "zh": "我现在转账"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-38",
+      "tokens": [
+        "입금이",
+        "됐어요"
+      ],
+      "full": "입금이 됐어요",
+      "gloss": {
+        "en": "The deposit went through",
+        "ko": "입금",
+        "zh": "入账了"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-39",
+      "tokens": [
+        "출금하러",
+        "가요"
+      ],
+      "full": "출금하러 가요",
+      "gloss": {
+        "en": "I'm going to withdraw",
+        "ko": "출금",
+        "zh": "去取款"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-40",
+      "tokens": [
+        "잔액을",
+        "먼저",
+        "봐요"
+      ],
+      "full": "잔액을 먼저 봐요",
+      "gloss": {
+        "en": "I check the balance first",
+        "ko": "잔액",
+        "zh": "先看余额"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-41",
+      "tokens": [
+        "수수료가",
+        "얼마예요"
+      ],
+      "full": "수수료가 얼마예요",
+      "gloss": {
+        "en": "How much is the fee?",
+        "ko": "수수료",
+        "zh": "手续费多少"
+      },
+      "tags": [
+        "banking",
+        "intermediate",
+        "question"
+      ]
+    },
+    {
+      "id": "ws-42",
+      "tokens": [
+        "현금이",
+        "필요해요"
+      ],
+      "full": "현금이 필요해요",
+      "gloss": {
+        "en": "I need cash",
+        "ko": "현금",
+        "zh": "需要现金"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-43",
+      "tokens": [
+        "환전하고",
+        "싶어요"
+      ],
+      "full": "환전하고 싶어요",
+      "gloss": {
+        "en": "I want to exchange currency",
+        "ko": "환전",
+        "zh": "想换钱"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-44",
+      "tokens": [
+        "통장을",
+        "만들어요"
+      ],
+      "full": "통장을 만들어요",
+      "gloss": {
+        "en": "I open a bankbook",
+        "ko": "통장",
+        "zh": "我开存折"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-45",
+      "tokens": [
+        "해외로",
+        "송금해요"
+      ],
+      "full": "해외로 송금해요",
+      "gloss": {
+        "en": "I send money overseas",
+        "ko": "송금",
+        "zh": "往海外汇款"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-46",
+      "tokens": [
+        "서류를",
+        "준비해요"
+      ],
+      "full": "서류를 준비해요",
+      "gloss": {
+        "en": "I prepare the documents",
+        "ko": "서류",
+        "zh": "我准备文件"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-47",
+      "tokens": [
+        "오늘",
+        "제출해요"
+      ],
+      "full": "오늘 제출해요",
+      "gloss": {
+        "en": "I submit today",
+        "ko": "제출",
+        "zh": "今天提交"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-48",
+      "tokens": [
+        "증명서를",
+        "발급해요"
+      ],
+      "full": "증명서를 발급해요",
+      "gloss": {
+        "en": "They issue a certificate",
+        "ko": "발급",
+        "zh": "发放证明书"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-49",
+      "tokens": [
+        "민원",
+        "창구로",
+        "가요"
+      ],
+      "full": "민원 창구로 가요",
+      "gloss": {
+        "en": "I go to the public-request counter",
+        "ko": "민원",
+        "zh": "去公务申请窗口"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-50",
+      "tokens": [
+        "담당자를",
+        "불러요"
+      ],
+      "full": "담당자를 불러요",
+      "gloss": {
+        "en": "I call the person in charge",
+        "ko": "담당자",
+        "zh": "我叫负责人"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-51",
+      "tokens": [
+        "새",
+        "부서에",
+        "가요"
+      ],
+      "full": "새 부서에 가요",
+      "gloss": {
+        "en": "I go to a new department",
+        "ko": "부서",
+        "zh": "去新部门"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-52",
+      "tokens": [
+        "일찍",
+        "출근해요"
+      ],
+      "full": "일찍 출근해요",
+      "gloss": {
+        "en": "I go to work early",
+        "ko": "출근",
+        "zh": "很早上班"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-53",
+      "tokens": [
+        "지금",
+        "퇴근해요"
+      ],
+      "full": "지금 퇴근해요",
+      "gloss": {
+        "en": "I'm leaving work now",
+        "ko": "퇴근",
+        "zh": "现在下班"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-54",
+      "tokens": [
+        "연차를",
+        "받아요"
+      ],
+      "full": "연차를 받아요",
+      "gloss": {
+        "en": "I get annual leave",
+        "ko": "연차",
+        "zh": "拿到年假"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-55",
+      "tokens": [
+        "증명서를",
+        "받아요"
+      ],
+      "full": "증명서를 받아요",
+      "gloss": {
+        "en": "I receive a certificate",
+        "ko": "증명서",
+        "zh": "我拿到证明书"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-56",
+      "tokens": [
+        "통증이",
+        "있어요"
+      ],
+      "full": "통증이 있어요",
+      "gloss": {
+        "en": "I have pain",
+        "ko": "통증",
+        "zh": "有疼痛"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-57",
+      "tokens": [
+        "매일",
+        "복용해요"
+      ],
+      "full": "매일 복용해요",
+      "gloss": {
+        "en": "I take it every day",
+        "ko": "복용",
+        "zh": "每天服用"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-58",
+      "tokens": [
+        "곧",
+        "회복해요"
+      ],
+      "full": "곧 회복해요",
+      "gloss": {
+        "en": "I recover soon",
+        "ko": "회복",
+        "zh": "很快恢复"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-59",
+      "tokens": [
+        "주사를",
+        "맞아요"
+      ],
+      "full": "주사를 맞아요",
+      "gloss": {
+        "en": "I get a shot",
+        "ko": "주사",
+        "zh": "打针"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-60",
+      "tokens": [
+        "증상을",
+        "적어요"
+      ],
+      "full": "증상을 적어요",
+      "gloss": {
+        "en": "I write down the symptoms",
+        "ko": "증상",
+        "zh": "记下症状"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-61",
+      "tokens": [
+        "오후에",
+        "진료해요"
+      ],
+      "full": "오후에 진료해요",
+      "gloss": {
+        "en": "I have a consultation in the afternoon",
+        "ko": "진료",
+        "zh": "下午诊疗"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-62",
+      "tokens": [
+        "처방을",
+        "보여요"
+      ],
+      "full": "처방을 보여요",
+      "gloss": {
+        "en": "I show the prescription",
+        "ko": "처방",
+        "zh": "出示处方"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-63",
+      "tokens": [
+        "접수를",
+        "기다려요"
+      ],
+      "full": "접수를 기다려요",
+      "gloss": {
+        "en": "I wait for check-in",
+        "ko": "접수",
+        "zh": "等挂号"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-64",
+      "tokens": [
+        "진찰을",
+        "받아요"
+      ],
+      "full": "진찰을 받아요",
+      "gloss": {
+        "en": "I get examined",
+        "ko": "진찰",
+        "zh": "接受诊察"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-65",
+      "tokens": [
+        "약사님을",
+        "찾아요"
+      ],
+      "full": "약사님을 찾아요",
+      "gloss": {
+        "en": "I look for the pharmacist",
+        "ko": "약사",
+        "zh": "找药剂师"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-66",
+      "tokens": [
+        "오늘",
+        "수업이에요"
+      ],
+      "full": "오늘 수업이에요",
+      "gloss": {
+        "en": "I have class today",
+        "ko": "수업",
+        "zh": "今天有课"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-67",
+      "tokens": [
+        "숙제부터",
+        "해요"
+      ],
+      "full": "숙제부터 해요",
+      "gloss": {
+        "en": "I start with homework",
+        "ko": "숙제",
+        "zh": "先做作业"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-68",
+      "tokens": [
+        "시험을",
+        "봐요"
+      ],
+      "full": "시험을 봐요",
+      "gloss": {
+        "en": "I take an exam",
+        "ko": "시험",
+        "zh": "考试"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-69",
+      "tokens": [
+        "온라인",
+        "강의를",
+        "들어요"
+      ],
+      "full": "온라인 강의를 들어요",
+      "gloss": {
+        "en": "I take an online lecture",
+        "ko": "강의",
+        "zh": "听网课"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-70",
+      "tokens": [
+        "등록을",
+        "마쳐요"
+      ],
+      "full": "등록을 마쳐요",
+      "gloss": {
+        "en": "I finish enrollment",
+        "ko": "등록",
+        "zh": "办完注册"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-71",
+      "tokens": [
+        "학기가",
+        "끝나요"
+      ],
+      "full": "학기가 끝나요",
+      "gloss": {
+        "en": "The semester ends",
+        "ko": "학기",
+        "zh": "学期结束"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-72",
+      "tokens": [
+        "교실에",
+        "앉아요"
+      ],
+      "full": "교실에 앉아요",
+      "gloss": {
+        "en": "I sit in the classroom",
+        "ko": "교실",
+        "zh": "在教室坐下"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-73",
+      "tokens": [
+        "교재를",
+        "펴요"
+      ],
+      "full": "교재를 펴요",
+      "gloss": {
+        "en": "I open the textbook",
+        "ko": "교재",
+        "zh": "翻开教材"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-74",
+      "tokens": [
+        "과제를",
+        "내요"
+      ],
+      "full": "과제를 내요",
+      "gloss": {
+        "en": "I turn in the assignment",
+        "ko": "과제",
+        "zh": "交课题"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-75",
+      "tokens": [
+        "한국어를",
+        "수강해요"
+      ],
+      "full": "한국어를 수강해요",
+      "gloss": {
+        "en": "I'm taking Korean",
+        "ko": "수강",
+        "zh": "我在上韩语课"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-76",
+      "tokens": [
+        "숙소를",
+        "잡아요"
+      ],
+      "full": "숙소를 잡아요",
+      "gloss": {
+        "en": "I book lodging",
+        "ko": "숙소",
+        "zh": "我订住处"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-77",
+      "tokens": [
+        "숙박이",
+        "짧아요"
+      ],
+      "full": "숙박이 짧아요",
+      "gloss": {
+        "en": "The stay is short",
+        "ko": "숙박",
+        "zh": "住宿很短"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-78",
+      "tokens": [
+        "여행지를",
+        "고르세요"
+      ],
+      "full": "여행지를 고르세요",
+      "gloss": {
+        "en": "Please choose a destination",
+        "ko": "여행지",
+        "zh": "请选目的地"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-79",
+      "tokens": [
+        "여권을",
+        "넣어요"
+      ],
+      "full": "여권을 넣어요",
+      "gloss": {
+        "en": "I put the passport away",
+        "ko": "여권",
+        "zh": "我放护照"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-80",
+      "tokens": [
+        "관광을",
+        "다녀요"
+      ],
+      "full": "관광을 다녀요",
+      "gloss": {
+        "en": "I go sightseeing",
+        "ko": "관광",
+        "zh": "我去观光"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-81",
+      "tokens": [
+        "관광지가",
+        "가까워요"
+      ],
+      "full": "관광지가 가까워요",
+      "gloss": {
+        "en": "The tourist spot is nearby",
+        "ko": "관광지",
+        "zh": "景点很近"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-82",
+      "tokens": [
+        "항공권을",
+        "끊어요"
+      ],
+      "full": "항공권을 끊어요",
+      "gloss": {
+        "en": "I buy an airline ticket",
+        "ko": "항공권",
+        "zh": "我买机票"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-83",
+      "tokens": [
+        "체크인을",
+        "마쳐요"
+      ],
+      "full": "체크인을 마쳐요",
+      "gloss": {
+        "en": "I finish check-in",
+        "ko": "체크인",
+        "zh": "办完入住"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-84",
+      "tokens": [
+        "체크아웃을",
+        "해요"
+      ],
+      "full": "체크아웃을 해요",
+      "gloss": {
+        "en": "I do check-out",
+        "ko": "체크아웃",
+        "zh": "我办理退房"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-85",
+      "tokens": [
+        "안내소를",
+        "찾아요"
+      ],
+      "full": "안내소를 찾아요",
+      "gloss": {
+        "en": "I look for the information desk",
+        "ko": "안내소",
+        "zh": "我找问讯处"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-86",
+      "tokens": [
+        "계절이",
+        "바뀌어요"
+      ],
+      "full": "계절이 바뀌어요",
+      "gloss": {
+        "en": "The season is changing",
+        "ko": "계절",
+        "zh": "季节在变"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-87",
+      "tokens": [
+        "기온을",
+        "확인해요"
+      ],
+      "full": "기온을 확인해요",
+      "gloss": {
+        "en": "I check the temperature",
+        "ko": "기온",
+        "zh": "我确认气温"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-88",
+      "tokens": [
+        "하늘이",
+        "맑아요"
+      ],
+      "full": "하늘이 맑아요",
+      "gloss": {
+        "en": "The sky is clear",
+        "ko": "맑다",
+        "zh": "天空很晴朗"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-89",
+      "tokens": [
+        "날씨가",
+        "흐려요"
+      ],
+      "full": "날씨가 흐려요",
+      "gloss": {
+        "en": "The weather is cloudy",
+        "ko": "흐리다",
+        "zh": "天气阴了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-90",
+      "tokens": [
+        "비가",
+        "와요"
+      ],
+      "full": "비가 와요",
+      "gloss": {
+        "en": "It's raining",
+        "ko": "비",
+        "zh": "下雨了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-91",
+      "tokens": [
+        "눈이",
+        "쌓여요"
+      ],
+      "full": "눈이 쌓여요",
+      "gloss": {
+        "en": "Snow is piling up",
+        "ko": "눈",
+        "zh": "雪在堆积"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-92",
+      "tokens": [
+        "바람이",
+        "세요"
+      ],
+      "full": "바람이 세요",
+      "gloss": {
+        "en": "The wind is strong",
+        "ko": "바람",
+        "zh": "风很大"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-93",
+      "tokens": [
+        "안개가",
+        "껴요"
+      ],
+      "full": "안개가 껴요",
+      "gloss": {
+        "en": "Fog is setting in",
+        "ko": "안개",
+        "zh": "起雾了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-94",
+      "tokens": [
+        "태풍을",
+        "피해요"
+      ],
+      "full": "태풍을 피해요",
+      "gloss": {
+        "en": "I avoid the typhoon",
+        "ko": "태풍",
+        "zh": "我避开台风"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-95",
+      "tokens": [
+        "일기예보를",
+        "봐요"
+      ],
+      "full": "일기예보를 봐요",
+      "gloss": {
+        "en": "I check the weather forecast",
+        "ko": "일기예보",
+        "zh": "我看天气预报"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-96",
+      "tokens": [
+        "와이파이를",
+        "켜요"
+      ],
+      "full": "와이파이를 켜요",
+      "gloss": {
+        "en": "I turn on the Wi-Fi",
+        "ko": "와이파이",
+        "zh": "我打开无线网"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-97",
+      "tokens": [
+        "충전을",
+        "시작해요"
+      ],
+      "full": "충전을 시작해요",
+      "gloss": {
+        "en": "I start charging",
+        "ko": "충전",
+        "zh": "我开始充电"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-98",
+      "tokens": [
+        "앱을",
+        "열어요"
+      ],
+      "full": "앱을 열어요",
+      "gloss": {
+        "en": "I open the app",
+        "ko": "앱",
+        "zh": "我打开应用"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-99",
+      "tokens": [
+        "문자를",
+        "확인해요"
+      ],
+      "full": "문자를 확인해요",
+      "gloss": {
+        "en": "I check the text",
+        "ko": "문자",
+        "zh": "我确认短信"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-100",
+      "tokens": [
+        "인터넷이",
+        "느려요"
+      ],
+      "full": "인터넷이 느려요",
+      "gloss": {
+        "en": "The internet is slow",
+        "ko": "인터넷",
+        "zh": "网很慢"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-101",
+      "tokens": [
+        "휴대폰을",
+        "꺼요"
+      ],
+      "full": "휴대폰을 꺼요",
+      "gloss": {
+        "en": "I turn off my phone",
+        "ko": "휴대폰",
+        "zh": "我关掉手机"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-102",
+      "tokens": [
+        "배터리가",
+        "없어요"
+      ],
+      "full": "배터리가 없어요",
+      "gloss": {
+        "en": "There's no battery left",
+        "ko": "배터리",
+        "zh": "没电了"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-103",
+      "tokens": [
+        "데이터를",
+        "아껴요"
+      ],
+      "full": "데이터를 아껴요",
+      "gloss": {
+        "en": "I conserve mobile data",
+        "ko": "데이터",
+        "zh": "我省着用流量"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-104",
+      "tokens": [
+        "통화를",
+        "걸어요"
+      ],
+      "full": "통화를 걸어요",
+      "gloss": {
+        "en": "I make a call",
+        "ko": "통화",
+        "zh": "我打电话"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-105",
+      "tokens": [
+        "알림을",
+        "확인해요"
+      ],
+      "full": "알림을 확인해요",
+      "gloss": {
+        "en": "I check the notification",
+        "ko": "알림",
+        "zh": "我确认通知"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-106",
+      "tokens": [
+        "가족이",
+        "많아요"
+      ],
+      "full": "가족이 많아요",
+      "gloss": {
+        "en": "I have a big family",
+        "ko": "가족",
+        "zh": "家人很多"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-107",
+      "tokens": [
+        "부모님께",
+        "전화해요"
+      ],
+      "full": "부모님께 전화해요",
+      "gloss": {
+        "en": "I call my parents",
+        "ko": "부모님",
+        "zh": "我给父母打电话"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-108",
+      "tokens": [
+        "형제와",
+        "놀아요"
+      ],
+      "full": "형제와 놀아요",
+      "gloss": {
+        "en": "I play with my siblings",
+        "ko": "형제",
+        "zh": "和兄弟姐妹玩"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-109",
+      "tokens": [
+        "친척을",
+        "방문해요"
+      ],
+      "full": "친척을 방문해요",
+      "gloss": {
+        "en": "I visit relatives",
+        "ko": "친척",
+        "zh": "我拜访亲戚"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-110",
+      "tokens": [
+        "결혼을",
+        "축하해요"
+      ],
+      "full": "결혼을 축하해요",
+      "gloss": {
+        "en": "I congratulate the marriage",
+        "ko": "결혼",
+        "zh": "我祝贺结婚"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-111",
+      "tokens": [
+        "남편이",
+        "요리해요"
+      ],
+      "full": "남편이 요리해요",
+      "gloss": {
+        "en": "My husband cooks",
+        "ko": "남편",
+        "zh": "丈夫做饭"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-112",
+      "tokens": [
+        "아내가",
+        "일해요"
+      ],
+      "full": "아내가 일해요",
+      "gloss": {
+        "en": "My wife works",
+        "ko": "아내",
+        "zh": "妻子工作"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-113",
+      "tokens": [
+        "아들이",
+        "학교에",
+        "가요"
+      ],
+      "full": "아들이 학교에 가요",
+      "gloss": {
+        "en": "My son goes to school",
+        "ko": "아들",
+        "zh": "儿子去学校"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-114",
+      "tokens": [
+        "사촌을",
+        "만나요"
+      ],
+      "full": "사촌을 만나요",
+      "gloss": {
+        "en": "I meet my cousin",
+        "ko": "사촌",
+        "zh": "我见表亲"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-115",
+      "tokens": [
+        "관계가",
+        "좋아요"
+      ],
+      "full": "관계가 좋아요",
+      "gloss": {
+        "en": "The relationship is good",
+        "ko": "관계",
+        "zh": "关系很好"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-116",
+      "tokens": [
+        "문화가",
+        "좋아요"
+      ],
+      "full": "문화가 좋아요",
+      "gloss": {
+        "en": "I like culture / Culture is good",
+        "ko": "문화",
+        "zh": "文化很好"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-117",
+      "tokens": [
+        "공연을",
+        "기다려요"
+      ],
+      "full": "공연을 기다려요",
+      "gloss": {
+        "en": "I wait for the performance",
+        "ko": "공연",
+        "zh": "我等演出"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-118",
+      "tokens": [
+        "전시가",
+        "열렸어요"
+      ],
+      "full": "전시가 열렸어요",
+      "gloss": {
+        "en": "An exhibition opened",
+        "ko": "전시",
+        "zh": "展览开了"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-119",
+      "tokens": [
+        "작품을",
+        "찍어요"
+      ],
+      "full": "작품을 찍어요",
+      "gloss": {
+        "en": "I photograph the piece",
+        "ko": "작품",
+        "zh": "我拍作品"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-120",
+      "tokens": [
+        "여가를",
+        "보내요"
+      ],
+      "full": "여가를 보내요",
+      "gloss": {
+        "en": "I spend my leisure time",
+        "ko": "여가",
+        "zh": "我度过闲暇"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-121",
+      "tokens": [
+        "미술관이",
+        "조용해요"
+      ],
+      "full": "미술관이 조용해요",
+      "gloss": {
+        "en": "The art museum is quiet",
+        "ko": "미술관",
+        "zh": "美术馆很安静"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-122",
+      "tokens": [
+        "박물관이",
+        "재미있어요"
+      ],
+      "full": "박물관이 재미있어요",
+      "gloss": {
+        "en": "The museum is fun",
+        "ko": "박물관",
+        "zh": "博物馆很有趣"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-123",
+      "tokens": [
+        "축제가",
+        "시작돼요"
+      ],
+      "full": "축제가 시작돼요",
+      "gloss": {
+        "en": "The festival is starting",
+        "ko": "축제",
+        "zh": "庆典开始了"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-124",
+      "tokens": [
+        "연극이",
+        "길어요"
+      ],
+      "full": "연극이 길어요",
+      "gloss": {
+        "en": "The play is long",
+        "ko": "연극",
+        "zh": "话剧很长"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-125",
+      "tokens": [
+        "관심이",
+        "많아요"
+      ],
+      "full": "관심이 많아요",
+      "gloss": {
+        "en": "I have a lot of interest",
+        "ko": "관심",
+        "zh": "兴趣很多"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-126",
+      "tokens": [
+        "감정이",
+        "복잡해요"
+      ],
+      "full": "감정이 복잡해요",
+      "gloss": {
+        "en": "Feelings are complicated",
+        "ko": "감정",
+        "zh": "感情很复杂"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-127",
+      "tokens": [
+        "기분이",
+        "좋아요"
+      ],
+      "full": "기분이 좋아요",
+      "gloss": {
+        "en": "I'm in a good mood",
+        "ko": "기분",
+        "zh": "心情很好"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-128",
+      "tokens": [
+        "기쁨이",
+        "커요"
+      ],
+      "full": "기쁨이 커요",
+      "gloss": {
+        "en": "The joy is big",
+        "ko": "기쁘다",
+        "zh": "喜悦很大"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-129",
+      "tokens": [
+        "슬픔이",
+        "깊어요"
+      ],
+      "full": "슬픔이 깊어요",
+      "gloss": {
+        "en": "The sadness is deep",
+        "ko": "슬프다",
+        "zh": "悲伤很深"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-130",
+      "tokens": [
+        "화가",
+        "나요"
+      ],
+      "full": "화가 나요",
+      "gloss": {
+        "en": "I get angry",
+        "ko": "화나다",
+        "zh": "生气"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-131",
+      "tokens": [
+        "걱정이",
+        "많아요"
+      ],
+      "full": "걱정이 많아요",
+      "gloss": {
+        "en": "I have a lot of worry",
+        "ko": "걱정",
+        "zh": "担心很多"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-132",
+      "tokens": [
+        "긴장이",
+        "돼요"
+      ],
+      "full": "긴장이 돼요",
+      "gloss": {
+        "en": "I get nervous",
+        "ko": "긴장",
+        "zh": "会紧张"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-133",
+      "tokens": [
+        "실망이",
+        "커요"
+      ],
+      "full": "실망이 커요",
+      "gloss": {
+        "en": "The disappointment is big",
+        "ko": "실망",
+        "zh": "失望很大"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-134",
+      "tokens": [
+        "외로움이",
+        "와요"
+      ],
+      "full": "외로움이 와요",
+      "gloss": {
+        "en": "Loneliness comes",
+        "ko": "외롭다",
+        "zh": "寂寞来了"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-135",
+      "tokens": [
+        "행복이",
+        "찾아요"
+      ],
+      "full": "행복이 찾아요",
+      "gloss": {
+        "en": "Happiness comes to me",
+        "ko": "행복",
+        "zh": "幸福找来"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-136",
+      "tokens": [
+        "스포츠가",
+        "재밌어요"
+      ],
+      "full": "스포츠가 재밌어요",
+      "gloss": {
+        "en": "Sports are fun",
+        "ko": "스포츠",
+        "zh": "体育很有趣"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-137",
+      "tokens": [
+        "경기가",
+        "있어요"
+      ],
+      "full": "경기가 있어요",
+      "gloss": {
+        "en": "There's a match",
+        "ko": "경기",
+        "zh": "有比赛"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-138",
+      "tokens": [
+        "선수가",
+        "달려요"
+      ],
+      "full": "선수가 달려요",
+      "gloss": {
+        "en": "The athlete runs",
+        "ko": "선수",
+        "zh": "选手在跑"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-139",
+      "tokens": [
+        "연습이",
+        "많아요"
+      ],
+      "full": "연습이 많아요",
+      "gloss": {
+        "en": "There is a lot of practice",
+        "ko": "연습",
+        "zh": "练习很多"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-140",
+      "tokens": [
+        "팀이",
+        "강해요"
+      ],
+      "full": "팀이 강해요",
+      "gloss": {
+        "en": "The team is strong",
+        "ko": "팀",
+        "zh": "队伍很强"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-141",
+      "tokens": [
+        "경기장이",
+        "커요"
+      ],
+      "full": "경기장이 커요",
+      "gloss": {
+        "en": "The stadium is big",
+        "ko": "경기장",
+        "zh": "赛场很大"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-142",
+      "tokens": [
+        "수영을",
+        "해요"
+      ],
+      "full": "수영을 해요",
+      "gloss": {
+        "en": "I swim",
+        "ko": "수영",
+        "zh": "我游泳"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-143",
+      "tokens": [
+        "축구를",
+        "봐요"
+      ],
+      "full": "축구를 봐요",
+      "gloss": {
+        "en": "I watch soccer",
+        "ko": "축구",
+        "zh": "我看足球"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-144",
+      "tokens": [
+        "농구를",
+        "해요"
+      ],
+      "full": "농구를 해요",
+      "gloss": {
+        "en": "I play basketball",
+        "ko": "농구",
+        "zh": "我打篮球"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-145",
+      "tokens": [
+        "체력을",
+        "키워요"
+      ],
+      "full": "체력을 키워요",
+      "gloss": {
+        "en": "I build stamina",
+        "ko": "체력",
+        "zh": "我增强体力"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-146",
+      "tokens": [
+        "자연이",
+        "아름다워요"
+      ],
+      "full": "자연이 아름다워요",
+      "gloss": {
+        "en": "Nature is beautiful",
+        "ko": "자연",
+        "zh": "自然很美"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-147",
+      "tokens": [
+        "환경을",
+        "지켜요"
+      ],
+      "full": "환경을 지켜요",
+      "gloss": {
+        "en": "I protect the environment",
+        "ko": "환경",
+        "zh": "我保护环境"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-148",
+      "tokens": [
+        "산에",
+        "올라요"
+      ],
+      "full": "산에 올라요",
+      "gloss": {
+        "en": "I go up the mountain",
+        "ko": "산",
+        "zh": "我上山"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-149",
+      "tokens": [
+        "강이",
+        "길어요"
+      ],
+      "full": "강이 길어요",
+      "gloss": {
+        "en": "The river is long",
+        "ko": "강",
+        "zh": "河很长"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-150",
+      "tokens": [
+        "바다를",
+        "봐요"
+      ],
+      "full": "바다를 봐요",
+      "gloss": {
+        "en": "I look at the sea",
+        "ko": "바다",
+        "zh": "我看海"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-151",
+      "tokens": [
+        "숲이",
+        "깊어요"
+      ],
+      "full": "숲이 깊어요",
+      "gloss": {
+        "en": "The forest is deep",
+        "ko": "숲",
+        "zh": "森林很深"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-152",
+      "tokens": [
+        "나무를",
+        "가꿔요"
+      ],
+      "full": "나무를 가꿔요",
+      "gloss": {
+        "en": "I tend the trees",
+        "ko": "나무",
+        "zh": "我照料树"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-153",
+      "tokens": [
+        "꽃이",
+        "펴요"
+      ],
+      "full": "꽃이 펴요",
+      "gloss": {
+        "en": "The flowers bloom",
+        "ko": "꽃",
+        "zh": "花开"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-154",
+      "tokens": [
+        "동물을",
+        "보호해요"
+      ],
+      "full": "동물을 보호해요",
+      "gloss": {
+        "en": "I protect animals",
+        "ko": "동물",
+        "zh": "我保护动物"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-155",
+      "tokens": [
+        "공원을",
+        "걸어요"
+      ],
+      "full": "공원을 걸어요",
+      "gloss": {
+        "en": "I walk the park",
+        "ko": "공원",
+        "zh": "我走公园"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-156",
+      "tokens": [
+        "식당에",
+        "가요"
+      ],
+      "full": "식당에 가요",
+      "gloss": {
+        "en": "I go to a restaurant",
+        "ko": "식당",
+        "zh": "我去餐厅"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-157",
+      "tokens": [
+        "메뉴를",
+        "골라요"
+      ],
+      "full": "메뉴를 골라요",
+      "gloss": {
+        "en": "I choose from the menu",
+        "ko": "메뉴",
+        "zh": "我选菜单"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-158",
+      "tokens": [
+        "주문이",
+        "늦어요"
+      ],
+      "full": "주문이 늦어요",
+      "gloss": {
+        "en": "The order is late",
+        "ko": "주문",
+        "zh": "点餐晚了"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-159",
+      "tokens": [
+        "음식이",
+        "맛있어요"
+      ],
+      "full": "음식이 맛있어요",
+      "gloss": {
+        "en": "The food is delicious",
+        "ko": "맛있다",
+        "zh": "饭菜很好吃"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-160",
+      "tokens": [
+        "요리를",
+        "배워요"
+      ],
+      "full": "요리를 배워요",
+      "gloss": {
+        "en": "I learn cooking",
+        "ko": "요리",
+        "zh": "我学做菜"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-161",
+      "tokens": [
+        "식사를",
+        "마쳐요"
+      ],
+      "full": "식사를 마쳐요",
+      "gloss": {
+        "en": "I finish the meal",
+        "ko": "식사",
+        "zh": "我吃完"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-162",
+      "tokens": [
+        "배가",
+        "고파요"
+      ],
+      "full": "배가 고파요",
+      "gloss": {
+        "en": "I’m hungry",
+        "ko": "배고프다",
+        "zh": "我饿了"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-163",
+      "tokens": [
+        "반찬이",
+        "짜요"
+      ],
+      "full": "반찬이 짜요",
+      "gloss": {
+        "en": "The side dish is salty",
+        "ko": "반찬·짜다",
+        "zh": "小菜很咸"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-164",
+      "tokens": [
+        "계산을",
+        "부탁해요"
+      ],
+      "full": "계산을 부탁해요",
+      "gloss": {
+        "en": "Please bring the bill",
+        "ko": "계산",
+        "zh": "请结账"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-165",
+      "tokens": [
+        "손님이",
+        "와요"
+      ],
+      "full": "손님이 와요",
+      "gloss": {
+        "en": "A customer comes",
+        "ko": "손님",
+        "zh": "客人来了"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-166",
+      "tokens": [
+        "옷을",
+        "입어요"
+      ],
+      "full": "옷을 입어요",
+      "gloss": {
+        "en": "I put on clothes",
+        "ko": "입다",
+        "zh": "我穿衣服"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-167",
+      "tokens": [
+        "신발을",
+        "벗어요"
+      ],
+      "full": "신발을 벗어요",
+      "gloss": {
+        "en": "I take off my shoes",
+        "ko": "벗다",
+        "zh": "我脱鞋"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-168",
+      "tokens": [
+        "바지가",
+        "길어요"
+      ],
+      "full": "바지가 길어요",
+      "gloss": {
+        "en": "The pants are long",
+        "ko": "바지",
+        "zh": "裤子很长"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-169",
+      "tokens": [
+        "치마가",
+        "예뻐요"
+      ],
+      "full": "치마가 예뻐요",
+      "gloss": {
+        "en": "The skirt is pretty",
+        "ko": "치마",
+        "zh": "裙子好看"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-170",
+      "tokens": [
+        "사이즈가",
+        "맞아요"
+      ],
+      "full": "사이즈가 맞아요",
+      "gloss": {
+        "en": "The size fits",
+        "ko": "사이즈·맞다",
+        "zh": "尺码合适"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-171",
+      "tokens": [
+        "색깔을",
+        "골라요"
+      ],
+      "full": "색깔을 골라요",
+      "gloss": {
+        "en": "I choose a color",
+        "ko": "색깔",
+        "zh": "我选颜色"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-172",
+      "tokens": [
+        "환불을",
+        "해요"
+      ],
+      "full": "환불을 해요",
+      "gloss": {
+        "en": "I get a refund",
+        "ko": "환불",
+        "zh": "我退款"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-173",
+      "tokens": [
+        "세탁소에",
+        "가요"
+      ],
+      "full": "세탁소에 가요",
+      "gloss": {
+        "en": "I go to the laundry",
+        "ko": "세탁소",
+        "zh": "我去洗衣店"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-174",
+      "tokens": [
+        "코트를",
+        "입어요"
+      ],
+      "full": "코트를 입어요",
+      "gloss": {
+        "en": "I put on a coat",
+        "ko": "코트",
+        "zh": "我穿大衣"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-175",
+      "tokens": [
+        "옷이",
+        "비싸요"
+      ],
+      "full": "옷이 비싸요",
+      "gloss": {
+        "en": "The clothes are expensive",
+        "ko": "옷",
+        "zh": "衣服很贵"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-176",
+      "tokens": [
+        "노래를",
+        "불러요"
+      ],
+      "full": "노래를 불러요",
+      "gloss": {
+        "en": "I sing a song",
+        "ko": "부르다",
+        "zh": "我唱歌"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-177",
+      "tokens": [
+        "그림을",
+        "그려요"
+      ],
+      "full": "그림을 그려요",
+      "gloss": {
+        "en": "I draw a picture",
+        "ko": "그리다",
+        "zh": "我画画"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-178",
+      "tokens": [
+        "예술이",
+        "좋아요"
+      ],
+      "full": "예술이 좋아요",
+      "gloss": {
+        "en": "I like art",
+        "ko": "예술",
+        "zh": "我喜欢艺术"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-179",
+      "tokens": [
+        "악기를",
+        "배워요"
+      ],
+      "full": "악기를 배워요",
+      "gloss": {
+        "en": "I learn an instrument",
+        "ko": "악기",
+        "zh": "我学乐器"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-180",
+      "tokens": [
+        "연주를",
+        "들어요"
+      ],
+      "full": "연주를 들어요",
+      "gloss": {
+        "en": "I listen to a performance",
+        "ko": "연주",
+        "zh": "我听演奏"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-181",
+      "tokens": [
+        "감상을",
+        "해요"
+      ],
+      "full": "감상을 해요",
+      "gloss": {
+        "en": "I appreciate (music/art)",
+        "ko": "감상",
+        "zh": "我欣赏"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-182",
+      "tokens": [
+        "가수가",
+        "유명해요"
+      ],
+      "full": "가수가 유명해요",
+      "gloss": {
+        "en": "The singer is famous",
+        "ko": "가수",
+        "zh": "歌手很有名"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-183",
+      "tokens": [
+        "춤을",
+        "배워요"
+      ],
+      "full": "춤을 배워요",
+      "gloss": {
+        "en": "I learn dance",
+        "ko": "춤",
+        "zh": "我学跳舞"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-184",
+      "tokens": [
+        "배우가",
+        "잘해요"
+      ],
+      "full": "배우가 잘해요",
+      "gloss": {
+        "en": "The actor is good",
+        "ko": "배우",
+        "zh": "演员演得好"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-185",
+      "tokens": [
+        "무대에",
+        "가요"
+      ],
+      "full": "무대에 가요",
+      "gloss": {
+        "en": "I go to the stage",
+        "ko": "무대",
+        "zh": "我去舞台"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-186",
+      "tokens": [
+        "뉴스를",
+        "들어요"
+      ],
+      "full": "뉴스를 들어요",
+      "gloss": {
+        "en": "I listen to the news",
+        "ko": "뉴스",
+        "zh": "我听新闻"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-187",
+      "tokens": [
+        "신문을",
+        "읽어요"
+      ],
+      "full": "신문을 읽어요",
+      "gloss": {
+        "en": "I read the newspaper",
+        "ko": "신문",
+        "zh": "我看报纸"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-188",
+      "tokens": [
+        "방송이",
+        "시작돼요"
+      ],
+      "full": "방송이 시작돼요",
+      "gloss": {
+        "en": "The broadcast is starting",
+        "ko": "방송",
+        "zh": "播出开始了"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-189",
+      "tokens": [
+        "기자가",
+        "왔어요"
+      ],
+      "full": "기자가 왔어요",
+      "gloss": {
+        "en": "The reporter came",
+        "ko": "기자",
+        "zh": "记者来了"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-190",
+      "tokens": [
+        "보도를",
+        "확인해요"
+      ],
+      "full": "보도를 확인해요",
+      "gloss": {
+        "en": "I check the news report",
+        "ko": "보도",
+        "zh": "我核对报道"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-191",
+      "tokens": [
+        "텔레비전을",
+        "봐요"
+      ],
+      "full": "텔레비전을 봐요",
+      "gloss": {
+        "en": "I watch television",
+        "ko": "텔레비전",
+        "zh": "我看电视"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-192",
+      "tokens": [
+        "라디오를",
+        "들어요"
+      ],
+      "full": "라디오를 들어요",
+      "gloss": {
+        "en": "I listen to the radio",
+        "ko": "라디오",
+        "zh": "我听收音机"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-193",
+      "tokens": [
+        "프로그램을",
+        "골라요"
+      ],
+      "full": "프로그램을 골라요",
+      "gloss": {
+        "en": "I choose a program",
+        "ko": "프로그램",
+        "zh": "我选节目"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-194",
+      "tokens": [
+        "기사를",
+        "써요"
+      ],
+      "full": "기사를 써요",
+      "gloss": {
+        "en": "I write an article",
+        "ko": "기사",
+        "zh": "我写报道"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-195",
+      "tokens": [
+        "제목이",
+        "짧아요"
+      ],
+      "full": "제목이 짧아요",
+      "gloss": {
+        "en": "The headline is short",
+        "ko": "제목",
+        "zh": "标题很短"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-196",
+      "tokens": [
+        "생일을",
+        "축하해요"
+      ],
+      "full": "생일을 축하해요",
+      "gloss": {
+        "en": "Happy birthday / I celebrate the birthday",
+        "ko": "생일",
+        "zh": "祝贺生日"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-197",
+      "tokens": [
+        "축하를",
+        "전해요"
+      ],
+      "full": "축하를 전해요",
+      "gloss": {
+        "en": "I send congratulations",
+        "ko": "축하",
+        "zh": "我转达祝贺"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-198",
+      "tokens": [
+        "선물을",
+        "사요"
+      ],
+      "full": "선물을 사요",
+      "gloss": {
+        "en": "I buy a gift",
+        "ko": "선물",
+        "zh": "我买礼物"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-199",
+      "tokens": [
+        "명절에",
+        "모여요"
+      ],
+      "full": "명절에 모여요",
+      "gloss": {
+        "en": "We gather on traditional holidays",
+        "ko": "명절",
+        "zh": "过节时聚在一起"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-200",
+      "tokens": [
+        "초대를",
+        "받아요"
+      ],
+      "full": "초대를 받아요",
+      "gloss": {
+        "en": "I receive an invitation",
+        "ko": "초대",
+        "zh": "我收到邀请"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-201",
+      "tokens": [
+        "파티를",
+        "해요"
+      ],
+      "full": "파티를 해요",
+      "gloss": {
+        "en": "We have a party",
+        "ko": "파티",
+        "zh": "我们办派对"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-202",
+      "tokens": [
+        "케이크를",
+        "잘라요"
+      ],
+      "full": "케이크를 잘라요",
+      "gloss": {
+        "en": "I cut the cake",
+        "ko": "케이크",
+        "zh": "我切蛋糕"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-203",
+      "tokens": [
+        "휴가를",
+        "내요"
+      ],
+      "full": "휴가를 내요",
+      "gloss": {
+        "en": "I take leave / vacation",
+        "ko": "휴가",
+        "zh": "我请假休假"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-204",
+      "tokens": [
+        "모임이",
+        "있어요"
+      ],
+      "full": "모임이 있어요",
+      "gloss": {
+        "en": "There is a gathering",
+        "ko": "모임",
+        "zh": "有聚会"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-205",
+      "tokens": [
+        "건배를",
+        "해요"
+      ],
+      "full": "건배를 해요",
+      "gloss": {
+        "en": "We make a toast",
+        "ko": "건배",
+        "zh": "我们干杯"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-206",
+      "tokens": [
+        "시간이",
+        "없어요"
+      ],
+      "full": "시간이 없어요",
+      "gloss": {
+        "en": "I don’t have time",
+        "ko": "시간",
+        "zh": "我没时间"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-207",
+      "tokens": [
+        "약속을",
+        "잡아요"
+      ],
+      "full": "약속을 잡아요",
+      "gloss": {
+        "en": "I make an appointment",
+        "ko": "약속",
+        "zh": "我约时间"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-208",
+      "tokens": [
+        "친구를",
+        "만나요"
+      ],
+      "full": "친구를 만나요",
+      "gloss": {
+        "en": "I meet a friend",
+        "ko": "만나다",
+        "zh": "我见朋友"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-209",
+      "tokens": [
+        "여기서",
+        "기다려요"
+      ],
+      "full": "여기서 기다려요",
+      "gloss": {
+        "en": "I wait here",
+        "ko": "기다리다",
+        "zh": "我在这里等"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-210",
+      "tokens": [
+        "일찍",
+        "나가요"
+      ],
+      "full": "일찍 나가요",
+      "gloss": {
+        "en": "I go out early",
+        "ko": "일찍",
+        "zh": "我早点出门"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-211",
+      "tokens": [
+        "시계를",
+        "봐요"
+      ],
+      "full": "시계를 봐요",
+      "gloss": {
+        "en": "I look at the clock",
+        "ko": "시계",
+        "zh": "我看钟表"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-212",
+      "tokens": [
+        "세 시에",
+        "만나요"
+      ],
+      "full": "세 시에 만나요",
+      "gloss": {
+        "en": "Let’s meet at three o’clock",
+        "ko": "시",
+        "zh": "三点见"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-213",
+      "tokens": [
+        "주말에",
+        "쉬어요"
+      ],
+      "full": "주말에 쉬어요",
+      "gloss": {
+        "en": "I rest on the weekend",
+        "ko": "주말",
+        "zh": "我周末休息"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-214",
+      "tokens": [
+        "오전에",
+        "만나요"
+      ],
+      "full": "오전에 만나요",
+      "gloss": {
+        "en": "Let’s meet in the morning",
+        "ko": "오전",
+        "zh": "上午见"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-215",
+      "tokens": [
+        "오후가",
+        "편해요"
+      ],
+      "full": "오후가 편해요",
+      "gloss": {
+        "en": "The afternoon is convenient",
+        "ko": "오후",
+        "zh": "下午方便"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-216",
+      "tokens": [
+        "청소를",
+        "해요"
+      ],
+      "full": "청소를 해요",
+      "gloss": {
+        "en": "I do the cleaning",
+        "ko": "청소",
+        "zh": "我打扫"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-217",
+      "tokens": [
+        "빨래가",
+        "많아요"
+      ],
+      "full": "빨래가 많아요",
+      "gloss": {
+        "en": "There is a lot of laundry",
+        "ko": "빨래",
+        "zh": "要洗的衣服很多"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-218",
+      "tokens": [
+        "설거지를",
+        "해요"
+      ],
+      "full": "설거지를 해요",
+      "gloss": {
+        "en": "I do the dishes",
+        "ko": "설거지",
+        "zh": "我洗碗"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-219",
+      "tokens": [
+        "부엌이",
+        "좁아요"
+      ],
+      "full": "부엌이 좁아요",
+      "gloss": {
+        "en": "The kitchen is narrow",
+        "ko": "부엌",
+        "zh": "厨房很窄"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-220",
+      "tokens": [
+        "냉장고를",
+        "열어요"
+      ],
+      "full": "냉장고를 열어요",
+      "gloss": {
+        "en": "I open the fridge",
+        "ko": "냉장고",
+        "zh": "我打开冰箱"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-221",
+      "tokens": [
+        "유리를",
+        "닦아요"
+      ],
+      "full": "유리를 닦아요",
+      "gloss": {
+        "en": "I wipe the glass",
+        "ko": "닦다",
+        "zh": "我擦玻璃"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-222",
+      "tokens": [
+        "얼굴을",
+        "씻어요"
+      ],
+      "full": "얼굴을 씻어요",
+      "gloss": {
+        "en": "I wash my face",
+        "ko": "씻다",
+        "zh": "我洗脸"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-223",
+      "tokens": [
+        "서랍을",
+        "정리해요"
+      ],
+      "full": "서랍을 정리해요",
+      "gloss": {
+        "en": "I tidy the drawer",
+        "ko": "정리하다",
+        "zh": "我整理抽屉"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-224",
+      "tokens": [
+        "수건을",
+        "줘요"
+      ],
+      "full": "수건을 줘요",
+      "gloss": {
+        "en": "I give a towel",
+        "ko": "수건",
+        "zh": "我给毛巾"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-225",
+      "tokens": [
+        "침대가",
+        "높아요"
+      ],
+      "full": "침대가 높아요",
+      "gloss": {
+        "en": "The bed is high",
+        "ko": "침대",
+        "zh": "床很高"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-226",
+      "tokens": [
+        "머리가",
+        "무거워요"
+      ],
+      "full": "머리가 무거워요",
+      "gloss": {
+        "en": "My head feels heavy",
+        "ko": "머리",
+        "zh": "头很沉"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-227",
+      "tokens": [
+        "손을",
+        "들어요"
+      ],
+      "full": "손을 들어요",
+      "gloss": {
+        "en": "I raise my hand",
+        "ko": "손",
+        "zh": "我举手"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-228",
+      "tokens": [
+        "발이",
+        "부어요"
+      ],
+      "full": "발이 부어요",
+      "gloss": {
+        "en": "My feet are swollen",
+        "ko": "발",
+        "zh": "脚肿了"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-229",
+      "tokens": [
+        "얼굴을",
+        "가려요"
+      ],
+      "full": "얼굴을 가려요",
+      "gloss": {
+        "en": "I cover my face",
+        "ko": "얼굴",
+        "zh": "我捂住脸"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-230",
+      "tokens": [
+        "몸을",
+        "펴요"
+      ],
+      "full": "몸을 펴요",
+      "gloss": {
+        "en": "I stretch my body",
+        "ko": "몸",
+        "zh": "我伸展身体"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-231",
+      "tokens": [
+        "팔이",
+        "아파요"
+      ],
+      "full": "팔이 아파요",
+      "gloss": {
+        "en": "My arm hurts",
+        "ko": "팔",
+        "zh": "胳膊疼"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-232",
+      "tokens": [
+        "다리가",
+        "저려요"
+      ],
+      "full": "다리가 저려요",
+      "gloss": {
+        "en": "My legs are numb",
+        "ko": "다리",
+        "zh": "腿发麻"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-233",
+      "tokens": [
+        "목을",
+        "만져요"
+      ],
+      "full": "목을 만져요",
+      "gloss": {
+        "en": "I touch my neck",
+        "ko": "목",
+        "zh": "我摸脖子"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-234",
+      "tokens": [
+        "입을",
+        "다물어요"
+      ],
+      "full": "입을 다물어요",
+      "gloss": {
+        "en": "I close my mouth",
+        "ko": "입",
+        "zh": "我闭上嘴"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-235",
+      "tokens": [
+        "어깨가",
+        "굳어요"
+      ],
+      "full": "어깨가 굳어요",
+      "gloss": {
+        "en": "My shoulders stiffen",
+        "ko": "어깨",
+        "zh": "肩膀变僵"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-236",
+      "tokens": [
+        "앞이",
+        "보여요"
+      ],
+      "full": "앞이 보여요",
+      "gloss": {
+        "en": "The front is visible",
+        "ko": "앞",
+        "zh": "前面看得见"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-237",
+      "tokens": [
+        "뒤로",
+        "가요"
+      ],
+      "full": "뒤로 가요",
+      "gloss": {
+        "en": "I go to the back",
+        "ko": "뒤",
+        "zh": "我往后走"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-238",
+      "tokens": [
+        "옆에",
+        "앉아요"
+      ],
+      "full": "옆에 앉아요",
+      "gloss": {
+        "en": "I sit beside",
+        "ko": "옆",
+        "zh": "我坐旁边"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-239",
+      "tokens": [
+        "위에",
+        "올려요"
+      ],
+      "full": "위에 올려요",
+      "gloss": {
+        "en": "I put it on top",
+        "ko": "위",
+        "zh": "我放上面"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-240",
+      "tokens": [
+        "아래에",
+        "두어요"
+      ],
+      "full": "아래에 두어요",
+      "gloss": {
+        "en": "I place it below",
+        "ko": "아래",
+        "zh": "我放下面"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-241",
+      "tokens": [
+        "왼쪽으로",
+        "돌아요"
+      ],
+      "full": "왼쪽으로 돌아요",
+      "gloss": {
+        "en": "I turn to the left",
+        "ko": "왼쪽",
+        "zh": "我往左转"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-242",
+      "tokens": [
+        "오른쪽을",
+        "봐요"
+      ],
+      "full": "오른쪽을 봐요",
+      "gloss": {
+        "en": "I look to the right",
+        "ko": "오른쪽",
+        "zh": "我看右边"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-243",
+      "tokens": [
+        "근처에",
+        "살아요"
+      ],
+      "full": "근처에 살아요",
+      "gloss": {
+        "en": "I live nearby",
+        "ko": "근처",
+        "zh": "我住附近"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-244",
+      "tokens": [
+        "길을",
+        "물어봐요"
+      ],
+      "full": "길을 물어봐요",
+      "gloss": {
+        "en": "I ask for the way",
+        "ko": "길",
+        "zh": "我问路"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-245",
+      "tokens": [
+        "지도를",
+        "펴요"
+      ],
+      "full": "지도를 펴요",
+      "gloss": {
+        "en": "I open the map",
+        "ko": "지도",
+        "zh": "我摊开地图"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-246",
+      "tokens": [
+        "문을",
+        "닫아 주세요"
+      ],
+      "full": "문을 닫아 주세요",
+      "gloss": {
+        "en": "Please close the door",
+        "ko": "문",
+        "zh": "请关门"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-247",
+      "tokens": [
+        "제 방은",
+        "편해요"
+      ],
+      "full": "제 방은 편해요",
+      "gloss": {
+        "en": "My room is comfortable",
+        "ko": "방",
+        "zh": "我的房间很舒服"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-248",
+      "tokens": [
+        "가구가",
+        "많아요"
+      ],
+      "full": "가구가 많아요",
+      "gloss": {
+        "en": "There is a lot of furniture",
+        "ko": "가구",
+        "zh": "家具很多"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-249",
+      "tokens": [
+        "소파에서",
+        "쉬어요"
+      ],
+      "full": "소파에서 쉬어요",
+      "gloss": {
+        "en": "I rest on the sofa",
+        "ko": "소파",
+        "zh": "我在沙发上休息"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-250",
+      "tokens": [
+        "거울을",
+        "봐요"
+      ],
+      "full": "거울을 봐요",
+      "gloss": {
+        "en": "I look in the mirror",
+        "ko": "거울",
+        "zh": "我照镜子"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-251",
+      "tokens": [
+        "식탁에",
+        "차려요"
+      ],
+      "full": "식탁에 차려요",
+      "gloss": {
+        "en": "I set the meal on the dining table",
+        "ko": "식탁",
+        "zh": "我摆到餐桌上"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-252",
+      "tokens": [
+        "책장에",
+        "꽂아요"
+      ],
+      "full": "책장에 꽂아요",
+      "gloss": {
+        "en": "I put it on the bookshelf",
+        "ko": "책장",
+        "zh": "我插在书架上"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-253",
+      "tokens": [
+        "거실은",
+        "밝아요"
+      ],
+      "full": "거실은 밝아요",
+      "gloss": {
+        "en": "The living room is bright",
+        "ko": "거실",
+        "zh": "客厅很亮"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-254",
+      "tokens": [
+        "옷장에",
+        "넣어요"
+      ],
+      "full": "옷장에 넣어요",
+      "gloss": {
+        "en": "I put it in the wardrobe",
+        "ko": "옷장",
+        "zh": "我放进衣柜"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-255",
+      "tokens": [
+        "창문을",
+        "열어요"
+      ],
+      "full": "창문을 열어요",
+      "gloss": {
+        "en": "I open the window",
+        "ko": "창문",
+        "zh": "我开窗"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-256",
+      "tokens": [
+        "과일을",
+        "골라요"
+      ],
+      "full": "과일을 골라요",
+      "gloss": {
+        "en": "I pick fruit",
+        "ko": "과일",
+        "zh": "我挑水果"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-257",
+      "tokens": [
+        "채소가",
+        "싸요"
+      ],
+      "full": "채소가 싸요",
+      "gloss": {
+        "en": "The vegetables are cheap",
+        "ko": "채소",
+        "zh": "蔬菜很便宜"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-258",
+      "tokens": [
+        "시장에",
+        "가요"
+      ],
+      "full": "시장에 가요",
+      "gloss": {
+        "en": "I go to the market",
+        "ko": "시장",
+        "zh": "我去市场"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-259",
+      "tokens": [
+        "사과를",
+        "깎아요"
+      ],
+      "full": "사과를 깎아요",
+      "gloss": {
+        "en": "I peel an apple",
+        "ko": "사과",
+        "zh": "我削苹果"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-260",
+      "tokens": [
+        "바나나가",
+        "노래요"
+      ],
+      "full": "바나나가 노래요",
+      "gloss": {
+        "en": "The bananas are yellow",
+        "ko": "바나나",
+        "zh": "香蕉是黄色的"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-261",
+      "tokens": [
+        "포도를",
+        "담아요"
+      ],
+      "full": "포도를 담아요",
+      "gloss": {
+        "en": "I put grapes in",
+        "ko": "포도",
+        "zh": "我装葡萄"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-262",
+      "tokens": [
+        "수박을",
+        "잘라요"
+      ],
+      "full": "수박을 잘라요",
+      "gloss": {
+        "en": "I cut the watermelon",
+        "ko": "수박",
+        "zh": "我切西瓜"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-263",
+      "tokens": [
+        "딸기를",
+        "골라요"
+      ],
+      "full": "딸기를 골라요",
+      "gloss": {
+        "en": "I pick strawberries",
+        "ko": "딸기",
+        "zh": "我挑草莓"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-264",
+      "tokens": [
+        "상자에",
+        "넣어요"
+      ],
+      "full": "상자에 넣어요",
+      "gloss": {
+        "en": "I put it in a box",
+        "ko": "상자",
+        "zh": "我放进箱子"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-265",
+      "tokens": [
+        "토마토가",
+        "빨개요"
+      ],
+      "full": "토마토가 빨개요",
+      "gloss": {
+        "en": "The tomato is red",
+        "ko": "토마토",
+        "zh": "番茄是红色的"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-266",
+      "tokens": [
+        "그릇을",
+        "닦아요"
+      ],
+      "full": "그릇을 닦아요",
+      "gloss": {
+        "en": "I wipe the bowl",
+        "ko": "그릇",
+        "zh": "我擦碗"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-267",
+      "tokens": [
+        "접시를",
+        "쌓아요"
+      ],
+      "full": "접시를 쌓아요",
+      "gloss": {
+        "en": "I stack the plates",
+        "ko": "접시",
+        "zh": "我叠盘子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-268",
+      "tokens": [
+        "컵에",
+        "담아요"
+      ],
+      "full": "컵에 담아요",
+      "gloss": {
+        "en": "I put it in a cup",
+        "ko": "컵",
+        "zh": "我装进杯子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-269",
+      "tokens": [
+        "숟가락을",
+        "주세요"
+      ],
+      "full": "숟가락을 주세요",
+      "gloss": {
+        "en": "Please give me a spoon",
+        "ko": "숟가락",
+        "zh": "请给我勺子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-270",
+      "tokens": [
+        "젓가락을",
+        "골라요"
+      ],
+      "full": "젓가락을 골라요",
+      "gloss": {
+        "en": "I pick chopsticks",
+        "ko": "젓가락",
+        "zh": "我挑筷子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-271",
+      "tokens": [
+        "포크를",
+        "꺼내요"
+      ],
+      "full": "포크를 꺼내요",
+      "gloss": {
+        "en": "I take out a fork",
+        "ko": "포크",
+        "zh": "我拿出叉子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-272",
+      "tokens": [
+        "쟁반에",
+        "올려요"
+      ],
+      "full": "쟁반에 올려요",
+      "gloss": {
+        "en": "I put it on the tray",
+        "ko": "쟁반",
+        "zh": "我放到托盘上"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-273",
+      "tokens": [
+        "프라이팬에",
+        "부쳐요"
+      ],
+      "full": "프라이팬에 부쳐요",
+      "gloss": {
+        "en": "I fry it in a frying pan",
+        "ko": "프라이팬",
+        "zh": "我用平底锅煎"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-274",
+      "tokens": [
+        "주전자에",
+        "넣어요"
+      ],
+      "full": "주전자에 넣어요",
+      "gloss": {
+        "en": "I put it in the kettle",
+        "ko": "주전자",
+        "zh": "我放进水壶"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-275",
+      "tokens": [
+        "도마를",
+        "닦아요"
+      ],
+      "full": "도마를 닦아요",
+      "gloss": {
+        "en": "I wipe the cutting board",
+        "ko": "도마",
+        "zh": "我擦砧板"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-276",
+      "tokens": [
+        "펜을",
+        "빌릴게요"
+      ],
+      "full": "펜을 빌릴게요",
+      "gloss": {
+        "en": "I will borrow a pen",
+        "ko": "펜",
+        "zh": "我借支笔"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-277",
+      "tokens": [
+        "연필을",
+        "깎아요"
+      ],
+      "full": "연필을 깎아요",
+      "gloss": {
+        "en": "I sharpen the pencil",
+        "ko": "연필",
+        "zh": "我削铅笔"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-278",
+      "tokens": [
+        "볼펜을",
+        "찾아요"
+      ],
+      "full": "볼펜을 찾아요",
+      "gloss": {
+        "en": "I look for a ballpoint pen",
+        "ko": "볼펜",
+        "zh": "我找圆珠笔"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-279",
+      "tokens": [
+        "지우개를",
+        "빌려요"
+      ],
+      "full": "지우개를 빌려요",
+      "gloss": {
+        "en": "I borrow an eraser",
+        "ko": "지우개",
+        "zh": "我借橡皮"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-280",
+      "tokens": [
+        "공책에",
+        "적어요"
+      ],
+      "full": "공책에 적어요",
+      "gloss": {
+        "en": "I write it in the notebook",
+        "ko": "공책",
+        "zh": "我记在练习本上"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-281",
+      "tokens": [
+        "종이를",
+        "접어요"
+      ],
+      "full": "종이를 접어요",
+      "gloss": {
+        "en": "I fold the paper",
+        "ko": "종이",
+        "zh": "我折纸"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-282",
+      "tokens": [
+        "가위를",
+        "빌려요"
+      ],
+      "full": "가위를 빌려요",
+      "gloss": {
+        "en": "I borrow scissors",
+        "ko": "가위",
+        "zh": "我借剪刀"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-283",
+      "tokens": [
+        "풀이",
+        "없어요"
+      ],
+      "full": "풀이 없어요",
+      "gloss": {
+        "en": "There is no glue",
+        "ko": "풀",
+        "zh": "没有胶水"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-284",
+      "tokens": [
+        "필통을",
+        "열어요"
+      ],
+      "full": "필통을 열어요",
+      "gloss": {
+        "en": "I open the pencil case",
+        "ko": "필통",
+        "zh": "我打开笔袋"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-285",
+      "tokens": [
+        "자를",
+        "주세요"
+      ],
+      "full": "자를 주세요",
+      "gloss": {
+        "en": "Please give me a ruler",
+        "ko": "자",
+        "zh": "请给我尺子"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-286",
+      "tokens": [
+        "편지를",
+        "읽어요"
+      ],
+      "full": "편지를 읽어요",
+      "gloss": {
+        "en": "I read the letter",
+        "ko": "편지",
+        "zh": "我读信"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-287",
+      "tokens": [
+        "소포를",
+        "열어요"
+      ],
+      "full": "소포를 열어요",
+      "gloss": {
+        "en": "I open the parcel",
+        "ko": "소포",
+        "zh": "我打开包裹"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-288",
+      "tokens": [
+        "우표를",
+        "골라요"
+      ],
+      "full": "우표를 골라요",
+      "gloss": {
+        "en": "I pick a stamp",
+        "ko": "우표",
+        "zh": "我挑邮票"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-289",
+      "tokens": [
+        "우체국으로",
+        "가요"
+      ],
+      "full": "우체국으로 가요",
+      "gloss": {
+        "en": "I go to the post office",
+        "ko": "우체국",
+        "zh": "我去邮局"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-290",
+      "tokens": [
+        "주소를",
+        "메모해요"
+      ],
+      "full": "주소를 메모해요",
+      "gloss": {
+        "en": "I jot down the address",
+        "ko": "주소",
+        "zh": "我记下地址"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-291",
+      "tokens": [
+        "봉투를",
+        "접어요"
+      ],
+      "full": "봉투를 접어요",
+      "gloss": {
+        "en": "I fold the envelope",
+        "ko": "봉투",
+        "zh": "我折信封"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-292",
+      "tokens": [
+        "엽서를",
+        "사요"
+      ],
+      "full": "엽서를 사요",
+      "gloss": {
+        "en": "I buy a postcard",
+        "ko": "엽서",
+        "zh": "我买明信片"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-293",
+      "tokens": [
+        "도착을",
+        "확인해요"
+      ],
+      "full": "도착을 확인해요",
+      "gloss": {
+        "en": "I check the arrival",
+        "ko": "도착",
+        "zh": "我确认到达"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-294",
+      "tokens": [
+        "서류를",
+        "부쳐요"
+      ],
+      "full": "서류를 부쳐요",
+      "gloss": {
+        "en": "I mail the documents",
+        "ko": "부치다",
+        "zh": "我寄文件"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-295",
+      "tokens": [
+        "포장이",
+        "끝났어요"
+      ],
+      "full": "포장이 끝났어요",
+      "gloss": {
+        "en": "The packing is done",
+        "ko": "포장",
+        "zh": "包装好了"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-296",
+      "tokens": [
+        "소가",
+        "있어요"
+      ],
+      "full": "소가 있어요",
+      "gloss": {
+        "en": "There is a cow",
+        "ko": "소",
+        "zh": "有牛"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-297",
+      "tokens": [
+        "돼지가",
+        "커요"
+      ],
+      "full": "돼지가 커요",
+      "gloss": {
+        "en": "The pig is big",
+        "ko": "돼지",
+        "zh": "猪很大"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-298",
+      "tokens": [
+        "개가",
+        "문을",
+        "봐요"
+      ],
+      "full": "개가 문을 봐요",
+      "gloss": {
+        "en": "The dog looks at the door",
+        "ko": "개",
+        "zh": "狗看着门"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-299",
+      "tokens": [
+        "고양이가",
+        "자요"
+      ],
+      "full": "고양이가 자요",
+      "gloss": {
+        "en": "The cat is sleeping",
+        "ko": "고양이",
+        "zh": "猫在睡觉"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-300",
+      "tokens": [
+        "새가",
+        "날아요"
+      ],
+      "full": "새가 날아요",
+      "gloss": {
+        "en": "A bird is flying",
+        "ko": "새",
+        "zh": "鸟在飞"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-301",
+      "tokens": [
+        "강아지를",
+        "키워요"
+      ],
+      "full": "강아지를 키워요",
+      "gloss": {
+        "en": "I keep a puppy",
+        "ko": "강아지",
+        "zh": "我养小狗"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-302",
+      "tokens": [
+        "물고기를",
+        "먹여요"
+      ],
+      "full": "물고기를 먹여요",
+      "gloss": {
+        "en": "I feed the fish",
+        "ko": "물고기",
+        "zh": "我喂鱼"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-303",
+      "tokens": [
+        "토끼가",
+        "뛰어요"
+      ],
+      "full": "토끼가 뛰어요",
+      "gloss": {
+        "en": "The rabbit is hopping",
+        "ko": "토끼",
+        "zh": "兔子在跳"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-304",
+      "tokens": [
+        "닭이",
+        "울어요"
+      ],
+      "full": "닭이 울어요",
+      "gloss": {
+        "en": "The chicken is crowing",
+        "ko": "닭",
+        "zh": "鸡在叫"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-305",
+      "tokens": [
+        "말을",
+        "타요"
+      ],
+      "full": "말을 타요",
+      "gloss": {
+        "en": "I ride a horse",
+        "ko": "말",
+        "zh": "我骑马"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-306",
+      "tokens": [
+        "운전을",
+        "연습해요"
+      ],
+      "full": "운전을 연습해요",
+      "gloss": {
+        "en": "I practice driving",
+        "ko": "운전",
+        "zh": "我练习开车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-307",
+      "tokens": [
+        "자동차를",
+        "빌려요"
+      ],
+      "full": "자동차를 빌려요",
+      "gloss": {
+        "en": "I rent a car",
+        "ko": "자동차",
+        "zh": "我租汽车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-308",
+      "tokens": [
+        "자전거를",
+        "고쳐요"
+      ],
+      "full": "자전거를 고쳐요",
+      "gloss": {
+        "en": "I fix the bicycle",
+        "ko": "자전거",
+        "zh": "我修自行车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-309",
+      "tokens": [
+        "택시를",
+        "기다려요"
+      ],
+      "full": "택시를 기다려요",
+      "gloss": {
+        "en": "I wait for a taxi",
+        "ko": "택시",
+        "zh": "我等出租车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-310",
+      "tokens": [
+        "횡단보도",
+        "앞에서",
+        "멈춰요"
+      ],
+      "full": "횡단보도 앞에서 멈춰요",
+      "gloss": {
+        "en": "I stop in front of the crosswalk",
+        "ko": "횡단보도",
+        "zh": "我在人行横道前停下"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-311",
+      "tokens": [
+        "사고를",
+        "피해요"
+      ],
+      "full": "사고를 피해요",
+      "gloss": {
+        "en": "I avoid an accident",
+        "ko": "사고",
+        "zh": "我避开事故"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-312",
+      "tokens": [
+        "위험이",
+        "보여요"
+      ],
+      "full": "위험이 보여요",
+      "gloss": {
+        "en": "I see danger",
+        "ko": "위험",
+        "zh": "我看到危险"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-313",
+      "tokens": [
+        "조심해서",
+        "건너요"
+      ],
+      "full": "조심해서 건너요",
+      "gloss": {
+        "en": "I cross carefully",
+        "ko": "조심하다",
+        "zh": "我小心过马路"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-314",
+      "tokens": [
+        "주차장을",
+        "찾아요"
+      ],
+      "full": "주차장을 찾아요",
+      "gloss": {
+        "en": "I look for a parking lot",
+        "ko": "주차장",
+        "zh": "我找停车场"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-315",
+      "tokens": [
+        "도로가",
+        "막혀요"
+      ],
+      "full": "도로가 막혀요",
+      "gloss": {
+        "en": "The road is jammed",
+        "ko": "막히다",
+        "zh": "道路堵了"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-316",
+      "tokens": [
+        "도서관이",
+        "넓어요"
+      ],
+      "full": "도서관이 넓어요",
+      "gloss": {
+        "en": "The library is spacious",
+        "ko": "도서관",
+        "zh": "图书馆很宽敞"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-317",
+      "tokens": [
+        "슈퍼마켓",
+        "문을",
+        "닫아요"
+      ],
+      "full": "슈퍼마켓 문을 닫아요",
+      "gloss": {
+        "en": "I close the supermarket door",
+        "ko": "슈퍼마켓",
+        "zh": "我关超市门"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-318",
+      "tokens": [
+        "은행",
+        "옆에",
+        "서요"
+      ],
+      "full": "은행 옆에 서요",
+      "gloss": {
+        "en": "I stand next to the bank",
+        "ko": "은행(건물)",
+        "zh": "我站在银行旁边"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-319",
+      "tokens": [
+        "백화점으로",
+        "가요"
+      ],
+      "full": "백화점으로 가요",
+      "gloss": {
+        "en": "I go to the department store",
+        "ko": "백화점",
+        "zh": "我去百货商店"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-320",
+      "tokens": [
+        "미용실이",
+        "붐벼요"
+      ],
+      "full": "미용실이 붐벼요",
+      "gloss": {
+        "en": "The hair salon is crowded",
+        "ko": "미용실",
+        "zh": "美发店很挤"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-321",
+      "tokens": [
+        "서점",
+        "책을",
+        "골라요"
+      ],
+      "full": "서점 책을 골라요",
+      "gloss": {
+        "en": "I pick a book at the bookstore",
+        "ko": "서점",
+        "zh": "我在书店选书"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-322",
+      "tokens": [
+        "영화관이",
+        "가까워요"
+      ],
+      "full": "영화관이 가까워요",
+      "gloss": {
+        "en": "The movie theater is nearby",
+        "ko": "영화관",
+        "zh": "电影院很近"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-323",
+      "tokens": [
+        "수영장이",
+        "깊어요"
+      ],
+      "full": "수영장이 깊어요",
+      "gloss": {
+        "en": "The pool is deep",
+        "ko": "수영장",
+        "zh": "游泳池很深"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-324",
+      "tokens": [
+        "카페가",
+        "조용해요"
+      ],
+      "full": "카페가 조용해요",
+      "gloss": {
+        "en": "The cafe is quiet",
+        "ko": "카페",
+        "zh": "咖啡馆很安静"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-325",
+      "tokens": [
+        "경찰서가",
+        "열려요"
+      ],
+      "full": "경찰서가 열려요",
+      "gloss": {
+        "en": "The police station is open",
+        "ko": "경찰서",
+        "zh": "警察局开门了"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-326",
+      "tokens": [
+        "오늘",
+        "쌀을",
+        "샀어요"
+      ],
+      "full": "오늘 쌀을 샀어요",
+      "gloss": {
+        "en": "I bought rice today",
+        "ko": "쌀",
+        "zh": "今天我买了大米"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-327",
+      "tokens": [
+        "밀가루가",
+        "많아요"
+      ],
+      "full": "밀가루가 많아요",
+      "gloss": {
+        "en": "There is a lot of flour",
+        "ko": "밀가루",
+        "zh": "面粉很多"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-328",
+      "tokens": [
+        "소금이",
+        "조금",
+        "모자라요"
+      ],
+      "full": "소금이 조금 모자라요",
+      "gloss": {
+        "en": "We're a little short on salt",
+        "ko": "소금",
+        "zh": "盐有点不够"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-329",
+      "tokens": [
+        "설탕이",
+        "필요해요"
+      ],
+      "full": "설탕이 필요해요",
+      "gloss": {
+        "en": "I need sugar",
+        "ko": "설탕",
+        "zh": "需要糖"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-330",
+      "tokens": [
+        "팬에",
+        "기름을",
+        "둘러요"
+      ],
+      "full": "팬에 기름을 둘러요",
+      "gloss": {
+        "en": "I put oil in the pan",
+        "ko": "기름",
+        "zh": "我往锅里倒油"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-331",
+      "tokens": [
+        "아침에",
+        "달걀을",
+        "먹어요"
+      ],
+      "full": "아침에 달걀을 먹어요",
+      "gloss": {
+        "en": "I eat eggs in the morning",
+        "ko": "달걀",
+        "zh": "早上我吃鸡蛋"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-332",
+      "tokens": [
+        "저녁에",
+        "고기를",
+        "구워요"
+      ],
+      "full": "저녁에 고기를 구워요",
+      "gloss": {
+        "en": "I grill meat for dinner",
+        "ko": "고기",
+        "zh": "晚上我烤肉"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-333",
+      "tokens": [
+        "생선이",
+        "신선해요"
+      ],
+      "full": "생선이 신선해요",
+      "gloss": {
+        "en": "The fish is fresh",
+        "ko": "생선",
+        "zh": "鱼很新鲜"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-334",
+      "tokens": [
+        "아침에",
+        "빵을",
+        "먹어요"
+      ],
+      "full": "아침에 빵을 먹어요",
+      "gloss": {
+        "en": "I eat bread in the morning",
+        "ko": "빵",
+        "zh": "早上我吃面包"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-335",
+      "tokens": [
+        "밥에",
+        "김치를",
+        "곁들여요"
+      ],
+      "full": "밥에 김치를 곁들여요",
+      "gloss": {
+        "en": "I have kimchi with rice",
+        "ko": "김치",
+        "zh": "我配米饭吃泡菜"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-336",
+      "tokens": [
+        "화장실이",
+        "이",
+        "층에",
+        "있어요"
+      ],
+      "full": "화장실이 이 층에 있어요",
+      "gloss": {
+        "en": "The restroom is on this floor",
+        "ko": "화장실",
+        "zh": "卫生间在这层"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-337",
+      "tokens": [
+        "샤워가",
+        "시원해요"
+      ],
+      "full": "샤워가 시원해요",
+      "gloss": {
+        "en": "The shower feels refreshing",
+        "ko": "샤워",
+        "zh": "淋浴很清爽"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-338",
+      "tokens": [
+        "목욕을",
+        "천천히",
+        "해요"
+      ],
+      "full": "목욕을 천천히 해요",
+      "gloss": {
+        "en": "I take a bath slowly",
+        "ko": "목욕",
+        "zh": "我慢慢泡澡"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-339",
+      "tokens": [
+        "세수하고",
+        "나와요"
+      ],
+      "full": "세수하고 나와요",
+      "gloss": {
+        "en": "I come out after washing my face",
+        "ko": "세수",
+        "zh": "我洗完脸出来"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-340",
+      "tokens": [
+        "칫솔을",
+        "물에",
+        "담가요"
+      ],
+      "full": "칫솔을 물에 담가요",
+      "gloss": {
+        "en": "I soak the toothbrush in water",
+        "ko": "칫솔",
+        "zh": "我把牙刷泡在水里"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-341",
+      "tokens": [
+        "치약이",
+        "다",
+        "떨어졌어요"
+      ],
+      "full": "치약이 다 떨어졌어요",
+      "gloss": {
+        "en": "The toothpaste has completely run out",
+        "ko": "치약",
+        "zh": "牙膏全用完了"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-342",
+      "tokens": [
+        "휴지를",
+        "꺼내요"
+      ],
+      "full": "휴지를 꺼내요",
+      "gloss": {
+        "en": "I take out some tissue",
+        "ko": "휴지",
+        "zh": "我抽出纸巾"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-343",
+      "tokens": [
+        "휴지통이",
+        "가득해요"
+      ],
+      "full": "휴지통이 가득해요",
+      "gloss": {
+        "en": "The trash can is full",
+        "ko": "휴지통",
+        "zh": "垃圾桶满了"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-344",
+      "tokens": [
+        "면도를",
+        "잊었어요"
+      ],
+      "full": "면도를 잊었어요",
+      "gloss": {
+        "en": "I forgot to shave",
+        "ko": "면도",
+        "zh": "我忘了刮胡子"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-345",
+      "tokens": [
+        "바닥이",
+        "더러워요"
+      ],
+      "full": "바닥이 더러워요",
+      "gloss": {
+        "en": "The floor is dirty",
+        "ko": "더럽다",
+        "zh": "地板很脏"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-346",
+      "tokens": [
+        "직업이",
+        "뭐예요"
+      ],
+      "full": "직업이 뭐예요",
+      "gloss": {
+        "en": "What is your occupation?",
+        "ko": "직업",
+        "zh": "你的职业是什么？"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-347",
+      "tokens": [
+        "회사원으로",
+        "다녀요"
+      ],
+      "full": "회사원으로 다녀요",
+      "gloss": {
+        "en": "I go as an office worker",
+        "ko": "회사원",
+        "zh": "我以公司职员身份上班"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-348",
+      "tokens": [
+        "간호사를",
+        "만나요"
+      ],
+      "full": "간호사를 만나요",
+      "gloss": {
+        "en": "I meet a nurse",
+        "ko": "간호사",
+        "zh": "我见护士"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-349",
+      "tokens": [
+        "선생님이",
+        "기다려요"
+      ],
+      "full": "선생님이 기다려요",
+      "gloss": {
+        "en": "The teacher is waiting",
+        "ko": "선생님",
+        "zh": "老师在等"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-350",
+      "tokens": [
+        "요리사가",
+        "만들어요"
+      ],
+      "full": "요리사가 만들어요",
+      "gloss": {
+        "en": "The cook makes (food)",
+        "ko": "요리사",
+        "zh": "厨师在做"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-351",
+      "tokens": [
+        "운전사가",
+        "친절해요"
+      ],
+      "full": "운전사가 친절해요",
+      "gloss": {
+        "en": "The driver is kind",
+        "ko": "운전사",
+        "zh": "司机很亲切"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-352",
+      "tokens": [
+        "저는",
+        "학생이에요"
+      ],
+      "full": "저는 학생이에요",
+      "gloss": {
+        "en": "I am a student",
+        "ko": "학생",
+        "zh": "我是学生"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-353",
+      "tokens": [
+        "가게에서",
+        "일해요"
+      ],
+      "full": "가게에서 일해요",
+      "gloss": {
+        "en": "I work at a store",
+        "ko": "일하다",
+        "zh": "我在店里工作"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-354",
+      "tokens": [
+        "직원이",
+        "많아요"
+      ],
+      "full": "직원이 많아요",
+      "gloss": {
+        "en": "There are many employees",
+        "ko": "직원",
+        "zh": "职员很多"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-355",
+      "tokens": [
+        "사장이",
+        "인사해요"
+      ],
+      "full": "사장이 인사해요",
+      "gloss": {
+        "en": "The boss greets (us)",
+        "ko": "사장",
+        "zh": "老板打招呼"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-356",
+      "tokens": [
+        "제",
+        "나라는",
+        "한국이에요"
+      ],
+      "full": "제 나라는 한국이에요",
+      "gloss": {
+        "en": "My country is Korea",
+        "ko": "나라",
+        "zh": "我的国家是韩国"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-357",
+      "tokens": [
+        "외국",
+        "음식을",
+        "좋아해요"
+      ],
+      "full": "외국 음식을 좋아해요",
+      "gloss": {
+        "en": "I like foreign food",
+        "ko": "외국",
+        "zh": "我喜欢外国食物"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-358",
+      "tokens": [
+        "외국인을",
+        "도와줘요"
+      ],
+      "full": "외국인을 도와줘요",
+      "gloss": {
+        "en": "I help a foreigner",
+        "ko": "외국인",
+        "zh": "我帮助外国人"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-359",
+      "tokens": [
+        "국적을",
+        "알려",
+        "주세요"
+      ],
+      "full": "국적을 알려 주세요",
+      "gloss": {
+        "en": "Please tell me (your) nationality",
+        "ko": "국적",
+        "zh": "请告诉我国籍"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-360",
+      "tokens": [
+        "고향에",
+        "가요"
+      ],
+      "full": "고향에 가요",
+      "gloss": {
+        "en": "I go to my hometown",
+        "ko": "고향",
+        "zh": "我去家乡"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-361",
+      "tokens": [
+        "중국에서",
+        "살아요"
+      ],
+      "full": "중국에서 살아요",
+      "gloss": {
+        "en": "I live in China",
+        "ko": "살다",
+        "zh": "我住在中国"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-362",
+      "tokens": [
+        "일본어가",
+        "어려워요"
+      ],
+      "full": "일본어가 어려워요",
+      "gloss": {
+        "en": "Japanese is hard",
+        "ko": "일본어",
+        "zh": "日语很难"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-363",
+      "tokens": [
+        "한국에서",
+        "태어났어요"
+      ],
+      "full": "한국에서 태어났어요",
+      "gloss": {
+        "en": "I was born in Korea",
+        "ko": "태어나다",
+        "zh": "我在韩国出生"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-364",
+      "tokens": [
+        "해외에서",
+        "왔어요"
+      ],
+      "full": "해외에서 왔어요",
+      "gloss": {
+        "en": "I came from overseas",
+        "ko": "해외",
+        "zh": "我从海外来"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-365",
+      "tokens": [
+        "유학생을",
+        "만나요"
+      ],
+      "full": "유학생을 만나요",
+      "gloss": {
+        "en": "I meet an international student",
+        "ko": "유학생",
+        "zh": "我见留学生"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-366",
+      "tokens": [
+        "일곱 시에",
+        "일어나요"
+      ],
+      "full": "일곱 시에 일어나요",
+      "gloss": {
+        "en": "I get up at seven",
+        "ko": "일어나다",
+        "zh": "我七点起床"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-367",
+      "tokens": [
+        "열 시에",
+        "자요"
+      ],
+      "full": "열 시에 자요",
+      "gloss": {
+        "en": "I sleep at ten",
+        "ko": "자다",
+        "zh": "我十点睡"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-368",
+      "tokens": [
+        "아침을",
+        "안",
+        "먹어요"
+      ],
+      "full": "아침을 안 먹어요",
+      "gloss": {
+        "en": "I do not eat breakfast",
+        "ko": "아침",
+        "zh": "我不吃早饭"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-369",
+      "tokens": [
+        "점심을",
+        "빨리",
+        "먹어요"
+      ],
+      "full": "점심을 빨리 먹어요",
+      "gloss": {
+        "en": "I eat lunch quickly",
+        "ko": "점심",
+        "zh": "我很快吃午饭"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-370",
+      "tokens": [
+        "저녁에",
+        "집에",
+        "와요"
+      ],
+      "full": "저녁에 집에 와요",
+      "gloss": {
+        "en": "I come home in the evening",
+        "ko": "저녁",
+        "zh": "晚上回家"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-371",
+      "tokens": [
+        "밤에",
+        "음악을",
+        "들어요"
+      ],
+      "full": "밤에 음악을 들어요",
+      "gloss": {
+        "en": "I listen to music at night",
+        "ko": "밤",
+        "zh": "晚上听音乐"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-372",
+      "tokens": [
+        "하루가",
+        "짧아요"
+      ],
+      "full": "하루가 짧아요",
+      "gloss": {
+        "en": "The day is short",
+        "ko": "하루",
+        "zh": "一天很短"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-373",
+      "tokens": [
+        "매일",
+        "운동해요"
+      ],
+      "full": "매일 운동해요",
+      "gloss": {
+        "en": "I exercise every day",
+        "ko": "매일",
+        "zh": "我每天运动"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-374",
+      "tokens": [
+        "어제",
+        "일찍",
+        "잤어요"
+      ],
+      "full": "어제 일찍 잤어요",
+      "gloss": {
+        "en": "I slept early yesterday",
+        "ko": "어제",
+        "zh": "昨天早睡了"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-375",
+      "tokens": [
+        "내일",
+        "일찍",
+        "일어나요"
+      ],
+      "full": "내일 일찍 일어나요",
+      "gloss": {
+        "en": "I get up early tomorrow",
+        "ko": "내일",
+        "zh": "明天早起"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-376",
+      "tokens": [
+        "사진이",
+        "커요"
+      ],
+      "full": "사진이 커요",
+      "gloss": {
+        "en": "The photo is big",
+        "ko": "크다",
+        "zh": "照片很大"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-377",
+      "tokens": [
+        "단추가",
+        "작아요"
+      ],
+      "full": "단추가 작아요",
+      "gloss": {
+        "en": "The button is small",
+        "ko": "작다",
+        "zh": "纽扣很小"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-378",
+      "tokens": [
+        "손님이",
+        "많아요"
+      ],
+      "full": "손님이 많아요",
+      "gloss": {
+        "en": "There are many customers",
+        "ko": "많다",
+        "zh": "客人很多"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-379",
+      "tokens": [
+        "선택이",
+        "적어요"
+      ],
+      "full": "선택이 적어요",
+      "gloss": {
+        "en": "There are few choices",
+        "ko": "적다",
+        "zh": "选择很少"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-380",
+      "tokens": [
+        "이야기가",
+        "길어요"
+      ],
+      "full": "이야기가 길어요",
+      "gloss": {
+        "en": "The story is long",
+        "ko": "길다",
+        "zh": "故事很长"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-381",
+      "tokens": [
+        "설명이",
+        "짧아요"
+      ],
+      "full": "설명이 짧아요",
+      "gloss": {
+        "en": "The explanation is short",
+        "ko": "짧다",
+        "zh": "说明很短"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-382",
+      "tokens": [
+        "돌이",
+        "무거워요"
+      ],
+      "full": "돌이 무거워요",
+      "gloss": {
+        "en": "The stone is heavy",
+        "ko": "무겁다",
+        "zh": "石头很重"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-383",
+      "tokens": [
+        "풍선이",
+        "가벼워요"
+      ],
+      "full": "풍선이 가벼워요",
+      "gloss": {
+        "en": "The balloon is light",
+        "ko": "가볍다",
+        "zh": "气球很轻"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-384",
+      "tokens": [
+        "탑이",
+        "높아요"
+      ],
+      "full": "탑이 높아요",
+      "gloss": {
+        "en": "The tower is tall",
+        "ko": "높다",
+        "zh": "塔很高"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-385",
+      "tokens": [
+        "소파가",
+        "낮아요"
+      ],
+      "full": "소파가 낮아요",
+      "gloss": {
+        "en": "The sofa is low",
+        "ko": "낮다",
+        "zh": "沙发很低"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-386",
+      "tokens": [
+        "커피가",
+        "써요"
+      ],
+      "full": "커피가 써요",
+      "gloss": {
+        "en": "The coffee is bitter",
+        "ko": "쓰다(맛)",
+        "zh": "咖啡很苦"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-387",
+      "tokens": [
+        "천이",
+        "부드러워요"
+      ],
+      "full": "천이 부드러워요",
+      "gloss": {
+        "en": "The fabric is soft",
+        "ko": "부드럽다",
+        "zh": "布料很软"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-388",
+      "tokens": [
+        "국이",
+        "뜨거워요"
+      ],
+      "full": "국이 뜨거워요",
+      "gloss": {
+        "en": "The soup is hot",
+        "ko": "뜨겁다",
+        "zh": "汤很烫"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-389",
+      "tokens": [
+        "바닥이",
+        "차가워요"
+      ],
+      "full": "바닥이 차가워요",
+      "gloss": {
+        "en": "The floor is cold",
+        "ko": "차갑다",
+        "zh": "地板很冰"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-390",
+      "tokens": [
+        "차가",
+        "따뜻해요"
+      ],
+      "full": "차가 따뜻해요",
+      "gloss": {
+        "en": "The tea is warm",
+        "ko": "따뜻하다",
+        "zh": "茶很暖"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-391",
+      "tokens": [
+        "그늘이",
+        "시원해요"
+      ],
+      "full": "그늘이 시원해요",
+      "gloss": {
+        "en": "The shade is cool",
+        "ko": "시원하다",
+        "zh": "树荫很凉快"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-392",
+      "tokens": [
+        "창이",
+        "밝아요"
+      ],
+      "full": "창이 밝아요",
+      "gloss": {
+        "en": "The window is bright",
+        "ko": "밝다",
+        "zh": "窗户很亮"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-393",
+      "tokens": [
+        "계단이",
+        "어두워요"
+      ],
+      "full": "계단이 어두워요",
+      "gloss": {
+        "en": "The stairs are dark",
+        "ko": "어둡다",
+        "zh": "楼梯很暗"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-394",
+      "tokens": [
+        "회의실이",
+        "조용해요"
+      ],
+      "full": "회의실이 조용해요",
+      "gloss": {
+        "en": "The meeting room is quiet",
+        "ko": "조용하다",
+        "zh": "会议室很安静"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-395",
+      "tokens": [
+        "시장이",
+        "시끄러워요"
+      ],
+      "full": "시장이 시끄러워요",
+      "gloss": {
+        "en": "The market is noisy",
+        "ko": "시끄럽다",
+        "zh": "市场很吵"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-396",
+      "tokens": [
+        "사과가",
+        "빨간색이에요"
+      ],
+      "full": "사과가 빨간색이에요",
+      "gloss": {
+        "en": "The apple is red",
+        "ko": "빨간색",
+        "zh": "苹果是红色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-397",
+      "tokens": [
+        "바다가",
+        "파란색이에요"
+      ],
+      "full": "바다가 파란색이에요",
+      "gloss": {
+        "en": "The sea is blue",
+        "ko": "파란색",
+        "zh": "大海是蓝色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-398",
+      "tokens": [
+        "지붕이",
+        "회색이에요"
+      ],
+      "full": "지붕이 회색이에요",
+      "gloss": {
+        "en": "The roof is gray",
+        "ko": "회색",
+        "zh": "屋顶是灰色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-399",
+      "tokens": [
+        "풍선이",
+        "분홍색이에요"
+      ],
+      "full": "풍선이 분홍색이에요",
+      "gloss": {
+        "en": "The balloon is pink",
+        "ko": "분홍색",
+        "zh": "气球是粉色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-400",
+      "tokens": [
+        "달이",
+        "둥글어요"
+      ],
+      "full": "달이 둥글어요",
+      "gloss": {
+        "en": "The moon is round",
+        "ko": "둥글다",
+        "zh": "月亮是圆的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-401",
+      "tokens": [
+        "카드가",
+        "네모예요"
+      ],
+      "full": "카드가 네모예요",
+      "gloss": {
+        "en": "The card is square",
+        "ko": "네모",
+        "zh": "卡片是方的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-402",
+      "tokens": [
+        "산이",
+        "세모예요"
+      ],
+      "full": "산이 세모예요",
+      "gloss": {
+        "en": "The mountain is a triangle",
+        "ko": "세모",
+        "zh": "山是三角形的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-403",
+      "tokens": [
+        "이",
+        "모양을",
+        "고르세요"
+      ],
+      "full": "이 모양을 고르세요",
+      "gloss": {
+        "en": "Please choose this shape",
+        "ko": "모양",
+        "zh": "请选这个形状"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-404",
+      "tokens": [
+        "귀걸이를",
+        "잃어버렸어요"
+      ],
+      "full": "귀걸이를 잃어버렸어요",
+      "gloss": {
+        "en": "I lost the earrings",
+        "ko": "귀걸이",
+        "zh": "耳环丢了"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-405",
+      "tokens": [
+        "넥타이를",
+        "매요"
+      ],
+      "full": "넥타이를 매요",
+      "gloss": {
+        "en": "I put on a tie",
+        "ko": "넥타이",
+        "zh": "我打领带"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-406",
+      "tokens": [
+        "모자가",
+        "작아요"
+      ],
+      "full": "모자가 작아요",
+      "gloss": {
+        "en": "The hat is small",
+        "ko": "모자",
+        "zh": "帽子小"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-407",
+      "tokens": [
+        "양말을",
+        "갈아신어요"
+      ],
+      "full": "양말을 갈아신어요",
+      "gloss": {
+        "en": "I change my socks",
+        "ko": "양말",
+        "zh": "我换袜子"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-408",
+      "tokens": [
+        "장갑이",
+        "두꺼워요"
+      ],
+      "full": "장갑이 두꺼워요",
+      "gloss": {
+        "en": "The gloves are thick",
+        "ko": "장갑",
+        "zh": "手套很厚"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-409",
+      "tokens": [
+        "안경이",
+        "안",
+        "보여요"
+      ],
+      "full": "안경이 안 보여요",
+      "gloss": {
+        "en": "I can't find the glasses",
+        "ko": "안경",
+        "zh": "眼镜找不到了"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-410",
+      "tokens": [
+        "벨트를",
+        "조여요"
+      ],
+      "full": "벨트를 조여요",
+      "gloss": {
+        "en": "I tighten the belt",
+        "ko": "벨트",
+        "zh": "我勒紧皮带"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-411",
+      "tokens": [
+        "반지가",
+        "반짝여요"
+      ],
+      "full": "반지가 반짝여요",
+      "gloss": {
+        "en": "The ring sparkles",
+        "ko": "반지",
+        "zh": "戒指闪闪发光"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-412",
+      "tokens": [
+        "에어컨을",
+        "켜",
+        "둘까요"
+      ],
+      "full": "에어컨을 켜 둘까요",
+      "gloss": {
+        "en": "Shall I leave the AC on?",
+        "ko": "에어컨·켜다",
+        "zh": "空调要一直开着吗？"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-413",
+      "tokens": [
+        "불을",
+        "켜요"
+      ],
+      "full": "불을 켜요",
+      "gloss": {
+        "en": "I turn on the light",
+        "ko": "불·켜다",
+        "zh": "我开灯"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-414",
+      "tokens": [
+        "선풍기를",
+        "켜",
+        "주세요"
+      ],
+      "full": "선풍기를 켜 주세요",
+      "gloss": {
+        "en": "Please turn on the fan",
+        "ko": "선풍기·켜다",
+        "zh": "请打开电风扇"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-415",
+      "tokens": [
+        "전기를",
+        "아껴요"
+      ],
+      "full": "전기를 아껴요",
+      "gloss": {
+        "en": "I save electricity",
+        "ko": "전기",
+        "zh": "我节约用电"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-416",
+      "tokens": [
+        "엘리베이터가",
+        "왔어요"
+      ],
+      "full": "엘리베이터가 왔어요",
+      "gloss": {
+        "en": "The elevator arrived",
+        "ko": "엘리베이터",
+        "zh": "电梯来了"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-417",
+      "tokens": [
+        "계단이",
+        "미끄러워요"
+      ],
+      "full": "계단이 미끄러워요",
+      "gloss": {
+        "en": "The stairs are slippery",
+        "ko": "계단",
+        "zh": "楼梯很滑"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-418",
+      "tokens": [
+        "가스를",
+        "껐어요"
+      ],
+      "full": "가스를 껐어요",
+      "gloss": {
+        "en": "I turned off the gas",
+        "ko": "가스·끄다",
+        "zh": "我关掉了煤气"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-419",
+      "tokens": [
+        "다리미가",
+        "무거워요"
+      ],
+      "full": "다리미가 무거워요",
+      "gloss": {
+        "en": "The iron is heavy",
+        "ko": "다리미",
+        "zh": "熨斗很重"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-420",
+      "tokens": [
+        "복도가",
+        "조용해요"
+      ],
+      "full": "복도가 조용해요",
+      "gloss": {
+        "en": "The hallway is quiet",
+        "ko": "복도",
+        "zh": "走廊很安静"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-421",
+      "tokens": [
+        "층을",
+        "확인해요"
+      ],
+      "full": "층을 확인해요",
+      "gloss": {
+        "en": "I check the floor",
+        "ko": "층",
+        "zh": "我确认楼层"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-422",
+      "tokens": [
+        "베란다를",
+        "닦아요"
+      ],
+      "full": "베란다를 닦아요",
+      "gloss": {
+        "en": "I wipe the veranda",
+        "ko": "베란다",
+        "zh": "我擦阳台"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-423",
+      "tokens": [
+        "아파트가",
+        "밝아요"
+      ],
+      "full": "아파트가 밝아요",
+      "gloss": {
+        "en": "The apartment is bright",
+        "ko": "아파트",
+        "zh": "公寓很亮"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-424",
+      "tokens": [
+        "호실을",
+        "불러요"
+      ],
+      "full": "호실을 불러요",
+      "gloss": {
+        "en": "I call out the unit number",
+        "ko": "호실",
+        "zh": "我报房间号"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-425",
+      "tokens": [
+        "초인종이",
+        "울려요"
+      ],
+      "full": "초인종이 울려요",
+      "gloss": {
+        "en": "The doorbell rings",
+        "ko": "초인종",
+        "zh": "门铃响了"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-426",
+      "tokens": [
+        "로비가",
+        "넓어요"
+      ],
+      "full": "로비가 넓어요",
+      "gloss": {
+        "en": "The lobby is spacious",
+        "ko": "로비",
+        "zh": "大厅很宽敞"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-427",
+      "tokens": [
+        "현관을",
+        "잠가요"
+      ],
+      "full": "현관을 잠가요",
+      "gloss": {
+        "en": "I lock the foyer door",
+        "ko": "현관",
+        "zh": "我锁上玄关"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-428",
+      "tokens": [
+        "형을",
+        "따라가요"
+      ],
+      "full": "형을 따라가요",
+      "gloss": {
+        "en": "I follow my older brother",
+        "ko": "따라가다",
+        "zh": "我跟着哥哥走"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-429",
+      "tokens": [
+        "교실로",
+        "들어와요"
+      ],
+      "full": "교실로 들어와요",
+      "gloss": {
+        "en": "Come into the classroom",
+        "ko": "들어오다",
+        "zh": "进教室来"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-430",
+      "tokens": [
+        "천천히",
+        "걸어요"
+      ],
+      "full": "천천히 걸어요",
+      "gloss": {
+        "en": "Walk slowly",
+        "ko": "걷다",
+        "zh": "慢慢走"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-431",
+      "tokens": [
+        "빨리",
+        "뛰어요"
+      ],
+      "full": "빨리 뛰어요",
+      "gloss": {
+        "en": "Run quickly",
+        "ko": "뛰다",
+        "zh": "快跑"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-432",
+      "tokens": [
+        "줄에",
+        "서요"
+      ],
+      "full": "줄에 서요",
+      "gloss": {
+        "en": "Stand in line",
+        "ko": "서다",
+        "zh": "排队站着"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-433",
+      "tokens": [
+        "앞에",
+        "앉아요"
+      ],
+      "full": "앞에 앉아요",
+      "gloss": {
+        "en": "Sit in front",
+        "ko": "앉다",
+        "zh": "坐前面"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-434",
+      "tokens": [
+        "짐을",
+        "들어요"
+      ],
+      "full": "짐을 들어요",
+      "gloss": {
+        "en": "I lift the luggage",
+        "ko": "들다",
+        "zh": "我提行李"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-435",
+      "tokens": [
+        "손을",
+        "잡아요"
+      ],
+      "full": "손을 잡아요",
+      "gloss": {
+        "en": "I hold (someone's) hand",
+        "ko": "잡다",
+        "zh": "我拉手"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-436",
+      "tokens": [
+        "시간을",
+        "물어봐요"
+      ],
+      "full": "시간을 물어봐요",
+      "gloss": {
+        "en": "I ask the time",
+        "ko": "물어보다",
+        "zh": "我问问时间"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-437",
+      "tokens": [
+        "이름을",
+        "확인해요"
+      ],
+      "full": "이름을 확인해요",
+      "gloss": {
+        "en": "I check the name",
+        "ko": "확인하다",
+        "zh": "我核对名字"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-438",
+      "tokens": [
+        "소포를",
+        "부탁해요"
+      ],
+      "full": "소포를 부탁해요",
+      "gloss": {
+        "en": "I ask you to handle the parcel",
+        "ko": "부탁하다",
+        "zh": "包裹拜托你了"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-439",
+      "tokens": [
+        "상자를",
+        "도와주세요"
+      ],
+      "full": "상자를 도와주세요",
+      "gloss": {
+        "en": "Please help with the box",
+        "ko": "도와주다",
+        "zh": "请帮一下这个箱子"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-440",
+      "tokens": [
+        "자를",
+        "빌려요"
+      ],
+      "full": "자를 빌려요",
+      "gloss": {
+        "en": "I borrow a ruler",
+        "ko": "빌리다",
+        "zh": "我借尺子"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-441",
+      "tokens": [
+        "지금은",
+        "괜찮아요"
+      ],
+      "full": "지금은 괜찮아요",
+      "gloss": {
+        "en": "As for now, it's fine",
+        "ko": "괜찮다",
+        "zh": "现在没关系"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-442",
+      "tokens": [
+        "지도가",
+        "필요해요"
+      ],
+      "full": "지도가 필요해요",
+      "gloss": {
+        "en": "I need a map",
+        "ko": "필요하다",
+        "zh": "我需要地图"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-443",
+      "tokens": [
+        "컵을",
+        "사용해요"
+      ],
+      "full": "컵을 사용해요",
+      "gloss": {
+        "en": "I use the cup",
+        "ko": "사용하다",
+        "zh": "我用杯子"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-444",
+      "tokens": [
+        "약속을",
+        "믿어요"
+      ],
+      "full": "약속을 믿어요",
+      "gloss": {
+        "en": "I trust the promise",
+        "ko": "믿다",
+        "zh": "我相信约定"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-445",
+      "tokens": [
+        "여행을",
+        "계획해요"
+      ],
+      "full": "여행을 계획해요",
+      "gloss": {
+        "en": "I plan a trip",
+        "ko": "계획하다",
+        "zh": "我计划旅行"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-446",
+      "tokens": [
+        "선택을",
+        "더",
+        "생각해요"
+      ],
+      "full": "선택을 더 생각해요",
+      "gloss": {
+        "en": "I think about the choice more",
+        "ko": "생각하다",
+        "zh": "选择我再想想"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-447",
+      "tokens": [
+        "뜻을",
+        "알아요"
+      ],
+      "full": "뜻을 알아요",
+      "gloss": {
+        "en": "I know the meaning",
+        "ko": "알다",
+        "zh": "意思我知道"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-448",
+      "tokens": [
+        "방법을",
+        "아직",
+        "몰라요"
+      ],
+      "full": "방법을 아직 몰라요",
+      "gloss": {
+        "en": "I still do not know the method",
+        "ko": "모르다",
+        "zh": "方法我还不知道"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-449",
+      "tokens": [
+        "장소를",
+        "기억해요"
+      ],
+      "full": "장소를 기억해요",
+      "gloss": {
+        "en": "I remember the place",
+        "ko": "기억하다",
+        "zh": "我记得地点"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-450",
+      "tokens": [
+        "내용을",
+        "이해했어요"
+      ],
+      "full": "내용을 이해했어요",
+      "gloss": {
+        "en": "I understood the content",
+        "ko": "이해하다",
+        "zh": "内容我听明白了"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-451",
+      "tokens": [
+        "주제를",
+        "먼저",
+        "결정해요"
+      ],
+      "full": "주제를 먼저 결정해요",
+      "gloss": {
+        "en": "We decide the topic first",
+        "ko": "결정하다",
+        "zh": "我们先决定主题"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-452",
+      "tokens": [
+        "가격을",
+        "질문해도",
+        "돼요"
+      ],
+      "full": "가격을 질문해도 돼요",
+      "gloss": {
+        "en": "May I ask about the price",
+        "ko": "질문하다",
+        "zh": "价格我可以问吗"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-453",
+      "tokens": [
+        "순서를",
+        "다시",
+        "설명해",
+        "주세요"
+      ],
+      "full": "순서를 다시 설명해 주세요",
+      "gloss": {
+        "en": "Please explain the order again",
+        "ko": "설명하다",
+        "zh": "请再说明一下顺序"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-454",
+      "tokens": [
+        "주소를",
+        "천천히",
+        "말해요"
+      ],
+      "full": "주소를 천천히 말해요",
+      "gloss": {
+        "en": "I say the address slowly",
+        "ko": "말하다",
+        "zh": "地址我说得慢一点"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-455",
+      "tokens": [
+        "주말을",
+        "이야기해요"
+      ],
+      "full": "주말을 이야기해요",
+      "gloss": {
+        "en": "We talk about the weekend",
+        "ko": "이야기하다",
+        "zh": "我们聊周末"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-456",
+      "tokens": [
+        "조언을",
+        "잘",
+        "들어요"
+      ],
+      "full": "조언을 잘 들어요",
+      "gloss": {
+        "en": "I listen carefully to the advice",
+        "ko": "듣다",
+        "zh": "忠告我认真听"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-457",
+      "tokens": [
+        "표지를",
+        "먼저",
+        "읽어요"
+      ],
+      "full": "표지를 먼저 읽어요",
+      "gloss": {
+        "en": "I read the cover first",
+        "ko": "읽다",
+        "zh": "我先看封面"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-458",
+      "tokens": [
+        "이름을",
+        "듣고",
+        "대답해요"
+      ],
+      "full": "이름을 듣고 대답해요",
+      "gloss": {
+        "en": "I hear the name and answer",
+        "ko": "대답하다",
+        "zh": "听见名字我就回答"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-459",
+      "tokens": [
+        "번호를",
+        "빨리",
+        "알려",
+        "주세요"
+      ],
+      "full": "번호를 빨리 알려 주세요",
+      "gloss": {
+        "en": "Please let me know the number soon",
+        "ko": "알리다",
+        "zh": "请尽快告诉号码"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-460",
+      "tokens": [
+        "손님이",
+        "주말에",
+        "늘었어요"
+      ],
+      "full": "손님이 주말에 늘었어요",
+      "gloss": {
+        "en": "Guests increased on the weekend",
+        "ko": "늘다",
+        "zh": "周末客人变多了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-461",
+      "tokens": [
+        "소음이",
+        "밤에",
+        "줄었어요"
+      ],
+      "full": "소음이 밤에 줄었어요",
+      "gloss": {
+        "en": "The noise decreased at night",
+        "ko": "줄다",
+        "zh": "夜里噪音变少了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-462",
+      "tokens": [
+        "영화를",
+        "일곱",
+        "시에",
+        "시작해요"
+      ],
+      "full": "영화를 일곱 시에 시작해요",
+      "gloss": {
+        "en": "We start the movie at seven",
+        "ko": "시작하다",
+        "zh": "电影七点开始"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-463",
+      "tokens": [
+        "공연이",
+        "곧",
+        "끝나요"
+      ],
+      "full": "공연이 곧 끝나요",
+      "gloss": {
+        "en": "The performance ends soon",
+        "ko": "끝나다",
+        "zh": "演出马上结束"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-464",
+      "tokens": [
+        "설명을",
+        "조금",
+        "더",
+        "계속해요"
+      ],
+      "full": "설명을 조금 더 계속해요",
+      "gloss": {
+        "en": "I continue the explanation a bit more",
+        "ko": "계속하다",
+        "zh": "说明我再继续一点"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-465",
+      "tokens": [
+        "알람을",
+        "잠깐",
+        "멈춰",
+        "주세요"
+      ],
+      "full": "알람을 잠깐 멈춰 주세요",
+      "gloss": {
+        "en": "Please pause the alarm for a moment",
+        "ko": "멈추다",
+        "zh": "请把闹钟停一下"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-466",
+      "tokens": [
+        "목소리가",
+        "조금",
+        "변했어요"
+      ],
+      "full": "목소리가 조금 변했어요",
+      "gloss": {
+        "en": "The voice changed a little",
+        "ko": "변하다",
+        "zh": "声音稍微变了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-467",
+      "tokens": [
+        "번호가",
+        "새로",
+        "바뀌었어요"
+      ],
+      "full": "번호가 새로 바뀌었어요",
+      "gloss": {
+        "en": "The number was switched to a new one",
+        "ko": "바뀌다",
+        "zh": "号码换成新的了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-468",
+      "tokens": [
+        "두",
+        "색이",
+        "똑같아요"
+      ],
+      "full": "두 색이 똑같아요",
+      "gloss": {
+        "en": "The two colors are exactly the same",
+        "ko": "똑같다",
+        "zh": "两种颜色一模一样"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-469",
+      "tokens": [
+        "소식을",
+        "전혀",
+        "못",
+        "들었어요"
+      ],
+      "full": "소식을 전혀 못 들었어요",
+      "gloss": {
+        "en": "I did not hear any news at all",
+        "ko": "전혀",
+        "zh": "消息我完全没听到"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-470",
+      "tokens": [
+        "시간이",
+        "같아요"
+      ],
+      "full": "시간이 같아요",
+      "gloss": {
+        "en": "The times are the same",
+        "ko": "같다",
+        "zh": "时间一样"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-471",
+      "tokens": [
+        "맛이",
+        "달라요"
+      ],
+      "full": "맛이 달라요",
+      "gloss": {
+        "en": "The taste is different",
+        "ko": "다르다",
+        "zh": "味道不一样"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-472",
+      "tokens": [
+        "옷차림이",
+        "비슷해요"
+      ],
+      "full": "옷차림이 비슷해요",
+      "gloss": {
+        "en": "The outfits are similar",
+        "ko": "비슷하다",
+        "zh": "穿着差不多"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-473",
+      "tokens": [
+        "색을",
+        "비교해",
+        "보세요"
+      ],
+      "full": "색을 비교해 보세요",
+      "gloss": {
+        "en": "Please compare the colors",
+        "ko": "비교하다",
+        "zh": "请比较一下颜色"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-474",
+      "tokens": [
+        "물을",
+        "더",
+        "주세요"
+      ],
+      "full": "물을 더 주세요",
+      "gloss": {
+        "en": "Please give me more water",
+        "ko": "더",
+        "zh": "请再给点水"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-475",
+      "tokens": [
+        "역이",
+        "가장",
+        "가까워요"
+      ],
+      "full": "역이 가장 가까워요",
+      "gloss": {
+        "en": "The station is the closest",
+        "ko": "가장",
+        "zh": "车站最近"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-476",
+      "tokens": [
+        "이유를",
+        "물어요"
+      ],
+      "full": "이유를 물어요",
+      "gloss": {
+        "en": "I ask the reason",
+        "ko": "이유",
+        "zh": "我问理由"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-477",
+      "tokens": [
+        "원인을",
+        "알아요"
+      ],
+      "full": "원인을 알아요",
+      "gloss": {
+        "en": "I know the cause",
+        "ko": "원인",
+        "zh": "我知道原因"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-478",
+      "tokens": [
+        "결과를",
+        "확인해요"
+      ],
+      "full": "결과를 확인해요",
+      "gloss": {
+        "en": "I check the result",
+        "ko": "결과",
+        "zh": "我确认结果"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-479",
+      "tokens": [
+        "목적이",
+        "달라요"
+      ],
+      "full": "목적이 달라요",
+      "gloss": {
+        "en": "The purpose is different",
+        "ko": "목적",
+        "zh": "目的不一样"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-480",
+      "tokens": [
+        "방법을",
+        "찾아요"
+      ],
+      "full": "방법을 찾아요",
+      "gloss": {
+        "en": "I look for a method",
+        "ko": "방법",
+        "zh": "我找方法"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-481",
+      "tokens": [
+        "과정이",
+        "끝났어요"
+      ],
+      "full": "과정이 끝났어요",
+      "gloss": {
+        "en": "The process finished",
+        "ko": "과정",
+        "zh": "过程结束了"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-482",
+      "tokens": [
+        "순서를",
+        "기억해요"
+      ],
+      "full": "순서를 기억해요",
+      "gloss": {
+        "en": "I remember the order",
+        "ko": "순서",
+        "zh": "我记顺序"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-483",
+      "tokens": [
+        "목표를",
+        "보여",
+        "주세요"
+      ],
+      "full": "목표를 보여 주세요",
+      "gloss": {
+        "en": "Please show me the goal",
+        "ko": "목표",
+        "zh": "请给我看目标"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-484",
+      "tokens": [
+        "상황이",
+        "바뀌었어요"
+      ],
+      "full": "상황이 바뀌었어요",
+      "gloss": {
+        "en": "The situation changed",
+        "ko": "상황",
+        "zh": "情况变了"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-485",
+      "tokens": [
+        "조건이",
+        "좋아요"
+      ],
+      "full": "조건이 좋아요",
+      "gloss": {
+        "en": "The conditions are good",
+        "ko": "조건",
+        "zh": "条件不错"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-486",
+      "tokens": [
+        "문제가",
+        "커요"
+      ],
+      "full": "문제가 커요",
+      "gloss": {
+        "en": "The problem is big",
+        "ko": "문제",
+        "zh": "问题很大"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-487",
+      "tokens": [
+        "해결을",
+        "알아요"
+      ],
+      "full": "해결을 알아요",
+      "gloss": {
+        "en": "I know the solution",
+        "ko": "해결",
+        "zh": "我知道解决办法"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-488",
+      "tokens": [
+        "실수를",
+        "인정해요"
+      ],
+      "full": "실수를 인정해요",
+      "gloss": {
+        "en": "I admit the mistake",
+        "ko": "실수",
+        "zh": "我承认失误"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-489",
+      "tokens": [
+        "도움이",
+        "커요"
+      ],
+      "full": "도움이 커요",
+      "gloss": {
+        "en": "The help is big",
+        "ko": "도움",
+        "zh": "帮助很大"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-490",
+      "tokens": [
+        "경험이",
+        "많아요"
+      ],
+      "full": "경험이 많아요",
+      "gloss": {
+        "en": "There is a lot of experience",
+        "ko": "경험",
+        "zh": "经验很多"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-491",
+      "tokens": [
+        "문을",
+        "고쳐요"
+      ],
+      "full": "문을 고쳐요",
+      "gloss": {
+        "en": "I fix the door",
+        "ko": "고치다",
+        "zh": "我修门"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-492",
+      "tokens": [
+        "학생을",
+        "칭찬해요"
+      ],
+      "full": "학생을 칭찬해요",
+      "gloss": {
+        "en": "I praise the student",
+        "ko": "칭찬하다",
+        "zh": "我称赞学生"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-493",
+      "tokens": [
+        "결과를",
+        "비판하지",
+        "마세요"
+      ],
+      "full": "결과를 비판하지 마세요",
+      "gloss": {
+        "en": "Please do not criticize the result",
+        "ko": "비판하다",
+        "zh": "请不要批评结果"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-494",
+      "tokens": [
+        "의견이",
+        "많아요"
+      ],
+      "full": "의견이 많아요",
+      "gloss": {
+        "en": "There are many opinions",
+        "ko": "의견",
+        "zh": "意见很多"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-495",
+      "tokens": [
+        "노력이",
+        "중요해요"
+      ],
+      "full": "노력이 중요해요",
+      "gloss": {
+        "en": "Effort is important",
+        "ko": "중요하다",
+        "zh": "努力很重要"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-496",
+      "tokens": [
+        "가게를",
+        "추천해요"
+      ],
+      "full": "가게를 추천해요",
+      "gloss": {
+        "en": "I recommend the shop",
+        "ko": "추천하다",
+        "zh": "我推荐这家店"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-497",
+      "tokens": [
+        "평가를",
+        "봐요"
+      ],
+      "full": "평가를 봐요",
+      "gloss": {
+        "en": "I look at the evaluation",
+        "ko": "평가",
+        "zh": "我看评价"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-498",
+      "tokens": [
+        "답이",
+        "확실해요"
+      ],
+      "full": "답이 확실해요",
+      "gloss": {
+        "en": "The answer is certain",
+        "ko": "확실하다",
+        "zh": "答案很确定"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-499",
+      "tokens": [
+        "설명이",
+        "분명해요"
+      ],
+      "full": "설명이 분명해요",
+      "gloss": {
+        "en": "The explanation is clear",
+        "ko": "분명하다",
+        "zh": "说明很清楚"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-500",
+      "tokens": [
+        "목표를",
+        "포기하지",
+        "않아요"
+      ],
+      "full": "목표를 포기하지 않아요",
+      "gloss": {
+        "en": "I do not give up the goal",
+        "ko": "포기하다",
+        "zh": "我不放弃目标"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-501",
+      "tokens": [
+        "화를",
+        "참아요"
+      ],
+      "full": "화를 참아요",
+      "gloss": {
+        "en": "I hold back my anger",
+        "ko": "참다",
+        "zh": "我忍住怒气"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-502",
+      "tokens": [
+        "습관이",
+        "중요해요"
+      ],
+      "full": "습관이 중요해요",
+      "gloss": {
+        "en": "Habits are important",
+        "ko": "습관",
+        "zh": "习惯很重要"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-503",
+      "tokens": [
+        "노력을",
+        "아끼지",
+        "않아요"
+      ],
+      "full": "노력을 아끼지 않아요",
+      "gloss": {
+        "en": "I do not spare effort",
+        "ko": "노력하다",
+        "zh": "我不吝惜努力"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-504",
+      "tokens": [
+        "적응이",
+        "빨라요"
+      ],
+      "full": "적응이 빨라요",
+      "gloss": {
+        "en": "Adaptation is quick",
+        "ko": "적응하다",
+        "zh": "适应很快"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-505",
+      "tokens": [
+        "방학을",
+        "기다려요"
+      ],
+      "full": "방학을 기다려요",
+      "gloss": {
+        "en": "I wait for school vacation",
+        "ko": "방학",
+        "zh": "我盼着学校假期"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-506",
+      "tokens": [
+        "동생이",
+        "부지런해요"
+      ],
+      "full": "동생이 부지런해요",
+      "gloss": {
+        "en": "My younger sibling is diligent",
+        "ko": "부지런하다",
+        "zh": "弟弟/妹妹很勤快"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-507",
+      "tokens": [
+        "주말에",
+        "게을러요"
+      ],
+      "full": "주말에 게을러요",
+      "gloss": {
+        "en": "I am lazy on weekends",
+        "ko": "게으르다",
+        "zh": "周末很懒"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-508",
+      "tokens": [
+        "반입을",
+        "허용해요"
+      ],
+      "full": "반입을 허용해요",
+      "gloss": {
+        "en": "They allow bringing items in",
+        "ko": "허용하다",
+        "zh": "允许携带入场"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-509",
+      "tokens": [
+        "헬멧이",
+        "안전해요"
+      ],
+      "full": "헬멧이 안전해요",
+      "gloss": {
+        "en": "A helmet is safe",
+        "ko": "안전하다",
+        "zh": "头盔很安全"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-510",
+      "tokens": [
+        "약속을",
+        "지켜요"
+      ],
+      "full": "약속을 지켜요",
+      "gloss": {
+        "en": "I keep the promise",
+        "ko": "지키다",
+        "zh": "我守约"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-511",
+      "tokens": [
+        "표지판을",
+        "어기지",
+        "않아요"
+      ],
+      "full": "표지판을 어기지 않아요",
+      "gloss": {
+        "en": "I do not break the signs",
+        "ko": "어기다",
+        "zh": "我不违反标志"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-512",
+      "tokens": [
+        "외출을",
+        "허락해요"
+      ],
+      "full": "외출을 허락해요",
+      "gloss": {
+        "en": "They allow going out",
+        "ko": "허락하다",
+        "zh": "允许外出"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-513",
+      "tokens": [
+        "흡연을",
+        "금지해요"
+      ],
+      "full": "흡연을 금지해요",
+      "gloss": {
+        "en": "They prohibit smoking",
+        "ko": "금지하다",
+        "zh": "禁止吸烟"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-514",
+      "tokens": [
+        "손님께",
+        "예의를",
+        "지켜요"
+      ],
+      "full": "손님께 예의를 지켜요",
+      "gloss": {
+        "en": "I keep manners toward guests",
+        "ko": "예의",
+        "zh": "对客人守礼"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-515",
+      "tokens": [
+        "줄에서",
+        "질서를",
+        "지켜요"
+      ],
+      "full": "줄에서 질서를 지켜요",
+      "gloss": {
+        "en": "I keep order in line",
+        "ko": "질서",
+        "zh": "排队守秩序"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-516",
+      "tokens": [
+        "친구를",
+        "사귀어요"
+      ],
+      "full": "친구를 사귀어요",
+      "gloss": {
+        "en": "I make friends",
+        "ko": "사귀다",
+        "zh": "交朋友"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-517",
+      "tokens": [
+        "정말",
+        "반가워요"
+      ],
+      "full": "정말 반가워요",
+      "gloss": {
+        "en": "I am really glad to see you",
+        "ko": "반갑다",
+        "zh": "真的很高兴见你"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-518",
+      "tokens": [
+        "정이",
+        "가까워요"
+      ],
+      "full": "정이 가까워요",
+      "gloss": {
+        "en": "Our feelings are close",
+        "ko": "가깝다",
+        "zh": "感情很近"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-519",
+      "tokens": [
+        "함께",
+        "공부해요"
+      ],
+      "full": "함께 공부해요",
+      "gloss": {
+        "en": "We study together",
+        "ko": "함께",
+        "zh": "一起学习"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-520",
+      "tokens": [
+        "혼자",
+        "먹어요"
+      ],
+      "full": "혼자 먹어요",
+      "gloss": {
+        "en": "I eat alone",
+        "ko": "혼자",
+        "zh": "一个人吃"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-521",
+      "tokens": [
+        "동아리에",
+        "가요"
+      ],
+      "full": "동아리에 가요",
+      "gloss": {
+        "en": "I go to the club",
+        "ko": "동아리",
+        "zh": "去社团"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-522",
+      "tokens": [
+        "이야기를",
+        "나눠요"
+      ],
+      "full": "이야기를 나눠요",
+      "gloss": {
+        "en": "We share a conversation",
+        "ko": "나누다",
+        "zh": "分享谈话"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-523",
+      "tokens": [
+        "주말에",
+        "놀아요"
+      ],
+      "full": "주말에 놀아요",
+      "gloss": {
+        "en": "We hang out on the weekend",
+        "ko": "놀다",
+        "zh": "周末玩"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-524",
+      "tokens": [
+        "겸손을",
+        "배워요"
+      ],
+      "full": "겸손을 배워요",
+      "gloss": {
+        "en": "I learn humility",
+        "ko": "겸손하다",
+        "zh": "学习谦虚"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-525",
+      "tokens": [
+        "엄격함이",
+        "필요해요"
+      ],
+      "full": "엄격함이 필요해요",
+      "gloss": {
+        "en": "Strictness is needed",
+        "ko": "엄격하다",
+        "zh": "需要严格"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-526",
+      "tokens": [
+        "너무",
+        "소심해요"
+      ],
+      "full": "너무 소심해요",
+      "gloss": {
+        "en": "I am too timid",
+        "ko": "소심하다",
+        "zh": "太拘谨了"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-527",
+      "tokens": [
+        "용감하게",
+        "말해요"
+      ],
+      "full": "용감하게 말해요",
+      "gloss": {
+        "en": "I speak bravely",
+        "ko": "용감하다",
+        "zh": "勇敢地说"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-528",
+      "tokens": [
+        "성격이",
+        "급해요"
+      ],
+      "full": "성격이 급해요",
+      "gloss": {
+        "en": "The personality is impatient",
+        "ko": "성격",
+        "zh": "性格很急"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-529",
+      "tokens": [
+        "친절을",
+        "기억해요"
+      ],
+      "full": "친절을 기억해요",
+      "gloss": {
+        "en": "I remember the kindness",
+        "ko": "친절하다",
+        "zh": "记得那份亲切"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-530",
+      "tokens": [
+        "성실함이",
+        "보여요"
+      ],
+      "full": "성실함이 보여요",
+      "gloss": {
+        "en": "Sincerity shows",
+        "ko": "성실하다",
+        "zh": "看得出认真"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-531",
+      "tokens": [
+        "꼼꼼함이",
+        "돋보여요"
+      ],
+      "full": "꼼꼼함이 돋보여요",
+      "gloss": {
+        "en": "Thoroughness stands out",
+        "ko": "꼼꼼하다",
+        "zh": "细致很突出"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-532",
+      "tokens": [
+        "번거로움을",
+        "줄여요"
+      ],
+      "full": "번거로움을 줄여요",
+      "gloss": {
+        "en": "I reduce the trouble",
+        "ko": "번거롭다",
+        "zh": "减少麻烦"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-533",
+      "tokens": [
+        "공손함이",
+        "보여요"
+      ],
+      "full": "공손함이 보여요",
+      "gloss": {
+        "en": "Politeness shows",
+        "ko": "공손하다",
+        "zh": "看得出恭敬"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-534",
+      "tokens": [
+        "먼저",
+        "인사해요"
+      ],
+      "full": "먼저 인사해요",
+      "gloss": {
+        "en": "I greet first",
+        "ko": "인사하다",
+        "zh": "先打招呼"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-535",
+      "tokens": [
+        "기다리기",
+        "불편해요"
+      ],
+      "full": "기다리기 불편해요",
+      "gloss": {
+        "en": "Waiting is inconvenient",
+        "ko": "불편하다",
+        "zh": "等着不方便"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-536",
+      "tokens": [
+        "미안함이",
+        "남아요"
+      ],
+      "full": "미안함이 남아요",
+      "gloss": {
+        "en": "A feeling of sorry remains",
+        "ko": "미안하다",
+        "zh": "抱歉感还在"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-537",
+      "tokens": [
+        "죄송함이",
+        "커요"
+      ],
+      "full": "죄송함이 커요",
+      "gloss": {
+        "en": "The apology feeling is strong",
+        "ko": "죄송하다",
+        "zh": "抱歉感很强"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-538",
+      "tokens": [
+        "사과를",
+        "전해요"
+      ],
+      "full": "사과를 전해요",
+      "gloss": {
+        "en": "I convey an apology",
+        "ko": "사과하다",
+        "zh": "转达道歉"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-539",
+      "tokens": [
+        "용서를",
+        "구해요"
+      ],
+      "full": "용서를 구해요",
+      "gloss": {
+        "en": "I ask for forgiveness",
+        "ko": "용서하다",
+        "zh": "请求原谅"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-540",
+      "tokens": [
+        "희망을",
+        "키워요"
+      ],
+      "full": "희망을 키워요",
+      "gloss": {
+        "en": "I grow hope",
+        "ko": "희망",
+        "zh": "培养希望"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-541",
+      "tokens": [
+        "기대가",
+        "커요"
+      ],
+      "full": "기대가 커요",
+      "gloss": {
+        "en": "Expectations are high",
+        "ko": "기대하다",
+        "zh": "期待很大"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-542",
+      "tokens": [
+        "상을",
+        "자랑해요"
+      ],
+      "full": "상을 자랑해요",
+      "gloss": {
+        "en": "I proudly show the award",
+        "ko": "자랑하다",
+        "zh": "炫耀奖项"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-543",
+      "tokens": [
+        "성과를",
+        "나눠요"
+      ],
+      "full": "성과를 나눠요",
+      "gloss": {
+        "en": "I share the results",
+        "ko": "성과",
+        "zh": "分享成果"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-544",
+      "tokens": [
+        "성취를",
+        "축하해요"
+      ],
+      "full": "성취를 축하해요",
+      "gloss": {
+        "en": "I congratulate the achievement",
+        "ko": "성취",
+        "zh": "祝贺成就"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-545",
+      "tokens": [
+        "바람을",
+        "적어요"
+      ],
+      "full": "바람을 적어요",
+      "gloss": {
+        "en": "I write down a wish",
+        "ko": "바라다",
+        "zh": "写下愿望"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-546",
+      "tokens": [
+        "성공이",
+        "보여요"
+      ],
+      "full": "성공이 보여요",
+      "gloss": {
+        "en": "Success shows",
+        "ko": "성공하다",
+        "zh": "看得出成功"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-547",
+      "tokens": [
+        "실패를",
+        "기록해요"
+      ],
+      "full": "실패를 기록해요",
+      "gloss": {
+        "en": "I record the failure",
+        "ko": "실패하다",
+        "zh": "记录失败"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-548",
+      "tokens": [
+        "조언을",
+        "적어요"
+      ],
+      "full": "조언을 적어요",
+      "gloss": {
+        "en": "I write down the advice",
+        "ko": "조언",
+        "zh": "记下建议"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-549",
+      "tokens": [
+        "상담이",
+        "있어요"
+      ],
+      "full": "상담이 있어요",
+      "gloss": {
+        "en": "There is a consultation",
+        "ko": "상담",
+        "zh": "有咨询"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-550",
+      "tokens": [
+        "답변을",
+        "기다려요"
+      ],
+      "full": "답변을 기다려요",
+      "gloss": {
+        "en": "I wait for a reply",
+        "ko": "답변",
+        "zh": "等待答复"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-551",
+      "tokens": [
+        "자리를",
+        "안내해요"
+      ],
+      "full": "자리를 안내해요",
+      "gloss": {
+        "en": "I show them to their seats",
+        "ko": "안내하다",
+        "zh": "引导入座"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-552",
+      "tokens": [
+        "회의",
+        "제안을",
+        "받아요"
+      ],
+      "full": "회의 제안을 받아요",
+      "gloss": {
+        "en": "I receive a meeting proposal",
+        "ko": "제안하다",
+        "zh": "收到会议提议"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-553",
+      "tokens": [
+        "가격",
+        "문의를",
+        "해요"
+      ],
+      "full": "가격 문의를 해요",
+      "gloss": {
+        "en": "I make a price inquiry",
+        "ko": "문의하다",
+        "zh": "询问价格"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-554",
+      "tokens": [
+        "충고를",
+        "기억해요"
+      ],
+      "full": "충고를 기억해요",
+      "gloss": {
+        "en": "I remember the counsel",
+        "ko": "충고하다",
+        "zh": "记住忠告"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-555",
+      "tokens": [
+        "새",
+        "정보를",
+        "찾아요"
+      ],
+      "full": "새 정보를 찾아요",
+      "gloss": {
+        "en": "I look for new information",
+        "ko": "정보",
+        "zh": "寻找新信息"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-556",
+      "tokens": [
+        "격려를",
+        "받아요"
+      ],
+      "full": "격려를 받아요",
+      "gloss": {
+        "en": "I receive encouragement",
+        "ko": "격려",
+        "zh": "得到鼓励"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-557",
+      "tokens": [
+        "위로가",
+        "필요해요"
+      ],
+      "full": "위로가 필요해요",
+      "gloss": {
+        "en": "I need comfort",
+        "ko": "위로",
+        "zh": "需要安慰"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-558",
+      "tokens": [
+        "응원이",
+        "필요해요"
+      ],
+      "full": "응원이 필요해요",
+      "gloss": {
+        "en": "I need cheering",
+        "ko": "응원",
+        "zh": "需要加油"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-559",
+      "tokens": [
+        "지지를",
+        "구해요"
+      ],
+      "full": "지지를 구해요",
+      "gloss": {
+        "en": "I look for support",
+        "ko": "지지",
+        "zh": "寻求支持"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-560",
+      "tokens": [
+        "후배를",
+        "격려해요"
+      ],
+      "full": "후배를 격려해요",
+      "gloss": {
+        "en": "I encourage a junior",
+        "ko": "격려하다",
+        "zh": "鼓励后辈"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-561",
+      "tokens": [
+        "이웃을",
+        "배려해요"
+      ],
+      "full": "이웃을 배려해요",
+      "gloss": {
+        "en": "I am considerate of neighbors",
+        "ko": "배려하다",
+        "zh": "体贴邻居"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-562",
+      "tokens": [
+        "든든한",
+        "버팀이",
+        "있어요"
+      ],
+      "full": "든든한 버팀이 있어요",
+      "gloss": {
+        "en": "There is a reliable support",
+        "ko": "든든하다",
+        "zh": "有可靠的依靠"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-563",
+      "tokens": [
+        "친구를",
+        "의지해요"
+      ],
+      "full": "친구를 의지해요",
+      "gloss": {
+        "en": "I rely on a friend",
+        "ko": "의지하다",
+        "zh": "依靠朋友"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-564",
+      "tokens": [
+        "진실을",
+        "말해요"
+      ],
+      "full": "진실을 말해요",
+      "gloss": {
+        "en": "I tell the truth",
+        "ko": "진실",
+        "zh": "说出真相"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-565",
+      "tokens": [
+        "거짓말을",
+        "하지",
+        "않아요"
+      ],
+      "full": "거짓말을 하지 않아요",
+      "gloss": {
+        "en": "I do not tell lies",
+        "ko": "거짓말",
+        "zh": "不说谎"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-566",
+      "tokens": [
+        "모임을",
+        "약속해요"
+      ],
+      "full": "모임을 약속해요",
+      "gloss": {
+        "en": "I promise a meeting",
+        "ko": "약속하다",
+        "zh": "约定见面"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-567",
+      "tokens": [
+        "신뢰를",
+        "쌓아요"
+      ],
+      "full": "신뢰를 쌓아요",
+      "gloss": {
+        "en": "I build trust",
+        "ko": "신뢰",
+        "zh": "建立信任"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-568",
+      "tokens": [
+        "태도가",
+        "정직해요"
+      ],
+      "full": "태도가 정직해요",
+      "gloss": {
+        "en": "The attitude is honest",
+        "ko": "정직하다",
+        "zh": "态度诚实"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-569",
+      "tokens": [
+        "상대를",
+        "속이지",
+        "않아요"
+      ],
+      "full": "상대를 속이지 않아요",
+      "gloss": {
+        "en": "I do not deceive the other person",
+        "ko": "속이다",
+        "zh": "不欺骗对方"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-570",
+      "tokens": [
+        "품질을",
+        "보장해요"
+      ],
+      "full": "품질을 보장해요",
+      "gloss": {
+        "en": "I guarantee the quality",
+        "ko": "보장하다",
+        "zh": "保障品质"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-571",
+      "tokens": [
+        "의심이",
+        "풀려요"
+      ],
+      "full": "의심이 풀려요",
+      "gloss": {
+        "en": "My doubt clears",
+        "ko": "의심",
+        "zh": "疑虑解开"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-572",
+      "tokens": [
+        "승낙이",
+        "필요해요"
+      ],
+      "full": "승낙이 필요해요",
+      "gloss": {
+        "en": "Consent is needed",
+        "ko": "승낙",
+        "zh": "需要允诺"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-573",
+      "tokens": [
+        "거부가",
+        "분명해요"
+      ],
+      "full": "거부가 분명해요",
+      "gloss": {
+        "en": "The rejection is clear",
+        "ko": "거부",
+        "zh": "拒斥很明确"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-574",
+      "tokens": [
+        "회의를",
+        "거절해요"
+      ],
+      "full": "회의를 거절해요",
+      "gloss": {
+        "en": "I decline the meeting",
+        "ko": "거절하다",
+        "zh": "拒绝会议"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-575",
+      "tokens": [
+        "제의를",
+        "수락해요"
+      ],
+      "full": "제의를 수락해요",
+      "gloss": {
+        "en": "I accept the offer",
+        "ko": "수락하다",
+        "zh": "接受提议"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-576",
+      "tokens": [
+        "요청에",
+        "응해요"
+      ],
+      "full": "요청에 응해요",
+      "gloss": {
+        "en": "I respond to the request",
+        "ko": "응하다",
+        "zh": "响应请求"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-577",
+      "tokens": [
+        "계획을",
+        "승인해요"
+      ],
+      "full": "계획을 승인해요",
+      "gloss": {
+        "en": "I approve the plan",
+        "ko": "승인하다",
+        "zh": "批准计划"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-578",
+      "tokens": [
+        "거절을",
+        "확인해요"
+      ],
+      "full": "거절을 확인해요",
+      "gloss": {
+        "en": "I confirm the refusal",
+        "ko": "거절",
+        "zh": "确认拒绝"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-579",
+      "tokens": [
+        "수락이",
+        "빨라요"
+      ],
+      "full": "수락이 빨라요",
+      "gloss": {
+        "en": "Acceptance is quick",
+        "ko": "수락",
+        "zh": "接受很快"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-580",
+      "tokens": [
+        "이의가",
+        "커요"
+      ],
+      "full": "이의가 커요",
+      "gloss": {
+        "en": "The objection is big",
+        "ko": "이의",
+        "zh": "异议很大"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-581",
+      "tokens": [
+        "하소연이",
+        "길어요"
+      ],
+      "full": "하소연이 길어요",
+      "gloss": {
+        "en": "The venting is long",
+        "ko": "하소연",
+        "zh": "诉苦很长"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-582",
+      "tokens": [
+        "항의를",
+        "전해요"
+      ],
+      "full": "항의를 전해요",
+      "gloss": {
+        "en": "I convey the protest",
+        "ko": "항의",
+        "zh": "转达抗议"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-583",
+      "tokens": [
+        "사고를",
+        "신고해요"
+      ],
+      "full": "사고를 신고해요",
+      "gloss": {
+        "en": "I report the accident",
+        "ko": "신고하다",
+        "zh": "申报事故"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-584",
+      "tokens": [
+        "불만이",
+        "커요"
+      ],
+      "full": "불만이 커요",
+      "gloss": {
+        "en": "The dissatisfaction is big",
+        "ko": "불만",
+        "zh": "不满很大"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-585",
+      "tokens": [
+        "시간을",
+        "따져요"
+      ],
+      "full": "시간을 따져요",
+      "gloss": {
+        "en": "I quibble over the time",
+        "ko": "따지다",
+        "zh": "计较时间"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-586",
+      "tokens": [
+        "불평이",
+        "줄어요"
+      ],
+      "full": "불평이 줄어요",
+      "gloss": {
+        "en": "Complaints decrease",
+        "ko": "불평",
+        "zh": "抱怨减少"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "ws-587",
+      "tokens": [
+        "결정에",
+        "항의해요"
+      ],
+      "full": "결정에 항의해요",
+      "gloss": {
+        "en": "I protest the decision",
+        "ko": "항의하다",
+        "zh": "抗议决定"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    }
+  ],
+  "note": "+8 complain-dissatisfaction scramble (ws-580–587, 2026-07-27): Prefer 이의·하소연 residual · Prefer-adjacent 항의·신고하다·불만·따지다 · 불평·항의하다. Skip 불평하다·제기하다·하소연하다·불만스럽다 (particle/dictation). Distinct from cloze/listen hosts. NIKL/Sejong · 해요체 · no brand names. Suggest ThemeSm close only. Prior refuse ws-572–579 kept.",
+  "updated": "2026-07-27"
+}

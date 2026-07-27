@@ -11,7 +11,7 @@
 | 역할 | 누가 | 하는 일 | 하지 않는 일 |
 |------|------|---------|--------------|
 | **Brain** | Claude | `git pull` → 큐/PROGRESS/로그/최근 커밋 리뷰 → 필요 시 리서치 → **docs만** 작성 → Next append · (선택) **docs만** commit+push | `hub/app/**` 앱 소스 · `.js`/`.css` 구현 · Lemon · Vercel 프로젝트 생성 |
-| **Hands** | Cursor | 큐 **Now/Next** 읽고 코드 구현 → Done 갱신 → 다음 항목 | Claude 소유 백로그를 **새로 발명**하지 않음 · Lemon / 새 Vercel 프로젝트 / commit·push(Paul 말 전) |
+| **Hands** | Cursor | 큐 **Now/Next** 읽고 코드 구현 · **항목 범위 안** 리서치 자동 가능 → Done 갱신 → 다음 항목 · 큐 비면 **self-QA만** | Next **발명 금지** · Lemon / 새 Vercel 프로젝트 / commit·push(Paul 말 전) |
 
 Paul은 **큐 + DAILY-LOG**만 보면 “누가 무엇을 했고 다음에 뭐가 있는지”를 추적할 수 있다.
 
@@ -61,10 +61,16 @@ Paul은 **큐 + DAILY-LOG**만 보면 “누가 무엇을 했고 다음에 뭐�
 3. 끝나면 큐에서 Done으로 옮기고 DAILY-LOG·PROGRESS에 짧게 반영.
 4. Paul 대기 없이 **다음 Next**로 진행 (큐 규칙의 예외 제외).
 
-### 3-2. 리서치 소유권
+### 3-2. 리서치·큐 소유권 (Paul 확정 · 2026-07-26)
 
-- **큐를 채우는 일(Next 발명)** 은 Claude. Cursor는 비어 있다고 백로그를 새로 만들어 넣지 않는다.
-- **예외:** 이미 큐에 있는 항목을 구현하는 중에 필요한 조사·스펙 보완은 해도 된다 (그 항목 범위 안).
+1. **큐를 채우는 일(Next 발명)** = **Claude만**. Cursor는 큐가 비었다고 **새 백로그 항목을 만들지 않는다**.
+2. **예외:** 이미 큐에 있는 항목을 **구현하는 중**이면, 그 항목 **범위 안**에서 리서치·스펙 보완을 해도 된다.
+3. 그 범위 안 작업에 리서치가 필요하다고 Cursor가 판단하면 → **자동으로 리서치 실행**해도 된다. **Paul 대기 불필요**.
+
+**Self-QA (큐 비었을 때):**
+
+- Next가 비어 있으면 → **리뷰·버그 수정만**. Next를 **발명하지 않는다**.
+- Next 채움은 **Claude**에게 맡긴다 (이 문서 §2 Claude 루프).
 
 ### 3-3. Stop 라인 (Cursor · Paul 말 전 금지)
 
@@ -111,7 +117,8 @@ Paul은 **큐 + DAILY-LOG**만 보면 “누가 무엇을 했고 다음에 뭐�
 **Cursor 체인 한 칸**
 
 - [ ] Now/Next 읽기
-- [ ] 스펙(research/handoff) 따라 구현
+- [ ] 스펙(research/handoff) 따라 구현 · 범위 안 리서치 필요 시 **자동 실행**(Paul 대기 X)
 - [ ] Done + 로그/PROGRESS
 - [ ] 다음 Next (Stop이면 정지)
-- [ ] Next 백로그 발명 금지 · commit/push/Lemon/Vercel-new 금지(Paul 전)
+- [ ] Next 비면 → self-QA(리뷰/버그)만 · **Next 발명 금지** · 채움은 Claude
+- [ ] commit/push/Lemon/Vercel-new 금지(Paul 전)

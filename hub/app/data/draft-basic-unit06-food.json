@@ -1,0 +1,639 @@
+{
+  "id": "jabi-basic-v1-06",
+  "title": {
+    "en": "jabi. Basics · Unit 6 — Food & restaurants",
+    "ko": "jabi. 기초 · 6과 — 음식과 식당",
+    "zh": "jabi. 基础 · 第6课 — 食物与餐厅"
+  },
+  "level": "Basic (pre-TOPIK)",
+  "theme": "음식",
+  "sourceNote": "PILOT — jabi. 원작. TOPIK I '음식 주문' can-do · 표준 주제 식음료. 세종 문장 미차용.",
+  "objective": {
+    "en": "Seat count, order food, say spice preference, ask for the check.",
+    "ko": "인원·주문·맵기·계산.",
+    "zh": "人数、点餐、辣度、结账。"
+  },
+  "explain": {
+    "en": "Headcount: 몇 분이세요? Order dishes with …주세요. Soften spicy with 안 + adjective (안 매운 걸로요). Pay: 계산해 주세요. Praise: 맛있어요.",
+    "ko": "인원 몇 분이세요? 음식+주세요. 안+형(안 매운). 계산해 주세요. 맛있어요.",
+    "zh": "人数几位？菜+주세요。안+形。结账주세요。맛있어요。"
+  },
+  "format": "duolingo-basic-v1",
+  "steps": [
+    {
+      "id": "intro",
+      "title": {
+        "en": "Skill intro",
+        "ko": "스킬 소개",
+        "zh": "技能介绍"
+      },
+      "body": {
+        "en": "Full meal transaction after café micro-order (TOPIK I: ordering food).",
+        "ko": "카페 짧은 주문 다음 식사 거래(TOPIK I: 음식 주문).",
+        "zh": "咖啡馆短点单之后的正餐交易（TOPIK I：点餐）。"
+      }
+    },
+    {
+      "id": "teach",
+      "title": {
+        "en": "Teach · 주문 · 안 · 계산",
+        "ko": "설명 · 주문 · 안 · 계산",
+        "zh": "讲解 · 点餐 · 안 · 结账"
+      },
+      "body": {
+        "en": "수량+주세요 for dishes. 안 negates adjectives before the noun (안 매운 걸로). End the meal with 계산해 주세요.",
+        "ko": "음식+주세요. 안+형용사. 끝은 계산해 주세요.",
+        "zh": "点菜주세요。안+形。结账。"
+      }
+    },
+    {
+      "id": "dialogue",
+      "title": {
+        "en": "Dialogue",
+        "ko": "대화",
+        "zh": "对话"
+      },
+      "body": {
+        "en": "Restaurant scene — read, then drill.",
+        "ko": "식당 장면 — 읽고 드릴.",
+        "zh": "餐厅场景——读完再练。"
+      }
+    },
+    {
+      "id": "practice",
+      "title": {
+        "en": "Practice",
+        "ko": "연습",
+        "zh": "练习"
+      },
+      "body": {
+        "en": "Complete dialogues — tips don’t reveal the answer word first.",
+        "ko": "대화 완성 — 힌트는 정답 단어를 바로 주지 않음.",
+        "zh": "完成对话——提示不先泄露答案词。"
+      }
+    },
+    {
+      "id": "checkpoint",
+      "title": {
+        "en": "Checkpoint",
+        "ko": "체크포인트",
+        "zh": "关卡"
+      },
+      "body": {
+        "en": "Order one dish + ask for the check.",
+        "ko": "음식 하나 주문 + 계산 한 줄.",
+        "zh": "点一道菜+请结账。"
+      }
+    }
+  ],
+  "dialogue": {
+    "title": {
+      "en": "At a restaurant",
+      "ko": "식당에서",
+      "zh": "在餐厅"
+    },
+    "lines": [
+      {
+        "who": "직원",
+        "ko": "몇 분이세요?"
+      },
+      {
+        "who": "손님",
+        "ko": "두 명이요."
+      },
+      {
+        "who": "직원",
+        "ko": "주문하시겠어요?"
+      },
+      {
+        "who": "손님",
+        "ko": "비빔밥 하나, 불고기 하나 주세요. 안 매운 걸로요."
+      },
+      {
+        "who": "손님",
+        "ko": "계산해 주세요."
+      }
+    ]
+  },
+  "phrases": [
+    {
+      "ko": "몇 분이세요?",
+      "gloss": {
+        "en": "How many people?",
+        "ko": "인원",
+        "zh": "几位"
+      }
+    },
+    {
+      "ko": "주문하시겠어요?",
+      "gloss": {
+        "en": "Ready to order?",
+        "ko": "주문",
+        "zh": "可以点餐了吗"
+      }
+    },
+    {
+      "ko": "비빔밥 하나 주세요.",
+      "gloss": {
+        "en": "One bibimbap, please.",
+        "ko": "주문",
+        "zh": "一份拌饭"
+      }
+    },
+    {
+      "ko": "안 매운 걸로요.",
+      "gloss": {
+        "en": "Not spicy, please.",
+        "ko": "맵기",
+        "zh": "不要辣的"
+      }
+    },
+    {
+      "ko": "맛있어요!",
+      "gloss": {
+        "en": "It's delicious!",
+        "ko": "평가",
+        "zh": "好吃"
+      }
+    },
+    {
+      "ko": "물 좀 주세요.",
+      "gloss": {
+        "en": "Water, please.",
+        "ko": "물",
+        "zh": "请给水"
+      }
+    },
+    {
+      "ko": "계산해 주세요.",
+      "gloss": {
+        "en": "Check, please.",
+        "ko": "계산",
+        "zh": "请结账"
+      }
+    },
+    {
+      "ko": "따로따로 계산할게요.",
+      "gloss": {
+        "en": "We'll pay separately.",
+        "ko": "더치페이",
+        "zh": "分开付"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "basic-06-01",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Party size.\n\n직원: (    )?\n손님: 두 명이요.",
+        "ko": "※ 인원.\n\n직원: (    )?\n손님: 두 명이요.",
+        "zh": "※ 人数。\n\n店员：(    )?\n客人：두 명이요。"
+      },
+      "choices": [
+        "몇 분이세요",
+        "얼마예요",
+        "어디예요",
+        "이름이 뭐예요"
+      ],
+      "answer": 0,
+      "answerText": "몇 분이세요",
+      "tags": [
+        "topic:음식"
+      ],
+      "hint": {
+        "ko": "인원 확인.",
+        "en": "Headcount.",
+        "zh": "确认人数。",
+        "steps": {
+          "en": [
+            "Restaurant entry",
+            "How many"
+          ],
+          "ko": [
+            "입장",
+            "인원"
+          ],
+          "zh": [
+            "进店",
+            "人数"
+          ]
+        }
+      },
+      "why": {
+        "en": "몇 분이세요? asks party size (honorific 이세요).",
+        "ko": "몇 분이세요?=인원.",
+        "zh": "问几位。"
+      }
+    },
+    {
+      "id": "basic-06-02",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Order.\n\n손님: 김치찌개 하나 (    ).",
+        "ko": "※ 주문.\n\n손님: 김치찌개 하나 (    ).",
+        "zh": "※ 点餐。\n\n客人：김치찌개 하나 (    )。"
+      },
+      "choices": [
+        "주세요",
+        "이에요요",
+        "직진하세요",
+        "읽어세요"
+      ],
+      "answer": 0,
+      "answerText": "주세요",
+      "tags": [
+        "topic:음식",
+        "grammar:주세요"
+      ],
+      "hint": {
+        "ko": "주문.",
+        "en": "Order.",
+        "zh": "点餐。",
+        "steps": {
+          "en": [
+            "Food + quantity",
+            "주세요"
+          ],
+          "ko": [
+            "음식+수량",
+            "주세요"
+          ],
+          "zh": [
+            "食物+数量",
+            "주세요"
+          ]
+        }
+      },
+      "why": {
+        "en": "Dish noun + 주세요 for the order.",
+        "ko": "음식+주세요.",
+        "zh": "菜+주세요。"
+      }
+    },
+    {
+      "id": "basic-06-03",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Spice.\n\n손님: (    ). 못 먹어요.",
+        "ko": "※ 맵기.\n\n손님: (    ). 못 먹어요.",
+        "zh": "※ 辣度。\n\n客人：(    ). 我吃不了。"
+      },
+      "choices": [
+        "안 매운 걸로요",
+        "포장이요만",
+        "직진으로요",
+        "받침으로요"
+      ],
+      "answer": 0,
+      "answerText": "안 매운 걸로요",
+      "tags": [
+        "topic:음식"
+      ],
+      "hint": {
+        "ko": "안+형용사.",
+        "en": "안 + adjective.",
+        "zh": "안+形容词。",
+        "steps": {
+          "en": [
+            "Can't eat spicy",
+            "안 매운"
+          ],
+          "ko": [
+            "맵면 안 됨",
+            "안 매운"
+          ],
+          "zh": [
+            "不能吃辣",
+            "안 매운"
+          ]
+        }
+      },
+      "why": {
+        "en": "안 매운 걸로요 — 안 + adjective before 걸로.",
+        "ko": "안+형용사.",
+        "zh": "안+形。"
+      }
+    },
+    {
+      "id": "basic-06-04",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Water.\n\n손님: (    ).\n직원: 네, 곧 가져올게요.",
+        "ko": "※ 물.\n\n손님: (    ).\n직원: 네, 곧 가져올게요.",
+        "zh": "※ 水。\n\n客人：(    ).\n店员：马上送来。"
+      },
+      "choices": [
+        "물 좀 주세요",
+        "산 좀 주세요",
+        "받침 좀 주세요",
+        "획순 좀 주세요"
+      ],
+      "answer": 0,
+      "answerText": "물 좀 주세요",
+      "tags": [
+        "topic:음식"
+      ],
+      "hint": {
+        "ko": "물 요청.",
+        "en": "Ask for water.",
+        "zh": "要水。",
+        "steps": {
+          "en": [
+            "Need water",
+            "주세요"
+          ],
+          "ko": [
+            "물",
+            "주세요"
+          ],
+          "zh": [
+            "水",
+            "주세요"
+          ]
+        }
+      },
+      "why": {
+        "en": "물 좀 주세요 — soft request with 좀.",
+        "ko": "물+좀+주세요.",
+        "zh": "请给点水。"
+      }
+    },
+    {
+      "id": "basic-06-05",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Taste.\n\n손님: 와, (    )!",
+        "ko": "※ 맛.\n\n손님: 와, (    )!",
+        "zh": "※ 味道。\n\n客人：哇，(    )！"
+      },
+      "choices": [
+        "맛있어요",
+        "멀어요",
+        "직진해요",
+        "포장해요"
+      ],
+      "answer": 0,
+      "answerText": "맛있어요",
+      "tags": [
+        "topic:음식"
+      ],
+      "hint": {
+        "ko": "맛 평가.",
+        "en": "Compliment food.",
+        "zh": "评价好吃。",
+        "steps": {
+          "en": [
+            "Positive reaction",
+            "맛있다"
+          ],
+          "ko": [
+            "긍정",
+            "맛있다"
+          ],
+          "zh": [
+            "正面",
+            "好吃"
+          ]
+        }
+      },
+      "why": {
+        "en": "맛있어요 praises the food (있다→있어요 feel on 맛).",
+        "ko": "맛있어요=칭찬.",
+        "zh": "好吃。"
+      }
+    },
+    {
+      "id": "basic-06-06",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Check.\n\n손님: (    ).\n직원: 카드로 하세요?",
+        "ko": "※ 계산.\n\n손님: (    ).\n직원: 카드로 하세요?",
+        "zh": "※ 结账。\n\n客人：(    ).\n店员：刷卡吗？"
+      },
+      "choices": [
+        "계산해 주세요",
+        "직진해 주세요",
+        "읽어 주세요 받침",
+        "운동해 주세요"
+      ],
+      "answer": 0,
+      "answerText": "계산해 주세요",
+      "tags": [
+        "topic:음식"
+      ],
+      "hint": {
+        "ko": "계산 요청.",
+        "en": "Ask for check.",
+        "zh": "请结账。",
+        "steps": {
+          "en": [
+            "Finished meal",
+            "계산"
+          ],
+          "ko": [
+            "식사 끝",
+            "계산"
+          ],
+          "zh": [
+            "吃完",
+            "结账"
+          ]
+        }
+      },
+      "why": {
+        "en": "계산해 주세요 = please calculate/check (request ending).",
+        "ko": "계산해 주세요=계산 부탁.",
+        "zh": "请结账。"
+      }
+    },
+    {
+      "id": "basic-06-07",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Split.\n\n손님: (    ).\n직원: 네, 알겠습니다.",
+        "ko": "※ 더치.\n\n손님: (    ).\n직원: 네, 알겠습니다.",
+        "zh": "※ 分开付。\n\n客人：(    ).\n店员：好的。"
+      },
+      "choices": [
+        "따로따로 계산할게요",
+        "같이 직진할게요",
+        "같이 받침할게요",
+        "같이 포장만 할게요"
+      ],
+      "answer": 0,
+      "answerText": "따로따로 계산할게요",
+      "tags": [
+        "topic:음식"
+      ],
+      "hint": {
+        "ko": "더치페이.",
+        "en": "Split bill.",
+        "zh": "AA制。",
+        "steps": {
+          "en": [
+            "Not one bill",
+            "따로"
+          ],
+          "ko": [
+            "한 장 아님",
+            "따로"
+          ],
+          "zh": [
+            "不共单",
+            "따로"
+          ]
+        }
+      },
+      "why": {
+        "en": "따로따로 asks separate checks when useful.",
+        "ko": "따로따로=각자 계산.",
+        "zh": "分开付。"
+      }
+    },
+    {
+      "id": "basic-06-08",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Ready to order?\n\n직원: (    )?\n손님: 네, 불고기 주세요.",
+        "ko": "※ 주문 준비.\n\n직원: (    )?\n손님: 네, 불고기 주세요.",
+        "zh": "※ 可以点了吗？\n\n店员：(    )?\n客人：네, 불고기 주세요。"
+      },
+      "choices": [
+        "주문하시겠어요",
+        "운동하시겠어요",
+        "직진하시겠어요",
+        "받침하시겠어요"
+      ],
+      "answer": 0,
+      "answerText": "주문하시겠어요",
+      "tags": [
+        "topic:음식"
+      ],
+      "hint": {
+        "ko": "주문 시점.",
+        "en": "Offer to take order.",
+        "zh": "询问是否点餐。",
+        "steps": {
+          "en": [
+            "Staff prompt",
+            "주문"
+          ],
+          "ko": [
+            "직원 유도",
+            "주문"
+          ],
+          "zh": [
+            "店员提示",
+            "点餐"
+          ]
+        }
+      },
+      "why": {
+        "en": "Order line again uses …주세요.",
+        "ko": "주문도 주세요.",
+        "zh": "点单仍用주세요。"
+      }
+    }
+  ],
+  "verified": false,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "research": "docs/research-basic-content-fill-ko.md",
+  "grammarCards": [
+    {
+      "id": "food-juseyo",
+      "title": {
+        "en": "음식 + 주세요",
+        "ko": "음식 + 주세요",
+        "zh": "菜 + 주세요"
+      },
+      "body": {
+        "en": "Same request pattern as the café, now for dishes: 비빔밥 주세요. Add people count first if seating asks. Bill: 계산해 주세요 (same 주세요 slot, different noun/verb).",
+        "ko": "카페와 같은 부탁, 음식용: 비빔밥 주세요. 좌석이면 인원 먼저. 계산: 계산해 주세요(같은 주세요 자리).",
+        "zh": "与咖啡店同：菜+주세요。先报人数。结账：계산해 주세요。"
+      },
+      "examples": [
+        {
+          "ko": "두 명이에요.",
+          "gloss": {
+            "en": "two people",
+            "ko": "두 명",
+            "zh": "两位"
+          }
+        },
+        {
+          "ko": "김치찌개 주세요.",
+          "gloss": {
+            "en": "dish + please",
+            "ko": "찌개+부탁",
+            "zh": "请给汤"
+          }
+        },
+        {
+          "ko": "계산해 주세요.",
+          "gloss": {
+            "en": "Please bring the check",
+            "ko": "계산 부탁",
+            "zh": "请结账"
+          }
+        }
+      ]
+    },
+    {
+      "id": "an-adj-verb",
+      "kind": "contrast",
+      "title": {
+        "en": "안 + adj ↔ 안 + V",
+        "ko": "안 + 형 ↔ 안 + 동사",
+        "zh": "안 + 形 ↔ 안 + 动"
+      },
+      "body": {
+        "en": "세종·국어원 slot rule: 안 sits before the word it negates. Before an adjective: 안 매운 걸로요 (the not-spicy one). Before a verb: 안 먹어요 (don’t eat). Same 안, different neighbor — don’t glue it after the stem.",
+        "ko": "세종·국어원 자리 규칙: 안은 부정할 말 앞. 형용사 앞: 안 매운 걸로요. 동사 앞: 안 먹어요. 같은 안, 이웃만 다름 — 어간 뒤에 붙이지 않음.",
+        "zh": "世宗/国语院位置规则：안在被否定词前。形前：안 매운；动前：안 먹어요。同一个안，邻居不同——不要粘在词干后。"
+      },
+      "examples": [
+        {
+          "ko": "안 매운 걸로요.",
+          "gloss": {
+            "en": "Adj slot · 안 + 매운",
+            "ko": "형 자리 · 안+매운",
+            "zh": "形位 · 안+매운"
+          }
+        },
+        {
+          "ko": "안 먹어요.",
+          "gloss": {
+            "en": "Verb slot · 안 + 먹어요",
+            "ko": "동사 자리 · 안+먹어요",
+            "zh": "动位 · 안+먹어요"
+          }
+        },
+        {
+          "ko": "안 매워요.",
+          "gloss": {
+            "en": "Predicate adj · still 안 before",
+            "ko": "서술 형 · 그래도 안 앞",
+            "zh": "谓语形 · 仍안在前"
+          }
+        }
+      ],
+      "trap": {
+        "en": "Not *매운안* / *먹안어요*. 안 comes first: 안 매운 · 안 먹어요. (Separate from 못 = can’t.)",
+        "ko": "「매운안」「먹안어요」 아님. 안이 앞: 안 매운 · 안 먹어요. (못=못 함과는 별개.)",
+        "zh": "不是*매운안*/*먹안어요*。안在前。与못（不能）分开记。"
+      },
+      "related": [
+        {
+          "href": "../../blog/#an-adj-verb",
+          "label": {
+            "en": "글모음 · 안+형 vs 안+동사 →",
+            "ko": "글모음 · 안+형 vs 안+동사 →",
+            "zh": "글모음 · 안+形 vs 안+动 →"
+          }
+        }
+      ]
+    }
+  ]
+}

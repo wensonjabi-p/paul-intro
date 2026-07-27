@@ -31,8 +31,19 @@
 
 ## 3. 아직 안 정한 것 (나중에 OK)
 
-- 최종 **도메인** (jabi. 전용 URL, Vercel staging 채우기)
+- 최종 **프로덕션 도메인** (스테이징 URL은 `brand.json` / `/ops`에 있음)
 - Google **Sheet / Doc / Canva** 링크 (만들면 `hub/config/ops-links.json`에 붙임)  
+- **상점 체크아웃 / Lemon 배선** (계획만 · 미구현) 
+
+### 3b. 다음 학습 트랙 순서 (2026-07-26 · Cursor 채택)
+
+Paul이 Cursor에 「순서 정하고 하나씩」 위임 → 리서치 제안 순서를 **기본 채택** (별도 §2 체크 불필요).
+
+1. **한글 읽기·쓰기** (먼저 스캐폴딩만; 획순 UI는 Claude 전담)
+2. **기초 수업**
+3. **TOPIK II** (가장 나중 · 엔진 확장)
+
+상세 백로그·에이전트 분담: `docs/PROGRESS.md` §7.
 
 ---
 

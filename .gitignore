@@ -13,6 +13,12 @@ backtest_out.txt
 __pycache__/
 scripts/__pycache__/
 *.pyc
+scripts/_trial_*.py
+
+# One-shot / backup artifacts
+*.bak
+*.bak-*
+*.svg.bak*
 
 # Character pipeline: trials, pick dumps, Canva raw exports
 hub/app/assets/chars/source/_trial_*

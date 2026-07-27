@@ -1,16 +1,16 @@
 {
   "id": "jabi-topik1-listen-v1-01",
   "title": {
-    "en": "jabi. Listening · Set 1 (script)",
-    "ko": "jabi. 듣기 · 세트 1 (대본)",
-    "zh": "jabi. 听力 · 套题 1（文稿）"
+    "en": "jabi. Listening · Set 1 (match · everyday)",
+    "ko": "jabi. 듣기 연습 1 (일치·일상)",
+    "zh": "jabi. 听力 · 套题 1（一致·日常）"
   },
   "level": "TOPIK I",
   "skill": "listening",
   "verified": true,
   "verifiedAt": "2026-07-26",
   "source": "jabi-original",
-  "sourceNote": "All items: Meaning→Look→Pair (hint.steps). Visual = clear nouns/verbs + Korean label. Grammar: 국립국어원 / beginner-app style.",
+  "sourceNote": "All items: Meaning→Look→Pair (hint.steps). Visual = clear nouns/verbs + Korean label. Grammar: 국립국어원 / beginner-app style. Research-fill #3: titles aligned to TOPIK I section labels; official format only.",
   "questions": [
     {
       "id": "l1-01",
@@ -36,9 +36,9 @@
         "vocab:비"
       ],
       "hint": {
-        "ko": "날씨 답. 나: 비가 와요. 답: 비가 온다.",
-        "en": "Listening match: weather answer. Listen for 나: 비가 와요. Match: 비가 온다 (not snow/wind).",
-        "zh": "听力一致：天气回答。 听 나：비가 와요。 对应：비가 온다。",
+        "ko": "날씨 답.",
+        "en": "Listening match: weather answer. Listen for 나: 비가 와요..",
+        "zh": "听力一致：天气回答。 听 나：비가 와요。。",
         "visual": {
           "emoji": [
             "🌧️",
@@ -50,26 +50,26 @@
         },
         "steps": {
           "en": [
-            "Listening match: weather answer.",
+            "Listening · weather answer.",
             "Listen for 나: 비가 와요.",
-            "Match: 비가 온다 (not snow/wind)."
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "听力一致：天气回答。",
             "听 나：비가 와요。",
-            "对应：비가 온다。"
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "날씨 답.",
             "나: 비가 와요.",
-            "답: 비가 온다."
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "비가 와요 → matches “비가 온다”.",
-        "zh": "비가 와요 → “비가 온다”。",
-        "ko": "비가 와요 → 비가 온다."
+        "en": "Key line 비가 와요 matches the choice about rain falling (온다/와요 present).",
+        "ko": "핵심 「비가 와요」=비가 온다/와요 현재.",
+        "zh": "关键句비가 와요＝下雨。"
       },
       "distractOrder": [
         1,
@@ -109,7 +109,7 @@
         "학교 정문 옆",
         "기숙사 안",
         "식당 뒤",
-        "운동장 중앙"
+        "운동장 가운데"
       ],
       "answer": 0,
       "answerText": "학교 정문 옆",
@@ -118,9 +118,9 @@
         "vocab:도서관"
       ],
       "hint": {
-        "ko": "장소 답. 정문 옆에 있어요. 답: 학교 정문 옆.",
-        "en": "Listening match: place. Listen after 어디에 → 학교 정문 옆에. Match: 학교 정문 옆.",
-        "zh": "听力一致：地点。 听「어디에」后面 → 학교 정문 옆에。 对应：학교 정문 옆。",
+        "ko": "장소 답.",
+        "en": "Listening match: place. Listen after 어디에 → 학교 정문 옆에..",
+        "zh": "听力一致：地点。 听「어디에」后面 → 학교 정문 옆에。。",
         "visual": {
           "emoji": [
             "📚",
@@ -132,26 +132,26 @@
         },
         "steps": {
           "en": [
-            "Listening match: place.",
-            "Listen after 어디에 → 학교 정문 옆에.",
-            "Match: 학교 정문 옆."
+            "Listening · place.",
+            "Listen after 어디에 — the place next to the school main gate.",
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "听力一致：地点。",
-            "听「어디에」后面 → 학교 정문 옆에。",
-            "对应：학교 정문 옆。"
+            "听「어디에」后面 — 学校正门旁边的位置。",
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "장소 답.",
-            "정문 옆에 있어요.",
-            "답: 학교 정문 옆."
+            "「어디에」 뒤에 나오는 위치를 들으세요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "학교 정문 옆에 있어요 = next to the main gate.",
-        "zh": "학교 정문 옆에 있어요 = 在正门旁边。",
-        "ko": "학교 정문 옆에 있어요."
+        "en": "Location phrase 학교 정문 옆에 있어요 — place + 에 있어요 (beside the main gate).",
+        "ko": "「학교 정문 옆에 있어요」=위치 에 있어요.",
+        "zh": "学校正门旁边+에 있어요。"
       },
       "distractOrder": [
         1,
@@ -172,7 +172,7 @@
         "3": {
           "en": "Why not center of the field? Answer: beside the main gate.",
           "zh": "为什么不是操场中央？答案：正门旁。",
-          "ko": "왜 운동장 중앙이 아니에요? 정문 옆."
+          "ko": "왜 운동장 가운데가 아니에요? 정문 옆."
         }
       }
     },
@@ -190,7 +190,7 @@
       "choices": [
         "영화 보기",
         "시험 보기",
-        "이사하기",
+        "이사 가요",
         "요리 수업"
       ],
       "answer": 0,
@@ -200,9 +200,9 @@
         "vocab:주말"
       ],
       "hint": {
-        "ko": "주말 계획. 영화를 볼 거예요. 답: 영화 보기.",
-        "en": "Listening match: weekend plan. Listen: 영화를 볼 거예요. Match: 영화 보기.",
-        "zh": "听力一致：周末计划。 听：영화를 볼 거예요。 对应：영화 보기。",
+        "ko": "주말 계획.",
+        "en": "Listening match: weekend plan. Listen: 영화를 볼 거예요..",
+        "zh": "听力一致：周末计划。 听：영화를 볼 거예요。。",
         "visual": {
           "emoji": [
             "🎬"
@@ -213,26 +213,26 @@
         },
         "steps": {
           "en": [
-            "Listening match: weekend plan.",
+            "Listening · weekend plan.",
             "Listen: 영화를 볼 거예요.",
-            "Match: 영화 보기."
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "听力一致：周末计划。",
             "听：영화를 볼 거예요。",
-            "对应：영화 보기。"
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "주말 계획.",
             "영화를 볼 거예요.",
-            "답: 영화 보기."
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "영화를 볼 거예요 → 영화 보기.",
-        "zh": "영화를 볼 거예요 → 看电影。",
-        "ko": "영화를 볼 거예요 → 영화 보기."
+        "en": "볼 거예요 marks future plan — watching a movie fits.",
+        "ko": "볼 거예요=계획(미래). 영화 보기.",
+        "zh": "볼 거예요＝打算看电影。"
       },
       "distractOrder": [
         1,
@@ -281,9 +281,9 @@
         "vocab:버스"
       ],
       "hint": {
-        "ko": "어디에 가요? 아니요. 시장에 가요. 답: 시장에 간다.",
-        "en": "Listening match: where are they going? After 아니요, hear 시장에 가요 (not 시청). Match: 시장에 간다.",
-        "zh": "听力一致：去哪里？ 「아니요」之后听 시장에 가요（不是 시청）。 对应：시장에 간다。",
+        "ko": "어디에 가요? 아니요.",
+        "en": "Listening match: where are they going? After 아니요, hear 시장에 가요 (not 시청)..",
+        "zh": "听力一致：去哪里？ 「아니요」之后听 시장에 가요（不是 시청）。。",
         "visual": {
           "emoji": [
             "🚌",
@@ -295,26 +295,26 @@
         },
         "steps": {
           "en": [
-            "Listening match: real destination.",
+            "Listening · real destination.",
             "After 아니요, hear 시장에 가요 (not 시청).",
-            "Match: 시장에 간다."
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "听力一致：真正目的地。",
             "「아니요」之后听 시장에 가요（不是 시청）。",
-            "对应：시장에 간다。"
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "진짜 어디에 가요?",
             "아니요. 시장에 가요.",
-            "답: 시장에 간다."
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "시장에 가요 — not 시청.",
-        "zh": "시장에 가요 — 不是 시청。",
-        "ko": "시장에 가요. 시청이 아니에요."
+        "en": "시장에 가요 uses destination 에 + 가다 — market, not city hall (시청).",
+        "ko": "시장에 가요=목적지 에. 시청과 구분.",
+        "zh": "去市场에 가요，不是市政府。"
       },
       "distractOrder": [
         1,
@@ -363,9 +363,9 @@
         "vocab:수업"
       ],
       "hint": {
-        "ko": "끝나는 시간. 네 시 = 4시. 답: 4시에 끝난다.",
-        "en": "Listening match: end time. Listen: 네 시 = 4 o’clock. Match: 4시에 끝난다.",
-        "zh": "听力一致：结束时间。 听：네 시 = 4点。 对应：4시에 끝난다。",
+        "ko": "끝나는 시간.",
+        "en": "Listening match: end time. Listen: 네 시 = 4 o’clock..",
+        "zh": "听力一致：结束时间。 听：네 시 = 4点。。",
         "visual": {
           "emoji": [
             "🕓"
@@ -376,26 +376,26 @@
         },
         "steps": {
           "en": [
-            "Listening match: end time.",
+            "Listening · end time.",
             "Listen: 네 시 = 4 o’clock.",
-            "Match: 4시에 끝난다."
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "听力一致：结束时间。",
             "听：네 시 = 4点。",
-            "对应：4시에 끝난다。"
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "끝나는 시간.",
             "네 시 = 4시.",
-            "답: 4시에 끝난다."
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "네 시에 끝나요 = ends at 4.",
-        "zh": "네 시에 끝나요 = 4点结束。",
-        "ko": "네 시에 끝나요 = 4시에 끝난다."
+        "en": "네 시에 끝나요 — clock time 에 + end verb.",
+        "ko": "네 시에 끝나요=시간 에.",
+        "zh": "四点结束：时间에。"
       },
       "distractOrder": [
         1,

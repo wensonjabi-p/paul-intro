@@ -1,0 +1,195 @@
+{
+  "version": 255,
+  "product": "jabi",
+  "category": "games",
+  "updated": "2026-07-27",
+  "research": "docs/research-jabi-games-ko.md",
+  "note": "Playable digital learning games. Banks = original jabi. only. Counts: bingo 697 · listen-match 664 · speed 650 · telephone 585 · scramble 587 · dictation 642 · cloze 642 · particle 636. +warn-caution bingo/listen +10 (bg-688–697 · lm-655–664) · themes warn · warnTagged 10×4(speed+cloze+bingo+listen) · Prefer 경고하다·주의하다·위험하다·피하다 Done · Suggest particle/dictation · chip 제안 KO 경고 / ZH 警告 · ThemeSm/칩 미터치. Prior cloze c-633–642 · speed sq-641–650. hangul.js untouched.",
+  "games": [
+    {
+      "id": "dictation",
+      "status": "pilot",
+      "priority": 1,
+      "href": "./dictation/",
+      "title": {
+        "en": "Dictation",
+        "ko": "받아쓰기",
+        "zh": "听写"
+      },
+      "blurb": {
+        "en": "Listen → type Korean → check. Speechling-style flow · original jabi. bank.",
+        "ko": "듣기 → 한국어 입력 → 확인. Speechling식 · jabi. 원작 뱅크.",
+        "zh": "听 → 输入韩文 → 核对。Speechling 式 · jabi. 原创题库。"
+      },
+      "badge": "live",
+      "bank": "../data/games/dictation-beginner.json",
+      "version": 66,
+      "itemCount": 642,
+      "count": 642
+    },
+    {
+      "id": "cloze-race",
+      "status": "pilot",
+      "priority": 2,
+      "href": "./cloze-race/",
+      "title": {
+        "en": "Cloze Race",
+        "ko": "빈칸 레이스",
+        "zh": "填空竞速"
+      },
+      "blurb": {
+        "en": "Particles & endings cloze — soft pace bar (never punishes).",
+        "ko": "조사·어미 빈칸 — 부드러운 페이스(비처벌).",
+        "zh": "助词词尾填空 — 轻量节奏（不惩罚）。"
+      },
+      "badge": "live",
+      "bank": "../data/games/cloze-beginner.json",
+      "version": 65,
+      "itemCount": 642,
+      "count": 642
+    },
+    {
+      "id": "particle-snap",
+      "status": "pilot",
+      "priority": 3,
+      "href": "./particle-snap/",
+      "title": {
+        "en": "Particle Snap",
+        "ko": "조사 스냅",
+        "zh": "助词快选"
+      },
+      "blurb": {
+        "en": "은/는 · 이/가 · 을/를 — tap the pair fast.",
+        "ko": "은/는 · 이/가 · 을/를 — 짝을 빠르게 탭.",
+        "zh": "은/는 · 이/가 · 을/를 — 快速点选配对。"
+      },
+      "badge": "live",
+      "bank": "../data/games/particle-beginner.json",
+      "version": 64,
+      "itemCount": 636,
+      "count": 636
+    },
+    {
+      "id": "speed-quiz",
+      "status": "pilot",
+      "priority": 4,
+      "href": "./speed-quiz/",
+      "title": {
+        "en": "Speed Quiz",
+        "ko": "스피드 퀴즈",
+        "zh": "速度测验"
+      },
+      "blurb": {
+        "en": "15–30s feel MCQ — soft pace, tap A–D. Kahoot-style.",
+        "ko": "짧은 객관식 한 판 — 부드러운 페이스 · A–D 탭. Kahoot식.",
+        "zh": "短时选择题 — 轻量节奏 · 点选 A–D。Kahoot 式。"
+      },
+      "badge": "live",
+      "bank": "../data/games/speed-quiz-beginner.json",
+      "version": 65,
+      "itemCount": 650,
+      "count": 650
+    },
+    {
+      "id": "word-scramble",
+      "status": "pilot",
+      "priority": 5,
+      "href": "./word-scramble/",
+      "title": {
+        "en": "Word Scramble",
+        "ko": "어순 맞추기",
+        "zh": "语序拼句"
+      },
+      "blurb": {
+        "en": "Tap scrambled chunks into Korean word order.",
+        "ko": "섞인 덩어리를 탭해 한국어 어순으로.",
+        "zh": "点选打乱语块，排成韩语语序。"
+      },
+      "badge": "live",
+      "bank": "../data/games/word-scramble-beginner.json",
+      "version": 63,
+      "itemCount": 587,
+      "count": 587
+    },
+    {
+      "id": "bingo-board",
+      "status": "pilot",
+      "priority": 6,
+      "href": "./bingo-board/",
+      "title": {
+        "en": "Bingo Board",
+        "ko": "어휘 빙고",
+        "zh": "词汇宾果"
+      },
+      "blurb": {
+        "en": "Classroom bingo — meaning/audio call, tap cells, win a line.",
+        "ko": "교실 빙고 — 뜻·듣기 콜, 칸 탭, 한 줄이면 빙고.",
+        "zh": "课堂宾果 — 释义/听叫号，点格连线。"
+      },
+      "badge": "live",
+      "bank": "../data/games/bingo-beginner.json",
+      "version": 71,
+      "itemCount": 697,
+      "count": 697
+    },
+    {
+      "id": "listen-match",
+      "status": "pilot",
+      "priority": 7,
+      "href": "./listen-match/",
+      "title": {
+        "en": "Listen Match",
+        "ko": "듣기 짝맞추기",
+        "zh": "听力配对"
+      },
+      "blurb": {
+        "en": "Hear audio, tap the matching Korean phrase. Soft practice.",
+        "ko": "음성을 듣고 맞는 한국어 구를 탭. 부드러운 연습.",
+        "zh": "听音频，点选对应韩语短句。轻量练习。"
+      },
+      "badge": "live",
+      "bank": "../data/games/listen-match-beginner.json",
+      "version": 71,
+      "itemCount": 664,
+      "count": 664
+    },
+    {
+      "id": "telephone",
+      "status": "pilot",
+      "priority": 8,
+      "href": "./telephone/",
+      "title": {
+        "en": "Telephone",
+        "ko": "전화게임",
+        "zh": "传话游戏"
+      },
+      "blurb": {
+        "en": "Solo whisper — see/hear, pass, type what you remember. Soft score.",
+        "ko": "솔로 전화게임 — 보고/듣고 전달 후 기억 입력. 부드러운 채점.",
+        "zh": "单人传话 — 看/听后凭记忆输入。轻量评分。"
+      },
+      "badge": "live",
+      "bank": "../data/games/telephone-beginner.json",
+      "version": 63,
+      "itemCount": 585,
+      "count": 585
+    },
+    {
+      "id": "syllable-build",
+      "status": "planned",
+      "priority": 9,
+      "href": null,
+      "title": {
+        "en": "Syllable Build",
+        "ko": "음절 조립",
+        "zh": "音节拼装"
+      },
+      "blurb": {
+        "en": "Build Hangul with cho·jung·jong — planned · ties to Hangul track.",
+        "ko": "초·중·종성 블록으로 글자 — 예정 · 한글 트랙 연동.",
+        "zh": "用初中终声积木组字 — 计划中 · 对接韩文轨。"
+      },
+      "badge": "soon"
+    }
+  ]
+}

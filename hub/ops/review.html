@@ -52,7 +52,7 @@
         <tr><td>허브 (만드는 중)</td><td>TOPIK 학습·블로그·앱·강사·샵 — <strong>본 사이트와 아직 연결 안 함</strong></td></tr>
         <tr><td>앱 1차</td><td>TOPIK <strong>I</strong> — 읽기 모의, 스트릭, 틀린 부분만 반복</td></tr>
         <tr><td>콘텐츠</td><td>Reddit 질문 → 블로그 <strong>영어+한국어</strong> (Reddit 자동 글쓰기 X)</td></tr>
-        <tr><td>앱 유료</td><td>Lemon Squeezy Pro — <strong>지금 가입비 없음</strong>, 팔릴 때만 수수료</td></tr>
+        <tr><td>앱 유료</td><td>Lemon Squeezy Pro 계획 — <strong>지금 가입비·체크아웃 없음</strong>, 팔릴 때만 수수료(미배선)</td></tr>
         <tr><td>1:1 강의</td><td>PayPal / Wise 등 <strong>직접</strong> 받기</td></tr>
       </table>
     </section>
@@ -61,36 +61,38 @@
       <h2>2. 이미 정해 둔 것 — Paul 확인</h2>
       <ul class="checklist">
         <li>허브는 wensonjabi.com과 <strong>분리</strong> (merge 전까지 본 사이트 안 건드림)</li>
-        <li>상품 브랜드 **jabi.** 확정 (Catch / Mercy / Guide) — `hub/config/brand.json`</li>
+        <li>상품 브랜드 <strong>jabi.</strong> 확정 (Catch / Mercy / Guide) — <code>hub/config/brand.json</code></li>
         <li>블로그 <strong>영·한 병행</strong></li>
-        <li>앱 v1 = <strong>TOPIK I만</strong></li>
+        <li>앱 v1 = <strong>TOPIK I</strong> 중심 (한글·기초·TOPIK II·학습 게임은 파일럿 병행)</li>
         <li><strong>AI 중심</strong> 앱, 강사는 선택 (AI 리포트 → 1:1)</li>
-        <li>앱 Pro = Lemon Squeezy / 강의 = 직접 송금</li>
+        <li>앱 Pro = Lemon Squeezy / 강의 = 직접 송금 — <strong>체크아웃 미배선</strong></li>
       </ul>
     </section>
 
     <section class="review-section">
       <h2>3. 아직 안 정한 것 (괜찮음)</h2>
       <ul>
-        <li>최종 상품명·도메인</li>
+        <li>최종 상품명·프로덕션 도메인</li>
         <li>Google Sheet / Canva 링크 (만들면 /ops 버튼에 연결)</li>
-        <li>Vercel 배포 URL (Paul 계정에 hub 연결 후 생김)</li>
+        <li>커스텀 도메인 (스테이징 URL은 <code>brand.json</code> · <code>/ops</code>에 있음)</li>
       </ul>
+      <p class="item-goal" style="margin-top:0.75rem"><strong>다음 트랙 순서 (2026-07-26 Cursor 채택):</strong> 한글 읽기·쓰기 → 기초 수업 → TOPIK II. 획순 UI는 Claude 전담. 백로그: <code>docs/PROGRESS.md</code> §7.</p>
     </section>
 
     <section class="review-section">
       <h2>4. 지금 만들어진 것</h2>
       <ul>
-        <li>스테이징 허브 + TOPIK I 앱 MVP → <a href="https://github.com/wensonjabi-p/paul-intro/pull/2">PR #2</a></li>
+        <li>스테이징 허브 + TOPIK I 앱 MVP → <a href="https://github.com/wensonjabi-p/paul-intro/pull/2">PR #2</a> · Vercel staging</li>
+        <li>파일럿: 한글·기초·TOPIK II·학습 게임·글모음·선생님 선택 · 상점/결제 미배선</li>
         <li>PM 링크 페이지 → <a href="./">/ops/</a> (이 페이지와 같은 폴더)</li>
         <li>상세 기술 문서 → GitHub <code>docs/</code></li>
       </ul>
     </section>
 
     <section class="review-section">
-      <h2>5. 지금 단계 (Phase 0)</h2>
-      <p class="item-goal">목표: 허브 URL을 Paul이 열어 볼 수 있게 Vercel에 올리기 + 위 §2 확인.</p>
-      <p class="item-goal">Phase 1: Zoom 학생 5명에게 앱 베타. Phase 2: 블로그·Sheet. 그 전에 강사 대시보드·상점·앱스토어·wensonjabi 합치기는 <strong>하지 않음</strong>.</p>
+      <h2>5. 지금 단계 (Phase 0 → 1 준비)</h2>
+      <p class="item-goal">스테이징 허브는 열 수 있음. 목표는 위 §2 확인 유지 + Zoom 베타 준비. Lemon/커밋·푸시는 Paul 요청 전 정지.</p>
+      <p class="item-goal">Phase 1: Zoom 학생 5명에게 앱 베타. Phase 2: 블로그·Sheet. 그 전에 강사 대시보드·상점 체크아웃·앱스토어·wensonjabi 합치기는 <strong>하지 않음</strong>.</p>
     </section>
 
     <section class="review-section">

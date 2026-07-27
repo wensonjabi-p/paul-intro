@@ -6,7 +6,9 @@ const BANKS = [
   { file: "verified-read-01.json", path: "../../app/data/verified-read-01.json", skill: "reading" },
   { file: "verified-read-02.json", path: "../../app/data/verified-read-02.json", skill: "reading" },
   { file: "verified-read-03.json", path: "../../app/data/verified-read-03.json", skill: "reading" },
+  { file: "verified-read-04.json", path: "../../app/data/verified-read-04.json", skill: "reading" },
   { file: "verified-listen-01.json", path: "../../app/data/verified-listen-01.json", skill: "listening" },
+  { file: "verified-listen-02.json", path: "../../app/data/verified-listen-02.json", skill: "listening" },
 ];
 
 const TARGETS = [

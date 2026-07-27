@@ -4,28 +4,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>Blog — jabi.</title>
+  <meta name="theme-color" content="#EAF4FF">
+  <title>글모음 — jabi.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/hub.css">
+  <link rel="stylesheet" href="./blog.css">
 </head>
 <body>
   <header class="site-header">
-    <a href="../" class="logo">← Hub</a>
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
     <div class="lang-toggle">
       <button type="button" class="lang-btn active" data-lang="en">EN</button>
       <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
     </div>
   </header>
-  <section class="hero-block">
-    <p class="eyebrow">Read</p>
-    <h1>Blog</h1>
-    <p class="lead">EN + KO posts from learner questions. Reddit → Kimi draft → Paul review → publish.</p>
-  </section>
-  <section class="doors" style="grid-template-columns:1fr">
-    <article class="door" style="cursor:default">
-      <h2>Coming soon</h2>
-      <p>First posts will link to <a href="../app/#deck=honorifics">app decks</a> when the content pipeline is live.</p>
-    </article>
-  </section>
+
+  <main class="blog-page">
+    <div id="blog-list-view">
+      <p class="eyebrow" data-i18n="blogEyebrow">Read</p>
+      <h1 data-i18n="blogTitle">Text collection</h1>
+      <p class="lead" data-i18n="blogLead">Short EN∥KO readings from learner questions — not random essays.</p>
+
+      <nav class="blog-nav" aria-label="Blog nav">
+        <a href="../" data-i18n="blogBackHub">← Hub</a>
+        <a href="../app/" data-i18n="blogToApp">TOPIK I →</a>
+        <a href="../app/games/" data-i18n="blogToGames">Games →</a>
+      </nav>
+
+      <p id="blog-error" class="blog-error hidden" role="alert"></p>
+      <ul class="blog-list" id="blog-list"></ul>
+    </div>
+
+    <div id="blog-detail" class="blog-detail hidden" aria-live="polite"></div>
+  </main>
+
   <script src="../js/i18n.js"></script>
+  <script>
+    window.HubI18nExtra = {
+      en: {
+        blogEyebrow: "Read",
+        blogTitle: "Text collection",
+        blogLead: "Short EN∥KO parallel readings from learner questions — research-backed pilot, not random essays.",
+        blogBackHub: "← Hub",
+        blogToApp: "TOPIK I →",
+        blogToGames: "Games →",
+        blogBack: "← All pieces",
+        blogPilot: "Pilot",
+        blogKeyPoints: "Key points",
+        blogExamples: "Examples",
+        blogCheck: "Quick check",
+        blogLoadFail: "Could not load text collection.",
+      },
+      ko: {
+        blogEyebrow: "읽기",
+        blogTitle: "글모음",
+        blogLead: "학습자 질문으로 쓴 짧은 영·한 병행 읽기 — 연구 근거 파일럿, 임의 에세이 아님.",
+        blogBackHub: "← 허브",
+        blogToApp: "TOPIK I →",
+        blogToGames: "게임 →",
+        blogBack: "← 목록",
+        blogPilot: "파일럿",
+        blogKeyPoints: "핵심",
+        blogExamples: "예문",
+        blogCheck: "확인 질문",
+        blogLoadFail: "글모음을 불러오지 못했습니다.",
+      },
+      zh: {
+        blogEyebrow: "阅读",
+        blogTitle: "文集",
+        blogLead: "来自学习者提问的短英韩对照阅读 — 研究依据试读，不是随意随笔。",
+        blogBackHub: "← 中心",
+        blogToApp: "TOPIK I →",
+        blogToGames: "游戏 →",
+        blogBack: "← 全部",
+        blogPilot: "试读",
+        blogKeyPoints: "要点",
+        blogExamples: "例句",
+        blogCheck: "小测",
+        blogLoadFail: "无法加载文集。",
+      },
+    };
+  </script>
+  <script src="./blog.js"></script>
 </body>
 </html>

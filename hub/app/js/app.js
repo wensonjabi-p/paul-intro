@@ -4,16 +4,24 @@ const MOCK_FILES = [
   "./data/verified-read-01.json",
   "./data/verified-read-02.json",
   "./data/verified-read-03.json",
+  "./data/verified-read-04.json",
 ];
-const LISTEN_FILES = ["./data/verified-listen-01.json"];
-const FINAL_MOCK_FILE = "./data/verified-read-03.json"; // provisional stand-in until dedicated final bank
+const LISTEN_FILES = [
+  "./data/verified-listen-01.json",
+  "./data/verified-listen-02.json",
+];
+/** Reading Set 3 — final-style practice stand-in (not a full 70Q official mock). */
+const FINAL_MOCK_FILE = "./data/verified-read-03.json";
 const SRS_PRACTICE_SIZE = 8;
 const FREE_STAGE_CAP = 2; // pants — D20 provisional
+/** XP floors for character stages 1–6 (matches syncCharStageFromXp). */
+const STAGE_XP_FLOORS = [0, 100, 250, 450, 700, 1000];
 const GOAL_SUGGEST_PCT = 25;
 const REGISTER_ASK_PCT = 80;
 // A single lucky mock shouldn't trigger a "go register" nudge — require a few scored attempts first.
 const MIN_ATTEMPTS_FOR_REGISTER = 3;
 
+/** 13 partners (ㅈ/jieut excluded). Art contract: assets/chars/manifest.json · char-{id}-{1..6}.svg */
 const PARTNER_JAMOS = [
   { id: "giyeok", glyph: "ㄱ" },
   { id: "nieun", glyph: "ㄴ" },
@@ -288,25 +296,25 @@ const UI = {
     streak: "Streak",
     xp: "XP",
     level: "Level",
-    srsDue: "Weak spots",
+    srsDue: "Quests",
     srsDueToday: "Due today",
-    reviewSrs: "Review weak spots",
-    noSrs: "No weak spots yet — take a mock.",
+    reviewSrs: "Open quest review",
+    noSrs: "No quest tags yet — clear a mock first.",
     finished: "Mock complete",
-    srsReviewDone: "Review complete",
+    srsReviewDone: "Quest complete",
     score: "Score",
-    added: "Added to weak-spot deck:",
-    nextReview: "Next review",
-    srsExplainer: "Tags from wrong answers. “Due today” = scheduled review.",
-    startSrsReview: "Start today’s review (up to 3)",
-    demoSrs: "Load demo weak spots (3)",
-    homeReviewCta: "Today’s review ({n})",
-    resultReviewDue: "Start today’s review ({n})",
-    resultReviewMore: "Continue review ({n} left)",
+    added: "Added to quest deck:",
+    nextReview: "Next quest",
+    srsExplainer: "Tags from wrong answers. Due today = today’s quest lane.",
+    startSrsReview: "Start today’s quest (up to 3)",
+    demoSrs: "Load demo quest tags (3)",
+    homeReviewCta: "Today’s quest ({n})",
+    resultReviewDue: "Start today’s quest ({n})",
+    resultReviewMore: "Continue quest ({n} left)",
     next: "Next",
     finish: "See results",
-    srsTitle: "Your weak-spot tags (SRS v1)",
-    practiceSrs: "Practice weak spots (no schedule)",
+    srsTitle: "Your quest tags (SRS)",
+    practiceSrs: "Practice quest tags (no schedule)",
     days: "days",
     changeMode: "Change mode",
     hint: "Hint",
@@ -324,23 +332,31 @@ const UI = {
     tabPractice: "Practice",
     tabMe: "Me",
     todayMission: "Today’s mission",
-    practiceLead: "Reading & listening. Final mock when ready.",
+    practiceLead: "Reading & listening practice sets. Final-style reading when ready.",
+    practiceHubNote: "Hangul · Basics · TOPIK II live on the Hub learning path.",
+    practiceGamesLink: "Games → Dictation",
     practiceReading: "Reading",
     practiceListening: "Listening",
     practiceListenNote: "MVP: device voice or script. Original — not official audio.",
-    practiceFinal: "Final mock",
-    finalMockCta: "Open final mock",
+    practiceFinal: "Final-style reading (Set 3)",
+    nextMissionCta: "Next mission",
+    stageClearBanner: "Stage clear! → {n} · {name}",
+    xpGainLine: "+{n} XP this run · total {total}",
+    xpToNext: "{remain} XP to stage {n}",
+    xpMaxStage: "Max stage — keep grinding XP",
+    stageChip: "S{n}",
+    finalMockCta: "Open Reading Set 3",
     finalMockLocked: "Recommended near ~80% readiness. You can still open it.",
-    finalMockReady: "Near the goal band — try the final-style set.",
+    finalMockReady: "Near the goal band — try Reading Set 3 (final-style practice).",
     listenPlay: "Play",
     listenScript: "Show script",
     coachGoalAsk: "At this pace, set an exam month as your goal?",
     coachGoalYes: "Set goal month",
     coachGoalLater: "Later",
-    coachRegisterAsk: "Around 80% — register for TOPIK?",
-    coachRegisterYes: "Open registration site",
-    coachRegisterNo: "Not now",
-    proSoftCap: "Free preview ends at pants (stage 2). Trial code in Me.",
+    coachRegisterAsk: "Around the 80% band — peek at TOPIK registration when you feel ready?",
+    coachRegisterYes: "View registration site",
+    coachRegisterNo: "Not yet",
+    proSoftCap: "Free court ends at pants (stage 2). Trial code lives in Me.",
     trialCodeLabel: "Trial / Pro code",
     trialApply: "Apply",
     trialOk: "Unlocked",
@@ -359,12 +375,30 @@ const UI = {
     meTrendEmpty: "Take a few practice mocks to see your trend.",
     meStrengths: "Strengths",
     meWeaknesses: "Weak spots",
+    meTeachHandoff: "Share AI report with a coach →",
     meCharNote: "Character stage is separate from this chart.",
     meReadyEmpty: "Not enough practice yet — estimate appears after mocks.",
     meReadyEst: "If you took the final mock now ≈ {pct}% (~{pts}/200). Goal band 80–90%.",
     meReadyConfirmed: "Last practice ≈ {pct}% (~{pts}/200).",
     meNone: "—",
     meProfileTitle: "Profile",
+    meSettingsTitle: "Settings",
+    meSettingsLead: "Change basics anytime. Full onboarding reset stays separate below.",
+    mePartnerSettingsTitle: "Track partners",
+    mePartnerSettingsLead: "Re-pick per track — XP stays.",
+    mePartnerChange: "Change",
+    mePartnerPickTitle: "Partner · {sector}",
+    meSettingsSaved: "Settings saved",
+    mePartnerSaved: "Partner updated · {sector}",
+    hofTitle: "Hall of Fame",
+    hofLead: "Partners you’ve grown across tracks.",
+    hofEmpty: "Not started yet",
+    hofMaxBadge: "MAX",
+    hofXpLine: "{xp} XP",
+    hofSectorHangul: "Hangul",
+    hofSectorBasic: "Basics",
+    hofSectorTopik1: "TOPIK I",
+    hofSectorTopik2: "TOPIK II",
     redoOnboarding: "Redo onboarding",
     obBasicsEyebrow: "About you",
     obBasicsTitle: "Basic info",
@@ -399,25 +433,25 @@ const UI = {
     streak: "연속 학습",
     xp: "경험치",
     level: "등급",
-    srsDue: "약점",
-    srsDueToday: "오늘 복습",
-    reviewSrs: "약점 주제 보기",
-    noSrs: "아직 약점 없음 — 모의고사를 풀어 보세요.",
+    srsDue: "퀘스트",
+    srsDueToday: "오늘 퀘스트",
+    reviewSrs: "퀘스트 복습",
+    noSrs: "아직 퀘스트 없음 — 모의고사를 먼저 클리어해 보세요.",
     finished: "모의고사 끝",
-    srsReviewDone: "복습 끝",
+    srsReviewDone: "퀘스트 완료",
     score: "점수",
-    added: "약점 목록에 넣음:",
-    nextReview: "다음 복습",
-    srsExplainer: "틀린 문항의 주제입니다. “오늘 복습” = 오늘 일정에 오른 주제.",
-    startSrsReview: "오늘 복습 시작 (최대 3문항)",
-    demoSrs: "예시 약점 넣기 (3개)",
-    homeReviewCta: "오늘 복습 ({n})",
-    resultReviewDue: "오늘 복습 시작 ({n})",
-    resultReviewMore: "남은 복습 이어가기 ({n})",
+    added: "퀘스트 덱에 넣음:",
+    nextReview: "다음 퀘스트",
+    srsExplainer: "틀린 문항의 주제입니다. “오늘 퀘스트” = 오늘 레인에 오른 주제.",
+    startSrsReview: "오늘 퀘스트 시작 (최대 3문항)",
+    demoSrs: "예시 퀘스트 넣기 (3개)",
+    homeReviewCta: "오늘 퀘스트 ({n})",
+    resultReviewDue: "오늘 퀘스트 시작 ({n})",
+    resultReviewMore: "남은 퀘스트 이어가기 ({n})",
     next: "다음",
     finish: "결과 보기",
-    srsTitle: "약점 주제 (간격 복습)",
-    practiceSrs: "약점 연습 (일정 유지)",
+    srsTitle: "나의 퀘스트 태그 (간격 복습)",
+    practiceSrs: "퀘스트 연습 (일정 무시)",
     days: "일",
     changeMode: "학습 방식 바꾸기",
     hint: "도움말",
@@ -435,23 +469,31 @@ const UI = {
     tabPractice: "연습",
     tabMe: "나",
     todayMission: "오늘 할 일",
-    practiceLead: "읽기·듣기. 준비되면 최종 간이 모의고사.",
+    practiceLead: "읽기·듣기 연습 세트. 준비되면 읽기 세트 3(최종 연습).",
+    practiceHubNote: "한글·기초·TOPIK II는 Hub 학습 경로에서.",
+    practiceGamesLink: "게임 → 받아쓰기",
     practiceReading: "읽기",
     practiceListening: "듣기",
     practiceListenNote: "미리보기: 기기 음성 또는 대본. 원작 — 공식 음원 아님.",
-    practiceFinal: "최종 간이 모의고사",
-    finalMockCta: "최종 모의고사 열기",
+    practiceFinal: "최종 연습 읽기 (세트 3)",
+    nextMissionCta: "다음 미션",
+    stageClearBanner: "스테이지 클리어! → {n} · {name}",
+    xpGainLine: "이번 +{n} XP · 합계 {total}",
+    xpToNext: "다음 단계까지 {remain} XP (S{n})",
+    xpMaxStage: "최고 단계 — XP는 계속 쌓입니다",
+    stageChip: "S{n}",
+    finalMockCta: "읽기 세트 3 열기",
     finalMockLocked: "준비도 약 80%를 권장합니다. 원하면 지금 열 수 있어요.",
-    finalMockReady: "목표에 가깝습니다 — 최종 형식 문제 묶음을 해 보세요.",
+    finalMockReady: "목표에 가깝습니다 — 읽기 세트 3(최종 연습)을 해 보세요.",
     listenPlay: "재생",
     listenScript: "대본 보기",
     coachGoalAsk: "이 속도라면 시험 달을 목표로 정할까요?",
     coachGoalYes: "목표 달 정하기",
     coachGoalLater: "나중에",
-    coachRegisterAsk: "준비도 약 80% — TOPIK 접수할까요?",
-    coachRegisterYes: "접수 누리집 열기",
-    coachRegisterNo: "지금은 아니요",
-    proSoftCap: "무료 체험은 바지(2단계)까지. 「나」에서 체험 암호.",
+    coachRegisterAsk: "준비도 약 80% — 마음이 되면 TOPIK 접수를 살짝 볼까요?",
+    coachRegisterYes: "접수 사이트 보기",
+    coachRegisterNo: "아직은 괜찮아요",
+    proSoftCap: "무료 코트는 바지(2단계)까지. 「나」에 체험 암호가 있어요.",
     trialCodeLabel: "체험 / 유료 암호",
     trialApply: "적용",
     trialOk: "잠금 풀림",
@@ -470,12 +512,30 @@ const UI = {
     meTrendEmpty: "연습 모의고사를 몇 번 풀면 추이가 보여요.",
     meStrengths: "강점",
     meWeaknesses: "약점",
+    meTeachHandoff: "AI 학습 보고를 선생님과 공유 →",
     meCharNote: "글자 성장 단계는 이 그림과 별개입니다.",
     meReadyEmpty: "연습이 더 필요해요 — 모의고사 후 추정이 표시됩니다.",
     meReadyEst: "지금 최종 모의고사라면 대략 {pct}% (약 {pts}/200). 추천 목표 80–90%.",
     meReadyConfirmed: "최근 연습 약 {pct}% (약 {pts}/200).",
     meNone: "—",
     meProfileTitle: "내 정보",
+    meSettingsTitle: "설정",
+    meSettingsLead: "기본 정보는 언제든 바꿀 수 있어요. 전체 온보딩 다시하기는 아래에 따로 있어요.",
+    mePartnerSettingsTitle: "트랙별 학습 짝",
+    mePartnerSettingsLead: "트랙마다 다시 고르기 — XP는 유지됩니다.",
+    mePartnerChange: "바꾸기",
+    mePartnerPickTitle: "학습 짝 · {sector}",
+    meSettingsSaved: "설정 저장됨",
+    mePartnerSaved: "짝 변경됨 · {sector}",
+    hofTitle: "명예의 전당",
+    hofLead: "트랙마다 키운 학습 짝을 모아요.",
+    hofEmpty: "아직 시작 안 함",
+    hofMaxBadge: "MAX",
+    hofXpLine: "{xp} XP",
+    hofSectorHangul: "한글",
+    hofSectorBasic: "기초",
+    hofSectorTopik1: "TOPIK I",
+    hofSectorTopik2: "TOPIK II",
     redoOnboarding: "첫 설정 다시",
     obBasicsEyebrow: "나에 대해",
     obBasicsTitle: "기본 정보",
@@ -501,8 +561,8 @@ const UI = {
     obPartnerTitle: "자음 짝 고르기",
     obPartnerLead: "한 과정에 짝 하나. ㅈ는 자비(길잡이) — 선택 목록에 없음.",
     missionCatch: "연습 모의고사 시작",
-    missionMercy: "연속 학습 유지 — 가벼운 복습",
-    missionGuide: "오늘의 균형 과제",
+    missionMercy: "연속 유지 — 가벼운 퀘스트",
+    missionGuide: "오늘의 균형 퀘스트",
     stageLabel: "{n}단계 · {name}",
   },
   zh: {
@@ -510,25 +570,25 @@ const UI = {
     streak: "连续",
     xp: "XP",
     level: "等级",
-    srsDue: "弱点",
-    srsDueToday: "今日复习",
-    reviewSrs: "查看弱点标签",
-    noSrs: "还没有弱点 — 先做一套模考。",
+    srsDue: "任务",
+    srsDueToday: "今日任务",
+    reviewSrs: "打开任务复习",
+    noSrs: "还没有任务标签 — 先通关一套模考。",
     finished: "模考完成",
-    srsReviewDone: "复习完成",
+    srsReviewDone: "任务完成",
     score: "得分",
-    added: "已加入弱点牌组：",
-    nextReview: "下次复习",
-    srsExplainer: "来自错题的标签。“今日复习”= 今天到期。",
-    startSrsReview: "开始今日复习（最多 3 题）",
-    demoSrs: "加载演示弱点（3 个）",
-    homeReviewCta: "今日复习（{n}）",
-    resultReviewDue: "开始今日复习（{n}）",
-    resultReviewMore: "继续复习（剩 {n}）",
+    added: "已加入任务牌组：",
+    nextReview: "下次任务",
+    srsExplainer: "来自错题的标签。“今日任务”= 今天赛道上的题。",
+    startSrsReview: "开始今日任务（最多 3 题）",
+    demoSrs: "加载演示任务（3 个）",
+    homeReviewCta: "今日任务（{n}）",
+    resultReviewDue: "开始今日任务（{n}）",
+    resultReviewMore: "继续任务（剩 {n}）",
     next: "下一题",
     finish: "查看结果",
-    srsTitle: "弱点标签（SRS v1）",
-    practiceSrs: "练习弱点（保留日程）",
+    srsTitle: "你的任务标签（SRS）",
+    practiceSrs: "练习任务标签（不跟日程）",
     days: "天",
     changeMode: "更换模式",
     hint: "提示",
@@ -546,23 +606,31 @@ const UI = {
     tabPractice: "练习",
     tabMe: "我的",
     todayMission: "今日任务",
-    practiceLead: "阅读与听力。准备好后最终简易模考。",
+    practiceLead: "阅读与听力练习套题。准备好后打开阅读套题 3（最终练习）。",
+    practiceHubNote: "韩文·基础·TOPIK II 在 Hub 学习路径。",
+    practiceGamesLink: "游戏 → 听写",
     practiceReading: "阅读",
     practiceListening: "听力",
     practiceListenNote: "MVP：设备朗读或文稿。原创 — 非官方音频。",
-    practiceFinal: "最终简易模考",
-    finalMockCta: "打开最终模考",
+    practiceFinal: "最终练习阅读（套题 3）",
+    nextMissionCta: "下一任务",
+    stageClearBanner: "关卡通关！→ {n} · {name}",
+    xpGainLine: "本局 +{n} XP · 合计 {total}",
+    xpToNext: "距下一阶 {remain} XP（S{n}）",
+    xpMaxStage: "已满阶 — XP 继续累积",
+    stageChip: "S{n}",
+    finalMockCta: "打开阅读套题 3",
     finalMockLocked: "建议准备度约 80%。也可现在打开。",
-    finalMockReady: "接近目标区间 — 试试最终形式套题。",
+    finalMockReady: "接近目标区间 — 试试阅读套题 3（最终练习）。",
     listenPlay: "播放",
     listenScript: "显示文稿",
     coachGoalAsk: "按此节奏，要把考试月份设为目标吗？",
     coachGoalYes: "设定目标月",
     coachGoalLater: "以后",
-    coachRegisterAsk: "准备度约 80% — 去报名 TOPIK 吗？",
-    coachRegisterYes: "打开报名网站",
-    coachRegisterNo: "暂不",
-    proSoftCap: "免费体验到短裤（第 2 阶）。「我的」可输入体验码。",
+    coachRegisterAsk: "准备度约 80% — 准备好了就先看看 TOPIK 报名入口？",
+    coachRegisterYes: "查看报名网站",
+    coachRegisterNo: "先不急",
+    proSoftCap: "免费赛场到短裤（第 2 阶）。「我的」里有体验码。",
     trialCodeLabel: "体验 / Pro 码",
     trialApply: "应用",
     trialOk: "已解锁",
@@ -581,12 +649,30 @@ const UI = {
     meTrendEmpty: "多做几套练习模考后可见趋势。",
     meStrengths: "强项",
     meWeaknesses: "弱项",
+    meTeachHandoff: "与教练分享 AI 学习报告 →",
     meCharNote: "角色成长与本图独立。",
     meReadyEmpty: "练习还不够 — 模考后会显示估计。",
     meReadyEst: "若现在考最终模考约 {pct}%（~{pts}/200）。建议目标 80–90%。",
     meReadyConfirmed: "最近练习约 {pct}%（~{pts}/200）。",
     meNone: "—",
     meProfileTitle: "资料",
+    meSettingsTitle: "设置",
+    meSettingsLead: "可随时改基本信息。完整重做引导仍在下方单独保留。",
+    mePartnerSettingsTitle: "各轨道伙伴",
+    mePartnerSettingsLead: "按轨道重选 — XP 保留。",
+    mePartnerChange: "更换",
+    mePartnerPickTitle: "伙伴 · {sector}",
+    meSettingsSaved: "设置已保存",
+    mePartnerSaved: "伙伴已更新 · {sector}",
+    hofTitle: "名人堂",
+    hofLead: "各轨道培养过的伙伴。",
+    hofEmpty: "尚未开始",
+    hofMaxBadge: "MAX",
+    hofXpLine: "{xp} XP",
+    hofSectorHangul: "韩文",
+    hofSectorBasic: "基础",
+    hofSectorTopik1: "TOPIK I",
+    hofSectorTopik2: "TOPIK II",
     redoOnboarding: "重新引导",
     obBasicsEyebrow: "关于你",
     obBasicsTitle: "基本信息",
@@ -612,7 +698,7 @@ const UI = {
     obPartnerTitle: "选择辅音伙伴",
     obPartnerLead: "一门课一位伙伴。ㅈ 是 jabi.（向导）— 不在可选列表。",
     missionCatch: "开始练习模考",
-    missionMercy: "保持连续 — 轻松复习",
+    missionMercy: "保持连续 — 轻松任务",
     missionGuide: "今日均衡任务",
     stageLabel: "第 {n} 阶 · {name}",
   },
@@ -650,6 +736,8 @@ let qHints = 0;
 let qWrongs = 0;
 let sessionHints = 0;
 let sessionWrongTries = 0;
+let runXpStart = 0;
+let runStageStart = 1;
 let eliminated = new Set();
 let obStep = 1;
 let currentTab = "home";
@@ -729,10 +817,24 @@ function applySelectLabels() {
     },
   };
   const pack = map[lang] || map.en;
+  const aliases = {
+    "me-set-native-lang": "ob-native-lang",
+    "me-set-region": "ob-region",
+    "me-set-amount": "ob-amount",
+    "me-set-daily": "ob-daily",
+  };
   Object.keys(pack).forEach((id) => {
     const sel = document.getElementById(id);
     if (!sel) return;
     const labels = pack[id];
+    [...sel.options].forEach((opt) => {
+      if (labels[opt.value] != null) opt.textContent = labels[opt.value];
+    });
+  });
+  Object.keys(aliases).forEach((meId) => {
+    const sel = document.getElementById(meId);
+    const labels = pack[aliases[meId]];
+    if (!sel || !labels) return;
     [...sel.options].forEach((opt) => {
       if (labels[opt.value] != null) opt.textContent = labels[opt.value];
     });
@@ -802,16 +904,55 @@ function effectiveCharStage() {
 function syncCharStageFromXp() {
   const xp = state.xp || 0;
   let stage = 1;
-  if (xp >= 40) stage = 2;
-  if (xp >= 120) stage = 3;
-  if (xp >= 220) stage = 4;
-  if (xp >= 350) stage = 5;
-  if (xp >= 500) stage = 6;
+  // Modest pace: ~1 clean mock (~100 XP) → pants; not mid-quiz after 4 items.
+  for (let i = STAGE_XP_FLOORS.length - 1; i >= 0; i--) {
+    if (xp >= STAGE_XP_FLOORS[i]) {
+      stage = i + 1;
+      break;
+    }
+  }
   const prev = state.profile.charStage || 1;
   state.profile.charStage = stage;
   if (!state.profile.proUnlock && stage > FREE_STAGE_CAP && prev <= FREE_STAGE_CAP) {
     toast(ui("proSoftCap"));
   }
+}
+
+function xpProgressTowardNext() {
+  const xp = state.xp || 0;
+  let stage = 1;
+  for (let i = STAGE_XP_FLOORS.length - 1; i >= 0; i--) {
+    if (xp >= STAGE_XP_FLOORS[i]) {
+      stage = i + 1;
+      break;
+    }
+  }
+  if (stage >= 6) {
+    return { stage, pct: 100, xp, nextAt: null, remain: 0 };
+  }
+  const floor = STAGE_XP_FLOORS[stage - 1];
+  const nextAt = STAGE_XP_FLOORS[stage];
+  const span = Math.max(1, nextAt - floor);
+  const pct = Math.min(100, Math.round(((xp - floor) / span) * 100));
+  return { stage, pct, xp, nextAt, remain: Math.max(0, nextAt - xp) };
+}
+
+/** Learner-facing tag label: hide internal prefixes like grammar:와/과 */
+const TAG_KIND_LABELS = {
+  en: { grammar: "Grammar", vocab: "Vocab", reading: "Reading", listening: "Listening" },
+  ko: { grammar: "문법", vocab: "어휘", reading: "읽기", listening: "듣기" },
+  zh: { grammar: "语法", vocab: "词汇", reading: "阅读", listening: "听力" },
+};
+
+function formatTagLabel(tag) {
+  const s = String(tag || "");
+  const i = s.indexOf(":");
+  if (i < 0) return s;
+  const kind = s.slice(0, i);
+  const name = s.slice(i + 1);
+  const map = TAG_KIND_LABELS[getLang()] || TAG_KIND_LABELS.en;
+  const kindLabel = map[kind] || kind;
+  return `${name} · ${kindLabel}`;
 }
 
 function renderFinalMockBox() {
@@ -1034,11 +1175,12 @@ function renderJamoGrid() {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "jamo-card";
+    btn.setAttribute("aria-label", j.glyph);
     btn.innerHTML =
       `<span class="jamo-glyph">` +
       `<img class="jamo-art" src="${charArtSrc(j.id, 1)}" alt="${j.glyph}" ` +
       `onerror="this.replaceWith(document.createTextNode('${j.glyph}'))">` +
-      `</span><span class="jamo-id">${j.id}</span>`;
+      `</span>`;
     btn.addEventListener("click", () => finishOnboarding(j));
     grid.appendChild(btn);
   });
@@ -1115,12 +1257,42 @@ function renderHome() {
     const labels = STAGE_LABELS[getLang()] || STAGE_LABELS.en;
     stageEl.textContent = interpolate(ui("stageLabel"), { n, name: labels[n - 1] });
   }
+  const stagePill = document.getElementById("partner-stage-pill");
+  if (stagePill) stagePill.textContent = `STAGE ${n}`;
   renderCoachBanners();
 
+  const prog = xpProgressTowardNext();
+  const xpLabel = document.getElementById("xp-bar-label");
+  const xpFill = document.getElementById("xp-bar-fill");
+  const xpBar = document.getElementById("xp-bar");
+  const xpHint = document.getElementById("xp-bar-hint");
+  if (xpLabel) xpLabel.textContent = String(prog.xp);
+  if (xpFill) xpFill.style.width = `${prog.pct}%`;
+  if (xpBar) xpBar.setAttribute("aria-valuenow", String(prog.pct));
+  if (xpHint) {
+    xpHint.textContent =
+      prog.nextAt == null
+        ? ui("xpMaxStage")
+        : interpolate(ui("xpToNext"), { remain: prog.remain, n: prog.stage + 1 });
+  }
+  const chips = document.getElementById("stage-chips");
+  if (chips) {
+    const labels = STAGE_LABELS[getLang()] || STAGE_LABELS.en;
+    const shown = effectiveCharStage();
+    chips.innerHTML = "";
+    for (let i = 1; i <= 6; i++) {
+      const span = document.createElement("span");
+      span.className = "stage-chip";
+      if (i < shown) span.classList.add("is-done");
+      else if (i === shown) span.classList.add("is-current");
+      else span.classList.add("is-locked");
+      span.title = labels[i - 1] || "";
+      span.textContent = interpolate(ui("stageChip"), { n: i });
+      chips.appendChild(span);
+    }
+  }
+
   document.getElementById("stat-streak").textContent = state.streak;
-  document.getElementById("stat-xp").textContent = state.xp;
-  document.getElementById("stat-level").textContent = levelFromXp(state.xp);
-  document.getElementById("stat-srs").textContent = Object.keys(state.srs).length;
   const dueN = getDueTags(state).length;
   document.getElementById("stat-srs-due").textContent = dueN;
   const banner = document.getElementById("srs-due-banner");
@@ -1128,9 +1300,9 @@ function renderHome() {
   if (dueN > 0) {
     if (banner) {
       banner.textContent = L(
-          `${dueN} tag(s) due today — start below.`,
-          `오늘 복습 ${dueN}개 — 아래 버튼으로 바로 시작.`,
-          `今日待复习 ${dueN} 个 — 点下方按钮开始。`
+                  `${dueN} quest(s) due today — start below.`,
+          `오늘 퀘스트 ${dueN}개 — 아래 버튼으로 시작.`,
+          `今日任务 ${dueN} 个 — 点下方按钮开始。`
         );
       banner.classList.remove("hidden");
     }
@@ -1274,7 +1446,7 @@ function renderAnalysis() {
     } else {
       strengths.forEach((r) => {
         const li = document.createElement("li");
-        li.innerHTML = `<strong>${r.tag}</strong> · ${Math.round(r.rate * 100)}%`;
+        li.innerHTML = `<strong>${escapeHtml(formatTagLabel(r.tag))}</strong> · ${Math.round(r.rate * 100)}%`;
         sUl.appendChild(li);
       });
     }
@@ -1288,7 +1460,7 @@ function renderAnalysis() {
     } else {
       weaknesses.forEach((r) => {
         const li = document.createElement("li");
-        li.innerHTML = `<strong>${r.tag}</strong> · ×${r.wrongs}`;
+        li.innerHTML = `<strong>${escapeHtml(formatTagLabel(r.tag))}</strong> · ×${r.wrongs}`;
         wUl.appendChild(li);
       });
     }
@@ -1301,6 +1473,9 @@ function renderMe() {
   setActiveTab("me");
   document.getElementById("view-me")?.classList.remove("hidden");
   applyUiStrings();
+  renderHallOfFame();
+  fillSettingsForm();
+  renderPartnerSettings();
   renderAnalysis();
   const p = state.profile;
   const el = document.getElementById("me-profile-summary");
@@ -1314,6 +1489,343 @@ function renderMe() {
   }
   renderCoachBanners();
   ensureTrialUi();
+}
+
+function readLsJson(key) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+function stageFromXpValue(xp) {
+  let stage = 1;
+  for (let i = STAGE_XP_FLOORS.length - 1; i >= 0; i--) {
+    if (xp >= STAGE_XP_FLOORS[i]) {
+      stage = i + 1;
+      break;
+    }
+  }
+  return stage;
+}
+
+function xpPctTowardNext(xp) {
+  const stage = stageFromXpValue(xp);
+  if (stage >= 6) return 100;
+  const floor = STAGE_XP_FLOORS[stage - 1];
+  const nextAt = STAGE_XP_FLOORS[stage];
+  const span = Math.max(1, nextAt - floor);
+  return Math.min(100, Math.round(((xp - floor) / span) * 100));
+}
+
+function effectiveStageForSector(rawStage, proUnlock) {
+  const raw = Math.max(1, Math.min(6, rawStage || 1));
+  if (proUnlock) return raw;
+  return Math.min(FREE_STAGE_CAP, raw);
+}
+
+/** SpecPartner-3 — read partner snapshots from all 4 sector stores. */
+function collectHofSectors() {
+  const hangul = readLsJson("jabi.hangul.v1");
+  const basic = readLsJson("jabi.basic.v1");
+  const topik2 = readLsJson("jabi.topik2.v1");
+  syncCharStageFromXp();
+  const topik1Xp = state.xp || 0;
+  const topik1Pro = !!state.profile.proUnlock;
+
+  function pack(id, labelKey, href, blob, fallbackPartner) {
+    const xp = typeof blob?.xp === "number" ? blob.xp : 0;
+    const proUnlock = !!blob?.proUnlock;
+    let partner = null;
+    if (fallbackPartner?.id) {
+      partner = {
+        id: fallbackPartner.id,
+        glyph: fallbackPartner.glyph || "",
+      };
+    } else if (blob?.partner?.id) {
+      partner = {
+        id: String(blob.partner.id),
+        glyph: String(blob.partner.glyph || ""),
+      };
+    }
+    const rawStage = partner ? stageFromXpValue(xp) : 0;
+    const stage = partner ? effectiveStageForSector(rawStage, proUnlock) : 0;
+    return {
+      id,
+      labelKey,
+      href,
+      partner,
+      xp,
+      stage,
+      rawStage,
+      pct: partner ? xpPctTowardNext(xp) : 0,
+      isMax: !!(partner && stage >= 6),
+    };
+  }
+
+  return [
+    pack("hangul", "hofSectorHangul", "./hangul/", hangul),
+    pack("basic", "hofSectorBasic", "./basic/", basic),
+    pack(
+      "topik1",
+      "hofSectorTopik1",
+      null,
+      { xp: topik1Xp, proUnlock: topik1Pro, partner: null },
+      state.profile.partnerId
+        ? { id: state.profile.partnerId, glyph: state.profile.partnerGlyph || "" }
+        : null
+    ),
+    pack("topik2", "hofSectorTopik2", "./topik2/", topik2),
+  ];
+}
+
+function hofTileHtml(sector) {
+  const sectorName = escapeHtml(ui(sector.labelKey));
+  if (!sector.partner) {
+    const inner = `
+      <span class="hof-tile-sector">${sectorName}</span>
+      <span class="hof-empty-label">${escapeHtml(ui("hofEmpty"))}</span>`;
+    if (sector.href) {
+      return `<a class="hof-tile is-empty" href="${sector.href}">${inner}</a>`;
+    }
+    return `<div class="hof-tile is-empty">${inner}</div>`;
+  }
+  const labels = STAGE_LABELS[getLang()] || STAGE_LABELS.en;
+  const stageName = labels[sector.stage - 1] || "";
+  const fallback = escapeHtml(sector.partner.glyph || "·");
+  const partnerId = escapeHtml(sector.partner.id);
+  const art = charArtSrc(sector.partner.id, sector.stage);
+  const maxBadge = sector.isMax
+    ? `<span class="hof-badge-max">${escapeHtml(ui("hofMaxBadge"))}</span>`
+    : "";
+  const stageLine = escapeHtml(
+    interpolate(ui("stageLabel"), { n: sector.stage, name: stageName })
+  );
+  const xpLine = escapeHtml(interpolate(ui("hofXpLine"), { xp: sector.xp }));
+  const cls = sector.isMax ? "hof-tile is-max" : "hof-tile";
+  const body = `
+    ${maxBadge}
+    <div class="hof-tile-art">
+      <img src="${art}" alt="${fallback}" onerror="this.replaceWith(document.createTextNode('${fallback}'))">
+    </div>
+    <span class="hof-tile-sector">${sectorName}</span>
+    <span class="hof-tile-name">${partnerId}</span>
+    <span class="hof-tile-stage">${stageLine} · ${xpLine}</span>
+    <div class="hof-tile-bar" aria-hidden="true"><span style="width:${sector.pct}%"></span></div>`;
+  if (sector.href) {
+    return `<a class="${cls}" href="${sector.href}">${body}</a>`;
+  }
+  return `<div class="${cls}">${body}</div>`;
+}
+
+function renderHallOfFame() {
+  const grid = document.getElementById("me-hof-grid");
+  const maxRow = document.getElementById("me-hof-max");
+  if (!grid) return;
+  const sectors = collectHofSectors();
+  const maxed = sectors.filter((s) => s.isMax);
+  const rest = sectors.filter((s) => !s.isMax);
+  if (maxRow) {
+    if (maxed.length) {
+      maxRow.hidden = false;
+      maxRow.innerHTML = maxed.map(hofTileHtml).join("");
+    } else {
+      maxRow.hidden = true;
+      maxRow.innerHTML = "";
+    }
+  }
+  grid.innerHTML = rest.map(hofTileHtml).join("");
+}
+
+let settingsWired = false;
+let partnerPickerSector = null;
+
+function fillSettingsForm() {
+  const p = state.profile || {};
+  const set = (id, val) => {
+    const el = document.getElementById(id);
+    if (el && val != null && val !== "") el.value = String(val);
+  };
+  set("me-set-native-lang", p.nativeLang || "zh");
+  set("me-set-region", p.region || "cn");
+  set("me-set-amount", p.studyAmount || "steady");
+  set("me-set-daily", p.dailyMinutes || "30");
+  applySelectLabels();
+}
+
+function saveSettingsFromForm(opts) {
+  const p = state.profile;
+  p.nativeLang = document.getElementById("me-set-native-lang")?.value || p.nativeLang || "zh";
+  p.region = document.getElementById("me-set-region")?.value || p.region || "cn";
+  p.studyAmount = document.getElementById("me-set-amount")?.value || p.studyAmount || "steady";
+  p.dailyMinutes = document.getElementById("me-set-daily")?.value || p.dailyMinutes || "30";
+  saveState(state);
+  if (opts?.toast !== false) toast(ui("meSettingsSaved"));
+  const el = document.getElementById("me-profile-summary");
+  if (el) {
+    el.textContent = L(
+      `Mode ${modeDisplayName()} · Partner ${p.partnerGlyph || "—"} · Region ${p.region || "—"} · Goal ${p.hasExamGoal ? p.goalMonth || "—" : "course first"} · Char ${effectiveCharStage()}/6${p.proUnlock ? " · Pro" : ""}`,
+      `학습 방식 ${modeDisplayName()} · 짝 ${p.partnerGlyph || "—"} · 지역 ${p.region || "—"} · 목표 달 ${p.hasExamGoal ? p.goalMonth || "—" : "과정 우선"} · 글자 ${effectiveCharStage()}/6${p.proUnlock ? " · 유료" : ""}`,
+      `模式 ${modeDisplayName()} · 伙伴 ${p.partnerGlyph || "—"} · 地区 ${p.region || "—"} · 目标月 ${p.hasExamGoal ? p.goalMonth || "—" : "先课程"} · 角色 ${effectiveCharStage()}/6${p.proUnlock ? " · Pro" : ""}`
+    );
+  }
+}
+
+function writePathPartner(lsKey, jamo) {
+  let data = readLsJson(lsKey);
+  if (!data || typeof data !== "object") {
+    data = { xp: 0, skills: {}, partner: null, proUnlock: false };
+  }
+  if (!data.skills || typeof data.skills !== "object") data.skills = {};
+  const xp = typeof data.xp === "number" && data.xp >= 0 ? data.xp : 0;
+  data.xp = xp;
+  data.partner = {
+    id: jamo.id,
+    glyph: jamo.glyph || "",
+    stage: stageFromXpValue(xp),
+  };
+  try {
+    localStorage.setItem(lsKey, JSON.stringify(data));
+  } catch {
+    /* ignore */
+  }
+}
+
+function writeTopik2Partner(jamo) {
+  let data = readLsJson("jabi.topik2.v1");
+  if (!data || typeof data !== "object") {
+    data = { xp: 0, partner: null, awarded: {}, proUnlock: false };
+  }
+  const xp = typeof data.xp === "number" && data.xp >= 0 ? data.xp : 0;
+  data.xp = xp;
+  if (!data.awarded || typeof data.awarded !== "object") data.awarded = {};
+  data.partner = {
+    id: jamo.id,
+    glyph: jamo.glyph || "",
+    stage: stageFromXpValue(xp),
+  };
+  try {
+    localStorage.setItem("jabi.topik2.v1", JSON.stringify(data));
+  } catch {
+    /* ignore */
+  }
+}
+
+function setSectorPartner(sectorId, jamo) {
+  if (!jamo?.id) return;
+  if (sectorId === "topik1") {
+    state.profile.partnerId = jamo.id;
+    state.profile.partnerGlyph = jamo.glyph || "";
+    syncCharStageFromXp();
+    saveState(state);
+  } else if (sectorId === "hangul") {
+    writePathPartner("jabi.hangul.v1", jamo);
+  } else if (sectorId === "basic") {
+    writePathPartner("jabi.basic.v1", jamo);
+  } else if (sectorId === "topik2") {
+    writeTopik2Partner(jamo);
+  }
+}
+
+function closePartnerPicker() {
+  partnerPickerSector = null;
+  const host = document.getElementById("me-partner-picker");
+  if (host) {
+    host.hidden = true;
+    host.classList.add("hidden");
+  }
+}
+
+function openPartnerPicker(sectorId) {
+  const host = document.getElementById("me-partner-picker");
+  const grid = document.getElementById("me-partner-picker-grid");
+  const title = document.getElementById("me-partner-picker-title");
+  if (!host || !grid) return;
+  partnerPickerSector = sectorId;
+  const sectorLabel = ui(
+    sectorId === "hangul"
+      ? "hofSectorHangul"
+      : sectorId === "basic"
+        ? "hofSectorBasic"
+        : sectorId === "topik2"
+          ? "hofSectorTopik2"
+          : "hofSectorTopik1"
+  );
+  if (title) {
+    title.textContent = interpolate(ui("mePartnerPickTitle"), { sector: sectorLabel });
+  }
+  grid.innerHTML = "";
+  PARTNER_JAMOS.forEach((j) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "jamo-card";
+    btn.setAttribute("aria-label", j.glyph);
+    btn.innerHTML =
+      `<span class="jamo-glyph">` +
+      `<img class="jamo-art" src="${charArtSrc(j.id, 1)}" alt="${j.glyph}" ` +
+      `onerror="this.replaceWith(document.createTextNode('${j.glyph}'))">` +
+      `</span>`;
+    btn.addEventListener("click", () => {
+      setSectorPartner(sectorId, j);
+      closePartnerPicker();
+      toast(interpolate(ui("mePartnerSaved"), { sector: sectorLabel }));
+      renderHallOfFame();
+      renderPartnerSettings();
+      const p = state.profile;
+      const el = document.getElementById("me-profile-summary");
+      if (el) {
+        el.textContent = L(
+          `Mode ${modeDisplayName()} · Partner ${p.partnerGlyph || "—"} · Region ${p.region || "—"} · Goal ${p.hasExamGoal ? p.goalMonth || "—" : "course first"} · Char ${effectiveCharStage()}/6${p.proUnlock ? " · Pro" : ""}`,
+          `학습 방식 ${modeDisplayName()} · 짝 ${p.partnerGlyph || "—"} · 지역 ${p.region || "—"} · 목표 달 ${p.hasExamGoal ? p.goalMonth || "—" : "과정 우선"} · 글자 ${effectiveCharStage()}/6${p.proUnlock ? " · 유료" : ""}`,
+          `模式 ${modeDisplayName()} · 伙伴 ${p.partnerGlyph || "—"} · 地区 ${p.region || "—"} · 目标月 ${p.hasExamGoal ? p.goalMonth || "—" : "先课程"} · 角色 ${effectiveCharStage()}/6${p.proUnlock ? " · Pro" : ""}`
+        );
+      }
+    });
+    grid.appendChild(btn);
+  });
+  host.hidden = false;
+  host.classList.remove("hidden");
+}
+
+function renderPartnerSettings() {
+  const host = document.getElementById("me-partner-settings");
+  if (!host) return;
+  const sectors = collectHofSectors();
+  host.innerHTML = "";
+  sectors.forEach((s) => {
+    const row = document.createElement("div");
+    row.className = "me-partner-row";
+    const name = s.partner
+      ? `${s.partner.glyph || ""} ${s.partner.id}`.trim()
+      : ui("hofEmpty");
+    row.innerHTML = `
+      <div class="me-partner-row-meta">
+        <span class="me-partner-row-sector">${escapeHtml(ui(s.labelKey))}</span>
+        <span class="me-partner-row-name">${escapeHtml(name)}</span>
+      </div>`;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-ghost";
+    btn.textContent = ui("mePartnerChange");
+    btn.addEventListener("click", () => openPartnerPicker(s.id));
+    row.appendChild(btn);
+    host.appendChild(row);
+  });
+}
+
+function wireSettingsOnce() {
+  if (settingsWired) return;
+  settingsWired = true;
+  ["me-set-native-lang", "me-set-region", "me-set-amount", "me-set-daily"].forEach((id) => {
+    document.getElementById(id)?.addEventListener("change", () => saveSettingsFromForm());
+  });
+  document.getElementById("me-partner-picker-cancel")?.addEventListener("click", closePartnerPicker);
+  document.getElementById("me-partner-picker")?.addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) closePartnerPicker();
+  });
 }
 
 function ensureTrialUi() {
@@ -1404,6 +1916,7 @@ function renderQuestion(opts = {}) {
     btn.type = "button";
     btn.className = "choice" + (eliminated.has(i) ? " eliminated" : "");
     btn.dataset.index = String(i);
+    btn.dataset.letter = String.fromCharCode(65 + i);
     btn.textContent = c;
     btn.addEventListener("click", () => selectChoice(i));
     box.appendChild(btn);
@@ -1465,6 +1978,8 @@ function resumeSession() {
   wrongCount = s.wrongCount || 0;
   sessionHints = s.sessionHints || 0;
   sessionWrongTries = s.sessionWrongTries || 0;
+  runXpStart = state.xp || 0;
+  runStageStart = state.profile.charStage || 1;
   srsReviewLog = [];
   hideAllViews();
   hideResumeGate();
@@ -1966,6 +2481,95 @@ function learnerHintText(field, fallback) {
   return fallback || "";
 }
 
+/** MCQ answer strings that must not appear in early hint stages. */
+function answerSpoilers(q) {
+  const out = [];
+  const at = String(q?.answerText || "").trim();
+  if (at) out.push(at);
+  const choices = q?.choices || [];
+  const ai = q?.answer;
+  if (typeof ai === "number" && choices[ai] != null) {
+    const c = String(choices[ai]).trim();
+    if (c && !out.includes(c)) out.push(c);
+  }
+  return out;
+}
+
+/** True if a hint line would reveal the keyed answer (Match:/답: or long answerText). */
+function isSpoilerHintLine(line, spoilers) {
+  const s = String(line || "").trim();
+  if (!s) return false;
+  // Pair markers only — case-sensitive Match (do not strip “Listening match: …”)
+  if (/^\s*(Match|답|对应|Answer)\s*[:：]/.test(s)) return true;
+  if (/(?:^|[.\s])(?:Match|답|对应)\s*[:：]/.test(s)) return true;
+  if (/^\s*answer\s*[:：]/i.test(s)) return true;
+  for (const sp of spoilers) {
+    if (!sp) continue;
+    // Short particles (와, 명, 때…): only spoiler if line is an explicit “pick this” reveal
+    if (sp.length <= 2) {
+      if (s.includes(sp) && /(?:답|Match|对应|→\s*use|골라|정답)/.test(s)) return true;
+      continue;
+    }
+    if (s.includes(sp)) return true;
+  }
+  return false;
+}
+
+function hintStepList(q) {
+  const steps = q?.hint?.steps;
+  if (!steps) return [];
+  const lang = getLang();
+  const list = steps[lang] || steps.en || steps.ko;
+  return Array.isArray(list) ? list : [];
+}
+
+/**
+ * Early scaffold lines only: Meaning + Look (steps[0], steps[1]).
+ * Never include Pair/Match (usually steps[2]) — that belongs in bottom-out `why`.
+ */
+function earlyScaffoldLines(q) {
+  const spoilers = answerSpoilers(q);
+  const list = hintStepList(q);
+  const clean = [];
+  for (let i = 0; i < Math.min(2, list.length); i++) {
+    if (!isSpoilerHintLine(list[i], spoilers)) clean.push(list[i]);
+  }
+  if (clean.length) return clean;
+  const fallback = learnerHintText(q.hint, "");
+  if (fallback && !isSpoilerHintLine(fallback, spoilers)) {
+    // Prefer first sentence only to avoid dumping a full Meaning→Look→Pair blob
+    const first = fallback.split(/(?<=[.。！？!?])\s+/)[0] || fallback;
+    if (!isSpoilerHintLine(first, spoilers)) return [first];
+  }
+  return [
+    L(
+      "Think about what the sentence is asking — don’t guess from one word alone.",
+      "문장이 무엇을 묻는지 먼저 생각해 보세요. 단어 하나만 보고 짐작하지 마세요.",
+      "先想句子在问什么 — 不要只靠一个词猜。"
+    ),
+  ];
+}
+
+/** Visual caption must not equal the MCQ answer (e.g. 공항 on a “where does it go?” item). */
+function safeVisualForHint(q) {
+  const vis = resolveHintVisual(q);
+  if (!vis) return null;
+  const spoilers = answerSpoilers(q);
+  const ko = (vis.ko || "").trim();
+  const en = (vis.en || "").trim();
+  const zh = (vis.zh || "").trim();
+  const leaks = spoilers.some(
+    (sp) => sp.length > 2 && (ko.includes(sp) || en.includes(sp) || zh.includes(sp))
+  );
+  if (!leaks) return vis;
+  return {
+    ...vis,
+    en: L("clue picture", "단서 그림", "线索图"),
+    ko: "단서",
+    zh: "线索",
+  };
+}
+
 function renderHintBox(nodes, { clear = false } = {}) {
   const hintBox = document.getElementById("hint-box");
   if (!hintBox) return;
@@ -1994,6 +2598,8 @@ function showHint() {
   const q = activeQuestions[qi];
   if (!q) return;
   const pictured = hasPictureHint(q);
+  // Tiered scaffold: strategy → look → eliminate → bottom-out why
+  // Never dump Pair/Match (full answer) on the first L1 tap.
   const maxHints = pictured ? 4 : 3;
   if (qHints >= maxHints) {
     toast(
@@ -2010,12 +2616,12 @@ function showHint() {
   state.learner.totalHints += 1;
   bumpLearnerTag(q.tags || (q._reviewTag ? [q._reviewTag] : []), "hints");
 
-  // With picture: 1 visual → 2 L1 → 3 eliminate → 4 why
-  // Without (abstract): 1 L1 → 2 eliminate → 3 why
+  // With picture: 1 visual → 2 scaffold (no answer) → 3 eliminate → 4 why
+  // Without: 1 scaffold → 2 eliminate → 3 why
   const stage = pictured ? qHints : qHints + 1;
 
   if (pictured && stage === 1) {
-    const vis = resolveHintVisual(q);
+    const vis = safeVisualForHint(q);
     const wrap = document.createElement("div");
     wrap.className = "hint-visual-wrap";
     const emo = buildHintVisualEl(vis);
@@ -2030,16 +2636,14 @@ function showHint() {
     const step = document.createElement("p");
     step.className = "hint-step";
     step.textContent = pictured
-      ? L("Hint 2 · your language", "도움말 2 · 모국어", "提示 2 · 母语")
-      : L("Hint 1 · your language", "도움말 1 · 모국어", "提示 1 · 母语");
+      ? L("Hint 2 · strategy", "도움말 2 · 전략", "提示 2 · 策略")
+      : L("Hint 1 · strategy", "도움말 1 · 전략", "提示 1 · 策略");
     wrap.appendChild(step);
-    const steps = q.hint?.steps;
-    const lang = getLang();
-    const stepList = steps && (steps[lang] || steps.en || steps.ko);
-    if (Array.isArray(stepList) && stepList.length) {
+    const lines = earlyScaffoldLines(q);
+    if (lines.length > 1) {
       const ol = document.createElement("ol");
       ol.className = "hint-skill-steps";
-      stepList.forEach((line) => {
+      lines.forEach((line) => {
         const li = document.createElement("li");
         li.textContent = line;
         ol.appendChild(li);
@@ -2048,10 +2652,7 @@ function showHint() {
     } else {
       const body = document.createElement("p");
       body.className = "hint-l1";
-      body.textContent = learnerHintText(
-        q.hint,
-        L("Read the key word again slowly.", "핵심 단어를 다시 천천히 보세요.", "再慢慢看关键词。")
-      );
+      body.textContent = lines[0] || "";
       wrap.appendChild(body);
     }
     renderHintBox(wrap);
@@ -2074,6 +2675,7 @@ function showHint() {
       );
     }
   } else {
+    // Bottom-out: full why (may name the answer). Last resort only.
     const line = learnerHintText(
       q.why,
       L("Re-read the whole sentence for meaning.", "문장 전체 뜻을 다시 읽어 보세요.", "再读整句，抓住意思。")
@@ -2082,8 +2684,8 @@ function showHint() {
     const step = document.createElement("p");
     step.className = "hint-step";
     step.textContent = pictured
-      ? L("Hint 4 · why", "도움말 4 · 왜", "提示 4 · 为什么")
-      : L("Hint 3 · why", "도움말 3 · 왜", "提示 3 · 为什么");
+      ? L("Hint 4 · why (answer)", "도움말 4 · 왜 (정답 설명)", "提示 4 · 为什么（含答案）")
+      : L("Hint 3 · why (answer)", "도움말 3 · 왜 (정답 설명)", "提示 3 · 为什么（含答案）");
     const body = document.createElement("p");
     body.className = "hint-l1";
     body.textContent = line;
@@ -2207,12 +2809,58 @@ function finishMock() {
   setTabBarVisible(false);
   document.getElementById("view-result").classList.remove("hidden");
   document.getElementById("result-score").textContent = `${right} / ${total} (${ui("added")} ${uniqueWrong.length}${L(" tags", "개 주제", " 个标签")})`;
-  document.getElementById("result-tags").textContent = uniqueWrong.join(", ") || "—";
+  document.getElementById("result-tags").textContent =
+    uniqueWrong.map(formatTagLabel).join(", ") || "—";
   document.getElementById("result-srs-schedule")?.classList.add("hidden");
   renderLearnerSnapshot(document.getElementById("result-learner"), sessionHints, sessionWrongTries, total);
   document.querySelector("#view-result h2")?.setAttribute("data-ui", "finished");
   applyUiStrings();
+  renderResultGrowth({
+    xpBefore: runXpStart,
+    stageBefore: runStageStart,
+    xpGained: Math.max(0, (state.xp || 0) - runXpStart),
+  });
   updateResultActions(uniqueWrong.length > 0 ? "mock-with-due" : "mock");
+}
+
+function renderResultGrowth({ xpBefore, stageBefore, xpGained }) {
+  const clearEl = document.getElementById("result-clear");
+  const clearText = document.getElementById("result-clear-text");
+  const clearArt = document.getElementById("result-clear-art");
+  const xpLine = document.getElementById("result-xp-line");
+  syncCharStageFromXp();
+  const stageNow = effectiveCharStage();
+  const labels = STAGE_LABELS[getLang()] || STAGE_LABELS.en;
+  const cleared = (state.profile.charStage || 1) > stageBefore;
+  if (clearEl) {
+    if (cleared) {
+      const banner = interpolate(ui("stageClearBanner"), {
+        n: stageNow,
+        name: labels[stageNow - 1] || "",
+      });
+      if (clearText) clearText.textContent = banner;
+      else clearEl.textContent = banner;
+      const partnerId = state.profile.partnerId;
+      if (clearArt && partnerId) {
+        clearArt.src = charArtSrc(partnerId, stageNow);
+        clearArt.alt = state.profile.partnerGlyph || "";
+      } else if (clearArt) {
+        clearArt.removeAttribute("src");
+        clearArt.alt = "";
+      }
+      clearEl.classList.add("hidden");
+      // reflow so clear-banner-in can replay
+      void clearEl.offsetWidth;
+      clearEl.classList.remove("hidden");
+    } else {
+      if (clearText) clearText.textContent = "";
+      clearEl.classList.add("hidden");
+    }
+  }
+  if (xpLine) {
+    const gained = typeof xpGained === "number" ? xpGained : Math.max(0, (state.xp || 0) - (xpBefore || 0));
+    xpLine.textContent = interpolate(ui("xpGainLine"), { n: gained, total: state.xp || 0 });
+  }
 }
 
 function updateResultActions(kind) {
@@ -2243,6 +2891,7 @@ function finishSrsReview() {
     wrongTries: sessionWrongTries,
     profile: profileLabel(sessionHints, sessionWrongTries, total),
   });
+  syncCharStageFromXp();
   clearSession();
   saveState(state);
 
@@ -2270,11 +2919,16 @@ function finishSrsReview() {
         ` (도움말 ${hints ?? 0}, 틀림 ${wrongs ?? 0})`,
         ` (提示 ${hints ?? 0}，错误 ${wrongs ?? 0})`
       );
-      li.innerHTML = `<strong>${tag}</strong> ${mark} → ${nextReview}${extra}`;
+      li.innerHTML = `<strong>${escapeHtml(formatTagLabel(tag))}</strong> ${mark} → ${nextReview}${extra}`;
       ul.appendChild(li);
     });
   }
   srsReviewLog = [];
+  renderResultGrowth({
+    xpBefore: runXpStart,
+    stageBefore: runStageStart,
+    xpGained: Math.max(0, (state.xp || 0) - runXpStart),
+  });
   updateResultActions("srs");
 }
 
@@ -2287,6 +2941,8 @@ function beginQuiz(questions, mockId) {
   srsReviewLog = [];
   sessionHints = 0;
   sessionWrongTries = 0;
+  runXpStart = state.xp || 0;
+  runStageStart = state.profile.charStage || 1;
   hideAllViews();
   setTabBarVisible(false);
   document.getElementById("view-quiz")?.classList.remove("hidden");
@@ -2395,7 +3051,7 @@ function showSrs() {
         `틀림 ${meta.count}`,
         `错 ${meta.count}`
       );
-      li.innerHTML = `<strong>${tag}</strong> · ${missLabel} · ${meta.nextReview} ${dueLabel}`;
+      li.innerHTML = `<strong>${escapeHtml(formatTagLabel(tag))}</strong> · ${missLabel} · ${meta.nextReview} ${dueLabel}`;
       ul.appendChild(li);
     });
   }
@@ -2475,8 +3131,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("btn-home2")?.addEventListener("click", () => goTab("practice"));
   document.getElementById("btn-mode")?.addEventListener("click", showOnboardingModeOnly);
   document.getElementById("btn-redo-onboarding")?.addEventListener("click", () => showOnboarding(true));
+  wireSettingsOnce();
   document.getElementById("btn-home-mission")?.addEventListener("click", runTodayMission);
   document.getElementById("btn-home-srs-review")?.addEventListener("click", startSrsReview);
+  document.getElementById("btn-result-mission")?.addEventListener("click", runTodayMission);
   document.getElementById("btn-result-review")?.addEventListener("click", startSrsReview);
   document.getElementById("btn-result-srs")?.addEventListener("click", showSrs);
   document.getElementById("btn-practice-srs")?.addEventListener("click", startSrsPractice);

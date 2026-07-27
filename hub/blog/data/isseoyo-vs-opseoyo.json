@@ -1,0 +1,49 @@
+{
+  "id": "isseoyo-vs-opseoyo",
+  "slug": "isseoyo-vs-opseoyo",
+  "status": "pilot",
+  "level": "A1",
+  "tags": ["grammar:existence"],
+  "sourceNote": "Original jabi. parallel reading on 있어요/없어요. Not scraped.",
+  "question": {
+    "en": "How do 있어요 and 없어요 really work?",
+    "ko": "있어요와 없어요는 어떻게 쓰나요?"
+  },
+  "reading": {
+    "en": "있어요 means something or someone exists / is present / is available. 없어요 is the opposite: not present, not available, don’t have.\n\nLocation: 「가방이 집에 있어요」(The bag is at home). 「민수가 학교에 없어요」(Minsu is not at school).\n\nPossession / availability: 「시간 있어요?」(Do you have time?) 「카드 없어요」(I don’t have a card / no cards).\n\nPolite speech uses 있어요/없어요 in everyday talk. Formal writing may use 있습니다/없습니다 — same meaning, different coat (see 요 vs 습니다).\n\nDo not confuse with 이에요/예요 (identification: “X is Y”). 있어요 is about existing or having, not naming.",
+    "ko": "있어요는 사람·물건이 있다/있다(존재·있음·가능)는 뜻입니다. 없어요는 반대: 없다, 없다(없음).\n\n위치: 「가방이 집에 있어요」. 「민수가 학교에 없어요」.\n\n소유·가능: 「시간 있어요?」 「카드 없어요」.\n\n일상 공손체는 있어요/없어요. 격식 글에서는 있습니다/없습니다 — 뜻은 같고 코트만 다릅니다(요 vs 습니다 글 참고).\n\n이에요/예요(「X는 Y이다」 정체)와 섞지 마세요. 있어요는 이름 붙이기가 아니라 있음·가짐입니다."
+  },
+  "keyPoints": [
+    {
+      "en": "있어요 = exists / is there / have; 없어요 = not.",
+      "ko": "있어요 = 있다 · 없어요 = 없다."
+    },
+    {
+      "en": "Works for location and for “have / available”.",
+      "ko": "위치와 「있다/없다(소유·가능)」 모두."
+    },
+    {
+      "en": "Not the same as 이에요/예요 (X is Y).",
+      "ko": "이에요/예요(정체)와 다름."
+    }
+  ],
+  "examples": [
+    { "ko": "화장실이 어디에 있어요?", "en": "Where is the restroom?" },
+    { "ko": "우유 있어요?", "en": "Do you have milk?" },
+    { "ko": "지금은 시간 없어요.", "en": "I don’t have time now." }
+  ],
+  "checkQuestions": [
+    {
+      "q": { "en": "Which pair asks if something is available in a shop?", "ko": "가게에서 「있어요?」는?" },
+      "a": { "en": "있어요? / 없어요 — availability.", "ko": "있어요?/없어요 — 재고·가능." }
+    }
+  ],
+  "practice": {
+    "href": "../app/games/cloze-race/",
+    "label": { "en": "Cloze Race practice →", "ko": "빈칸 레이스 →" }
+  },
+  "related": [
+    { "href": "../app/basic/", "label": { "en": "Basics Unit 4 (있어요↔없어요)", "ko": "기초 4과 (있어요↔없어요)" } },
+    { "href": "./#yo-vs-seumnida", "label": { "en": "Related: -요 vs -습니다", "ko": "관련: 요 vs 습니다" } }
+  ]
+}

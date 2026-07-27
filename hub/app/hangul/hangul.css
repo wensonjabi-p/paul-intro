@@ -1,71 +1,20 @@
-/* Hangul track scaffold — mirrors hub tokens; no stroke UI */
+/* Hangul track — stroke practice shell (list chrome lives in hub.css) */
 .hidden {
   display: none !important;
 }
 
-.hangul-page {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 12px 5vw 10vh;
+/* Stroke roster + practice chrome: Gulim (굴림) for clear jamo shapes */
+.hangul-stroke-hub,
+.hangul-trace-grid,
+.hangul-practice-card {
+  --hangul-stroke-font: Gulim, "굴림", "New Gulim", "새굴림", "Malgun Gothic", "맑은 고딕", sans-serif;
+  font-family: var(--hangul-stroke-font);
 }
 
-.hangul-page .eyebrow {
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-
-.hangul-page h1 {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 4.5vw, 40px);
-  line-height: 1.15;
-  margin-bottom: 10px;
-}
-
-.hangul-page .lead {
-  color: var(--muted);
-  margin-bottom: 22px;
-  max-width: 36em;
-}
-
-.hangul-meta {
-  font-size: 12px;
-  color: var(--faint);
-  margin-bottom: 18px;
-  font-family: var(--font-mono);
-}
-
-.hangul-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.hangul-item {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 14px 16px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--bg-soft);
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  transition: border-color 0.15s;
-}
-
-.hangul-item:hover,
-.hangul-item:focus-visible {
-  border-color: var(--accent-dim);
-  outline: none;
-}
-
-.hangul-item.is-open {
-  border-color: var(--accent);
+.hangul-trace-glyph,
+.hangul-trace-missing,
+.hangul-practice-glyph {
+  font-family: Gulim, "굴림", "New Gulim", "새굴림", "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 
 .hangul-item-top {
@@ -79,20 +28,19 @@
   font-weight: 700;
 }
 
-.hangul-badge {
-  font-size: 11px;
-  font-family: var(--font-mono);
-  color: var(--faint);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
 .hangul-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
   margin-top: 6px;
   color: var(--muted);
-  font-size: 15px;
-  letter-spacing: 0.12em;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.hangul-preview-tok {
+  font-family: Gulim, "굴림", "New Gulim", "새굴림", "Malgun Gothic", "맑은 고딕", sans-serif;
+  letter-spacing: 0.02em;
 }
 
 .hangul-detail {
@@ -103,7 +51,8 @@
   color: var(--muted);
 }
 
-.hangul-detail .k {
+.hangul-detail .k,
+.hangul-stroke-block .k {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -138,51 +87,426 @@
   border-radius: 12px;
 }
 
-.hangul-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 18px;
-  margin: 8px 0 20px;
-  font-size: 13px;
+.hangul-badge--trace {
+  color: var(--accent, #ff8a14);
 }
 
-.hangul-nav a {
-  color: var(--accent);
+.hangul-objective-line {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.hangul-mod {
+  margin-top: 12px;
+}
+
+.hangul-mod-body {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* Grammar / explain teach cards (Sunstage) */
+.hangul-mod--explain {
+  margin-top: 14px;
+  padding: 12px 14px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent, #ff8a14);
+  background: var(--bg-soft, #f4f7fb);
+}
+
+.hangul-grammar-k {
+  color: var(--accent, #ff8a14) !important;
+  letter-spacing: 0.16em !important;
+}
+
+.hangul-grammar-title {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.hangul-mod--explain .hangul-mod-body {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.hangul-ex-list--grammar {
+  margin-top: 10px;
+}
+
+.hangul-ex--inline {
+  background: var(--bg, #fff);
+}
+
+.hangul-ex-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hangul-ex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: baseline;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg, #fff);
+}
+
+.hangul-ex-ko {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+
+.hangul-ex-gloss {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.hangul-mod--task .hangul-mod-body {
+  padding: 8px 10px;
+  border-left: 3px solid var(--accent, #ff8a14);
+  background: var(--bg-soft);
+  border-radius: 0 8px 8px 0;
+}
+
+.hangul-flow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--accent-2);
+}
+
+.hangul-step-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--xp);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-bottom: 6px;
+}
+
+.hangul-mod--checkpoint .hangul-mod-body,
+.hangul-mod--intro .hangul-mod-body {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1.5px solid var(--path);
+  background: rgba(126, 200, 255, 0.18);
+}
+
+.hangul-check-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.hangul-check-btn {
+  font: inherit;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 2px solid var(--ink);
+  background: var(--bg-soft);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 2px 0 rgba(20, 32, 51, 0.12);
+}
+
+.hangul-check-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.hangul-check-btn.is-correct {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: var(--success);
+}
+
+.hangul-check-btn.is-wrong {
+  background: rgba(255, 92, 108, 0.15);
+  border-color: var(--heart);
+}
+
+.hangul-check-tip {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Stroke hub + roster — shell only; do not restyle Hanzi Writer SVG paths */
+.hangul-stroke-hub {
+  margin: 0 0 28px;
+  padding: 16px 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-soft);
+}
+
+.hangul-stroke-lead,
+.hangul-trace-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.hangul-stroke-block + .hangul-stroke-block {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
 }
 
 .hangul-trace-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .hangul-trace-cell {
-  text-align: center;
-}
-
-.hangul-trace-target {
-  width: 96px;
-  height: 96px;
-  background: var(--bg-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 64px;
+  padding: 10px 8px 8px;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 12px;
+  background: var(--bg, #fff);
+  color: inherit;
+  font: inherit;
   cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s;
 }
 
-.hangul-trace-label {
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--faint);
+.hangul-trace-cell:hover:not(:disabled),
+.hangul-trace-cell:focus-visible:not(:disabled) {
+  border-color: var(--accent, #ff8a14);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.hangul-trace-cell.is-missing,
+.hangul-trace-cell:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.hangul-trace-glyph {
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--ink);
 }
 
 .hangul-trace-missing {
-  width: 96px;
-  height: 96px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
-  background: var(--bg-soft);
   border: 1px dashed var(--line);
-  border-radius: 10px;
+  border-radius: 8px;
   color: var(--faint);
-  font-size: 20px;
+  font-size: 22px;
+}
+
+.hangul-trace-label {
+  font-size: 11px;
+  color: var(--faint);
+  letter-spacing: 0.04em;
+}
+
+/* Full practice dialog */
+.hangul-practice {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(20, 16, 12, 0.45);
+}
+
+.hangul-practice.hidden {
+  display: none !important;
+}
+
+.hangul-practice-card {
+  width: min(360px, 100%);
+  padding: 18px 18px 20px;
+  border-radius: 16px;
+  background: var(--bg, #fffaf3);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 40px rgba(40, 24, 8, 0.18);
+}
+
+.hangul-practice-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.hangul-practice-glyph {
+  margin: 0;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--ink);
+  font-family: Gulim, "굴림", "New Gulim", "새굴림", "Malgun Gothic", sans-serif;
+}
+
+/* Stage: Hanzi Writer only (outline + ink share strokes[] — no CSS font ghost). */
+.hangul-practice-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  min-height: 220px;
+  /* Soft paper + faint cross guides (not a second glyph). */
+  background:
+    linear-gradient(rgba(40, 32, 24, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 32, 24, 0.045) 1px, transparent 1px),
+    radial-gradient(120% 100% at 50% 0%, #fffef9 0%, #f7f3ea 72%);
+  background-size: 28px 28px, 28px 28px, auto;
+  background-position: center center, center center, 0 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.hangul-practice-stage::before,
+.hangul-practice-stage::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  background: rgba(232, 119, 34, 0.12);
+}
+
+/* Soft center guides — help Trace without overlapping HW ink. */
+.hangul-practice-stage::before {
+  left: 12%;
+  right: 12%;
+  top: 50%;
+  height: 1px;
+  transform: translateY(-0.5px);
+}
+
+.hangul-practice-stage::after {
+  top: 12%;
+  bottom: 12%;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-0.5px);
+}
+
+.hangul-practice-stage.is-clear {
+  border-color: rgba(232, 119, 34, 0.45);
+  box-shadow: 0 0 0 3px rgba(232, 119, 34, 0.16), inset 0 0 0 1px rgba(232, 119, 34, 0.12);
+}
+
+.hangul-practice-close {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.hangul-practice-hint {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.hangul-practice-target {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-height: 200px;
+  background: transparent;
+}
+
+/* Softer AA on polygonal tube joints (HW path fills). */
+.hangul-practice-target svg {
+  shape-rendering: geometricPrecision;
+}
+
+.hangul-practice-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.hangul-practice-btn {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-soft);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hangul-practice-btn--primary {
+  border-color: var(--accent, #ff8a14);
+  background: var(--accent, #ff8a14);
+  color: #fff;
+}
+
+.hangul-practice-status {
+  margin: 12px 0 0;
+  min-height: 1.2em;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  transition: color 0.25s ease;
+}
+
+.hangul-practice-status.is-watch {
+  color: var(--ink);
+}
+
+.hangul-practice-status.is-clear {
+  color: var(--accent, #e87722);
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hangul-trace-cell {
+    transition: none;
+  }
+  .hangul-practice-stage,
+  .hangul-practice-status {
+    transition: none;
+  }
 }

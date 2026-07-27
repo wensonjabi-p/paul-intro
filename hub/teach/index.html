@@ -4,19 +4,226 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>Coach option — jabi.</title>
+  <meta name="theme-color" content="#EAF4FF">
+  <title>선생님 선택 — jabi.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/hub.css">
+  <link rel="stylesheet" href="./teach.css">
 </head>
 <body>
   <header class="site-header">
-    <a href="../" class="logo">← Hub</a>
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
   </header>
-  <section class="hero-block">
-    <p class="eyebrow">Teach · optional</p>
-    <h1>Live coach (optional)</h1>
-    <p class="lead">The app is AI-first. Coaches are optional: they receive an AI learner report (weak grammar &amp; vocab), then meet you on Zoom for study direction or Q&amp;A.</p>
-    <p class="lead" style="margin-top:1rem">MVP: waitlist only. Existing students book via agency / email.</p>
-    <p style="margin-top:1.5rem"><a href="mailto:wensonjabi@gmail.com?subject=TOPIK%20Coach%20waitlist">wensonjabi@gmail.com</a></p>
-  </section>
+
+  <main class="teach-page">
+    <p class="eyebrow" data-i18n="teachEyebrow">Teach · optional</p>
+    <h1 data-i18n="doorTeachTitle">Coach option</h1>
+    <p class="lead" data-i18n="teachLead">AI-first practice. Optional vetted coaches get a short learner report — then direction or Q&amp;A on Zoom.</p>
+
+    <nav class="teach-nav" aria-label="Teach nav">
+      <a href="../" data-i18n="teachBackHub">← Hub</a>
+      <a href="../app/" data-i18n="teachToApp">TOPIK I →</a>
+      <a href="../blog/" data-i18n="teachToBlog">Text collection →</a>
+    </nav>
+
+    <p id="teach-error" class="teach-empty hidden" role="alert"></p>
+
+    <ol class="teach-flow" aria-label="Handoff flow">
+      <li>
+        <div class="step-num">01</div>
+        <strong data-i18n="teachFlow1Title">Practice in the app</strong>
+        <p data-i18n="teachFlow1Body">Mocks, weak tags, hints — AI is the daily coach.</p>
+      </li>
+      <li>
+        <div class="step-num">02</div>
+        <strong data-i18n="teachFlow2Title">Short AI report</strong>
+        <p data-i18n="teachFlow2Body">Triage packet: strengths, weak tags, signals — not a chat dump.</p>
+      </li>
+      <li>
+        <div class="step-num">03</div>
+        <strong data-i18n="teachFlow3Title">Verified human</strong>
+        <p data-i18n="teachFlow3Body">Direction or Q&amp;A on Zoom. Open seats need certification first.</p>
+      </li>
+    </ol>
+
+    <section class="teach-section" aria-labelledby="teach-report-h">
+      <h2 id="teach-report-h" data-i18n="teachReportTitle">Your AI learner report</h2>
+      <p class="lead" data-i18n="teachReportLead">Built from this browser’s TOPIK practice data. Copy to share with a coach when ready.</p>
+      <div id="teach-report" class="teach-report"></div>
+    </section>
+
+    <section class="teach-section" aria-labelledby="teach-seats-h">
+      <h2 id="teach-seats-h" data-i18n="teachSeatsTitle">Verified seats</h2>
+      <p id="teach-policy" class="teach-policy"></p>
+      <ul class="teach-seats" id="teach-seats"></ul>
+    </section>
+  </main>
+
+  <script src="../js/i18n.js"></script>
+  <script>
+    window.HubI18nExtra = {
+      en: {
+        teachEyebrow: "Teach · optional",
+        teachLead: "AI-first practice. Optional vetted coaches get a short learner report — then direction or Q&A on Zoom.",
+        teachBackHub: "← Hub",
+        teachToApp: "TOPIK I →",
+        teachToBlog: "Text collection →",
+        teachFlow1Title: "Practice in the app",
+        teachFlow1Body: "Mocks, weak tags, hints — AI is the daily coach.",
+        teachFlow2Title: "Short AI report",
+        teachFlow2Body: "Triage packet: strengths, weak tags, signals — not a chat dump.",
+        teachFlow3Title: "Verified human",
+        teachFlow3Body: "Direction or Q&A on Zoom. Open seats need certification first.",
+        teachReportTitle: "Your AI learner report",
+        teachReportLead: "Built from this browser’s TOPIK practice data. Copy to share with a coach when ready.",
+        teachReportEmpty: "No practice tags yet. Do a few TOPIK I items, then refresh this page.",
+        teachReportSource: "Source · local TOPIK practice",
+        teachReadyNone: "Readiness · — (need more tries)",
+        teachReadyPct: "Readiness · {pct}%",
+        teachStrengths: "Strengths",
+        teachWeaknesses: "Weak spots",
+        teachSignals: "Signals",
+        teachSignalHints: "Hint-heavy",
+        teachSignalSparse: "Tag coverage",
+        teachSignalStalled: "Stalled tags",
+        teachSparseLow: "broad",
+        teachSparseMed: "some tags",
+        teachSparseHigh: "sparse",
+        teachAiTried: "AI already tried",
+        teachTriedMode: "Catch / Mercy / Guide mode",
+        teachTriedSrs: "SRS weak-deck",
+        teachTriedHints: "Hint ladder",
+        teachTriedApp: "App practice (when available)",
+        teachSuggestFocus: "Suggested session focus",
+        teachNoteLabel: "Optional note for your coach",
+        teachNotePh: "What do you want help with this week?",
+        teachPrivacy: "Stays in this browser until you copy or email. No server upload in this pilot.",
+        teachCopy: "Copy report JSON",
+        teachCopied: "Report copied",
+        teachCopyFail: "Copy failed — select manually",
+        teachSeatsTitle: "Verified seats",
+        teachBadgeAnchor: "Anchor",
+        teachBadgeOpen: "Open",
+        teachBadgeWait: "Waitlist",
+        teachFilter: "Filter",
+        teachMailCta: "Email waitlist",
+        teachWaitCta: "Join waitlist",
+        teachNone: "None yet",
+        teachYes: "yes",
+        teachNo: "no",
+        teachLoadFail: "Could not load coach seats.",
+      },
+      ko: {
+        teachEyebrow: "가르치기 · 선택",
+        teachLead: "앱이 먼저. 선택형 검증 선생님에게 짧은 학습 보고를 넘긴 뒤, Zoom으로 방향·질문을.",
+        teachBackHub: "← 허브",
+        teachToApp: "TOPIK I →",
+        teachToBlog: "글모음 →",
+        teachFlow1Title: "앱에서 연습",
+        teachFlow1Body: "모의·약점 태그·힌트 — 매일의 코치는 AI.",
+        teachFlow2Title: "짧은 AI 보고",
+        teachFlow2Body: "트리아지 패킷: 강점·약점 태그·신호 — 채팅 로그 아님.",
+        teachFlow3Title: "검증된 사람",
+        teachFlow3Body: "Zoom으로 방향·질문. 열린 좌석은 자격 검증 후.",
+        teachReportTitle: "내 AI 학습 보고",
+        teachReportLead: "이 브라우저의 TOPIK 연습 데이터로 만듭니다. 준비되면 복사해 선생님과 공유.",
+        teachReportEmpty: "아직 연습 태그가 없습니다. TOPIK I을 몇 문항 푼 뒤 이 페이지를 새로고침하세요.",
+        teachReportSource: "출처 · 로컬 TOPIK 연습",
+        teachReadyNone: "준비도 · — (시도 더 필요)",
+        teachReadyPct: "준비도 · {pct}%",
+        teachStrengths: "강점",
+        teachWeaknesses: "약점",
+        teachSignals: "신호",
+        teachSignalHints: "힌트 과다",
+        teachSignalSparse: "태그 커버",
+        teachSignalStalled: "정체 태그",
+        teachSparseLow: "넓음",
+        teachSparseMed: "일부 태그",
+        teachSparseHigh: "희소",
+        teachAiTried: "AI가 이미 한 일",
+        teachTriedMode: "붙잡기 / 천천히 / 길잡이 모드",
+        teachTriedSrs: "SRS 약점 덱",
+        teachTriedHints: "힌트 사다리",
+        teachTriedApp: "앱 연습(있을 때)",
+        teachSuggestFocus: "추천 세션 초점",
+        teachNoteLabel: "선생님에게 남길 메모(선택)",
+        teachNotePh: "이번 주에 무엇에 도움이 필요하세요?",
+        teachPrivacy: "복사·메일하기 전까지 이 브라우저에만 둡니다. 이번 파일럿은 서버 업로드 없음.",
+        teachCopy: "보고 JSON 복사",
+        teachCopied: "보고서를 복사했습니다",
+        teachCopyFail: "복사 실패 — 직접 선택하세요",
+        teachSeatsTitle: "검증 좌석",
+        teachBadgeAnchor: "앵커",
+        teachBadgeOpen: "모집",
+        teachBadgeWait: "대기",
+        teachFilter: "필터",
+        teachMailCta: "이메일 대기열",
+        teachWaitCta: "대기열 신청",
+        teachNone: "아직 없음",
+        teachYes: "예",
+        teachNo: "아니오",
+        teachLoadFail: "선생님 좌석을 불러오지 못했습니다.",
+      },
+      zh: {
+        teachEyebrow: "教 · 可选",
+        teachLead: "AI 练习优先。可选认证老师先看短学习报告，再在 Zoom 做方向或答疑。",
+        teachBackHub: "← 中心",
+        teachToApp: "TOPIK I →",
+        teachToBlog: "文集 →",
+        teachFlow1Title: "在应用练习",
+        teachFlow1Body: "模考、弱项标签、提示 — 日常教练是 AI。",
+        teachFlow2Title: "短 AI 报告",
+        teachFlow2Body: "分诊包：强弱标签与信号 — 不是聊天记录。",
+        teachFlow3Title: "认证真人",
+        teachFlow3Body: "Zoom 方向或答疑。空席须先通过资质审核。",
+        teachReportTitle: "你的 AI 学习报告",
+        teachReportLead: "来自本浏览器的 TOPIK 练习数据。准备好后可复制分享给教练。",
+        teachReportEmpty: "还没有练习标签。先做几道 TOPIK I，再刷新本页。",
+        teachReportSource: "来源 · 本地 TOPIK 练习",
+        teachReadyNone: "准备度 · —（需要更多练习）",
+        teachReadyPct: "准备度 · {pct}%",
+        teachStrengths: "强项",
+        teachWeaknesses: "弱项",
+        teachSignals: "信号",
+        teachSignalHints: "提示偏多",
+        teachSignalSparse: "标签覆盖",
+        teachSignalStalled: "停滞标签",
+        teachSparseLow: "较广",
+        teachSparseMed: "部分标签",
+        teachSparseHigh: "稀疏",
+        teachAiTried: "AI 已尝试",
+        teachTriedMode: "Catch / Mercy / Guide 模式",
+        teachTriedSrs: "SRS 弱项卡组",
+        teachTriedHints: "提示阶梯",
+        teachTriedApp: "应用练习（有数据时）",
+        teachSuggestFocus: "建议课时焦点",
+        teachNoteLabel: "给教练的备注（可选）",
+        teachNotePh: "这周最想得到什么帮助？",
+        teachPrivacy: "复制或发邮件前仅保存在本浏览器。本试运行不上传服务器。",
+        teachCopy: "复制报告 JSON",
+        teachCopied: "已复制报告",
+        teachCopyFail: "复制失败 — 请手动选择",
+        teachSeatsTitle: "认证席位",
+        teachBadgeAnchor: "锚点",
+        teachBadgeOpen: "空缺",
+        teachBadgeWait: "候补",
+        teachFilter: "筛选",
+        teachMailCta: "邮件候补",
+        teachWaitCta: "加入候补",
+        teachNone: "暂无",
+        teachYes: "是",
+        teachNo: "否",
+        teachLoadFail: "无法加载教练席位。",
+      },
+    };
+  </script>
+  <script src="./teach.js"></script>
 </body>
 </html>

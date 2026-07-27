@@ -1,7 +1,8 @@
 # Claude Task A — Vercel 배포 URL 반영 (Paul OK 후)
 
 > **Owner:** Claude (직접 실행). Cursor는 B(`app.js` SRS·듣기) 담당.  
-> **시작 조건:** Paul 채팅에 **`jabi. OK`** + **Vercel hub 미리보기 URL** (Root Directory = `hub`).
+> **시작 조건:** ✅ **`jabi. OK` 받음 (2026-07-26)** + **Vercel hub 미리보기 URL** (Root Directory = `hub`).  
+> URL만 오면 바로 실행. 브랜드 게이트는 닫힘.
 
 ---
 
@@ -11,6 +12,22 @@
 jabi. OK. Vercel hub URL: https://________.vercel.app
 docs/claude-task-a-vercel-deploy.md 따라 Task A 실행해줘. commit push까지.
 ```
+
+(또는 URL만: `Vercel hub URL: https://….vercel.app` — `jabi. OK`는 이미 기록됨)
+
+---
+
+## Paul이 아직 URL 없을 때 (체크리스트)
+
+Vercel MCP 확인 (2026-07-26): 팀 **`paul-intro`만** 존재 (= wensonjabi.com). **hub 전용 프로젝트 #2 없음.**
+
+1. [vercel.com](https://vercel.com) 로그인  
+2. **Add New Project** → GitHub `wensonjabi-p/paul-intro`  
+3. **Root Directory:** `hub` (필수 — 루트 그대로면 정체성 사이트와 충돌)  
+4. Framework: Other / static · Build Command 비움 · Output `.`  
+5. Deploy → 미리보기 URL을 채팅에 붙여넣기  
+
+**하지 말 것:** 기존 `paul-intro` 프로젝트의 Root를 `hub`로 바꾸기 (wensonjabi.com 깨짐).
 
 ---
 
@@ -35,7 +52,7 @@ docs/claude-task-a-vercel-deploy.md 따라 Task A 실행해줘. commit push까�
    - §3 ops: 배포 후 `/ops` URL
 
 4. **`docs/DAILY-LOG.md`**
-   - append (최상단 2026-07-25 블록 아래):  
+   - append (최상단 날짜 블록):  
      `### Claude` · ✅ Task A — staging URL 반영 · commit `…`
 
 5. **Notion** (Claude Notion MCP 있으면)
@@ -63,6 +80,6 @@ docs/claude-task-a-vercel-deploy.md 따라 Task A 실행해줘. commit push까�
 
 ## 아직 URL 없을 때
 
-Paul URL 전까지 **대기**. 이 파일만 repo에 두고 DAILY-LOG에 “Claude Task A 대기 중” 유지.
+Paul URL 전까지 **대기**. `jabi. OK`는 기록됨 · 이 파일의 Paul 체크리스트만 따르면 됨.
 
-*Created: 2026-07-25 · Cursor (Paul 요청: Claude에게 A 직접)*
+*Created: 2026-07-25 · Cursor (Paul 요청: Claude에게 A 직접) · Updated: 2026-07-26 (jabi. OK)*

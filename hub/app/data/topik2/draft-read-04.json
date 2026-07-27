@@ -1,0 +1,350 @@
+{
+  "id": "jabi-topik2-read-v0-04",
+  "title": {
+    "en": "jabi. TOPIK II · Reading bank 4 (research fill)",
+    "ko": "jabi. TOPIK II · 읽기 뱅크 4 (연구 보강)",
+    "zh": "jabi. TOPIK II · 阅读题库4（研究补强）"
+  },
+  "level": "TOPIK II Reading",
+  "skill": "reading",
+  "kind": "read",
+  "verified": false,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "sourceNote": "Research fill — original intermediate items (notice · topic · match · blank). Official TOPIK II reading shapes only. No official items/wording. MCQ only; no Lemon/AI. See docs/research-topik2-content-fill-ko.md.",
+  "research": [
+    "docs/research-topik2-content-fill-ko.md"
+  ],
+  "questions": [
+    {
+      "id": "t2-r04-01",
+      "type": "notice",
+      "prompt": {
+        "ko": "※ 다음 안내문의 내용과 같은 것을 고르십시오.\n\n[커뮤니티 센터 요리 교실]\n· 대상: 성인 / 회당 12명\n· 일시: 매주 수요일 저녁 7–9시\n· 재료비: 회당 8,000원 (현장 결제)\n· 신청: 센터 앱 또는 1층 안내 데스크\n※ 알레르기가 있으면 신청 시 적어 주세요.",
+        "en": "※ Choose what matches the notice.\n\n[Community Center Cooking Class]\n· Adults / 12 per session\n· Wed evenings 7–9\n· Materials 8,000₩ per session (pay on site)\n· Sign up: center app or 1F desk\n※ Note allergies when registering.",
+        "zh": "※ 选择与告示一致的一项。\n\n[社区中心烹饪课]\n· 成人 / 每班12人\n· 每周三晚7–9点\n· 材料费每节8,000韩元（现场付）\n· 报名：中心App或1楼前台\n※ 有过敏请报名时注明。"
+      },
+      "choices": [
+        "재료비는 수업 당일 현장에서 낸다",
+        "어린이만 신청할 수 있다",
+        "수업은 토요일 오전에만 열린다",
+        "알레르기 정보는 적지 않아도 된다"
+      ],
+      "answer": 0,
+      "answerText": "재료비는 수업 당일 현장에서 낸다",
+      "tags": [
+        "topik2:read",
+        "reading:안내세부",
+        "genre:notice"
+      ],
+      "hint": {
+        "ko": "재료비·대상·요일을 각각 확인하세요.",
+        "en": "Check materials fee, audience, and weekday separately.",
+        "zh": "分别核对材料费、对象和星期。",
+        "steps": {
+          "en": [
+            "Detail: how is the materials fee paid?",
+            "Notice: 8,000 per session, pay on site.",
+            "Reject kids-only / Saturday / skip allergy note."
+          ],
+          "zh": [
+            "细节：材料费怎么付？",
+            "告示：每节8,000，现场付。",
+            "排除仅儿童/周六/可不写过敏。"
+          ],
+          "ko": [
+            "재료비 결제 방식.",
+            "회당 8,000 · 현장 결제.",
+            "어린이만·토요·알레르기 생략 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Materials fee is paid on site each session; adults Wed evenings.",
+        "zh": "材料费每节现场付；成人周三晚。",
+        "ko": "재료비 현장 결제 · 성인 · 수요일 저녁."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not kids only? Target is adults.",
+          "zh": "为什么不是仅儿童？对象是成人。",
+          "ko": "왜 어린이만이 아니에요? 대상이 성인이에요."
+        },
+        "2": {
+          "en": "Why not Saturday morning? Classes are Wednesday evenings.",
+          "zh": "为什么不是周六上午？是周三晚上。",
+          "ko": "왜 토요 오전이 아니에요? 수요일 저녁이에요."
+        },
+        "3": {
+          "en": "Why not skip allergies? The notice asks you to write them.",
+          "zh": "为什么不是可不写过敏？告示要求注明。",
+          "ko": "왜 안 적어도 된다고요? 신청 시 적으래요."
+        }
+      }
+    },
+    {
+      "id": "t2-r04-02",
+      "type": "topic",
+      "prompt": {
+        "ko": "※ 다음 글의 제목으로 가장 알맞은 것을 고르십시오.\n\n작은 도시에서도 중고 물품을 쉽게 나누는 앱이 늘고 있다. 사용자는 사진과 상태를 올린 뒤 근처에서 거래하거나 기부할 수 있다. 새 제품을 사지 않아도 필요한 물건을 구할 수 있어, 쓰레기 줄이기에도 도움이 된다는 평가다.",
+        "en": "※ Choose the best title.\n\nEven in small cities, apps for sharing used goods are growing. Users post photos and condition, then trade nearby or donate. People can get what they need without buying new, which also helps cut waste.",
+        "zh": "※ 选择最合适的标题。\n\n即便小城市，分享二手物品的App也在增多。用户上传照片与成色，可就近交易或捐赠。不必买新也能得到所需，也有助减少垃圾。"
+      },
+      "choices": [
+        "중고 나눔 앱과 지역 생활",
+        "대형 쇼핑몰의 할인 전략",
+        "해외 여행 준비 체크리스트",
+        "학교 시험 일정 안내"
+      ],
+      "answer": 0,
+      "answerText": "중고 나눔 앱과 지역 생활",
+      "tags": [
+        "topik2:read",
+        "reading:제목",
+        "topic:society"
+      ],
+      "hint": {
+        "ko": "핵심 소재(중고·앱·지역)를 묶은 제목을 고르세요.",
+        "en": "Pick a title that bundles used goods, apps, and local life.",
+        "zh": "选把二手、App、本地生活捆在一起的标题。",
+        "steps": {
+          "en": [
+            "Topic: used-goods sharing apps in local areas.",
+            "Title should mention sharing / apps / community life.",
+            "Reject mall sales, travel, or school exams."
+          ],
+          "zh": [
+            "主题：本地二手分享App。",
+            "标题应含分享/App/社区生活。",
+            "排除商场打折、旅行、考试。"
+          ],
+          "ko": [
+            "중고 나눔 앱 · 지역.",
+            "제목에 나눔·앱·생활.",
+            "쇼핑몰·여행·시험 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Whole text centers on local used-goods sharing apps.",
+        "zh": "全文围绕本地二手分享App。",
+        "ko": "글 전체가 지역 중고 나눔 앱을 다룸."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not mall discounts? No shopping-mall strategy appears.",
+          "zh": "为什么不是商场打折？未谈商场策略。",
+          "ko": "왜 쇼핑몰이 아니에요? 할인 전략 이야기가 없어요."
+        },
+        "2": {
+          "en": "Why not travel checklist? Topic is reuse apps, not trips.",
+          "zh": "为什么不是旅行清单？主题是二手App。",
+          "ko": "왜 여행이 아니에요? 중고 앱 이야기예요."
+        },
+        "3": {
+          "en": "Why not school exams? No exam schedule is mentioned.",
+          "zh": "为什么不是考试通知？没提考试。",
+          "ko": "왜 시험 안내가 아니에요? 시험 일정이 없어요."
+        }
+      }
+    },
+    {
+      "id": "t2-r04-03",
+      "type": "inference",
+      "prompt": {
+        "ko": "※ 다음 글의 내용과 같은 것을 고르십시오.\n\n회사 구내식당이 이번 달부터 채식 메뉴를 매일 한 가지 이상 제공한다. 육류를 먹는 직원도 선택할 수 있고, 알레르기 표시도 메뉴판에 함께 올린다. 첫 주 설문에서는 ‘선택지가 늘었다’는 응답이 많았다.",
+        "en": "※ Choose what matches the text.\n\nFrom this month the company cafeteria offers at least one vegetarian dish daily. Meat-eaters can still choose other options, and allergy labels appear on the menu. First-week survey: many said choices increased.",
+        "zh": "※ 选择与文章一致的一项。\n\n从本月起公司食堂每天至少提供一种素食。吃肉员工仍可选其他菜，菜单也标注过敏信息。首周问卷中许多人表示选择变多了。"
+      },
+      "choices": [
+        "채식 메뉴가 매일 최소 한 가지 제공된다",
+        "구내식당이 육류 메뉴를 모두 없앴다",
+        "알레르기 표시는 하지 않는다",
+        "설문에서 선택지가 줄었다는 답이 많았다"
+      ],
+      "answer": 0,
+      "answerText": "채식 메뉴가 매일 최소 한 가지 제공된다",
+      "tags": [
+        "topik2:read",
+        "reading:내용일치",
+        "topic:workplace"
+      ],
+      "hint": {
+        "ko": "‘매일 한 가지 이상’과 설문 결과를 확인하세요.",
+        "en": "Check ‘at least one daily’ and the survey result.",
+        "zh": "核对“每天至少一种”和问卷结果。",
+        "steps": {
+          "en": [
+            "Check: daily vegetarian option count.",
+            "Text: ≥1 veg dish daily; meat options remain; survey = more choice.",
+            "Reject ‘all meat removed’ or fewer choices."
+          ],
+          "zh": [
+            "一致：每日素食数量。",
+            "文：每天≥1素；肉菜仍有；问卷=选择变多。",
+            "排除全取消肉菜或选择变少。"
+          ],
+          "ko": [
+            "매일 채식 ≥1.",
+            "육류 유지 · 설문=선택 증가.",
+            "육류 전폐·선택 감소 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Explicit: ≥1 vegetarian dish daily; choices increased in survey.",
+        "zh": "明确：每天≥1素食；问卷显示选择变多。",
+        "ko": "매일 채식 한 가지 이상 · 설문은 선택지 증가."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not remove all meat? Meat-eaters still have options.",
+          "zh": "为什么不是取消全部肉菜？吃肉仍可选。",
+          "ko": "왜 육류 전폐가 아니에요? 육류도 선택할 수 있어요."
+        },
+        "2": {
+          "en": "Why not no allergy labels? They are on the menu.",
+          "zh": "为什么不是无过敏标注？菜单有标注。",
+          "ko": "왜 표시 없음이 아니에요? 메뉴판에 올려요."
+        },
+        "3": {
+          "en": "Why not fewer choices? Survey said choices increased.",
+          "zh": "为什么不是选择变少？问卷说变多了。",
+          "ko": "왜 감소가 아니에요? 늘었다는 응답이 많아요."
+        }
+      }
+    },
+    {
+      "id": "t2-r04-04",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 말로 가장 알맞은 것을 고르십시오.\n\n공공 도서관은 책을 빌리는 곳만이 아니다. 스터디룸·강연·전시까지 열려, 동네 주민이 지식을 ( 　 ) 공간으로 자리 잡고 있다.",
+        "en": "※ Choose the best word for the blank.\n\nPublic libraries are not only for borrowing books. With study rooms, talks, and exhibits, they are becoming spaces where neighbors ( 　 ) knowledge.",
+        "zh": "※ 选择最合适的填空词。\n\n公共图书馆不只是借书。因有自习室、讲座、展览，正成为街坊（ 　 ）知识的空间。"
+      },
+      "choices": [
+        "나누고 배우는",
+        "버리고 잊는",
+        "숨기고 막는",
+        "사고파는"
+      ],
+      "answer": 0,
+      "answerText": "나누고 배우는",
+      "tags": [
+        "topik2:read",
+        "reading:문맥빈칸",
+        "topic:community"
+      ],
+      "hint": {
+        "ko": "스터디·강연·전시와 어울리는 동사를 고르세요.",
+        "en": "Pick verbs that fit study rooms, talks, and exhibits.",
+        "zh": "选与自习、讲座、展览搭配的动词。",
+        "steps": {
+          "en": [
+            "Blank: what do neighbors do with knowledge here?",
+            "Positive public learning → share and learn.",
+            "Reject discard / hide / buy-sell as main sense."
+          ],
+          "zh": [
+            "空格：街坊在这里对知识做什么？",
+            "正向公共学习 → 分享并学习。",
+            "排除丢弃/隐瞒/买卖为主义。"
+          ],
+          "ko": [
+            "주민이 지식을 ?",
+            "긍정·학습 → 나누고 배우다.",
+            "버림·숨김·매매 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Context of rooms/talks/exhibits → share and learn knowledge.",
+        "zh": "自习/讲座/展览语境 → 分享并学习知识。",
+        "ko": "스터디·강연·전시 맥락 → 지식을 나누고 배우는 공간."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not discard/forget? Libraries preserve and teach.",
+          "zh": "为什么不是丢弃遗忘？图书馆保存与教学。",
+          "ko": "왜 버리고 잊는이 아니에요? 도서관은 나누는 곳이에요."
+        },
+        "2": {
+          "en": "Why not hide/block? The text stresses open access.",
+          "zh": "为什么不是隐瞒阻拦？文中强调开放。",
+          "ko": "왜 숨기고 막는이 아니에요? 열린 공간이에요."
+        },
+        "3": {
+          "en": "Why not buy/sell? Focus is free public learning, not commerce.",
+          "zh": "为什么不是买卖？重点是公共学习，非商业。",
+          "ko": "왜 사고파는이 아니에요? 공공 학습 공간이에요."
+        }
+      }
+    },
+    {
+      "id": "t2-r04-05",
+      "type": "inference",
+      "prompt": {
+        "ko": "※ 다음 글의 내용과 같은 것을 고르십시오.\n\n시 교통국은 다음 달부터 심야 버스 노선 두 개를 추가한다고 발표했다. 이용자가 많은 대학가와 환승 센터를 잇는 노선이다. 요금은 낮 시간대와 같고, 첫 달은 앱으로 탑승 기록을 남기면 포인트가 적립된다.",
+        "en": "※ Choose what matches the text.\n\nThe city transit bureau announced two new late-night bus routes from next month. They link busy campus areas and a transfer hub. Fares match daytime; in the first month, logging rides in the app earns points.",
+        "zh": "※ 选择与文章一致的一项。\n\n市交通局宣布下月起新增两条深夜公交线，连接人流多的大学城与换乘中心。票价与白天相同；首月在App留乘车记录可积点。"
+      },
+      "choices": [
+        "심야 버스 두 노선이 다음 달부터 추가된다",
+        "요금이 낮보다 두 배다",
+        "대학가 노선은 없다",
+        "포인트는 첫 달에도 없다"
+      ],
+      "answer": 0,
+      "answerText": "심야 버스 두 노선이 다음 달부터 추가된다",
+      "tags": [
+        "topik2:read",
+        "reading:내용일치",
+        "topic:transit-news"
+      ],
+      "hint": {
+        "ko": "추가 시기·노선 수·요금·포인트를 확인하세요.",
+        "en": "Check timing, route count, fare, and points.",
+        "zh": "核对时间、线路数、票价和积分。",
+        "steps": {
+          "en": [
+            "Match: what starts next month?",
+            "Two late-night routes; same fare as day; first-month app points.",
+            "Reject double fare / no campus / no points."
+          ],
+          "zh": [
+            "一致：下月开始什么？",
+            "两条深夜线；票价同白天；首月App积分。",
+            "排除双倍票价/无大学城/无积分。"
+          ],
+          "ko": [
+            "다음 달 · 두 노선.",
+            "요금=낮 · 첫 달 포인트.",
+            "배가·대학가 없음·포인트 없음 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Explicit: two late-night routes added next month.",
+        "zh": "明确：下月新增两条深夜线路。",
+        "ko": "다음 달 심야 버스 두 노선 추가가 명시됨."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not double fare? Text says same as daytime.",
+          "zh": "为什么不是双倍票价？文中说与白天相同。",
+          "ko": "왜 두 배예요? 낮과 같대요."
+        },
+        "2": {
+          "en": "Why not no campus routes? University area is linked.",
+          "zh": "为什么不是无大学城线？有大学城连接。",
+          "ko": "왜 대학가 없음이에요? 대학가를 이어요."
+        },
+        "3": {
+          "en": "Why not no points? First month earns app points.",
+          "zh": "为什么不是无积分？首月有App积分。",
+          "ko": "왜 포인트 없음이에요? 첫 달에 적립돼요."
+        }
+      }
+    }
+  ]
+}

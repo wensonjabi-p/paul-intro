@@ -1,15 +1,15 @@
 {
   "id": "jabi-topik1-read-v1-03",
   "title": {
-    "en": "jabi. Practice · Set 3",
-    "ko": "jabi. 연습 · 세트 3",
-    "zh": "jabi. 练习 · 套题 3"
+    "en": "jabi. Reading · Set 3 (final-style practice)",
+    "ko": "jabi. 읽기 연습 3 (최종 연습용)",
+    "zh": "jabi. 阅读 · 套题 3（最终练习）"
   },
   "level": "TOPIK I",
   "verified": true,
   "verifiedAt": "2026-07-26",
   "source": "jabi-original",
-  "sourceNote": "All items: Meaning→Look→Pair (hint.steps). Visual = clear nouns/verbs + Korean label. Grammar: 국립국어원 / beginner-app style.",
+  "sourceNote": "All items: Meaning→Look→Pair (hint.steps). Visual = clear nouns/verbs + Korean label. Grammar: 국립국어원 / beginner-app style. Research-fill #3: titles aligned to TOPIK I section labels; official format only.",
   "questions": [
     {
       "id": "v3-01",
@@ -44,26 +44,26 @@
         },
         "steps": {
           "en": [
-            "이에요/예요 ≈ “is / am / are” after a noun (생일 is the noun).",
-            "Look at the end of 생일: it has 받침 (a final consonant letter) → use 이에요.",
-            "Pair: 생일이에요 · 학생이에요 (받침) · 학교예요 · 친구예요 (no 받침)."
+            "After a noun, pick the polite ‘is’ ending (two common shapes).",
+            "Check whether 생일 has a final consonant (받침) — that picks which ending.",
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
-            "이에요/예요 ≈ 名词后面的“是”（생일 是名词）。",
-            "看 생일 的结尾：有받침（收音）→ 用 이에요。",
-            "对比：생일이에요·학생이에요（有받침）· 학교예요·친구예요（无받침）。"
+            "名词后面的礼貌“是”（两种常见词尾）。",
+            "看 생일 有无收音(받침) — 据此选词尾。",
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
-            "이에요/예요 ≈ 명사 뒤에서 “~예요/입니다”.",
-            "「생일」끝소리에 받침이 있어요 → 「이에요」.",
-            "짝: 생일이에요·학생이에요 (받침) · 학교예요·친구예요 (받침 없음)."
+            "명사 뒤 정중체 「이다」 끝맺음(두 형태).",
+            "「생일」받침 유무로 끝을 고르세요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "내일은 제 생일이에요. 생일 has 받침 → 이에요 (not 예요).",
-        "zh": "내일은 제 생일이에요。생일 有받침 → 이에요。",
-        "ko": "내일은 제 생일이에요. 「생일」받침 → 「이에요」."
+        "en": "생일 has 받침 → 이에요 (not 예요) after the noun.",
+        "ko": "생일 받침 → 이에요.",
+        "zh": "생일有收音→이에요。"
       },
       "distractOrder": [
         1,
@@ -123,25 +123,25 @@
         "steps": {
           "en": [
             "지난주 = last week → already past.",
-            "Past polite: ~았어요/었어요 → 갔어요 (went).",
-            "Contrast: 갔어요 + 지난주 · 가요 + 지금 · 갈 거예요 + 내일."
+            "Past polite: ~았어요/었어요 (went).",
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "지난주 = 上周 → 过去。",
-            "过去礼貌形：~았어요/었어요 → 갔어요。",
-            "对比：갔어요 + 지난주 · 가요 + 지금 · 갈 거예요 + 내일。"
+            "过去礼貌形：~았/었어요。",
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "지난주 = 과거.",
-            "「갔어요」.",
-            "대비: 갔어요 + 지난주 · 가요 + 지금 · 갈 거예요 + 내일."
+            "과거 정중체 ~았/었어요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "지난주에 부산에 갔어요 = I went to Busan last week.",
-        "zh": "지난주에 부산에 갔어요 = 上周去了釜山。",
-        "ko": "지난주에 부산에 갔어요."
+        "en": "지난주에 … 갔어요 — past time + destination 에 + 았어요.",
+        "ko": "지난주+에 갔어요 과거.",
+        "zh": "上周去了：过去。"
       },
       "distractOrder": [
         1,
@@ -154,94 +154,15 @@
           "zh": "为什么不是 가요？那像现在。上周 → 过去 갔어요。",
           "ko": "왜 「가요」가 아니에요? 지난주 → 「갔어요」."
         },
-        "3": {
-          "en": "Why not 가고 있어요? That’s “am going.” Last week → already went: 갔어요.",
-          "zh": "为什么不是 가고 있어요？那是“正在去”。上周已经去了：갔어요。",
-          "ko": "왜 「가고 있어요」가 아니에요? 지난주에는 「갔어요」."
-        },
         "2": {
           "en": "Why not 갈 거예요? That’s future. 지난주 is past → 갔어요.",
           "zh": "为什么不是 갈 거예요？那是将来。上周是过去 → 갔어요。",
           "ko": "왜 「갈 거예요」가 아니에요? 과거는 「갔어요」."
-        }
-      }
-    },
-    {
-      "id": "v3-03",
-      "type": "notice",
-      "prompt": {
-        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[병원 안내]\n약국: 1층\n식당: 2층\n화장실: 1층\n\n식당은 몇 층에 있습니까?",
-        "en": "Read the following and answer.\n\n[병원 안내]\n약국: 1층\n식당: 2층\n화장실: 1층\n\n식당은 몇 층에 있습니까?\n\n→ Which floor is the cafeteria on?",
-        "zh": "请阅读并回答问题。\n\n[병원 안내]\n약국: 1층\n식당: 2층\n화장실: 1층\n\n식당은 몇 층에 있습니까?\n\n→ 食堂在几楼？"
-      },
-      "choices": [
-        "2층",
-        "1층",
-        "3층",
-        "지하"
-      ],
-      "answer": 0,
-      "answerText": "2층",
-      "tags": [
-        "reading:안내문",
-        "vocab:장소"
-      ],
-      "hint": {
-        "ko": "식당은 몇 층? 「식당」 줄을 보세요. 답: 2층.",
-        "en": "Hospital notice: which floor is 식당? Look at the 식당 line — the floor number next to it. Match: 2층 (1층 is 약국 / 화장실).",
-        "zh": "医院告示：식당在几楼？ 找「식당」那一行。 对应：2층（1층是 약국/화장실）。",
-        "visual": {
-          "emoji": [
-            "🏥",
-            "🍽️"
-          ],
-          "en": "hospital · cafeteria",
-          "ko": "병원·식당",
-          "zh": "医院·食堂"
-        },
-        "steps": {
-          "en": [
-            "Hospital notice: which floor is 식당 (cafeteria)?",
-            "Look at the 식당 line — floor number next to it.",
-            "Match: 2층 (1층 = 약국 / 화장실)."
-          ],
-          "zh": [
-            "医院告示：식당(食堂)在几楼？",
-            "找「식당」那一行旁的楼层。",
-            "对应：2층（1층是 약국/화장실）。"
-          ],
-          "ko": [
-            "식당은 몇 층?",
-            "「식당」 줄을 보세요.",
-            "답: 2층."
-          ]
-        }
-      },
-      "why": {
-        "en": "식당: 2층 → floor 2.",
-        "zh": "식당: 2층 → 2楼。",
-        "ko": "식당: 2층 → 2층."
-      },
-      "distractOrder": [
-        1,
-        2,
-        3
-      ],
-      "distractWhy": {
-        "1": {
-          "en": "Why not floor 1? Floor 1 is 약국 / 화장실. 식당 is floor 2.",
-          "zh": "为什么不是1楼？1楼是 약국/화장실。식당是2楼。",
-          "ko": "왜 1층이 아니에요? 식당은 2층이에요."
-        },
-        "2": {
-          "en": "Why not floor 3? The notice says 식당: 2층.",
-          "zh": "为什么不是3楼？告示写 식당: 2층。",
-          "ko": "왜 3층이 아니에요? 식당은 2층."
         },
         "3": {
-          "en": "Why not basement? Not on the notice — 식당 is 2층.",
-          "zh": "为什么不是地下？告示没有，식당是 2층。",
-          "ko": "왜 지하가 아니에요? 식당은 2층."
+          "en": "Why not 가고 있어요? That’s “am going.” Last week → already went: 갔어요.",
+          "zh": "为什么不是 가고 있어요？那是“正在去”。上周已经去了：갔어요。",
+          "ko": "왜 「가고 있어요」가 아니에요? 지난주에는 「갔어요」."
         }
       }
     },
@@ -296,9 +217,9 @@
         }
       },
       "why": {
-        "en": "커피와 차 중에서 = coffee or tea.",
-        "zh": "커피와 차 중에서 = 咖啡和茶之中。",
-        "ko": "커피와 차 중에서."
+        "en": "A와 B 중에서 = choosing between coffee and tea.",
+        "ko": "와/과 중에서=선택.",
+        "zh": "A와/과 B 중에서：在咖啡和茶之中选。"
       },
       "distractOrder": [
         1,
@@ -359,25 +280,25 @@
         "steps": {
           "en": [
             "They say wear a coat → weather feeling.",
-            "추워요 = cold.",
-            "Contrast: 추워요 + 코트 · 더워요 + 티셔츠."
+            "Pick the ‘cold’ weather adjective.",
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "说穿外套 → 天气感觉。",
-            "추워요 = 冷。",
-            "对比：추워요 + 코트 · 더워요 + 티셔츠."
+            "选表示“冷”的天气形容词。",
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "코트 → 날씨가 어때요?",
-            "「추워요」.",
-            "대비: 추워요 + 코트 · 더워요 + 티셔츠."
+            "추운 느낌의 형용사를 고르세요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "코트를 입으세요 → 추워요 (cold).",
-        "zh": "코트를 입으세요 → 추워요（冷）。",
-        "ko": "코트를 입으세요 → 추워요."
+        "en": "입으세요 imperative/soft command — reason is cold (추워요).",
+        "ko": "입으세요 ← 추워요 이유.",
+        "zh": "让穿外套 → 天气冷（추워요）。"
       },
       "distractOrder": [
         1,
@@ -399,87 +320,6 @@
           "en": "Why not 맛있어요? That’s tasty — not weather.",
           "zh": "为什么不是 맛있어요？那是好吃，不是天气。",
           "ko": "왜 「맛있어요」가 아니에요? 날씨는 「추워요」."
-        }
-      }
-    },
-    {
-      "id": "v3-06",
-      "type": "topic",
-      "prompt": {
-        "ko": "※ 밑줄 친 ‘그곳’이 가리키는 곳을 고르십시오.\n\n저는 자주 공원에 갑니다. 그곳은 조용하고 공기가 좋습니다.",
-        "en": "What does the underlined part refer to?\n\n저는 자주 공원에 갑니다. 그곳은 조용하고 공기가 좋습니다.",
-        "zh": "请选择划线部分指的是什么。\n\n저는 자주 공원에 갑니다. 그곳은 조용하고 공기가 좋습니다."
-      },
-      "underline": [
-        "그곳"
-      ],
-      "choices": [
-        "공원",
-        "공기",
-        "집",
-        "학교"
-      ],
-      "answer": 0,
-      "answerText": "공원",
-      "tags": [
-        "reading:지시어",
-        "vocab:장소"
-      ],
-      "hint": {
-        "ko": "「그곳」= 그 장소. 앞에서 공원에 가요. 답: 그곳 = 공원.",
-        "en": "그곳 = that place (points back). Look at sentence 1: 공원에 갑니다. Match: 그곳 = 공원.",
-        "zh": "그곳 = 那个地方（指前面）。 看第一句：공원에 갑니다。 对应：그곳 = 공원。",
-        "visual": {
-          "emoji": [
-            "🌳"
-          ],
-          "en": "park",
-          "ko": "공원",
-          "zh": "公园"
-        },
-        "steps": {
-          "en": [
-            "그곳 = that place (points back).",
-            "Look at sentence 1: 공원에 갑니다.",
-            "Match: 그곳 = 공원."
-          ],
-          "zh": [
-            "그곳 = 那个地方（指前面）。",
-            "看第一句：공원에 갑니다。",
-            "对应：그곳 = 공원。"
-          ],
-          "ko": [
-            "「그곳」= 그 장소.",
-            "앞에서 공원에 가요.",
-            "답: 그곳 = 공원."
-          ]
-        }
-      },
-      "why": {
-        "en": "공원에 갑니다 → 그곳 = the park.",
-        "zh": "공원에 갑니다 → 그곳 = 公园。",
-        "ko": "공원에 가요. 그곳 = 공원."
-      },
-      "distractOrder": [
-        1,
-        2,
-        3
-      ],
-      "distractWhy": {
-        "1": {
-          "en": "Why not 공기? 그곳 = that place. Air isn’t a place — the park is.",
-          "zh": "为什么不是 공기？그곳=那个地方。空气不是地方，公园是。",
-          "ko": "왜 공기가 아니에요? 「그곳」은 공원이에요."
-        },
-        "2": {
-          "en": "Why not home? Sentence 1 goes to the park — 그곳 points there.",
-          "zh": "为什么不是家？第一句去公园，그곳 指那里。",
-          "ko": "왜 집이 아니에요? 「그곳」= 공원."
-        },
-        "3": {
-          "en": "Why not school? The place named first is the park.",
-          "zh": "为什么不是学校？先出现的地点是公园。",
-          "ko": "왜 학교가 아니에요? 「그곳」= 공원."
         }
       }
     },
@@ -535,9 +375,9 @@
         }
       },
       "why": {
-        "en": "공부할 때 = time to study.",
-        "zh": "공부할 때 = 学习的时候。",
-        "ko": "공부할 때 = 공부하는 시간."
+        "en": "-을 때 marks “when (studying).”",
+        "ko": "공부할 때=-을 때.",
+        "zh": "V을/를 때＝……的时候。这里是‘学习的时候’。"
       },
       "distractOrder": [
         1,
@@ -598,25 +438,25 @@
         "steps": {
           "en": [
             "Mother is the subject — raise the verb “eat.”",
-            "드십니다 ≈ honorific of 먹다.",
-            "Contrast: 어머니께서 드십니다 · 아이가 먹어요."
+            "Pick the honorific form of 먹다.",
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "主语是妈妈 — 抬高“吃”。",
-            "드십니다 ≈ 먹다 的敬语。",
-            "对比：어머니께서 드십니다 · 아이가 먹어요。"
+            "选 먹다 的敬语形式。",
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
-            "어머니 주어 → 「드십니다」.",
-            "「먹다」를 높여 말해요.",
-            "대비: 어머니께서 드십니다 · 아이가 먹어요."
+            "어머니 주어 → 「먹다」를 높여 말해요.",
+            "「먹다」 높임형을 고르세요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "어머니께서 음식을 드십니다 = Mother eats (honorific).",
-        "zh": "어머니께서 음식을 드십니다 = 妈妈用餐（敬语）。",
-        "ko": "어머니께서 음식을 드십니다."
+        "en": "께서 + 드십니다 — honorific subject + honorific eat.",
+        "ko": "께서+드십니다 높임.",
+        "zh": "敬语：께서+드십니다。"
       },
       "distractOrder": [
         3,
@@ -624,11 +464,6 @@
         2
       ],
       "distractWhy": {
-        "3": {
-          "en": "Why not 먹습니다? Polite, but for mother we raise it more: 드십니다.",
-          "zh": "为什么不是 먹습니다？礼貌，但对母亲更高：드십니다。",
-          "ko": "왜 「먹습니다」가 아니에요? 어머니께는 「드십니다」."
-        },
         "1": {
           "en": "Why not 먹어요? Too plain for mother as subject — use 드십니다.",
           "zh": "为什么不是 먹어요？对母亲作主语太随便 → 드십니다。",
@@ -638,6 +473,171 @@
           "en": "Why not 먹어? Very casual. Mother → 드십니다.",
           "zh": "为什么不是 먹어？很随便。母亲 → 드십니다。",
           "ko": "왜 「먹어」가 아니에요? 「드십니다」예요."
+        },
+        "3": {
+          "en": "Why not 먹습니다? Polite, but for mother we raise it more: 드십니다.",
+          "zh": "为什么不是 먹습니다？礼貌，但对母亲更高：드십니다。",
+          "ko": "왜 「먹습니다」가 아니에요? 어머니께는 「드십니다」."
+        }
+      }
+    },
+    {
+      "id": "v3-03",
+      "type": "notice",
+      "prompt": {
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[병원]\n약국: 1층\n식당: 2층\n화장실: 1층\n\n식당은 몇 층에 있습니까?",
+        "en": "Read the following and answer.\n\n[병원]\n약국: 1층\n식당: 2층\n화장실: 1층\n\n식당은 몇 층에 있습니까?\n\n→ Which floor is the cafeteria on?",
+        "zh": "请阅读并回答问题。\n\n[병원]\n약국: 1층\n식당: 2층\n화장실: 1층\n\n식당은 몇 층에 있습니까?\n\n→ 食堂在几楼？"
+      },
+      "choices": [
+        "2층",
+        "1층",
+        "3층",
+        "지하"
+      ],
+      "answer": 0,
+      "answerText": "2층",
+      "tags": [
+        "reading:글",
+        "vocab:장소"
+      ],
+      "hint": {
+        "ko": "식당은 몇 층? 「식당」 줄을 보세요..",
+        "en": "Hospital notice: which floor is 식당? Look at the 식당 line — the floor number next to it..",
+        "zh": "医院告示：식당在几楼？ 找「식당」那一行。。",
+        "visual": {
+          "emoji": [
+            "🏥",
+            "🍽️"
+          ],
+          "en": "hospital · cafeteria",
+          "ko": "병원·식당",
+          "zh": "医院·食堂"
+        },
+        "steps": {
+          "en": [
+            "Hospital notice: which floor is 식당 (cafeteria)?",
+            "Look at the 식당 line — floor number next to it.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "医院告示：식당(食堂)在几楼？",
+            "找「식당」那一行旁的楼层。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "식당은 몇 층?",
+            "「식당」 줄을 보세요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Floor noun 2층 answers location in the restaurant notice.",
+        "ko": "식당 위치=2층.",
+        "zh": "医院告示：식당 那一行是 2층（二楼）。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not floor 1? Floor 1 is 약국 / 화장실. 식당 is floor 2.",
+          "zh": "为什么不是1楼？1楼是 약국/화장실。식당是2楼。",
+          "ko": "왜 1층이 아니에요? 식당은 2층이에요."
+        },
+        "2": {
+          "en": "Why not floor 3? The notice says 식당: 2층.",
+          "zh": "为什么不是3楼？告示写 식당: 2층。",
+          "ko": "왜 3층이 아니에요? 식당은 2층."
+        },
+        "3": {
+          "en": "Why not basement? Not on the notice — 식당 is 2층.",
+          "zh": "为什么不是地下？告示没有，식당是 2층。",
+          "ko": "왜 지하가 아니에요? 식당은 2층."
+        }
+      }
+    },
+    {
+      "id": "v3-06",
+      "type": "topic",
+      "prompt": {
+        "ko": "※ 밑줄 친 ‘그곳’이 가리키는 곳을 고르십시오.\n\n저는 자주 공원에 갑니다. 그곳은 조용하고 공기가 좋습니다.",
+        "en": "What does the underlined part refer to?\n\n저는 자주 공원에 갑니다. 그곳은 조용하고 공기가 좋습니다.",
+        "zh": "请选择划线部分指的是什么。\n\n저는 자주 공원에 갑니다. 그곳은 조용하고 공기가 좋습니다."
+      },
+      "underline": [
+        "그곳"
+      ],
+      "choices": [
+        "공원",
+        "공기",
+        "집",
+        "학교"
+      ],
+      "answer": 0,
+      "answerText": "공원",
+      "tags": [
+        "reading:지시어",
+        "vocab:장소"
+      ],
+      "hint": {
+        "ko": "「그곳」= 그 장소. 앞에서 공원에 가요..",
+        "en": "그곳 = that place (points back). Look at sentence 1: 공원에 갑니다..",
+        "zh": "그곳 = 那个地方（指前面）。 看第一句：공원에 갑니다。。",
+        "visual": {
+          "emoji": [
+            "🌳"
+          ],
+          "en": "park",
+          "ko": "공원",
+          "zh": "公园"
+        },
+        "steps": {
+          "en": [
+            "그곳 = that place (points back).",
+            "Look at sentence 1: 공원에 갑니다.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "그곳 = 那个地方（指前面）。",
+            "看第一句：공원에 갑니다。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "「그곳」= 그 장소.",
+            "앞에서 공원에 가요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "그곳 refers back to 공원 as the place they go.",
+        "ko": "그곳=공원 지시.",
+        "zh": "그곳回指前面去的地方 → 公园。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not 공기? 그곳 = that place. Air isn’t a place — the park is.",
+          "zh": "为什么不是 공기？그곳=那个地方。空气不是地方，公园是。",
+          "ko": "왜 공기가 아니에요? 「그곳」은 공원이에요."
+        },
+        "2": {
+          "en": "Why not home? Sentence 1 goes to the park — 그곳 points there.",
+          "zh": "为什么不是家？第一句去公园，그곳 指那里。",
+          "ko": "왜 집이 아니에요? 「그곳」= 공원."
+        },
+        "3": {
+          "en": "Why not school? The place named first is the park.",
+          "zh": "为什么不是学校？先出现的地点是公园。",
+          "ko": "왜 학교가 아니에요? 「그곳」= 공원."
         }
       }
     },
@@ -645,9 +645,9 @@
       "id": "v3-09",
       "type": "notice",
       "prompt": {
-        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[수업 안내]\n한국어 수업\n시간: 오후 2시~4시\n장소: 3호실\n준비물: 책, 공책\n\n수업은 몇 시부터 시작합니까?",
-        "en": "Read the following and answer.\n\n[수업 안내]\n한국어 수업\n시간: 오후 2시~4시\n장소: 3호실\n준비물: 책, 공책\n\n수업은 몇 시부터 시작합니까?\n\n→ What time does class start?",
-        "zh": "请阅读并回答问题。\n\n[수업 안내]\n한국어 수업\n시간: 오후 2시~4시\n장소: 3호실\n준비물: 책, 공책\n\n수업은 몇 시부터 시작합니까?\n\n→ 课几点开始？"
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[수업]\n한국어 수업\n시간: 오후 2시~4시\n장소: 3번 방\n가져오는 것: 책, 공책\n\n수업은 몇 시부터 시작합니까?",
+        "en": "Read the following and answer.\n\n[수업]\n한국어 수업\n시간: 오후 2시~4시\n장소: 3번 방\n가져오는 것: 책, 공책\n\n수업은 몇 시부터 시작합니까?\n\n→ What time does class start?",
+        "zh": "请阅读并回答问题。\n\n[수업]\n한국어 수업\n시간: 오후 2시~4시\n장소: 3번 방\n가져오는 것: 책, 공책\n\n수업은 몇 시부터 시작합니까?\n\n→ 课几点开始？"
       },
       "choices": [
         "오후 2시",
@@ -658,13 +658,13 @@
       "answer": 0,
       "answerText": "오후 2시",
       "tags": [
-        "reading:안내문",
+        "reading:글",
         "vocab:학교"
       ],
       "hint": {
-        "ko": "수업 시작 시간? 「2시~4시」→ 앞이 시작. 답: 오후 2시.",
-        "en": "Class notice: when does it start? In A시~B시, A = start, B = end. Match: 오후 2시.",
-        "zh": "上课告示：几点开始？ A시~B시：A=开始，B=结束。 对应：오후 2시。",
+        "ko": "수업 시작 시간? 「2시~4시」→ 앞이 시작.",
+        "en": "Class notice: when does it start? In A시~B시, A = start, B = end..",
+        "zh": "上课告示：几点开始？ A시~B시：A=开始，B=结束。。",
         "visual": {
           "emoji": [
             "🕐",
@@ -678,24 +678,24 @@
           "en": [
             "Class notice: when does it start?",
             "In A시~B시, A = start, B = end.",
-            "Match: 오후 2시."
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "上课告示：几点开始？",
             "A시~B시：A=开始，B=结束。",
-            "对应：오후 2시。"
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "수업 시작 시간?",
             "「2시~4시」→ 앞이 시작.",
-            "답: 오후 2시."
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "오후 2시~4시 → starts at 2 p.m.",
-        "zh": "오후 2시~4시 → 下午2点开始。",
-        "ko": "오후 2시부터 시작해요. 4시는 끝."
+        "en": "Time span 오후 2시~4시 → starts at 2 p.m.",
+        "ko": "2시~4시 → 시작 2시.",
+        "zh": "从下午2点开始。"
       },
       "distractOrder": [
         1,
@@ -741,9 +741,9 @@
         "vocab:학교"
       ],
       "hint": {
-        "ko": "글과 같은 것만. 「기숙사에서 삽니다」. 답: 유나는 기숙사에 삽니다.",
-        "en": "Pick only what the text says. Look: 기숙사에서 삽니다. Match: 유나는 기숙사에 삽니다.",
-        "zh": "只选原文有的。 看：기숙사에서 삽니다。 对应：유나는 기숙사에 삽니다。",
+        "ko": "글과 같은 것만.",
+        "en": "Pick only what the text says. Look: 기숙사에서 삽니다..",
+        "zh": "只选原文有的。 看：기숙사에서 삽니다。。",
         "visual": {
           "emoji": [
             "🎓",
@@ -757,24 +757,24 @@
           "en": [
             "Pick only what the text says.",
             "Look: 기숙사에서 삽니다.",
-            "Match: 유나는 기숙사에 삽니다."
+            "Use the pattern contrast — pick the choice yourself."
           ],
           "zh": [
             "只选原文有的。",
             "看：기숙사에서 삽니다。",
-            "对应：유나는 기숙사에 삽니다。"
+            "只看对照句式，自己从选项里选。"
           ],
           "ko": [
             "글과 같은 것만.",
             "「기숙사에서 삽니다」.",
-            "답: 유나는 기숙사에 삽니다."
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
           ]
         }
       },
       "why": {
-        "en": "Lives in the dorm → matches.",
-        "zh": "住宿舍 → 一致。",
-        "ko": "유나는 기숙사에 삽니다 = 글과 같아요."
+        "en": "Dorm living line matches the residence choice.",
+        "ko": "기숙사 거주=거처 선택.",
+        "zh": "文中写住在宿舍 → 选与此一致的一项。"
       },
       "distractOrder": [
         3,
@@ -782,11 +782,6 @@
         2
       ],
       "distractWhy": {
-        "3": {
-          "en": "Why not “lives at home”? Text: dorm (기숙사).",
-          "zh": "为什么不是住家？原文：宿舍。",
-          "ko": "왜 집에서가 아니에요? 기숙사에 살아요."
-        },
         "1": {
           "en": "Why not teacher? Text: she is a student.",
           "zh": "为什么不是老师？原文：学生。",
@@ -796,6 +791,11 @@
           "en": "Why not “dorm is far”? Text: close to school.",
           "zh": "为什么不是宿舍远？原文：离学校近。",
           "ko": "왜 멀다가 아니에요? 가깝다고 했어요."
+        },
+        "3": {
+          "en": "Why not “lives at home”? Text: dorm (기숙사).",
+          "zh": "为什么不是住家？原文：宿舍。",
+          "ko": "왜 집에서가 아니에요? 기숙사에 살아요."
         }
       }
     }

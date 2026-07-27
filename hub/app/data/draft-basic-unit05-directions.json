@@ -1,0 +1,673 @@
+{
+  "id": "jabi-basic-v1-05",
+  "title": {
+    "en": "jabi. Basics · Unit 5 — Places & directions",
+    "ko": "jabi. 기초 · 5과 — 장소와 길 찾기",
+    "zh": "jabi. 基础 · 第5课 — 地点与问路"
+  },
+  "level": "Basic (pre-TOPIK)",
+  "theme": "장소",
+  "sourceNote": "PILOT — jabi. 원작. 세종 3과 '위치'(에 있다) + A1 길 안내(직진·회전) 결합. 교재 문장 미차용.",
+  "objective": {
+    "en": "Ask where a place is; say 에 있어요; follow go-straight / turn.",
+    "ko": "어디인지 묻기 · 에 있어요 · 직진·회전 이해.",
+    "zh": "问路；说에 있어요；理解直行、转弯。"
+  },
+  "explain": {
+    "en": "Ask where: [place] 어디예요? Locate: [place]에 있어요. Then guide with 직진하세요 / 왼쪽·오른쪽으로 도세요. 에 here is location/existence — not action-에서.",
+    "ko": "어디예요? · 에 있어요(위치). 안내: 직진/돌다. 여기서 에는 위치 — 동작 에서와 구분.",
+    "zh": "어디예요？·에 있어요。指路：直走/转弯。에=位置，不是动作에서。"
+  },
+  "format": "duolingo-basic-v1",
+  "steps": [
+    {
+      "id": "intro",
+      "title": {
+        "en": "Skill intro",
+        "ko": "스킬 소개",
+        "zh": "技能介绍"
+      },
+      "body": {
+        "en": "Sejong location + street directions for travelers (A1 places).",
+        "ko": "세종 위치 + 여행자용 길 안내(A1 장소).",
+        "zh": "世宗位置 + 旅行者指路（A1地点）。"
+      }
+    },
+    {
+      "id": "teach",
+      "title": {
+        "en": "Teach · 어디예요 · 에 있어요",
+        "ko": "설명 · 어디예요 · 에 있어요",
+        "zh": "讲解 · 어디예요 · 에 있어요"
+      },
+      "body": {
+        "en": "어디예요 asks where. Existence/location: N에 있어요. Movement cues: 직진 · 돌다. 가까워요 softens distance.",
+        "ko": "어디예요=어디. N에 있어요=위치. 직진·돌다. 가까워요=거리.",
+        "zh": "어디예요问哪里。N에 있어요=位置。"
+      }
+    },
+    {
+      "id": "dialogue",
+      "title": {
+        "en": "Dialogue",
+        "ko": "대화",
+        "zh": "对话"
+      },
+      "body": {
+        "en": "Asking-the-way scene — read, then drill.",
+        "ko": "길 묻기 장면 — 읽고 드릴.",
+        "zh": "问路场景——读完再练。"
+      }
+    },
+    {
+      "id": "practice",
+      "title": {
+        "en": "Practice",
+        "ko": "연습",
+        "zh": "练习"
+      },
+      "body": {
+        "en": "Complete dialogues — tips don’t reveal the answer word first.",
+        "ko": "대화 완성 — 힌트는 정답 단어를 바로 주지 않음.",
+        "zh": "完成对话——提示不先泄露答案词。"
+      }
+    },
+    {
+      "id": "checkpoint",
+      "title": {
+        "en": "Checkpoint",
+        "ko": "체크포인트",
+        "zh": "关卡"
+      },
+      "body": {
+        "en": "Ask where one place is + understand one direction line.",
+        "ko": "장소 하나 어디 + 안내 한 줄 이해.",
+        "zh": "问一处在哪+听懂一句指路。"
+      }
+    }
+  ],
+  "dialogue": {
+    "title": {
+      "en": "Asking the way",
+      "ko": "길 묻기",
+      "zh": "问路"
+    },
+    "lines": [
+      {
+        "who": "유키",
+        "ko": "저기요, 지하철역이 어디예요?"
+      },
+      {
+        "who": "행인",
+        "ko": "이쪽으로 직진하세요."
+      },
+      {
+        "who": "유키",
+        "ko": "그리고요?"
+      },
+      {
+        "who": "행인",
+        "ko": "은행에서 오른쪽으로 도세요. 가까워요."
+      }
+    ]
+  },
+  "phrases": [
+    {
+      "ko": "지하철역이 어디예요?",
+      "gloss": {
+        "en": "Where is the subway station?",
+        "ko": "위치",
+        "zh": "地铁站在哪"
+      }
+    },
+    {
+      "ko": "직진하세요.",
+      "gloss": {
+        "en": "Go straight.",
+        "ko": "직진",
+        "zh": "请直行"
+      }
+    },
+    {
+      "ko": "왼쪽으로 도세요.",
+      "gloss": {
+        "en": "Turn left.",
+        "ko": "좌회전",
+        "zh": "请向左转"
+      }
+    },
+    {
+      "ko": "오른쪽으로 도세요.",
+      "gloss": {
+        "en": "Turn right.",
+        "ko": "우회전",
+        "zh": "请向右转"
+      }
+    },
+    {
+      "ko": "가까워요 / 멀어요.",
+      "gloss": {
+        "en": "It's near / far.",
+        "ko": "거리",
+        "zh": "近/远"
+      }
+    },
+    {
+      "ko": "옆에 있어요.",
+      "gloss": {
+        "en": "It's next to ~.",
+        "ko": "옆",
+        "zh": "在旁边"
+      }
+    },
+    {
+      "ko": "건너편에 있어요.",
+      "gloss": {
+        "en": "Across the street.",
+        "ko": "건너편",
+        "zh": "在对面"
+      }
+    },
+    {
+      "ko": "편의점은 저기 있어요.",
+      "gloss": {
+        "en": "The convenience store is over there.",
+        "ko": "에 있다",
+        "zh": "便利店在那边"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "basic-05-01",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Ask place.\n\n유키: 화장실 (    )?\n행인: 저쪽이에요.",
+        "ko": "※ 위치.\n\n유키: 화장실 (    )?\n행인: 저쪽이에요.",
+        "zh": "※ 位置。\n\n雪：화장실 (    )?\n路人：저쪽이에요。"
+      },
+      "choices": [
+        "어디예요",
+        "얼마예요",
+        "누구예요",
+        "뭐 해요"
+      ],
+      "answer": 0,
+      "answerText": "어디예요",
+      "tags": [
+        "topic:장소"
+      ],
+      "hint": {
+        "ko": "위치 질문.",
+        "en": "Ask where.",
+        "zh": "问哪里。",
+        "steps": {
+          "en": [
+            "Need location",
+            "어디"
+          ],
+          "ko": [
+            "위치",
+            "어디"
+          ],
+          "zh": [
+            "要位置",
+            "어디"
+          ]
+        }
+      },
+      "why": {
+        "en": "어디예요? is the where-question with polite linking ending.",
+        "ko": "어디예요?=위치 물음.",
+        "zh": "어디예요？问位置。"
+      }
+    },
+    {
+      "id": "basic-05-02",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Location.\n\nA: 지갑이 어디에 있어요?\nB: 가방 (    ).",
+        "ko": "※ 위치.\n\nA: 지갑이 어디에 있어요?\nB: 가방 (    ).",
+        "zh": "※ 位置。\n\nA: 지갑이 어디에 있어요?\nB: 가방 (    )。"
+      },
+      "choices": [
+        "안에 있어요",
+        "안에 가요",
+        "안으로만",
+        "안 사람이에요"
+      ],
+      "answer": 0,
+      "answerText": "안에 있어요",
+      "tags": [
+        "topic:장소",
+        "grammar:에 있다"
+      ],
+      "hint": {
+        "ko": "어디에 있어요? → …에 있어요.",
+        "en": "어디에 있어요? → …에 있어요.",
+        "zh": "어디에 있어요？ → …에 있어요。",
+        "steps": {
+          "en": [
+            "Object location",
+            "에 있어요"
+          ],
+          "ko": [
+            "물건 위치",
+            "에 있어요"
+          ],
+          "zh": [
+            "物品位置",
+            "에 있어요"
+          ]
+        }
+      },
+      "why": {
+        "en": "(place)에 있어요 — location/existence 에 (Sejong-style location).",
+        "ko": "장소에 있어요 — 위치 에.",
+        "zh": "场所+에 있어요。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "가요 is movement, not static location.",
+          "ko": "가요는 이동.",
+          "zh": "가요是移动。"
+        },
+        "2": {
+          "en": "만 = only — incomplete.",
+          "ko": "만=불완전.",
+          "zh": "만不完整。"
+        },
+        "3": {
+          "en": "사람이에요 is identity.",
+          "ko": "사람이에요는 신원.",
+          "zh": "사람이에요是身份。"
+        }
+      }
+    },
+    {
+      "id": "basic-05-03",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Straight.\n\n행인: 이쪽으로 (    ).",
+        "ko": "※ 직진.\n\n행인: 이쪽으로 (    ).",
+        "zh": "※ 直行。\n\n路人：이쪽으로 (    )。"
+      },
+      "choices": [
+        "직진하세요",
+        "공부하세요",
+        "포장하세요",
+        "결제하세요"
+      ],
+      "answer": 0,
+      "answerText": "직진하세요",
+      "tags": [
+        "topic:장소"
+      ],
+      "hint": {
+        "ko": "직진 안내.",
+        "en": "Go straight.",
+        "zh": "直行指引。",
+        "steps": {
+          "en": [
+            "Direction help",
+            "직진"
+          ],
+          "ko": [
+            "길 안내",
+            "직진"
+          ],
+          "zh": [
+            "指路",
+            "直行"
+          ]
+        }
+      },
+      "why": {
+        "en": "직진하세요 = go-straight cue.",
+        "ko": "직진하세요.",
+        "zh": "直走。"
+      }
+    },
+    {
+      "id": "basic-05-04",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Turn.\n\n행인: 은행에서 (    ).",
+        "ko": "※ 회전.\n\n행인: 은행에서 (    ).",
+        "zh": "※ 转弯。\n\n路人：은행에서 (    )。"
+      },
+      "choices": [
+        "오른쪽으로 도세요",
+        "아메리카노 주세요",
+        "일곱 시에 일어나요",
+        "만나서 반가워요"
+      ],
+      "answer": 0,
+      "answerText": "오른쪽으로 도세요",
+      "tags": [
+        "topic:장소"
+      ],
+      "hint": {
+        "ko": "방향 전환.",
+        "en": "Turn.",
+        "zh": "转弯。",
+        "steps": {
+          "en": [
+            "At bank landmark",
+            "Right turn"
+          ],
+          "ko": [
+            "은행 기준",
+            "오른쪽"
+          ],
+          "zh": [
+            "以银行为准",
+            "右转"
+          ]
+        }
+      },
+      "why": {
+        "en": "오른쪽으로 도세요 — direction + 돌다 polite.",
+        "ko": "오른쪽+도세요.",
+        "zh": "右转。"
+      }
+    },
+    {
+      "id": "basic-05-05",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Distance.\n\n유키: 멀어요?\n행인: 아니요, (    ).",
+        "ko": "※ 거리.\n\n유키: 멀어요?\n행인: 아니요, (    ).",
+        "zh": "※ 距离。\n\n雪：멀어요?\n路人：아니요, (    )。"
+      },
+      "choices": [
+        "가까워요",
+        "매워어요",
+        "감사해요만",
+        "사람이에요"
+      ],
+      "answer": 0,
+      "answerText": "가까워요",
+      "tags": [
+        "topic:장소"
+      ],
+      "hint": {
+        "ko": "가깝다.",
+        "en": "Near.",
+        "zh": "近。",
+        "steps": {
+          "en": [
+            "Not far",
+            "가까워요"
+          ],
+          "ko": [
+            "안 멀다",
+            "가까워요"
+          ],
+          "zh": [
+            "不远",
+            "가까워요"
+          ]
+        }
+      },
+      "why": {
+        "en": "가까워요 softens “it’s nearby.”",
+        "ko": "가까워요=가깝다.",
+        "zh": "很近。"
+      }
+    },
+    {
+      "id": "basic-05-06",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Next to.\n\n행인: 편의점은 은행 (    ).",
+        "ko": "※ 옆.\n\n행인: 편의점은 은행 (    ).",
+        "zh": "※ 旁边。\n\n路人：편의점은 은행 (    )。"
+      },
+      "choices": [
+        "옆에 있어요",
+        "위에만 있어요",
+        "받침에 있어요",
+        "포장에 있어요"
+      ],
+      "answer": 0,
+      "answerText": "옆에 있어요",
+      "tags": [
+        "topic:장소",
+        "grammar:에 있다"
+      ],
+      "hint": {
+        "ko": "옆 위치.",
+        "en": "Beside.",
+        "zh": "旁边。",
+        "steps": {
+          "en": [
+            "Relative place",
+            "옆"
+          ],
+          "ko": [
+            "상대 위치",
+            "옆"
+          ],
+          "zh": [
+            "相对位置",
+            "옆"
+          ]
+        }
+      },
+      "why": {
+        "en": "건너편 / 옆 noun cues for relative place.",
+        "ko": "건너편·옆 위치 명사.",
+        "zh": "对面/旁边。"
+      }
+    },
+    {
+      "id": "basic-05-07",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Polite attention.\n\n유키: (    ), 서점이 어디예요?",
+        "ko": "※ 부르기.\n\n유키: (    ), 서점이 어디예요?",
+        "zh": "※ 招呼。\n\n雪：(    ), 서점이 어디예요？"
+      },
+      "choices": [
+        "저기요",
+        "포장이요",
+        "이에요",
+        "받침이요"
+      ],
+      "answer": 0,
+      "answerText": "저기요",
+      "tags": [
+        "topic:장소"
+      ],
+      "hint": {
+        "ko": "모르는 사람 부르기.",
+        "en": "Excuse me.",
+        "zh": "劳驾。",
+        "steps": {
+          "en": [
+            "Stop a passerby",
+            "저기요"
+          ],
+          "ko": [
+            "행인 부르기",
+            "저기요"
+          ],
+          "zh": [
+            "叫住路人",
+            "저기요"
+          ]
+        }
+      },
+      "why": {
+        "en": "저기요 opens a polite ask-to-stranger.",
+        "ko": "저기요=부르기.",
+        "zh": "저기요打招呼。"
+      }
+    },
+    {
+      "id": "basic-05-08",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Across.\n\n행인: 카페는 길 (    ).",
+        "ko": "※ 건너편.\n\n행인: 카페는 길 (    ).",
+        "zh": "※ 对面。\n\n路人：카페는 길 (    )。"
+      },
+      "choices": [
+        "건너편에 있어요",
+        "안에서만 있어요",
+        "모음에 있어요",
+        "획순에 있어요"
+      ],
+      "answer": 0,
+      "answerText": "건너편에 있어요",
+      "tags": [
+        "topic:장소"
+      ],
+      "hint": {
+        "ko": "길 건너.",
+        "en": "Across.",
+        "zh": "马路对面。",
+        "steps": {
+          "en": [
+            "Other side of street",
+            "건너편"
+          ],
+          "ko": [
+            "반대편",
+            "건너편"
+          ],
+          "zh": [
+            "街对面",
+            "건너편"
+          ]
+        }
+      },
+      "why": {
+        "en": "Location answer again uses 에 있어요.",
+        "ko": "답도 에 있어요.",
+        "zh": "回答仍用에 있어요。"
+      }
+    }
+  ],
+  "verified": false,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "research": "docs/research-basic-content-fill-ko.md · docs/research-korean-grammar-explain-ko.md",
+  "grammarCards": [
+    {
+      "id": "eodieyo",
+      "title": {
+        "en": "어디예요? · 에 있어요",
+        "ko": "어디예요? · 에 있어요",
+        "zh": "어디예요？·에 있어요"
+      },
+      "body": {
+        "en": "어디예요? = Where is it? Answer with place + 에 있어요 (exists/is located at).",
+        "ko": "어디예요?=어디. 답: 장소+에 있어요.",
+        "zh": "어디예요？答：场所+에 있어요。"
+      },
+      "examples": [
+        {
+          "ko": "화장실 어디예요?",
+          "gloss": {
+            "en": "Where’s the restroom?",
+            "ko": "화장실 어디?",
+            "zh": "厕所在哪？"
+          }
+        },
+        {
+          "ko": "오른쪽에 있어요.",
+          "gloss": {
+            "en": "It’s on the right",
+            "ko": "오른쪽",
+            "zh": "在右边"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e-eseo-location",
+      "kind": "contrast",
+      "title": {
+        "en": "에 있어요 ↔ 에서 (review)",
+        "ko": "에 있어요 ↔ 에서 (복습)",
+        "zh": "에 있어요 ↔ 에서（复习）"
+      },
+      "body": {
+        "en": "This unit leans on 에 for location/existence (N에 있어요). Keep Unit 2 contrast: action venue still 에서 (카페에서 만나요). Same place noun, different job.",
+        "ko": "이 단원은 위치·존재에 에(N에 있어요). 2과 대조 유지: 동작 장소는 여전히 에서. 같은 장소 명사, 다른 역할.",
+        "zh": "本课位置/存在用에(N에 있어요)。保持第2课对照：做事场所仍用에서。同一场所名词，职责不同。"
+      },
+      "examples": [
+        {
+          "ko": "은행에 있어요.",
+          "gloss": {
+            "en": "Located at · 에",
+            "ko": "위치 · 에",
+            "zh": "位于 · 에"
+          }
+        },
+        {
+          "ko": "은행에서 일해요.",
+          "gloss": {
+            "en": "Work at · 에서",
+            "ko": "동작 장소 · 에서",
+            "zh": "在…工作 · 에서"
+          }
+        }
+      ],
+      "trap": {
+        "en": "존재/위치 → 에 있어요. “do something there” → 에서.",
+        "ko": "존재·위치 → 에 있어요. 「거기서 하다」→ 에서.",
+        "zh": "存在/位置→에 있어요；在那儿做事→에서。"
+      },
+      "related": [
+        {
+          "href": "../../blog/#e-vs-eseo",
+          "label": {
+            "en": "글모음 · 에 vs 에서 →",
+            "ko": "글모음 · 에 vs 에서 →",
+            "zh": "글모음 · 에 vs 에서 →"
+          }
+        }
+      ]
+    },
+    {
+      "id": "directions",
+      "title": {
+        "en": "직진 / 돌다",
+        "ko": "직진 / 돌다",
+        "zh": "直走 / 转弯"
+      },
+      "body": {
+        "en": "Guide verbs in polite form: 직진하세요 · 왼쪽으로 도세요. Keep them short — one cue per turn.",
+        "ko": "안내: 직진하세요 · 왼쪽으로 도세요. 한 턴에 한 지시.",
+        "zh": "指路：직진하세요等。一轮一个指示。"
+      },
+      "examples": [
+        {
+          "ko": "직진하세요.",
+          "gloss": {
+            "en": "Go straight",
+            "ko": "직진",
+            "zh": "直走"
+          }
+        },
+        {
+          "ko": "왼쪽으로 도세요.",
+          "gloss": {
+            "en": "Turn left",
+            "ko": "좌회전",
+            "zh": "左转"
+          }
+        }
+      ]
+    }
+  ]
+}

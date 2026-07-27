@@ -1,0 +1,49 @@
+{
+  "id": "two-number-systems",
+  "slug": "two-number-systems",
+  "status": "pilot",
+  "level": "A1",
+  "tags": ["vocab:numbers"],
+  "sourceNote": "Original jabi. FAQ on native vs Sino-Korean numbers. Not scraped.",
+  "question": {
+    "en": "Why are there two number systems in Korean?",
+    "ko": "한국어 숫자가 왜 두 가지인가요?"
+  },
+  "reading": {
+    "en": "Korean keeps two common counting systems side by side.\n\nNative Korean numbers (하나, 둘, 셋…) often go with counters for people, age (informal), hours on the clock, and many everyday “how many” phrases: 한 명, 두 시, 세 잔.\n\nSino-Korean numbers (일, 이, 삼…) come from Chinese numerals. They dominate money (원), dates, phone numbers, minutes, floors, and most math-like counting: 삼천 원, 이십오 분.\n\nYou do not choose freely every time — the noun (counter) usually picks the system. Beginners: memorize pairs with counters (잔, 명, 시) instead of memorizing two bare lists.\n\nIrregular sound changes (둘→두 before a counter) are normal. Learn them with the phrase, not alone.",
+    "ko": "한국어는 숫자 체계를 둘 나란히 씁니다.\n\n고유어 수(하나, 둘, 셋…)는 사람·(일상)나이·시계의 시·「몇」류 일상 표현에 자주 붙습니다. 한 명, 두 시, 세 잔.\n\n한자어 수(일, 이, 삼…)는 돈(원), 날짜, 전화번호, 분, 층, 계산에 가깝습니다. 삼천 원, 이십오 분.\n\n매번 마음대로 고르는 것이 아닙니다. 명사(단위)가 체계를 고르는 경우가 많습니다. 초급: 맨 숫자 두 목록보다 잔·명·시와 짝으로 외우세요.\n\n둘→두처럼 소리 변화는 정상입니다. 구와 함께 배우세요."
+  },
+  "keyPoints": [
+    {
+      "en": "Native ≈ people/hours/cups; Sino ≈ money/dates/minutes.",
+      "ko": "고유어 ≈ 사람·시·잔 · 한자어 ≈ 돈·날짜·분."
+    },
+    {
+      "en": "The counter usually chooses the system.",
+      "ko": "단위(명사)가 체계를 고르는 경우가 많음."
+    },
+    {
+      "en": "Learn number + counter as one chunk.",
+      "ko": "수+단위를 한 덩어리로."
+    }
+  ],
+  "examples": [
+    { "ko": "커피 두 잔 주세요.", "en": "Two cups of coffee, please. (native + 잔)" },
+    { "ko": "사천 원이에요.", "en": "It's 4,000 won. (Sino + 원)" },
+    { "ko": "지금 세 시예요.", "en": "It's 3 o'clock. (native + 시)" }
+  ],
+  "checkQuestions": [
+    {
+      "q": { "en": "Which system for prices in 원?", "ko": "원(가격)은 어느 수?" },
+      "a": { "en": "Sino-Korean (일, 이, 삼…).", "ko": "한자어 수(일, 이, 삼…)." }
+    }
+  ],
+  "practice": {
+    "href": "../app/basic/",
+    "label": { "en": "Basics: café & shopping →", "ko": "기초: 카페·쇼핑 →" }
+  },
+  "related": [
+    { "href": "../app/basic/", "label": { "en": "Basics Unit 3 (잔↔원 contrast)", "ko": "기초 3과 (잔↔원 대조)" } },
+    { "href": "../app/games/dictation/", "label": { "en": "Dictation drill", "ko": "받아쓰기" } }
+  ]
+}

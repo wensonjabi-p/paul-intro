@@ -7,8 +7,10 @@
 
 ## 한 줄 상태
 
-설계 **D1–D22 합의 완료**. Claude=캐릭터 SVG·Canva·Vercel(Task A). Cursor=`hub/app` 코딩 + **Notion PM 동기(MCP)**.  
-ㄱ 파일럿 일시 중단 후 재시도 예정 · Cursor는 UI 골격부터 착수 가능.
+설계 **D1–D22 합의 완료**. Cursor=`hub/app` + ㄱ Canva→추적. Claude=Vercel(Task A)·리서치.  
+ㄱ **stage 1–6 PNG·SVG 전부 있음** · **1–6 Paul OK** (2026-07-26 · `_check.html`).  
+**「나머지 12 자음 일괄」** = 파트너 13(ㅈ 제외) − ㄱ → **ㄴ…ㅎ 12자** × 같은 6단 아이템 스택(Canva PNG→trace→SVG).  
+Cursor 1차 슬라이스(2026-07-26): `manifest.json` · `trace-char-sources.py` · `_check` 로스터 · `CANVA-BATCH-12-ko.md`(ㄴ·ㄷ 워크시트). **72장 아트는 Paul Canva.**
 
 ---
 
@@ -20,7 +22,7 @@
 | **Notion PM 허브 동기** | **Cursor** (`user-notion` MCP · ready) | Claude 브라우저 스크린샷 방식 종료 |
 | 자음 캐릭터 **Canva→추적→SVG** | **Cursor** (Paul 승인 2026-07-26 이어서) · Claude 병행 OK | `trace-character-multi` · ㄱ stage1 있음 → 2–6 |
 | 자비(ㅈ) 가이드 비주얼 | **Claude** | 파트너 목록 밖 |
-| Vercel 배포 Task A | **Claude** | Paul `jabi. OK` + 로그인 시 |
+| Vercel 배포 Task A | **Claude** | **`jabi. OK` 받음** (2026-07-26). Paul이 hub 프로젝트 URL 주면 실행 |
 | **문항 QA 관리 앱** `hub/ops/qa/` | **Cursor** | 인간 라벨 → JSON → AI 제안 → Paul 승인 후 뱅크 반영 |
 
 ---
@@ -88,7 +90,7 @@
 
 1. **자음 파일럿** → 확인 후 일괄 (`hub/app/assets/chars/`, `char-{id}-{1..6}.svg`) · Canva 그리드는 컨셉만 · 프로덕션=단계별 단독 생성→추적  
 2. **자비** 완성형 스탠딩 / 표정 몇 종 (코멘트용) · **ㅈ는 파트너 목록 밖**  
-3. Task A(Vercel)는 Paul `jabi. OK`+URL 있을 때만 — **캐릭터와 병행 OK**  
+3. Task A(Vercel): **`jabi. OK` 완료** — hub 미리보기 URL만 오면 Claude 실행 (캐릭터 병행 OK)  
 4. **하지 말 것:** `app.js` 퀴즈/SRS 대규모 수정, official JSON을 MOCK에 다시 넣기
 
 ---
@@ -284,10 +286,11 @@ D4에서 "코스 80%+ + 파트너 풀세트 → 명예의 전당"은 정책으�
 
 ## Paul 다음 액션
 
-1. Claude: ㄱ 1단계 재시도 → 6단 SVG → 확인 후 12 로스터  
-2. Cursor: 홈/연습/나 골격 · 온보딩 · 분석 페이지 · zh · 듣기 뱅크 · **Notion MCP 동기**  
-3. Task A: `jabi. OK`+Vercel 로그인 되면 Claude  
-4. 공식 기출 JSON은 참고만 · 앱 미로드  
+1. ✅ giyeok **3–5** `_check.html` **Paul OK** (2026-07-26) · stage6도 기존 OK  
+2. ✅ **`jabi.` / Vercel 방향 OK** — 남은 건 Vercel **New Project** (Root=`hub`) → URL 한 줄  
+3. ✅ Cursor 12자음 **파이프라인 슬라이스** (`chars/manifest.json` · batch script · check · ㄴ/ㄷ 워크시트). Paul=Canva PNG(우선 ㄴ).  
+4. Claude Task A: URL 오면 `docs/claude-task-a-vercel-deploy.md`  
+5. 공식 기출 JSON은 참고만 · 앱 미로드  
 
 *파일 위치: `docs/handoff-growth-character-ko.md`*  
 *에셋 계약: `hub/app/assets/chars/README.md`*

@@ -1,0 +1,296 @@
+{
+  "id": "jabi-topik2-listen-v0-03",
+  "title": {
+    "en": "jabi. TOPIK II · Listening bank 3 (research fill)",
+    "ko": "jabi. TOPIK II · 듣기 뱅크 3 (연구 보강)",
+    "zh": "jabi. TOPIK II · 听力题库3（研究补强）"
+  },
+  "level": "TOPIK II Listening",
+  "skill": "listening",
+  "kind": "listen",
+  "verified": false,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "sourceNote": "Research fill — original intermediate items (attitude · next action · detail · purpose). Official TOPIK II section shape only. No official items/wording. No audio — optional script. MCQ only; no Lemon/AI. See docs/research-topik2-content-fill-ko.md.",
+  "research": [
+    "docs/research-topik2-content-fill-ko.md"
+  ],
+  "questions": [
+    {
+      "id": "t2-l03-01",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 여자의 심정으로 가장 알맞은 것을 고르십시오.\n(오디오 없음 — 필요하면 대본을 확인하세요.)",
+        "en": "※ Choose the woman’s feeling.\n(No audio yet — reveal the script if needed.)",
+        "zh": "※ 选择女士的心情。\n（暂无音频 — 需要时可查看文稿。）"
+      },
+      "script": {
+        "ko": "가: 프로젝트 마감이 내일인데, 아직 그래프가 안 왔어요.\n나: 하아… 어제부터 계속 독촉했는데. 오늘은 정말 난감하네요."
+      },
+      "choices": [
+        "답답하고 곤란하다",
+        "매우 기쁘다",
+        "관심이 없다",
+        "안심하고 있다"
+      ],
+      "answer": 0,
+      "answerText": "답답하고 곤란하다",
+      "tags": [
+        "topik2:listen",
+        "listening:태도",
+        "topic:workplace"
+      ],
+      "hint": {
+        "ko": "한숨·‘난감’ 같은 말에 주목하세요.",
+        "en": "Notice the sigh and words like ‘난감’.",
+        "zh": "注意叹息和‘난감’一类词。",
+        "steps": {
+          "en": [
+            "Attitude: how does 나 sound about the missing chart?",
+            "Clues: long sigh + ‘really awkward/troublesome today’.",
+            "Pick frustrated / stuck — not glad or calm."
+          ],
+          "zh": [
+            "态度：나对缺图什么心情？",
+            "线索：长叹 + “今天真为难”。",
+            "选为难/烦闷，不是高兴或安心。"
+          ],
+          "ko": [
+            "나: 그래프 지연에 대한 태도.",
+            "한숨 + 「난감」.",
+            "기쁨·안심이 아닌 곤란을 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Sigh + 난감 = frustrated / in a tough spot about the deadline.",
+        "zh": "叹息 + 난감 = 对截止为难/烦闷。",
+        "ko": "한숨과 「난감」 → 답답·곤란한 심정."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not very happy? Tone and 난감 show trouble, not joy.",
+          "zh": "为什么不是很高兴？语气和난감是麻烦。",
+          "ko": "왜 기쁨이 아니에요? 「난감」은 곤란이에요."
+        },
+        "2": {
+          "en": "Why not uninterested? She has been chasing the chart since yesterday.",
+          "zh": "为什么不是没兴趣？昨天起一直催。",
+          "ko": "왜 무관심이 아니에요? 어제부터 독촉했어요."
+        },
+        "3": {
+          "en": "Why not relieved? The chart still has not arrived before the deadline.",
+          "zh": "为什么不是安心？图还没到、明天截止。",
+          "ko": "왜 안심이 아니에요? 그래프가 아직 없어요."
+        }
+      }
+    },
+    {
+      "id": "t2-l03-02",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 남자는 다음에 무엇을 할 것입니까?",
+        "en": "※ What will the man do next?",
+        "zh": "※ 男士接下来会做什么？"
+      },
+      "script": {
+        "ko": "가: 세미나 자료는 인쇄해 두었어요. 그런데 회의실 마이크가 고장 났대요.\n나: 그래요? 그럼 제가 관리실에 가서 여분 마이크를 빌려 올게요. 자료는 입구에 두면 돼요."
+      },
+      "choices": [
+        "관리실에서 여분 마이크를 빌린다",
+        "세미나 자료를 다시 인쇄한다",
+        "회의를 취소한다",
+        "입구에서 자료를 가져간다"
+      ],
+      "answer": 0,
+      "answerText": "관리실에서 여분 마이크를 빌린다",
+      "tags": [
+        "topik2:listen",
+        "listening:다음행동",
+        "topic:campus"
+      ],
+      "hint": {
+        "ko": "나가 「그럼 제가…」 뒤에 무엇을 하는지 들으세요.",
+        "en": "Listen to what 나 offers after ‘그럼 제가…’.",
+        "zh": "听나在“그럼 제가…”之后要做什么。",
+        "steps": {
+          "en": [
+            "Next action: who volunteers and for what?",
+            "나: go to the admin office and borrow a spare mic.",
+            "Materials stay at the entrance — he does not reprint."
+          ],
+          "zh": [
+            "下一步：谁主动、做什么？",
+            "나：去管理室借备用麦克风。",
+            "资料放门口 — 不是重印。"
+          ],
+          "ko": [
+            "다음 행동 주체 = 나.",
+            "관리실 · 여분 마이크.",
+            "재인쇄·취소는 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "나 will borrow a spare mic from the admin office.",
+        "zh": "나要去管理室借备用麦克风。",
+        "ko": "나가 관리실에서 여분 마이크를 빌리러 감."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not reprint? 가 already printed; 나 only handles the mic.",
+          "zh": "为什么不是重印？资料已印好，나只管麦克风。",
+          "ko": "왜 재인쇄가 아니에요? 자료는 이미 있어요."
+        },
+        "2": {
+          "en": "Why not cancel? They are fixing equipment, not canceling.",
+          "zh": "为什么不是取消？在解决设备，不是取消。",
+          "ko": "왜 취소가 아니에요? 마이크를 구하러 가요."
+        },
+        "3": {
+          "en": "Why not take materials from the entrance? He told 가 to leave them there.",
+          "zh": "为什么不是从门口取资料？让가放门口。",
+          "ko": "왜 자료 회수가 아니에요? 입구에 두라고 했어요."
+        }
+      }
+    },
+    {
+      "id": "t2-l03-03",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.",
+        "en": "※ Choose what matches what you heard.",
+        "zh": "※ 选择与听到内容一致的一项。"
+      },
+      "script": {
+        "ko": "가: 이번 설문은 며칠까지 받나요?\n나: 금요일 자정까지요. 다만 익명으로만 받고, 중복 응답은 자동으로 걸러집니다. 결과는 다음 주 화요일에 공개할 예정입니다."
+      },
+      "choices": [
+        "설문은 금요일 자정까지이며 결과는 다음 주 화요일에 공개된다",
+        "실명으로만 설문에 참여할 수 있다",
+        "중복 응답도 모두 인정된다",
+        "결과는 금요일에 바로 공개된다"
+      ],
+      "answer": 0,
+      "answerText": "설문은 금요일 자정까지이며 결과는 다음 주 화요일에 공개된다",
+      "tags": [
+        "topik2:listen",
+        "listening:세부",
+        "topic:campus"
+      ],
+      "hint": {
+        "ko": "마감·익명·결과 공개일을 각각 확인하세요.",
+        "en": "Check deadline, anonymity, and result date separately.",
+        "zh": "分别核对截止、匿名、结果公布日。",
+        "steps": {
+          "en": [
+            "Detail check: deadline + how responses work + when results appear.",
+            "Friday midnight · anonymous · filter duplicates · results next Tuesday.",
+            "Reject real-name-only or same-day results."
+          ],
+          "zh": [
+            "细节：截止 + 作答规则 + 结果日。",
+            "周五午夜 · 匿名 · 去重 · 下周二公布。",
+            "排除仅实名或周五当天公布。"
+          ],
+          "ko": [
+            "마감·익명·결과일.",
+            "금 자정 · 익명 · 화 공개.",
+            "실명만·당일 공개는 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Deadline Friday midnight; results next Tuesday; anonymous + dedupe.",
+        "zh": "周五午夜截止；下周二出结果；匿名并去重。",
+        "ko": "금 자정 마감 · 다음 주 화 공개 · 익명·중복 필터."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not real-name only? 나 said anonymous only.",
+          "zh": "为什么不是仅实名？说只收匿名。",
+          "ko": "왜 실명만이 아니에요? 「익명으로만」이에요."
+        },
+        "2": {
+          "en": "Why not accept duplicates? Duplicates are filtered automatically.",
+          "zh": "为什么不是接受重复？会自动过滤。",
+          "ko": "왜 중복 인정이 아니에요? 자동으로 걸러요."
+        },
+        "3": {
+          "en": "Why not Friday results? Results come next Tuesday.",
+          "zh": "为什么不是周五出结果？是下周二。",
+          "ko": "왜 금요일 공개가 아니에요? 다음 주 화요일이에요."
+        }
+      }
+    },
+    {
+      "id": "t2-l03-04",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 남자가 이 말을 한 이유로 가장 알맞은 것을 고르십시오.",
+        "en": "※ Choose the best reason the man said this.",
+        "zh": "※ 选择男士这样说的最合适理由。"
+      },
+      "script": {
+        "ko": "남자: 오늘은 도서관 열람실을 조금 일찍 닫습니다. 내일 아침 보수 공사가 있어서요. 자료를 다 못 보신 분은 1층 로비 좌석을 이용해 주세요."
+      },
+      "choices": [
+        "내일 보수 공사 때문에 열람실을 일찍 닫기 위해",
+        "로비를 영구히 폐쇄하기 위해",
+        "도서관을 하루 종일 열기 위해",
+        "보수 공사를 취소하기 위해"
+      ],
+      "answer": 0,
+      "answerText": "내일 보수 공사 때문에 열람실을 일찍 닫기 위해",
+      "tags": [
+        "topik2:listen",
+        "listening:목적",
+        "topic:campus"
+      ],
+      "hint": {
+        "ko": "「…있어서요」 앞의 조치와 이유를 연결하세요.",
+        "en": "Link the action to the reason after ‘있어서요’.",
+        "zh": "把措施与“있어서요”前的原因连起来。",
+        "steps": {
+          "en": [
+            "Purpose: why announce early closing?",
+            "Because of tomorrow morning’s repair work.",
+            "Lobby seats are an alternate — not a permanent lobby shutdown."
+          ],
+          "zh": [
+            "目的：为何提前闭馆？",
+            "因明早维修。",
+            "大厅是替代座位 — 不是永久关闭大厅。"
+          ],
+          "ko": [
+            "일찍 닫는 이유.",
+            "내일 아침 보수.",
+            "로비 영구 폐쇄는 아님."
+          ]
+        }
+      },
+      "why": {
+        "en": "He closes early to prepare for tomorrow morning’s repair work.",
+        "zh": "因明早维修而提前关闭阅览室。",
+        "ko": "내일 아침 보수 공사 때문에 열람실을 일찍 닫음."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not permanently close the lobby? Lobby is the alternate study place.",
+          "zh": "为什么不是永久关大厅？大厅是替代座位。",
+          "ko": "왜 로비 폐쇄가 아니에요? 로비를 쓰라고 해요."
+        },
+        "2": {
+          "en": "Why not keep the library open all day? He is closing the reading room early.",
+          "zh": "为什么不是全天开放？在提前关闭阅览室。",
+          "ko": "왜 하루 종일 개방이 아니에요? 일찍 닫아요."
+        },
+        "3": {
+          "en": "Why not cancel repairs? The repairs are the reason for early closing.",
+          "zh": "为什么不是取消维修？维修正是提前关闭的原因。",
+          "ko": "왜 공사 취소가 아니에요? 공사 때문에 닫아요."
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,10 @@
 # 리서치+제안 — TOPIK II 작문 AI 채점 설계 (2026-07-26, Claude)
 
-> TOPIK II가 우선순위 가장 마지막인 이유(`docs/research-next-tracks-ko.md`)의 핵심이 바로 이 작문 채점 엔진 — 지금 미리 설계해두면 착수 시점에 바로 쓸 수 있음.
+> **후속(필수):** 논문·게이트 = [`research-topik2-writing-scoring-papers-ko.md`](research-topik2-writing-scoring-papers-ko.md) · **영어 AES 딥다이브** = [`research-english-aes-for-jabi-ko.md`](research-english-aes-for-jabi-ko.md).  
+> Paul 지시: **리서치 리뷰 전 고도화 구현 pause.** 아래 AI 프롬프트는 초안만 — **미구현**.  
+> **갱신:** 학생 **형성 점수 필수 노출**(공식 TOPIK 아님). 구 “축별 점수 아님” 문구는 영어 AES 문서 §B로 **대체** — 이 파일의 프롬프트는 코멘트 톤 참고용.
+>
+> TOPIK II가 우선순위 가장 마지막인 이유(`docs/research-next-tracks-ko.md`)의 핵심이 바로 이 작문 채점 엔진 — 설계 메모는 유지하되, 착수는 영어 AES·papers Phase 승인 후.
 
 ---
 

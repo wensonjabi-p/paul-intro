@@ -1,0 +1,223 @@
+{
+  "id": "jabi-topik2-write-52-v0",
+  "title": {
+    "en": "jabi. TOPIK II · Writing Q52 (pilot)",
+    "ko": "jabi. TOPIK II · 쓰기 52번 (파일럿)",
+    "zh": "jabi. TOPIK II · 写作第52题（试点）"
+  },
+  "level": "TOPIK II Writing · Q52",
+  "kind": "write-52",
+  "verified": false,
+  "verifiedAt": "2026-07-27",
+  "source": "jabi-original",
+  "sourceNote": "Research fill — original jabi. sentence-completion items (Q52 slot). Official TOPIK structure only (blank + formal written register). No official prompts. Formative cloze score with partial credit; no AI / Lemon. Early tips must not leak model wording. NIKL spacing in accepted answers.",
+  "research": [
+    "docs/research-topik2-content-fill-ko.md",
+    "docs/research-english-aes-for-jabi-ko.md",
+    "docs/research-topik2-writing-scoring-papers-ko.md",
+    "docs/research-topik2-writing-grading-ko.md",
+    "docs/topik2-writing-axis-mapping-ko.md"
+  ],
+  "scoring": {
+    "mode": "cloze-partial",
+    "scale": "0-100",
+    "note": "c-rater-style accepted set + fuzzy partial credit — formative only",
+    "traits": {
+      "content": {
+        "weight": 0.85,
+        "label": {
+          "en": "Content",
+          "ko": "내용",
+          "zh": "内容"
+        }
+      },
+      "organization": {
+        "weight": 0,
+        "na": true,
+        "label": {
+          "en": "Organization / flow",
+          "ko": "조직·흐름",
+          "zh": "结构·连贯"
+        }
+      },
+      "language": {
+        "weight": 0.15,
+        "label": {
+          "en": "Language",
+          "ko": "언어",
+          "zh": "语言"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "t2-w52-01",
+      "type": "write-blank",
+      "prompt": {
+        "ko": "※ 다음을 읽고 (    )에 알맞은 말을 쓰십시오.\n\n최근 들어 온라인 쇼핑을 이용하는 사람들이 크게 늘었습니다. 그 결과 동네 작은 가게들의 매출은 오히려 (    ).",
+        "en": "Read and write the word(s) that fit the blank.\n\nLately more people use online shopping. As a result, sales at small neighborhood shops have instead (    ).",
+        "zh": "阅读后在括号内填入合适的话。\n\n最近使用网购的人大幅增加。结果社区小店的销售额反而(    )。"
+      },
+      "acceptedAnswers": [
+        "줄었습니다",
+        "감소했습니다",
+        "떨어졌습니다",
+        "줄어들었습니다",
+        "감소하였다",
+        "줄었다"
+      ],
+      "modelAnswer": "줄었습니다",
+      "tags": [
+        "topik2:write-52",
+        "register:formal",
+        "cause-effect"
+      ],
+      "feedback": {
+        "ok": {
+          "en": "Good — a formal decrease verb fits the contrast after ‘오히려’.",
+          "ko": "좋아요 — ‘오히려’ 대비에 맞는 격식체 ‘감소’ 표현입니다.",
+          "zh": "很好 — 与‘오히려’对照的正式“减少”表达合适。"
+        },
+        "stub": {
+          "en": "Coach: after ‘오히려’, use a formal verb for sales going down. Keep written register. Not an official score.",
+          "ko": "코치: ‘오히려’ 뒤에는 매출이 내려가는 격식체 동사를 쓰세요. 문어체 유지. 공식 점수 아님.",
+          "zh": "教练：‘오히려’后用销售额下降的敬体动词。保持书面语。非官方分数。"
+        }
+      },
+      "why": {
+        "en": "Online boom ↔ local shops hurt → formal ‘decrease’ ending.",
+        "ko": "온라인 증가 ↔ 동네 가게 타격 → 격식체 ‘감소’ 어미.",
+        "zh": "网购升温 ↔ 社区店受损 → 敬体“减少”语尾。"
+      }
+    },
+    {
+      "id": "t2-w52-02",
+      "type": "write-blank",
+      "prompt": {
+        "ko": "※ 다음을 읽고 (    )에 알맞은 말을 쓰십시오.\n\n이 제품은 가격이 조금 비싸지만 품질이 뛰어납니다. 따라서 장기적으로는 더 경제적(    ).",
+        "en": "Read and write the word(s) that fit the blank.\n\nThis product is a bit expensive but high quality. Therefore, in the long run it is more economical(    ).",
+        "zh": "阅读后在括号内填入合适的话。\n\n这款产品价格稍贵但品质出色。因此长期来看更经济(    )。"
+      },
+      "acceptedAnswers": [
+        "이라고 할 수 있습니다",
+        "이라고 할 수 있다",
+        "입니다",
+        "이다",
+        "이라고 봅니다",
+        "이라고 본다",
+        "이라고 생각합니다",
+        "이라고 생각된다"
+      ],
+      "modelAnswer": "이라고 할 수 있습니다",
+      "tags": [
+        "topik2:write-52",
+        "register:formal",
+        "conclusion"
+      ],
+      "feedback": {
+        "ok": {
+          "en": "Good — a formal concluding / equative ending fits ‘따라서’.",
+          "ko": "좋아요 — ‘따라서’ 결론에 맞는 격식체 종결입니다.",
+          "zh": "很好 — 符合‘따라서’结论的敬体收尾。"
+        },
+        "stub": {
+          "en": "Coach: finish with a formal written ending that completes ‘경제적…’. Avoid casual speech. Not an official score.",
+          "ko": "코치: ‘경제적…’을 잇는 격식체 문어 종결로 마무리하세요. 구어 피하기. 공식 점수 아님.",
+          "zh": "教练：用书面敬体收尾接上‘경제적…’。避免口语。非官方分数。"
+        }
+      },
+      "why": {
+        "en": "‘따라서’ signals a written conclusion → formal equative / hedge ending.",
+        "ko": "‘따라서’ = 문어 결론 → 격식체 판단·단정 종결.",
+        "zh": "‘따라서’表书面结论 → 敬体判断/断定语尾。"
+      }
+    },
+    {
+      "id": "t2-w52-03",
+      "type": "write-blank",
+      "prompt": {
+        "ko": "※ 다음을 읽고 (    )에 알맞은 말을 쓰십시오.\n\n환경 보호를 위해서는 개인의 노력만으로는 부족합니다. 기업과 정부가 함께 (    ).",
+        "en": "Read and write the word(s) that fit the blank.\n\nIndividual effort alone is not enough for environmental protection. Companies and the government must together (    ).",
+        "zh": "阅读后在括号内填入合适的话。\n\n要保护环境，仅靠个人努力不够。企业和政府必须一起(    )。"
+      },
+      "acceptedAnswers": [
+        "노력해야 합니다",
+        "노력해야 한다",
+        "협력해야 합니다",
+        "협력해야 한다",
+        "나서야 합니다",
+        "나서야 한다",
+        "힘을 모아야 합니다",
+        "힘을 모아야 한다",
+        "참여해야 합니다",
+        "참여해야 한다"
+      ],
+      "modelAnswer": "노력해야 합니다",
+      "tags": [
+        "topik2:write-52",
+        "register:formal",
+        "obligation"
+      ],
+      "feedback": {
+        "ok": {
+          "en": "Good — a formal obligation / joint-action ending fits.",
+          "ko": "좋아요 — 공동 행동·당위 격식체 표현이 맞습니다.",
+          "zh": "很好 — 共同行动/应当类敬体合适。"
+        },
+        "stub": {
+          "en": "Coach: need a formal ‘must / should act together’ ending. Written register only. Not an official score.",
+          "ko": "코치: 함께 움직여야 한다는 격식체 당위 표현이 필요합니다. 문어만. 공식 점수 아님.",
+          "zh": "教练：需要“必须一起行动”的敬体应当表达。仅书面语。非官方分数。"
+        }
+      },
+      "why": {
+        "en": "Contrast with ‘만으로는 부족’ → obligation for joint effort.",
+        "ko": "‘만으로는 부족’ 대비 → 공동 노력 당위.",
+        "zh": "对照‘仅靠…不够’ → 共同努力的应当义。"
+      }
+    },
+    {
+      "id": "t2-w52-04",
+      "type": "write-blank",
+      "prompt": {
+        "ko": "※ 다음을 읽고 (    )에 알맞은 말을 쓰십시오.\n\n도시 공원은 휴식 공간을 제공한다. 그러나 관리가 소홀하면 오히려 주민에게 (    ).",
+        "en": "Read and write the word(s) that fit the blank.\n\nCity parks offer rest space. But if management is neglected, they can instead (    ) residents.",
+        "zh": "阅读后在括号内填入合适的话。\n\n城市公园提供休息空间。但若疏于管理，反而会对居民(    )。"
+      },
+      "acceptedAnswers": [
+        "불편을 줄 수 있습니다",
+        "불편을 줄 수 있다",
+        "피해를 줄 수 있습니다",
+        "피해를 줄 수 있다",
+        "부담이 될 수 있습니다",
+        "부담이 될 수 있다",
+        "문제가 될 수 있습니다",
+        "문제가 될 수 있다"
+      ],
+      "modelAnswer": "불편을 줄 수 있습니다",
+      "tags": [
+        "topik2:write-52",
+        "register:formal",
+        "concession"
+      ],
+      "feedback": {
+        "ok": {
+          "en": "Good — a formal ‘may inconvenience / harm’ ending fits ‘오히려’ after weak management.",
+          "ko": "좋아요 — 관리 소홀 + ‘오히려’에 맞는 격식체 ‘불편·피해’ 표현입니다.",
+          "zh": "很好 — 疏于管理 + ‘오히려’后用敬体“造成不便/损害”合适。"
+        },
+        "stub": {
+          "en": "Coach: after ‘오히려’, use a cautious formal result for residents. Written register only. Not an official score.",
+          "ko": "코치: ‘오히려’ 뒤에는 주민에게 미치는 격식체 결과를 쓰세요. 문어만. 공식 점수 아님.",
+          "zh": "教练：‘오히려’后写对居民造成影响的敬体结果。仅书面语。非官方分数。"
+        }
+      },
+      "why": {
+        "en": "Concession: parks help, but poor upkeep may inconvenience residents.",
+        "ko": "양보: 공원은 도움이지만 관리 소홀 시 주민 불편 가능.",
+        "zh": "让步：公园有益，但疏于管理可能给居民带来不便。"
+      }
+    }
+  ]
+}

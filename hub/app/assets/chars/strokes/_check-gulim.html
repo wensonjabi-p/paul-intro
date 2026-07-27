@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>Stroke HW-only check</title>
+  <style>
+    body { font-family: "Malgun Gothic", sans-serif; background: #faf8f4; padding: 20px; }
+    h1 { font-size: 18px; }
+    .row { display: flex; flex-wrap: wrap; gap: 18px; }
+    .card { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 12px; text-align: center; }
+    .target { width: 200px; height: 200px; margin: 0 auto; }
+    .lab { font-size: 12px; color: #666; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Hanzi Writer only (outline + ink = same strokes[])</h1>
+  <p>No CSS Gulim ghost. Uniform speed 0.5 · delay 450ms. Blog order rebuild.</p>
+  <div class="row" id="row"></div>
+  <script src="../../../js/vendor/hanzi-writer.min.js"></script>
+  <script>
+    const IDS = [
+      ["rieul", "ㄹ"], ["giyeok", "ㄱ"], ["nieun", "ㄴ"], ["digeut", "ㄷ"],
+      ["mieum", "ㅁ"], ["bieup", "ㅂ"], ["siot", "ㅅ"], ["ieung", "ㅇ"],
+      ["chieut", "ㅊ"], ["kieuk", "ㅋ"], ["tieut", "ㅌ"], ["pieup", "ㅍ"], ["hieut", "ㅎ"],
+    ];
+    const row = document.getElementById("row");
+    fetch("./jamo-strokes-13.json", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((data) => {
+        IDS.forEach(([id, glyph]) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `<div class="target" id="t-${id}"></div><div class="lab">${glyph} · ${id} · ${data[id].strokes.length}획</div>`;
+          row.appendChild(card);
+          const w = HanziWriter.create(`t-${id}`, id, {
+            width: 200,
+            height: 200,
+            padding: 10,
+            showOutline: true,
+            showCharacter: false,
+            strokeColor: "#1a1a1a",
+            outlineColor: "#d0ccc4",
+            strokeAnimationSpeed: 0.5,
+            delayBetweenStrokes: 450,
+            charDataLoader: (_c, onLoad) => onLoad(data[id]),
+          });
+          w.animateCharacter();
+        });
+      });
+  </script>
+</body>
+</html>

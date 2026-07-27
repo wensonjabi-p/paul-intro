@@ -1,0 +1,49 @@
+{
+  "id": "eunneun-iga",
+  "slug": "eunneun-iga",
+  "status": "pilot",
+  "level": "A2",
+  "tags": ["grammar:particles"],
+  "sourceNote": "Original jabi. FAQ-style parallel reading on 은/는 vs 이/가. Not scraped.",
+  "question": {
+    "en": "What is the difference between 은/는 and 이/가?",
+    "ko": "은/는과 이/가의 차이는 뭔가요?"
+  },
+  "reading": {
+    "en": "Both mark the noun before them, but they answer different jobs.\n\n이/가 often marks the subject when you introduce or focus on who/what does the action — especially with new information: 「비가 와요」(Rain is falling).\n\n은/는 often marks the topic — what we are talking about, or a contrast: 「오늘은 바빠요」(As for today, I'm busy). It can soften the spotlight on the noun and set the frame for the sentence.\n\nOverlap exists. Native speakers choose by feel. For learners: use 이/가 when answering 「무엇이/누가…?」 with fresh info; use 은/는 when comparing or continuing a known topic.\n\nDo not translate them as English “the/a”. Particles are roles, not articles.",
+    "ko": "둘 다 앞 명사를 표시하지만, 하는 일이 다릅니다.\n\n이/가는 주어를 나타낼 때, 특히 새 정보로 「누가/무엇이」 하는지 밝힐 때 자주 씁니다. 예: 「비가 와요」.\n\n은/는는 주제를 나타냅니다. 「무엇에 대해 말하는지」, 또는 대조: 「오늘은 바빠요」(오늘은 특히). 명사에 조명을 부드럽게 두고 문장의 틀을 잡습니다.\n\n겹치는 경우도 있습니다. 원어민은 감각으로 고릅니다. 학습자 가이드: 「무엇이/누가…?」에 새 정보로 답할 때 이/가 · 이미 아는 주제를 이어가거나 대조할 때 은/는.\n\n영어 the/a로 옮기지 마세요. 조사는 관사가 아니라 역할입니다."
+  },
+  "keyPoints": [
+    {
+      "en": "이/가 ≈ subject / new focus; 은/는 ≈ topic / contrast.",
+      "ko": "이/가 ≈ 주어·새 초점 · 은/는 ≈ 주제·대조."
+    },
+    {
+      "en": "Not English articles — learn by role in the sentence.",
+      "ko": "영어 관사 아님 — 문장 속 역할로 배우기."
+    },
+    {
+      "en": "Overlap is normal; start with the FAQ rules above.",
+      "ko": "겹침은 정상 · 위 규칙부터."
+    }
+  ],
+  "examples": [
+    { "ko": "제가 학생이에요.", "en": "I (focus) am a student." },
+    { "ko": "저는 학생이에요.", "en": "As for me, I'm a student." },
+    { "ko": "커피는 좋아요. 차는 싫어요.", "en": "Coffee: OK. Tea: no. (contrast)" }
+  ],
+  "checkQuestions": [
+    {
+      "q": { "en": "Which particle fits a contrast like “coffee vs tea”?", "ko": "커피 vs 차처럼 대조할 때?" },
+      "a": { "en": "은/는.", "ko": "은/는." }
+    }
+  ],
+  "practice": {
+    "href": "../app/games/particle-snap/",
+    "label": { "en": "Play Particle Snap →", "ko": "조사 스냅 하기 →" }
+  },
+  "related": [
+    { "href": "../app/basic/", "label": { "en": "Basics Unit 1 (contrast card)", "ko": "기초 1과 (대조 카드)" } },
+    { "href": "../app/games/", "label": { "en": "More games", "ko": "다른 게임" } }
+  ]
+}

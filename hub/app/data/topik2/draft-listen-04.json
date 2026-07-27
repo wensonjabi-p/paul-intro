@@ -1,0 +1,365 @@
+{
+  "id": "jabi-topik2-listen-v0-04",
+  "title": {
+    "en": "jabi. TOPIK II · Listening bank 4 (research fill)",
+    "ko": "jabi. TOPIK II · 듣기 뱅크 4 (연구 보강)",
+    "zh": "jabi. TOPIK II · 听力题库4（研究补强）"
+  },
+  "level": "TOPIK II Listening",
+  "skill": "listening",
+  "kind": "listen",
+  "verified": false,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "sourceNote": "Research fill — original intermediate items (match · announcement · continuation · main idea). Official TOPIK II section shape only. No official items/wording. No audio — optional script. MCQ only; no Lemon/AI. See docs/research-topik2-content-fill-ko.md.",
+  "research": [
+    "docs/research-topik2-content-fill-ko.md"
+  ],
+  "questions": [
+    {
+      "id": "t2-l04-01",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.\n(오디오 없음 — 필요하면 대본을 확인하세요.)",
+        "en": "※ Choose what matches what you heard.\n(No audio yet — reveal the script if needed.)",
+        "zh": "※ 选择与听到内容一致的一项。\n（暂无音频 — 需要时可查看文稿。）"
+      },
+      "script": {
+        "ko": "가: 도서관 열람실이 오늘 몇 시까지예요?\n나: 평소엔 열 시인데, 오늘은 공사 때문에 여덟 시에 닫아요. 주말은 그대로 열 시까지예요."
+      },
+      "choices": [
+        "오늘은 여덟 시에 열람실이 닫힌다",
+        "오늘은 열 시까지 열람실이 열린다",
+        "주말에도 여덟 시에 닫힌다",
+        "공사가 끝나서 평소보다 늦게 연다"
+      ],
+      "answer": 0,
+      "answerText": "오늘은 여덟 시에 열람실이 닫힌다",
+      "tags": [
+        "topik2:listen",
+        "listening:내용일치",
+        "topic:campus"
+      ],
+      "hint": {
+        "ko": "오늘과 평소·주말 시간을 구분하세요.",
+        "en": "Separate today’s hours from usual / weekend hours.",
+        "zh": "区分今天与平时/周末的时间。",
+        "steps": {
+          "en": [
+            "Focus: what closes early today?",
+            "나: construction → closes at eight today; weekends still ten.",
+            "Reject ‘open until ten today’ or weekend early close."
+          ],
+          "zh": [
+            "一致：今天何时关门？",
+            "나：施工 → 今天八点关；周末仍十点。",
+            "排除今天开到十点或周末也早关。"
+          ],
+          "ko": [
+            "오늘 마감 시간.",
+            "공사 → 오늘 여덟 시 닫음.",
+            "평소·주말 열 시와 구분."
+          ]
+        }
+      },
+      "why": {
+        "en": "Today closes at 8 for construction; weekends stay until 10.",
+        "zh": "因施工今天八点关；周末仍十点。",
+        "ko": "공사 때문에 오늘은 여덟 시에 닫고, 주말은 열 시까지."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not open until ten today? Today is the exception (eight).",
+          "zh": "为什么不是今天开到十点？今天例外（八点）。",
+          "ko": "왜 오늘 열 시가 아니에요? 오늘은 여덟 시예요."
+        },
+        "2": {
+          "en": "Why not weekends at eight? Weekends stay at ten.",
+          "zh": "为什么不是周末八点？周末仍十点。",
+          "ko": "왜 주말 여덟 시가 아니에요? 주말은 열 시예요."
+        },
+        "3": {
+          "en": "Why not later hours? Construction shortens today’s hours.",
+          "zh": "为什么不是更晚？施工缩短今天时间。",
+          "ko": "왜 더 늦게가 아니에요? 공사로 일찍 닫아요."
+        }
+      }
+    },
+    {
+      "id": "t2-l04-02",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 다음을 듣고 물음에 답하십시오. 안내의 내용과 같은 것을 고르십시오.",
+        "en": "※ Listen and choose what matches the announcement.",
+        "zh": "※ 听广播，选择与内容一致的一项。"
+      },
+      "script": {
+        "ko": "안내 말씀드립니다. 시립 수영장 주차장은 오후 한 시부터 세 시까지 정기 청소로 이용할 수 없습니다. 그 시간에는 옆 건물 임시 주차장을 이용해 주시기 바랍니다. 수영장 자체는 정상 운영합니다."
+      },
+      "choices": [
+        "오후 1–3시에는 옆 건물 임시 주차장을 쓴다",
+        "수영장이 오후 한 시부터 세 시까지 문을 닫는다",
+        "주차장 청소가 취소됐다",
+        "임시 주차장은 밤에만 열린다"
+      ],
+      "answer": 0,
+      "answerText": "오후 1–3시에는 옆 건물 임시 주차장을 쓴다",
+      "tags": [
+        "topik2:listen",
+        "listening:안내",
+        "topic:public"
+      ],
+      "hint": {
+        "ko": "무엇이 막히고, 대안이 무엇인지 보세요.",
+        "en": "What is blocked, and what is the alternative?",
+        "zh": "看什么被堵住、替代方案是什么。",
+        "steps": {
+          "en": [
+            "Announcement: parking closed 1–3 for cleaning.",
+            "Use the temporary lot next door; pool stays open.",
+            "Reject pool closure or night-only temp lot."
+          ],
+          "zh": [
+            "广播：1–3点停车场清洁关闭。",
+            "用旁边临时车位；泳池照常。",
+            "排除泳池关门或夜间才开临时车位。"
+          ],
+          "ko": [
+            "주차장 1–3시 청소.",
+            "옆 건물 임시 주차장 · 수영장은 정상.",
+            "수영장 휴장·밤만 임시는 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Main lot closed 1–3; use next-building temp lot; pool normal.",
+        "zh": "主停车场1–3点关闭；用邻楼临时车位；泳池正常。",
+        "ko": "본 주차장 1–3시 불가 → 옆 건물 임시 · 수영장 정상."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not pool closed? Announcement says the pool runs normally.",
+          "zh": "为什么不是泳池关门？广播说泳池正常。",
+          "ko": "왜 수영장 휴장이 아니에요? 정상 운영이래요."
+        },
+        "2": {
+          "en": "Why not cleaning canceled? Cleaning is why parking is blocked.",
+          "zh": "为什么不是清洁取消？清洁才是封路原因。",
+          "ko": "왜 청소 취소가 아니에요? 청소 때문에 막혀요."
+        },
+        "3": {
+          "en": "Why not night-only temp lot? The window is afternoon 1–3.",
+          "zh": "为什么不是夜间临时车位？时段是下午1–3。",
+          "ko": "왜 밤에만이 아니에요? 오후 1–3시예요."
+        }
+      }
+    },
+    {
+      "id": "t2-l04-03",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 이어지는 말로 가장 알맞은 것을 고르십시오.",
+        "en": "※ Choose the best continuation.",
+        "zh": "※ 选择最合适的接续。"
+      },
+      "script": {
+        "ko": "가: 발표 슬라이드에 오타가 두 군데 있네요. 제가 고칠까요?\n나: 고마워요. 그런데 오늘은 제가 마감을 맡아서…"
+      },
+      "choices": [
+        "괜찮아요. 제가 바로 수정할게요",
+        "그럼 발표를 취소합시다",
+        "오타가 하나도 없어요",
+        "슬라이드를 전부 지우세요"
+      ],
+      "answer": 0,
+      "answerText": "괜찮아요. 제가 바로 수정할게요",
+      "tags": [
+        "topik2:listen",
+        "listening:이어가기",
+        "topic:workplace"
+      ],
+      "hint": {
+        "ko": "나: 고마움 + 본인이 마감을 맡았다는 뉘앙스.",
+        "en": "나: thanks + signals they own the deadline.",
+        "zh": "나：感谢 + 暗示自己负责截止。",
+        "steps": {
+          "en": [
+            "Continuation: 나 thanks but owns the deadline.",
+            "Natural next line: I’ll fix it myself now.",
+            "Reject cancel / deny typos / delete all."
+          ],
+          "zh": [
+            "接续：나感谢但自己负责截止。",
+            "自然下一句：我这就改。",
+            "排除取消/否认错字/全删。"
+          ],
+          "ko": [
+            "고마움 + 본인 마감.",
+            "직접 수정하겠다는 응답.",
+            "취소·부정·전부 삭제는 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Polite decline of help + ‘I own the deadline’ → I’ll fix it.",
+        "zh": "礼貌谢绝帮忙 + “我负责截止” → 我来改。",
+        "ko": "고마움·본인 마감 → 직접 고치겠다는 이어가기."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not cancel the talk? Only typos; no cancel signal.",
+          "zh": "为什么不是取消演讲？只是错字，无取消信号。",
+          "ko": "왜 취소가 아니에요? 오타만 이야기해요."
+        },
+        "2": {
+          "en": "Why not ‘no typos’? 가 already found two.",
+          "zh": "为什么不是“没有错字”？가已找到两处。",
+          "ko": "왜 오타 없음이 아니에요? 가: 두 군데래요."
+        },
+        "3": {
+          "en": "Why not delete everything? Overkill vs fixing two typos.",
+          "zh": "为什么不是全删？改两处即可。",
+          "ko": "왜 전부 삭제가 아니에요? 두 곳만 고치면 돼요."
+        }
+      }
+    },
+    {
+      "id": "t2-l04-04",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 남자의 중심 내용으로 가장 알맞은 것을 고르십시오.",
+        "en": "※ Choose the man’s main point.",
+        "zh": "※ 选择男士的中心内容。"
+      },
+      "script": {
+        "ko": "저는 지역 도서관에서 야간 독서 모임을 운영합니다. 평일 저녁에 한 권을 같이 읽고 짧게 이야기하는 자리예요. 성적이 목적이 아니라, 혼자 읽기 어려운 책을 나누며 읽는 습관을 만드는 게 목표입니다."
+      },
+      "choices": [
+        "함께 읽으며 독서 습관을 기르는 것이 목적이다",
+        "시험 점수를 올리는 것이 주된 목적이다",
+        "주말에만 모임을 연다",
+        "도서관을 폐쇄하려고 한다"
+      ],
+      "answer": 0,
+      "answerText": "함께 읽으며 독서 습관을 기르는 것이 목적이다",
+      "tags": [
+        "topik2:listen",
+        "listening:중심내용",
+        "topic:community"
+      ],
+      "hint": {
+        "ko": "‘성적이 목적이 아니라’ 뒤의 목표에 주목하세요.",
+        "en": "Focus on the goal after ‘not for grades’.",
+        "zh": "注意“不是为了成绩”之后的目标。",
+        "steps": {
+          "en": [
+            "Main idea: purpose of the night reading club.",
+            "Not grades — build a reading habit together.",
+            "Reject weekend-only or closing the library."
+          ],
+          "zh": [
+            "主旨：夜间读书会的目的。",
+            "不为成绩 — 一起养成阅读习惯。",
+            "排除只在周末或关闭图书馆。"
+          ],
+          "ko": [
+            "야간 모임의 목적.",
+            "성적 X → 함께 읽는 습관.",
+            "주말만·폐쇄는 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Explicit goal: share hard books and build a reading habit, not scores.",
+        "zh": "明确目标：分享难读的书、养成习惯，不是成绩。",
+        "ko": "성적 아닌 함께 읽기·습관 형성이 중심."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not grades? He says grades are not the purpose.",
+          "zh": "为什么不是成绩？他说成绩不是目的。",
+          "ko": "왜 성적이 아니에요? 목적이 아니라고 해요."
+        },
+        "2": {
+          "en": "Why not weekends only? He says weekday evenings.",
+          "zh": "为什么不是只周末？他说平日晚上。",
+          "ko": "왜 주말만이 아니에요? 평일 저녁이래요."
+        },
+        "3": {
+          "en": "Why not close the library? He runs a club inside it.",
+          "zh": "为什么不是关闭图书馆？他在馆内办活动。",
+          "ko": "왜 폐쇄가 아니에요? 도서관에서 모임을 해요."
+        }
+      }
+    },
+    {
+      "id": "t2-l04-05",
+      "type": "listening",
+      "prompt": {
+        "ko": "※ 들은 내용과 같은 것을 고르십시오.\n(오디오 없음 — 필요하면 대본을 확인하세요.)",
+        "en": "※ Choose what matches what you heard.\n(No audio yet — reveal the script if needed.)",
+        "zh": "※ 选择与听到内容一致的一项。\n（暂无音频 — 需要时可查看文稿。）"
+      },
+      "script": {
+        "ko": "가: 이번 달 버스 요금이 올랐다면서요?\n나: 네. 시내 버스는 백 원 올랐고, 학생 할인은 그대로예요. 지하철은 아직 안 바뀌었어요."
+      },
+      "choices": [
+        "시내 버스 요금만 올랐고 학생 할인은 그대로다",
+        "지하철 요금도 함께 올랐다",
+        "학생 할인이 없어졌다",
+        "버스 요금이 내렸다"
+      ],
+      "answer": 0,
+      "answerText": "시내 버스 요금만 올랐고 학생 할인은 그대로다",
+      "tags": [
+        "topik2:listen",
+        "listening:내용일치",
+        "topic:prices"
+      ],
+      "hint": {
+        "ko": "버스·학생 할인·지하철을 각각 확인하세요.",
+        "en": "Check bus, student discount, and subway separately.",
+        "zh": "分别核对公交、学生优惠和地铁。",
+        "steps": {
+          "en": [
+            "Match: what changed this month?",
+            "나: city bus +100₩; student discount same; subway unchanged.",
+            "Reject subway hike / no student discount / fare cut."
+          ],
+          "zh": [
+            "一致：本月什么变了？",
+            "나：市内公交涨100；学生优惠不变；地铁未变。",
+            "排除地铁也涨/取消学生优惠/降价。"
+          ],
+          "ko": [
+            "버스·할인·지하철 구분.",
+            "시내버스 +100 · 학생 할인 유지 · 지하철 그대로.",
+            "지하철 인상·할인 폐지·인하 제외."
+          ]
+        }
+      },
+      "why": {
+        "en": "Only city bus rose 100₩; student discount and subway stay.",
+        "zh": "仅市内公交涨100；学生优惠与地铁不变。",
+        "ko": "시내버스만 올랐고 학생 할인·지하철은 그대로."
+      },
+      "distractWhy": {
+        "1": {
+          "en": "Why not subway too? 나 says subway hasn’t changed.",
+          "zh": "为什么不是地铁也涨？나说地铁还没变。",
+          "ko": "왜 지하철도예요? 아직 안 바뀌었어요."
+        },
+        "2": {
+          "en": "Why not no student discount? It stays the same.",
+          "zh": "为什么不是取消学生优惠？优惠照旧。",
+          "ko": "왜 할인 없앰이에요? 그대로래요."
+        },
+        "3": {
+          "en": "Why not a fare cut? Fares went up, not down.",
+          "zh": "为什么不是降价？是涨价。",
+          "ko": "왜 인하예요? 올랐어요."
+        }
+      }
+    }
+  ]
+}

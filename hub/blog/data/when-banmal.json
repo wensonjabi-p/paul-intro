@@ -1,0 +1,48 @@
+{
+  "id": "when-banmal",
+  "slug": "when-banmal",
+  "status": "pilot",
+  "level": "A2",
+  "tags": ["grammar:honorifics", "speech-level"],
+  "sourceNote": "Original jabi. guidance on when banmal is safe. Not scraped from forums.",
+  "question": {
+    "en": "When is it OK to use banmal (반말)?",
+    "ko": "반말은 언제 써도 되나요?"
+  },
+  "reading": {
+    "en": "반말 is casual speech without polite endings like -요. It signals closeness — or, used too early, rudeness.\n\nSafe defaults for learners: use polite -요 with strangers, staff, teachers, and anyone older until they clearly invite 반말 (“말 놓아”, “반말 해도 돼”). Age, workplace rank, and first meetings almost always stay polite.\n\nAmong close friends of similar age, 반말 is normal. Online, some spaces use 반말 by community habit — still watch how others address you first.\n\nIf unsure, stay in -요. Switching down is a social gift; grabbing 반말 first is a risk. Coaches can role-play your real situations (café, lab, chat) if you want feedback.",
+    "ko": "반말은 -요 같은 공손 어미를 뺀 편한 말투입니다. 가깝다는 신호이지만, 너무 일찍 쓰면 무례해질 수 있습니다.\n\n학습자 기본값: 낯선 사람, 점원, 선생님, 나이가 위인 분에게는 상대가 「말 놓아」「반말 해도 돼」처럼 분명히 권하기 전까지 -요. 나이·직장 직급·첫 만남은 거의 공손을 유지합니다.\n\n비슷한 나이의 친한 친구 사이에서는 반말이 자연스럽습니다. 온라인도 커뮤니티 습관이 있어도, 먼저 상대가 나를 어떻게 부르는지 보세요.\n\n확신이 없으면 -요를 지키세요. 낮추는 것은 상대가 주는 선물에 가깝고, 먼저 반말을 집는 것은 위험합니다. 카페·연구실·채팅 장면을 선생님과 역할극으로 점검할 수도 있습니다."
+  },
+  "keyPoints": [
+    {
+      "en": "Default to -요 with strangers and seniors.",
+      "ko": "낯선 사람·윗사람에게는 -요 기본."
+    },
+    {
+      "en": "Switch to 반말 only after a clear invitation.",
+      "ko": "분명한 권유 후에만 반말."
+    },
+    {
+      "en": "When unsure, stay polite — safer socially.",
+      "ko": "확신이 없으면 공손 유지가 안전."
+    }
+  ],
+  "examples": [
+    { "ko": "말 놓으셔도 돼요.", "en": "You can speak casually. (invitation)" },
+    { "ko": "아직 존댓말 할게요.", "en": "I’ll stay polite for now." },
+    { "ko": "뭐 해?", "en": "What are you doing? (반말, close friends)" }
+  ],
+  "checkQuestions": [
+    {
+      "q": { "en": "Safe choice with a new barista?", "ko": "처음 보는 바리스타에게?" },
+      "a": { "en": "Keep -요 until invited otherwise.", "ko": "권유 전까지 -요." }
+    }
+  ],
+  "practice": {
+    "href": "../teach/",
+    "label": { "en": "Coach option (role-play) →", "ko": "선생님 선택(역할극) →" }
+  },
+  "related": [
+    { "href": "./#yo-vs-seumnida", "label": { "en": "Related: -요 vs -습니다", "ko": "관련: 요 vs 습니다" } }
+  ]
+}

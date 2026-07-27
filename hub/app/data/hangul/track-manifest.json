@@ -1,21 +1,22 @@
 {
   "id": "jabi-hangul-v0",
-  "version": 0,
-  "status": "scaffold",
-  "updated": "2026-07-26",
+  "version": 5,
+  "status": "pilot",
+  "updated": "2026-07-27",
   "title": {
     "en": "Hangul read & write",
     "ko": "한글 읽기·쓰기",
     "zh": "韩文字母读写"
   },
   "lead": {
-    "en": "Scaffold only — lesson shells 00–17. No body text, audio, or stroke practice yet.",
-    "ko": "스캐폴딩만 — 00–17 레슨 껍데기. 본문·오디오·획순 연습은 아직 없음.",
-    "zh": "仅骨架 — 00–17 课壳。正文、音频、笔顺练习尚未接入。"
+    "en": "Sejong 00–17 structure · research-backed jabi. content · stroke practice live · XP & crowns on.",
+    "ko": "세종 입문 00–17 구조 · 연구 근거 jabi. 콘텐츠 · 획순 연습 · XP·크라운 동작.",
+    "zh": "世宗入门00–17结构 · 研究依据原创内容 · 笔顺可用 · XP与王冠可用。"
   },
   "sourcePolicy": {
-    "note": "Sejong structure (unit order / grouping method) only — no official wording or audio. Original jabi. content TBD.",
+    "note": "Sejong structure (unit order / grouping / practice-expression roles) only — no official wording or audio. Original jabi. research-backed fill.",
     "research": [
+      "docs/research-hangul-content-fill-ko.md",
       "docs/research-hangul-track-implementation-ko.md",
       "docs/research-next-tracks-ko.md"
     ]
@@ -27,12 +28,33 @@
       "slug": "kebab-case",
       "kind": "intro | vowels | consonants | aspirated | tense | diphthong | batchim | liaison | practice | survival",
       "title": "{ en, ko, zh }",
-      "jamoPreview": ["optional jamo chars for learn units"],
-      "groups": ["optional subgroups e.g. ㄴㅁㄹ — structure only"],
-      "status": "scaffold | draft | ready",
-      "modules": "empty until content — intro / learn / drill / task later"
+      "objective": "{ en, ko, zh } — what this lesson trains",
+      "jamoPreview": [
+        "optional jamo chars for learn units"
+      ],
+      "groups": [
+        "optional subgroups e.g. ㄴㅁㄹ"
+      ],
+      "status": "scaffold | draft | ready | pilot",
+      "modules": "objective | explain | examples | task | trace"
     },
-    "srsTagHint": "Future wrong answers may use jamo:* tags (e.g. jamo:ㄹ) — not wired yet"
+    "moduleTypes": {
+      "objective": "body {en,ko,zh}",
+      "explain": "body {en,ko,zh}",
+      "examples": "items[{ ko, gloss:{en,ko,zh} }]",
+      "task": "body {en,ko,zh} — short self-check",
+      "trace": "dataUrl + optional note — stroke practice for lesson jamo",
+      "intro": "body {en,ko,zh} — hook card",
+      "check": "prompt + choices + answer + tip — quick practice (no spoiling early tip)",
+      "checkpoint": "body — end-of-skill gate copy"
+    },
+    "srsTagHint": "Future wrong answers may use jamo:* tags (e.g. jamo:ㄹ) — not wired yet",
+    "steps": [
+      "intro",
+      "teach",
+      "practice",
+      "checkpoint"
+    ]
   },
   "lessons": [
     {
@@ -40,221 +62,4071 @@
       "order": 0,
       "slug": "preview",
       "kind": "intro",
-      "title": { "en": "00 · Preview", "ko": "00 · 예비과", "zh": "00 · 预备" },
-      "jamoPreview": [],
+      "title": {
+        "en": "00 · Preview",
+        "ko": "00 · 예비과",
+        "zh": "00 · 预备"
+      },
+      "objective": {
+        "en": "See how Hangul blocks work before letters.",
+        "ko": "글자 전에 한글 음절 블록이 어떻게 모이는지 보기.",
+        "zh": "在学字母前，先看韩文音节块如何组成。"
+      },
+      "jamoPreview": [
+        "아",
+        "가",
+        "강"
+      ],
       "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "See syllable blocks (초·중·종) before memorizing letters.",
+            "ko": "글자 암기 전에 음절 블록(초·중·종) 구조 보기.",
+            "zh": "先看音节块（初·中·终）结构，再背字母。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Hangul is a building game: one spoken syllable ≈ one square. Inside: left→right, top→bottom (same idea as Hunminjeongeum combining).",
+            "ko": "한글은 조립: 소리 음절 ≈ 네모 하나. 안은 왼→오·위→아래(훈민정음 합자 방향과 같음).",
+            "zh": "韩文像拼装：一声节约一块。块内左→右、上→下（合字方向）。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Three jobs: (1) initial consonant 초성 (2) vowel 중성 (3) optional final 종성/받침 under the vowel. Empty initial → silent ㅇ seat.",
+            "ko": "일 3가지: (1) 초성 자음 (2) 중성 모음 (3) 선택 종성(받침). 초성 비면 ㅇ이 자리만 지킴(무음).",
+            "zh": "三职：(1)声母 (2)元音 (3)可选韵尾。无声母用静音ㅇ占位。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          },
+          "title": {
+            "en": "Syllable block rule",
+            "ko": "음절 블록 규칙",
+            "zh": "音节块规则"
+          },
+          "body": {
+            "en": "One spoken syllable ≈ one square. Jobs: initial + vowel + optional final. Empty initial → silent ㅇ seat (아). Same letter ㅇ as final = ng (강) — train the slot, not the shape alone.",
+            "ko": "소리 음절 ≈ 네모 하나. 일: 초성+중성+(선택)종성. 초성 비면 ㅇ이 자리만(아). 같은 ㅇ이 종성이면 ng(강) — 글자보다 자리.",
+            "zh": "一声节约一块。职：声母+元音+可选韵尾。无声母用静音ㅇ(아)。韵尾ㅇ=ng(강)——先看槽位。"
+          },
+          "examples": [
+            {
+              "ko": "아",
+              "gloss": {
+                "en": "silent ㅇ + ㅏ",
+                "ko": "ㅇ(무음)+ㅏ",
+                "zh": "静音ㅇ+ㅏ"
+              }
+            },
+            {
+              "ko": "강",
+              "gloss": {
+                "en": "ㄱ+ㅏ+ㅇ ng",
+                "ko": "ㄱ+ㅏ+종성 ㅇ",
+                "zh": "ㄱ+ㅏ+韵尾ㅇ"
+              }
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Later: the same letter ㅇ as a final means ng (강). Role changes with position — train your eyes on the slot first.",
+            "ko": "나중에: 같은 ㅇ이 종성이면 ng(강). 글자 같고 자리가 다름 — 먼저 자리 보기.",
+            "zh": "稍后：韵尾ㅇ=ng。字形同、位置不同——先看槽位。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "아",
+              "gloss": {
+                "en": "a — silent ㅇ + ㅏ",
+                "ko": "아 — ㅇ(무음)+ㅏ",
+                "zh": "아 — 静音ㅇ+ㅏ"
+              }
+            },
+            {
+              "ko": "가",
+              "gloss": {
+                "en": "ga — ㄱ + ㅏ",
+                "ko": "가 — ㄱ+ㅏ",
+                "zh": "가 — ㄱ+ㅏ"
+              }
+            },
+            {
+              "ko": "나",
+              "gloss": {
+                "en": "na — ㄴ + ㅏ",
+                "ko": "나 — ㄴ+ㅏ",
+                "zh": "나 — ㄴ+ㅏ"
+              }
+            },
+            {
+              "ko": "강",
+              "gloss": {
+                "en": "gang — ㄱ+ㅏ+ㅇ final (ng)",
+                "ko": "강 — ㄱ+ㅏ+종성 ㅇ(ng)",
+                "zh": "강 — ㄱ+ㅏ+韵尾ㅇ(ng)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Which part is the vowel in 가?",
+            "ko": "「가」에서 모음(중성)은?",
+            "zh": "「가」里元音是？"
+          },
+          "choices": [
+            "ㄱ",
+            "ㅏ",
+            "가 전체",
+            "ㅇ"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㄱ=consonant; ㅏ=vowel.",
+            "ko": "ㄱ=자음, ㅏ=모음.",
+            "zh": "ㄱ辅音，ㅏ元音。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "When a vowel stands alone, what fills the initial slot?",
+            "ko": "모음만 쓸 때 초성 자리는?",
+            "zh": "元音单独写时声母位？"
+          },
+          "choices": [
+            "ㄱ",
+            "ㅎ",
+            {
+              "en": "ㅇ (silent seat)",
+              "ko": "ㅇ (자리만, 소리 없음)",
+              "zh": "ㅇ（占位，不发音）"
+            },
+            "받침"
+          ],
+          "answer": 2,
+          "tip": {
+            "en": "Silent ㅇ holds the spot (아 어 오…).",
+            "ko": "ㅇ이 자리만 지킴(아 어 오…).",
+            "zh": "静音ㅇ占位。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: point to consonant vs vowel in 아 · 가 · 나.",
+            "ko": "체크포인트: 아·가·나에서 자음·모음 가리키기.",
+            "zh": "关卡：在아·가·나指出辅音与元音。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Draw three squares. Write 아 · 가 · 나; circle the vowel; underline any final if present.",
+            "ko": "빈 네모 셋에 아·가·나. 모음 동그라미. 받침 있으면 밑줄.",
+            "zh": "画三格写아·가·나；圈元音；有收音则划线。"
+          }
+        }
+      ],
+      "pathLabel": "00"
     },
     {
       "id": "hangul-01",
       "order": 1,
       "slug": "basic-vowels",
       "kind": "vowels",
-      "title": { "en": "01 · Basic vowels", "ko": "01 · 기본 모음", "zh": "01 · 基本元音" },
-      "jamoPreview": ["ㅏ", "ㅓ", "ㅗ", "ㅜ", "ㅡ", "ㅣ", "ㅔ", "ㅐ"],
-      "groups": [
-        { "id": "vowel-a", "jamo": ["ㅏ", "ㅓ", "ㅗ", "ㅜ"] },
-        { "id": "vowel-b", "jamo": ["ㅡ", "ㅣ", "ㅔ", "ㅐ"] }
+      "title": {
+        "en": "01 · Basic vowels",
+        "ko": "01 · 기본 모음",
+        "zh": "01 · 基本元音"
+      },
+      "objective": {
+        "en": "Recognize and say the 8 basic vowels.",
+        "ko": "기본 모음 8개를 보고 소리 내기.",
+        "zh": "认读 8 个基本元音。"
+      },
+      "jamoPreview": [
+        "ㅏ",
+        "ㅓ",
+        "ㅗ",
+        "ㅜ",
+        "ㅡ",
+        "ㅣ",
+        "ㅔ",
+        "ㅐ"
       ],
-      "status": "scaffold",
-      "modules": []
+      "groups": [
+        {
+          "id": "vowel-a",
+          "label": {
+            "en": "Group A",
+            "ko": "그룹 A",
+            "zh": "A组"
+          },
+          "jamo": [
+            "ㅏ",
+            "ㅓ",
+            "ㅗ",
+            "ㅜ"
+          ]
+        },
+        {
+          "id": "vowel-b",
+          "label": {
+            "en": "Group B",
+            "ko": "그룹 B",
+            "zh": "B组"
+          },
+          "jamo": [
+            "ㅡ",
+            "ㅣ",
+            "ㅔ",
+            "ㅐ"
+          ]
+        }
+      ],
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Recognize and say the 8 basic vowels in two groups (Sejong 「기본 모음」 order).",
+            "ko": "세종 입문 「기본 모음」8개를 두 그룹으로 보고 소리 내기.",
+            "zh": "按世宗入门「基本元音」认读 8 个，分两组。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "KFL paths usually teach vowels before consonants. Group A ㅏㅓㅗㅜ · Group B ㅡㅣㅔㅐ.",
+            "ko": "KFL 교재는 보통 모음이 먼저. 그룹 A ㅏㅓㅗㅜ · 그룹 B ㅡㅣㅔㅐ.",
+            "zh": "KFL 通常先元音。A组ㅏㅓㅗㅜ · B组ㅡㅣㅔㅐ。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Shape tip: vertical-ish ㅏㅓㅣ (stem beside) · horizontal-ish ㅗㅜㅡ (stem under/over). Alone → 아 어 오 우.",
+            "ko": "모양: 세로형 ㅏㅓㅣ · 가로형 ㅗㅜㅡ. 혼자면 아 어 오 우.",
+            "zh": "形：竖型ㅏㅓㅣ · 横型ㅗㅜㅡ。单独＝아 어 오 우。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "아",
+              "gloss": {
+                "en": "a · open front",
+                "ko": "아 · 앞 열림",
+                "zh": "아 · 前开"
+              }
+            },
+            {
+              "ko": "어",
+              "gloss": {
+                "en": "eo · open back/central",
+                "ko": "어 · 뒤·가운데 열림",
+                "zh": "어 · 后/央开"
+              }
+            },
+            {
+              "ko": "오",
+              "gloss": {
+                "en": "o · rounded",
+                "ko": "오 · 둥글",
+                "zh": "오 · 圆唇"
+              }
+            },
+            {
+              "ko": "우",
+              "gloss": {
+                "en": "u · rounded back",
+                "ko": "우 · 둥글 뒤",
+                "zh": "우 · 圆后"
+              }
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Group B: ㅡ tight unrounded · ㅣ “ee”. ㅔ/ㅐ often merge toward “e” for many speakers — hear the pair; spelling precision comes later.",
+            "ko": "그룹 B: ㅡ 좁고 안 둥글 · ㅣ 이. ㅔ/ㅐ는 구어에서 비슷한 ‘에’로 들리기도 — 철자 정교함은 나중.",
+            "zh": "B组：ㅡ紧平 · ㅣ ee。ㅔ/ㅐ口语常近 e——拼写稍后精修。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "으",
+              "gloss": {
+                "en": "eu · tight uh",
+                "ko": "으",
+                "zh": "으 · eu"
+              }
+            },
+            {
+              "ko": "이",
+              "gloss": {
+                "en": "i",
+                "ko": "이",
+                "zh": "이 · i"
+              }
+            },
+            {
+              "ko": "에",
+              "gloss": {
+                "en": "e",
+                "ko": "에",
+                "zh": "에 · e"
+              }
+            },
+            {
+              "ko": "애",
+              "gloss": {
+                "en": "ae · often near 에",
+                "ko": "애 (에와 비슷할 수)",
+                "zh": "애（常近에）"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Which set is Group A (basic open/round)?",
+            "ko": "그룹 A(열림·둥글)는?",
+            "zh": "A组（开口/圆唇）？"
+          },
+          "choices": [
+            "ㅡㅣㅔㅐ",
+            "ㅏㅓㅗㅜ",
+            "ㅑㅕㅛㅠ",
+            "ㅋㅌㅍㅊ"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Basic open/round vowels first in Sejong path.",
+            "ko": "세종 경로에서 기본 열림·둥글이 먼저.",
+            "zh": "世宗路径先基本开口/圆唇。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Alone, ㅗ is written and read as…",
+            "ko": "ㅗ 혼자면?",
+            "zh": "ㅗ单独读作？"
+          },
+          "choices": [
+            "오",
+            "우",
+            "어",
+            "요"
+          ],
+          "answer": 0,
+          "tip": {
+            "en": "Silent ㅇ + ㅗ → 오.",
+            "ko": "ㅇ+ㅗ → 오.",
+            "zh": "ㅇ+ㅗ → 오。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: list Group A then Group B from memory.",
+            "ko": "체크포인트: 그룹 A → B를 기억해서 말하기.",
+            "zh": "关卡：默背 A组再 B组。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Cover the list; write ㅏㅓㅗㅜ then ㅡㅣㅔㅐ. Whisper 아어오우 · 으이에애.",
+            "ko": "목록 가리고 ㅏㅓㅗㅜ · ㅡㅣㅔㅐ 쓰기. 아어오우 · 으이에애 속삭이기.",
+            "zh": "遮表默写ㅏㅓㅗㅜ与ㅡㅣㅔㅐ，轻读아어오우 · 으이에애。"
+          }
+        }
+      ],
+      "pathLabel": "01"
     },
     {
       "id": "hangul-02",
       "order": 2,
       "slug": "basic-consonants",
       "kind": "consonants",
-      "title": { "en": "02 · Basic consonants", "ko": "02 · 기본 자음", "zh": "02 · 基本辅音" },
-      "jamoPreview": ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅈ"],
-      "groups": [
-        { "id": "cons-soft", "jamo": ["ㄴ", "ㅁ", "ㄹ"] },
-        { "id": "cons-stop", "jamo": ["ㄱ", "ㄷ", "ㅂ"] },
-        { "id": "cons-fric", "jamo": ["ㅅ", "ㅈ"] }
+      "title": {
+        "en": "02 · Basic consonants",
+        "ko": "02 · 기본 자음",
+        "zh": "02 · 基本辅音"
+      },
+      "objective": {
+        "en": "Learn 8 basic consonants in three sound/shape groups.",
+        "ko": "기본 자음 8개를 소리·모양 비슷한 3그룹으로 익히기.",
+        "zh": "按声形相近的三组学习 8 个基本辅音。"
+      },
+      "jamoPreview": [
+        "ㄴㅁㄹ",
+        "ㄱㄷㅂ",
+        "ㅅㅈ"
       ],
-      "status": "draft",
+      "groups": [
+        {
+          "id": "cons-soft",
+          "label": {
+            "en": "Soft / nasal-ish",
+            "ko": "부드러운 소리",
+            "zh": "柔/鼻近"
+          },
+          "jamo": [
+            "ㄴ",
+            "ㅁ",
+            "ㄹ"
+          ]
+        },
+        {
+          "id": "cons-stop",
+          "label": {
+            "en": "Stops",
+            "ko": "막힘 소리",
+            "zh": "塞音"
+          },
+          "jamo": [
+            "ㄱ",
+            "ㄷ",
+            "ㅂ"
+          ]
+        },
+        {
+          "id": "cons-fric",
+          "label": {
+            "en": "S / J",
+            "ko": "ㅅ · ㅈ",
+            "zh": "ㅅ · ㅈ"
+          },
+          "jamo": [
+            "ㅅ",
+            "ㅈ"
+          ]
+        }
+      ],
+      "status": "pilot",
       "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Learn 8 basic consonants in three sound/shape groups (not ABC order).",
+            "ko": "기본 자음 8개를 소리·모양 3그룹으로 (가나다순 아님).",
+            "zh": "按声形三组学 8 个基本辅音（非字母表序）。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Sejong-style grouping: soft ㄴㅁㄹ → stops ㄱㄷㅂ → ㅅㅈ. With ㅏ: 나마라 · 가다바 · 사자.",
+            "ko": "세종식 묶음: 부드러운 ㄴㅁㄹ → 막힘 ㄱㄷㅂ → ㅅㅈ. ㅏ와: 나마라 · 가다바 · 사자.",
+            "zh": "世宗式分组：柔ㄴㅁㄹ → 塞ㄱㄷㅂ → ㅅㅈ。配ㅏ：나마라 · 가다바 · 사자。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "ㄴ tongue tip · ㅁ lips · ㄹ light flap. Feel the soft set before hard stops — matches articulatory grouping used in many KFL intros.",
+            "ko": "ㄴ 혀끝 · ㅁ 입술 · ㄹ 가볍게 튕김. 부드러운 세트를 막힘보다 먼저 — KFL 입문 조음 묶음과 같음.",
+            "zh": "ㄴ舌尖 · ㅁ双唇 · ㄹ轻弹。先柔后塞——与常见KFL入门分组一致。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "나",
+              "gloss": {
+                "en": "na",
+                "ko": "나",
+                "zh": "나"
+              }
+            },
+            {
+              "ko": "마",
+              "gloss": {
+                "en": "ma",
+                "ko": "마",
+                "zh": "마"
+              }
+            },
+            {
+              "ko": "라",
+              "gloss": {
+                "en": "ra/la flap",
+                "ko": "라",
+                "zh": "라"
+              }
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Stops: ㄱ back · ㄷ tip · ㅂ lips — short, not aspirated yet. Stroke habit (not NIKL law): horizontal L→R, vertical T→B.",
+            "ko": "막힘: ㄱ 목구멍 쪽 · ㄷ 혀끝 · ㅂ 입술 — 짧게, 아직 거센소리 아님. 획 관행(국어원 필순법 아님): 가로 왼→오, 세로 위→아래.",
+            "zh": "塞音：ㄱ舌根 · ㄷ舌尖 · ㅂ双唇。笔顺习惯（非国语院成文）：横左→右，竖上→下。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "가",
+              "gloss": {
+                "en": "ga",
+                "ko": "가",
+                "zh": "가"
+              }
+            },
+            {
+              "ko": "다",
+              "gloss": {
+                "en": "da",
+                "ko": "다",
+                "zh": "다"
+              }
+            },
+            {
+              "ko": "바",
+              "gloss": {
+                "en": "ba",
+                "ko": "바",
+                "zh": "바"
+              }
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Third group ㅅ · ㅈ: hiss / light affricate. Read 사자. Stroke panel covers ㅅ now; ㅈ shape practice comes when stroke JSON is ready (literacy still counts).",
+            "ko": "셋째 ㅅ·ㅈ: 마찰·가벼운 파찰. 사자. 획순 패널은 ㅅ까지 — ㅈ 획 데이터는 후속(문해는 지금).",
+            "zh": "第三组ㅅ·ㅈ。读사자。笔顺现有ㅅ；ㅈ待数据（识字仍算）。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "사",
+              "gloss": {
+                "en": "sa",
+                "ko": "사",
+                "zh": "사"
+              }
+            },
+            {
+              "ko": "자",
+              "gloss": {
+                "en": "ja (read now · stroke later)",
+                "ko": "자 (읽기 지금 · 획순 후속)",
+                "zh": "자（先认读 · 笔顺稍后）"
+              }
+            },
+            {
+              "ko": "사자",
+              "gloss": {
+                "en": "sa-ja chunk",
+                "ko": "사자",
+                "zh": "사자"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Which group is ㄴㅁㄹ?",
+            "ko": "ㄴㅁㄹ은 어느 그룹?",
+            "zh": "ㄴㅁㄹ属哪组？"
+          },
+          "choices": [
+            {
+              "en": "Stops ㄱㄷㅂ",
+              "ko": "파열음 ㄱㄷㅂ",
+              "zh": "破裂音 ㄱㄷㅂ"
+            },
+            {
+              "en": "Soft / nasal-ish",
+              "ko": "부드러운·비음 쪽",
+              "zh": "软音/鼻音类"
+            },
+            {
+              "en": "Aspirated ㅋㅌㅍㅊ",
+              "ko": "격음 ㅋㅌㅍㅊ",
+              "zh": "送气音 ㅋㅌㅍㅊ"
+            },
+            {
+              "en": "Vowels",
+              "ko": "모음",
+              "zh": "元音"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Soft feel first in Sejong-style grouping.",
+            "ko": "세종식 묶음에서 부드러운 소리 먼저.",
+            "zh": "入门分组先柔音。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "ㄱ + ㅏ = ?",
+            "ko": "ㄱ+ㅏ=?",
+            "zh": "ㄱ+ㅏ=？"
+          },
+          "choices": [
+            "카",
+            "가",
+            "까",
+            "아"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Plain ㄱ + ㅏ → 가.",
+            "ko": "평음 ㄱ+ㅏ → 가.",
+            "zh": "平音ㄱ+ㅏ→가。"
+          }
+        },
         {
           "type": "trace",
           "status": "pilot",
           "dataUrl": "../assets/chars/strokes/jamo-strokes-13.json",
-          "note": "ㅈ has no stroke data yet (jabi. partner roster excludes it, but literacy still needs it — gap flagged in strokes/README.md)"
+          "note": "Lesson panel lists stroke-ready jamo only (ㄴㅁㄹㄱㄷㅂㅅ + ㅇ later units). ㅈ omitted — `ji` stub is not a ㅈ shape."
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: say 나마라 · 가다바 · 사자 without looking.",
+            "ko": "체크포인트: 나마라 · 가다바 · 사자를 보지 않고.",
+            "zh": "关卡：不看资料读나마라 · 가다바 · 사자。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Use the stroke panel for available consonants (skip ㅈ if marked later). Trace once, then read the three chunks.",
+            "ko": "획순 패널로 가능한 자음 연습(ㅈ 준비 중이면 스킵). 한 번 따라 쓴 뒤 세 덩어리 읽기.",
+            "zh": "笔顺练习可用辅音（ㅈ若准备中则跳过），再读三组。"
+          }
         }
-      ]
+      ],
+      "pathLabel": "02"
     },
     {
       "id": "hangul-03",
       "order": 3,
       "slug": "practice-1",
       "kind": "practice",
-      "title": { "en": "03 · Practice 1", "ko": "03 · 연습활용 1", "zh": "03 · 练习活用 1" },
-      "jamoPreview": [],
-      "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "title": {
+        "en": "03 · Practice 1",
+        "ko": "03 · 연습활용 1",
+        "zh": "03 · 练习活用 1"
+      },
+      "objective": {
+        "en": "Mix vowels + basic consonants; meet silent ㅇ and ㅎ.",
+        "ko": "모음+기본 자음 섞어 읽기. ㅇ(자리)·ㅎ 만나기.",
+        "zh": "混读元音+基本辅音；认识ㅇ占位与ㅎ。"
+      },
+      "jamoPreview": [
+        "ㅇ",
+        "ㅎ",
+        "가",
+        "오",
+        "하"
+      ],
+      "groups": [
+        {
+          "id": "review-v",
+          "label": {
+            "en": "Vowels review",
+            "ko": "모음 복습",
+            "zh": "元音复习"
+          },
+          "jamo": [
+            "ㅏ",
+            "ㅓ",
+            "ㅗ",
+            "ㅜ",
+            "ㅡ",
+            "ㅣ"
+          ]
+        },
+        {
+          "id": "review-c",
+          "label": {
+            "en": "Consonants review",
+            "ko": "자음 복습",
+            "zh": "辅音复习"
+          },
+          "jamo": [
+            "ㄴ",
+            "ㅁ",
+            "ㄹ",
+            "ㄱ",
+            "ㄷ",
+            "ㅂ",
+            "ㅅ"
+          ]
+        },
+        {
+          "id": "new-oh",
+          "label": {
+            "en": "New",
+            "ko": "새 글자",
+            "zh": "新字母"
+          },
+          "jamo": [
+            "ㅇ",
+            "ㅎ"
+          ]
+        }
+      ],
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Mix vowels + basic consonants; meet silent ㅇ and breathy ㅎ.",
+            "ko": "모음+기본 자음 섞기. ㅇ(자리)·ㅎ 만나기.",
+            "zh": "混读元音+基本辅音；认识ㅇ占位与ㅎ。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Practice unit (세종 「연습활용」 role): recycle 01–02, add ㅇ/ㅎ. Short CV only — no finals yet.",
+            "ko": "연습활용 역할: 01–02 재활용 + ㅇ/ㅎ. 짧은 CV만 — 아직 받침 없음.",
+            "zh": "练习课角色：复用01–02，加ㅇ/ㅎ。只要短CV——尚无收音。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Initial ㅇ = silent seat. ㅎ = light breath (하). Do not confuse with final ㅇ (ng) — that arrives in 받침 1.",
+            "ko": "초성 ㅇ=무음 자리. ㅎ=가벼운 숨(하). 종성 ㅇ(ng)과 구분 — 받침 1에서.",
+            "zh": "声母ㅇ静音。ㅎ轻送气。别与韵尾ㅇ混淆——在收音1。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "아",
+              "gloss": {
+                "en": "a (ㅇ silent)",
+                "ko": "아 (ㅇ 무음)",
+                "zh": "아（ㅇ静音）"
+              }
+            },
+            {
+              "ko": "오",
+              "gloss": {
+                "en": "o",
+                "ko": "오",
+                "zh": "오"
+              }
+            },
+            {
+              "ko": "하",
+              "gloss": {
+                "en": "ha",
+                "ko": "하",
+                "zh": "하"
+              }
+            },
+            {
+              "ko": "고마",
+              "gloss": {
+                "en": "go-ma (drill)",
+                "ko": "고마 (연습)",
+                "zh": "고마（练习）"
+              }
+            },
+            {
+              "ko": "나라",
+              "gloss": {
+                "en": "na-ra",
+                "ko": "나라",
+                "zh": "나라"
+              }
+            },
+            {
+              "ko": "미소",
+              "gloss": {
+                "en": "mi-so",
+                "ko": "미소",
+                "zh": "미소"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "In 하, what is ㅎ?",
+            "ko": "「하」의 ㅎ는?",
+            "zh": "「하」的ㅎ是？"
+          },
+          "choices": [
+            {
+              "en": "Silent seat",
+              "ko": "소리 없는 자리",
+              "zh": "不发音占位"
+            },
+            {
+              "en": "Light breath consonant",
+              "ko": "가벼운 숨소리 자음",
+              "zh": "轻送气辅音"
+            },
+            {
+              "en": "Final ng",
+              "ko": "받침 ng",
+              "zh": "韵尾 ng"
+            },
+            {
+              "en": "Vowel",
+              "ko": "모음",
+              "zh": "元音"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㅎ is a consonant with breath.",
+            "ko": "ㅎ는 숨이 섞인 자음.",
+            "zh": "ㅎ是带气辅音。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Read: 가나",
+            "ko": "읽기: 가나",
+            "zh": "朗读：가나"
+          },
+          "choices": [
+            {
+              "en": "ka-na",
+              "ko": "카나",
+              "zh": "ka-na"
+            },
+            {
+              "en": "ga-na",
+              "ko": "가나",
+              "zh": "ga-na"
+            },
+            {
+              "en": "ha-na",
+              "ko": "하나",
+              "zh": "ha-na"
+            },
+            {
+              "en": "a-na",
+              "ko": "아나",
+              "zh": "a-na"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㄱ→ga, ㄴ→na.",
+            "ko": "ㄱ→가, ㄴ→나.",
+            "zh": "ㄱ→가，ㄴ→나。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: read 가나 · 다라 · 마바 · 사아 · 하 smoothly.",
+            "ko": "체크포인트: 가나 · 다라 · 마바 · 사아 · 하 부드럽게.",
+            "zh": "关卡：流畅读가나 · 다라 · 마바 · 사아 · 하。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Write five CV syllables mixing any vowel from 01 with ㄱㄴㅁㅅㅎ.",
+            "ko": "01 모음 + ㄱㄴㅁㅅㅎ로 CV 다섯 개 쓰기.",
+            "zh": "用01元音+ㄱㄴㅁㅅㅎ写五个CV。"
+          }
+        }
+      ],
+      "pathLabel": "03"
     },
     {
       "id": "hangul-04",
       "order": 4,
       "slug": "aspirated",
       "kind": "aspirated",
-      "title": { "en": "04 · Aspirated", "ko": "04 · 격음(거센소리)", "zh": "04 · 送气音" },
-      "jamoPreview": ["ㅋ", "ㅌ", "ㅍ", "ㅊ"],
-      "groups": [{ "id": "aspirated-all", "jamo": ["ㅋ", "ㅌ", "ㅍ", "ㅊ"] }],
-      "status": "draft",
+      "title": {
+        "en": "04 · Aspirated",
+        "ko": "04 · 격음(거센소리)",
+        "zh": "04 · 送气音"
+      },
+      "objective": {
+        "en": "Hear and write the four strong-breath consonants ㅋㅌㅍㅊ.",
+        "ko": "거센소리 ㅋㅌㅍㅊ를 듣고 쓰기.",
+        "zh": "听写四个送气音ㅋㅌㅍㅊ。"
+      },
+      "jamoPreview": [
+        "ㅋ",
+        "ㅌ",
+        "ㅍ",
+        "ㅊ"
+      ],
+      "groups": [
+        {
+          "id": "aspirated-all",
+          "label": {
+            "en": "Aspirated set",
+            "ko": "격음 세트",
+            "zh": "送气组"
+          },
+          "jamo": [
+            "ㅋ",
+            "ㅌ",
+            "ㅍ",
+            "ㅊ"
+          ]
+        }
+      ],
+      "status": "pilot",
       "modules": [
-        { "type": "trace", "status": "pilot", "dataUrl": "../assets/chars/strokes/jamo-strokes-13.json" }
-      ]
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Hear/write aspirated ㅋㅌㅍㅊ — more air than plain ㄱㄷㅂㅈ.",
+            "ko": "거센소리 ㅋㅌㅍㅊ — ㄱㄷㅂㅈ보다 숨이 셈.",
+            "zh": "送气音ㅋㅌㅍㅊ——比ㄱㄷㅂㅈ送气更强。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Hand in front of mouth: 카 should puff more than 가 (classic aspiration contrast drill).",
+            "ko": "손등을 입 앞에: 카가 가보다 바람이 셈 (격음 대비 드릴).",
+            "zh": "手背对嘴：카比가风更强。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Map: ㅋ←ㄱ, ㅌ←ㄷ, ㅍ←ㅂ, ㅊ←ㅈ. Same place, more air. Minimal pairs beat isolated drilling.",
+            "ko": "ㅋ←ㄱ, ㅌ←ㄷ, ㅍ←ㅂ, ㅊ←ㅈ. 자리 같고 숨만 셈. 단독보다 최소대립 쌍.",
+            "zh": "ㅋ←ㄱ等。同部位更多气。最小对立对比单练更好。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "카",
+              "gloss": {
+                "en": "ka vs 가",
+                "ko": "카 (가와 비교)",
+                "zh": "카（对比가）"
+              }
+            },
+            {
+              "ko": "타",
+              "gloss": {
+                "en": "ta vs 다",
+                "ko": "타 (다와 비교)",
+                "zh": "타（对比다）"
+              }
+            },
+            {
+              "ko": "파",
+              "gloss": {
+                "en": "pa vs 바",
+                "ko": "파 (바와 비교)",
+                "zh": "파（对比바）"
+              }
+            },
+            {
+              "ko": "차",
+              "gloss": {
+                "en": "cha vs 자",
+                "ko": "차 (자와 비교)",
+                "zh": "차（对比자）"
+              }
+            },
+            {
+              "ko": "커피",
+              "gloss": {
+                "en": "keo-pi (drill)",
+                "ko": "커피 (연습)",
+                "zh": "커피（练习）"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Strong-breath partner of ㄱ is…",
+            "ko": "ㄱ의 거센소리는?",
+            "zh": "ㄱ的送气是？"
+          },
+          "choices": [
+            "ㄲ",
+            "ㅋ",
+            "ㅎ",
+            "ㅇ"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㅋ is aspirated ㄱ.",
+            "ko": "ㅋ=거센 ㄱ.",
+            "zh": "ㅋ＝送气ㄱ。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Which pair contrasts plain vs aspirated?",
+            "ko": "평음·격음 대비는?",
+            "zh": "平/送气对比？"
+          },
+          "choices": [
+            "가 / 까",
+            "가 / 카",
+            "아 / 어",
+            "나 / 마"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "가 plain · 카 aspirated.",
+            "ko": "가 평 · 카 격.",
+            "zh": "가平 · 카送气。"
+          }
+        },
+        {
+          "type": "trace",
+          "status": "pilot",
+          "dataUrl": "../assets/chars/strokes/jamo-strokes-13.json"
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: contrast-read 가/카 · 다/타 · 바/파 · 자/차.",
+            "ko": "체크포인트: 가/카 · 다/타 · 바/파 · 자/차 대비.",
+            "zh": "关卡：对比读가/카等。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Trace ㅋㅌㅍㅊ in the stroke panel, then whisper each contrast pair twice.",
+            "ko": "획순으로 ㅋㅌㅍㅊ 연습 후 대비 쌍을 두 번씩.",
+            "zh": "笔顺练ㅋㅌㅍㅊ，再轻读每对比两遍。"
+          }
+        }
+      ],
+      "pathLabel": "04"
     },
     {
       "id": "hangul-05",
       "order": 5,
       "slug": "tense",
       "kind": "tense",
-      "title": { "en": "05 · Tense", "ko": "05 · 경음(된소리)", "zh": "05 · 紧音" },
-      "jamoPreview": ["ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ"],
-      "groups": [{ "id": "tense-all", "jamo": ["ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ"] }],
-      "status": "draft",
+      "title": {
+        "en": "05 · Tense",
+        "ko": "05 · 경음(된소리)",
+        "zh": "05 · 紧音"
+      },
+      "objective": {
+        "en": "Meet tense doubles ㄲㄸㅃㅆ (ㅉ later).",
+        "ko": "된소리 ㄲㄸㅃㅆ 익히기 (ㅉ는 나중에).",
+        "zh": "认识紧音ㄲㄸㅃㅆ（ㅉ稍后）。"
+      },
+      "jamoPreview": [
+        "ㄲ",
+        "ㄸ",
+        "ㅃ",
+        "ㅆ"
+      ],
+      "groups": [
+        {
+          "id": "tense-all",
+          "label": {
+            "en": "Tense set (stroke-ready)",
+            "ko": "경음 세트 (획순 가능)",
+            "zh": "紧音组（有笔顺）"
+          },
+          "jamo": [
+            "ㄲ",
+            "ㄸ",
+            "ㅃ",
+            "ㅆ"
+          ]
+        }
+      ],
+      "status": "pilot",
       "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Meet tense doubles ㄲㄸㅃㅆ (ㅉ later if ㅈ stroke missing).",
+            "ko": "된소리 ㄲㄸㅃㅆ (ㅉ는 ㅈ 획 데이터 후).",
+            "zh": "紧音ㄲㄸㅃㅆ（ㅉ待ㅈ数据）。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Tighten — shorter/harder than plain. Shape looks doubled. Third member of the plain/aspirated/tense set.",
+            "ko": "목을 조여 짧고 단단하게. 모양은 글자 두 번. 평·격·경 삼중의 세 번째.",
+            "zh": "收紧更短硬。字形双写。平/送气/紧三连的第三。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Drill order (pedagogy, not “physics ranking”): 가 (plain) · 카 (aspirated) · 까 (tense). Same for ㄷ/ㅂ; ㅅ → 사/싸.",
+            "ko": "연습 순(물리 세기표 아님): 가·카·까. ㄷ/ㅂ도 같음. ㅅ → 사/싸.",
+            "zh": "练习序：가·카·까。ㄷ/ㅂ同。ㅅ→사/싸。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "까",
+              "gloss": {
+                "en": "kka vs 가·카",
+                "ko": "까 (가·카와)",
+                "zh": "까（对比가·카）"
+              }
+            },
+            {
+              "ko": "따",
+              "gloss": {
+                "en": "tta",
+                "ko": "따",
+                "zh": "따"
+              }
+            },
+            {
+              "ko": "빠",
+              "gloss": {
+                "en": "ppa",
+                "ko": "빠",
+                "zh": "빠"
+              }
+            },
+            {
+              "ko": "싸",
+              "gloss": {
+                "en": "ssa",
+                "ko": "싸",
+                "zh": "싸"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Tense partner of ㄱ is…",
+            "ko": "ㄱ의 된소리는?",
+            "zh": "ㄱ的紧音是？"
+          },
+          "choices": [
+            "ㅋ",
+            "ㄲ",
+            "ㅎ",
+            "ㅇ"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㄲ is tense (된소리).",
+            "ko": "ㄲ=된소리.",
+            "zh": "ㄲ＝紧音。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Handy drill order for the g-set?",
+            "ko": "ㄱ 계열 연습 순?",
+            "zh": "ㄱ系练习顺序？"
+          },
+          "choices": [
+            "까 · 가 · 카",
+            "가 · 카 · 까",
+            "카 · 까 · 가",
+            "가 · 까 · 카"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Plain → aspirated → tense is a clear classroom drill.",
+            "ko": "평→격→경이 교실 드릴로 또렷함.",
+            "zh": "平→送气→紧便于课堂练。"
+          }
+        },
         {
           "type": "trace",
           "status": "pilot",
           "dataUrl": "../assets/chars/strokes/jamo-strokes-tense.json",
-          "note": "Generated by doubling the base consonant shape (ㄲ=ㄱ+ㄱ etc.), not hand-authored. ㅉ has no data (needs ㅈ, which jabi. excludes from the partner roster)."
+          "note": "Generated by doubling the base consonant shape. ㅉ deferred (needs ㅈ stroke)."
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: say 가·카·까 and 다·타·따 slowly.",
+            "ko": "체크포인트: 가·카·까 / 다·타·따 천천히.",
+            "zh": "关卡：慢读가·카·까与다·타·따。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Trace ㄲㄸㅃㅆ in the stroke panel. Record yourself on one triple.",
+            "ko": "ㄲㄸㅃㅆ 획순. 삼중 하나 녹음.",
+            "zh": "笔顺ㄲㄸㅃㅆ。录一组三连。"
+          }
         }
-      ]
+      ],
+      "pathLabel": "05"
     },
     {
       "id": "hangul-06",
       "order": 6,
       "slug": "practice-2",
       "kind": "practice",
-      "title": { "en": "06 · Practice 2", "ko": "06 · 연습활용 2", "zh": "06 · 练习活用 2" },
-      "jamoPreview": [],
-      "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "title": {
+        "en": "06 · Practice 2",
+        "ko": "06 · 연습활용 2",
+        "zh": "06 · 练习活用 2"
+      },
+      "objective": {
+        "en": "Review plain / aspirated / tense contrasts.",
+        "ko": "평음 · 격음 · 경음 대비 복습.",
+        "zh": "复习平/送气/紧音对比。"
+      },
+      "jamoPreview": [
+        "가",
+        "카",
+        "까",
+        "다",
+        "타",
+        "따"
+      ],
+      "groups": [
+        {
+          "id": "tri-g",
+          "label": {
+            "en": "G set",
+            "ko": "ㄱ 계열",
+            "zh": "ㄱ系"
+          },
+          "jamo": [
+            "ㄱ",
+            "ㅋ",
+            "ㄲ"
+          ]
+        },
+        {
+          "id": "tri-d",
+          "label": {
+            "en": "D set",
+            "ko": "ㄷ 계열",
+            "zh": "ㄷ系"
+          },
+          "jamo": [
+            "ㄷ",
+            "ㅌ",
+            "ㄸ"
+          ]
+        },
+        {
+          "id": "tri-b",
+          "label": {
+            "en": "B set",
+            "ko": "ㅂ 계열",
+            "zh": "ㅂ系"
+          },
+          "jamo": [
+            "ㅂ",
+            "ㅍ",
+            "ㅃ"
+          ]
+        },
+        {
+          "id": "tri-s",
+          "label": {
+            "en": "S set",
+            "ko": "ㅅ 계열",
+            "zh": "ㅅ系"
+          },
+          "jamo": [
+            "ㅅ",
+            "ㅆ"
+          ]
+        }
+      ],
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Review plain / aspirated / tense contrasts together.",
+            "ko": "평음 · 격음 · 경음 대비 복습.",
+            "zh": "综合复习平/送气/紧。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Practice 2: slow triples beat fast guessing. Same mouth place, three strengths.",
+            "ko": "연습활용 2: 빠른 찍기보다 느린 삼중. 자리 같고 세기만 다름.",
+            "zh": "练习2：慢三连胜过快猜。同部位三种力度。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "If one pair is fuzzy (e.g. 다/타), stay there — contrast listening is the gate before diphthongs.",
+            "ko": "한 쌍이 흐리면(예: 다/타) 거기 머물기 — 이중모음 전 대비 청취가 게이트.",
+            "zh": "某一对比糊就停住——双元音前对比听力是关卡。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "가카까",
+              "gloss": {
+                "en": "ga-ka-kka",
+                "ko": "가·카·까",
+                "zh": "가·카·까"
+              }
+            },
+            {
+              "ko": "다타따",
+              "gloss": {
+                "en": "da-ta-tta",
+                "ko": "다·타·따",
+                "zh": "다·타·따"
+              }
+            },
+            {
+              "ko": "바파빠",
+              "gloss": {
+                "en": "ba-pa-ppa",
+                "ko": "바·파·빠",
+                "zh": "바·파·빠"
+              }
+            },
+            {
+              "ko": "사싸",
+              "gloss": {
+                "en": "sa-ssa",
+                "ko": "사·싸",
+                "zh": "사·싸"
+              }
+            },
+            {
+              "ko": "자차짜",
+              "gloss": {
+                "en": "ja-cha-jja (optional)",
+                "ko": "자·차·짜 (선택)",
+                "zh": "자·차·짜（可选）"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "바파빠 drills which family?",
+            "ko": "바파빠는 어느 계열?",
+            "zh": "바파빠属哪系？"
+          },
+          "choices": [
+            "ㄱ",
+            "ㄷ",
+            "ㅂ",
+            "ㅅ"
+          ],
+          "answer": 2,
+          "tip": {
+            "en": "ㅂ · ㅍ · ㅃ.",
+            "ko": "ㅂ·ㅍ·ㅃ.",
+            "zh": "ㅂ·ㅍ·ㅃ。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Best practice tip?",
+            "ko": "가장 좋은 연습 팁?",
+            "zh": "最佳练习提示？"
+          },
+          "choices": [
+            {
+              "en": "Rush all triples",
+              "ko": "세 쌍을 급하게",
+              "zh": "三组全赶着练"
+            },
+            {
+              "en": "Slow clear triples",
+              "ko": "천천히 또렷한 세 쌍",
+              "zh": "慢而清楚练三组"
+            },
+            {
+              "en": "Only English letters",
+              "ko": "영어 철자만",
+              "zh": "只用英文字母"
+            },
+            {
+              "en": "Skip aspirated",
+              "ko": "격음 건너뛰기",
+              "zh": "跳过送气音"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Clarity > speed for contrasts.",
+            "ko": "대비는 또렷함이 속도보다 중요.",
+            "zh": "对比靠清晰度。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: write one remembered triple without looking.",
+            "ko": "체크포인트: 기억나는 삼중 하나 보기 없이 쓰기.",
+            "zh": "关卡：默写一组三连。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Pick your weakest pair (e.g. 다/타) and do 10 slow reps.",
+            "ko": "가장 약한 쌍(예: 다/타) 10번 천천히.",
+            "zh": "选最弱对比（如다/타）慢练10次。"
+          }
+        }
+      ],
+      "pathLabel": "06"
     },
     {
       "id": "hangul-07",
       "order": 7,
       "slug": "diphthong-1",
       "kind": "diphthong",
-      "title": { "en": "07 · Diphthongs 1", "ko": "07 · 이중모음 1", "zh": "07 · 双元音 1" },
-      "jamoPreview": ["ㅑ", "ㅕ", "ㅛ", "ㅠ"],
-      "groups": [{ "id": "dip-y", "jamo": ["ㅑ", "ㅕ", "ㅛ", "ㅠ"] }],
-      "status": "scaffold",
-      "modules": []
+      "title": {
+        "en": "07 · Diphthongs 1",
+        "ko": "07 · 이중모음 1",
+        "zh": "07 · 双元音 1"
+      },
+      "objective": {
+        "en": "Add a y-glide: ㅑㅕㅛㅠ.",
+        "ko": "y 미끄러짐 추가: ㅑㅕㅛㅠ.",
+        "zh": "加 y 滑音：ㅑㅕㅛㅠ。"
+      },
+      "jamoPreview": [
+        "ㅑ",
+        "ㅕ",
+        "ㅛ",
+        "ㅠ"
+      ],
+      "groups": [
+        {
+          "id": "dip-y",
+          "label": {
+            "en": "Y-glide",
+            "ko": "y 계열",
+            "zh": "y滑音"
+          },
+          "jamo": [
+            "ㅑ",
+            "ㅕ",
+            "ㅛ",
+            "ㅠ"
+          ]
+        }
+      ],
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Add y-glide diphthongs ㅑㅕㅛㅠ (세종 이중모음 1).",
+            "ko": "y 미끄러짐 이중모음 ㅑㅕㅛㅠ (세종 이중모음 1).",
+            "zh": "加 y 滑音双元音ㅑㅕㅛㅠ。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Think y + basic vowel. Extra stroke on the basic vowel shape.",
+            "ko": "y + 기본 모음. 기본 모음에 획 하나 더.",
+            "zh": "y+基本元音。基本形多一笔。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Map: ㅑ≈ya ←ㅏ, ㅕ≈yeo ←ㅓ, ㅛ≈yo ←ㅗ, ㅠ≈yu ←ㅜ. Say the base, then add the glide.",
+            "ko": "ㅑ≈야←ㅏ, ㅕ≈여←ㅓ, ㅛ≈요←ㅗ, ㅠ≈유←ㅜ. 기본 먼저 → 미끄러짐.",
+            "zh": "ㅑ≈ya←ㅏ等。先基本再滑。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "야",
+              "gloss": {
+                "en": "ya",
+                "ko": "야",
+                "zh": "야"
+              }
+            },
+            {
+              "ko": "여",
+              "gloss": {
+                "en": "yeo",
+                "ko": "여",
+                "zh": "여"
+              }
+            },
+            {
+              "ko": "요",
+              "gloss": {
+                "en": "yo",
+                "ko": "요",
+                "zh": "요"
+              }
+            },
+            {
+              "ko": "유",
+              "gloss": {
+                "en": "yu",
+                "ko": "유",
+                "zh": "유"
+              }
+            },
+            {
+              "ko": "야구",
+              "gloss": {
+                "en": "ya-gu (drill)",
+                "ko": "야구 (연습)",
+                "zh": "야구（练习）"
+              }
+            },
+            {
+              "ko": "우유",
+              "gloss": {
+                "en": "u-yu",
+                "ko": "우유",
+                "zh": "우유"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "ㅑ comes from which basic vowel?",
+            "ko": "ㅑ의 기본 모음은?",
+            "zh": "ㅑ来自哪个基本元音？"
+          },
+          "choices": [
+            "ㅓ",
+            "ㅏ",
+            "ㅗ",
+            "ㅜ"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㅑ ← ㅏ + y-glide.",
+            "ko": "ㅑ ← ㅏ + y.",
+            "zh": "ㅑ←ㅏ+y。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "ㅛ is closest to…",
+            "ko": "ㅛ에 가까운 것은?",
+            "zh": "ㅛ最接近？"
+          },
+          "choices": [
+            "야",
+            "요",
+            "와",
+            "으"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㅛ → 요.",
+            "ko": "ㅛ → 요.",
+            "zh": "ㅛ→요。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: match ㅑㅕㅛㅠ to ㅏㅓㅗㅜ.",
+            "ko": "체크포인트: ㅑㅕㅛㅠ ↔ ㅏㅓㅗㅜ 짝.",
+            "zh": "关卡：配对ㅑㅕㅛㅠ与ㅏㅓㅗㅜ。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Write 야 여 요 유, then invent two nonsense syllables with ㅛ.",
+            "ko": "야여요유 쓰고 ㅛ로 nonsense 음절 둘.",
+            "zh": "写야여요유，再用ㅛ造两个无音节。"
+          }
+        }
+      ],
+      "pathLabel": "07"
     },
     {
       "id": "hangul-08",
       "order": 8,
       "slug": "diphthong-2",
       "kind": "diphthong",
-      "title": { "en": "08 · Diphthongs 2", "ko": "08 · 이중모음 2", "zh": "08 · 双元音 2" },
-      "jamoPreview": ["ㅘ", "ㅝ", "ㅟ", "ㅢ"],
-      "groups": [{ "id": "dip-w", "jamo": ["ㅘ", "ㅝ", "ㅟ", "ㅢ"] }],
-      "status": "scaffold",
-      "modules": []
+      "title": {
+        "en": "08 · Diphthongs 2",
+        "ko": "08 · 이중모음 2",
+        "zh": "08 · 双元音 2"
+      },
+      "objective": {
+        "en": "Combo vowels ㅘㅝㅟㅢ (and friends later).",
+        "ko": "합쳐진 모음 ㅘㅝㅟㅢ.",
+        "zh": "组合元音ㅘㅝㅟㅢ。"
+      },
+      "jamoPreview": [
+        "ㅘ",
+        "ㅝ",
+        "ㅟ",
+        "ㅢ"
+      ],
+      "groups": [
+        {
+          "id": "dip-w",
+          "label": {
+            "en": "W / ui",
+            "ko": "w · ㅢ",
+            "zh": "w · ㅢ"
+          },
+          "jamo": [
+            "ㅘ",
+            "ㅝ",
+            "ㅟ",
+            "ㅢ"
+          ]
+        }
+      ],
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Build combo vowels ㅘㅝㅟㅢ from parts (세종 이중모음 2 core set).",
+            "ko": "합쳐진 모음 ㅘㅝㅟㅢ를 부품으로 (이중모음 2 핵심).",
+            "zh": "用零件组合ㅘㅝㅟㅢ（双元音2核心）。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Say the parts, then blend: ㅗ+ㅏ=ㅘ (wa), ㅜ+ㅓ=ㅝ, ㅜ+ㅣ=ㅟ, ㅡ+ㅣ=ㅢ.",
+            "ko": "나눠 말한 뒤 붙이기: ㅗ+ㅏ=ㅘ, ㅜ+ㅓ=ㅝ, ㅜ+ㅣ=ㅟ, ㅡ+ㅣ=ㅢ.",
+            "zh": "先分读再合：ㅗ+ㅏ=ㅘ等。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "ㅢ often sounds like “e” in fast speech (의사). Learn spelling parts first; polish listening later. (Extra ㅚ/ㅙ/ㅞ can wait.)",
+            "ko": "ㅢ는 빠르게 ‘에’처럼 들리기도(의사). 철자 부품 먼저. (ㅚ/ㅙ/ㅞ는 후속.)",
+            "zh": "ㅢ口语常近 e。先记零件。（ㅚ等稍后。）"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "와",
+              "gloss": {
+                "en": "wa",
+                "ko": "와",
+                "zh": "와"
+              }
+            },
+            {
+              "ko": "워",
+              "gloss": {
+                "en": "wo/weo",
+                "ko": "워",
+                "zh": "워"
+              }
+            },
+            {
+              "ko": "위",
+              "gloss": {
+                "en": "wi",
+                "ko": "위",
+                "zh": "위"
+              }
+            },
+            {
+              "ko": "의",
+              "gloss": {
+                "en": "ui (often e)",
+                "ko": "의 (자주 에)",
+                "zh": "의（常近에）"
+              }
+            },
+            {
+              "ko": "과일",
+              "gloss": {
+                "en": "gwa-il",
+                "ko": "과일",
+                "zh": "과일"
+              }
+            },
+            {
+              "ko": "의사",
+              "gloss": {
+                "en": "ui-sa / e-sa",
+                "ko": "의사",
+                "zh": "의사"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "ㅗ + ㅏ = ?",
+            "ko": "ㅗ+ㅏ=?",
+            "zh": "ㅗ+ㅏ=？"
+          },
+          "choices": [
+            "ㅝ",
+            "ㅘ",
+            "ㅟ",
+            "ㅢ"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㅘ = wa.",
+            "ko": "ㅘ=와.",
+            "zh": "ㅘ＝와。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Which uses ㅡ + ㅣ?",
+            "ko": "ㅡ+ㅣ인 것은?",
+            "zh": "哪个是ㅡ+ㅣ？"
+          },
+          "choices": [
+            "ㅘ",
+            "ㅝ",
+            "ㅟ",
+            "ㅢ"
+          ],
+          "answer": 3,
+          "tip": {
+            "en": "ㅢ.",
+            "ko": "ㅢ.",
+            "zh": "ㅢ。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: build 와 · 워 · 위 · 의 from parts out loud.",
+            "ko": "체크포인트: 와·워·위·의를 부품부터 소리 내어.",
+            "zh": "关卡：从零件读出와·워·위·의。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "For each of ㅘㅝㅟㅢ, write the two source vowels beside it.",
+            "ko": "ㅘㅝㅟㅢ 옆에 재료 모음 둘씩 쓰기.",
+            "zh": "在ㅘㅝㅟㅢ旁写出两个源元音。"
+          }
+        }
+      ],
+      "pathLabel": "08"
     },
     {
       "id": "hangul-09",
       "order": 9,
       "slug": "practice-3",
       "kind": "practice",
-      "title": { "en": "09 · Practice 3", "ko": "09 · 연습활용 3", "zh": "09 · 练习活用 3" },
-      "jamoPreview": [],
-      "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "title": {
+        "en": "09 · Practice 3",
+        "ko": "09 · 연습활용 3",
+        "zh": "09 · 练习活用 3"
+      },
+      "objective": {
+        "en": "Mix all vowels learned so far (basic + diphthongs).",
+        "ko": "지금까지 모음(기본+이중) 섞어 읽기.",
+        "zh": "混读已学全部元音（基本+双元音）。"
+      },
+      "jamoPreview": [
+        "야",
+        "와",
+        "위",
+        "의"
+      ],
+      "groups": [
+        {
+          "id": "mix-y",
+          "jamo": [
+            "ㅑ",
+            "ㅕ",
+            "ㅛ",
+            "ㅠ"
+          ]
+        },
+        {
+          "id": "mix-w",
+          "jamo": [
+            "ㅘ",
+            "ㅝ",
+            "ㅟ",
+            "ㅢ"
+          ]
+        }
+      ],
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Mix all vowels so far (basic + both diphthong sets).",
+            "ko": "지금까지 모음(기본+이중) 섞어 읽기.",
+            "zh": "混读已学全部元音（基本+双元音）。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Attach known consonants ㄱㄴㅁㅅㅎ to y- and w-vowels. Keep chunks short (skill-path bite size).",
+            "ko": "아는 자음 ㄱㄴㅁㅅㅎ를 y·w 모음에. 한입 크기.",
+            "zh": "把已会辅音接到 y/w 元音，保持一口大小。"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "야호",
+              "gloss": {
+                "en": "ya-ho",
+                "ko": "야호",
+                "zh": "야호"
+              }
+            },
+            {
+              "ko": "와요",
+              "gloss": {
+                "en": "wa-yo",
+                "ko": "와요",
+                "zh": "와요"
+              }
+            },
+            {
+              "ko": "위에",
+              "gloss": {
+                "en": "wi-e",
+                "ko": "위에",
+                "zh": "위에"
+              }
+            },
+            {
+              "ko": "의자",
+              "gloss": {
+                "en": "ui-ja",
+                "ko": "의자",
+                "zh": "의자"
+              }
+            },
+            {
+              "ko": "휴가",
+              "gloss": {
+                "en": "hyu-ga",
+                "ko": "휴가",
+                "zh": "휴가"
+              }
+            },
+            {
+              "ko": "과일",
+              "gloss": {
+                "en": "gwa-il",
+                "ko": "과일",
+                "zh": "과일"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "와요 uses which w-vowel?",
+            "ko": "「와요」의 w 모음은?",
+            "zh": "「와요」的 w 元音？"
+          },
+          "choices": [
+            "ㅝ",
+            "ㅘ",
+            "ㅟ",
+            "ㅢ"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "와 = ㅘ.",
+            "ko": "와=ㅘ.",
+            "zh": "와＝ㅘ。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Best drill length?",
+            "ko": "연습 길이는?",
+            "zh": "练习长度？"
+          },
+          "choices": [
+            {
+              "en": "Full paragraphs",
+              "ko": "긴 문단 전체",
+              "zh": "整段长文"
+            },
+            {
+              "en": "Short 2-syllable chunks",
+              "ko": "짧은 2음절 덩어리",
+              "zh": "短的两音节块"
+            },
+            {
+              "en": "Only romanization",
+              "ko": "로마자만",
+              "zh": "只用罗马字"
+            },
+            {
+              "en": "Skip diphthongs",
+              "ko": "이중모음 건너뛰기",
+              "zh": "跳过双元音"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Bite-size like a skill path step.",
+            "ko": "스킬 패스처럼 한입 크기.",
+            "zh": "像技能路径一口大小。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: invent three nonsense syllables using ㅛ or ㅘ.",
+            "ko": "체크포인트: ㅛ 또는 ㅘ로 nonsense 셋.",
+            "zh": "关卡：用ㅛ或ㅘ造三个无音节。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Read the example list twice: once slow, once normal.",
+            "ko": "예 목록 두 번: 느림 → 보통.",
+            "zh": "例句表读两遍：慢→常速。"
+          }
+        }
+      ],
+      "pathLabel": "09"
     },
     {
       "id": "hangul-10",
       "order": 10,
       "slug": "batchim-1",
       "kind": "batchim",
-      "title": { "en": "10 · Finals 1", "ko": "10 · 받침 1", "zh": "10 · 收音 1" },
-      "jamoPreview": [],
-      "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "title": {
+        "en": "10 · Finals 1",
+        "ko": "10 · 받침 1",
+        "zh": "10 · 收音 1"
+      },
+      "objective": {
+        "en": "Put a consonant under the vowel (simple finals).",
+        "ko": "모음 아래 자음 두기 — 쉬운 받침.",
+        "zh": "在元音下放辅音——简单收音。"
+      },
+      "jamoPreview": [
+        "ㄱ",
+        "ㄴ",
+        "ㄷ",
+        "ㄹ",
+        "ㅁ",
+        "ㅂ",
+        "ㅇ"
+      ],
+      "groups": [
+        {
+          "id": "bat-1",
+          "label": {
+            "en": "Common finals",
+            "ko": "자주 쓰는 받침",
+            "zh": "常用收音"
+          },
+          "jamo": [
+            "ㄱ",
+            "ㄴ",
+            "ㄷ",
+            "ㄹ",
+            "ㅁ",
+            "ㅂ",
+            "ㅇ"
+          ]
+        }
+      ],
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Spot 받침 position, then the 7 representative finals (ㄱㄴㄷㄹㅁㅂㅇ).",
+            "ko": "받침 자리 보기 → 7대표음(ㄱㄴㄷㄹㅁㅂㅇ).",
+            "zh": "先看收音位置，再学 7 代表音。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Research order: (1) see the bottom slot (2) learn 7 sounds (3) keep endings short/unreleased. Final ㅇ = ng — not silent!",
+            "ko": "연구 순서: (1) 아래 자리 (2) 7소리 (3) 끝소리 짧게·미방출. 종성 ㅇ=ng — 무음 아님!",
+            "zh": "研究顺序：(1)看底部 (2)七音 (3)尾音短促不爆破。韵尾ㅇ=ng！"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Start under 가 → 각 간 갈 감 갑 강. Feel stop vs nasal vs ng. Do not add an English “uh” after (밥 ≠ ba-buh).",
+            "ko": "가 아래 → 각 간 갈 감 갑 강. 막힘·비음·ng. 영어식 ‘어’ 덧붙이지 않기(밥 ≠ ba-buh).",
+            "zh": "가下→각간갈갑강。塞/鼻/ng。勿加英文 uh。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          },
+          "title": {
+            "en": "7 representative finals",
+            "ko": "7대표 받침",
+            "zh": "七代表收音"
+          },
+          "body": {
+            "en": "Beginner reading uses seven final sounds: ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ ㅇ. Keep them short/unreleased — no English “uh” after (밥 ≠ ba-buh). Final ㅇ is ng, never silent.",
+            "ko": "초급 읽기는 끝소리 일곱: ㄱㄴㄷㄹㅁㅂㅇ. 짧게·미방출 — 영어식 ‘어’ 금지(밥 ≠ ba-buh). 종성 ㅇ=ng(무음 아님).",
+            "zh": "初学尾音七个：ㄱㄴㄷㄹㅁㅂㅇ。短促不爆破——勿加英文 uh。韵尾ㅇ=ng。"
+          },
+          "examples": [
+            {
+              "ko": "밥",
+              "gloss": {
+                "en": "[ㅂ] stop, no puff",
+                "ko": "[ㅂ] 막힘·짧게",
+                "zh": "[ㅂ] 塞、短"
+              }
+            },
+            {
+              "ko": "강",
+              "gloss": {
+                "en": "[ㅇ]=ng",
+                "ko": "[ㅇ]=ng",
+                "zh": "[ㅇ]=ng"
+              }
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "각",
+              "gloss": {
+                "en": "gak · [ㄱ] final",
+                "ko": "각 · 끝 [ㄱ]",
+                "zh": "각 · 尾[ㄱ]"
+              }
+            },
+            {
+              "ko": "간",
+              "gloss": {
+                "en": "gan · [ㄴ]",
+                "ko": "간 · [ㄴ]",
+                "zh": "간 · [ㄴ]"
+              }
+            },
+            {
+              "ko": "갈",
+              "gloss": {
+                "en": "gal · [ㄹ]",
+                "ko": "갈 · [ㄹ]",
+                "zh": "갈 · [ㄹ]"
+              }
+            },
+            {
+              "ko": "감",
+              "gloss": {
+                "en": "gam · [ㅁ]",
+                "ko": "감 · [ㅁ]",
+                "zh": "감 · [ㅁ]"
+              }
+            },
+            {
+              "ko": "갑",
+              "gloss": {
+                "en": "gap · [ㅂ]",
+                "ko": "갑 · [ㅂ]",
+                "zh": "갑 · [ㅂ]"
+              }
+            },
+            {
+              "ko": "강",
+              "gloss": {
+                "en": "gang · [ㅇ]=ng",
+                "ko": "강 · [ㅇ]=ng",
+                "zh": "강 · [ㅇ]=ng"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Final ㅇ sounds like…",
+            "ko": "받침 ㅇ 소리는?",
+            "zh": "韵尾ㅇ读作？"
+          },
+          "choices": [
+            {
+              "en": "silent",
+              "ko": "소리 없음",
+              "zh": "不发音"
+            },
+            {
+              "en": "h",
+              "ko": "h",
+              "zh": "h"
+            },
+            {
+              "en": "ng",
+              "ko": "ng",
+              "zh": "ng"
+            },
+            {
+              "en": "same as initial ㅇ",
+              "ko": "초성 ㅇ과 같음",
+              "zh": "与声母ㅇ相同"
+            }
+          ],
+          "answer": 2,
+          "tip": {
+            "en": "Final ㅇ = ng.",
+            "ko": "종성 ㅇ=ng.",
+            "zh": "韵尾ㅇ＝ng。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "How many representative final sounds for beginners?",
+            "ko": "초급 받침 대표음 개수는?",
+            "zh": "初学收音代表音几个？"
+          },
+          "choices": [
+            "2",
+            "7",
+            "24",
+            {
+              "en": "Only ㅇ",
+              "ko": "ㅇ만",
+              "zh": "只有ㅇ"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Seven: ㄱㄴㄷㄹㅁㅂㅇ.",
+            "ko": "일곱: ㄱㄴㄷㄹㅁㅂㅇ.",
+            "zh": "七个：ㄱㄴㄷㄹㅁㅂㅇ。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: change 가 by adding ㄴ · ㅁ · ㅇ and read each.",
+            "ko": "체크포인트: 가에 ㄴ·ㅁ·ㅇ 넣어 각각 읽기.",
+            "zh": "关卡：가下加ㄴ·ㅁ·ㅇ并朗读。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Write 산 · 문 · 밥; underline the final; say each once without a trailing “uh”.",
+            "ko": "산·문·밥 쓰고 받침 밑줄. ‘어’ 없이 한 번씩.",
+            "zh": "写산·문·밥并划收音；尾不加 uh。"
+          }
+        }
+      ],
+      "pathLabel": "10"
     },
     {
       "id": "hangul-11",
       "order": 11,
       "slug": "batchim-2",
       "kind": "batchim",
-      "title": { "en": "11 · Finals 2", "ko": "11 · 받침 2", "zh": "11 · 收音 2" },
-      "jamoPreview": [],
-      "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "title": {
+        "en": "11 · Finals 2",
+        "ko": "11 · 받침 2",
+        "zh": "11 · 收音 2"
+      },
+      "objective": {
+        "en": "More finals and sound shortcuts (ㅅ/ㅈ/ㅊ → t-like, etc.).",
+        "ko": "더 많은 받침과 소리 줄임(ㅅ/ㅈ/ㅊ → ㄷ 계열 등).",
+        "zh": "更多收音与读音简化（ㅅ/ㅈ/ㅊ近ㄷ等）。"
+      },
+      "jamoPreview": [
+        "ㅅ",
+        "ㅈ",
+        "ㅊ",
+        "ㅋ",
+        "ㅌ",
+        "ㅍ",
+        "ㅎ"
+      ],
+      "groups": [
+        {
+          "id": "bat-2",
+          "label": {
+            "en": "More finals",
+            "ko": "받침 더",
+            "zh": "更多收音"
+          },
+          "jamo": [
+            "ㅅ",
+            "ㅈ",
+            "ㅊ",
+            "ㅋ",
+            "ㅌ",
+            "ㅍ",
+            "ㅎ"
+          ]
+        }
+      ],
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "More finals: several letters collapse to few end-sounds (esp. ㄷ-family).",
+            "ko": "받침 더 — 여러 글자가 몇 끝소리로 모임(특히 ㄷ 계열).",
+            "zh": "更多收音：多字母归并到少数尾音（尤其ㄷ系）。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "After the 7 reps: at syllable end, ㅅ/ㅆ/ㅈ/ㅊ/ㅌ/(ㅎ) often sound ㄷ-like. Spelling stays; sound shortens.",
+            "ko": "7대표 다음: 음절 끝 ㅅ/ㅆ/ㅈ/ㅊ/ㅌ/(ㅎ)는 ㄷ처럼. 철자 그대로, 소리만 짧아짐.",
+            "zh": "七音之后：音节末ㅅ等常近ㄷ。写法不变，音变短。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Quick map (reading aid): ㅋ/ㄲ → [ㄱ] feel · ㅍ → [ㅂ] · ㅅㅈㅊ… → [ㄷ]. Refine with listening later — don’t freeze on new shapes.",
+            "ko": "읽기 지도: ㅋ/ㄲ → [ㄱ] · ㅍ → [ㅂ] · ㅅㅈㅊ… → [ㄷ]. 듣기는 나중에 — 새 모양에 멈추지 않기.",
+            "zh": "读音提示：ㅋ/ㄲ→[ㄱ] · ㅍ→[ㅂ] · ㅅㅈㅊ→[ㄷ]。听力稍后。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          },
+          "title": {
+            "en": "Final sound shortcuts",
+            "ko": "끝소리 줄임",
+            "zh": "尾音归并"
+          },
+          "body": {
+            "en": "Many letters share a final sound when alone: ㅅ/ㅆ/ㅈ/ㅊ/ㅌ… often feel like [ㄷ]; ㅋ/ㄲ → [ㄱ]; ㅍ → [ㅂ]. Eyes first, then listen — don’t freeze on every new shape.",
+            "ko": "혼자 있을 때 여러 글자가 같은 끝소리: ㅅㅆㅈㅊㅌ… ≈ [ㄷ] · ㅋㄲ→[ㄱ] · ㅍ→[ㅂ]. 눈 먼저, 듣기는 나중.",
+            "zh": "单独时多字同尾音：ㅅㅆㅈㅊ…≈[ㄷ]；ㅋㄲ→[ㄱ]；ㅍ→[ㅂ]。先眼后耳。"
+          },
+          "examples": [
+            {
+              "ko": "옷",
+              "gloss": {
+                "en": "reads like [ㄷ] end",
+                "ko": "끝 [ㄷ] 느낌",
+                "zh": "尾近[ㄷ]"
+              }
+            },
+            {
+              "ko": "밖",
+              "gloss": {
+                "en": "ㄲ → [ㄱ] feel",
+                "ko": "ㄲ→[ㄱ]",
+                "zh": "ㄲ→[ㄱ]"
+              }
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "갓",
+              "gloss": {
+                "en": "gat-like end ≈ [ㄷ]",
+                "ko": "갓 (끝≈ㄷ)",
+                "zh": "갓（尾近ㄷ）"
+              }
+            },
+            {
+              "ko": "낮",
+              "gloss": {
+                "en": "nat-like ≈ [ㄷ]",
+                "ko": "낮",
+                "zh": "낮"
+              }
+            },
+            {
+              "ko": "꽃",
+              "gloss": {
+                "en": "kkot-like ≈ [ㄷ]",
+                "ko": "꽃",
+                "zh": "꽃"
+              }
+            },
+            {
+              "ko": "부엌",
+              "gloss": {
+                "en": "bu-eok · [ㄱ] family",
+                "ko": "부엌 · [ㄱ] 계열",
+                "zh": "부엌 · [ㄱ]系"
+              }
+            },
+            {
+              "ko": "앞",
+              "gloss": {
+                "en": "ap · [ㅂ] family",
+                "ko": "앞 · [ㅂ] 계열",
+                "zh": "앞 · [ㅂ]系"
+              }
+            },
+            {
+              "ko": "빛",
+              "gloss": {
+                "en": "bit-like ≈ [ㄷ]",
+                "ko": "빛",
+                "zh": "빛"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Why learn end-sound shortcuts now?",
+            "ko": "지금 끝소리 줄임을 배우는 이유?",
+            "zh": "为何现在学尾音简化？"
+          },
+          "choices": [
+            {
+              "en": "To ignore spelling",
+              "ko": "철자를 무시하려고",
+              "zh": "为了忽略拼写"
+            },
+            {
+              "en": "So reading doesn’t freeze on new finals",
+              "ko": "새 받침에서 읽기가 멈추지 않게",
+              "zh": "读到新收音时不卡壳"
+            },
+            {
+              "en": "To skip vowels",
+              "ko": "모음을 건너뛰려고",
+              "zh": "为了跳过元音"
+            },
+            {
+              "en": "For TOPIK essay only",
+              "ko": "TOPIK 작문만을 위해",
+              "zh": "只为TOPIK作文"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Recognize the pattern; polish later.",
+            "ko": "패턴만 알고 정교함은 나중에.",
+            "zh": "先认模式，精修稍后。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "앞 ends with which letter (spelling)?",
+            "ko": "「앞」받침 글자는?",
+            "zh": "「앞」收音字母？"
+          },
+          "choices": [
+            "ㅂ",
+            "ㅍ",
+            "ㅁ",
+            "ㅇ"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Spelling ㅍ; end-sound near [ㅂ].",
+            "ko": "철자 ㅍ; 끝소리는 [ㅂ] 쪽.",
+            "zh": "拼写ㅍ；尾音近[ㅂ]。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: read 갓 · 낮 · 앞 slowly without English letter names.",
+            "ko": "체크포인트: 갓·낮·앞을 영어 알파벳 이름 없이.",
+            "zh": "关卡：慢读갓·낮·앞，不用英文字母名。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Copy three example words; mark C–V–C in each block.",
+            "ko": "예에서 단어 셋 베끼고 각 블록에 C–V–C 표시.",
+            "zh": "从例子抄三词，标出每块 C–V–C。"
+          }
+        }
+      ],
+      "pathLabel": "11"
     },
     {
       "id": "hangul-12",
       "order": 12,
       "slug": "practice-4",
       "kind": "practice",
-      "title": { "en": "12 · Practice 4", "ko": "12 · 연습활용 4", "zh": "12 · 练习活用 4" },
-      "jamoPreview": [],
+      "title": {
+        "en": "12 · Practice 4",
+        "ko": "12 · 연습활용 4",
+        "zh": "12 · 练习活用 4"
+      },
+      "objective": {
+        "en": "CVC reading drill with finals from 10–11.",
+        "ko": "10–11 받침으로 CVC 읽기 연습.",
+        "zh": "用10–11收音做CVC朗读。"
+      },
+      "jamoPreview": [
+        "산",
+        "물",
+        "밥",
+        "옷"
+      ],
       "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "CVC reading drill with finals from lessons 10–11.",
+            "ko": "10–11 받침으로 CVC 읽기.",
+            "zh": "用10–11收音做CVC朗读。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Build consonant + vowel + final. Pause between syllables if needed — then glue. Original short nouns only.",
+            "ko": "자음+모음+받침. 필요하면 음절 사이 쉬고 붙이기. 원작 짧은 명사.",
+            "zh": "辅音+元音+收音。需要就停顿再粘。原创短名词。"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "산",
+              "gloss": {
+                "en": "san · mountain",
+                "ko": "산 · mountain",
+                "zh": "산 · 山"
+              }
+            },
+            {
+              "ko": "물",
+              "gloss": {
+                "en": "mul · water",
+                "ko": "물 · water",
+                "zh": "물 · 水"
+              }
+            },
+            {
+              "ko": "밥",
+              "gloss": {
+                "en": "bap · meal (no trailing uh)",
+                "ko": "밥 · meal (‘어’ 없이)",
+                "zh": "밥 · 饭（无uh）"
+              }
+            },
+            {
+              "ko": "옷",
+              "gloss": {
+                "en": "ot · clothes ≈ [ㄷ] end",
+                "ko": "옷 · clothes (끝≈ㄷ)",
+                "zh": "옷 · 衣服（尾近ㄷ）"
+              }
+            },
+            {
+              "ko": "한국",
+              "gloss": {
+                "en": "han-guk",
+                "ko": "한국",
+                "zh": "한국"
+              }
+            },
+            {
+              "ko": "친구",
+              "gloss": {
+                "en": "chin-gu",
+                "ko": "친구",
+                "zh": "친구"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "물 has which final?",
+            "ko": "「물」받침은?",
+            "zh": "「물」收音？"
+          },
+          "choices": [
+            "ㅁ",
+            "ㄹ",
+            "ㅂ",
+            "ㅇ"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㄹ.",
+            "ko": "ㄹ.",
+            "zh": "ㄹ。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "한국 is how many blocks?",
+            "ko": "「한국」블록 수?",
+            "zh": "「한국」几块？"
+          },
+          "choices": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "한 + 국.",
+            "ko": "한+국.",
+            "zh": "한+국。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: write three CVC syllables you can read without help.",
+            "ko": "체크포인트: 혼자 읽을 CVC 셋 쓰기.",
+            "zh": "关卡：写出三个自己能读的CVC。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Mini list: place · food · thing — one Hangul word each.",
+            "ko": "미니 목록: 장소·음식·물건 한글 단어 하나씩.",
+            "zh": "迷你表：地点·食物·物品各一词。"
+          }
+        }
+      ],
+      "pathLabel": "12"
     },
     {
       "id": "hangul-13",
       "order": 13,
       "slug": "double-batchim",
       "kind": "batchim",
-      "title": { "en": "13 · Double finals", "ko": "13 · 겹받침", "zh": "13 · 双收音" },
-      "jamoPreview": [],
-      "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "title": {
+        "en": "13 · Double finals",
+        "ko": "13 · 겹받침",
+        "zh": "13 · 双收音"
+      },
+      "objective": {
+        "en": "See double finals; usually only one sound is heard.",
+        "ko": "겹받침 보기 — 보통 소리 하나만 들림.",
+        "zh": "认识双收音——通常只听到一个音。"
+      },
+      "jamoPreview": [
+        "ㄵ",
+        "ㅄ",
+        "ㄺ"
+      ],
+      "groups": [
+        {
+          "id": "dbl-common",
+          "label": {
+            "en": "Core doubles (앉·없·읽)",
+            "ko": "핵심 겹받침 (앉·없·읽)",
+            "zh": "核心双收音（앉·없·읽）"
+          },
+          "jamo": [
+            "ㄵ",
+            "ㅄ",
+            "ㄺ"
+          ]
+        }
+      ],
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "See double finals (겹받침): two letters under one vowel; usually one sound when alone.",
+            "ko": "겹받침: 모음 아래 둘 — 단독일 때 소리 하나인 경우가 많음.",
+            "zh": "双收音：一元音下两字母——单独时常只听一个音。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Two letters under one vowel. Before a vowel, the second may move (연음 → next lesson). Don’t memorize every cluster rule today.",
+            "ko": "모음 아래 둘. 다음이 모음이면 뒤 글자가 넘어가기도(연음→다음). 오늘 전 규칙 암기 금지.",
+            "zh": "一元音下两字母。后接元音可连（下一课）。今天不背全规则。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Spot the cluster first (ㅄ in 없다, ㄺ in 읽다, ㄵ in 앉다). Sound shortcuts come after eyes can see two letters.",
+            "ko": "먼저 묶음 찾기(없다의 ㅄ, 읽다의 ㄺ, 앉다의 ㄵ). 소리 줄임은 눈이 둘을 본 다음.",
+            "zh": "先找双字（없다的ㅄ等）。音变在眼睛能看见两个之后。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          },
+          "title": {
+            "en": "Double finals = two letters",
+            "ko": "겹받침 = 글자 둘",
+            "zh": "双收音=两字"
+          },
+          "body": {
+            "en": "Clusters (ㅄ, ㄺ, ㄵ…) write two consonants under the vowel. Alone, you usually hear one; before a vowel, liaison can move a sound. Spot the cluster before memorizing every rule.",
+            "ko": "ㅄ·ㄺ·ㄵ 등은 모음 아래 자음 둘. 단독은 대개 소리 하나 · 다음이 모음이면 연음 가능. 규칙 암기 전에 묶음부터 찾기.",
+            "zh": "ㅄ/ㄺ等在元音下写两辅音。单独常听一个；后接元音可连音。先看见双字。"
+          },
+          "examples": [
+            {
+              "ko": "없다",
+              "gloss": {
+                "en": "ㅄ cluster",
+                "ko": "ㅄ 묶음",
+                "zh": "ㅄ 双字"
+              }
+            },
+            {
+              "ko": "읽다",
+              "gloss": {
+                "en": "ㄺ cluster",
+                "ko": "ㄺ 묶음",
+                "zh": "ㄺ 双字"
+              }
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "앉다",
+              "gloss": {
+                "en": "an-da feel (앉·)",
+                "ko": "앉다",
+                "zh": "앉다"
+              }
+            },
+            {
+              "ko": "없다",
+              "gloss": {
+                "en": "eop-da · cluster ㅄ",
+                "ko": "없다 · 겹받침 ㅄ",
+                "zh": "없다 · 双收音ㅄ"
+              }
+            },
+            {
+              "ko": "읽다",
+              "gloss": {
+                "en": "ik-da feel · ㄺ",
+                "ko": "읽다 · ㄺ",
+                "zh": "읽다 · ㄺ"
+              }
+            },
+            {
+              "ko": "흙",
+              "gloss": {
+                "en": "heuk",
+                "ko": "흙",
+                "zh": "흙"
+              }
+            },
+            {
+              "ko": "많다",
+              "gloss": {
+                "en": "man-ta feel",
+                "ko": "많다",
+                "zh": "많다"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "겹받침 means…",
+            "ko": "겹받침은?",
+            "zh": "겹받침是？"
+          },
+          "choices": [
+            {
+              "en": "Two vowels",
+              "ko": "모음 둘",
+              "zh": "两个元音"
+            },
+            {
+              "en": "Two finals under one vowel",
+              "ko": "한 모음 아래 받침 둘",
+              "zh": "一个元音下两个收音"
+            },
+            {
+              "en": "No final",
+              "ko": "받침 없음",
+              "zh": "无收音"
+            },
+            {
+              "en": "Only ㅇ",
+              "ko": "ㅇ만",
+              "zh": "只有ㅇ"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Double final cluster.",
+            "ko": "받침이 둘.",
+            "zh": "双收音。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "「없다」 double final cluster?",
+            "ko": "「없다」겹받침은?",
+            "zh": "「없다」双收音？"
+          },
+          "choices": [
+            "ㄴㅈ",
+            "ㅂㅅ",
+            "ㄹㄱ",
+            "ㄴㅎ"
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㅄ.",
+            "ko": "ㅄ.",
+            "zh": "ㅄ。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: find the double final in 없다 and 읽다.",
+            "ko": "체크포인트: 없다·읽다에서 겹받침 찾기.",
+            "zh": "关卡：在없다、읽다找双收音。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Copy 없다 · 읽다 · 앉다 and underline the two final letters.",
+            "ko": "없다·읽다·앉다 베끼고 받침 두 글자에 밑줄.",
+            "zh": "抄없다·읽다·앉다并给两收音字母划线。"
+          }
+        }
+      ],
+      "pathLabel": "13"
     },
     {
       "id": "hangul-14",
       "order": 14,
       "slug": "liaison",
       "kind": "liaison",
-      "title": { "en": "14 · Liaison", "ko": "14 · 연음", "zh": "14 · 连音" },
-      "jamoPreview": [],
+      "title": {
+        "en": "14 · Liaison",
+        "ko": "14 · 연음",
+        "zh": "14 · 连音"
+      },
+      "objective": {
+        "en": "When the next syllable starts with ㅇ, the final often moves over.",
+        "ko": "다음 음절이 ㅇ으로 시작하면 받침이 넘어가는 경우가 많음.",
+        "zh": "下一音节以ㅇ开头时，收音常挪过去。"
+      },
+      "jamoPreview": [
+        "한국어",
+        "음악",
+        "있어요"
+      ],
       "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Liaison (연음): when the next block starts with silent ㅇ, the final often moves over.",
+            "ko": "연음: 다음이 초성 ㅇ이면 받침이 자주 넘어감.",
+            "zh": "连音：下一块声母ㅇ时收音常前移。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Teach liaison before heavier sound-change rules. Spelling stays; speaking links. 한국어 ≈ han-gu-geo.",
+            "ko": "무거운 음운 규칙보다 연음을 먼저. 철자 그대로, 말할 때 연결. 한국어 ≈ 한구거.",
+            "zh": "先连音再学更重音变。写法不变。한국어≈한구거。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Empty ㅇ seat invites the previous final. Practice slow (3 chunks) → normal. Advanced nasalization can wait.",
+            "ko": "빈 ㅇ 자리가 앞 받침을 받음. 느림(세 덩어리) → 보통. 비음화 등은 후속.",
+            "zh": "空ㅇ位承接收音。慢拆→常速。鼻音化等稍后。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          },
+          "title": {
+            "en": "Liaison into empty ㅇ",
+            "ko": "빈 ㅇ으로 연음",
+            "zh": "空ㅇ连音"
+          },
+          "body": {
+            "en": "When the next syllable starts with silent ㅇ, the previous final often moves over (꽃이 → 꼬치 feel). Practice slow chunks → normal. Advanced nasalization can wait.",
+            "ko": "다음 초성이 무음 ㅇ이면 앞 받침이 넘어가는 경우가 많음(꽃이). 느림(세 덩어리)→보통. 비음화는 후속.",
+            "zh": "下一音节静音ㅇ时，前收音常移过去（꽃이）。慢拆→常速。鼻音化稍后。"
+          },
+          "examples": [
+            {
+              "ko": "한국어",
+              "gloss": {
+                "en": "받침 moves before 어",
+                "ko": "국어 앞 연음",
+                "zh": "收音前移"
+              }
+            },
+            {
+              "ko": "있어요",
+              "gloss": {
+                "en": "ㅆ + 어 feel",
+                "ko": "ㅆ+어 느낌",
+                "zh": "ㅆ+어"
+              }
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "한국어",
+              "gloss": {
+                "en": "≈ han-gu-geo",
+                "ko": "≈ 한구거",
+                "zh": "≈ 한구거"
+              }
+            },
+            {
+              "ko": "음악",
+              "gloss": {
+                "en": "eu-mak link",
+                "ko": "음악 연음",
+                "zh": "音乐连读"
+              }
+            },
+            {
+              "ko": "있어요",
+              "gloss": {
+                "en": "≈ i-sseo-yo",
+                "ko": "≈ 이써요",
+                "zh": "≈ 이써요"
+              }
+            },
+            {
+              "ko": "꽃이",
+              "gloss": {
+                "en": "≈ kko-chi",
+                "ko": "≈ 꼬치",
+                "zh": "≈ 꼬치"
+              }
+            },
+            {
+              "ko": "옷이",
+              "gloss": {
+                "en": "≈ o-si",
+                "ko": "≈ 오시",
+                "zh": "≈ 오시"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Liaison often happens when next initial is…",
+            "ko": "연음이 자주 되는 다음 초성은?",
+            "zh": "连音常发生在下一声母为？"
+          },
+          "choices": [
+            "ㄱ",
+            {
+              "en": "ㅇ (silent seat)",
+              "ko": "ㅇ (자리만, 소리 없음)",
+              "zh": "ㅇ（占位，不发音）"
+            },
+            {
+              "en": "ㅎ only",
+              "ko": "ㅎ만",
+              "zh": "只有ㅎ"
+            },
+            {
+              "en": "Never",
+              "ko": "절대 안 됨",
+              "zh": "从不"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Empty ㅇ seat invites the final.",
+            "ko": "빈 ㅇ 자리가 받침을 받음.",
+            "zh": "空ㅇ位承接收音。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "한국어 spoken linking moves which sound?",
+            "ko": "「한국어」연음으로 움직이는 소리?",
+            "zh": "「한국어」连音移动的音？"
+          },
+          "choices": [
+            "ㅎ",
+            {
+              "en": "ㄱ from 국",
+              "ko": "국의 ㄱ",
+              "zh": "국里的ㄱ"
+            },
+            {
+              "en": "Only ㅏ",
+              "ko": "ㅏ만",
+              "zh": "只有ㅏ"
+            },
+            {
+              "en": "Nothing",
+              "ko": "없음",
+              "zh": "没有"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "ㄱ moves toward the next ㅇ.",
+            "ko": "ㄱ이 다음 ㅇ 쪽으로.",
+            "zh": "ㄱ移向下一ㅇ。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: say 한국어 slow (3 parts) then normal speed.",
+            "ko": "체크포인트: 한국어 천천히 세 덩어리 → 보통.",
+            "zh": "关卡：한국어先慢拆三截再常速。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Take 꽃이 and 있어요: write spelling, then write a linked reading aid.",
+            "ko": "꽃이·있어요: 철자 쓰고 연음 읽기 도우미 적기.",
+            "zh": "꽃이·있어요：写拼法，再写连读提示。"
+          }
+        }
+      ],
+      "pathLabel": "14"
     },
     {
       "id": "hangul-15",
       "order": 15,
       "slug": "practice-5",
       "kind": "practice",
-      "title": { "en": "15 · Practice 5", "ko": "15 · 연습활용 5", "zh": "15 · 练习活用 5" },
-      "jamoPreview": [],
+      "title": {
+        "en": "15 · Practice 5",
+        "ko": "15 · 연습활용 5",
+        "zh": "15 · 练习活用 5"
+      },
+      "objective": {
+        "en": "Full Hangul warm-up before survival phrases.",
+        "ko": "생존 표현 전 한글 종합 워밍업.",
+        "zh": "进入生存表达前的综合热身。"
+      },
+      "jamoPreview": [
+        "읽어요",
+        "없어요",
+        "한국어"
+      ],
       "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Full Hangul warm-up before survival phrases.",
+            "ko": "생존 표현 전 한글 종합 워밍업.",
+            "zh": "生存表达前的综合热身。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Pull vowels, consonants, finals, liaison into short real-looking words — still decode-first.",
+            "ko": "모음·자음·받침·연음을 짧은 실전 느낌 단어로 — 여전히 글자 먼저.",
+            "zh": "把元音辅音收音连音收进短词——仍先解码。"
+          }
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "읽어요",
+              "gloss": {
+                "en": "il-geo-yo (겹받침+연음 맛)",
+                "ko": "읽어요",
+                "zh": "읽어요"
+              }
+            },
+            {
+              "ko": "없어요",
+              "gloss": {
+                "en": "eop-seo-yo",
+                "ko": "없어요",
+                "zh": "없어요"
+              }
+            },
+            {
+              "ko": "좋아요",
+              "gloss": {
+                "en": "jo-a-yo (ㅎ weaken possible)",
+                "ko": "좋아요 (ㅎ 약화 가능)",
+                "zh": "좋아요"
+              }
+            },
+            {
+              "ko": "학교",
+              "gloss": {
+                "en": "hak-gyo",
+                "ko": "학교",
+                "zh": "학교"
+              }
+            },
+            {
+              "ko": "안녕하세요",
+              "gloss": {
+                "en": "preview toward 표현 1",
+                "ko": "안녕하세요 (표현 맛보기)",
+                "zh": "안녕하세요（预览）"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "좋아요 may show liaison/weakening on which boundary?",
+            "ko": "「좋아요」연음·약화 경계는?",
+            "zh": "「좋아요」连音/弱化边界？"
+          },
+          "choices": [
+            {
+              "en": "조 / 아요 → 조아요 feel",
+              "ko": "조 / 아요 → 조아요 느낌",
+              "zh": "조 / 아요 → 조아요感"
+            },
+            {
+              "en": "Only roman letters",
+              "ko": "로마 글자만",
+              "zh": "只有罗马字母"
+            },
+            {
+              "en": "No vowels",
+              "ko": "모음 없음",
+              "zh": "没有元音"
+            },
+            {
+              "en": "Always silent",
+              "ko": "항상 무음",
+              "zh": "总是不发音"
+            }
+          ],
+          "answer": 0,
+          "tip": {
+            "en": "ㅎ can weaken; listen for smooth jo-a-yo.",
+            "ko": "ㅎ가 약해지며 조아요처럼.",
+            "zh": "ㅎ弱化，听成조아요。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "This unit’s job?",
+            "ko": "이 단원 역할?",
+            "zh": "本课作用？"
+          },
+          "choices": [
+            {
+              "en": "New alphabet",
+              "ko": "새 알파벳",
+              "zh": "新字母表"
+            },
+            {
+              "en": "Warm-up mix before phrases",
+              "ko": "표현 전 워밍업 섞기",
+              "zh": "短语前的热身混合"
+            },
+            {
+              "en": "TOPIK II essay",
+              "ko": "TOPIK II 작문",
+              "zh": "TOPIK II作文"
+            },
+            {
+              "en": "Skip reading",
+              "ko": "읽기 건너뛰기",
+              "zh": "跳过阅读"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Practice 5 = mix before survival lines.",
+            "ko": "연습활용 5=표현 전 섞기.",
+            "zh": "练习5＝表达前混合。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: pick one hard word and write it three times while saying it.",
+            "ko": "체크포인트: 어려운 단어 하나 쓰며 세 번.",
+            "zh": "关卡：选难词边写边说三遍。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "60-second loop: 읽어요 · 없어요 · 학교 · 좋아요.",
+            "ko": "60초 루프: 읽어요 · 없어요 · 학교 · 좋아요.",
+            "zh": "60秒循环：읽어요 · 없어요 · 학교 · 좋아요。"
+          }
+        }
+      ],
+      "pathLabel": "15"
     },
     {
       "id": "hangul-16",
       "order": 16,
       "slug": "survival-1",
       "kind": "survival",
-      "title": { "en": "16 · Survival phrases 1", "ko": "16 · 표현 1", "zh": "16 · 生存表达 1" },
-      "jamoPreview": [],
+      "title": {
+        "en": "16 · Survival phrases 1",
+        "ko": "16 · 표현 1",
+        "zh": "16 · 生存表达 1"
+      },
+      "objective": {
+        "en": "Read three polite survival lines with Hangul you know.",
+        "ko": "아는 한글로 예의 있는 생존 문장 세 줄 읽기.",
+        "zh": "用已会韩文读三句礼貌生存句。"
+      },
+      "jamoPreview": [
+        "안녕하세요",
+        "감사합니다",
+        "죄송합니다"
+      ],
       "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Read polite survival lines with Hangul you know (jabi. original — not Sejong text).",
+            "ko": "아는 한글로 예의 있는 생존 문장 (jabi. 원작 — 세종 문구 아님).",
+            "zh": "用已会韩文读礼貌生存句（jabi.原创，非世宗原文）。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Expression section role only: greeting · thanks · apology. Decode blocks first, then meaning.",
+            "ko": "표현 편 역할만: 인사 · 감사 · 사과. 블록 먼저 → 뜻.",
+            "zh": "仅对齐表达篇角色：问候·感谢·道歉。先解码再意思。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Pattern pack: polite -습니다 / -요 family feel. Classroom tone — still a Hangul reading drill.",
+            "ko": "패턴: 존댓말 -습니다/-요 느낌. 교실 톤 — 여전히 한글 읽기 드릴.",
+            "zh": "句型：敬体 -습니다/-요。课堂语气——仍是韩文朗读。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          },
+          "title": {
+            "en": "Polite ending taste",
+            "ko": "존댓말 어미 맛보기",
+            "zh": "敬体语尾初尝"
+          },
+          "body": {
+            "en": "Survival lines often end in -요 / -습니다 family. Here the goal is still Hangul decoding — Basics track deepens conversation grammar.",
+            "ko": "생존 문장은 자주 -요/-습니다 계열로 끝남. 여기는 한글 디코드가 목표 — 대화 문법은 기초 수업.",
+            "zh": "生存句常以-요/-습니다收尾。这里仍是识字——会话语法在基础课。"
+          },
+          "examples": [
+            {
+              "ko": "감사합니다",
+              "gloss": {
+                "en": "formal polite feel",
+                "ko": "격식 공손",
+                "zh": "正式敬体"
+              }
+            },
+            {
+              "ko": "안녕하세요",
+              "gloss": {
+                "en": "-요 polite",
+                "ko": "-요 공손",
+                "zh": "-요敬体"
+              }
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "안녕하세요",
+              "gloss": {
+                "en": "Hello (polite)",
+                "ko": "안녕하세요",
+                "zh": "你好（敬体）"
+              }
+            },
+            {
+              "ko": "감사합니다",
+              "gloss": {
+                "en": "Thank you",
+                "ko": "감사합니다",
+                "zh": "谢谢"
+              }
+            },
+            {
+              "ko": "죄송합니다",
+              "gloss": {
+                "en": "I’m sorry",
+                "ko": "죄송합니다",
+                "zh": "对不起"
+              }
+            },
+            {
+              "ko": "만나서 반가워요",
+              "gloss": {
+                "en": "Nice to meet you",
+                "ko": "만나서 반가워요",
+                "zh": "很高兴认识你"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "Best order when learning a line?",
+            "ko": "문장 학습 순서는?",
+            "zh": "学一句的最佳顺序？"
+          },
+          "choices": [
+            {
+              "en": "English first only",
+              "ko": "영어만 먼저",
+              "zh": "只先看英语"
+            },
+            {
+              "en": "Sound out Hangul blocks → meaning",
+              "ko": "한글 블록 소리 내기 → 뜻",
+              "zh": "读出韩文块 → 含义"
+            },
+            {
+              "en": "Skip Hangul",
+              "ko": "한글 건너뛰기",
+              "zh": "跳过韩文"
+            },
+            {
+              "en": "Memorize roman only",
+              "ko": "로마자만 외우기",
+              "zh": "只背罗马字"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Letters first keeps the Hangul track honest.",
+            "ko": "글자 먼저가 한글 트랙의 약속.",
+            "zh": "先字母才符合韩文轨。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "안녕하세요 is mainly used for…",
+            "ko": "「안녕하세요」주요 용도?",
+            "zh": "「안녕하세요」主要用于？"
+          },
+          "choices": [
+            {
+              "en": "Ordering coffee size",
+              "ko": "커피 사이즈 주문",
+              "zh": "点咖啡杯型"
+            },
+            {
+              "en": "Polite hello",
+              "ko": "공손한 인사",
+              "zh": "礼貌问候"
+            },
+            {
+              "en": "Writing Q54",
+              "ko": "쓰기 54번",
+              "zh": "写作第54题"
+            },
+            {
+              "en": "Batchim only",
+              "ko": "받침만",
+              "zh": "只有收音"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Polite greeting.",
+            "ko": "예의 있는 인사.",
+            "zh": "礼貌问候。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: cover glosses; read only Hangul twice.",
+            "ko": "체크포인트: 뜻 가리고 한글만 두 번.",
+            "zh": "关卡：遮释义只读韩文两遍。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Pick one line to say aloud once a day this week.",
+            "ko": "이번 주 매일 한 번 소리 낼 문장 하나.",
+            "zh": "选一句本周每天大声说一次。"
+          }
+        }
+      ],
+      "pathLabel": "16"
     },
     {
       "id": "hangul-17",
       "order": 17,
       "slug": "survival-2",
       "kind": "survival",
-      "title": { "en": "17 · Survival phrases 2", "ko": "17 · 표현 2", "zh": "17 · 生存表达 2" },
-      "jamoPreview": [],
+      "title": {
+        "en": "17 · Survival phrases 2",
+        "ko": "17 · 표현 2",
+        "zh": "17 · 生存表达 2"
+      },
+      "objective": {
+        "en": "Ask for help / place / price in Hangul.",
+        "ko": "도움·장소·가격을 한글로 묻기.",
+        "zh": "用韩文问帮忙、地点、价钱。"
+      },
+      "jamoPreview": [
+        "어디예요?",
+        "얼마예요?",
+        "도와 주세요"
+      ],
       "groups": [],
-      "status": "scaffold",
-      "modules": []
+      "status": "pilot",
+      "modules": [
+        {
+          "type": "objective",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Ask for help / place / price in Hangul (jabi. original survival set 2).",
+            "ko": "도움·장소·가격을 한글로 묻기 (jabi. 원작 표현 2).",
+            "zh": "用韩文问帮忙、地点、价钱（原创表达2）。"
+          }
+        },
+        {
+          "type": "intro",
+          "status": "ready",
+          "step": "intro",
+          "body": {
+            "en": "Still decode first. Liaison may appear (어디예요). Question endings: -예요/-이에요 · -세요 as listening taste only.",
+            "ko": "여전히 글자 먼저. 연음 가능(어디예요). 물음 어미 -예요/-이에요 · -세요는 듣기 맛보기.",
+            "zh": "仍先解码。可能有连音。疑问尾仅听力预览。"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "body": {
+            "en": "Meaning after sound. Basics track will deepen conversation themes — here Hangul literacy is the goal.",
+            "ko": "소리 다음 뜻. 대화 주제 심화는 기초 수업 트랙 — 여기는 한글 문해.",
+            "zh": "先声后义。会话深化在基础课——这里是韩文识字。"
+          },
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          }
+        },
+        {
+          "type": "explain",
+          "status": "ready",
+          "step": "teach",
+          "label": {
+            "en": "Grammar",
+            "ko": "문법",
+            "zh": "语法"
+          },
+          "title": {
+            "en": "Question ending feel",
+            "ko": "물음 어미 맛보기",
+            "zh": "疑问语尾初尝"
+          },
+          "body": {
+            "en": "Questions often keep the same polite coat (-요?) while pitch/particle marks the ask. Decode the Hangul first; meaning practice continues in Basics.",
+            "ko": "물음도 같은 공손 코트(-요?)를 쓰며 억양·조사로 묻는다. 글자 먼저 — 뜻 연습은 기초 수업.",
+            "zh": "疑问常用同一敬体(-요?)，靠语调/助词提问。先识字——意义在基础课。"
+          },
+          "examples": [
+            {
+              "ko": "어디예요?",
+              "gloss": {
+                "en": "where? polite",
+                "ko": "어디? 공손",
+                "zh": "哪里？敬"
+              }
+            },
+            {
+              "ko": "얼마예요?",
+              "gloss": {
+                "en": "how much?",
+                "ko": "얼마?",
+                "zh": "多少钱？"
+              }
+            }
+          ]
+        },
+        {
+          "type": "examples",
+          "status": "ready",
+          "step": "teach",
+          "items": [
+            {
+              "ko": "화장실 어디예요?",
+              "gloss": {
+                "en": "Where is the restroom?",
+                "ko": "화장실 어디예요?",
+                "zh": "洗手间在哪？"
+              }
+            },
+            {
+              "ko": "얼마예요?",
+              "gloss": {
+                "en": "How much is it?",
+                "ko": "얼마예요?",
+                "zh": "多少钱？"
+              }
+            },
+            {
+              "ko": "도와 주세요",
+              "gloss": {
+                "en": "Please help me",
+                "ko": "도와 주세요",
+                "zh": "请帮帮我"
+              }
+            },
+            {
+              "ko": "다시 말해 주세요",
+              "gloss": {
+                "en": "Please say that again",
+                "ko": "다시 말해 주세요",
+                "zh": "请再说一次"
+              }
+            }
+          ]
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "얼마예요? asks about…",
+            "ko": "「얼마예요?」는?",
+            "zh": "「얼마예요?」问？"
+          },
+          "choices": [
+            {
+              "en": "Time only",
+              "ko": "시간만",
+              "zh": "只问时间"
+            },
+            {
+              "en": "Price",
+              "ko": "가격",
+              "zh": "价格"
+            },
+            {
+              "en": "Name spelling",
+              "ko": "이름 철자",
+              "zh": "名字拼写"
+            },
+            {
+              "en": "Batchim theory",
+              "ko": "받침 이론",
+              "zh": "收音理论"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Price question.",
+            "ko": "가격.",
+            "zh": "价钱。"
+          }
+        },
+        {
+          "type": "check",
+          "status": "ready",
+          "step": "practice",
+          "prompt": {
+            "en": "도와 주세요 is…",
+            "ko": "「도와 주세요」는?",
+            "zh": "「도와 주세요」是？"
+          },
+          "choices": [
+            {
+              "en": "A greeting",
+              "ko": "인사말",
+              "zh": "问候语"
+            },
+            {
+              "en": "A help request",
+              "ko": "도움 요청",
+              "zh": "求助请求"
+            },
+            {
+              "en": "A vowel chart",
+              "ko": "모음 표",
+              "zh": "元音表"
+            },
+            {
+              "en": "A tense consonant",
+              "ko": "경음 자음",
+              "zh": "紧辅音"
+            }
+          ],
+          "answer": 1,
+          "tip": {
+            "en": "Please help.",
+            "ko": "도와 달라는 말.",
+            "zh": "请帮忙。"
+          }
+        },
+        {
+          "type": "checkpoint",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "Checkpoint: choose one line for daily aloud practice.",
+            "ko": "체크포인트: 매일 소리 낼 문장 하나 고르기.",
+            "zh": "关卡：选一句每日朗读。"
+          }
+        },
+        {
+          "type": "task",
+          "status": "ready",
+          "step": "checkpoint",
+          "body": {
+            "en": "10-second role-play: ask 어디예요? then answer with a place word you know.",
+            "ko": "10초 롤플레이: 어디예요? → 아는 장소 단어로 답.",
+            "zh": "10秒角色：问어디예요？再用已知地点词答。"
+          }
+        }
+      ],
+      "pathLabel": "17"
     }
-  ]
+  ],
+  "format": "duolingo-steps-v1"
 }

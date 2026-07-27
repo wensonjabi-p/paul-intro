@@ -6,55 +6,245 @@
     "zh": "jabi. 基础 · 第1课 — 打招呼和自我介绍"
   },
   "level": "Basic (pre-TOPIK)",
-  "verified": true,
-  "verifiedAt": "2026-07-26",
-  "source": "jabi-original",
-  "sourceNote": "DRAFT/PILOT — jabi. 원작 대화형 콘텐츠. 세종학당 표준교육과정의 '주제 중심 단원' 구조만 참고(문장·어휘 미차용). TOPIK 문법빈칸이 아니라 상황 대화 완성형. Cursor/Paul 검토 후 확정.",
+  "theme": "인사",
+  "sourceNote": "PILOT — jabi. 원작. 세종한국어 1과 '자기소개' 주제·문법 앵커(이에요/예요·은/는)만 참고. 교재 문장 미차용.",
+  "objective": {
+    "en": "Greet, introduce yourself, say where you are from, reply to 만나서 반가워요.",
+    "ko": "인사·자기소개·국적·「만나서 반가워요」답하기.",
+    "zh": "打招呼、自我介绍、国籍，回应「만나서 반가워요」。"
+  },
+  "explain": {
+    "en": "Two decisions this unit: (1) 이에요 after a name with 받침, 예요 with none. (2) 은/는 marks the topic (저는…). Contrast: 이/가 marks subject / new focus — not English a/the. See the contrast card + 글모음 FAQ.",
+    "ko": "이 단원 결정 둘: (1) 이름에 받침→이에요 · 없으면 예요. (2) 은/는=주제(저는…). 대조: 이/가=주어·새 초점 — 영어 a/the 아님. 아래 대조 카드·글모음 FAQ.",
+    "zh": "本课两个决定：(1)名字有收音→이에요，无→예요。(2)은/는=话题。对照：이/가=主语/新焦点——不是英文冠词。见对照卡与글모음 FAQ。"
+  },
+  "format": "duolingo-basic-v1",
+  "steps": [
+    {
+      "id": "intro",
+      "title": {
+        "en": "Skill intro",
+        "ko": "스킬 소개",
+        "zh": "技能介绍"
+      },
+      "body": {
+        "en": "Classroom goal: survive the first 30 seconds of meeting someone (TOPIK I / Sejong unit-1 function).",
+        "ko": "교실 목표: 처음 30초 인사 생존(TOPIK I·세종 1과 기능).",
+        "zh": "课堂目标：见面前30秒能打招呼（TOPIK I / 世宗第1课功能）。"
+      }
+    },
+    {
+      "id": "teach",
+      "title": {
+        "en": "Teach · 이에요/예요 + 은/는",
+        "ko": "설명 · 이에요/예요 + 은/는",
+        "zh": "讲解 · 이에요/예요 + 은/는"
+      },
+      "body": {
+        "en": "받침 → 이에요 · no 받침 → 예요. 저는 = topic (은/는). Contrast card: 은/는↔이/가 (국립국어원/세종 role split). Deep dive → 글모음 FAQ.",
+        "ko": "받침 있으면 이에요 · 없으면 예요. 「저는」=주제(은/는). 대조 카드: 은/는↔이/가(국어원·세종 역할 구분). 심화→글모음 FAQ.",
+        "zh": "有收音→이에요，无→예요。「저는」=话题。对照卡：은/는↔이/가。详解→글모음 FAQ。"
+      }
+    },
+    {
+      "id": "dialogue",
+      "title": {
+        "en": "Dialogue",
+        "ko": "대화",
+        "zh": "对话"
+      },
+      "body": {
+        "en": "Read the first-meeting scene aloud once before drills.",
+        "ko": "연습 전에 첫 만남 장면을 한 번 소리 내어 읽기.",
+        "zh": "做题前先朗读初次见面场景。"
+      }
+    },
+    {
+      "id": "practice",
+      "title": {
+        "en": "Practice",
+        "ko": "연습",
+        "zh": "练习"
+      },
+      "body": {
+        "en": "Complete dialogues — tips don’t reveal the answer word first.",
+        "ko": "대화 완성 — 힌트는 정답 단어를 바로 주지 않음.",
+        "zh": "完成对话——提示不先泄露答案词。"
+      }
+    },
+    {
+      "id": "checkpoint",
+      "title": {
+        "en": "Checkpoint",
+        "ko": "체크포인트",
+        "zh": "关卡"
+      },
+      "body": {
+        "en": "Say your name + country in one polite turn.",
+        "ko": "이름+국적을 존댓말로 한 턴.",
+        "zh": "用敬体说名字+国籍一轮。"
+      }
+    }
+  ],
+  "dialogue": {
+    "title": {
+      "en": "First meeting",
+      "ko": "첫 만남",
+      "zh": "初次见面"
+    },
+    "lines": [
+      {
+        "who": "민수",
+        "ko": "안녕하세요? 저는 민수예요."
+      },
+      {
+        "who": "민준",
+        "ko": "안녕하세요? 저는 민준이에요. 중국 사람이에요."
+      },
+      {
+        "who": "민수",
+        "ko": "만나서 반가워요."
+      },
+      {
+        "who": "민준",
+        "ko": "저도 반가워요."
+      }
+    ]
+  },
+  "phrases": [
+    {
+      "ko": "안녕하세요?",
+      "gloss": {
+        "en": "Hello (polite)",
+        "ko": "인사",
+        "zh": "你好（敬体）"
+      }
+    },
+    {
+      "ko": "저는 민준이에요.",
+      "gloss": {
+        "en": "I'm Minjun (받침 → 이에요)",
+        "ko": "받침 → 이에요",
+        "zh": "有收音 → 이에요"
+      }
+    },
+    {
+      "ko": "저는 유키예요.",
+      "gloss": {
+        "en": "I'm Yuki (no 받침 → 예요)",
+        "ko": "받침 없음 → 예요",
+        "zh": "无收音 → 예요"
+      }
+    },
+    {
+      "ko": "중국 사람이에요.",
+      "gloss": {
+        "en": "I'm Chinese.",
+        "ko": "국적",
+        "zh": "国籍"
+      }
+    },
+    {
+      "ko": "베트남 사람이에요.",
+      "gloss": {
+        "en": "I'm Vietnamese.",
+        "ko": "국적",
+        "zh": "国籍"
+      }
+    },
+    {
+      "ko": "저도 반가워요.",
+      "gloss": {
+        "en": "Nice to meet you too.",
+        "ko": "답인사",
+        "zh": "回礼问候"
+      }
+    },
+    {
+      "ko": "이름이 뭐예요?",
+      "gloss": {
+        "en": "What's your name?",
+        "ko": "이름 묻기",
+        "zh": "问名字"
+      }
+    },
+    {
+      "ko": "어디에서 왔어요?",
+      "gloss": {
+        "en": "Where are you from?",
+        "ko": "출신",
+        "zh": "从哪里来"
+      }
+    }
+  ],
   "questions": [
     {
       "id": "basic-01-01",
       "type": "blank",
       "prompt": {
-        "ko": "※ 다음 대화를 완성하십시오.\n\n민수: 안녕하세요? 저는 민수예요.\n유키: 안녕하세요? 저는 유키(    ).",
-        "en": "Complete the dialogue.\n\nMinsu: Hello. I'm Minsu.\nYuki: Hello. I'm Yuki(    ).",
-        "zh": "请完成对话。\n\n民秀：你好，我是民秀。\n由纪：你好，我是由纪(    )。"
+        "en": "※ Complete.\n\n민수: 안녕하세요? 저는 민수예요.\n민준: 안녕하세요? 저는 민준(    ).",
+        "ko": "※ 다음 대화를 완성하십시오.\n\n민수: 안녕하세요? 저는 민수예요.\n민준: 안녕하세요? 저는 민준(    ).",
+        "zh": "※ 完成对话。\n\n民秀：안녕하세요? 저는 민수예요.\n民俊：안녕하세요? 저는 민준(    )。"
       },
-      "choices": ["예요", "이에요", "해요", "있어요"],
-      "answer": 1,
+      "choices": [
+        "이에요",
+        "예요",
+        "해요",
+        "있어요"
+      ],
+      "answer": 0,
       "answerText": "이에요",
-      "tags": ["topic:인사", "grammar:이에요/예요"],
+      "tags": [
+        "topic:인사",
+        "grammar:이에요/예요"
+      ],
       "hint": {
-        "ko": "이름 뒤에 「저는 OO예요/이에요」. 받침 있으면 「이에요」, 받침 없으면 「예요」. 유키는 받침 없어 보이지만 마지막 글자 '키'는 받침 없음 — 잠깐, '유키'는 모음으로 끝나니 예요? 확인: 이 문항은 받침 규칙 연습용.",
-        "en": "After a name: 저는 OO예요/이에요. If the name ends in a consonant (받침), use 이에요; if it ends in a vowel, use 예요.",
-        "zh": "名字后接 저는 OO예요/이에요。名字以辅音收尾用 이에요，以元音收尾用 예요。",
-        "visual": { "emoji": ["👋", "🙋"], "en": "greeting + name", "ko": "인사·이름", "zh": "打招呼·名字" },
+        "ko": "저는 OO이에요/예요. 받침 있으면 이에요.",
+        "en": "Pattern 저는 OO이에요/예요. 받침 → 이에요.",
+        "zh": "句型 저는 OO이에요/예요。有收音→이에요。",
         "steps": {
-          "en": ["Self-intro pattern: 저는 [name]예요/이에요.", "받침(final consonant) → 이에요. No 받침 → 예요.", "민수 ends in 수(no 받침) → 예요. Yuki(유키) also ends in a vowel sound → 예요 in real use, but this drill targets 받침 nouns, so answer follows 이에요 for consonant-ending names as the general rule."],
-          "zh": ["自我介绍句型：저는 [名字]예요/이에요。", "有收音(받침) → 이에요。无收音 → 예요。", "本题练习的是有收音时的用法。"],
-          "ko": ["자기소개 패턴: 저는 [이름]예요/이에요.", "받침 있으면 이에요, 없으면 예요.", "이 문항은 받침 규칙 연습입니다."]
+          "en": [
+            "Look at the name ending.",
+            "받침? → 이에요.",
+            "민준 ends with ㄴ."
+          ],
+          "ko": [
+            "이름 끝 보기",
+            "받침? → 이에요",
+            "민준은 ㄴ"
+          ],
+          "zh": [
+            "看名字尾",
+            "有收音→이에요",
+            "민준以ㄴ收"
+          ]
         }
       },
       "why": {
-        "en": "This drill practices the 이에요/예요 alternation rule with names.",
-        "zh": "本题练习姓名后 이에요/예요 的交替规则。",
-        "ko": "이름 뒤 이에요/예요 규칙 연습 문항입니다."
+        "en": "민준 ends with 받침 ㄴ → link with 이에요 (not 예요).",
+        "ko": "민준은 받침 ㄴ으로 끝 → 이에요(예요 아님).",
+        "zh": "민준以ㄴ收音结尾→이에요。"
       },
-      "distractOrder": [0, 2, 3],
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
       "distractWhy": {
-        "0": {
-          "en": "예요 is used after vowel-ending words — this drill is set up for the 받침 (consonant-ending) case.",
-          "zh": "예요 用于元音收尾的词——本题设定为辅音收尾情况。",
-          "ko": "예요는 받침 없는 말 뒤에 써요. 이 문항은 받침 있는 경우를 연습합니다."
+        "1": {
+          "en": "예요 is for no 받침 (민수예요).",
+          "ko": "예요는 받침 없을 때.",
+          "zh": "예요用于无收音。"
         },
         "2": {
-          "en": "해요 is the general polite verb ending (\"do\"), not the self-intro copula.",
-          "zh": "해요 是通用敬语动词词尾(\"做\")，不是自我介绍用的系词。",
-          "ko": "해요는 일반 동사 종결어미예요. 자기소개용 서술어가 아니에요."
+          "en": "해요 is a general verb ending.",
+          "ko": "해요는 일반 동사 어미.",
+          "zh": "해요是通用动词尾。"
         },
         "3": {
-          "en": "있어요 means \"there is/have,\" not \"to be [a name].\"",
-          "zh": "있어요 意为\"有/存在\"，不是\"是[名字]\"。",
-          "ko": "있어요는 '있다'의 뜻이에요. 이름을 소개하는 말이 아니에요."
+          "en": "있어요 means exist/have.",
+          "ko": "있어요는 있다.",
+          "zh": "있어요表示有。"
         }
       }
     },
@@ -62,71 +252,430 @@
       "id": "basic-01-02",
       "type": "blank",
       "prompt": {
-        "ko": "※ 다음 대화를 완성하십시오.\n\n선생님: 어느 나라 사람이에요?\n학생: 저는 (    ) 사람이에요. 중국에서 왔어요.",
-        "en": "Complete the dialogue.\n\nTeacher: What country are you from?\nStudent: I'm (    ). I came from China.",
-        "zh": "请完成对话。\n\n老师：你是哪国人？\n学生：我是(    )人。我来自中国。"
+        "en": "※ Complete.\n\nA: 저는 유키(    ).\nB: 아, 유키 씨!",
+        "ko": "※ 대화 완성.\n\nA: 저는 유키(    ).\nB: 아, 유키 씨!",
+        "zh": "※ 完成。\n\nA: 저는 유키(    ).\nB: 아, 유키 씨!"
       },
-      "choices": ["중국", "한국", "미국", "일본"],
-      "answer": 0,
-      "answerText": "중국",
-      "tags": ["topic:인사", "vocab:국적"],
+      "choices": [
+        "이에요",
+        "예요",
+        "입니다만",
+        "합니까"
+      ],
+      "answer": 1,
+      "answerText": "예요",
+      "tags": [
+        "topic:인사",
+        "grammar:이에요/예요"
+      ],
       "hint": {
-        "ko": "뒤 문장 「중국에서 왔어요」를 보면 답을 알 수 있어요.",
-        "en": "The next sentence (\"I came from China\") tells you the answer.",
-        "zh": "后一句「我来自中国」告诉你答案。",
-        "visual": { "emoji": ["🌏", "🇨🇳"], "en": "country + nationality", "ko": "나라·국적", "zh": "国家·国籍" },
+        "ko": "받침이 없으면 예요.",
+        "en": "No 받침 → 예요.",
+        "zh": "无收音→예요。",
         "steps": {
-          "en": ["Look at context clues in the next sentence.", "\"중국에서 왔어요\" = \"came from China.\"", "So the nationality is 중국(사람)."],
-          "zh": ["查看下一句的语境线索。", "\"중국에서 왔어요\" = \"来自中国\"。", "所以国籍是 중국(사람)。"],
-          "ko": ["다음 문장의 단서를 보세요.", "\"중국에서 왔어요\"가 힌트예요.", "그래서 국적은 중국(사람)이에요."]
+          "en": [
+            "Check 키 ending.",
+            "No final consonant letter.",
+            "Use 예요."
+          ],
+          "ko": [
+            "「키」끝 확인",
+            "받침 없음",
+            "예요"
+          ],
+          "zh": [
+            "看「키」",
+            "无收音",
+            "用예요"
+          ]
         }
       },
       "why": {
-        "en": "The follow-up sentence explicitly states the country of origin.",
-        "zh": "后续句子明确说明了来源国家。",
-        "ko": "뒤 문장이 출신 국가를 그대로 알려줘요."
-      },
-      "distractOrder": [1, 2, 3],
-      "distractWhy": {
-        "1": { "en": "한국 doesn't match \"came from China.\"", "zh": "한국 与「来自中国」不符。", "ko": "한국은 「중국에서 왔어요」와 안 맞아요." },
-        "2": { "en": "미국 doesn't match \"came from China.\"", "zh": "미국 与「来自中国」不符。", "ko": "미국은 안 맞아요." },
-        "3": { "en": "일본 doesn't match \"came from China.\"", "zh": "일본 与「来自中国」不符。", "ko": "일본은 안 맞아요." }
+        "en": "유키 ends with a vowel sound → 예요.",
+        "ko": "유키는 모음으로 끝 → 예요.",
+        "zh": "유키元音结尾→예요。"
       }
     },
     {
       "id": "basic-01-03",
       "type": "blank",
       "prompt": {
-        "ko": "※ 다음 대화를 완성하십시오.\n\n유키: 만나서 반가워요.\n민수: 저도 (    ).",
-        "en": "Complete the dialogue.\n\nYuki: Nice to meet you.\nMinsu: (    ), too.",
-        "zh": "请完成对话。\n\n由纪：很高兴认识你。\n民秀：我也(    )。"
+        "en": "※ Complete.\n\nA: 어디에서 왔어요?\nB: 저는 중국(    ).",
+        "ko": "※ 대화 완성.\n\nA: 어디에서 왔어요?\nB: 저는 중국(    ).",
+        "zh": "※ 完成。\n\nA: 어디에서 왔어요?\nB: 저는 중국(    )。"
       },
-      "choices": ["반가워요", "고마워요", "죄송해요", "괜찮아요"],
+      "choices": [
+        "사람이에요",
+        "먹어요",
+        "가요",
+        "읽어요"
+      ],
       "answer": 0,
-      "answerText": "반가워요",
-      "tags": ["topic:인사"],
+      "answerText": "사람이에요",
+      "tags": [
+        "topic:인사",
+        "vocab:국적"
+      ],
       "hint": {
-        "ko": "상대방이 한 말을 그대로 되돌려주는 인사 표현이에요.",
-        "en": "This is a set greeting phrase — you echo back what the other person said.",
-        "zh": "这是固定问候语——回应对方说的话。",
-        "visual": { "emoji": ["🤝", "😊"], "en": "nice to meet you", "ko": "반갑다", "zh": "很高兴认识你" },
+        "ko": "나라 이름 + 사람이에요.",
+        "en": "Country + 사람이에요.",
+        "zh": "国名 + 사람이에요。",
         "steps": {
-          "en": ["만나서 반가워요 = \"nice to meet you.\"", "The polite reply echoes 반가워요 back.", "저도 반가워요 = \"nice to meet you too.\""],
-          "zh": ["만나서 반가워요 = \"很高兴认识你\"。", "礼貌的回应会重复 반가워요。", "저도 반가워요 = \"我也很高兴认识你\"。"],
-          "ko": ["만나서 반가워요 = 인사 표현.", "대답도 반가워요를 그대로 써요.", "저도 반가워요 = 나도 반갑다."]
+          "en": [
+            "Question asks origin.",
+            "Pattern: country + 사람이에요."
+          ],
+          "ko": [
+            "출신을 물음",
+            "나라+사람이에요"
+          ],
+          "zh": [
+            "问出身",
+            "国名+사람이에요"
+          ]
         }
       },
       "why": {
-        "en": "저도 반가워요 is the standard reciprocal greeting.",
-        "zh": "저도 반가워요 是标准的回礼问候语。",
-        "ko": "저도 반가워요는 표준적인 답인사예요."
-      },
-      "distractOrder": [1, 2, 3],
-      "distractWhy": {
-        "1": { "en": "고마워요 means \"thank you\" — not a greeting reply.", "zh": "고마워요 意为\"谢谢\"——不是问候回应。", "ko": "고마워요는 감사 표현이에요." },
-        "2": { "en": "죄송해요 means \"I'm sorry.\"", "zh": "죄송해요 意为\"对不起\"。", "ko": "죄송해요는 사과 표현이에요." },
-        "3": { "en": "괜찮아요 means \"it's okay.\"", "zh": "괜찮아요 意为\"没关系\"。", "ko": "괜찮아요는 '괜찮다'는 뜻이에요." }
+        "en": "저는 marks the speaker as topic (은/는). Country + 사람이에요.",
+        "ko": "저는=화자 주제(은/는). 나라+사람이에요.",
+        "zh": "저는=话题。国家+사람이에요。"
       }
+    },
+    {
+      "id": "basic-01-04",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Reply.\n\nA: 만나서 반가워요.\nB: (    ).",
+        "ko": "※ 대답.\n\nA: 만나서 반가워요.\nB: (    ).",
+        "zh": "※ 回答。\n\nA: 만나서 반가워요.\nB: (    )。"
+      },
+      "choices": [
+        "저도 반가워요",
+        "저는 학생이에요",
+        "얼마예요",
+        "도와 주세요"
+      ],
+      "answer": 0,
+      "answerText": "저도 반가워요",
+      "tags": [
+        "topic:인사"
+      ],
+      "hint": {
+        "ko": "반가워요에 대한 자연스러운 답.",
+        "en": "Natural reply to nice-to-meet-you.",
+        "zh": "对「很高兴认识你」的自然回应。",
+        "steps": {
+          "en": [
+            "A said nice to meet you.",
+            "Reply with 저도…"
+          ],
+          "ko": [
+            "A가 반가워요",
+            "저도…로 답"
+          ],
+          "zh": [
+            "A说반가워요",
+            "用저도…答"
+          ]
+        }
+      },
+      "why": {
+        "en": "Polite greeting opener — 안녕하세요? before name lines.",
+        "ko": "공손 인사 오프너 — 이름 전에 안녕하세요?",
+        "zh": "敬体开场：안녕하세요？"
+      }
+    },
+    {
+      "id": "basic-01-05",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Ask the name.\n\nA: (    )?\nB: 저는 하나예요.",
+        "ko": "※ 이름 묻기.\n\nA: (    )?\nB: 저는 하나예요.",
+        "zh": "※ 问名字。\n\nA: (    )?\nB: 저는 하나예요。"
+      },
+      "choices": [
+        "이름이 뭐예요",
+        "몇 시예요",
+        "어디예요",
+        "뭐 먹어요"
+      ],
+      "answer": 0,
+      "answerText": "이름이 뭐예요",
+      "tags": [
+        "topic:인사",
+        "vocab:이름"
+      ],
+      "hint": {
+        "ko": "이름을 묻는 표현.",
+        "en": "Asking for a name.",
+        "zh": "询问名字。",
+        "steps": {
+          "en": [
+            "B answers with a name.",
+            "A must ask for the name."
+          ],
+          "ko": [
+            "B가 이름으로 답",
+            "A는 이름 질문"
+          ],
+          "zh": [
+            "B用名字回答",
+            "A应问名字"
+          ]
+        }
+      },
+      "why": {
+        "en": "Reply to 만나서 반가워요 with 저도 반가워요 (same polite coat).",
+        "ko": "만나서 반가워요 → 저도 반가워요(같은 공손).",
+        "zh": "回应반가워요：저도 반가워요。"
+      }
+    },
+    {
+      "id": "basic-01-06",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Choose the greeting.\n\n(First class morning)\n선생님: (    )?\n학생들: 안녕하세요?",
+        "ko": "※ 인사 고르기.\n\n(수업 아침)\n선생님: (    )?\n학생들: 안녕하세요?",
+        "zh": "※ 选问候。\n\n（早上上课）\n老师：(    )?\n学生：안녕하세요?"
+      },
+      "choices": [
+        "안녕하세요",
+        "안녕히 주무세요",
+        "축하합니다",
+        "맛있어요"
+      ],
+      "answer": 0,
+      "answerText": "안녕하세요",
+      "tags": [
+        "topic:인사"
+      ],
+      "hint": {
+        "ko": "낮/수업에서 쓰는 기본 인사.",
+        "en": "Default daytime/class hello.",
+        "zh": "白天/课堂基本问候。",
+        "steps": {
+          "en": [
+            "Morning class context.",
+            "Students reply 안녕하세요."
+          ],
+          "ko": [
+            "아침 수업",
+            "학생도 안녕하세요"
+          ],
+          "zh": [
+            "早上课",
+            "学生也说안녕하세요"
+          ]
+        }
+      },
+      "why": {
+        "en": "Name + 이에요/예요 follows the 받침 rule from teach.",
+        "ko": "이름+이에요/예요는 받침 규칙.",
+        "zh": "名字+이에요/예요跟收音规则。"
+      }
+    },
+    {
+      "id": "basic-01-07",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Topic marker.\n\nA: (    ) 한국 사람이에요.\nB: 아, 한국에서 왔어요?",
+        "ko": "※ 주제 표시.\n\nA: (    ) 한국 사람이에요.\nB: 아, 한국에서 왔어요?",
+        "zh": "※ 话题标记。\n\nA: (    ) 한국 사람이에요.\nB: 아, 한국에서 왔어요?"
+      },
+      "choices": [
+        "저는",
+        "저를",
+        "저에",
+        "저하고"
+      ],
+      "answer": 0,
+      "answerText": "저는",
+      "tags": [
+        "topic:인사",
+        "grammar:은/는"
+      ],
+      "hint": {
+        "ko": "자기소개는 「저는」으로 주제를 잡음.",
+        "en": "Self-intro often starts with 저는.",
+        "zh": "自我介绍常用「저는」起话题。",
+        "steps": {
+          "en": [
+            "Talking about myself.",
+            "Use topic 는 → 저는."
+          ],
+          "ko": [
+            "나에 대해 말함",
+            "주제 는 → 저는"
+          ],
+          "zh": [
+            "说自己",
+            "话题는 → 저는"
+          ]
+        }
+      },
+      "why": {
+        "en": "국적: [나라] 사람이에요 — noun + linking ending.",
+        "ko": "국적: [나라] 사람이에요.",
+        "zh": "国籍：[国家] 사람이에요。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "저를 is object (을/를).",
+          "ko": "저를는 목적어.",
+          "zh": "저를是宾语。"
+        },
+        "2": {
+          "en": "저에 is not the self-intro pattern.",
+          "ko": "저에는 소개 패턴 아님.",
+          "zh": "저에不是自我介绍句型。"
+        },
+        "3": {
+          "en": "저하고 means with me.",
+          "ko": "저하고=함께.",
+          "zh": "저하고＝和我一起。"
+        }
+      }
+    },
+    {
+      "id": "basic-01-08",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Best next line after self-intro?\n\nA: 저는 수진이에요. 한국 사람이에요.\nB: (    )",
+        "ko": "※ 자기소개 다음으로 자연스러운 말?\n\nA: 저는 수진이에요. 한국 사람이에요.\nB: (    )",
+        "zh": "※ 自我介绍后最自然？\n\nA: 저는 수진이에요. 한국 사람이에요.\nB: (    )"
+      },
+      "choices": [
+        "만나서 반가워요",
+        "밥 먹었어요",
+        "시험을 봐요",
+        "받침이 뭐예요"
+      ],
+      "answer": 0,
+      "answerText": "만나서 반가워요",
+      "tags": [
+        "topic:인사"
+      ],
+      "hint": {
+        "ko": "첫 만남 맥락.",
+        "en": "First-meeting context.",
+        "zh": "初次见面语境。",
+        "steps": {
+          "en": [
+            "A introduced name/country.",
+            "B responds politely."
+          ],
+          "ko": [
+            "A가 소개함",
+            "B 예의 답"
+          ],
+          "zh": [
+            "A已介绍",
+            "B礼貌回应"
+          ]
+        }
+      },
+      "why": {
+        "en": "저도 adds “me too” with topic particle feel on 저.",
+        "ko": "저도=나도(저+도).",
+        "zh": "저도=我也。"
+      }
+    }
+  ],
+  "verified": false,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "research": "docs/research-basic-content-fill-ko.md · docs/research-korean-grammar-explain-ko.md",
+  "grammarCards": [
+    {
+      "id": "ieyo-yeyo",
+      "title": {
+        "en": "이에요 / 예요",
+        "ko": "이에요 / 예요",
+        "zh": "이에요 / 예요"
+      },
+      "body": {
+        "en": "After a noun: if it ends in a consonant (받침) → 이에요. If it ends in a vowel → 예요. Same meaning (“am/is/are” linking).",
+        "ko": "명사 뒤: 받침 있으면 이에요 · 모음으로 끝나면 예요. 뜻은 같음(이다 계열).",
+        "zh": "名词后：有收音→이에요；元音结尾→예요。意思相同。"
+      },
+      "examples": [
+        {
+          "ko": "민준이에요.",
+          "gloss": {
+            "en": "준 has ㄴ → 이에요",
+            "ko": "준에 ㄴ → 이에요",
+            "zh": "준有ㄴ→이에요"
+          }
+        },
+        {
+          "ko": "민수예요.",
+          "gloss": {
+            "en": "수 no 받침 → 예요",
+            "ko": "수 받침 없음 → 예요",
+            "zh": "수无收音→예요"
+          }
+        }
+      ]
+    },
+    {
+      "id": "eunneun-iga",
+      "kind": "contrast",
+      "title": {
+        "en": "은/는 ↔ 이/가",
+        "ko": "은/는 ↔ 이/가",
+        "zh": "은/는 ↔ 이/가"
+      },
+      "body": {
+        "en": "Same noun slot, different jobs (세종·국어원 role split). 은/는 = topic / known frame / contrast (“as for…”). 이/가 = subject / new focus (“who/what…?”). Form: after 받침 → 은·이 · after vowel → 는·가.",
+        "ko": "같은 자리, 다른 역할(세종·국어원). 은/는=주제·아는 틀·대조. 이/가=주어·새 초점(누가/무엇이). 형태: 받침→은·이 · 모음→는·가.",
+        "zh": "同一位置、不同职责（世宗/国语院）。은/는=话题/已知框/对照；이/가=主语/新焦点。形式：收音→은·이，元音→는·가。"
+      },
+      "examples": [
+        {
+          "ko": "저는 학생이에요.",
+          "gloss": {
+            "en": "Topic frame · 은/는",
+            "ko": "주제 틀 · 은/는",
+            "zh": "话题框 · 은/는"
+          }
+        },
+        {
+          "ko": "제가 학생이에요.",
+          "gloss": {
+            "en": "Subject focus · 이/가",
+            "ko": "주어 초점 · 이/가",
+            "zh": "主语焦点 · 이/가"
+          }
+        },
+        {
+          "ko": "커피는 좋아요. 차는 싫어요.",
+          "gloss": {
+            "en": "Contrast pair · 은/는",
+            "ko": "대조 · 은/는",
+            "zh": "对照 · 은/는"
+          }
+        }
+      ],
+      "trap": {
+        "en": "Do not map to English a/the. Particles mark roles, not articles.",
+        "ko": "영어 a/the로 옮기지 마세요. 조사는 관사가 아니라 역할입니다.",
+        "zh": "别当成英文冠词 a/the。助词是角色，不是冠词。"
+      },
+      "related": [
+        {
+          "href": "../../blog/#eunneun-iga",
+          "label": {
+            "en": "글모음 · 은/는 vs 이/가 →",
+            "ko": "글모음 · 은/는 vs 이/가 →",
+            "zh": "글모음 · 은/는 vs 이/가 →"
+          }
+        }
+      ]
     }
   ]
 }
