@@ -12,6 +12,12 @@
 
 ## 2026-07-27
 
+### Claude (UX 제안서 3개 문제 -> 구현 스펙 3건 작성 + N11/N12/N13 큐잉)
+- Paul 답변 반영: (1) 3개 문제진단 동의 (2) PPT흐름 파일럿은 Basics 먼저(Hangul 후속) (3) 트랙일관성은 옵션B(톤만 통일, 트랙별 세부 유지) (4) 온보딩은 공통정보만 hub레벨 1회, TOPIK 응시질문은 "내 페이지"에서 진도 임계치 도달 시 컨텍스트 노출로 완전히 재설계.
+- 코드 직접 확인 후 스펙 3건 작성: spec-basics-ppt-slide-flow-ko.md(bank.steps[]가 이미 5단계로 쪼개져 있음을 확인, renderDetail() 슬라이드 상태머신 교체안, 데이터 마이그레이션 불필요) / spec-topik2-unit-list-unify-ko.md(TOPIK I은 섹션별 평평한 목록, TOPIK II/Basics는 이미 skill-path/skill-node 공유 컴포넌트 씀을 확인 -- TOPIK II만 섹션그룹핑+비기능항목(00 Overview/13 planned) 분리, 배지 자체는 유지) / spec-onboarding-relocate-ko.md(state.profile을 hub 공유 localStorage로 이동, 온보딩에서 TOPIK 응시질문 제거, estimateReadiness() 재사용해 "내 페이지"에서 임계치 도달시 컨텍스트 노출, 개별필드 수정 설정폼 추가).
+- cursor-work-queue-ko.md Next에 N11/N12/N13 큐잉(전부 차단 없음, Paul 승인 완료).
+- hub/app/** 미편집(스펙만, 실제 코드는 읽기만 하고 확인용으로 인용).
+
 ### Claude (트랙 UX 개편 제안서 -- 실사용 감사 + 3편 병렬 학술리서치 + 큐 우선순위 재지정)
 - Paul이 이전에 정리했다는 UI/UX 개선사항(Basics/Hangul PPT식 흐름, TOPIK II가 TOPIK I과 다른 패턴, Basic info 온보딩 배치)이 왜 반영 안 됐는지 질문 -> DAILY-LOG/큐/PROGRESS/메모리 전수 검색했으나 기록 전무 확인, Cursor에게 지시가 실제로 전달된 적이 없었음을 확인.
 - Paul의 메타 질문("Cursor가 지금 하는 작업이 우선순위 맞냐")에 답변: Cursor가 Next(N8/N9/N10 대기 중)를 무시하고 sibling-handoff 어휘 테마팩 체인(advice~warn-caution까지 이어짐)을 계속 돌고 있음을 확인. 큐 규칙에 "Next가 sibling-handoff보다 항상 우선" 명시 추가.
