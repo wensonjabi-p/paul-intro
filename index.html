@@ -157,6 +157,10 @@
   }
   .related-row { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   .related-row .lbl { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); margin-right: 6px; }
+  .x-src { margin-top: 18px; font-size: 12px; color: var(--faint); letter-spacing: 0.03em; }
+  .x-src a, .thought-card .meta a { color: var(--accent-dim); text-decoration: none; border-bottom: 1px dotted var(--accent-dim); }
+  .x-src a:hover, .thought-card .meta a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .x-src a + a { margin-left: 12px; }
   .chip {
     font-size: 13px; color: var(--muted); border: 1px solid var(--line); padding: 5px 13px;
     border-radius: 16px; cursor: pointer; transition: all 0.25s; letter-spacing: 0.03em;
@@ -330,6 +334,12 @@
   .feed h2 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 44px); font-weight: 700; }
   .feed .lede { margin-top: 14px; color: var(--muted); max-width: 620px; font-size: 15px; }
   .feed-list { margin-top: 6vh; }
+  .feed-more {
+    margin-top: 10px; background: none; border: 1px solid var(--line); color: var(--muted);
+    font-family: inherit; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 20px;
+    cursor: pointer; letter-spacing: 0.03em; transition: all 0.2s;
+  }
+  .feed-more:hover { border-color: var(--accent); color: var(--accent); }
 
   /* ---------- GUESTBOOK ---------- */
   .guestbook { padding: 10vh 5vw 4vh; max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--line); }
@@ -632,6 +642,7 @@
       skyAutoDeselected: name => '"' + name + '" 선택이 해제됐어요 (최대 3개까지)',
       feedH2: '최근의 생각들',
       feedLede: '이 페이지는 완성본이 아닙니다. 생각이 생길 때마다, 대화할 때마다 성좌는 조금씩 커집니다.',
+      feedMore: '더 보기',
       addboxH4: '새로운 생각 추가',
       addboxHint: '떠오른 생각을 적고, 관련 단어를 붙이면 성좌에서 그 단어를 골랐을 때 나타납니다. 브라우저에 저장됩니다.<br>더 깊은 이야기는 Claude와 대화하면 성좌 자체가 자랍니다.',
       addboxTagLabel: '관련 단어 (쉼표 구분 — 예: 이방인, 파키스탄)',
@@ -655,6 +666,7 @@
       emptyState: '아직 선택된 단어가 없습니다. 위 성좌에서 궁금한 단어를 하나 골라보세요 — 이야기가 열립니다.',
       askRibbonPrefix: '✦ 이 이야기는 아직 Paul에게 듣는 중입니다',
       relatedLinked: '이어지는 단어',
+      xOriginal: 'X 원글',
       relatedComboWordsCurated: '이 이야기를 이루는 단어',
       relatedComboWordsSynth: '이 글을 이루는 단어',
       comboLoading: '✦ 이 단어들이 어떻게 만나는지 엮고 있어요…',
@@ -712,6 +724,7 @@
       skyAutoDeselected: name => '"' + name + '" was deselected (max 3 at a time)',
       feedH2: 'Recent Thoughts',
       feedLede: "This page is never finished. Every time a thought forms, every time we talk, the constellation grows a little.",
+      feedMore: 'Show more',
       addboxH4: 'Add a New Thought',
       addboxHint: 'Write down a thought and attach related words — it\'ll appear when that word is chosen in the constellation. Saved in your browser.<br>Talk with Claude for a deeper story, and the constellation itself grows.',
       addboxTagLabel: 'Related words (comma-separated — e.g. Outsider, Pakistan)',
@@ -735,6 +748,7 @@
       emptyState: 'No word selected yet. Pick a word you\'re curious about in the constellation above — a story will open.',
       askRibbonPrefix: '✦ This story is still being told by Paul',
       relatedLinked: 'Related words',
+      xOriginal: 'Original on X',
       relatedComboWordsCurated: 'Words that make up this story',
       relatedComboWordsSynth: 'Words that make up this piece',
       comboLoading: '✦ Weaving these words together…',
@@ -794,6 +808,7 @@
       skyAutoDeselected: name => '"' + name + '" 已取消选择(最多同时选 3 个)',
       feedH2: '最近的想法',
       feedLede: '这个页面永远不是完成品。每当有新的想法，每次交谈，这片星座都会悄悄长大一点。',
+      feedMore: '查看更多',
       addboxH4: '添加新想法',
       addboxHint: '写下浮现的想法，附上相关的词——在星座中选到那个词时就会出现。保存在浏览器中。<br>和 Claude 深入聊聊，星座本身也会成长。',
       addboxTagLabel: '相关词（逗号分隔——例如：异乡人, 巴基斯坦）',
@@ -817,6 +832,7 @@
       emptyState: '还没有选择任何词。在上面的星座中选一个你好奇的词——故事就会展开。',
       askRibbonPrefix: '✦ 这个故事还在等 Paul 讲述',
       relatedLinked: '相关的词',
+      xOriginal: 'X 原文',
       relatedComboWordsCurated: '组成这个故事的词',
       relatedComboWordsSynth: '组成这段文字的词',
       comboLoading: '✦ 正在把这些词编织在一起…',
@@ -937,8 +953,18 @@
   })();
 
   const NOW = Date.now();
+  // 정적 thoughts의 addedAt은 방문 시점이 아니라 contentAsOf(예: 2026.11.24) 기준 고정일.
+  // UTC+9(KST) 자정을 쓰므로 기준일 당일 daysAgo:0 은 "오늘"로 보이고, 이후 날짜로 자연히 흘러간다.
+  function contentAsOfTs() {
+    const raw = D.profile && D.profile.contentAsOf;
+    const m = raw && String(raw).match(/^(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})$/);
+    if (!m) return NOW;
+    const y = +m[1], mo = +m[2], day = +m[3];
+    return Date.UTC(y, mo - 1, day, -9, 0, 0); // contentAsOf 당일 00:00 UTC+9
+  }
   function buildBaseThoughts() {
-    return D.thoughts.map(t => ({ id: t.id, text: t.text, tags: t.tags, addedAt: NOW - t.daysAgo * 86400000 }));
+    const base = contentAsOfTs();
+    return D.thoughts.map(t => ({ id: t.id, text: t.text, tags: t.tags, xUrl: t.xUrl, addedAt: base - t.daysAgo * 86400000 }));
   }
   // 서버에서 라이브로 받아오는 발행된 생각들 — 인터뷰/기록에서 올라온 최신 콘텐츠. data.js를 손대지 않아도 여기서 갱신됨.
   let remoteThoughts = [];
@@ -1879,10 +1905,12 @@
     const avgScore = sel.reduce((s, n) => s + factScoreOf(n), 0) / (sel.length || 1);
     // AI 합성은 각 단어의 사실 조각을 새로 엮어 쓴 글이라 원본보다 살짝 낮게, 폴백(문장 이어붙이기)은 원문 그대로라 원래 점수 유지.
     const shownScore = usedAI ? avgScore * 0.85 : avgScore;
+    const xs = !usedAI && fallbackXUrl ? xSourceLinks([fallbackXUrl]) : '';
 
     el.innerHTML = '<div class="synth-title">' + title + '</div>' +
       factBarHtml(shownScore) +
       '<div class="prose" data-fact-pct="' + Math.round(shownScore) + '" style="margin-top:20px;">' + paragraph + '</div>' +
+      (xs ? '<div class="x-src">' + xs + '</div>' : '') +
       '<div class="related-row"><span class="lbl">' + UI[LANG].relatedComboWordsSynth + '</span>' +
       sel.map(n => '<span class="chip" data-id="' + n.id + '">' + n.label + '</span>').join('') + '</div>' +
       storyRemakeBtnHtml() + cardMakeBtnHtml() + storyEditBtnsHtml();
@@ -1890,12 +1918,14 @@
     attachPhoto(el, ids);
   }
 
+  let fallbackXUrl = null;
   function fallbackSynthesis(ids, sel) {
+    fallbackXUrl = null;
     const best = state.thoughts
       .map(t => ({ t, s: t.tags.filter(tag => ids.includes(tag)).length }))
       .filter(o => o.s >= 2)
       .sort((a, b) => b.s - a.s || b.t.addedAt - a.t.addedAt)[0];
-    if (best) return thoughtText(best.t);
+    if (best) { fallbackXUrl = best.t.xUrl || null; return thoughtText(best.t); }
     const frags = sel.map(n => (n.story.match(/^.*?[.!?…。！？]/) || [n.story])[0].trim());
     return frags.join(' ');
   }
@@ -1953,6 +1983,13 @@
     return '<button class="card-make-btn" id="card-make-btn" type="button">' + UI[LANG].cardMakeBtn + '</button>';
   }
 
+  function xSourceLinks(urls) {
+    const ok = (urls || []).filter(u => /^https:\/\/x\.com\/wensonjabi\/status\/\d+$/.test(u));
+    if (!ok.length) return '';
+    return ok.map((u, i) => '<a href="' + u + '" target="_blank" rel="noopener noreferrer">' +
+      UI[LANG].xOriginal + (ok.length > 1 ? ' ' + (i + 1) : '') + ' ↗</a>').join('');
+  }
+
   function renderSingle(n) {
     if (!n) return '';
     const override = activeStoryFor([n.id]);
@@ -1967,6 +2004,10 @@
     h += '<div class="headword">' + n.label + '</div>';
     h += factBarHtml(shownScore);
     h += '<div class="prose" data-fact-pct="' + Math.round(shownScore) + '">' + storyText + '</div>';
+    if (!override) {
+      const xs = xSourceLinks(n.xUrls);
+      if (xs) h += '<div class="x-src">' + xs + '</div>';
+    }
     if (!override && n.status === 'ask') {
       const oq = D.openQuestions.find(q => q.node === n.id);
       h += '<div class="ask-ribbon">' + UI[LANG].askRibbonPrefix + (oq ? ' — "' + oq.q + '"' : '') + '</div>';
@@ -2007,22 +2048,41 @@
       : (t.photoUrl ? '<img class="photo" src="' + t.photoUrl + '" alt="" loading="lazy">' : '');
     return '<div class="thought-card">' + body +
       '<div class="meta">' + formatDate(t.addedAt) + ' · ' +
-      t.tags.map(labelOf).join(' · ') + '</div></div>';
+      t.tags.map(labelOf).join(' · ') +
+      (t.xUrl ? ' · ' + xSourceLinks([t.xUrl]) : '') + '</div></div>';
   }
   function formatDate(ts) {
     const u = UI[LANG];
-    const d = Math.floor((NOW - ts) / 86400000);
+    // contentAsOf 기준 addedAt이 브라우저 시각보다 약간 미래여도(시차) 음수 일수를 내지 않는다.
+    const d = Math.max(0, Math.floor((NOW - ts) / 86400000));
     if (d <= 0) return u.dateToday; if (d === 1) return u.dateYesterday;
     if (d < 7) return u.dateDaysAgo(d); if (d < 30) return u.dateWeeksAgo(Math.floor(d / 7));
     return u.dateMonthsAgo(Math.floor(d / 30));
   }
 
+  const FEED_PAGE = 6;
+  let feedShown = FEED_PAGE;
+
+  function allFeedThoughts() {
+    // remote(/api/thoughts)·로컬 저장·정적 data.js를 날짜순으로 한 줄로 합친다.
+    // 관리자가 더 최근 날짜로 쓴 글이 있으면 자연히 최상단. 같은 시각이면 X 원글(xUrl)을 살짝 우선.
+    return [...remoteThoughts, ...saved.thoughts, ...buildBaseThoughts()].sort((a, b) =>
+      (b.addedAt - a.addedAt) ||
+      ((b.xUrl ? 1 : 0) - (a.xUrl ? 1 : 0)) ||
+      String(b.id).localeCompare(String(a.id)));
+  }
+
   function renderFeed() {
-    // 서버에서 발행된 최신 생각을 먼저(최신순), 그 다음 로컬/기본 생각으로 채운다 — 최근 인터뷰 내용이 항상 앞에 오도록.
-    const remote = [...remoteThoughts].sort((a, b) => b.addedAt - a.addedAt);
-    const rest = [...saved.thoughts, ...buildBaseThoughts()].sort((a, b) => b.addedAt - a.addedAt);
-    const feed = [...remote, ...rest].slice(0, 3);
-    document.getElementById('feed-list').innerHTML = feed.map(thoughtCard).join('');
+    const all = allFeedThoughts();
+    if (feedShown > all.length) feedShown = Math.max(FEED_PAGE, all.length);
+    const feed = all.slice(0, feedShown);
+    let html = feed.map(thoughtCard).join('');
+    if (feedShown < all.length) {
+      html += '<button type="button" class="feed-more" id="feed-more">' + UI[LANG].feedMore + '</button>';
+    }
+    document.getElementById('feed-list').innerHTML = html;
+    const btn = document.getElementById('feed-more');
+    if (btn) btn.addEventListener('click', () => { feedShown += FEED_PAGE; renderFeed(); });
   }
 
   async function fetchRemoteThoughts() {
