@@ -953,8 +953,18 @@
   })();
 
   const NOW = Date.now();
+  // 정적 thoughts의 addedAt은 방문 시점이 아니라 contentAsOf(예: 2026.11.24) 기준 고정일.
+  // UTC+9(KST) 자정을 쓰므로 기준일 당일 daysAgo:0 은 "오늘"로 보이고, 이후 날짜로 자연히 흘러간다.
+  function contentAsOfTs() {
+    const raw = D.profile && D.profile.contentAsOf;
+    const m = raw && String(raw).match(/^(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})$/);
+    if (!m) return NOW;
+    const y = +m[1], mo = +m[2], day = +m[3];
+    return Date.UTC(y, mo - 1, day, -9, 0, 0); // contentAsOf 당일 00:00 UTC+9
+  }
   function buildBaseThoughts() {
-    return D.thoughts.map(t => ({ id: t.id, text: t.text, tags: t.tags, xUrl: t.xUrl, addedAt: NOW - t.daysAgo * 86400000 }));
+    const base = contentAsOfTs();
+    return D.thoughts.map(t => ({ id: t.id, text: t.text, tags: t.tags, xUrl: t.xUrl, addedAt: base - t.daysAgo * 86400000 }));
   }
   // 서버에서 라이브로 받아오는 발행된 생각들 — 인터뷰/기록에서 올라온 최신 콘텐츠. data.js를 손대지 않아도 여기서 갱신됨.
   let remoteThoughts = [];
@@ -2043,7 +2053,8 @@
   }
   function formatDate(ts) {
     const u = UI[LANG];
-    const d = Math.floor((NOW - ts) / 86400000);
+    // contentAsOf 기준 addedAt이 브라우저 시각보다 약간 미래여도(시차) 음수 일수를 내지 않는다.
+    const d = Math.max(0, Math.floor((NOW - ts) / 86400000));
     if (d <= 0) return u.dateToday; if (d === 1) return u.dateYesterday;
     if (d < 7) return u.dateDaysAgo(d); if (d < 30) return u.dateWeeksAgo(Math.floor(d / 7));
     return u.dateMonthsAgo(Math.floor(d / 30));
