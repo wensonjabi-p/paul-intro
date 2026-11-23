@@ -334,6 +334,12 @@
   .feed h2 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 44px); font-weight: 700; }
   .feed .lede { margin-top: 14px; color: var(--muted); max-width: 620px; font-size: 15px; }
   .feed-list { margin-top: 6vh; }
+  .feed-more {
+    margin-top: 10px; background: none; border: 1px solid var(--line); color: var(--muted);
+    font-family: inherit; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 20px;
+    cursor: pointer; letter-spacing: 0.03em; transition: all 0.2s;
+  }
+  .feed-more:hover { border-color: var(--accent); color: var(--accent); }
 
   /* ---------- GUESTBOOK ---------- */
   .guestbook { padding: 10vh 5vw 4vh; max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--line); }
@@ -636,6 +642,7 @@
       skyAutoDeselected: name => '"' + name + '" 선택이 해제됐어요 (최대 3개까지)',
       feedH2: '최근의 생각들',
       feedLede: '이 페이지는 완성본이 아닙니다. 생각이 생길 때마다, 대화할 때마다 성좌는 조금씩 커집니다.',
+      feedMore: '더 보기',
       addboxH4: '새로운 생각 추가',
       addboxHint: '떠오른 생각을 적고, 관련 단어를 붙이면 성좌에서 그 단어를 골랐을 때 나타납니다. 브라우저에 저장됩니다.<br>더 깊은 이야기는 Claude와 대화하면 성좌 자체가 자랍니다.',
       addboxTagLabel: '관련 단어 (쉼표 구분 — 예: 이방인, 파키스탄)',
@@ -717,6 +724,7 @@
       skyAutoDeselected: name => '"' + name + '" was deselected (max 3 at a time)',
       feedH2: 'Recent Thoughts',
       feedLede: "This page is never finished. Every time a thought forms, every time we talk, the constellation grows a little.",
+      feedMore: 'Show more',
       addboxH4: 'Add a New Thought',
       addboxHint: 'Write down a thought and attach related words — it\'ll appear when that word is chosen in the constellation. Saved in your browser.<br>Talk with Claude for a deeper story, and the constellation itself grows.',
       addboxTagLabel: 'Related words (comma-separated — e.g. Outsider, Pakistan)',
@@ -800,6 +808,7 @@
       skyAutoDeselected: name => '"' + name + '" 已取消选择(最多同时选 3 个)',
       feedH2: '最近的想法',
       feedLede: '这个页面永远不是完成品。每当有新的想法，每次交谈，这片星座都会悄悄长大一点。',
+      feedMore: '查看更多',
       addboxH4: '添加新想法',
       addboxHint: '写下浮现的想法，附上相关的词——在星座中选到那个词时就会出现。保存在浏览器中。<br>和 Claude 深入聊聊，星座本身也会成长。',
       addboxTagLabel: '相关词（逗号分隔——例如：异乡人, 巴基斯坦）',
@@ -2040,12 +2049,29 @@
     return u.dateMonthsAgo(Math.floor(d / 30));
   }
 
+  const FEED_PAGE = 6;
+  let feedShown = FEED_PAGE;
+
+  function allFeedThoughts() {
+    // remote(/api/thoughts)·로컬 저장·정적 data.js를 날짜순으로 한 줄로 합친다.
+    // 관리자가 더 최근 날짜로 쓴 글이 있으면 자연히 최상단. 같은 시각이면 X 원글(xUrl)을 살짝 우선.
+    return [...remoteThoughts, ...saved.thoughts, ...buildBaseThoughts()].sort((a, b) =>
+      (b.addedAt - a.addedAt) ||
+      ((b.xUrl ? 1 : 0) - (a.xUrl ? 1 : 0)) ||
+      String(b.id).localeCompare(String(a.id)));
+  }
+
   function renderFeed() {
-    // 서버에서 발행된 최신 생각을 먼저(최신순), 그 다음 로컬/기본 생각으로 채운다 — 최근 인터뷰 내용이 항상 앞에 오도록.
-    const remote = [...remoteThoughts].sort((a, b) => b.addedAt - a.addedAt);
-    const rest = [...saved.thoughts, ...buildBaseThoughts()].sort((a, b) => b.addedAt - a.addedAt);
-    const feed = [...remote, ...rest].slice(0, 3);
-    document.getElementById('feed-list').innerHTML = feed.map(thoughtCard).join('');
+    const all = allFeedThoughts();
+    if (feedShown > all.length) feedShown = Math.max(FEED_PAGE, all.length);
+    const feed = all.slice(0, feedShown);
+    let html = feed.map(thoughtCard).join('');
+    if (feedShown < all.length) {
+      html += '<button type="button" class="feed-more" id="feed-more">' + UI[LANG].feedMore + '</button>';
+    }
+    document.getElementById('feed-list').innerHTML = html;
+    const btn = document.getElementById('feed-more');
+    if (btn) btn.addEventListener('click', () => { feedShown += FEED_PAGE; renderFeed(); });
   }
 
   async function fetchRemoteThoughts() {

@@ -47,7 +47,7 @@ for (const lang of Object.keys(D)) {
 const sig = (lang, fn) => JSON.stringify(D[lang].nodes.map(fn));
 ['en', 'zh'].forEach(l => {
   if (sig('ko', n => [n.id, n.type, n.status, (n.links || []).join(), (n.xUrls || []).join()]) !== sig(l, n => [n.id, n.type, n.status, (n.links || []).join(), (n.xUrls || []).join()])) fail(`ko/${l} node id/type/status/links mismatch`);
-  const th = lang => JSON.stringify(D[lang].thoughts.map(t => [t.id, t.tags.join(), t.xUrl || '']));
+  const th = lang => JSON.stringify(D[lang].thoughts.map(t => [t.id, t.tags.join(), t.xUrl || '', t.daysAgo]));
   if (th('ko') !== th(l)) fail(`ko/${l} thoughts mismatch`);
   const cb = lang => JSON.stringify(D[lang].combos.map(c => [...c.ids].sort().join()));
   if (cb('ko') !== cb(l)) fail(`ko/${l} combos mismatch`);
