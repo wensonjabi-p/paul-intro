@@ -1,0 +1,665 @@
+{
+  "id": "jabi-basic-v1-02",
+  "title": {
+    "en": "jabi. Basics · Unit 2 — Daily life",
+    "ko": "jabi. 기초 · 2과 — 일상생활",
+    "zh": "jabi. 基础 · 第2课 — 日常生活"
+  },
+  "level": "Basic (pre-TOPIK)",
+  "theme": "일상",
+  "sourceNote": "PILOT — jabi. 원작. 세종한국어 2과 '일상생활' 문법 앵커(-아요/어요·에 가다) + 에/에서만 참고.",
+  "objective": {
+    "en": "Ask what someone is doing; say routines with time 에 and place 에서.",
+    "ko": "지금 하는 일 묻기 · 시간 에 · 동작 장소 에서로 루틴 말하기.",
+    "zh": "问正在做什么；用时间에、动作场所에서说日常。"
+  },
+  "explain": {
+    "en": "Present polite: stem + -아요/-어요 (하다→해요). Contrast card: 에 (time / destination / 있어요) ↔ 에서 (action place). Destination: (place)에 가요 — not 에서. Norms: 세종·국어원 place-particle split.",
+    "ko": "존댓말 현재: 어간+-아요/어요(하다→해요). 대조 카드: 에(시간·목적지·있어요) ↔ 에서(동작 장소). 목적지는 에 가요(에서 아님). 규범: 세종·국어원 장소 조사 구분.",
+    "zh": "敬体现在：词干+-아요/어요。对照卡：에（时间/目的地/있어요）↔에서（动作场所）。去某处用에 가요。规范：世宗/国语院场所助词分工。"
+  },
+  "format": "duolingo-basic-v1",
+  "steps": [
+    {
+      "id": "intro",
+      "title": {
+        "en": "Skill intro",
+        "ko": "스킬 소개",
+        "zh": "技能介绍"
+      },
+      "body": {
+        "en": "Describe a simple day with polite present endings (Sejong unit-2 function).",
+        "ko": "존댓말 현재형으로 하루를 말하기(세종 2과 기능).",
+        "zh": "用敬体现再说一天（世宗第2课功能）。"
+      }
+    },
+    {
+      "id": "teach",
+      "title": {
+        "en": "Teach · -아요/어요 · 에 / 에서",
+        "ko": "설명 · -아요/어요 · 에 / 에서",
+        "zh": "讲解 · -아요/어요 · 에 / 에서"
+      },
+      "body": {
+        "en": "Pick 아요 vs 어요 by the stem vowel (bright ㅏ/ㅗ → 아요; else often 어요). Contrast card: 에↔에서 (time/go/exist vs do-at). Deep dive → 글모음 FAQ.",
+        "ko": "어간 모음으로 아요/어요 선택(ㅏ/ㅗ→아요). 대조 카드: 에↔에서(시간·가다·있어요 vs 동작 장소). 심화→글모음 FAQ.",
+        "zh": "按词干元音选아요/어요。对照卡：에↔에서。详解→글모음 FAQ。"
+      }
+    },
+    {
+      "id": "dialogue",
+      "title": {
+        "en": "Dialogue",
+        "ko": "대화",
+        "zh": "对话"
+      },
+      "body": {
+        "en": "Campus afternoon chat — read once, then drill.",
+        "ko": "캠퍼스 오후 수다 — 한 번 읽고 드릴.",
+        "zh": "校园下午闲聊——先读再练。"
+      }
+    },
+    {
+      "id": "practice",
+      "title": {
+        "en": "Practice",
+        "ko": "연습",
+        "zh": "练习"
+      },
+      "body": {
+        "en": "Complete dialogues — tips don’t reveal the answer word first.",
+        "ko": "대화 완성 — 힌트는 정답 단어를 바로 주지 않음.",
+        "zh": "完成对话——提示不先泄露答案词。"
+      }
+    },
+    {
+      "id": "checkpoint",
+      "title": {
+        "en": "Checkpoint",
+        "ko": "체크포인트",
+        "zh": "关卡"
+      },
+      "body": {
+        "en": "Say: wake time + one evening activity.",
+        "ko": "기상 시간 + 저녁 활동 하나.",
+        "zh": "起床时间+晚上活动一句。"
+      }
+    }
+  ],
+  "dialogue": {
+    "title": {
+      "en": "After class",
+      "ko": "수업 후",
+      "zh": "课后"
+    },
+    "lines": [
+      {
+        "who": "타완",
+        "ko": "지금 뭐 해요?"
+      },
+      {
+        "who": "투이",
+        "ko": "저는 지금 한국어를 공부해요."
+      },
+      {
+        "who": "타완",
+        "ko": "저녁에 보통 뭐 해요?"
+      },
+      {
+        "who": "투이",
+        "ko": "일곱 시에 운동해요. 그리고 집에서 쉬어요."
+      }
+    ]
+  },
+  "phrases": [
+    {
+      "ko": "지금 뭐 해요?",
+      "gloss": {
+        "en": "What are you doing now?",
+        "ko": "현재 행동",
+        "zh": "现在做什么"
+      }
+    },
+    {
+      "ko": "한국어를 공부해요.",
+      "gloss": {
+        "en": "I'm studying Korean.",
+        "ko": "공부",
+        "zh": "学习韩语"
+      }
+    },
+    {
+      "ko": "집에서 쉬어요.",
+      "gloss": {
+        "en": "I rest at home.",
+        "ko": "휴식",
+        "zh": "在家休息"
+      }
+    },
+    {
+      "ko": "일곱 시에 일어나요.",
+      "gloss": {
+        "en": "I get up at 7.",
+        "ko": "기상",
+        "zh": "七点起床"
+      }
+    },
+    {
+      "ko": "저녁에 운동해요.",
+      "gloss": {
+        "en": "I exercise in the evening.",
+        "ko": "운동",
+        "zh": "晚上运动"
+      }
+    },
+    {
+      "ko": "보통 카페에서 만나요.",
+      "gloss": {
+        "en": "We usually meet at a café.",
+        "ko": "장소+에서",
+        "zh": "通常在咖啡馆见"
+      }
+    },
+    {
+      "ko": "학교에 가요.",
+      "gloss": {
+        "en": "I go to school.",
+        "ko": "에 가다",
+        "zh": "去学校"
+      }
+    },
+    {
+      "ko": "오늘 바빠요.",
+      "gloss": {
+        "en": "I'm busy today.",
+        "ko": "상태",
+        "zh": "今天忙"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "basic-02-01",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Complete.\n\n타완: 지금 뭐 해요?\n투이: 저는 지금 한국어를 (    ).",
+        "ko": "※ 완성.\n\n타완: 지금 뭐 해요?\n투이: 저는 지금 한국어를 (    ).",
+        "zh": "※ 完成。\n\n他万：지금 뭐 해요?\n翠：저는 지금 한국어를 (    )。"
+      },
+      "choices": [
+        "공부해요",
+        "운동해요",
+        "요리해요",
+        "청소해요"
+      ],
+      "answer": 0,
+      "answerText": "공부해요",
+      "tags": [
+        "topic:일상",
+        "grammar:아요/어요",
+        "vocab:공부"
+      ],
+      "hint": {
+        "ko": "공부하다 → 공부해요.",
+        "en": "공부하다 → 공부해요.",
+        "zh": "공부하다 → 공부해요。",
+        "steps": {
+          "en": [
+            "Object is Korean.",
+            "Verb: study."
+          ],
+          "ko": [
+            "목적어=한국어",
+            "동사=공부"
+          ],
+          "zh": [
+            "宾语是韩语",
+            "动词=学习"
+          ]
+        }
+      },
+      "why": {
+        "en": "공부하다 → 공부해요 (하다→해요 shortcut).",
+        "ko": "공부하다 → 공부해요.",
+        "zh": "공부하다→공부해요。"
+      }
+    },
+    {
+      "id": "basic-02-02",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Complete.\n\nA: 어디에서 쉬어요?\nB: (    ) 쉬어요.",
+        "ko": "※ 완성.\n\nA: 어디에서 쉬어요?\nB: (    ) 쉬어요.",
+        "zh": "※ 完成。\n\nA: 어디에서 쉬어요?\nB: (    ) 쉬어요。"
+      },
+      "choices": [
+        "집에서",
+        "집에",
+        "집으로만",
+        "집까지요만"
+      ],
+      "answer": 0,
+      "answerText": "집에서",
+      "tags": [
+        "topic:일상",
+        "grammar:에서"
+      ],
+      "hint": {
+        "ko": "장소+에서+동작.",
+        "en": "Place+에서+action.",
+        "zh": "场所+에서+动作。",
+        "steps": {
+          "en": [
+            "Resting place",
+            "에서"
+          ],
+          "ko": [
+            "쉬는 장소",
+            "에서"
+          ],
+          "zh": [
+            "休息地点",
+            "에서"
+          ]
+        }
+      },
+      "why": {
+        "en": "Action happens at home → 에서 (not destination 에).",
+        "ko": "동작 장소=집 → 에서(목적지 에 아님).",
+        "zh": "在家做动作→에서。"
+      }
+    },
+    {
+      "id": "basic-02-03",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Complete.\n\nA: 몇 시에 일어나요?\nB: (    ) 일어나요.",
+        "ko": "※ 완성.\n\nA: 몇 시에 일어나요?\nB: (    ) 일어나요.",
+        "zh": "※ 完成。\n\nA: 몇 시에 일어나요?\nB: (    ) 일어나요。"
+      },
+      "choices": [
+        "일곱 시에",
+        "일곱 시에서",
+        "일곱 시만",
+        "일곱"
+      ],
+      "answer": 0,
+      "answerText": "일곱 시에",
+      "tags": [
+        "topic:일상",
+        "grammar:에"
+      ],
+      "hint": {
+        "ko": "시간에 에.",
+        "en": "Time takes 에.",
+        "zh": "时间加에。",
+        "steps": {
+          "en": [
+            "Clock time",
+            "Attach 에"
+          ],
+          "ko": [
+            "시계 시간",
+            "에 붙임"
+          ],
+          "zh": [
+            "钟点",
+            "加에"
+          ]
+        }
+      },
+      "why": {
+        "en": "Clock time takes 에: 일곱 시에.",
+        "ko": "시계 시간은 에: 일곱 시에.",
+        "zh": "钟点加에。"
+      }
+    },
+    {
+      "id": "basic-02-04",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Destination.\n\nA: 어디에 가요?\nB: 지금 (    ).",
+        "ko": "※ 목적지.\n\nA: 어디에 가요?\nB: 지금 (    ).",
+        "zh": "※ 目的地。\n\nA: 어디에 가요?\nB: 지금 (    )。"
+      },
+      "choices": [
+        "학교에 가요",
+        "학교에서 가요",
+        "학교만 해요",
+        "학교 사람이에요"
+      ],
+      "answer": 0,
+      "answerText": "학교에 가요",
+      "tags": [
+        "topic:일상",
+        "grammar:에 가다"
+      ],
+      "hint": {
+        "ko": "가는 곳은 에 가요.",
+        "en": "Going somewhere → 에 가요.",
+        "zh": "去某处 → 에 가요。",
+        "steps": {
+          "en": [
+            "Ask where going",
+            "에 + 가요"
+          ],
+          "ko": [
+            "어디 가요",
+            "에+가요"
+          ],
+          "zh": [
+            "问去哪",
+            "에+가요"
+          ]
+        }
+      },
+      "why": {
+        "en": "Destination of 가다 → (place)에 가요.",
+        "ko": "가다 목적지 → 에 가요.",
+        "zh": "去某处：에 가요。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "에서 marks action place, not destination alone.",
+          "ko": "에서는 동작 장소.",
+          "zh": "에서是动作场所。"
+        },
+        "2": {
+          "en": "만 = only — wrong frame.",
+          "ko": "만=오직 — 틀.",
+          "zh": "만＝只——框不对。"
+        },
+        "3": {
+          "en": "사람이에요 is nationality/identity.",
+          "ko": "사람이에요는 신원.",
+          "zh": "사람이에요是身份。"
+        }
+      }
+    },
+    {
+      "id": "basic-02-05",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Complete.\n\nA: 오늘 어때요?\nB: 오늘 (    ). 숙제가 많아요.",
+        "ko": "※ 완성.\n\nA: 오늘 어때요?\nB: 오늘 (    ). 숙제가 많아요.",
+        "zh": "※ 完成。\n\nA: 오늘 어때요?\nB: 오늘 (    ). 숙제가 많아요。"
+      },
+      "choices": [
+        "바빠요",
+        "과일이요",
+        "화장실이요",
+        "받침이요"
+      ],
+      "answer": 0,
+      "answerText": "바빠요",
+      "tags": [
+        "topic:일상",
+        "grammar:아요/어요"
+      ],
+      "hint": {
+        "ko": "형용사도 -아요/어요.",
+        "en": "Adjectives also take -아요/어요.",
+        "zh": "形容词也接-아요/어요。",
+        "steps": {
+          "en": [
+            "Lots of homework cue",
+            "Busy"
+          ],
+          "ko": [
+            "숙제 많음",
+            "바쁘다"
+          ],
+          "zh": [
+            "作业多",
+            "忙"
+          ]
+        }
+      },
+      "why": {
+        "en": "Polite present for 만나다 → 만나요.",
+        "ko": "만나다 → 만나요.",
+        "zh": "만나다→만나요。"
+      }
+    },
+    {
+      "id": "basic-02-06",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Complete.\n\nA: 친구를 어디에서 만나요?\nB: 보통 카페(    ) 만나요.",
+        "ko": "※ 완성.\n\nA: 친구를 어디에서 만나요?\nB: 보통 카페(    ) 만나요.",
+        "zh": "※ 完成。\n\nA: 친구를 어디에서 만나요?\nB: 보통 카페(    ) 만나요。"
+      },
+      "choices": [
+        "에서",
+        "에만",
+        "으로요",
+        "와"
+      ],
+      "answer": 0,
+      "answerText": "에서",
+      "tags": [
+        "topic:일상",
+        "grammar:에서"
+      ],
+      "hint": {
+        "ko": "동작 장소.",
+        "en": "Action location.",
+        "zh": "动作地点。",
+        "steps": {
+          "en": [
+            "Meeting is an action",
+            "에서"
+          ],
+          "ko": [
+            "만남은 동작",
+            "에서"
+          ],
+          "zh": [
+            "见面是动作",
+            "에서"
+          ]
+        }
+      },
+      "why": {
+        "en": "지금 뭐 해요? asks present activity with -아요/어요.",
+        "ko": "지금 뭐 해요?=현재 활동.",
+        "zh": "지금 뭐 해요？问正在做的事。"
+      }
+    },
+    {
+      "id": "basic-02-07",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Evening activity.\n\nA: 저녁에 보통 뭐 해요?\nB: 저녁에 (    ).",
+        "ko": "※ 저녁.\n\nA: 저녁에 보통 뭐 해요?\nB: 저녁에 (    ).",
+        "zh": "※ 晚上。\n\nA: 저녁에 보통 뭐 해요?\nB: 저녁에 (    )。"
+      },
+      "choices": [
+        "운동해요",
+        "아침이에요",
+        "사람이에요",
+        "받침이에요"
+      ],
+      "answer": 0,
+      "answerText": "운동해요",
+      "tags": [
+        "topic:일상"
+      ],
+      "hint": {
+        "ko": "활동 동사 -아요/어요.",
+        "en": "Activity verb ending.",
+        "zh": "活动动词尾。",
+        "steps": {
+          "en": [
+            "Ask what you do",
+            "Pick an activity"
+          ],
+          "ko": [
+            "뭐 해요 질문",
+            "활동 선택"
+          ],
+          "zh": [
+            "问做什么",
+            "选活动"
+          ]
+        }
+      },
+      "why": {
+        "en": "Cafe is where they meet → 에서.",
+        "ko": "만나는 장소=카페 → 에서.",
+        "zh": "见面场所→에서。"
+      }
+    },
+    {
+      "id": "basic-02-08",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Choose.\n\nA: 지금 뭐 해요?\nB: (    ) — I'm resting at home.",
+        "ko": "※ 고르기.\n\nA: 지금 뭐 해요?\nB: (    ) — 집에서 쉬는 중.",
+        "zh": "※ 选择。\n\nA: 지금 뭐 해요?\nB: (    ) — 在家休息。"
+      },
+      "choices": [
+        "집에서 쉬어요",
+        "집 사람이에요",
+        "일곱 시예요",
+        "만나서 반가워요"
+      ],
+      "answer": 0,
+      "answerText": "집에서 쉬어요",
+      "tags": [
+        "topic:일상"
+      ],
+      "hint": {
+        "ko": "장소+동작.",
+        "en": "Place+action.",
+        "zh": "场所+动作。",
+        "steps": {
+          "en": [
+            "Rest + home",
+            "에서"
+          ],
+          "ko": [
+            "쉬다+집",
+            "에서"
+          ],
+          "zh": [
+            "休息+家",
+            "에서"
+          ]
+        }
+      },
+      "why": {
+        "en": "쉬다 → 쉬어요 (stem + 어요).",
+        "ko": "쉬다 → 쉬어요.",
+        "zh": "쉬다→쉬어요。"
+      }
+    }
+  ],
+  "verified": false,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "research": "docs/research-basic-content-fill-ko.md · docs/research-korean-grammar-explain-ko.md",
+  "grammarCards": [
+    {
+      "id": "ayo-oyo",
+      "title": {
+        "en": "-아요 / -어요",
+        "ko": "-아요 / -어요",
+        "zh": "-아요 / -어요"
+      },
+      "body": {
+        "en": "Attach to the verb/adjective stem for everyday polite present. Common shortcuts: 하다→해요, 가다→가요, 먹다→먹어요.",
+        "ko": "어간에 붙여 일상 공손 현재. 자주: 하다→해요, 가다→가요, 먹다→먹어요.",
+        "zh": "接词干表日常敬体现在。常见：하다→해요等。"
+      },
+      "examples": [
+        {
+          "ko": "공부해요.",
+          "gloss": {
+            "en": "하다 → 해요",
+            "ko": "하다→해요",
+            "zh": "하다→해요"
+          }
+        },
+        {
+          "ko": "먹어요.",
+          "gloss": {
+            "en": "먹다 → 어요",
+            "ko": "먹다→어요",
+            "zh": "먹다→어요"
+          }
+        }
+      ],
+      "related": [
+        {
+          "href": "../../blog/#ayo-oyo",
+          "label": {
+            "en": "글모음 · -아요/-어요 →",
+            "ko": "글모음 · -아요/-어요 →",
+            "zh": "글모음 · -아요/-어요 →"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e-eseo",
+      "kind": "contrast",
+      "title": {
+        "en": "에 ↔ 에서",
+        "ko": "에 ↔ 에서",
+        "zh": "에 ↔ 에서"
+      },
+      "body": {
+        "en": "세종·국어원 split: 에 = time, destination, or static location (있어요). 에서 = place where an action happens. Learner rule: clock / go-to / exist → 에 · do-X-at-Y → 에서.",
+        "ko": "세종·국어원 구분: 에=시간·목적지·정적 위치(있어요). 에서=동작이 일어나는 장소. 학습 규칙: 시계·가다·있어요→에 · Y에서 X하다→에서.",
+        "zh": "世宗/国语院分工：에=时间、目的地、静态位置(있어요)；에서=动作发生的场所。规则：钟点/去/存在→에；在Y做X→에서。"
+      },
+      "examples": [
+        {
+          "ko": "일곱 시에 만나요.",
+          "gloss": {
+            "en": "Time · 에",
+            "ko": "시간 · 에",
+            "zh": "时间 · 에"
+          }
+        },
+        {
+          "ko": "학교에 가요.",
+          "gloss": {
+            "en": "Destination · 에 (not 에서)",
+            "ko": "목적지 · 에 (에서 아님)",
+            "zh": "目的地 · 에（不是에서）"
+          }
+        },
+        {
+          "ko": "집에서 쉬어요.",
+          "gloss": {
+            "en": "Action place · 에서",
+            "ko": "동작 장소 · 에서",
+            "zh": "动作场所 · 에서"
+          }
+        }
+      ],
+      "trap": {
+        "en": "학교에 가요 ≠ 학교에서 가요. Going uses 에; studying at school uses 에서.",
+        "ko": "「학교에 가요」≠「학교에서 가요」. 가기는 에 · 학교에서 공부는 에서.",
+        "zh": "학교에 가요 ≠ 학교에서 가요。去用에；在学校学习用에서。"
+      },
+      "related": [
+        {
+          "href": "../../blog/#e-vs-eseo",
+          "label": {
+            "en": "글모음 · 에 vs 에서 →",
+            "ko": "글모음 · 에 vs 에서 →",
+            "zh": "글모음 · 에 vs 에서 →"
+          }
+        }
+      ]
+    }
+  ]
+}

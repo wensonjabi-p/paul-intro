@@ -1,0 +1,257 @@
+{
+  "id": "jabi-topik2-write-53-v0",
+  "title": {
+    "en": "jabi. TOPIK II · Writing Q53 (pilot)",
+    "ko": "jabi. TOPIK II · 쓰기 53번 (파일럿)",
+    "zh": "jabi. TOPIK II · 写作第53题（试点）"
+  },
+  "level": "TOPIK II Writing · Q53",
+  "kind": "write-53",
+  "verified": false,
+  "verifiedAt": "2026-07-27",
+  "source": "jabi-original",
+  "sourceNote": "Research fill — original short-composition prompts (~200–300 Hangul chars). Graph/info described in text (no official TOPIK items). Formative trait continuum from length/register/softKeywords/checklist — no AI / Lemon. Do not leak full model essay in early tips.",
+  "research": [
+    "docs/research-topik2-content-fill-ko.md",
+    "docs/research-english-aes-for-jabi-ko.md",
+    "docs/research-topik2-writing-scoring-papers-ko.md",
+    "docs/research-topik2-writing-grading-ko.md",
+    "docs/topik2-writing-axis-mapping-ko.md"
+  ],
+  "scoring": {
+    "mode": "trait-heuristic",
+    "scale": "0-100",
+    "note": "Weighted traits continuum (partial credit) — formative only",
+    "traits": {
+      "content": {
+        "weight": 0.4,
+        "label": {
+          "en": "Content",
+          "ko": "내용",
+          "zh": "内容"
+        }
+      },
+      "organization": {
+        "weight": 0.3,
+        "label": {
+          "en": "Organization / flow",
+          "ko": "조직·흐름",
+          "zh": "结构·连贯"
+        }
+      },
+      "language": {
+        "weight": 0.3,
+        "label": {
+          "en": "Language",
+          "ko": "언어",
+          "zh": "语言"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "t2-w53-01",
+      "type": "write-short",
+      "minChars": 180,
+      "maxChars": 320,
+      "prompt": {
+        "ko": "※ 다음 자료를 보고 그래프의 내용과 변화 이유를 중심으로 200~300자로 쓰십시오. (원작 연습용)\n\n[자료] 한국 성인의 ‘주 3회 이상 운동’ 비율\n· 2018년: 28%\n· 2021년: 34%\n· 2024년: 41%\n\n조건: (1) 전체 추세를 한 문장으로 요약 (2) 가장 큰 변화가 언제인지 언급 (3) 가능한 이유를 하나 이상 제시 (4) 격식체 문어.",
+        "en": "Using the data, write ~200–300 Hangul characters on the trend and reasons. (Original practice — not official TOPIK.)\n\n[Data] Share of Korean adults who exercise 3+ times/week\n· 2018: 28%\n· 2021: 34%\n· 2024: 41%\n\nInclude: (1) overall trend (2) when the biggest change was (3) at least one possible reason (4) formal written Korean.",
+        "zh": "根据资料，围绕图表内容与变化原因写约200–300字（韩文字符）。（原作练习，非官方题）\n\n[资料] 韩国成年人“每周运动3次以上”比例\n· 2018：28%\n· 2021：34%\n· 2024：41%\n\n须含：(1)总体趋势 (2)最大变化时段 (3)至少一条可能原因 (4)书面敬体。"
+      },
+      "checklist": [
+        {
+          "id": "trend",
+          "en": "States overall upward trend with years/figures",
+          "ko": "연도·수치와 함께 전반적 상승 추세를 말함",
+          "zh": "用年份/数字说明总体上升趋势"
+        },
+        {
+          "id": "change",
+          "en": "Notes largest jump (esp. 2021→2024)",
+          "ko": "가장 큰 상승(특히 2021→2024)을 언급",
+          "zh": "提到最大升幅（尤其2021→2024）"
+        },
+        {
+          "id": "reason",
+          "en": "Gives at least one plausible reason",
+          "ko": "그럴듯한 이유를 하나 이상 제시",
+          "zh": "给出至少一条合理原因"
+        },
+        {
+          "id": "register",
+          "en": "Uses formal written endings (-습니다 / -다)",
+          "ko": "격식체 문어 종결(-습니다/-다) 사용",
+          "zh": "使用书面敬体语尾（-습니다/-다）"
+        }
+      ],
+      "softKeywords": [
+        "2018",
+        "2021",
+        "2024",
+        "%",
+        "증가",
+        "늘",
+        "운동"
+      ],
+      "modelOutline": {
+        "en": "Outline only: rising share 28→34→41; biggest rise after 2021; reason e.g. health interest / remote work flexibility. Full essay not shown in early tip.",
+        "ko": "개요만: 비율 28→34→41 상승 · 2021 이후 상승폭 큼 · 이유 예: 건강 관심·재택 유연 근무. 전문은 조기 팁에 없음.",
+        "zh": "仅提纲：比例28→34→41上升；2021后升幅大；原因如健康意识/居家办公灵活。全文不在早期提示中给出。"
+      },
+      "feedback": {
+        "ok": {
+          "en": "OK — length and checklist look solid. Not an official score.",
+          "ko": "통과 — 분량·체크리스트가 무난합니다. 공식 점수 아님.",
+          "zh": "通过 — 篇幅与清单看起来扎实。非官方分数。"
+        },
+        "stub": {
+          "en": "Coach: hit ~200–300 chars, cover trend + biggest change + one reason, stay formal. Outline reveal is optional after check.",
+          "ko": "코치: 약 200–300자, 추세·최대 변화·이유 하나, 격식체. 확인 후 개요 보기는 선택.",
+          "zh": "教练：约200–300字，覆盖趋势、最大变化、一条原因，保持敬体。核对后可选查看提纲。"
+        }
+      },
+      "why": {
+        "en": "Q53 rewards clear data summary + structure, not creative freestyle.",
+        "ko": "53번은 자료 요약·구조가 핵심 — 자유 창작보다 과제 수행.",
+        "zh": "第53题重在资料归纳与结构，而非自由创作。"
+      }
+    },
+    {
+      "id": "t2-w53-02",
+      "type": "write-short",
+      "minChars": 180,
+      "maxChars": 320,
+      "prompt": {
+        "ko": "※ 다음 표를 보고 두 교통수단을 비교하여 200~300자로 쓰십시오. (원작 연습용)\n\n[표] 시내 출근 평균 (편도)\n· 버스: 시간 45분 · 비용 1,500원 · 환승 평균 1.2회\n· 지하철: 시간 32분 · 비용 1,450원 · 환승 평균 0.6회\n\n조건: (1) 시간·비용·환승을 비교 (2) 어떤 수단이 더 유리한지 한 문장으로 결론 (3) 격식체 문어.",
+        "en": "Compare the two commute options in ~200–300 Hangul characters. (Original practice.)\n\n[Table] Average one-way city commute\n· Bus: 45 min · 1,500 won · 1.2 transfers\n· Subway: 32 min · 1,450 won · 0.6 transfers\n\nInclude: (1) compare time/cost/transfers (2) one-sentence which is better (3) formal written Korean.",
+        "zh": "比较两种通勤方式，写约200–300字（韩文字符）。（原作练习）\n\n[表] 市内上班单程平均\n· 公交：45分钟 · 1,500韩元 · 换乘平均1.2次\n· 地铁：32分钟 · 1,450韩元 · 换乘平均0.6次\n\n须含：(1)比较时间/费用/换乘 (2)一句结论哪种更有利 (3)书面敬体。"
+      },
+      "checklist": [
+        {
+          "id": "compare",
+          "en": "Compares time, cost, and transfers",
+          "ko": "시간·비용·환승을 비교함",
+          "zh": "比较了时间、费用与换乘"
+        },
+        {
+          "id": "conclude",
+          "en": "States a clear preference / conclusion",
+          "ko": "어느 쪽이 유리한지 결론을 냄",
+          "zh": "给出明确更优结论"
+        },
+        {
+          "id": "register",
+          "en": "Uses formal written endings (-습니다 / -다)",
+          "ko": "격식체 문어 종결(-습니다/-다) 사용",
+          "zh": "使用书面敬体语尾（-습니다/-다）"
+        },
+        {
+          "id": "length",
+          "en": "Stays near 200–300 Hangul characters",
+          "ko": "대략 200–300자 분량",
+          "zh": "篇幅约在200–300字（韩文）"
+        }
+      ],
+      "softKeywords": [
+        "버스",
+        "지하철",
+        "시간",
+        "비용",
+        "환승"
+      ],
+      "modelOutline": {
+        "en": "Outline only: subway faster + fewer transfers; cost similar; conclude subway usually better for this commute. No full model text in early tip.",
+        "ko": "개요만: 지하철이 더 빠르고 환승 적음 · 비용 비슷 · 이 조건에선 지하철이 유리. 전문은 조기 팁에 없음.",
+        "zh": "仅提纲：地铁更快、换乘更少；费用接近；此条件下地铁更有利。全文不在早期提示中给出。"
+      },
+      "feedback": {
+        "ok": {
+          "en": "OK — comparison + conclusion look present. Not an official score.",
+          "ko": "통과 — 비교·결론이 보입니다. 공식 점수 아님.",
+          "zh": "通过 — 可见比较与结论。非官方分数。"
+        },
+        "stub": {
+          "en": "Coach: cover all three metrics, end with a clear conclusion, keep formal length band. Reveal outline only if you want.",
+          "ko": "코치: 세 지표를 다루고 분명한 결론으로 끝내세요. 격식체·분량 유지. 개요는 원할 때만.",
+          "zh": "教练：覆盖三项指标并以明确结论收尾。保持敬体与篇幅。提纲仅在需要时查看。"
+        }
+      },
+      "why": {
+        "en": "Q53 comparison tasks need balanced facts then a crisp closing line.",
+        "ko": "53번 비교형은 사실 균형 + 짧은 결론이 중요.",
+        "zh": "第53题比较型需事实均衡 + 简洁收尾。"
+      }
+    },
+    {
+      "id": "t2-w53-03",
+      "type": "write-short",
+      "minChars": 180,
+      "maxChars": 320,
+      "prompt": {
+        "ko": "※ 다음 자료를 보고 변화와 이유를 중심으로 200~300자로 쓰십시오. (원작 연습용)\n\n[자료] 대학생 ‘하루 스마트폰 사용 3시간 이상’ 비율\n· 2019년: 42%\n· 2022년: 55%\n· 2025년: 63%\n\n조건: (1) 전체 추세 요약 (2) 가장 큰 상승 구간 언급 (3) 가능한 이유 하나 이상 (4) 격식체 문어.",
+        "en": "Using the data, write ~200–300 Hangul characters on the trend and reasons. (Original practice.)\n\n[Data] Share of university students using smartphones 3+ hours/day\n· 2019: 42%\n· 2022: 55%\n· 2025: 63%\n\nInclude: (1) overall trend (2) largest rise interval (3) ≥1 reason (4) formal written Korean.",
+        "zh": "根据资料写约200–300字（韩文字符），围绕变化与原因。（原作练习）\n\n[资料] 大学生“每天使用智能手机3小时以上”比例\n· 2019：42%\n· 2022：55%\n· 2025：63%\n\n须含：(1)总体趋势 (2)最大升幅区间 (3)至少一条原因 (4)书面敬体。"
+      },
+      "checklist": [
+        {
+          "id": "trend",
+          "en": "States overall upward trend with years/figures",
+          "ko": "연도·수치와 함께 전반적 상승 추세를 말함",
+          "zh": "用年份/数字说明总体上升趋势"
+        },
+        {
+          "id": "change",
+          "en": "Notes largest jump (esp. 2019→2022)",
+          "ko": "가장 큰 상승(특히 2019→2022)을 언급",
+          "zh": "提到最大升幅（尤其2019→2022）"
+        },
+        {
+          "id": "reason",
+          "en": "Gives at least one plausible reason",
+          "ko": "그럴듯한 이유를 하나 이상 제시",
+          "zh": "给出至少一条合理原因"
+        },
+        {
+          "id": "register",
+          "en": "Uses formal written endings (-습니다 / -다)",
+          "ko": "격식체 문어 종결(-습니다/-다) 사용",
+          "zh": "使用书面敬体语尾（-습니다/-다）"
+        }
+      ],
+      "softKeywords": [
+        "2019",
+        "2022",
+        "2025",
+        "%",
+        "증가",
+        "늘",
+        "스마트",
+        "사용"
+      ],
+      "modelOutline": {
+        "en": "Outline only: rising 42→55→63; biggest rise 2019–2022; reason e.g. online class / SNS. No full model in early tip.",
+        "ko": "개요만: 42→55→63 상승 · 2019–2022 상승폭 큼 · 이유 예: 온라인 수업·SNS. 전문은 조기 팁에 없음.",
+        "zh": "仅提纲：42→55→63上升；2019–2022升幅大；原因如网课/社交。全文不在早期提示。"
+      },
+      "feedback": {
+        "ok": {
+          "en": "OK — length and checklist look solid. Not an official score.",
+          "ko": "통과 — 분량·체크리스트가 무난합니다. 공식 점수 아님.",
+          "zh": "通过 — 篇幅与清单看起来扎实。非官方分数。"
+        },
+        "stub": {
+          "en": "Coach: hit ~200–300 chars, cover trend + biggest change + one reason, stay formal. Outline reveal optional.",
+          "ko": "코치: 약 200–300자, 추세·최대 변화·이유 하나, 격식체. 개요 보기는 선택.",
+          "zh": "教练：约200–300字，覆盖趋势、最大变化、一条原因，保持敬体。提纲可选。"
+        }
+      },
+      "why": {
+        "en": "Q53 rewards clear data summary + structure, not freestyle.",
+        "ko": "53번은 자료 요약·구조가 핵심 — 자유 창작보다 과제 수행.",
+        "zh": "第53题重在资料归纳与结构，而非自由创作。"
+      }
+    }
+  ]
+}

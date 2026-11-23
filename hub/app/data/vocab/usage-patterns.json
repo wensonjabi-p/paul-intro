@@ -1,0 +1,558 @@
+{
+  "id": "jabi-usage-patterns",
+  "version": 1,
+  "updated": "2026-07-27",
+  "registerDefault": "해요",
+  "note": "Phase 3 starter — high-value survival patterns from drinks-order / requests-favors / habits-lifestyle / rules-permission grammarHooks + repeated examples. Grow only when a pattern repeats or a hook is taught; do not invent across all 736 lemmas.",
+  "schema": {
+    "usageId": "use:{anchor}.{role}",
+    "pattern": "slot template with {slot} / {V} / {N}",
+    "register": "해요 | 합쇼 | 반말 | 문어",
+    "speechAct": "request | ask | offer | suggest | thank | describe | forbid | allow | oblige | reassure | promise",
+    "skill": "order | ask-price | ask-availability | ask-permission | request-favor | describe-habit | observe-rule | …",
+    "senseIds": "optional — senses that slot into or exemplify the pattern",
+    "themes": "themeKey canon",
+    "grammarHooks": "pack grammarHooks strings when applicable",
+    "example": "one KO exemplar from pack (not new invention)"
+  },
+  "patterns": [
+    {
+      "usageId": "use:주세요.order",
+      "pattern": "{slot} 주세요",
+      "register": "해요",
+      "speechAct": "request",
+      "skill": "order",
+      "themes": [
+        "cafe"
+      ],
+      "grammarHooks": [
+        "주세요"
+      ],
+      "senseIds": [
+        "sns:물.1",
+        "sns:커피.1",
+        "sns:콜라.1"
+      ],
+      "example": {
+        "ko": "물 주세요.",
+        "sourcePack": "drinks-order",
+        "sourceItem": "beg-dr-01"
+      }
+    },
+    {
+      "usageId": "use:얼마예요.price",
+      "pattern": "{slot} 얼마예요?",
+      "register": "해요",
+      "speechAct": "ask",
+      "skill": "ask-price",
+      "themes": [
+        "cafe",
+        "shopping"
+      ],
+      "grammarHooks": [
+        "얼마예요"
+      ],
+      "senseIds": [
+        "sns:주스.1"
+      ],
+      "example": {
+        "ko": "오렌지 주스 얼마예요?",
+        "sourcePack": "drinks-order",
+        "sourceItem": "beg-dr-04"
+      }
+    },
+    {
+      "usageId": "use:있어요.availability",
+      "pattern": "{slot} 있어요?",
+      "register": "해요",
+      "speechAct": "ask",
+      "skill": "ask-availability",
+      "themes": [
+        "cafe"
+      ],
+      "senseIds": [
+        "sns:차.1",
+        "sns:온수.1"
+      ],
+      "example": {
+        "ko": "온수 있어요?",
+        "sourcePack": "drinks-order",
+        "sourceItem": "beg-dr-09"
+      }
+    },
+    {
+      "usageId": "use:잔이요.order",
+      "pattern": "{item} {n} 잔이요",
+      "register": "해요",
+      "speechAct": "request",
+      "skill": "order",
+      "themes": [
+        "cafe"
+      ],
+      "senseIds": [
+        "sns:잔.1",
+        "sns:커피.1"
+      ],
+      "example": {
+        "ko": "커피 두 잔이요.",
+        "sourcePack": "drinks-order",
+        "sourceItem": "beg-dr-06"
+      }
+    },
+    {
+      "usageId": "use:넣어주세요.request",
+      "pattern": "{slot} 넣어 주세요",
+      "register": "해요",
+      "speechAct": "request",
+      "skill": "order",
+      "themes": [
+        "cafe"
+      ],
+      "grammarHooks": [
+        "주세요",
+        "아/어 주세요"
+      ],
+      "senseIds": [
+        "sns:우유.1"
+      ],
+      "example": {
+        "ko": "우유 조금 넣어 주세요.",
+        "sourcePack": "drinks-order",
+        "sourceItem": "beg-dr-05"
+      }
+    },
+    {
+      "usageId": "use:하실래요.offer",
+      "pattern": "{option}로 하실래요?",
+      "register": "해요",
+      "speechAct": "offer",
+      "skill": "order",
+      "themes": [
+        "cafe"
+      ],
+      "senseIds": [
+        "sns:아이스.1"
+      ],
+      "example": {
+        "ko": "아이스로 하실래요?",
+        "sourcePack": "drinks-order",
+        "sourceItem": "beg-dr-08"
+      }
+    },
+    {
+      "usageId": "use:시킬까요.suggest",
+      "pattern": "뭐 시킬까요?",
+      "register": "해요",
+      "speechAct": "suggest",
+      "skill": "order",
+      "themes": [
+        "cafe",
+        "restaurant"
+      ],
+      "senseIds": [
+        "sns:시키다.1"
+      ],
+      "example": {
+        "ko": "뭐 시킬까요?",
+        "sourcePack": "drinks-order",
+        "sourceItem": "beg-dr-10"
+      }
+    },
+    {
+      "usageId": "use:아어주세요.request",
+      "pattern": "{V-아/어} 주세요",
+      "register": "해요",
+      "speechAct": "request",
+      "skill": "request-favor",
+      "themes": [
+        "favor",
+        "rules"
+      ],
+      "grammarHooks": [
+        "아/어 주세요"
+      ],
+      "senseIds": [
+        "sns:도와주다.1",
+        "sns:확인하다.1",
+        "sns:규칙.1"
+      ],
+      "example": {
+        "ko": "짐 옮기는 걸 도와주세요.",
+        "sourcePack": "requests-favors",
+        "sourceItem": "int-rf-02"
+      }
+    },
+    {
+      "usageId": "use:부탁하다.request",
+      "pattern": "{N} 좀 부탁해요",
+      "register": "해요",
+      "speechAct": "request",
+      "skill": "request-favor",
+      "themes": [
+        "favor"
+      ],
+      "senseIds": [
+        "sns:부탁하다.1"
+      ],
+      "example": {
+        "ko": "이 서류 좀 부탁해요.",
+        "sourcePack": "requests-favors",
+        "sourceItem": "int-rf-01"
+      }
+    },
+    {
+      "usageId": "use:아어도되다.permission",
+      "pattern": "{V-아/어}도 돼요?",
+      "register": "해요",
+      "speechAct": "ask",
+      "skill": "ask-permission",
+      "themes": [
+        "favor",
+        "rules"
+      ],
+      "grammarHooks": [
+        "아/어도 되다"
+      ],
+      "senseIds": [
+        "sns:빌리다.1",
+        "sns:바꾸다.1",
+        "sns:물어보다.1"
+      ],
+      "example": {
+        "ko": "펜 하나 빌려도 돼요?",
+        "sourcePack": "requests-favors",
+        "sourceItem": "int-rf-03"
+      }
+    },
+    {
+      "usageId": "use:아어도괜찮다.reassure",
+      "pattern": "{V-아/어}도 괜찮아요",
+      "register": "해요",
+      "speechAct": "reassure",
+      "skill": "request-favor",
+      "themes": [
+        "favor"
+      ],
+      "senseIds": [
+        "sns:괜찮다.1"
+      ],
+      "example": {
+        "ko": "천천히 해도 괜찮아요.",
+        "sourcePack": "requests-favors",
+        "sourceItem": "int-rf-04"
+      }
+    },
+    {
+      "usageId": "use:고마워요.thanks",
+      "pattern": "{reason} 고마워요",
+      "register": "해요",
+      "speechAct": "thank",
+      "skill": "request-favor",
+      "themes": [
+        "favor"
+      ],
+      "senseIds": [
+        "sns:고맙다.1"
+      ],
+      "example": {
+        "ko": "도와 주셔서 정말 고마워요.",
+        "sourcePack": "requests-favors",
+        "sourceItem": "int-rf-05"
+      }
+    },
+    {
+      "usageId": "use:필요해요.need",
+      "pattern": "{N}이/가 필요해요",
+      "register": "해요",
+      "speechAct": "request",
+      "skill": "request-favor",
+      "themes": [
+        "favor",
+        "habit"
+      ],
+      "senseIds": [
+        "sns:필요하다.1",
+        "sns:휴식.1"
+      ],
+      "example": {
+        "ko": "지금 도움이 필요해요.",
+        "sourcePack": "requests-favors",
+        "sourceItem": "int-rf-06"
+      }
+    },
+    {
+      "usageId": "use:고있어요.progress",
+      "pattern": "{V}고 있어요",
+      "register": "해요",
+      "speechAct": "describe",
+      "skill": "request-favor",
+      "themes": [
+        "favor"
+      ],
+      "senseIds": [
+        "sns:찾다.1"
+      ],
+      "example": {
+        "ko": "지갑을 찾고 있어요.",
+        "sourcePack": "requests-favors",
+        "sourceItem": "int-rf-09"
+      }
+    },
+    {
+      "usageId": "use:습관이있다.habit",
+      "pattern": "{clause} 습관이 있어요",
+      "register": "해요",
+      "speechAct": "describe",
+      "skill": "describe-habit",
+      "themes": [
+        "habit"
+      ],
+      "senseIds": [
+        "sns:습관.1"
+      ],
+      "example": {
+        "ko": "아침에 운동하는 습관이 있어요.",
+        "sourcePack": "habits-lifestyle",
+        "sourceItem": "int-hb-01"
+      }
+    },
+    {
+      "usageId": "use:익숙하다.describe",
+      "pattern": "{N}이/가 익숙해요",
+      "register": "해요",
+      "speechAct": "describe",
+      "skill": "describe-habit",
+      "themes": [
+        "habit"
+      ],
+      "senseIds": [
+        "sns:익숙하다.1"
+      ],
+      "example": {
+        "ko": "이 길이 이제 익숙해요.",
+        "sourcePack": "habits-lifestyle",
+        "sourceItem": "int-hb-03"
+      }
+    },
+    {
+      "usageId": "use:적응하다.want",
+      "pattern": "{N}에 적응하고 싶어요",
+      "register": "해요",
+      "speechAct": "describe",
+      "skill": "describe-habit",
+      "themes": [
+        "habit"
+      ],
+      "grammarHooks": [
+        "고 싶다"
+      ],
+      "senseIds": [
+        "sns:적응하다.1"
+      ],
+      "example": {
+        "ko": "새 회사에 빨리 적응하고 싶어요.",
+        "sourcePack": "habits-lifestyle",
+        "sourceItem": "int-hb-05"
+      }
+    },
+    {
+      "usageId": "use:노력하다.effort",
+      "pattern": "{N}을/를 열심히 노력해요",
+      "register": "해요",
+      "speechAct": "describe",
+      "skill": "describe-habit",
+      "themes": [
+        "habit"
+      ],
+      "senseIds": [
+        "sns:노력하다.1"
+      ],
+      "example": {
+        "ko": "한국어를 열심히 노력해요.",
+        "sourcePack": "habits-lifestyle",
+        "sourceItem": "int-hb-02"
+      }
+    },
+    {
+      "usageId": "use:지마세요.prohibit",
+      "pattern": "{V}지 마세요",
+      "register": "해요",
+      "speechAct": "forbid",
+      "skill": "observe-rule",
+      "themes": [
+        "habit",
+        "rules"
+      ],
+      "senseIds": [
+        "sns:포기하다.1",
+        "sns:어기다.1"
+      ],
+      "example": {
+        "ko": "중간에 포기하지 마세요.",
+        "sourcePack": "habits-lifestyle",
+        "sourceItem": "int-hb-11"
+      }
+    },
+    {
+      "usageId": "use:아어도참다.endure",
+      "pattern": "{clause}아/어도 {V}아요",
+      "register": "해요",
+      "speechAct": "describe",
+      "skill": "describe-habit",
+      "themes": [
+        "habit"
+      ],
+      "senseIds": [
+        "sns:참다.1"
+      ],
+      "example": {
+        "ko": "배가 고파도 조금 참아요.",
+        "sourcePack": "habits-lifestyle",
+        "sourceItem": "int-hb-12"
+      }
+    },
+    {
+      "usageId": "use:지키다.observe",
+      "pattern": "{N}을/를 지키다",
+      "register": "해요",
+      "speechAct": "describe",
+      "skill": "observe-rule",
+      "themes": [
+        "rules"
+      ],
+      "senseIds": [
+        "sns:지키다.1",
+        "sns:규칙.1",
+        "sns:질서.1",
+        "sns:예의.1"
+      ],
+      "example": {
+        "ko": "줄을 서서 질서를 지켜요.",
+        "sourcePack": "rules-permission",
+        "sourceItem": "int-rp-09"
+      }
+    },
+    {
+      "usageId": "use:지킬게요.promise",
+      "pattern": "{N}을/를 지킬게요",
+      "register": "해요",
+      "speechAct": "promise",
+      "skill": "observe-rule",
+      "themes": [
+        "rules"
+      ],
+      "senseIds": [
+        "sns:지키다.1"
+      ],
+      "example": {
+        "ko": "약속을 꼭 지킬게요.",
+        "sourcePack": "rules-permission",
+        "sourceItem": "int-rp-02"
+      }
+    },
+    {
+      "usageId": "use:금지하다.forbid",
+      "pattern": "{N}을/를 금지해요",
+      "register": "해요",
+      "speechAct": "forbid",
+      "skill": "observe-rule",
+      "themes": [
+        "rules"
+      ],
+      "senseIds": [
+        "sns:금지하다.1"
+      ],
+      "example": {
+        "ko": "여기서는 담배를 금지해요.",
+        "sourcePack": "rules-permission",
+        "sourceItem": "int-rp-05"
+      }
+    },
+    {
+      "usageId": "use:허용되다.allow",
+      "pattern": "{N}이/가 허용돼요",
+      "register": "해요",
+      "speechAct": "allow",
+      "skill": "ask-permission",
+      "themes": [
+        "rules"
+      ],
+      "senseIds": [
+        "sns:허용하다.1"
+      ],
+      "example": {
+        "ko": "이 자리에는 반려동물 입장이 허용돼요.",
+        "sourcePack": "rules-permission",
+        "sourceItem": "int-rp-11"
+      }
+    },
+    {
+      "usageId": "use:아야하다.obligation",
+      "pattern": "{V-아/어}야 해요",
+      "register": "해요",
+      "speechAct": "oblige",
+      "skill": "observe-rule",
+      "themes": [
+        "rules"
+      ],
+      "senseIds": [
+        "sns:예의.1"
+      ],
+      "example": {
+        "ko": "어른께는 예의를 지켜야 해요.",
+        "sourcePack": "rules-permission",
+        "sourceItem": "int-rp-08"
+      }
+    },
+    {
+      "usageId": "use:허락하다.allow",
+      "pattern": "{N}을/를 허락하다",
+      "register": "해요",
+      "speechAct": "allow",
+      "skill": "ask-permission",
+      "themes": [
+        "rules"
+      ],
+      "senseIds": [
+        "sns:허락하다.1"
+      ],
+      "example": {
+        "ko": "부모님이 외출을 허락하셨어요.",
+        "sourcePack": "rules-permission",
+        "sourceItem": "int-rp-04"
+      }
+    },
+    {
+      "usageId": "use:으면안되다.forbid",
+      "pattern": "{V}(으)면 안 돼요",
+      "register": "해요",
+      "speechAct": "forbid",
+      "skill": "observe-rule",
+      "themes": [
+        "rules"
+      ],
+      "grammarHooks": [
+        "으면 안 되다"
+      ],
+      "senseIds": [],
+      "example": null,
+      "note": "Pack grammarHook on rules-permission; no pack example yet — senseIds empty until taught."
+    },
+    {
+      "usageId": "use:기로하다.decide",
+      "pattern": "{V}기로 하다",
+      "register": "해요",
+      "speechAct": "describe",
+      "skill": "describe-habit",
+      "themes": [
+        "habit"
+      ],
+      "grammarHooks": [
+        "기로 하다"
+      ],
+      "senseIds": [],
+      "example": null,
+      "note": "Pack grammarHook on habits-lifestyle; no pack example yet — senseIds empty until taught."
+    }
+  ]
+}

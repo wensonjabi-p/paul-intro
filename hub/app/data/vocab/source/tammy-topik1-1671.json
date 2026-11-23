@@ -1,0 +1,8352 @@
+[
+  {
+    "no": 1,
+    "ko": "가게",
+    "en": "store, shop"
+  },
+  {
+    "no": 2,
+    "ko": "가격",
+    "en": "price"
+  },
+  {
+    "no": 3,
+    "ko": "가구",
+    "en": "furniture"
+  },
+  {
+    "no": 4,
+    "ko": "가깝다",
+    "en": "close"
+  },
+  {
+    "no": 5,
+    "ko": "가끔",
+    "en": "sometimes"
+  },
+  {
+    "no": 6,
+    "ko": "가다",
+    "en": "go"
+  },
+  {
+    "no": 7,
+    "ko": "가르치다",
+    "en": "teach"
+  },
+  {
+    "no": 8,
+    "ko": "가방",
+    "en": "bag"
+  },
+  {
+    "no": 9,
+    "ko": "가볍다",
+    "en": "light"
+  },
+  {
+    "no": 10,
+    "ko": "가수",
+    "en": "singer"
+  },
+  {
+    "no": 11,
+    "ko": "가슴",
+    "en": "chest, breast"
+  },
+  {
+    "no": 12,
+    "ko": "가요",
+    "en": "song"
+  },
+  {
+    "no": 13,
+    "ko": "가운데",
+    "en": "middle"
+  },
+  {
+    "no": 14,
+    "ko": "가위",
+    "en": "scissors"
+  },
+  {
+    "no": 15,
+    "ko": "가을",
+    "en": "autumn, fall"
+  },
+  {
+    "no": 16,
+    "ko": "가장",
+    "en": "most"
+  },
+  {
+    "no": 17,
+    "ko": "가져가다",
+    "en": "take away"
+  },
+  {
+    "no": 18,
+    "ko": "가져오다",
+    "en": "bring"
+  },
+  {
+    "no": 19,
+    "ko": "가족",
+    "en": "family"
+  },
+  {
+    "no": 20,
+    "ko": "가지",
+    "en": "branch"
+  },
+  {
+    "no": 21,
+    "ko": "가지다",
+    "en": "have"
+  },
+  {
+    "no": 22,
+    "ko": "각",
+    "en": "each"
+  },
+  {
+    "no": 23,
+    "ko": "간",
+    "en": "while"
+  },
+  {
+    "no": 24,
+    "ko": "간단하다",
+    "en": "simple, easy"
+  },
+  {
+    "no": 25,
+    "ko": "간단히",
+    "en": "simply"
+  },
+  {
+    "no": 26,
+    "ko": "간식",
+    "en": "snack"
+  },
+  {
+    "no": 27,
+    "ko": "간장",
+    "en": "soy sauce"
+  },
+  {
+    "no": 28,
+    "ko": "간호사",
+    "en": "nurse"
+  },
+  {
+    "no": 29,
+    "ko": "갈비",
+    "en": "Galvi, spareribs"
+  },
+  {
+    "no": 30,
+    "ko": "갈비탕",
+    "en": "Galbitang, spareribs soup"
+  },
+  {
+    "no": 31,
+    "ko": "갈색",
+    "en": "brown"
+  },
+  {
+    "no": 32,
+    "ko": "갈아타다",
+    "en": "transfer"
+  },
+  {
+    "no": 33,
+    "ko": "감",
+    "en": "persimmon"
+  },
+  {
+    "no": 34,
+    "ko": "감기",
+    "en": "cold"
+  },
+  {
+    "no": 35,
+    "ko": "감기약",
+    "en": "cold medicine"
+  },
+  {
+    "no": 36,
+    "ko": "감다",
+    "en": "close ~ (eyes)"
+  },
+  {
+    "no": 37,
+    "ko": "감동",
+    "en": "sensation"
+  },
+  {
+    "no": 38,
+    "ko": "감동하다",
+    "en": "be impressed"
+  },
+  {
+    "no": 39,
+    "ko": "감사",
+    "en": "thank"
+  },
+  {
+    "no": 40,
+    "ko": "감사드립니다",
+    "en": "thank you"
+  },
+  {
+    "no": 41,
+    "ko": "감사하다",
+    "en": "thank, appreciate"
+  },
+  {
+    "no": 42,
+    "ko": "감사합니다",
+    "en": "thank you"
+  },
+  {
+    "no": 43,
+    "ko": "감자",
+    "en": "potato"
+  },
+  {
+    "no": 44,
+    "ko": "감자탕",
+    "en": "Gamjatang, potato soup"
+  },
+  {
+    "no": 45,
+    "ko": "갑자기",
+    "en": "suddenly"
+  },
+  {
+    "no": 46,
+    "ko": "값",
+    "en": "price"
+  },
+  {
+    "no": 47,
+    "ko": "강",
+    "en": "river"
+  },
+  {
+    "no": 48,
+    "ko": "강아지",
+    "en": "puppy"
+  },
+  {
+    "no": 49,
+    "ko": "강좌",
+    "en": "lecture"
+  },
+  {
+    "no": 50,
+    "ko": "갖다",
+    "en": "have"
+  },
+  {
+    "no": 51,
+    "ko": "같다",
+    "en": "same"
+  },
+  {
+    "no": 52,
+    "ko": "같이",
+    "en": "together"
+  },
+  {
+    "no": 53,
+    "ko": "개",
+    "en": "dog, ~ piece(s)"
+  },
+  {
+    "no": 54,
+    "ko": "개나리",
+    "en": "forsythia"
+  },
+  {
+    "no": 55,
+    "ko": "개인",
+    "en": "individual"
+  },
+  {
+    "no": 56,
+    "ko": "거기",
+    "en": "there"
+  },
+  {
+    "no": 57,
+    "ko": "거리",
+    "en": "street"
+  },
+  {
+    "no": 58,
+    "ko": "거실",
+    "en": "living room"
+  },
+  {
+    "no": 59,
+    "ko": "거울",
+    "en": "mirror"
+  },
+  {
+    "no": 60,
+    "ko": "거의",
+    "en": "almost, nearly"
+  },
+  {
+    "no": 61,
+    "ko": "거짓말",
+    "en": "lie"
+  },
+  {
+    "no": 62,
+    "ko": "걱정",
+    "en": "anxiety, concern"
+  },
+  {
+    "no": 63,
+    "ko": "걱정하다",
+    "en": "worry"
+  },
+  {
+    "no": 64,
+    "ko": "건강",
+    "en": "health"
+  },
+  {
+    "no": 65,
+    "ko": "건강하다",
+    "en": "be healthy"
+  },
+  {
+    "no": 66,
+    "ko": "건너가다",
+    "en": "cross (a road)"
+  },
+  {
+    "no": 67,
+    "ko": "건너다",
+    "en": "cross over"
+  },
+  {
+    "no": 68,
+    "ko": "건너편",
+    "en": "other side, opposite side"
+  },
+  {
+    "no": 69,
+    "ko": "건물",
+    "en": "building"
+  },
+  {
+    "no": 70,
+    "ko": "건배",
+    "en": "cheers, toast"
+  },
+  {
+    "no": 71,
+    "ko": "걷다",
+    "en": "walk"
+  },
+  {
+    "no": 72,
+    "ko": "걸다",
+    "en": "bet, call"
+  },
+  {
+    "no": 73,
+    "ko": "걸리다",
+    "en": "get caught, take (time)"
+  },
+  {
+    "no": 74,
+    "ko": "걸어가다",
+    "en": "walk (go)"
+  },
+  {
+    "no": 75,
+    "ko": "걸어오다",
+    "en": "walk (come)"
+  },
+  {
+    "no": 76,
+    "ko": "검은색",
+    "en": "black"
+  },
+  {
+    "no": 77,
+    "ko": "것",
+    "en": "that, thing, it"
+  },
+  {
+    "no": 78,
+    "ko": "게임",
+    "en": "game"
+  },
+  {
+    "no": 79,
+    "ko": "겨울",
+    "en": "winter"
+  },
+  {
+    "no": 80,
+    "ko": "겨울방학",
+    "en": "winter vacation"
+  },
+  {
+    "no": 81,
+    "ko": "결과",
+    "en": "result"
+  },
+  {
+    "no": 82,
+    "ko": "결정",
+    "en": "decision"
+  },
+  {
+    "no": 83,
+    "ko": "결정하다",
+    "en": "decide"
+  },
+  {
+    "no": 84,
+    "ko": "결혼",
+    "en": "marriage"
+  },
+  {
+    "no": 85,
+    "ko": "결혼식",
+    "en": "wedding ceremony"
+  },
+  {
+    "no": 86,
+    "ko": "결혼하다",
+    "en": "get married"
+  },
+  {
+    "no": 87,
+    "ko": "경기",
+    "en": "competition, game"
+  },
+  {
+    "no": 88,
+    "ko": "경기장",
+    "en": "stadium, arena"
+  },
+  {
+    "no": 89,
+    "ko": "경복궁",
+    "en": "Gyeongbokgung"
+  },
+  {
+    "no": 90,
+    "ko": "경주",
+    "en": "Gyeongju"
+  },
+  {
+    "no": 91,
+    "ko": "경찰",
+    "en": "police"
+  },
+  {
+    "no": 92,
+    "ko": "경찰관",
+    "en": "police officer"
+  },
+  {
+    "no": 93,
+    "ko": "경찰서",
+    "en": "police office"
+  },
+  {
+    "no": 94,
+    "ko": "경치",
+    "en": "view, landscape"
+  },
+  {
+    "no": 95,
+    "ko": "경험",
+    "en": "experience"
+  },
+  {
+    "no": 96,
+    "ko": "계단",
+    "en": "stairs"
+  },
+  {
+    "no": 97,
+    "ko": "계란",
+    "en": "egg"
+  },
+  {
+    "no": 98,
+    "ko": "계산하다",
+    "en": "calculate"
+  },
+  {
+    "no": 99,
+    "ko": "계속",
+    "en": "continue"
+  },
+  {
+    "no": 100,
+    "ko": "계시다",
+    "en": "be, exist (honorific form)"
+  },
+  {
+    "no": 101,
+    "ko": "계절",
+    "en": "season"
+  },
+  {
+    "no": 102,
+    "ko": "계획",
+    "en": "plan"
+  },
+  {
+    "no": 103,
+    "ko": "고기",
+    "en": "meat"
+  },
+  {
+    "no": 104,
+    "ko": "고등학교",
+    "en": "high school"
+  },
+  {
+    "no": 105,
+    "ko": "고등학생",
+    "en": "high school student"
+  },
+  {
+    "no": 106,
+    "ko": "고르다",
+    "en": "choose"
+  },
+  {
+    "no": 107,
+    "ko": "고마웠습니다",
+    "en": "Thank you (past tense)"
+  },
+  {
+    "no": 108,
+    "ko": "고맙다",
+    "en": "thank"
+  },
+  {
+    "no": 109,
+    "ko": "고맙습니다",
+    "en": "Thank you"
+  },
+  {
+    "no": 110,
+    "ko": "고모",
+    "en": "paternal aunt"
+  },
+  {
+    "no": 111,
+    "ko": "고모부",
+    "en": "paternal uncle"
+  },
+  {
+    "no": 112,
+    "ko": "고속버스",
+    "en": "express bus"
+  },
+  {
+    "no": 113,
+    "ko": "고양이",
+    "en": "cat"
+  },
+  {
+    "no": 114,
+    "ko": "고장",
+    "en": "broken, malfunction"
+  },
+  {
+    "no": 115,
+    "ko": "고추",
+    "en": "red pepper"
+  },
+  {
+    "no": 116,
+    "ko": "고추장",
+    "en": "Kochujang, red pepper paste"
+  },
+  {
+    "no": 117,
+    "ko": "고치다",
+    "en": "fix"
+  },
+  {
+    "no": 118,
+    "ko": "고프다",
+    "en": "hungry"
+  },
+  {
+    "no": 119,
+    "ko": "고향",
+    "en": "hometown"
+  },
+  {
+    "no": 120,
+    "ko": "곧",
+    "en": "soon"
+  },
+  {
+    "no": 121,
+    "ko": "골목",
+    "en": "alley"
+  },
+  {
+    "no": 122,
+    "ko": "골프",
+    "en": "golf"
+  },
+  {
+    "no": 123,
+    "ko": "곱다",
+    "en": "beautiful"
+  },
+  {
+    "no": 124,
+    "ko": "곳",
+    "en": "place"
+  },
+  {
+    "no": 125,
+    "ko": "공",
+    "en": "ball"
+  },
+  {
+    "no": 126,
+    "ko": "공간",
+    "en": "space"
+  },
+  {
+    "no": 127,
+    "ko": "공기",
+    "en": "air"
+  },
+  {
+    "no": 128,
+    "ko": "공무원",
+    "en": "public official"
+  },
+  {
+    "no": 129,
+    "ko": "공부",
+    "en": "study"
+  },
+  {
+    "no": 130,
+    "ko": "공부하다",
+    "en": "study"
+  },
+  {
+    "no": 131,
+    "ko": "공연",
+    "en": "show, public performance"
+  },
+  {
+    "no": 132,
+    "ko": "공원",
+    "en": "park"
+  },
+  {
+    "no": 133,
+    "ko": "공중전화",
+    "en": "payphone, public phone"
+  },
+  {
+    "no": 134,
+    "ko": "공짜",
+    "en": "free"
+  },
+  {
+    "no": 135,
+    "ko": "공책",
+    "en": "notebook, note"
+  },
+  {
+    "no": 136,
+    "ko": "공항",
+    "en": "airport"
+  },
+  {
+    "no": 137,
+    "ko": "공휴일",
+    "en": "public holiday"
+  },
+  {
+    "no": 138,
+    "ko": "과",
+    "en": "division"
+  },
+  {
+    "no": 139,
+    "ko": "과거",
+    "en": "past"
+  },
+  {
+    "no": 140,
+    "ko": "과일",
+    "en": "fruit"
+  },
+  {
+    "no": 141,
+    "ko": "과자",
+    "en": "snack"
+  },
+  {
+    "no": 142,
+    "ko": "과학",
+    "en": "science"
+  },
+  {
+    "no": 143,
+    "ko": "관계",
+    "en": "relation"
+  },
+  {
+    "no": 144,
+    "ko": "관광하다",
+    "en": "travel, sightsee"
+  },
+  {
+    "no": 145,
+    "ko": "관심",
+    "en": "attention, interest"
+  },
+  {
+    "no": 146,
+    "ko": "광고",
+    "en": "advertisement"
+  },
+  {
+    "no": 147,
+    "ko": "괜찮다",
+    "en": "be okay"
+  },
+  {
+    "no": 148,
+    "ko": "괜찮습니다",
+    "en": "It's fine."
+  },
+  {
+    "no": 149,
+    "ko": "교과서",
+    "en": "textbook"
+  },
+  {
+    "no": 150,
+    "ko": "교수",
+    "en": "professor"
+  },
+  {
+    "no": 151,
+    "ko": "교실",
+    "en": "classroom"
+  },
+  {
+    "no": 152,
+    "ko": "교체",
+    "en": "substitute, change"
+  },
+  {
+    "no": 153,
+    "ko": "교통",
+    "en": "traffic"
+  },
+  {
+    "no": 154,
+    "ko": "교통사고",
+    "en": "traffic accident"
+  },
+  {
+    "no": 155,
+    "ko": "교회",
+    "en": "church"
+  },
+  {
+    "no": 156,
+    "ko": "구",
+    "en": "9"
+  },
+  {
+    "no": 157,
+    "ko": "구경하다",
+    "en": "take a look"
+  },
+  {
+    "no": 158,
+    "ko": "구두",
+    "en": "shoes"
+  },
+  {
+    "no": 159,
+    "ko": "구름",
+    "en": "cloud"
+  },
+  {
+    "no": 160,
+    "ko": "구십",
+    "en": "90"
+  },
+  {
+    "no": 161,
+    "ko": "구월",
+    "en": "September"
+  },
+  {
+    "no": 162,
+    "ko": "구하다",
+    "en": "save, seek, get"
+  },
+  {
+    "no": 163,
+    "ko": "국",
+    "en": "soup"
+  },
+  {
+    "no": 164,
+    "ko": "국내",
+    "en": "domestic"
+  },
+  {
+    "no": 165,
+    "ko": "국립",
+    "en": "nationalestablished, state"
+  },
+  {
+    "no": 166,
+    "ko": "국수",
+    "en": "noodle"
+  },
+  {
+    "no": 167,
+    "ko": "국어",
+    "en": "Korean language"
+  },
+  {
+    "no": 168,
+    "ko": "국적",
+    "en": "nationality, country of citizenship"
+  },
+  {
+    "no": 169,
+    "ko": "국제",
+    "en": "international"
+  },
+  {
+    "no": 170,
+    "ko": "군인",
+    "en": "soldier, military personnel"
+  },
+  {
+    "no": 171,
+    "ko": "굽다",
+    "en": "bake"
+  },
+  {
+    "no": 172,
+    "ko": "권",
+    "en": "~ book(s)"
+  },
+  {
+    "no": 173,
+    "ko": "귀",
+    "en": "ear"
+  },
+  {
+    "no": 174,
+    "ko": "귀엽다",
+    "en": "cute"
+  },
+  {
+    "no": 175,
+    "ko": "규칙",
+    "en": "rule"
+  },
+  {
+    "no": 176,
+    "ko": "귤",
+    "en": "mandarin orange"
+  },
+  {
+    "no": 177,
+    "ko": "그",
+    "en": "it"
+  },
+  {
+    "no": 178,
+    "ko": "그거",
+    "en": "it"
+  },
+  {
+    "no": 179,
+    "ko": "그것",
+    "en": "it"
+  },
+  {
+    "no": 180,
+    "ko": "그곳",
+    "en": "there"
+  },
+  {
+    "no": 181,
+    "ko": "그날",
+    "en": "that day"
+  },
+  {
+    "no": 182,
+    "ko": "그냥",
+    "en": "just, as it is"
+  },
+  {
+    "no": 183,
+    "ko": "그동안",
+    "en": "meantime, meanwhile, up to now"
+  },
+  {
+    "no": 184,
+    "ko": "그들",
+    "en": "them, they"
+  },
+  {
+    "no": 185,
+    "ko": "그때",
+    "en": "then, at that time"
+  },
+  {
+    "no": 186,
+    "ko": "그래",
+    "en": "Yes, Yeah"
+  },
+  {
+    "no": 187,
+    "ko": "그래서",
+    "en": "so, thus"
+  },
+  {
+    "no": 188,
+    "ko": "그램",
+    "en": "gram"
+  },
+  {
+    "no": 189,
+    "ko": "그러나",
+    "en": "but, however"
+  },
+  {
+    "no": 190,
+    "ko": "그러니까",
+    "en": "so, because"
+  },
+  {
+    "no": 191,
+    "ko": "그러면",
+    "en": "then, if so"
+  },
+  {
+    "no": 192,
+    "ko": "그런",
+    "en": "then, such"
+  },
+  {
+    "no": 193,
+    "ko": "그런데",
+    "en": "by the way, however"
+  },
+  {
+    "no": 194,
+    "ko": "그럼",
+    "en": "then"
+  },
+  {
+    "no": 195,
+    "ko": "그렇게",
+    "en": "like that, so"
+  },
+  {
+    "no": 196,
+    "ko": "그렇구나",
+    "en": "well, I see."
+  },
+  {
+    "no": 197,
+    "ko": "그렇다",
+    "en": "Yes, that's it."
+  },
+  {
+    "no": 198,
+    "ko": "그렇습니다",
+    "en": "That's right."
+  },
+  {
+    "no": 199,
+    "ko": "그렇지만",
+    "en": "nevertheless, but"
+  },
+  {
+    "no": 200,
+    "ko": "그릇",
+    "en": "bowl, container, tableware"
+  },
+  {
+    "no": 201,
+    "ko": "그리고",
+    "en": "and"
+  },
+  {
+    "no": 202,
+    "ko": "그리다",
+    "en": "draw"
+  },
+  {
+    "no": 203,
+    "ko": "그림",
+    "en": "drawing, picture"
+  },
+  {
+    "no": 204,
+    "ko": "그만",
+    "en": "stop, finish"
+  },
+  {
+    "no": 205,
+    "ko": "그분",
+    "en": "his, the person"
+  },
+  {
+    "no": 206,
+    "ko": "그저께",
+    "en": "day before yesterday"
+  },
+  {
+    "no": 207,
+    "ko": "그중",
+    "en": "among them"
+  },
+  {
+    "no": 208,
+    "ko": "그쪽",
+    "en": "there, the person"
+  },
+  {
+    "no": 209,
+    "ko": "그치다",
+    "en": "stop, end, cease"
+  },
+  {
+    "no": 210,
+    "ko": "극장",
+    "en": "theater, cinema"
+  },
+  {
+    "no": 211,
+    "ko": "근처",
+    "en": "nearby, neighborhood"
+  },
+  {
+    "no": 212,
+    "ko": "글",
+    "en": "post, sentence, character"
+  },
+  {
+    "no": 213,
+    "ko": "글쎄요",
+    "en": "I do not know., well, I guess ~"
+  },
+  {
+    "no": 214,
+    "ko": "금방",
+    "en": "soon, a little while ago"
+  },
+  {
+    "no": 215,
+    "ko": "금연",
+    "en": "no smoking"
+  },
+  {
+    "no": 216,
+    "ko": "금요일",
+    "en": "Friday"
+  },
+  {
+    "no": 217,
+    "ko": "금주",
+    "en": "abstinence, temperance"
+  },
+  {
+    "no": 218,
+    "ko": "급",
+    "en": "class, grade"
+  },
+  {
+    "no": 219,
+    "ko": "급하다",
+    "en": "hurry, urgent"
+  },
+  {
+    "no": 220,
+    "ko": "기간",
+    "en": "term, period"
+  },
+  {
+    "no": 221,
+    "ko": "기다리다",
+    "en": "wait"
+  },
+  {
+    "no": 222,
+    "ko": "기르다",
+    "en": "cultivate, grow"
+  },
+  {
+    "no": 223,
+    "ko": "기름",
+    "en": "oil, gasoline"
+  },
+  {
+    "no": 224,
+    "ko": "기분",
+    "en": "feeling"
+  },
+  {
+    "no": 225,
+    "ko": "기뻐하다",
+    "en": "glad, delight"
+  },
+  {
+    "no": 226,
+    "ko": "기쁘다",
+    "en": "happy"
+  },
+  {
+    "no": 227,
+    "ko": "기사",
+    "en": "article, driver, engineer"
+  },
+  {
+    "no": 228,
+    "ko": "기숙사",
+    "en": "dormitory"
+  },
+  {
+    "no": 229,
+    "ko": "기억하다",
+    "en": "remember"
+  },
+  {
+    "no": 230,
+    "ko": "기온",
+    "en": "temperature"
+  },
+  {
+    "no": 231,
+    "ko": "기자",
+    "en": "reporter"
+  },
+  {
+    "no": 232,
+    "ko": "기차",
+    "en": "train"
+  },
+  {
+    "no": 233,
+    "ko": "기침",
+    "en": "cough"
+  },
+  {
+    "no": 234,
+    "ko": "기타",
+    "en": "other"
+  },
+  {
+    "no": 235,
+    "ko": "긴장되다",
+    "en": "be nervous"
+  },
+  {
+    "no": 236,
+    "ko": "길",
+    "en": "way, road"
+  },
+  {
+    "no": 237,
+    "ko": "길다",
+    "en": "long"
+  },
+  {
+    "no": 238,
+    "ko": "김",
+    "en": "seaweed"
+  },
+  {
+    "no": 239,
+    "ko": "김밥",
+    "en": "Kimbab"
+  },
+  {
+    "no": 240,
+    "ko": "김치",
+    "en": "Kimchi"
+  },
+  {
+    "no": 241,
+    "ko": "김치찌개",
+    "en": "Kimchi stew"
+  },
+  {
+    "no": 242,
+    "ko": "김포공항",
+    "en": "Gimpo International Airport"
+  },
+  {
+    "no": 243,
+    "ko": "까만색",
+    "en": "black color"
+  },
+  {
+    "no": 244,
+    "ko": "까맣다",
+    "en": "black"
+  },
+  {
+    "no": 245,
+    "ko": "깎다",
+    "en": "cut, shave"
+  },
+  {
+    "no": 246,
+    "ko": "깜짝",
+    "en": "startled, surprised"
+  },
+  {
+    "no": 247,
+    "ko": "깨끗하다",
+    "en": "clean"
+  },
+  {
+    "no": 248,
+    "ko": "깨다",
+    "en": "wake up, crack, break"
+  },
+  {
+    "no": 249,
+    "ko": "깨지다",
+    "en": "chip, crack, break"
+  },
+  {
+    "no": 250,
+    "ko": "꺼내다",
+    "en": "take out"
+  },
+  {
+    "no": 251,
+    "ko": "껌",
+    "en": "chewing gum"
+  },
+  {
+    "no": 252,
+    "ko": "꼭",
+    "en": "exactly, absolutely"
+  },
+  {
+    "no": 253,
+    "ko": "꽃",
+    "en": "flower"
+  },
+  {
+    "no": 254,
+    "ko": "꽃집",
+    "en": "florist"
+  },
+  {
+    "no": 255,
+    "ko": "꾸다",
+    "en": "dream"
+  },
+  {
+    "no": 256,
+    "ko": "꿈",
+    "en": "dream"
+  },
+  {
+    "no": 257,
+    "ko": "끄다",
+    "en": "turn off, extinguish, stop"
+  },
+  {
+    "no": 258,
+    "ko": "끓이다",
+    "en": "boil"
+  },
+  {
+    "no": 259,
+    "ko": "끝",
+    "en": "end"
+  },
+  {
+    "no": 260,
+    "ko": "끝나다",
+    "en": "finish, end"
+  },
+  {
+    "no": 261,
+    "ko": "끝내다",
+    "en": "finish"
+  },
+  {
+    "no": 262,
+    "ko": "끼다",
+    "en": "put on, plug, (fog) rolls in"
+  },
+  {
+    "no": 263,
+    "ko": "나",
+    "en": "I"
+  },
+  {
+    "no": 264,
+    "ko": "나가다",
+    "en": "go out, get out"
+  },
+  {
+    "no": 265,
+    "ko": "나누다",
+    "en": "share, divide"
+  },
+  {
+    "no": 266,
+    "ko": "나다",
+    "en": "occur, come out"
+  },
+  {
+    "no": 267,
+    "ko": "나라",
+    "en": "country"
+  },
+  {
+    "no": 268,
+    "ko": "나무",
+    "en": "tree"
+  },
+  {
+    "no": 269,
+    "ko": "나빠지다",
+    "en": "spoil, deteriorate"
+  },
+  {
+    "no": 270,
+    "ko": "나쁘다",
+    "en": "bad"
+  },
+  {
+    "no": 271,
+    "ko": "나오다",
+    "en": "come out, appear"
+  },
+  {
+    "no": 272,
+    "ko": "나이",
+    "en": "age, old"
+  },
+  {
+    "no": 273,
+    "ko": "나중",
+    "en": "later, after"
+  },
+  {
+    "no": 274,
+    "ko": "나타나다",
+    "en": "appear"
+  },
+  {
+    "no": 275,
+    "ko": "나흘",
+    "en": "four days"
+  },
+  {
+    "no": 276,
+    "ko": "낚시",
+    "en": "fishing"
+  },
+  {
+    "no": 277,
+    "ko": "날",
+    "en": "day"
+  },
+  {
+    "no": 278,
+    "ko": "날씨",
+    "en": "weather"
+  },
+  {
+    "no": 279,
+    "ko": "날짜",
+    "en": "date"
+  },
+  {
+    "no": 280,
+    "ko": "남",
+    "en": "south, man"
+  },
+  {
+    "no": 281,
+    "ko": "남기다",
+    "en": "leave"
+  },
+  {
+    "no": 282,
+    "ko": "남녀",
+    "en": "men and women"
+  },
+  {
+    "no": 283,
+    "ko": "남대문시장",
+    "en": "Namdaemun market"
+  },
+  {
+    "no": 284,
+    "ko": "남동생",
+    "en": "younger brother"
+  },
+  {
+    "no": 285,
+    "ko": "남미",
+    "en": "South America"
+  },
+  {
+    "no": 286,
+    "ko": "남북",
+    "en": "north and south"
+  },
+  {
+    "no": 287,
+    "ko": "남자",
+    "en": "man"
+  },
+  {
+    "no": 288,
+    "ko": "남쪽",
+    "en": "south"
+  },
+  {
+    "no": 289,
+    "ko": "남편",
+    "en": "husband"
+  },
+  {
+    "no": 290,
+    "ko": "남학생",
+    "en": "male student"
+  },
+  {
+    "no": 291,
+    "ko": "낮",
+    "en": "day, noon, during the day"
+  },
+  {
+    "no": 292,
+    "ko": "낮다",
+    "en": "low"
+  },
+  {
+    "no": 293,
+    "ko": "내",
+    "en": "of mine, my"
+  },
+  {
+    "no": 294,
+    "ko": "내가",
+    "en": "I"
+  },
+  {
+    "no": 295,
+    "ko": "내과",
+    "en": "internal medicine"
+  },
+  {
+    "no": 296,
+    "ko": "내년",
+    "en": "next year"
+  },
+  {
+    "no": 297,
+    "ko": "내다",
+    "en": "pay, put out"
+  },
+  {
+    "no": 298,
+    "ko": "내려가다",
+    "en": "go down"
+  },
+  {
+    "no": 299,
+    "ko": "내려오다",
+    "en": "come down"
+  },
+  {
+    "no": 300,
+    "ko": "내리다",
+    "en": "go down"
+  },
+  {
+    "no": 301,
+    "ko": "내용",
+    "en": "content"
+  },
+  {
+    "no": 302,
+    "ko": "내일",
+    "en": "tomorrow"
+  },
+  {
+    "no": 303,
+    "ko": "냄비",
+    "en": "pot"
+  },
+  {
+    "no": 304,
+    "ko": "냄새",
+    "en": "smell"
+  },
+  {
+    "no": 305,
+    "ko": "냉면",
+    "en": "cold noodle"
+  },
+  {
+    "no": 306,
+    "ko": "냉장고",
+    "en": "refrigerator"
+  },
+  {
+    "no": 307,
+    "ko": "너",
+    "en": "you"
+  },
+  {
+    "no": 308,
+    "ko": "너무",
+    "en": "too, very"
+  },
+  {
+    "no": 309,
+    "ko": "넓다",
+    "en": "wide"
+  },
+  {
+    "no": 310,
+    "ko": "넘다",
+    "en": "exceed, more than"
+  },
+  {
+    "no": 311,
+    "ko": "넘어지다",
+    "en": "fall down, fall"
+  },
+  {
+    "no": 312,
+    "ko": "넣다",
+    "en": "put in"
+  },
+  {
+    "no": 313,
+    "ko": "네",
+    "en": "yes, 4"
+  },
+  {
+    "no": 314,
+    "ko": "넥타이",
+    "en": "necktie"
+  },
+  {
+    "no": 315,
+    "ko": "넷",
+    "en": "4"
+  },
+  {
+    "no": 316,
+    "ko": "넷째",
+    "en": "fourth"
+  },
+  {
+    "no": 317,
+    "ko": "년",
+    "en": "year"
+  },
+  {
+    "no": 318,
+    "ko": "노란색",
+    "en": "yellow color"
+  },
+  {
+    "no": 319,
+    "ko": "노랗다",
+    "en": "yellow"
+  },
+  {
+    "no": 320,
+    "ko": "노래",
+    "en": "song"
+  },
+  {
+    "no": 321,
+    "ko": "노래방",
+    "en": "Karaoke shop"
+  },
+  {
+    "no": 322,
+    "ko": "노래하다",
+    "en": "sing"
+  },
+  {
+    "no": 323,
+    "ko": "노력하다",
+    "en": "endeavor, strive"
+  },
+  {
+    "no": 324,
+    "ko": "노트",
+    "en": "note"
+  },
+  {
+    "no": 325,
+    "ko": "녹색",
+    "en": "green"
+  },
+  {
+    "no": 326,
+    "ko": "녹차",
+    "en": "green tea"
+  },
+  {
+    "no": 327,
+    "ko": "놀다",
+    "en": "play"
+  },
+  {
+    "no": 328,
+    "ko": "놀라다",
+    "en": "be surprised"
+  },
+  {
+    "no": 329,
+    "ko": "농구",
+    "en": "basketball"
+  },
+  {
+    "no": 330,
+    "ko": "높다",
+    "en": "high"
+  },
+  {
+    "no": 331,
+    "ko": "놓다",
+    "en": "put"
+  },
+  {
+    "no": 332,
+    "ko": "누가",
+    "en": "who"
+  },
+  {
+    "no": 333,
+    "ko": "누구",
+    "en": "who"
+  },
+  {
+    "no": 334,
+    "ko": "누나",
+    "en": "sister (as seen from the younger brother)"
+  },
+  {
+    "no": 335,
+    "ko": "누르다",
+    "en": "press down, push"
+  },
+  {
+    "no": 336,
+    "ko": "눈",
+    "en": "eye, snow"
+  },
+  {
+    "no": 337,
+    "ko": "눈물",
+    "en": "tear"
+  },
+  {
+    "no": 338,
+    "ko": "눈사람",
+    "en": "snowman"
+  },
+  {
+    "no": 339,
+    "ko": "눈싸움",
+    "en": "staring contest, snowball fight"
+  },
+  {
+    "no": 340,
+    "ko": "눕다",
+    "en": "lie down, sleep"
+  },
+  {
+    "no": 341,
+    "ko": "뉴스",
+    "en": "news"
+  },
+  {
+    "no": 342,
+    "ko": "뉴욕",
+    "en": "New York"
+  },
+  {
+    "no": 343,
+    "ko": "느끼다",
+    "en": "feel"
+  },
+  {
+    "no": 344,
+    "ko": "느낌",
+    "en": "feeling"
+  },
+  {
+    "no": 345,
+    "ko": "느리다",
+    "en": "slow"
+  },
+  {
+    "no": 346,
+    "ko": "늘",
+    "en": "always"
+  },
+  {
+    "no": 347,
+    "ko": "늘다",
+    "en": "gain, increase"
+  },
+  {
+    "no": 348,
+    "ko": "능력",
+    "en": "ability"
+  },
+  {
+    "no": 349,
+    "ko": "늦다",
+    "en": "late, delay"
+  },
+  {
+    "no": 350,
+    "ko": "늦잠",
+    "en": "overslept, sleeping in late"
+  },
+  {
+    "no": 351,
+    "ko": "님",
+    "en": "Sir"
+  },
+  {
+    "no": 352,
+    "ko": "다",
+    "en": "all, whole"
+  },
+  {
+    "no": 353,
+    "ko": "다녀오다",
+    "en": "return, come back"
+  },
+  {
+    "no": 354,
+    "ko": "다니다",
+    "en": "go, commute"
+  },
+  {
+    "no": 355,
+    "ko": "다르다",
+    "en": "different"
+  },
+  {
+    "no": 356,
+    "ko": "다른",
+    "en": "other ~, another ~, different ~"
+  },
+  {
+    "no": 357,
+    "ko": "다리",
+    "en": "bridge, leg, foot"
+  },
+  {
+    "no": 358,
+    "ko": "다섯",
+    "en": "5"
+  },
+  {
+    "no": 359,
+    "ko": "다시",
+    "en": "again"
+  },
+  {
+    "no": 360,
+    "ko": "다음",
+    "en": "next, after"
+  },
+  {
+    "no": 361,
+    "ko": "다음달",
+    "en": "next month"
+  },
+  {
+    "no": 362,
+    "ko": "다음주",
+    "en": "next week"
+  },
+  {
+    "no": 363,
+    "ko": "다음해",
+    "en": "next year, following year"
+  },
+  {
+    "no": 364,
+    "ko": "다이어트",
+    "en": "diet"
+  },
+  {
+    "no": 365,
+    "ko": "다치다",
+    "en": "hurt"
+  },
+  {
+    "no": 366,
+    "ko": "닦다",
+    "en": "wipe, polish"
+  },
+  {
+    "no": 367,
+    "ko": "단어",
+    "en": "word"
+  },
+  {
+    "no": 368,
+    "ko": "단점",
+    "en": "disadvantage, shortcoming, drawback"
+  },
+  {
+    "no": 369,
+    "ko": "닫다",
+    "en": "close"
+  },
+  {
+    "no": 370,
+    "ko": "닫히다",
+    "en": "shut, close"
+  },
+  {
+    "no": 371,
+    "ko": "달",
+    "en": "month, moon"
+  },
+  {
+    "no": 372,
+    "ko": "달걀",
+    "en": "egg"
+  },
+  {
+    "no": 373,
+    "ko": "달다",
+    "en": "sweet"
+  },
+  {
+    "no": 374,
+    "ko": "달러",
+    "en": "dollar"
+  },
+  {
+    "no": 375,
+    "ko": "달력",
+    "en": "calendar"
+  },
+  {
+    "no": 376,
+    "ko": "달리다",
+    "en": "run"
+  },
+  {
+    "no": 377,
+    "ko": "닭",
+    "en": "chicken, hen"
+  },
+  {
+    "no": 378,
+    "ko": "닭고기",
+    "en": "chicken"
+  },
+  {
+    "no": 379,
+    "ko": "닮다",
+    "en": "resemble"
+  },
+  {
+    "no": 380,
+    "ko": "담그다",
+    "en": "dip, pickle"
+  },
+  {
+    "no": 381,
+    "ko": "담배",
+    "en": "tobacco"
+  },
+  {
+    "no": 382,
+    "ko": "답장",
+    "en": "reply"
+  },
+  {
+    "no": 383,
+    "ko": "당근",
+    "en": "carrot"
+  },
+  {
+    "no": 384,
+    "ko": "당신",
+    "en": "you"
+  },
+  {
+    "no": 385,
+    "ko": "대",
+    "en": "versus, large"
+  },
+  {
+    "no": 386,
+    "ko": "대답",
+    "en": "answer"
+  },
+  {
+    "no": 387,
+    "ko": "대답하다",
+    "en": "answer, reply"
+  },
+  {
+    "no": 388,
+    "ko": "대부분",
+    "en": "mostly, almost"
+  },
+  {
+    "no": 389,
+    "ko": "대사관",
+    "en": "embassy"
+  },
+  {
+    "no": 390,
+    "ko": "대학",
+    "en": "university, college"
+  },
+  {
+    "no": 391,
+    "ko": "대학교",
+    "en": "university, college"
+  },
+  {
+    "no": 392,
+    "ko": "대학생",
+    "en": "college student"
+  },
+  {
+    "no": 393,
+    "ko": "대학원",
+    "en": "graduate school"
+  },
+  {
+    "no": 394,
+    "ko": "대학원생",
+    "en": "postgraduate student, graduate student"
+  },
+  {
+    "no": 395,
+    "ko": "대한민국",
+    "en": "Republic of Korea, South Korea"
+  },
+  {
+    "no": 396,
+    "ko": "대화",
+    "en": "conversation, dialogue"
+  },
+  {
+    "no": 397,
+    "ko": "대회",
+    "en": "competition, tournament"
+  },
+  {
+    "no": 398,
+    "ko": "댁",
+    "en": "house"
+  },
+  {
+    "no": 399,
+    "ko": "더",
+    "en": "more"
+  },
+  {
+    "no": 400,
+    "ko": "더럽다",
+    "en": "dirty"
+  },
+  {
+    "no": 401,
+    "ko": "더운물",
+    "en": "hot water"
+  },
+  {
+    "no": 402,
+    "ko": "덕분",
+    "en": "thanks for, thanks to"
+  },
+  {
+    "no": 403,
+    "ko": "덥다",
+    "en": "hot"
+  },
+  {
+    "no": 404,
+    "ko": "덮다",
+    "en": "cover"
+  },
+  {
+    "no": 405,
+    "ko": "데리다",
+    "en": "bring, take along"
+  },
+  {
+    "no": 406,
+    "ko": "데이트",
+    "en": "date, dating"
+  },
+  {
+    "no": 407,
+    "ko": "도로",
+    "en": "road"
+  },
+  {
+    "no": 408,
+    "ko": "도서관",
+    "en": "library"
+  },
+  {
+    "no": 409,
+    "ko": "도시",
+    "en": "city"
+  },
+  {
+    "no": 410,
+    "ko": "도와주다",
+    "en": "help"
+  },
+  {
+    "no": 411,
+    "ko": "도움",
+    "en": "help, assistance"
+  },
+  {
+    "no": 412,
+    "ko": "도착",
+    "en": "arrival"
+  },
+  {
+    "no": 413,
+    "ko": "도착하다",
+    "en": "arrive"
+  },
+  {
+    "no": 414,
+    "ko": "도쿄",
+    "en": "Tokyo"
+  },
+  {
+    "no": 415,
+    "ko": "독서",
+    "en": "reading"
+  },
+  {
+    "no": 416,
+    "ko": "독서실",
+    "en": "reading room"
+  },
+  {
+    "no": 417,
+    "ko": "독서하다",
+    "en": "read"
+  },
+  {
+    "no": 418,
+    "ko": "독일",
+    "en": "Germany"
+  },
+  {
+    "no": 419,
+    "ko": "돈",
+    "en": "money"
+  },
+  {
+    "no": 420,
+    "ko": "돌아가다",
+    "en": "return, go back"
+  },
+  {
+    "no": 421,
+    "ko": "돌아오다",
+    "en": "come back, come home"
+  },
+  {
+    "no": 422,
+    "ko": "돕다",
+    "en": "help"
+  },
+  {
+    "no": 423,
+    "ko": "동네",
+    "en": "town, neighborhood"
+  },
+  {
+    "no": 424,
+    "ko": "동대문시장",
+    "en": "Dongdaemun market"
+  },
+  {
+    "no": 425,
+    "ko": "동물",
+    "en": "animal"
+  },
+  {
+    "no": 426,
+    "ko": "동생",
+    "en": "brother, sister"
+  },
+  {
+    "no": 427,
+    "ko": "동아리",
+    "en": "club, group"
+  },
+  {
+    "no": 428,
+    "ko": "동안",
+    "en": "during, between"
+  },
+  {
+    "no": 429,
+    "ko": "동양",
+    "en": "eastern, orient"
+  },
+  {
+    "no": 430,
+    "ko": "동전",
+    "en": "coin"
+  },
+  {
+    "no": 431,
+    "ko": "동쪽",
+    "en": "east"
+  },
+  {
+    "no": 432,
+    "ko": "돼지",
+    "en": "pig"
+  },
+  {
+    "no": 433,
+    "ko": "돼지고기",
+    "en": "pork"
+  },
+  {
+    "no": 434,
+    "ko": "되다",
+    "en": "become"
+  },
+  {
+    "no": 435,
+    "ko": "된장",
+    "en": "fermented soybean paste"
+  },
+  {
+    "no": 436,
+    "ko": "된장국",
+    "en": "soybean paste soup"
+  },
+  {
+    "no": 437,
+    "ko": "된장찌개",
+    "en": "soybean paste stew"
+  },
+  {
+    "no": 438,
+    "ko": "두",
+    "en": "two"
+  },
+  {
+    "no": 439,
+    "ko": "두껍다",
+    "en": "thick"
+  },
+  {
+    "no": 440,
+    "ko": "두다",
+    "en": "put"
+  },
+  {
+    "no": 441,
+    "ko": "두부",
+    "en": "tofu"
+  },
+  {
+    "no": 442,
+    "ko": "두부찌개",
+    "en": "tofu soup"
+  },
+  {
+    "no": 443,
+    "ko": "둘",
+    "en": "2"
+  },
+  {
+    "no": 444,
+    "ko": "둘째",
+    "en": "second, the second of~"
+  },
+  {
+    "no": 445,
+    "ko": "뒤",
+    "en": "rear, back"
+  },
+  {
+    "no": 446,
+    "ko": "뒤쪽",
+    "en": "behind, back, towards the rear"
+  },
+  {
+    "no": 447,
+    "ko": "드라마",
+    "en": "drama"
+  },
+  {
+    "no": 448,
+    "ko": "드리다",
+    "en": "give"
+  },
+  {
+    "no": 449,
+    "ko": "드시다",
+    "en": "eat (honorific form)"
+  },
+  {
+    "no": 450,
+    "ko": "듣기",
+    "en": "listening, hearing"
+  },
+  {
+    "no": 451,
+    "ko": "듣다",
+    "en": "listen"
+  },
+  {
+    "no": 452,
+    "ko": "들",
+    "en": "field, ~s,"
+  },
+  {
+    "no": 453,
+    "ko": "들다",
+    "en": "hold, enter"
+  },
+  {
+    "no": 454,
+    "ko": "들어가다",
+    "en": "go in, enter"
+  },
+  {
+    "no": 455,
+    "ko": "들어오다",
+    "en": "come in, enter"
+  },
+  {
+    "no": 456,
+    "ko": "등",
+    "en": "etc, back"
+  },
+  {
+    "no": 457,
+    "ko": "등산",
+    "en": "hiking, mountain-climbing"
+  },
+  {
+    "no": 458,
+    "ko": "등산복",
+    "en": "mountaineering clothing"
+  },
+  {
+    "no": 459,
+    "ko": "등산화",
+    "en": "hiking boots, climbing shoes"
+  },
+  {
+    "no": 460,
+    "ko": "디브이디",
+    "en": "DVD"
+  },
+  {
+    "no": 461,
+    "ko": "디자인",
+    "en": "design"
+  },
+  {
+    "no": 462,
+    "ko": "따뜻하다",
+    "en": "warm"
+  },
+  {
+    "no": 463,
+    "ko": "따라가다",
+    "en": "follow"
+  },
+  {
+    "no": 464,
+    "ko": "따라오다",
+    "en": "come with, follow"
+  },
+  {
+    "no": 465,
+    "ko": "따로",
+    "en": "separately"
+  },
+  {
+    "no": 466,
+    "ko": "따르다",
+    "en": "follow"
+  },
+  {
+    "no": 467,
+    "ko": "딸",
+    "en": "daughter"
+  },
+  {
+    "no": 468,
+    "ko": "딸기",
+    "en": "strawberry"
+  },
+  {
+    "no": 469,
+    "ko": "땀",
+    "en": "sweat"
+  },
+  {
+    "no": 470,
+    "ko": "때",
+    "en": "time"
+  },
+  {
+    "no": 471,
+    "ko": "때문",
+    "en": "because, for ~, so~"
+  },
+  {
+    "no": 472,
+    "ko": "떠나다",
+    "en": "leave"
+  },
+  {
+    "no": 473,
+    "ko": "떠들다",
+    "en": "chatter, make a noise"
+  },
+  {
+    "no": 474,
+    "ko": "떡",
+    "en": "rice cake"
+  },
+  {
+    "no": 475,
+    "ko": "떡국",
+    "en": "rice cake soup"
+  },
+  {
+    "no": 476,
+    "ko": "떡볶이",
+    "en": "Toppogi"
+  },
+  {
+    "no": 477,
+    "ko": "떨어지다",
+    "en": "drop"
+  },
+  {
+    "no": 478,
+    "ko": "또",
+    "en": "in addition, again"
+  },
+  {
+    "no": 479,
+    "ko": "또는",
+    "en": "or"
+  },
+  {
+    "no": 480,
+    "ko": "똑같다",
+    "en": "same"
+  },
+  {
+    "no": 481,
+    "ko": "똑바로",
+    "en": "upright, straight"
+  },
+  {
+    "no": 482,
+    "ko": "뛰다",
+    "en": "run"
+  },
+  {
+    "no": 483,
+    "ko": "뜨겁다",
+    "en": "hot"
+  },
+  {
+    "no": 484,
+    "ko": "뜨다",
+    "en": "rise, open (the eyes)"
+  },
+  {
+    "no": 485,
+    "ko": "뜻",
+    "en": "meaning"
+  },
+  {
+    "no": 486,
+    "ko": "라디오",
+    "en": "radio"
+  },
+  {
+    "no": 487,
+    "ko": "라면",
+    "en": "ramen"
+  },
+  {
+    "no": 488,
+    "ko": "러시아",
+    "en": "Russia"
+  },
+  {
+    "no": 489,
+    "ko": "로션",
+    "en": "skin lotion"
+  },
+  {
+    "no": 490,
+    "ko": "마늘",
+    "en": "garlic"
+  },
+  {
+    "no": 491,
+    "ko": "마르다",
+    "en": "dry"
+  },
+  {
+    "no": 492,
+    "ko": "마리",
+    "en": "~ animal(s), ~ head(s)"
+  },
+  {
+    "no": 493,
+    "ko": "마시다",
+    "en": "drink"
+  },
+  {
+    "no": 494,
+    "ko": "마음",
+    "en": "mind, feeling"
+  },
+  {
+    "no": 495,
+    "ko": "마지막",
+    "en": "last"
+  },
+  {
+    "no": 496,
+    "ko": "마치다",
+    "en": "finish, end"
+  },
+  {
+    "no": 497,
+    "ko": "마흔",
+    "en": "40"
+  },
+  {
+    "no": 498,
+    "ko": "막히다",
+    "en": "be blocked, be clogged"
+  },
+  {
+    "no": 499,
+    "ko": "만",
+    "en": "only, ten thousand"
+  },
+  {
+    "no": 500,
+    "ko": "만나다",
+    "en": "meet"
+  },
+  {
+    "no": 501,
+    "ko": "만두",
+    "en": "dumpling"
+  },
+  {
+    "no": 502,
+    "ko": "만들다",
+    "en": "make, create"
+  },
+  {
+    "no": 503,
+    "ko": "만일",
+    "en": "if, should"
+  },
+  {
+    "no": 504,
+    "ko": "만지다",
+    "en": "touch"
+  },
+  {
+    "no": 505,
+    "ko": "만화",
+    "en": "comic book, cartoon"
+  },
+  {
+    "no": 506,
+    "ko": "많다",
+    "en": "many"
+  },
+  {
+    "no": 507,
+    "ko": "많이",
+    "en": "a lot of, many"
+  },
+  {
+    "no": 508,
+    "ko": "말",
+    "en": "word, talk"
+  },
+  {
+    "no": 509,
+    "ko": "말씀",
+    "en": "words, remarks"
+  },
+  {
+    "no": 510,
+    "ko": "말씀하다",
+    "en": "talk"
+  },
+  {
+    "no": 511,
+    "ko": "말하기",
+    "en": "speaking"
+  },
+  {
+    "no": 512,
+    "ko": "말하다",
+    "en": "say, talk"
+  },
+  {
+    "no": 513,
+    "ko": "맑다",
+    "en": "clear, clean"
+  },
+  {
+    "no": 514,
+    "ko": "맛",
+    "en": "flavor, taste"
+  },
+  {
+    "no": 515,
+    "ko": "맛없다",
+    "en": "not delicious"
+  },
+  {
+    "no": 516,
+    "ko": "맛있다",
+    "en": "delicious"
+  },
+  {
+    "no": 517,
+    "ko": "맞다",
+    "en": "right, fit, correct"
+  },
+  {
+    "no": 518,
+    "ko": "맞습니다",
+    "en": "That's right."
+  },
+  {
+    "no": 519,
+    "ko": "맞아요",
+    "en": "That's right."
+  },
+  {
+    "no": 520,
+    "ko": "맞은편",
+    "en": "across, the other side, opposite"
+  },
+  {
+    "no": 521,
+    "ko": "매다",
+    "en": "tie"
+  },
+  {
+    "no": 522,
+    "ko": "매우",
+    "en": "extremely, very"
+  },
+  {
+    "no": 523,
+    "ko": "매일",
+    "en": "everyday"
+  },
+  {
+    "no": 524,
+    "ko": "매주",
+    "en": "every week"
+  },
+  {
+    "no": 525,
+    "ko": "맥주",
+    "en": "beer"
+  },
+  {
+    "no": 526,
+    "ko": "맵다",
+    "en": "spicy"
+  },
+  {
+    "no": 527,
+    "ko": "머리",
+    "en": "head, hair"
+  },
+  {
+    "no": 528,
+    "ko": "먹다",
+    "en": "eat"
+  },
+  {
+    "no": 529,
+    "ko": "먼저",
+    "en": "first, first of all, before"
+  },
+  {
+    "no": 530,
+    "ko": "멀다",
+    "en": "far, distant, long"
+  },
+  {
+    "no": 531,
+    "ko": "멋있다",
+    "en": "cool, nice"
+  },
+  {
+    "no": 532,
+    "ko": "메뉴",
+    "en": "menu"
+  },
+  {
+    "no": 533,
+    "ko": "메다",
+    "en": "shoulder, carry"
+  },
+  {
+    "no": 534,
+    "ko": "메모",
+    "en": "memo"
+  },
+  {
+    "no": 535,
+    "ko": "메시지",
+    "en": "message"
+  },
+  {
+    "no": 536,
+    "ko": "멕시코",
+    "en": "Mexico"
+  },
+  {
+    "no": 537,
+    "ko": "며칠",
+    "en": "a few days, what date"
+  },
+  {
+    "no": 538,
+    "ko": "면도",
+    "en": "razor, shaving"
+  },
+  {
+    "no": 539,
+    "ko": "명",
+    "en": "~ person(s)"
+  },
+  {
+    "no": 540,
+    "ko": "명절",
+    "en": "holidays, annual events"
+  },
+  {
+    "no": 541,
+    "ko": "몇",
+    "en": "a few, a number of"
+  },
+  {
+    "no": 542,
+    "ko": "모두",
+    "en": "all, everyone"
+  },
+  {
+    "no": 543,
+    "ko": "모레",
+    "en": "the day after tomorrow"
+  },
+  {
+    "no": 544,
+    "ko": "모르겠습니다",
+    "en": "I don't know."
+  },
+  {
+    "no": 545,
+    "ko": "모르다",
+    "en": "do not know"
+  },
+  {
+    "no": 546,
+    "ko": "모시다",
+    "en": "take you, serve you (honorific form)"
+  },
+  {
+    "no": 547,
+    "ko": "모양",
+    "en": "shape, form, style"
+  },
+  {
+    "no": 548,
+    "ko": "모으다",
+    "en": "collect, gather"
+  },
+  {
+    "no": 549,
+    "ko": "모이다",
+    "en": "gather, get together"
+  },
+  {
+    "no": 550,
+    "ko": "모임",
+    "en": "meeting, gathering"
+  },
+  {
+    "no": 551,
+    "ko": "모자",
+    "en": "hat"
+  },
+  {
+    "no": 552,
+    "ko": "목",
+    "en": "neck, throat"
+  },
+  {
+    "no": 553,
+    "ko": "목걸이",
+    "en": "necklace"
+  },
+  {
+    "no": 554,
+    "ko": "목소리",
+    "en": "voice"
+  },
+  {
+    "no": 555,
+    "ko": "목요일",
+    "en": "Thursday"
+  },
+  {
+    "no": 556,
+    "ko": "목욕",
+    "en": "bath, bathing"
+  },
+  {
+    "no": 557,
+    "ko": "목욕하다",
+    "en": "take a bath"
+  },
+  {
+    "no": 558,
+    "ko": "목적",
+    "en": "purpose"
+  },
+  {
+    "no": 559,
+    "ko": "몸",
+    "en": "body"
+  },
+  {
+    "no": 560,
+    "ko": "몸살",
+    "en": "sickness, disease that comes from fatigue"
+  },
+  {
+    "no": 561,
+    "ko": "못하다",
+    "en": "~ can not do"
+  },
+  {
+    "no": 562,
+    "ko": "몽골",
+    "en": "Mongolia"
+  },
+  {
+    "no": 563,
+    "ko": "무",
+    "en": "radish"
+  },
+  {
+    "no": 564,
+    "ko": "무겁다",
+    "en": "heavy"
+  },
+  {
+    "no": 565,
+    "ko": "무궁화",
+    "en": "rose of sharon"
+  },
+  {
+    "no": 566,
+    "ko": "무료",
+    "en": "free"
+  },
+  {
+    "no": 567,
+    "ko": "무릎",
+    "en": "knee"
+  },
+  {
+    "no": 568,
+    "ko": "무리",
+    "en": "swarm, unreasonable"
+  },
+  {
+    "no": 569,
+    "ko": "무섭다",
+    "en": "scary"
+  },
+  {
+    "no": 570,
+    "ko": "무슨",
+    "en": "what"
+  },
+  {
+    "no": 571,
+    "ko": "무엇",
+    "en": "what"
+  },
+  {
+    "no": 572,
+    "ko": "무엇이",
+    "en": "what"
+  },
+  {
+    "no": 573,
+    "ko": "무역",
+    "en": "trade"
+  },
+  {
+    "no": 574,
+    "ko": "무용",
+    "en": "dance"
+  },
+  {
+    "no": 575,
+    "ko": "무척",
+    "en": "very"
+  },
+  {
+    "no": 576,
+    "ko": "문",
+    "en": "door, gate"
+  },
+  {
+    "no": 577,
+    "ko": "문구점",
+    "en": "stationery store"
+  },
+  {
+    "no": 578,
+    "ko": "문장",
+    "en": "sentence"
+  },
+  {
+    "no": 579,
+    "ko": "문제",
+    "en": "problem"
+  },
+  {
+    "no": 580,
+    "ko": "문화",
+    "en": "culture"
+  },
+  {
+    "no": 581,
+    "ko": "묻다",
+    "en": "ask"
+  },
+  {
+    "no": 582,
+    "ko": "물",
+    "en": "water"
+  },
+  {
+    "no": 583,
+    "ko": "물건",
+    "en": "stuff, thing"
+  },
+  {
+    "no": 584,
+    "ko": "물론",
+    "en": "sure, of course"
+  },
+  {
+    "no": 585,
+    "ko": "물어보다",
+    "en": "ask"
+  },
+  {
+    "no": 586,
+    "ko": "뭐",
+    "en": "what"
+  },
+  {
+    "no": 587,
+    "ko": "미국",
+    "en": "The United States"
+  },
+  {
+    "no": 588,
+    "ko": "미래",
+    "en": "future"
+  },
+  {
+    "no": 589,
+    "ko": "미리",
+    "en": "in advance, beforehand"
+  },
+  {
+    "no": 590,
+    "ko": "미술",
+    "en": "art"
+  },
+  {
+    "no": 591,
+    "ko": "미술관",
+    "en": "art gallery, art museum"
+  },
+  {
+    "no": 592,
+    "ko": "미안하다",
+    "en": "sorry"
+  },
+  {
+    "no": 593,
+    "ko": "미안합니다",
+    "en": "I'm sorry."
+  },
+  {
+    "no": 594,
+    "ko": "미용실",
+    "en": "beauty salon"
+  },
+  {
+    "no": 595,
+    "ko": "미터",
+    "en": "meter"
+  },
+  {
+    "no": 596,
+    "ko": "민속촌",
+    "en": "folk village"
+  },
+  {
+    "no": 597,
+    "ko": "밀가루",
+    "en": "flour"
+  },
+  {
+    "no": 598,
+    "ko": "밀리다",
+    "en": "be shaved, be pushed"
+  },
+  {
+    "no": 599,
+    "ko": "밑",
+    "en": "bottom, below"
+  },
+  {
+    "no": 600,
+    "ko": "바꾸다",
+    "en": "change"
+  },
+  {
+    "no": 601,
+    "ko": "바뀌다",
+    "en": "be changed"
+  },
+  {
+    "no": 602,
+    "ko": "바나나",
+    "en": "banana"
+  },
+  {
+    "no": 603,
+    "ko": "바다",
+    "en": "sea"
+  },
+  {
+    "no": 604,
+    "ko": "바닷가",
+    "en": "beach"
+  },
+  {
+    "no": 605,
+    "ko": "바라다",
+    "en": "hope"
+  },
+  {
+    "no": 606,
+    "ko": "바람",
+    "en": "wind"
+  },
+  {
+    "no": 607,
+    "ko": "바로",
+    "en": "immediately, soon, just"
+  },
+  {
+    "no": 608,
+    "ko": "바르다",
+    "en": "right, paint, wear"
+  },
+  {
+    "no": 609,
+    "ko": "바쁘다",
+    "en": "busy"
+  },
+  {
+    "no": 610,
+    "ko": "바이올린",
+    "en": "violin"
+  },
+  {
+    "no": 611,
+    "ko": "바지",
+    "en": "pants"
+  },
+  {
+    "no": 612,
+    "ko": "박물관",
+    "en": "museum"
+  },
+  {
+    "no": 613,
+    "ko": "박수",
+    "en": "clap, applause"
+  },
+  {
+    "no": 614,
+    "ko": "밖",
+    "en": "out, outside"
+  },
+  {
+    "no": 615,
+    "ko": "반",
+    "en": "half, group"
+  },
+  {
+    "no": 616,
+    "ko": "반갑다",
+    "en": "nice to meet, happy"
+  },
+  {
+    "no": 617,
+    "ko": "반갑습니다",
+    "en": "Nice to meet you."
+  },
+  {
+    "no": 618,
+    "ko": "반년",
+    "en": "half a year"
+  },
+  {
+    "no": 619,
+    "ko": "반달",
+    "en": "half-moon"
+  },
+  {
+    "no": 620,
+    "ko": "반바지",
+    "en": "shorts"
+  },
+  {
+    "no": 621,
+    "ko": "반지",
+    "en": "ring"
+  },
+  {
+    "no": 622,
+    "ko": "반찬",
+    "en": "side dish"
+  },
+  {
+    "no": 623,
+    "ko": "받다",
+    "en": "receive"
+  },
+  {
+    "no": 624,
+    "ko": "발",
+    "en": "foot, leg"
+  },
+  {
+    "no": 625,
+    "ko": "발가락",
+    "en": "toe(s)"
+  },
+  {
+    "no": 626,
+    "ko": "발음",
+    "en": "pronunciation"
+  },
+  {
+    "no": 627,
+    "ko": "발전",
+    "en": "development"
+  },
+  {
+    "no": 628,
+    "ko": "발표",
+    "en": "announcement, presentation"
+  },
+  {
+    "no": 629,
+    "ko": "밝다",
+    "en": "bright"
+  },
+  {
+    "no": 630,
+    "ko": "밤",
+    "en": "night"
+  },
+  {
+    "no": 631,
+    "ko": "밥",
+    "en": "rice, meal"
+  },
+  {
+    "no": 632,
+    "ko": "방",
+    "en": "room"
+  },
+  {
+    "no": 633,
+    "ko": "방법",
+    "en": "way, method"
+  },
+  {
+    "no": 634,
+    "ko": "방송",
+    "en": "broadcast"
+  },
+  {
+    "no": 635,
+    "ko": "방송국",
+    "en": "broadcast stations"
+  },
+  {
+    "no": 636,
+    "ko": "방학",
+    "en": "vacation"
+  },
+  {
+    "no": 637,
+    "ko": "배",
+    "en": "ship, stomach, pear"
+  },
+  {
+    "no": 638,
+    "ko": "배고프다",
+    "en": "hungry"
+  },
+  {
+    "no": 639,
+    "ko": "배구",
+    "en": "volleyball"
+  },
+  {
+    "no": 640,
+    "ko": "배달",
+    "en": "delivery"
+  },
+  {
+    "no": 641,
+    "ko": "배부르다",
+    "en": "be full (I am full.)"
+  },
+  {
+    "no": 642,
+    "ko": "배우",
+    "en": "actor"
+  },
+  {
+    "no": 643,
+    "ko": "배우다",
+    "en": "learn"
+  },
+  {
+    "no": 644,
+    "ko": "배탈",
+    "en": "stomachache"
+  },
+  {
+    "no": 645,
+    "ko": "백",
+    "en": "100"
+  },
+  {
+    "no": 646,
+    "ko": "백화점",
+    "en": "department store"
+  },
+  {
+    "no": 647,
+    "ko": "버리다",
+    "en": "abandon, throw away"
+  },
+  {
+    "no": 648,
+    "ko": "버스",
+    "en": "bus"
+  },
+  {
+    "no": 649,
+    "ko": "번",
+    "en": "~ time(s)"
+  },
+  {
+    "no": 650,
+    "ko": "번호",
+    "en": "number"
+  },
+  {
+    "no": 651,
+    "ko": "벌다",
+    "en": "earn, make money"
+  },
+  {
+    "no": 652,
+    "ko": "벌써",
+    "en": "already"
+  },
+  {
+    "no": 653,
+    "ko": "벗다",
+    "en": "take off (clothes, shoes)"
+  },
+  {
+    "no": 654,
+    "ko": "벚꽃",
+    "en": "cherry blossom"
+  },
+  {
+    "no": 655,
+    "ko": "베이징",
+    "en": "Beijing"
+  },
+  {
+    "no": 656,
+    "ko": "베트남",
+    "en": "Vietnam"
+  },
+  {
+    "no": 657,
+    "ko": "벽",
+    "en": "wall"
+  },
+  {
+    "no": 658,
+    "ko": "변호사",
+    "en": "lawyer"
+  },
+  {
+    "no": 659,
+    "ko": "별",
+    "en": "star"
+  },
+  {
+    "no": 660,
+    "ko": "별로",
+    "en": "not really"
+  },
+  {
+    "no": 661,
+    "ko": "병",
+    "en": "illness, ~ bottle(s)"
+  },
+  {
+    "no": 662,
+    "ko": "병원",
+    "en": "hospital"
+  },
+  {
+    "no": 663,
+    "ko": "보내다",
+    "en": "send, spend"
+  },
+  {
+    "no": 664,
+    "ko": "보다",
+    "en": "see"
+  },
+  {
+    "no": 665,
+    "ko": "보도",
+    "en": "sidewalk, report"
+  },
+  {
+    "no": 666,
+    "ko": "보이다",
+    "en": "show, look"
+  },
+  {
+    "no": 667,
+    "ko": "보통",
+    "en": "usually, normally, in general"
+  },
+  {
+    "no": 668,
+    "ko": "복숭아",
+    "en": "peach"
+  },
+  {
+    "no": 669,
+    "ko": "복잡하다",
+    "en": "complicated, crowded"
+  },
+  {
+    "no": 670,
+    "ko": "볶다",
+    "en": "fry"
+  },
+  {
+    "no": 671,
+    "ko": "볶음밥",
+    "en": "fried rice"
+  },
+  {
+    "no": 672,
+    "ko": "볼펜",
+    "en": "ballpoint pen"
+  },
+  {
+    "no": 673,
+    "ko": "봄",
+    "en": "spring"
+  },
+  {
+    "no": 674,
+    "ko": "봉지",
+    "en": "bag"
+  },
+  {
+    "no": 675,
+    "ko": "봉투",
+    "en": "envelope"
+  },
+  {
+    "no": 676,
+    "ko": "뵙다",
+    "en": "meet"
+  },
+  {
+    "no": 677,
+    "ko": "부동산",
+    "en": "real estate"
+  },
+  {
+    "no": 678,
+    "ko": "부드럽다",
+    "en": "soft, friendly"
+  },
+  {
+    "no": 679,
+    "ko": "부르다",
+    "en": "call, sing"
+  },
+  {
+    "no": 680,
+    "ko": "부모",
+    "en": "parents"
+  },
+  {
+    "no": 681,
+    "ko": "부부",
+    "en": "couple, husband and wife, married couple"
+  },
+  {
+    "no": 682,
+    "ko": "부산",
+    "en": "Busan"
+  },
+  {
+    "no": 683,
+    "ko": "부업",
+    "en": "sideline"
+  },
+  {
+    "no": 684,
+    "ko": "부엌",
+    "en": "kitchen"
+  },
+  {
+    "no": 685,
+    "ko": "부인",
+    "en": "wife, Mrs."
+  },
+  {
+    "no": 686,
+    "ko": "부장",
+    "en": "director"
+  },
+  {
+    "no": 687,
+    "ko": "부지런하다",
+    "en": "diligent"
+  },
+  {
+    "no": 688,
+    "ko": "부치다",
+    "en": "send, fry, transmit"
+  },
+  {
+    "no": 689,
+    "ko": "부탁",
+    "en": "request, please"
+  },
+  {
+    "no": 690,
+    "ko": "부탁하다",
+    "en": "beg, ask"
+  },
+  {
+    "no": 691,
+    "ko": "북쪽",
+    "en": "North"
+  },
+  {
+    "no": 692,
+    "ko": "분",
+    "en": "~ person(s), ~ minute(s)"
+  },
+  {
+    "no": 693,
+    "ko": "분위기",
+    "en": "atmosphere"
+  },
+  {
+    "no": 694,
+    "ko": "불",
+    "en": "fire, electrical light"
+  },
+  {
+    "no": 695,
+    "ko": "불고기",
+    "en": "Bulgogi, grilled meat"
+  },
+  {
+    "no": 696,
+    "ko": "불다",
+    "en": "blow (wind or whistle, musical instruments, etc.)"
+  },
+  {
+    "no": 697,
+    "ko": "불편하다",
+    "en": "uncomfortable, inconvenient"
+  },
+  {
+    "no": 698,
+    "ko": "붓다",
+    "en": "pour"
+  },
+  {
+    "no": 699,
+    "ko": "붙다",
+    "en": "stick, pass a test"
+  },
+  {
+    "no": 700,
+    "ko": "붙이다",
+    "en": "attach, stick"
+  },
+  {
+    "no": 701,
+    "ko": "브라질",
+    "en": "Brazil"
+  },
+  {
+    "no": 702,
+    "ko": "블라우스",
+    "en": "blouse"
+  },
+  {
+    "no": 703,
+    "ko": "비",
+    "en": "rain"
+  },
+  {
+    "no": 704,
+    "ko": "비누",
+    "en": "soap"
+  },
+  {
+    "no": 705,
+    "ko": "비디오",
+    "en": "video"
+  },
+  {
+    "no": 706,
+    "ko": "비밀",
+    "en": "secret"
+  },
+  {
+    "no": 707,
+    "ko": "비빔밥",
+    "en": "Bibimbap, mixed rice"
+  },
+  {
+    "no": 708,
+    "ko": "비슷하다",
+    "en": "similar, like"
+  },
+  {
+    "no": 709,
+    "ko": "비싸다",
+    "en": "expensive"
+  },
+  {
+    "no": 710,
+    "ko": "비행기",
+    "en": "airplane"
+  },
+  {
+    "no": 711,
+    "ko": "비행장",
+    "en": "airfield, airport"
+  },
+  {
+    "no": 712,
+    "ko": "빌딩",
+    "en": "building"
+  },
+  {
+    "no": 713,
+    "ko": "빌리다",
+    "en": "borrow, lend"
+  },
+  {
+    "no": 714,
+    "ko": "빠르다",
+    "en": "fast"
+  },
+  {
+    "no": 715,
+    "ko": "빨간색",
+    "en": "red color"
+  },
+  {
+    "no": 716,
+    "ko": "빨갛다",
+    "en": "red"
+  },
+  {
+    "no": 717,
+    "ko": "빨다",
+    "en": "suck, do laundry"
+  },
+  {
+    "no": 718,
+    "ko": "빨래",
+    "en": "laundry, wash"
+  },
+  {
+    "no": 719,
+    "ko": "빨리",
+    "en": "quickly"
+  },
+  {
+    "no": 720,
+    "ko": "빵",
+    "en": "bread"
+  },
+  {
+    "no": 721,
+    "ko": "빵집",
+    "en": "bakery"
+  },
+  {
+    "no": 722,
+    "ko": "빼다",
+    "en": "remove, pull, pull out"
+  },
+  {
+    "no": 723,
+    "ko": "뿐",
+    "en": "only"
+  },
+  {
+    "no": 724,
+    "ko": "사",
+    "en": "4"
+  },
+  {
+    "no": 725,
+    "ko": "사거리",
+    "en": "intersection, four corners"
+  },
+  {
+    "no": 726,
+    "ko": "사계절",
+    "en": "four seasons"
+  },
+  {
+    "no": 727,
+    "ko": "사고",
+    "en": "accident"
+  },
+  {
+    "no": 728,
+    "ko": "사과",
+    "en": "apple"
+  },
+  {
+    "no": 729,
+    "ko": "사다",
+    "en": "buy"
+  },
+  {
+    "no": 730,
+    "ko": "사람",
+    "en": "person, man"
+  },
+  {
+    "no": 731,
+    "ko": "사랑",
+    "en": "love"
+  },
+  {
+    "no": 732,
+    "ko": "사랑하다",
+    "en": "love"
+  },
+  {
+    "no": 733,
+    "ko": "사례",
+    "en": "case, example"
+  },
+  {
+    "no": 734,
+    "ko": "사무실",
+    "en": "office"
+  },
+  {
+    "no": 735,
+    "ko": "사물",
+    "en": "object, thing"
+  },
+  {
+    "no": 736,
+    "ko": "사십",
+    "en": "40"
+  },
+  {
+    "no": 737,
+    "ko": "사업가",
+    "en": "entrepreneur, businessman"
+  },
+  {
+    "no": 738,
+    "ko": "사용하다",
+    "en": "use"
+  },
+  {
+    "no": 739,
+    "ko": "사원",
+    "en": "temple, employee"
+  },
+  {
+    "no": 740,
+    "ko": "사월",
+    "en": "April"
+  },
+  {
+    "no": 741,
+    "ko": "사이",
+    "en": "between, while"
+  },
+  {
+    "no": 742,
+    "ko": "사이다",
+    "en": "cider"
+  },
+  {
+    "no": 743,
+    "ko": "사이즈",
+    "en": "size"
+  },
+  {
+    "no": 744,
+    "ko": "사인하다",
+    "en": "sign"
+  },
+  {
+    "no": 745,
+    "ko": "사장",
+    "en": "CEO, the president"
+  },
+  {
+    "no": 746,
+    "ko": "사전",
+    "en": "dictionary"
+  },
+  {
+    "no": 747,
+    "ko": "사진",
+    "en": "picture, photo"
+  },
+  {
+    "no": 748,
+    "ko": "사진기",
+    "en": "camera"
+  },
+  {
+    "no": 749,
+    "ko": "사촌",
+    "en": "cousin"
+  },
+  {
+    "no": 750,
+    "ko": "사탕",
+    "en": "candy"
+  },
+  {
+    "no": 751,
+    "ko": "사흘",
+    "en": "3 days"
+  },
+  {
+    "no": 752,
+    "ko": "산",
+    "en": "mountain"
+  },
+  {
+    "no": 753,
+    "ko": "산책",
+    "en": "walk"
+  },
+  {
+    "no": 754,
+    "ko": "살",
+    "en": "flesh, ~ year(s) old"
+  },
+  {
+    "no": 755,
+    "ko": "살다",
+    "en": "live"
+  },
+  {
+    "no": 756,
+    "ko": "삼",
+    "en": "3"
+  },
+  {
+    "no": 757,
+    "ko": "삼거리",
+    "en": "intersection, three-way intersection"
+  },
+  {
+    "no": 758,
+    "ko": "삼계탕",
+    "en": "Samgyetang"
+  },
+  {
+    "no": 759,
+    "ko": "삼십",
+    "en": "30"
+  },
+  {
+    "no": 760,
+    "ko": "삼월",
+    "en": "March"
+  },
+  {
+    "no": 761,
+    "ko": "삼촌",
+    "en": "paternal uncle"
+  },
+  {
+    "no": 762,
+    "ko": "상관",
+    "en": "relation"
+  },
+  {
+    "no": 763,
+    "ko": "상자",
+    "en": "box"
+  },
+  {
+    "no": 764,
+    "ko": "상처",
+    "en": "wound, scratch"
+  },
+  {
+    "no": 765,
+    "ko": "상품",
+    "en": "product"
+  },
+  {
+    "no": 766,
+    "ko": "새",
+    "en": "bird, new"
+  },
+  {
+    "no": 767,
+    "ko": "새로",
+    "en": "newly"
+  },
+  {
+    "no": 768,
+    "ko": "새벽",
+    "en": "dawn, late at night, early morning"
+  },
+  {
+    "no": 769,
+    "ko": "새우",
+    "en": "shrimp"
+  },
+  {
+    "no": 770,
+    "ko": "색",
+    "en": "color"
+  },
+  {
+    "no": 771,
+    "ko": "색깔",
+    "en": "color"
+  },
+  {
+    "no": 772,
+    "ko": "샌드위치",
+    "en": "sandwich"
+  },
+  {
+    "no": 773,
+    "ko": "생각",
+    "en": "thinking, thought"
+  },
+  {
+    "no": 774,
+    "ko": "생각되다",
+    "en": "be considered, it seems~"
+  },
+  {
+    "no": 775,
+    "ko": "생각하다",
+    "en": "think"
+  },
+  {
+    "no": 776,
+    "ko": "생기다",
+    "en": "form, arise"
+  },
+  {
+    "no": 777,
+    "ko": "생선",
+    "en": "fish"
+  },
+  {
+    "no": 778,
+    "ko": "생신",
+    "en": "birthday (honorific form)"
+  },
+  {
+    "no": 779,
+    "ko": "생일",
+    "en": "birthday"
+  },
+  {
+    "no": 780,
+    "ko": "생활",
+    "en": "life"
+  },
+  {
+    "no": 781,
+    "ko": "샤워하다",
+    "en": "take a shower"
+  },
+  {
+    "no": 782,
+    "ko": "샴푸",
+    "en": "shampoo"
+  },
+  {
+    "no": 783,
+    "ko": "서다",
+    "en": "stand"
+  },
+  {
+    "no": 784,
+    "ko": "서로",
+    "en": "each other, both"
+  },
+  {
+    "no": 785,
+    "ko": "서류",
+    "en": "document"
+  },
+  {
+    "no": 786,
+    "ko": "서른",
+    "en": "30"
+  },
+  {
+    "no": 787,
+    "ko": "서비스",
+    "en": "service"
+  },
+  {
+    "no": 788,
+    "ko": "서양",
+    "en": "western, west"
+  },
+  {
+    "no": 789,
+    "ko": "서울",
+    "en": "Seoul"
+  },
+  {
+    "no": 790,
+    "ko": "서울역",
+    "en": "Seoul station"
+  },
+  {
+    "no": 791,
+    "ko": "서점",
+    "en": "bookstore"
+  },
+  {
+    "no": 792,
+    "ko": "서쪽",
+    "en": "west, western"
+  },
+  {
+    "no": 793,
+    "ko": "선물",
+    "en": "gift, present"
+  },
+  {
+    "no": 794,
+    "ko": "선배",
+    "en": "elder, senior"
+  },
+  {
+    "no": 795,
+    "ko": "선생님",
+    "en": "teacher"
+  },
+  {
+    "no": 796,
+    "ko": "선수",
+    "en": "player"
+  },
+  {
+    "no": 797,
+    "ko": "선택하다",
+    "en": "choose, select"
+  },
+  {
+    "no": 798,
+    "ko": "선풍기",
+    "en": "fan"
+  },
+  {
+    "no": 799,
+    "ko": "설거지",
+    "en": "washing dishes, dish-washing"
+  },
+  {
+    "no": 800,
+    "ko": "설날",
+    "en": "Lunar New Year"
+  },
+  {
+    "no": 801,
+    "ko": "설렁탕",
+    "en": "Seolleongtang"
+  },
+  {
+    "no": 802,
+    "ko": "설명",
+    "en": "explanation, description"
+  },
+  {
+    "no": 803,
+    "ko": "설명하다",
+    "en": "explain"
+  },
+  {
+    "no": 804,
+    "ko": "설악산",
+    "en": "Mt. Seorak"
+  },
+  {
+    "no": 805,
+    "ko": "설탕",
+    "en": "sugar"
+  },
+  {
+    "no": 806,
+    "ko": "섬",
+    "en": "island"
+  },
+  {
+    "no": 807,
+    "ko": "성",
+    "en": "castle, last name"
+  },
+  {
+    "no": 808,
+    "ko": "성격",
+    "en": "personality"
+  },
+  {
+    "no": 809,
+    "ko": "성함",
+    "en": "name"
+  },
+  {
+    "no": 810,
+    "ko": "세계",
+    "en": "world"
+  },
+  {
+    "no": 811,
+    "ko": "세수하다",
+    "en": "wash"
+  },
+  {
+    "no": 812,
+    "ko": "세우다",
+    "en": "set up, formulate"
+  },
+  {
+    "no": 813,
+    "ko": "세일하다",
+    "en": "have a sale"
+  },
+  {
+    "no": 814,
+    "ko": "세탁기",
+    "en": "washing machine"
+  },
+  {
+    "no": 815,
+    "ko": "세탁소",
+    "en": "dry cleaners, laundromat"
+  },
+  {
+    "no": 816,
+    "ko": "센터",
+    "en": "center"
+  },
+  {
+    "no": 817,
+    "ko": "센티미터",
+    "en": "centimeter"
+  },
+  {
+    "no": 818,
+    "ko": "셋",
+    "en": "3"
+  },
+  {
+    "no": 819,
+    "ko": "셋째",
+    "en": "third"
+  },
+  {
+    "no": 820,
+    "ko": "소",
+    "en": "small, cow"
+  },
+  {
+    "no": 821,
+    "ko": "소개",
+    "en": "introduction"
+  },
+  {
+    "no": 822,
+    "ko": "소개하다",
+    "en": "introduce"
+  },
+  {
+    "no": 823,
+    "ko": "소고기",
+    "en": "beef"
+  },
+  {
+    "no": 824,
+    "ko": "소금",
+    "en": "salt"
+  },
+  {
+    "no": 825,
+    "ko": "소리",
+    "en": "sound, voice"
+  },
+  {
+    "no": 826,
+    "ko": "소설",
+    "en": "novel"
+  },
+  {
+    "no": 827,
+    "ko": "소설가",
+    "en": "novelist"
+  },
+  {
+    "no": 828,
+    "ko": "소식",
+    "en": "news"
+  },
+  {
+    "no": 829,
+    "ko": "소파",
+    "en": "sofa"
+  },
+  {
+    "no": 830,
+    "ko": "소포",
+    "en": "parcel"
+  },
+  {
+    "no": 831,
+    "ko": "소풍",
+    "en": "picnic, trip"
+  },
+  {
+    "no": 832,
+    "ko": "소화제",
+    "en": "peptic, digestive"
+  },
+  {
+    "no": 833,
+    "ko": "속",
+    "en": "inside"
+  },
+  {
+    "no": 834,
+    "ko": "손",
+    "en": "hand"
+  },
+  {
+    "no": 835,
+    "ko": "손가락",
+    "en": "finger"
+  },
+  {
+    "no": 836,
+    "ko": "손님",
+    "en": "customer"
+  },
+  {
+    "no": 837,
+    "ko": "손수건",
+    "en": "handkerchief"
+  },
+  {
+    "no": 838,
+    "ko": "송이",
+    "en": "bunch, flower, cluster"
+  },
+  {
+    "no": 839,
+    "ko": "쇼핑",
+    "en": "shopping"
+  },
+  {
+    "no": 840,
+    "ko": "수건",
+    "en": "towel, washcloth"
+  },
+  {
+    "no": 841,
+    "ko": "수도",
+    "en": "capital, water supply"
+  },
+  {
+    "no": 842,
+    "ko": "수돗물",
+    "en": "tap water"
+  },
+  {
+    "no": 843,
+    "ko": "수박",
+    "en": "watermelon"
+  },
+  {
+    "no": 844,
+    "ko": "수술하다",
+    "en": "operate on for"
+  },
+  {
+    "no": 845,
+    "ko": "수업",
+    "en": "class, lesson"
+  },
+  {
+    "no": 846,
+    "ko": "수영",
+    "en": "swimming"
+  },
+  {
+    "no": 847,
+    "ko": "수영복",
+    "en": "swimsuit"
+  },
+  {
+    "no": 848,
+    "ko": "수영장",
+    "en": "swimming pool"
+  },
+  {
+    "no": 849,
+    "ko": "수요일",
+    "en": "Wednesday"
+  },
+  {
+    "no": 850,
+    "ko": "수저",
+    "en": "chopsticks and a spoon"
+  },
+  {
+    "no": 851,
+    "ko": "수첩",
+    "en": "note, notebook"
+  },
+  {
+    "no": 852,
+    "ko": "수학",
+    "en": "mathematics"
+  },
+  {
+    "no": 853,
+    "ko": "숙제",
+    "en": "homework"
+  },
+  {
+    "no": 854,
+    "ko": "순서",
+    "en": "order, turn"
+  },
+  {
+    "no": 855,
+    "ko": "숟가락",
+    "en": "spoon"
+  },
+  {
+    "no": 856,
+    "ko": "술",
+    "en": "alcohol, liquor"
+  },
+  {
+    "no": 857,
+    "ko": "쉬다",
+    "en": "rest"
+  },
+  {
+    "no": 858,
+    "ko": "쉰",
+    "en": "50"
+  },
+  {
+    "no": 859,
+    "ko": "쉽다",
+    "en": "easy"
+  },
+  {
+    "no": 860,
+    "ko": "슈퍼마켓",
+    "en": "supermarket"
+  },
+  {
+    "no": 861,
+    "ko": "스물",
+    "en": "20"
+  },
+  {
+    "no": 862,
+    "ko": "스웨터",
+    "en": "sweater"
+  },
+  {
+    "no": 863,
+    "ko": "스케이트",
+    "en": "skate"
+  },
+  {
+    "no": 864,
+    "ko": "스키",
+    "en": "ski, skiing"
+  },
+  {
+    "no": 865,
+    "ko": "스키장",
+    "en": "ski resort"
+  },
+  {
+    "no": 866,
+    "ko": "스타",
+    "en": "star"
+  },
+  {
+    "no": 867,
+    "ko": "스타킹",
+    "en": "stockings"
+  },
+  {
+    "no": 868,
+    "ko": "스트레스",
+    "en": "stress"
+  },
+  {
+    "no": 869,
+    "ko": "스페인어",
+    "en": "Spanish"
+  },
+  {
+    "no": 870,
+    "ko": "스포츠",
+    "en": "sport"
+  },
+  {
+    "no": 871,
+    "ko": "슬퍼하다",
+    "en": "sorrow, mourn"
+  },
+  {
+    "no": 872,
+    "ko": "슬프다",
+    "en": "sad"
+  },
+  {
+    "no": 873,
+    "ko": "습관",
+    "en": "habit"
+  },
+  {
+    "no": 874,
+    "ko": "시",
+    "en": "city, time"
+  },
+  {
+    "no": 875,
+    "ko": "시간",
+    "en": "time"
+  },
+  {
+    "no": 876,
+    "ko": "시간표",
+    "en": "schedule, timetable"
+  },
+  {
+    "no": 877,
+    "ko": "시계",
+    "en": "clock"
+  },
+  {
+    "no": 878,
+    "ko": "시골",
+    "en": "countryside"
+  },
+  {
+    "no": 879,
+    "ko": "시끄럽다",
+    "en": "noisy"
+  },
+  {
+    "no": 880,
+    "ko": "시내",
+    "en": "downtown, city, stream"
+  },
+  {
+    "no": 881,
+    "ko": "시다",
+    "en": "sour"
+  },
+  {
+    "no": 882,
+    "ko": "시디",
+    "en": "CD"
+  },
+  {
+    "no": 883,
+    "ko": "시민",
+    "en": "citizen"
+  },
+  {
+    "no": 884,
+    "ko": "시설",
+    "en": "facility"
+  },
+  {
+    "no": 885,
+    "ko": "시외",
+    "en": "suburbs"
+  },
+  {
+    "no": 886,
+    "ko": "시원하다",
+    "en": "cool, refresh"
+  },
+  {
+    "no": 887,
+    "ko": "시월",
+    "en": "October"
+  },
+  {
+    "no": 888,
+    "ko": "시작",
+    "en": "start"
+  },
+  {
+    "no": 889,
+    "ko": "시작되다",
+    "en": "begin"
+  },
+  {
+    "no": 890,
+    "ko": "시작하다",
+    "en": "start, begin"
+  },
+  {
+    "no": 891,
+    "ko": "시장",
+    "en": "market"
+  },
+  {
+    "no": 892,
+    "ko": "시청",
+    "en": "city hall"
+  },
+  {
+    "no": 893,
+    "ko": "시키다",
+    "en": "make someone do, order"
+  },
+  {
+    "no": 894,
+    "ko": "시험",
+    "en": "exam, test"
+  },
+  {
+    "no": 895,
+    "ko": "식당",
+    "en": "restaurant, cafeteria"
+  },
+  {
+    "no": 896,
+    "ko": "식사",
+    "en": "meal"
+  },
+  {
+    "no": 897,
+    "ko": "식탁",
+    "en": "table"
+  },
+  {
+    "no": 898,
+    "ko": "신",
+    "en": "god, new"
+  },
+  {
+    "no": 899,
+    "ko": "신다",
+    "en": "put on, wear"
+  },
+  {
+    "no": 900,
+    "ko": "신문",
+    "en": "newspaper"
+  },
+  {
+    "no": 901,
+    "ko": "신발",
+    "en": "shoes, footwear"
+  },
+  {
+    "no": 902,
+    "ko": "신청서",
+    "en": "application forms"
+  },
+  {
+    "no": 903,
+    "ko": "신청하다",
+    "en": "put in for, apply for"
+  },
+  {
+    "no": 904,
+    "ko": "실례",
+    "en": "excuse"
+  },
+  {
+    "no": 905,
+    "ko": "실례하다",
+    "en": "be excused"
+  },
+  {
+    "no": 906,
+    "ko": "실수",
+    "en": "mistake, failure"
+  },
+  {
+    "no": 907,
+    "ko": "싫다",
+    "en": "hate"
+  },
+  {
+    "no": 908,
+    "ko": "싫어하다",
+    "en": "dislike, hate"
+  },
+  {
+    "no": 909,
+    "ko": "심하다",
+    "en": "severe, terrible"
+  },
+  {
+    "no": 910,
+    "ko": "십",
+    "en": "10"
+  },
+  {
+    "no": 911,
+    "ko": "십이월",
+    "en": "December"
+  },
+  {
+    "no": 912,
+    "ko": "십일월",
+    "en": "November"
+  },
+  {
+    "no": 913,
+    "ko": "싱겁다",
+    "en": "not salty"
+  },
+  {
+    "no": 914,
+    "ko": "싶다",
+    "en": "want"
+  },
+  {
+    "no": 915,
+    "ko": "싸다",
+    "en": "cheap, wrap"
+  },
+  {
+    "no": 916,
+    "ko": "싸우다",
+    "en": "fight"
+  },
+  {
+    "no": 917,
+    "ko": "쌀",
+    "en": "rice"
+  },
+  {
+    "no": 918,
+    "ko": "쌀밥",
+    "en": "cooked rice"
+  },
+  {
+    "no": 919,
+    "ko": "쌓이다",
+    "en": "stack up, pile up"
+  },
+  {
+    "no": 920,
+    "ko": "썰다",
+    "en": "chop, cut"
+  },
+  {
+    "no": 921,
+    "ko": "쓰기",
+    "en": "writing, dictation"
+  },
+  {
+    "no": 922,
+    "ko": "쓰다",
+    "en": "write, use, wear (glasses)"
+  },
+  {
+    "no": 923,
+    "ko": "쓰레기",
+    "en": "garbage"
+  },
+  {
+    "no": 924,
+    "ko": "쓰이다",
+    "en": "be written, be used"
+  },
+  {
+    "no": 925,
+    "ko": "씨",
+    "en": "seed, Mr. ~"
+  },
+  {
+    "no": 926,
+    "ko": "씩",
+    "en": "each, every, per"
+  },
+  {
+    "no": 927,
+    "ko": "씹다",
+    "en": "chew, bite"
+  },
+  {
+    "no": 928,
+    "ko": "씻다",
+    "en": "wash"
+  },
+  {
+    "no": 929,
+    "ko": "아가씨",
+    "en": "Miss, daughter"
+  },
+  {
+    "no": 930,
+    "ko": "아기",
+    "en": "baby, toddler"
+  },
+  {
+    "no": 931,
+    "ko": "아까",
+    "en": "earlier, while ago"
+  },
+  {
+    "no": 932,
+    "ko": "아내",
+    "en": "wife"
+  },
+  {
+    "no": 933,
+    "ko": "아뇨",
+    "en": "no"
+  },
+  {
+    "no": 934,
+    "ko": "아니다",
+    "en": "no"
+  },
+  {
+    "no": 935,
+    "ko": "아니오",
+    "en": "no"
+  },
+  {
+    "no": 936,
+    "ko": "아니요",
+    "en": "no"
+  },
+  {
+    "no": 937,
+    "ko": "아들",
+    "en": "son"
+  },
+  {
+    "no": 938,
+    "ko": "아랍어",
+    "en": "Arabic"
+  },
+  {
+    "no": 939,
+    "ko": "아래",
+    "en": "bottom, under"
+  },
+  {
+    "no": 940,
+    "ko": "아름답다",
+    "en": "beautiful"
+  },
+  {
+    "no": 941,
+    "ko": "아마",
+    "en": "maybe, perhaps"
+  },
+  {
+    "no": 942,
+    "ko": "아무",
+    "en": "any"
+  },
+  {
+    "no": 943,
+    "ko": "아버님",
+    "en": "father"
+  },
+  {
+    "no": 944,
+    "ko": "아버지",
+    "en": "father"
+  },
+  {
+    "no": 945,
+    "ko": "아빠",
+    "en": "dad"
+  },
+  {
+    "no": 946,
+    "ko": "아시아",
+    "en": "Asia"
+  },
+  {
+    "no": 947,
+    "ko": "아이",
+    "en": "child"
+  },
+  {
+    "no": 948,
+    "ko": "아이스크림",
+    "en": "ice cream"
+  },
+  {
+    "no": 949,
+    "ko": "아저씨",
+    "en": "uncle, mister"
+  },
+  {
+    "no": 950,
+    "ko": "아주",
+    "en": "very, completely"
+  },
+  {
+    "no": 951,
+    "ko": "아주머니",
+    "en": "old lady, madame, aunt"
+  },
+  {
+    "no": 952,
+    "ko": "아줌마",
+    "en": "old lady, madame, aunt"
+  },
+  {
+    "no": 953,
+    "ko": "아직",
+    "en": "yet, still"
+  },
+  {
+    "no": 954,
+    "ko": "아침",
+    "en": "morning, breakfast"
+  },
+  {
+    "no": 955,
+    "ko": "아침밥",
+    "en": "breakfast"
+  },
+  {
+    "no": 956,
+    "ko": "아침식사",
+    "en": "breakfast"
+  },
+  {
+    "no": 957,
+    "ko": "아파트",
+    "en": "apartment, mansion"
+  },
+  {
+    "no": 958,
+    "ko": "아프다",
+    "en": "painful, sick"
+  },
+  {
+    "no": 959,
+    "ko": "아프리카",
+    "en": "Africa"
+  },
+  {
+    "no": 960,
+    "ko": "아홉",
+    "en": "9"
+  },
+  {
+    "no": 961,
+    "ko": "아흔",
+    "en": "90"
+  },
+  {
+    "no": 962,
+    "ko": "악기",
+    "en": "musical instrument"
+  },
+  {
+    "no": 963,
+    "ko": "안",
+    "en": "within, not ~"
+  },
+  {
+    "no": 964,
+    "ko": "안경",
+    "en": "glasses"
+  },
+  {
+    "no": 965,
+    "ko": "안내하다",
+    "en": "guide, invite"
+  },
+  {
+    "no": 966,
+    "ko": "안녕하세요",
+    "en": "hi, hello"
+  },
+  {
+    "no": 967,
+    "ko": "안녕하십니까",
+    "en": "hello"
+  },
+  {
+    "no": 968,
+    "ko": "안다",
+    "en": "embrace, cradle"
+  },
+  {
+    "no": 969,
+    "ko": "안전하다",
+    "en": "safe"
+  },
+  {
+    "no": 970,
+    "ko": "앉다",
+    "en": "sit"
+  },
+  {
+    "no": 971,
+    "ko": "알다",
+    "en": "know"
+  },
+  {
+    "no": 972,
+    "ko": "알리다",
+    "en": "inform"
+  },
+  {
+    "no": 973,
+    "ko": "알맞다",
+    "en": "fit, appropriate"
+  },
+  {
+    "no": 974,
+    "ko": "알았습니다",
+    "en": "I understood."
+  },
+  {
+    "no": 975,
+    "ko": "앞",
+    "en": "front, previous"
+  },
+  {
+    "no": 976,
+    "ko": "애",
+    "en": "child"
+  },
+  {
+    "no": 977,
+    "ko": "액세서리",
+    "en": "accessory"
+  },
+  {
+    "no": 978,
+    "ko": "야구",
+    "en": "baseball"
+  },
+  {
+    "no": 979,
+    "ko": "야채",
+    "en": "vegetable"
+  },
+  {
+    "no": 980,
+    "ko": "약",
+    "en": "about, medicine"
+  },
+  {
+    "no": 981,
+    "ko": "약간",
+    "en": "slightly, a little"
+  },
+  {
+    "no": 982,
+    "ko": "약국",
+    "en": "pharmacy"
+  },
+  {
+    "no": 983,
+    "ko": "약사",
+    "en": "pharmacist"
+  },
+  {
+    "no": 984,
+    "ko": "약속",
+    "en": "appointment, promise"
+  },
+  {
+    "no": 985,
+    "ko": "얇다",
+    "en": "thin"
+  },
+  {
+    "no": 986,
+    "ko": "양",
+    "en": "amount, sheep"
+  },
+  {
+    "no": 987,
+    "ko": "양말",
+    "en": "socks"
+  },
+  {
+    "no": 988,
+    "ko": "양복",
+    "en": "suit"
+  },
+  {
+    "no": 989,
+    "ko": "양식",
+    "en": "form, western style"
+  },
+  {
+    "no": 990,
+    "ko": "양파",
+    "en": "onion"
+  },
+  {
+    "no": 991,
+    "ko": "얘기하다",
+    "en": "talk"
+  },
+  {
+    "no": 992,
+    "ko": "어깨",
+    "en": "shoulder"
+  },
+  {
+    "no": 993,
+    "ko": "어느",
+    "en": "which, how"
+  },
+  {
+    "no": 994,
+    "ko": "어둡다",
+    "en": "dark"
+  },
+  {
+    "no": 995,
+    "ko": "어디",
+    "en": "where"
+  },
+  {
+    "no": 996,
+    "ko": "어떤",
+    "en": "which, what"
+  },
+  {
+    "no": 997,
+    "ko": "어떻게",
+    "en": "how"
+  },
+  {
+    "no": 998,
+    "ko": "어떻다",
+    "en": "how"
+  },
+  {
+    "no": 999,
+    "ko": "어떻습니까?",
+    "en": "How is it?"
+  },
+  {
+    "no": 1000,
+    "ko": "어렵다",
+    "en": "difficult"
+  },
+  {
+    "no": 1001,
+    "ko": "어른",
+    "en": "adult"
+  },
+  {
+    "no": 1002,
+    "ko": "어리다",
+    "en": "young"
+  },
+  {
+    "no": 1003,
+    "ko": "어린이",
+    "en": "child"
+  },
+  {
+    "no": 1004,
+    "ko": "어머",
+    "en": "oh, well"
+  },
+  {
+    "no": 1005,
+    "ko": "어머니",
+    "en": "mother"
+  },
+  {
+    "no": 1006,
+    "ko": "어머님",
+    "en": "mother"
+  },
+  {
+    "no": 1007,
+    "ko": "어서",
+    "en": "hurry, quickly"
+  },
+  {
+    "no": 1008,
+    "ko": "어울리다",
+    "en": "look good on, befit"
+  },
+  {
+    "no": 1009,
+    "ko": "어저께",
+    "en": "yesterday"
+  },
+  {
+    "no": 1010,
+    "ko": "어제",
+    "en": "yesterday"
+  },
+  {
+    "no": 1011,
+    "ko": "어젯밤",
+    "en": "last night"
+  },
+  {
+    "no": 1012,
+    "ko": "언니",
+    "en": "sister (as seen from the younger sister)"
+  },
+  {
+    "no": 1013,
+    "ko": "언제",
+    "en": "when"
+  },
+  {
+    "no": 1014,
+    "ko": "언제나",
+    "en": "always, anytime"
+  },
+  {
+    "no": 1015,
+    "ko": "얼굴",
+    "en": "face"
+  },
+  {
+    "no": 1016,
+    "ko": "얼마나",
+    "en": "how much"
+  },
+  {
+    "no": 1017,
+    "ko": "얼음",
+    "en": "ice"
+  },
+  {
+    "no": 1018,
+    "ko": "엄마",
+    "en": "mom"
+  },
+  {
+    "no": 1019,
+    "ko": "없다",
+    "en": "none, no, not"
+  },
+  {
+    "no": 1020,
+    "ko": "없이",
+    "en": "without"
+  },
+  {
+    "no": 1021,
+    "ko": "에어컨",
+    "en": "air conditioner"
+  },
+  {
+    "no": 1022,
+    "ko": "엔",
+    "en": "yen"
+  },
+  {
+    "no": 1023,
+    "ko": "엘리베이터",
+    "en": "elevator"
+  },
+  {
+    "no": 1024,
+    "ko": "여권",
+    "en": "passport"
+  },
+  {
+    "no": 1025,
+    "ko": "여기",
+    "en": "here"
+  },
+  {
+    "no": 1026,
+    "ko": "여기저기",
+    "en": "here and there"
+  },
+  {
+    "no": 1027,
+    "ko": "여덟",
+    "en": "8"
+  },
+  {
+    "no": 1028,
+    "ko": "여동생",
+    "en": "younger sister"
+  },
+  {
+    "no": 1029,
+    "ko": "여든",
+    "en": "80"
+  },
+  {
+    "no": 1030,
+    "ko": "여러",
+    "en": "various, many"
+  },
+  {
+    "no": 1031,
+    "ko": "여러가지",
+    "en": "several, various"
+  },
+  {
+    "no": 1032,
+    "ko": "여러분",
+    "en": "everyone, ladies and gentlemen"
+  },
+  {
+    "no": 1033,
+    "ko": "여름",
+    "en": "summer"
+  },
+  {
+    "no": 1034,
+    "ko": "여보세요",
+    "en": "hello"
+  },
+  {
+    "no": 1035,
+    "ko": "여섯",
+    "en": "6"
+  },
+  {
+    "no": 1036,
+    "ko": "여자",
+    "en": "woman"
+  },
+  {
+    "no": 1037,
+    "ko": "여학생",
+    "en": "female student"
+  },
+  {
+    "no": 1038,
+    "ko": "여행",
+    "en": "travel"
+  },
+  {
+    "no": 1039,
+    "ko": "여행사",
+    "en": "travel agency, travel firm"
+  },
+  {
+    "no": 1040,
+    "ko": "역",
+    "en": "station"
+  },
+  {
+    "no": 1041,
+    "ko": "역사",
+    "en": "history"
+  },
+  {
+    "no": 1042,
+    "ko": "연락처",
+    "en": "contact information"
+  },
+  {
+    "no": 1043,
+    "ko": "연세",
+    "en": "age (honorific form)"
+  },
+  {
+    "no": 1044,
+    "ko": "연습",
+    "en": "practice"
+  },
+  {
+    "no": 1045,
+    "ko": "연습하다",
+    "en": "practice"
+  },
+  {
+    "no": 1046,
+    "ko": "연예인",
+    "en": "celebrity"
+  },
+  {
+    "no": 1047,
+    "ko": "연필",
+    "en": "pencil"
+  },
+  {
+    "no": 1048,
+    "ko": "연휴",
+    "en": "consecutive holidays"
+  },
+  {
+    "no": 1049,
+    "ko": "열",
+    "en": "10"
+  },
+  {
+    "no": 1050,
+    "ko": "열다",
+    "en": "open"
+  },
+  {
+    "no": 1051,
+    "ko": "열리다",
+    "en": "be opened"
+  },
+  {
+    "no": 1052,
+    "ko": "열쇠",
+    "en": "key"
+  },
+  {
+    "no": 1053,
+    "ko": "열심히",
+    "en": "hard, enthusiastic"
+  },
+  {
+    "no": 1054,
+    "ko": "열차",
+    "en": "train"
+  },
+  {
+    "no": 1055,
+    "ko": "엽서",
+    "en": "postcard"
+  },
+  {
+    "no": 1056,
+    "ko": "영",
+    "en": "spirit, zero"
+  },
+  {
+    "no": 1057,
+    "ko": "영국",
+    "en": "The United Kingdom"
+  },
+  {
+    "no": 1058,
+    "ko": "영상",
+    "en": "video"
+  },
+  {
+    "no": 1059,
+    "ko": "영어",
+    "en": "English"
+  },
+  {
+    "no": 1060,
+    "ko": "영어회화",
+    "en": "English conversation"
+  },
+  {
+    "no": 1061,
+    "ko": "영하",
+    "en": "minus, below zero"
+  },
+  {
+    "no": 1062,
+    "ko": "영화",
+    "en": "movie"
+  },
+  {
+    "no": 1063,
+    "ko": "영화관",
+    "en": "movie theater"
+  },
+  {
+    "no": 1064,
+    "ko": "영화배우",
+    "en": "movie star"
+  },
+  {
+    "no": 1065,
+    "ko": "영화표",
+    "en": "movie ticket"
+  },
+  {
+    "no": 1066,
+    "ko": "옆",
+    "en": "side"
+  },
+  {
+    "no": 1067,
+    "ko": "예",
+    "en": "yes"
+  },
+  {
+    "no": 1068,
+    "ko": "예문",
+    "en": "example, model sentence"
+  },
+  {
+    "no": 1069,
+    "ko": "예쁘다",
+    "en": "pretty, beautiful"
+  },
+  {
+    "no": 1070,
+    "ko": "예순",
+    "en": "60"
+  },
+  {
+    "no": 1071,
+    "ko": "예약",
+    "en": "reservation"
+  },
+  {
+    "no": 1072,
+    "ko": "옛날",
+    "en": "a long ago, olden days"
+  },
+  {
+    "no": 1073,
+    "ko": "오",
+    "en": "5"
+  },
+  {
+    "no": 1074,
+    "ko": "오늘",
+    "en": "today"
+  },
+  {
+    "no": 1075,
+    "ko": "오다",
+    "en": "come"
+  },
+  {
+    "no": 1076,
+    "ko": "오래",
+    "en": "long, much"
+  },
+  {
+    "no": 1077,
+    "ko": "오래간만",
+    "en": "after a long time"
+  },
+  {
+    "no": 1078,
+    "ko": "오래간만입니다",
+    "en": "Long time no see."
+  },
+  {
+    "no": 1079,
+    "ko": "오랜만",
+    "en": "after a long time"
+  },
+  {
+    "no": 1080,
+    "ko": "오랜만에",
+    "en": "after a long time"
+  },
+  {
+    "no": 1081,
+    "ko": "오랫동안",
+    "en": "for a long time"
+  },
+  {
+    "no": 1082,
+    "ko": "오렌지",
+    "en": "orange"
+  },
+  {
+    "no": 1083,
+    "ko": "오르다",
+    "en": "climb"
+  },
+  {
+    "no": 1084,
+    "ko": "오른쪽",
+    "en": "right side, right"
+  },
+  {
+    "no": 1085,
+    "ko": "오리",
+    "en": "duck"
+  },
+  {
+    "no": 1086,
+    "ko": "오빠",
+    "en": "brother (as seen from the younger sister)"
+  },
+  {
+    "no": 1087,
+    "ko": "오십",
+    "en": "50"
+  },
+  {
+    "no": 1088,
+    "ko": "오월",
+    "en": "May"
+  },
+  {
+    "no": 1089,
+    "ko": "오이",
+    "en": "cucumber"
+  },
+  {
+    "no": 1090,
+    "ko": "오전",
+    "en": "morning, a.m."
+  },
+  {
+    "no": 1091,
+    "ko": "오징어",
+    "en": "squid"
+  },
+  {
+    "no": 1092,
+    "ko": "오후",
+    "en": "afternoon"
+  },
+  {
+    "no": 1093,
+    "ko": "올라가다",
+    "en": "go up"
+  },
+  {
+    "no": 1094,
+    "ko": "올라오다",
+    "en": "come up"
+  },
+  {
+    "no": 1095,
+    "ko": "올려놓다",
+    "en": "put on, place"
+  },
+  {
+    "no": 1096,
+    "ko": "올림픽",
+    "en": "olympic"
+  },
+  {
+    "no": 1097,
+    "ko": "올해",
+    "en": "this year"
+  },
+  {
+    "no": 1098,
+    "ko": "옮기다",
+    "en": "move, transfer, translate"
+  },
+  {
+    "no": 1099,
+    "ko": "옷",
+    "en": "dress, clothes"
+  },
+  {
+    "no": 1100,
+    "ko": "옷가게",
+    "en": "clothing store"
+  },
+  {
+    "no": 1101,
+    "ko": "옷장",
+    "en": "closet"
+  },
+  {
+    "no": 1102,
+    "ko": "와이셔츠",
+    "en": "shirt"
+  },
+  {
+    "no": 1103,
+    "ko": "왜",
+    "en": "why"
+  },
+  {
+    "no": 1104,
+    "ko": "왜냐하면",
+    "en": "because"
+  },
+  {
+    "no": 1105,
+    "ko": "외국",
+    "en": "foreign country"
+  },
+  {
+    "no": 1106,
+    "ko": "외국어",
+    "en": "foreign language"
+  },
+  {
+    "no": 1107,
+    "ko": "외국인",
+    "en": "foreigner"
+  },
+  {
+    "no": 1108,
+    "ko": "외롭다",
+    "en": "lonely"
+  },
+  {
+    "no": 1109,
+    "ko": "외삼촌",
+    "en": "maternal uncle"
+  },
+  {
+    "no": 1110,
+    "ko": "외숙모",
+    "en": "maternal aunt"
+  },
+  {
+    "no": 1111,
+    "ko": "외출하다",
+    "en": "go out"
+  },
+  {
+    "no": 1112,
+    "ko": "외할머니",
+    "en": "maternal grandmother"
+  },
+  {
+    "no": 1113,
+    "ko": "외할아버지",
+    "en": "maternal grandfather"
+  },
+  {
+    "no": 1114,
+    "ko": "왼쪽",
+    "en": "left"
+  },
+  {
+    "no": 1115,
+    "ko": "요금",
+    "en": "fee"
+  },
+  {
+    "no": 1116,
+    "ko": "요르단",
+    "en": "Jordan"
+  },
+  {
+    "no": 1117,
+    "ko": "요리",
+    "en": "cooking, cuisine"
+  },
+  {
+    "no": 1118,
+    "ko": "요일",
+    "en": "day of the week"
+  },
+  {
+    "no": 1119,
+    "ko": "요즘",
+    "en": "nowadays, around this time, lately"
+  },
+  {
+    "no": 1120,
+    "ko": "우리",
+    "en": "we, us"
+  },
+  {
+    "no": 1121,
+    "ko": "우리나라",
+    "en": "our country, South Korea"
+  },
+  {
+    "no": 1122,
+    "ko": "우산",
+    "en": "umbrella"
+  },
+  {
+    "no": 1123,
+    "ko": "우선",
+    "en": "first"
+  },
+  {
+    "no": 1124,
+    "ko": "우유",
+    "en": "milk"
+  },
+  {
+    "no": 1125,
+    "ko": "우체국",
+    "en": "post office"
+  },
+  {
+    "no": 1126,
+    "ko": "우표",
+    "en": "stamp"
+  },
+  {
+    "no": 1127,
+    "ko": "운동",
+    "en": "exercise"
+  },
+  {
+    "no": 1128,
+    "ko": "운동복",
+    "en": "sportswear, gym clothes"
+  },
+  {
+    "no": 1129,
+    "ko": "운동선수",
+    "en": "athlete"
+  },
+  {
+    "no": 1130,
+    "ko": "운동장",
+    "en": "playground, athletic field"
+  },
+  {
+    "no": 1131,
+    "ko": "운동하다",
+    "en": "exercise"
+  },
+  {
+    "no": 1132,
+    "ko": "운동화",
+    "en": "sports shoes"
+  },
+  {
+    "no": 1133,
+    "ko": "운전하다",
+    "en": "drive"
+  },
+  {
+    "no": 1134,
+    "ko": "울다",
+    "en": "cry"
+  },
+  {
+    "no": 1135,
+    "ko": "울리다",
+    "en": "make cry, chime"
+  },
+  {
+    "no": 1136,
+    "ko": "움직이다",
+    "en": "move"
+  },
+  {
+    "no": 1137,
+    "ko": "웃기다",
+    "en": "funny, make someone laugh"
+  },
+  {
+    "no": 1138,
+    "ko": "웃다",
+    "en": "laugh"
+  },
+  {
+    "no": 1139,
+    "ko": "원",
+    "en": "won (currency units of Korea)"
+  },
+  {
+    "no": 1140,
+    "ko": "원피스",
+    "en": "one-piece dress"
+  },
+  {
+    "no": 1141,
+    "ko": "원하다",
+    "en": "want, wish, desire"
+  },
+  {
+    "no": 1142,
+    "ko": "월",
+    "en": "month"
+  },
+  {
+    "no": 1143,
+    "ko": "월급",
+    "en": "monthly salary"
+  },
+  {
+    "no": 1144,
+    "ko": "월드컵",
+    "en": "world cup"
+  },
+  {
+    "no": 1145,
+    "ko": "월세",
+    "en": "monthly rent"
+  },
+  {
+    "no": 1146,
+    "ko": "월요일",
+    "en": "Monday"
+  },
+  {
+    "no": 1147,
+    "ko": "웬일",
+    "en": "for some reason, What was it?"
+  },
+  {
+    "no": 1148,
+    "ko": "위",
+    "en": "top, up"
+  },
+  {
+    "no": 1149,
+    "ko": "위치",
+    "en": "location, position"
+  },
+  {
+    "no": 1150,
+    "ko": "위하다",
+    "en": "for, in favor of, for the sake of"
+  },
+  {
+    "no": 1151,
+    "ko": "위험하다",
+    "en": "dangerous"
+  },
+  {
+    "no": 1152,
+    "ko": "유럽",
+    "en": "Europe"
+  },
+  {
+    "no": 1153,
+    "ko": "유리",
+    "en": "glass"
+  },
+  {
+    "no": 1154,
+    "ko": "유명하다",
+    "en": "famous"
+  },
+  {
+    "no": 1155,
+    "ko": "유월",
+    "en": "June"
+  },
+  {
+    "no": 1156,
+    "ko": "유학",
+    "en": "study abroad"
+  },
+  {
+    "no": 1157,
+    "ko": "유학생",
+    "en": "foreign student, international student"
+  },
+  {
+    "no": 1158,
+    "ko": "유행",
+    "en": "trend"
+  },
+  {
+    "no": 1159,
+    "ko": "육",
+    "en": "6"
+  },
+  {
+    "no": 1160,
+    "ko": "육십",
+    "en": "60"
+  },
+  {
+    "no": 1161,
+    "ko": "은행",
+    "en": "bank"
+  },
+  {
+    "no": 1162,
+    "ko": "은행원",
+    "en": "bank clerk"
+  },
+  {
+    "no": 1163,
+    "ko": "음료수",
+    "en": "drink, soft drink"
+  },
+  {
+    "no": 1164,
+    "ko": "음반",
+    "en": "record"
+  },
+  {
+    "no": 1165,
+    "ko": "음식",
+    "en": "food, cooking"
+  },
+  {
+    "no": 1166,
+    "ko": "음악",
+    "en": "music"
+  },
+  {
+    "no": 1167,
+    "ko": "음악가",
+    "en": "musician"
+  },
+  {
+    "no": 1168,
+    "ko": "응",
+    "en": "Yeah (answer)"
+  },
+  {
+    "no": 1169,
+    "ko": "의미",
+    "en": "meaning"
+  },
+  {
+    "no": 1170,
+    "ko": "의사",
+    "en": "doctor"
+  },
+  {
+    "no": 1171,
+    "ko": "의자",
+    "en": "chair"
+  },
+  {
+    "no": 1172,
+    "ko": "이",
+    "en": "this, tooth, 2"
+  },
+  {
+    "no": 1173,
+    "ko": "이거",
+    "en": "this"
+  },
+  {
+    "no": 1174,
+    "ko": "이것",
+    "en": "this"
+  },
+  {
+    "no": 1175,
+    "ko": "이곳",
+    "en": "this place, here"
+  },
+  {
+    "no": 1176,
+    "ko": "이따가",
+    "en": "later"
+  },
+  {
+    "no": 1177,
+    "ko": "이런",
+    "en": "this, such ~"
+  },
+  {
+    "no": 1178,
+    "ko": "이렇게",
+    "en": "like this, so, in this way"
+  },
+  {
+    "no": 1179,
+    "ko": "이렇다",
+    "en": "like this"
+  },
+  {
+    "no": 1180,
+    "ko": "이름",
+    "en": "name"
+  },
+  {
+    "no": 1181,
+    "ko": "이메일",
+    "en": "e-mail"
+  },
+  {
+    "no": 1182,
+    "ko": "이모",
+    "en": "maternal aunt"
+  },
+  {
+    "no": 1183,
+    "ko": "이모부",
+    "en": "maternal uncle"
+  },
+  {
+    "no": 1184,
+    "ko": "이번",
+    "en": "this time"
+  },
+  {
+    "no": 1185,
+    "ko": "이분",
+    "en": "this person"
+  },
+  {
+    "no": 1186,
+    "ko": "이사",
+    "en": "move, moving"
+  },
+  {
+    "no": 1187,
+    "ko": "이상",
+    "en": "more than, strange"
+  },
+  {
+    "no": 1188,
+    "ko": "이상하다",
+    "en": "strange, funny, weird"
+  },
+  {
+    "no": 1189,
+    "ko": "이십",
+    "en": "20"
+  },
+  {
+    "no": 1190,
+    "ko": "이야기",
+    "en": "story"
+  },
+  {
+    "no": 1191,
+    "ko": "이야기하다",
+    "en": "talk"
+  },
+  {
+    "no": 1192,
+    "ko": "이용",
+    "en": "usage"
+  },
+  {
+    "no": 1193,
+    "ko": "이용하다",
+    "en": "use"
+  },
+  {
+    "no": 1194,
+    "ko": "이월",
+    "en": "February"
+  },
+  {
+    "no": 1195,
+    "ko": "이유",
+    "en": "reason"
+  },
+  {
+    "no": 1196,
+    "ko": "이제",
+    "en": "now"
+  },
+  {
+    "no": 1197,
+    "ko": "이집트",
+    "en": "Egypt"
+  },
+  {
+    "no": 1198,
+    "ko": "이쪽",
+    "en": "this way, here, this person"
+  },
+  {
+    "no": 1199,
+    "ko": "이틀",
+    "en": "two days"
+  },
+  {
+    "no": 1200,
+    "ko": "이해",
+    "en": "understanding"
+  },
+  {
+    "no": 1201,
+    "ko": "이해하다",
+    "en": "understand"
+  },
+  {
+    "no": 1202,
+    "ko": "인",
+    "en": "sign, ~ person(s)"
+  },
+  {
+    "no": 1203,
+    "ko": "인구",
+    "en": "population"
+  },
+  {
+    "no": 1204,
+    "ko": "인기",
+    "en": "popularity"
+  },
+  {
+    "no": 1205,
+    "ko": "인기스타",
+    "en": "popular star"
+  },
+  {
+    "no": 1206,
+    "ko": "인도",
+    "en": "India"
+  },
+  {
+    "no": 1207,
+    "ko": "인사",
+    "en": "greetings"
+  },
+  {
+    "no": 1208,
+    "ko": "인사하다",
+    "en": "greet"
+  },
+  {
+    "no": 1209,
+    "ko": "인삼",
+    "en": "ginseng"
+  },
+  {
+    "no": 1210,
+    "ko": "인상",
+    "en": "impression"
+  },
+  {
+    "no": 1211,
+    "ko": "인천",
+    "en": "Incheon"
+  },
+  {
+    "no": 1212,
+    "ko": "인터넷",
+    "en": "internet"
+  },
+  {
+    "no": 1213,
+    "ko": "인터뷰하다",
+    "en": "interview"
+  },
+  {
+    "no": 1214,
+    "ko": "인형",
+    "en": "doll"
+  },
+  {
+    "no": 1215,
+    "ko": "일",
+    "en": "work, 1, day"
+  },
+  {
+    "no": 1216,
+    "ko": "일곱",
+    "en": "7"
+  },
+  {
+    "no": 1217,
+    "ko": "일기",
+    "en": "diary"
+  },
+  {
+    "no": 1218,
+    "ko": "일기예보",
+    "en": "weather forecast"
+  },
+  {
+    "no": 1219,
+    "ko": "일본",
+    "en": "Japan"
+  },
+  {
+    "no": 1220,
+    "ko": "일본드라마",
+    "en": "Japanese drama"
+  },
+  {
+    "no": 1221,
+    "ko": "일본말",
+    "en": "Japanese language"
+  },
+  {
+    "no": 1222,
+    "ko": "일본사람",
+    "en": "Japanese people"
+  },
+  {
+    "no": 1223,
+    "ko": "일본어",
+    "en": "Japanese language"
+  },
+  {
+    "no": 1224,
+    "ko": "일본요리",
+    "en": "Japanese food"
+  },
+  {
+    "no": 1225,
+    "ko": "일상생활",
+    "en": "everyday life"
+  },
+  {
+    "no": 1226,
+    "ko": "일식",
+    "en": "Japanese style, Japanese food"
+  },
+  {
+    "no": 1227,
+    "ko": "일어나다",
+    "en": "rise, stand, occur"
+  },
+  {
+    "no": 1228,
+    "ko": "일어서다",
+    "en": "get up, stand up"
+  },
+  {
+    "no": 1229,
+    "ko": "일요일",
+    "en": "Sunday"
+  },
+  {
+    "no": 1230,
+    "ko": "일월",
+    "en": "January"
+  },
+  {
+    "no": 1231,
+    "ko": "일주일",
+    "en": "one week"
+  },
+  {
+    "no": 1232,
+    "ko": "일찍",
+    "en": "early"
+  },
+  {
+    "no": 1233,
+    "ko": "일하다",
+    "en": "work"
+  },
+  {
+    "no": 1234,
+    "ko": "일흔",
+    "en": "70"
+  },
+  {
+    "no": 1235,
+    "ko": "읽기",
+    "en": "reading"
+  },
+  {
+    "no": 1236,
+    "ko": "읽다",
+    "en": "read"
+  },
+  {
+    "no": 1237,
+    "ko": "잃다",
+    "en": "lose"
+  },
+  {
+    "no": 1238,
+    "ko": "잃어버리다",
+    "en": "lose"
+  },
+  {
+    "no": 1239,
+    "ko": "입",
+    "en": "mouth"
+  },
+  {
+    "no": 1240,
+    "ko": "입구",
+    "en": "entrance"
+  },
+  {
+    "no": 1241,
+    "ko": "입다",
+    "en": "put on, wear"
+  },
+  {
+    "no": 1242,
+    "ko": "입원하다",
+    "en": "hospitalize"
+  },
+  {
+    "no": 1243,
+    "ko": "입학",
+    "en": "admission"
+  },
+  {
+    "no": 1244,
+    "ko": "있다",
+    "en": "have, there"
+  },
+  {
+    "no": 1245,
+    "ko": "잊다",
+    "en": "forget"
+  },
+  {
+    "no": 1246,
+    "ko": "잊어버리다",
+    "en": "forget"
+  },
+  {
+    "no": 1247,
+    "ko": "자",
+    "en": "character, Here we go."
+  },
+  {
+    "no": 1248,
+    "ko": "자기",
+    "en": "myself, own"
+  },
+  {
+    "no": 1249,
+    "ko": "자다",
+    "en": "sleep"
+  },
+  {
+    "no": 1250,
+    "ko": "자동차",
+    "en": "car, automobile"
+  },
+  {
+    "no": 1251,
+    "ko": "자동차회사",
+    "en": "car company"
+  },
+  {
+    "no": 1252,
+    "ko": "자료",
+    "en": "material, document"
+  },
+  {
+    "no": 1253,
+    "ko": "자르다",
+    "en": "cut"
+  },
+  {
+    "no": 1254,
+    "ko": "자리",
+    "en": "seat, location"
+  },
+  {
+    "no": 1255,
+    "ko": "자신",
+    "en": "myself, own"
+  },
+  {
+    "no": 1256,
+    "ko": "자연",
+    "en": "nature"
+  },
+  {
+    "no": 1257,
+    "ko": "자유",
+    "en": "freedom"
+  },
+  {
+    "no": 1258,
+    "ko": "자장면",
+    "en": "Jajangmyeon"
+  },
+  {
+    "no": 1259,
+    "ko": "자전거",
+    "en": "bicycle"
+  },
+  {
+    "no": 1260,
+    "ko": "자주",
+    "en": "often"
+  },
+  {
+    "no": 1261,
+    "ko": "작년",
+    "en": "last year"
+  },
+  {
+    "no": 1262,
+    "ko": "작다",
+    "en": "small"
+  },
+  {
+    "no": 1263,
+    "ko": "작은아버지",
+    "en": "uncle"
+  },
+  {
+    "no": 1264,
+    "ko": "작은어머니",
+    "en": "aunt"
+  },
+  {
+    "no": 1265,
+    "ko": "잔",
+    "en": "glass, ~ cup(s)"
+  },
+  {
+    "no": 1266,
+    "ko": "잔치",
+    "en": "party, feast"
+  },
+  {
+    "no": 1267,
+    "ko": "잘",
+    "en": "well"
+  },
+  {
+    "no": 1268,
+    "ko": "잘못",
+    "en": "mistake"
+  },
+  {
+    "no": 1269,
+    "ko": "잘생기다",
+    "en": "handsome"
+  },
+  {
+    "no": 1270,
+    "ko": "잘하다",
+    "en": "do well, good at"
+  },
+  {
+    "no": 1271,
+    "ko": "잠",
+    "en": "slumbers, sleep"
+  },
+  {
+    "no": 1272,
+    "ko": "잠깐",
+    "en": "for a while, a little"
+  },
+  {
+    "no": 1273,
+    "ko": "잠시",
+    "en": "for a bit, for a while, a little"
+  },
+  {
+    "no": 1274,
+    "ko": "잠자다",
+    "en": "sleep, go to bed"
+  },
+  {
+    "no": 1275,
+    "ko": "잡다",
+    "en": "catch, grab, hold"
+  },
+  {
+    "no": 1276,
+    "ko": "잡수시다",
+    "en": "eat (honorific form)"
+  },
+  {
+    "no": 1277,
+    "ko": "잡지",
+    "en": "magazine"
+  },
+  {
+    "no": 1278,
+    "ko": "장",
+    "en": "~ chapter(s), ~ sheet(s)"
+  },
+  {
+    "no": 1279,
+    "ko": "장갑",
+    "en": "gloves"
+  },
+  {
+    "no": 1280,
+    "ko": "장마",
+    "en": "rainy season"
+  },
+  {
+    "no": 1281,
+    "ko": "장마철",
+    "en": "rainy season"
+  },
+  {
+    "no": 1282,
+    "ko": "장미",
+    "en": "rose"
+  },
+  {
+    "no": 1283,
+    "ko": "장소",
+    "en": "place"
+  },
+  {
+    "no": 1284,
+    "ko": "장점",
+    "en": "advantage"
+  },
+  {
+    "no": 1285,
+    "ko": "재료",
+    "en": "material"
+  },
+  {
+    "no": 1286,
+    "ko": "재미없다",
+    "en": "not funny, uninteresting"
+  },
+  {
+    "no": 1287,
+    "ko": "재미있다",
+    "en": "interesting"
+  },
+  {
+    "no": 1288,
+    "ko": "재킷",
+    "en": "jacket"
+  },
+  {
+    "no": 1289,
+    "ko": "저",
+    "en": "that"
+  },
+  {
+    "no": 1290,
+    "ko": "저거",
+    "en": "that"
+  },
+  {
+    "no": 1291,
+    "ko": "저것",
+    "en": "that"
+  },
+  {
+    "no": 1292,
+    "ko": "저곳",
+    "en": "over there"
+  },
+  {
+    "no": 1293,
+    "ko": "저기",
+    "en": "there, over there"
+  },
+  {
+    "no": 1294,
+    "ko": "저녁",
+    "en": "dinner, evening, night"
+  },
+  {
+    "no": 1295,
+    "ko": "저녁식사",
+    "en": "dinner"
+  },
+  {
+    "no": 1296,
+    "ko": "저렇게",
+    "en": "like that, in that way"
+  },
+  {
+    "no": 1297,
+    "ko": "저분",
+    "en": "that person"
+  },
+  {
+    "no": 1298,
+    "ko": "저쪽",
+    "en": "there, over there"
+  },
+  {
+    "no": 1299,
+    "ko": "저희",
+    "en": "we"
+  },
+  {
+    "no": 1300,
+    "ko": "적",
+    "en": "enemy"
+  },
+  {
+    "no": 1301,
+    "ko": "적다",
+    "en": "be few, write down"
+  },
+  {
+    "no": 1302,
+    "ko": "전",
+    "en": "all, before"
+  },
+  {
+    "no": 1303,
+    "ko": "전공",
+    "en": "major"
+  },
+  {
+    "no": 1304,
+    "ko": "전기자동차",
+    "en": "electric car"
+  },
+  {
+    "no": 1305,
+    "ko": "전자사전",
+    "en": "electronic dictionary"
+  },
+  {
+    "no": 1306,
+    "ko": "전하다",
+    "en": "tell"
+  },
+  {
+    "no": 1307,
+    "ko": "전혀",
+    "en": "not at all"
+  },
+  {
+    "no": 1308,
+    "ko": "전화",
+    "en": "telephone"
+  },
+  {
+    "no": 1309,
+    "ko": "전화기",
+    "en": "telephone"
+  },
+  {
+    "no": 1310,
+    "ko": "전화번호",
+    "en": "phone number"
+  },
+  {
+    "no": 1311,
+    "ko": "절",
+    "en": "~ section(s), temple"
+  },
+  {
+    "no": 1312,
+    "ko": "절대",
+    "en": "never, absolutely"
+  },
+  {
+    "no": 1313,
+    "ko": "젊다",
+    "en": "young"
+  },
+  {
+    "no": 1314,
+    "ko": "점",
+    "en": "point"
+  },
+  {
+    "no": 1315,
+    "ko": "점수",
+    "en": "score, point"
+  },
+  {
+    "no": 1316,
+    "ko": "점심",
+    "en": "lunch"
+  },
+  {
+    "no": 1317,
+    "ko": "점심시간",
+    "en": "lunchtime"
+  },
+  {
+    "no": 1318,
+    "ko": "점심식사",
+    "en": "lunch"
+  },
+  {
+    "no": 1319,
+    "ko": "점원",
+    "en": "clerk"
+  },
+  {
+    "no": 1320,
+    "ko": "점퍼",
+    "en": "jacket"
+  },
+  {
+    "no": 1321,
+    "ko": "젓가락",
+    "en": "chopsticks"
+  },
+  {
+    "no": 1322,
+    "ko": "정거장",
+    "en": "station, depot"
+  },
+  {
+    "no": 1323,
+    "ko": "정도",
+    "en": "degree"
+  },
+  {
+    "no": 1324,
+    "ko": "정류장",
+    "en": "station, bus stop"
+  },
+  {
+    "no": 1325,
+    "ko": "정리하다",
+    "en": "straighten out, organize"
+  },
+  {
+    "no": 1326,
+    "ko": "정말",
+    "en": "really, truly"
+  },
+  {
+    "no": 1327,
+    "ko": "정문",
+    "en": "front door, main gate"
+  },
+  {
+    "no": 1328,
+    "ko": "정보",
+    "en": "information"
+  },
+  {
+    "no": 1329,
+    "ko": "정하다",
+    "en": "choose, establish"
+  },
+  {
+    "no": 1330,
+    "ko": "제가",
+    "en": "I"
+  },
+  {
+    "no": 1331,
+    "ko": "제목",
+    "en": "title"
+  },
+  {
+    "no": 1332,
+    "ko": "제일",
+    "en": "most"
+  },
+  {
+    "no": 1333,
+    "ko": "제주도",
+    "en": "Jeju Island"
+  },
+  {
+    "no": 1334,
+    "ko": "조금",
+    "en": "a little"
+  },
+  {
+    "no": 1335,
+    "ko": "조사하다",
+    "en": "investigate"
+  },
+  {
+    "no": 1336,
+    "ko": "조선",
+    "en": "shipbuilding, Korea"
+  },
+  {
+    "no": 1337,
+    "ko": "조선말",
+    "en": "Korean language"
+  },
+  {
+    "no": 1338,
+    "ko": "조선어",
+    "en": "Korean language"
+  },
+  {
+    "no": 1339,
+    "ko": "조심하다",
+    "en": "be careful, warn"
+  },
+  {
+    "no": 1340,
+    "ko": "조용하다",
+    "en": "silent, quiet"
+  },
+  {
+    "no": 1341,
+    "ko": "조용히",
+    "en": "quietly"
+  },
+  {
+    "no": 1342,
+    "ko": "조카",
+    "en": "nephew"
+  },
+  {
+    "no": 1343,
+    "ko": "졸업",
+    "en": "graduation"
+  },
+  {
+    "no": 1344,
+    "ko": "졸업하다",
+    "en": "graduate"
+  },
+  {
+    "no": 1345,
+    "ko": "좀",
+    "en": "a little"
+  },
+  {
+    "no": 1346,
+    "ko": "좀더",
+    "en": "a little more"
+  },
+  {
+    "no": 1347,
+    "ko": "좁다",
+    "en": "narrow"
+  },
+  {
+    "no": 1348,
+    "ko": "종로",
+    "en": "Jong-ro"
+  },
+  {
+    "no": 1349,
+    "ko": "종류",
+    "en": "kind, type"
+  },
+  {
+    "no": 1350,
+    "ko": "종업원",
+    "en": "employee"
+  },
+  {
+    "no": 1351,
+    "ko": "종이",
+    "en": "paper"
+  },
+  {
+    "no": 1352,
+    "ko": "종일",
+    "en": "all day"
+  },
+  {
+    "no": 1353,
+    "ko": "좋다",
+    "en": "good"
+  },
+  {
+    "no": 1354,
+    "ko": "좋아하다",
+    "en": "like"
+  },
+  {
+    "no": 1355,
+    "ko": "죄송하다",
+    "en": "sorry"
+  },
+  {
+    "no": 1356,
+    "ko": "주",
+    "en": "week"
+  },
+  {
+    "no": 1357,
+    "ko": "주다",
+    "en": "give"
+  },
+  {
+    "no": 1358,
+    "ko": "주로",
+    "en": "mainly"
+  },
+  {
+    "no": 1359,
+    "ko": "주말",
+    "en": "weekend"
+  },
+  {
+    "no": 1360,
+    "ko": "주머니",
+    "en": "pocket, pouch"
+  },
+  {
+    "no": 1361,
+    "ko": "주무시다",
+    "en": "sleep, rest"
+  },
+  {
+    "no": 1362,
+    "ko": "주문하다",
+    "en": "order"
+  },
+  {
+    "no": 1363,
+    "ko": "주변",
+    "en": "around"
+  },
+  {
+    "no": 1364,
+    "ko": "주부",
+    "en": "housewife"
+  },
+  {
+    "no": 1365,
+    "ko": "주사",
+    "en": "injection"
+  },
+  {
+    "no": 1366,
+    "ko": "주소",
+    "en": "address"
+  },
+  {
+    "no": 1367,
+    "ko": "주스",
+    "en": "juice"
+  },
+  {
+    "no": 1368,
+    "ko": "주위",
+    "en": "around"
+  },
+  {
+    "no": 1369,
+    "ko": "주인",
+    "en": "owner"
+  },
+  {
+    "no": 1370,
+    "ko": "주차장",
+    "en": "parking lot"
+  },
+  {
+    "no": 1371,
+    "ko": "주차하다",
+    "en": "park"
+  },
+  {
+    "no": 1372,
+    "ko": "주황색",
+    "en": "orange color"
+  },
+  {
+    "no": 1373,
+    "ko": "죽",
+    "en": "bamboo, porridge"
+  },
+  {
+    "no": 1374,
+    "ko": "죽다",
+    "en": "die"
+  },
+  {
+    "no": 1375,
+    "ko": "준비",
+    "en": "preparation"
+  },
+  {
+    "no": 1376,
+    "ko": "준비하다",
+    "en": "prepare"
+  },
+  {
+    "no": 1377,
+    "ko": "줄",
+    "en": "line, column, string"
+  },
+  {
+    "no": 1378,
+    "ko": "줄다",
+    "en": "shrink, decrease"
+  },
+  {
+    "no": 1379,
+    "ko": "중",
+    "en": "medium, during"
+  },
+  {
+    "no": 1380,
+    "ko": "중국",
+    "en": "China"
+  },
+  {
+    "no": 1381,
+    "ko": "중국어",
+    "en": "Chinese"
+  },
+  {
+    "no": 1382,
+    "ko": "중국집",
+    "en": "Chinese restaurant"
+  },
+  {
+    "no": 1383,
+    "ko": "중식",
+    "en": "Chinese cuisine"
+  },
+  {
+    "no": 1384,
+    "ko": "중심",
+    "en": "center"
+  },
+  {
+    "no": 1385,
+    "ko": "중요",
+    "en": "importance"
+  },
+  {
+    "no": 1386,
+    "ko": "중요하다",
+    "en": "important"
+  },
+  {
+    "no": 1387,
+    "ko": "중학교",
+    "en": "middle school, Junior high school"
+  },
+  {
+    "no": 1388,
+    "ko": "중학생",
+    "en": "middle school student"
+  },
+  {
+    "no": 1389,
+    "ko": "즐거워하다",
+    "en": "have fun"
+  },
+  {
+    "no": 1390,
+    "ko": "즐겁다",
+    "en": "fun, be pleasant"
+  },
+  {
+    "no": 1391,
+    "ko": "즐기다",
+    "en": "enjoy, have fun"
+  },
+  {
+    "no": 1392,
+    "ko": "증세",
+    "en": "symptom, medical condition"
+  },
+  {
+    "no": 1393,
+    "ko": "지각",
+    "en": "tardy, being late"
+  },
+  {
+    "no": 1394,
+    "ko": "지갑",
+    "en": "wallet"
+  },
+  {
+    "no": 1395,
+    "ko": "지금",
+    "en": "now"
+  },
+  {
+    "no": 1396,
+    "ko": "지나다",
+    "en": "pass by"
+  },
+  {
+    "no": 1397,
+    "ko": "지난달",
+    "en": "last month"
+  },
+  {
+    "no": 1398,
+    "ko": "지난번",
+    "en": "last time"
+  },
+  {
+    "no": 1399,
+    "ko": "지난주",
+    "en": "last week"
+  },
+  {
+    "no": 1400,
+    "ko": "지내다",
+    "en": "stay, spend, live"
+  },
+  {
+    "no": 1401,
+    "ko": "지다",
+    "en": "lose"
+  },
+  {
+    "no": 1402,
+    "ko": "지도",
+    "en": "map"
+  },
+  {
+    "no": 1403,
+    "ko": "지방",
+    "en": "fat, region"
+  },
+  {
+    "no": 1404,
+    "ko": "지우개",
+    "en": "eraser"
+  },
+  {
+    "no": 1405,
+    "ko": "지키다",
+    "en": "protect"
+  },
+  {
+    "no": 1406,
+    "ko": "지하",
+    "en": "underground"
+  },
+  {
+    "no": 1407,
+    "ko": "지하도",
+    "en": "underpass"
+  },
+  {
+    "no": 1408,
+    "ko": "지하철",
+    "en": "subway"
+  },
+  {
+    "no": 1409,
+    "ko": "지하철역",
+    "en": "subway station"
+  },
+  {
+    "no": 1410,
+    "ko": "직업",
+    "en": "job, profession"
+  },
+  {
+    "no": 1411,
+    "ko": "직원",
+    "en": "employee, staff"
+  },
+  {
+    "no": 1412,
+    "ko": "직장",
+    "en": "workplace"
+  },
+  {
+    "no": 1413,
+    "ko": "직접",
+    "en": "directly, direct"
+  },
+  {
+    "no": 1414,
+    "ko": "진달래",
+    "en": "azalea"
+  },
+  {
+    "no": 1415,
+    "ko": "질",
+    "en": "quality"
+  },
+  {
+    "no": 1416,
+    "ko": "질문",
+    "en": "question"
+  },
+  {
+    "no": 1417,
+    "ko": "질문하다",
+    "en": "ask a question"
+  },
+  {
+    "no": 1418,
+    "ko": "짐",
+    "en": "load, baggage"
+  },
+  {
+    "no": 1419,
+    "ko": "집",
+    "en": "house, shop"
+  },
+  {
+    "no": 1420,
+    "ko": "짓다",
+    "en": "build, create"
+  },
+  {
+    "no": 1421,
+    "ko": "짜다",
+    "en": "salty, make (the plan)"
+  },
+  {
+    "no": 1422,
+    "ko": "짜리",
+    "en": "a value (won coin)"
+  },
+  {
+    "no": 1423,
+    "ko": "짧다",
+    "en": "short"
+  },
+  {
+    "no": 1424,
+    "ko": "쪽",
+    "en": "side, page"
+  },
+  {
+    "no": 1425,
+    "ko": "쯤",
+    "en": "about, around ~"
+  },
+  {
+    "no": 1426,
+    "ko": "찌개",
+    "en": "stew, soup"
+  },
+  {
+    "no": 1427,
+    "ko": "찍다",
+    "en": "pierce, take (a photo), press"
+  },
+  {
+    "no": 1428,
+    "ko": "차",
+    "en": "car, tea"
+  },
+  {
+    "no": 1429,
+    "ko": "차갑다",
+    "en": "cold"
+  },
+  {
+    "no": 1430,
+    "ko": "차다",
+    "en": "kick"
+  },
+  {
+    "no": 1431,
+    "ko": "차리다",
+    "en": "prepare, arrange"
+  },
+  {
+    "no": 1432,
+    "ko": "착하다",
+    "en": "be good, friendly"
+  },
+  {
+    "no": 1433,
+    "ko": "참",
+    "en": "really, very"
+  },
+  {
+    "no": 1434,
+    "ko": "창문",
+    "en": "window"
+  },
+  {
+    "no": 1435,
+    "ko": "찾다",
+    "en": "find, visit"
+  },
+  {
+    "no": 1436,
+    "ko": "찾아가다",
+    "en": "go to visit"
+  },
+  {
+    "no": 1437,
+    "ko": "찾아오다",
+    "en": "come to visit"
+  },
+  {
+    "no": 1438,
+    "ko": "채소",
+    "en": "vegetable"
+  },
+  {
+    "no": 1439,
+    "ko": "책",
+    "en": "book"
+  },
+  {
+    "no": 1440,
+    "ko": "책방",
+    "en": "bookstore"
+  },
+  {
+    "no": 1441,
+    "ko": "책상",
+    "en": "desk"
+  },
+  {
+    "no": 1442,
+    "ko": "책임",
+    "en": "responsibility"
+  },
+  {
+    "no": 1443,
+    "ko": "책장",
+    "en": "bookshelf"
+  },
+  {
+    "no": 1444,
+    "ko": "처음",
+    "en": "first, for the first time"
+  },
+  {
+    "no": 1445,
+    "ko": "처음 뵙겠습니다",
+    "en": "Nice to meet you."
+  },
+  {
+    "no": 1446,
+    "ko": "천",
+    "en": "1000"
+  },
+  {
+    "no": 1447,
+    "ko": "천천히",
+    "en": "slowly"
+  },
+  {
+    "no": 1448,
+    "ko": "철",
+    "en": "iron, season"
+  },
+  {
+    "no": 1449,
+    "ko": "첫",
+    "en": "first"
+  },
+  {
+    "no": 1450,
+    "ko": "첫째",
+    "en": "first"
+  },
+  {
+    "no": 1451,
+    "ko": "청바지",
+    "en": "blue jeans"
+  },
+  {
+    "no": 1452,
+    "ko": "청소기",
+    "en": "vacuum cleaner"
+  },
+  {
+    "no": 1453,
+    "ko": "청소하다",
+    "en": "sweep, clean"
+  },
+  {
+    "no": 1454,
+    "ko": "초",
+    "en": "~second(s)"
+  },
+  {
+    "no": 1455,
+    "ko": "초대하다",
+    "en": "invite"
+  },
+  {
+    "no": 1456,
+    "ko": "초등학교",
+    "en": "elementary school"
+  },
+  {
+    "no": 1457,
+    "ko": "초등학생",
+    "en": "elementary student"
+  },
+  {
+    "no": 1458,
+    "ko": "초록색",
+    "en": "green color"
+  },
+  {
+    "no": 1459,
+    "ko": "초콜릿",
+    "en": "chocolate"
+  },
+  {
+    "no": 1460,
+    "ko": "촬영하다",
+    "en": "take a picture"
+  },
+  {
+    "no": 1461,
+    "ko": "최고",
+    "en": "best, the highest"
+  },
+  {
+    "no": 1462,
+    "ko": "추다",
+    "en": "dance"
+  },
+  {
+    "no": 1463,
+    "ko": "추석",
+    "en": "Chusoku (Korean Thanksgiving Day)"
+  },
+  {
+    "no": 1464,
+    "ko": "추억",
+    "en": "memory"
+  },
+  {
+    "no": 1465,
+    "ko": "축구",
+    "en": "football, soccer"
+  },
+  {
+    "no": 1466,
+    "ko": "축제",
+    "en": "festival"
+  },
+  {
+    "no": 1467,
+    "ko": "축하",
+    "en": "celebration"
+  },
+  {
+    "no": 1468,
+    "ko": "축하하다",
+    "en": "celebrate"
+  },
+  {
+    "no": 1469,
+    "ko": "축하합니다",
+    "en": "congratulations"
+  },
+  {
+    "no": 1470,
+    "ko": "출구",
+    "en": "exit"
+  },
+  {
+    "no": 1471,
+    "ko": "출근하다",
+    "en": "go to work"
+  },
+  {
+    "no": 1472,
+    "ko": "출발",
+    "en": "start, departure"
+  },
+  {
+    "no": 1473,
+    "ko": "출발하다",
+    "en": "depart"
+  },
+  {
+    "no": 1474,
+    "ko": "출장",
+    "en": "business trip"
+  },
+  {
+    "no": 1475,
+    "ko": "춤",
+    "en": "dance"
+  },
+  {
+    "no": 1476,
+    "ko": "춤추다",
+    "en": "dance"
+  },
+  {
+    "no": 1477,
+    "ko": "춥다",
+    "en": "cold"
+  },
+  {
+    "no": 1478,
+    "ko": "취미",
+    "en": "hobby"
+  },
+  {
+    "no": 1479,
+    "ko": "취소하다",
+    "en": "cancel"
+  },
+  {
+    "no": 1480,
+    "ko": "취직하다",
+    "en": "get a job"
+  },
+  {
+    "no": 1481,
+    "ko": "층",
+    "en": "layer, ~ floor"
+  },
+  {
+    "no": 1482,
+    "ko": "치과",
+    "en": "dentist, dentistry"
+  },
+  {
+    "no": 1483,
+    "ko": "치료하다",
+    "en": "treat"
+  },
+  {
+    "no": 1484,
+    "ko": "치마",
+    "en": "skirt"
+  },
+  {
+    "no": 1485,
+    "ko": "치약",
+    "en": "toothpaste"
+  },
+  {
+    "no": 1486,
+    "ko": "친구",
+    "en": "friend"
+  },
+  {
+    "no": 1487,
+    "ko": "친절하다",
+    "en": "be kind"
+  },
+  {
+    "no": 1488,
+    "ko": "친척",
+    "en": "relative"
+  },
+  {
+    "no": 1489,
+    "ko": "친하다",
+    "en": "close, familiar"
+  },
+  {
+    "no": 1490,
+    "ko": "칠",
+    "en": "7"
+  },
+  {
+    "no": 1491,
+    "ko": "칠십",
+    "en": "70"
+  },
+  {
+    "no": 1492,
+    "ko": "칠월",
+    "en": "July"
+  },
+  {
+    "no": 1493,
+    "ko": "칠판",
+    "en": "blackboard"
+  },
+  {
+    "no": 1494,
+    "ko": "침대",
+    "en": "bed"
+  },
+  {
+    "no": 1495,
+    "ko": "칫솔",
+    "en": "toothbrush"
+  },
+  {
+    "no": 1496,
+    "ko": "카드",
+    "en": "card"
+  },
+  {
+    "no": 1497,
+    "ko": "카레",
+    "en": "curry"
+  },
+  {
+    "no": 1498,
+    "ko": "카메라",
+    "en": "camera"
+  },
+  {
+    "no": 1499,
+    "ko": "카페",
+    "en": "cafe, coffee shops"
+  },
+  {
+    "no": 1500,
+    "ko": "칼",
+    "en": "knife, cutlery, swords"
+  },
+  {
+    "no": 1501,
+    "ko": "캐나다",
+    "en": "Canada"
+  },
+  {
+    "no": 1502,
+    "ko": "커피",
+    "en": "coffee"
+  },
+  {
+    "no": 1503,
+    "ko": "커피숍",
+    "en": "coffee shop"
+  },
+  {
+    "no": 1504,
+    "ko": "컴퓨터",
+    "en": "computer, PC"
+  },
+  {
+    "no": 1505,
+    "ko": "컵",
+    "en": "cup"
+  },
+  {
+    "no": 1506,
+    "ko": "케이크",
+    "en": "cake"
+  },
+  {
+    "no": 1507,
+    "ko": "켜다",
+    "en": "turn on (the light, the power, etc.)"
+  },
+  {
+    "no": 1508,
+    "ko": "코",
+    "en": "nose"
+  },
+  {
+    "no": 1509,
+    "ko": "코트",
+    "en": "coat"
+  },
+  {
+    "no": 1510,
+    "ko": "코피",
+    "en": "nosebleed"
+  },
+  {
+    "no": 1511,
+    "ko": "콜라",
+    "en": "Coke"
+  },
+  {
+    "no": 1512,
+    "ko": "콧노래",
+    "en": "humming"
+  },
+  {
+    "no": 1513,
+    "ko": "콧물",
+    "en": "snot, nasal discharge"
+  },
+  {
+    "no": 1514,
+    "ko": "콩",
+    "en": "bean, soy"
+  },
+  {
+    "no": 1515,
+    "ko": "크기",
+    "en": "size"
+  },
+  {
+    "no": 1516,
+    "ko": "크다",
+    "en": "big, large"
+  },
+  {
+    "no": 1517,
+    "ko": "크리스마스",
+    "en": "Christmas"
+  },
+  {
+    "no": 1518,
+    "ko": "큰아버지",
+    "en": "uncle"
+  },
+  {
+    "no": 1519,
+    "ko": "큰어머니",
+    "en": "aunt"
+  },
+  {
+    "no": 1520,
+    "ko": "키",
+    "en": "key, height"
+  },
+  {
+    "no": 1521,
+    "ko": "킬로그램",
+    "en": "kilogram"
+  },
+  {
+    "no": 1522,
+    "ko": "킬로미터",
+    "en": "kilometer"
+  },
+  {
+    "no": 1523,
+    "ko": "타다",
+    "en": "ride, get on"
+  },
+  {
+    "no": 1524,
+    "ko": "타월",
+    "en": "towel"
+  },
+  {
+    "no": 1525,
+    "ko": "탁구",
+    "en": "table tennis"
+  },
+  {
+    "no": 1526,
+    "ko": "태국",
+    "en": "Thailand"
+  },
+  {
+    "no": 1527,
+    "ko": "태권도",
+    "en": "Taekwondo"
+  },
+  {
+    "no": 1528,
+    "ko": "태어나다",
+    "en": "be born"
+  },
+  {
+    "no": 1529,
+    "ko": "태풍",
+    "en": "typhoon"
+  },
+  {
+    "no": 1530,
+    "ko": "택시",
+    "en": "taxi"
+  },
+  {
+    "no": 1531,
+    "ko": "탤런트",
+    "en": "entertainers"
+  },
+  {
+    "no": 1532,
+    "ko": "터미널",
+    "en": "terminal"
+  },
+  {
+    "no": 1533,
+    "ko": "테니스",
+    "en": "tennis"
+  },
+  {
+    "no": 1534,
+    "ko": "테이블",
+    "en": "table"
+  },
+  {
+    "no": 1535,
+    "ko": "텔레비전",
+    "en": "TV"
+  },
+  {
+    "no": 1536,
+    "ko": "토마토",
+    "en": "tomato"
+  },
+  {
+    "no": 1537,
+    "ko": "토요일",
+    "en": "Saturday"
+  },
+  {
+    "no": 1538,
+    "ko": "통",
+    "en": "barrel, ~ package(s)"
+  },
+  {
+    "no": 1539,
+    "ko": "통장",
+    "en": "bank book, (deposit) passbook"
+  },
+  {
+    "no": 1540,
+    "ko": "통하다",
+    "en": "pass, lead"
+  },
+  {
+    "no": 1541,
+    "ko": "퇴근하다",
+    "en": "leave the office"
+  },
+  {
+    "no": 1542,
+    "ko": "특별히",
+    "en": "especially"
+  },
+  {
+    "no": 1543,
+    "ko": "특징",
+    "en": "characteristic, feature"
+  },
+  {
+    "no": 1544,
+    "ko": "특히",
+    "en": "especially, in particular"
+  },
+  {
+    "no": 1545,
+    "ko": "틀다",
+    "en": "turn on (the switch)"
+  },
+  {
+    "no": 1546,
+    "ko": "틀리다",
+    "en": "wrong"
+  },
+  {
+    "no": 1547,
+    "ko": "티셔츠",
+    "en": "t-shirt"
+  },
+  {
+    "no": 1548,
+    "ko": "팀",
+    "en": "team"
+  },
+  {
+    "no": 1549,
+    "ko": "파",
+    "en": "wave, green onion"
+  },
+  {
+    "no": 1550,
+    "ko": "파란색",
+    "en": "blue color"
+  },
+  {
+    "no": 1551,
+    "ko": "파랗다",
+    "en": "blue"
+  },
+  {
+    "no": 1552,
+    "ko": "파티",
+    "en": "party"
+  },
+  {
+    "no": 1553,
+    "ko": "팔",
+    "en": "8"
+  },
+  {
+    "no": 1554,
+    "ko": "팔다",
+    "en": "sell"
+  },
+  {
+    "no": 1555,
+    "ko": "팔리다",
+    "en": "sell, be sold"
+  },
+  {
+    "no": 1556,
+    "ko": "팔십",
+    "en": "80"
+  },
+  {
+    "no": 1557,
+    "ko": "팔월",
+    "en": "August"
+  },
+  {
+    "no": 1558,
+    "ko": "패션",
+    "en": "fashion"
+  },
+  {
+    "no": 1559,
+    "ko": "퍼센트",
+    "en": "percent"
+  },
+  {
+    "no": 1560,
+    "ko": "페이지",
+    "en": "page"
+  },
+  {
+    "no": 1561,
+    "ko": "펜",
+    "en": "pen"
+  },
+  {
+    "no": 1562,
+    "ko": "펴다",
+    "en": "spread, stretch"
+  },
+  {
+    "no": 1563,
+    "ko": "편",
+    "en": "side, episode"
+  },
+  {
+    "no": 1564,
+    "ko": "편지",
+    "en": "letter"
+  },
+  {
+    "no": 1565,
+    "ko": "편하다",
+    "en": "comfortable, easy, convenient"
+  },
+  {
+    "no": 1566,
+    "ko": "평양",
+    "en": "Pyongyang"
+  },
+  {
+    "no": 1567,
+    "ko": "평일",
+    "en": "weekday"
+  },
+  {
+    "no": 1568,
+    "ko": "포도",
+    "en": "grape"
+  },
+  {
+    "no": 1569,
+    "ko": "포장",
+    "en": "packing"
+  },
+  {
+    "no": 1570,
+    "ko": "표",
+    "en": "table, ticket"
+  },
+  {
+    "no": 1571,
+    "ko": "표현",
+    "en": "expression"
+  },
+  {
+    "no": 1572,
+    "ko": "푹",
+    "en": "deeply"
+  },
+  {
+    "no": 1573,
+    "ko": "풀",
+    "en": "pool, grass"
+  },
+  {
+    "no": 1574,
+    "ko": "풀다",
+    "en": "solve"
+  },
+  {
+    "no": 1575,
+    "ko": "프랑스",
+    "en": "France"
+  },
+  {
+    "no": 1576,
+    "ko": "프로그램",
+    "en": "program"
+  },
+  {
+    "no": 1577,
+    "ko": "프린트",
+    "en": "print"
+  },
+  {
+    "no": 1578,
+    "ko": "피",
+    "en": "blood"
+  },
+  {
+    "no": 1579,
+    "ko": "피곤하다",
+    "en": "tired"
+  },
+  {
+    "no": 1580,
+    "ko": "피다",
+    "en": "bloom"
+  },
+  {
+    "no": 1581,
+    "ko": "피아노",
+    "en": "piano"
+  },
+  {
+    "no": 1582,
+    "ko": "피우다",
+    "en": "smoke, bloom"
+  },
+  {
+    "no": 1583,
+    "ko": "피자",
+    "en": "pizza"
+  },
+  {
+    "no": 1584,
+    "ko": "필름",
+    "en": "film"
+  },
+  {
+    "no": 1585,
+    "ko": "필요",
+    "en": "necessity"
+  },
+  {
+    "no": 1586,
+    "ko": "필요하다",
+    "en": "need"
+  },
+  {
+    "no": 1587,
+    "ko": "필통",
+    "en": "pencil case"
+  },
+  {
+    "no": 1588,
+    "ko": "하나",
+    "en": "1"
+  },
+  {
+    "no": 1589,
+    "ko": "하늘",
+    "en": "sky"
+  },
+  {
+    "no": 1590,
+    "ko": "하늘색",
+    "en": "sky blue, light blue"
+  },
+  {
+    "no": 1591,
+    "ko": "하다",
+    "en": "do, say"
+  },
+  {
+    "no": 1592,
+    "ko": "하루",
+    "en": "one day"
+  },
+  {
+    "no": 1593,
+    "ko": "하숙",
+    "en": "boarding house, lodging house"
+  },
+  {
+    "no": 1594,
+    "ko": "하숙집",
+    "en": "boarding house, lodging house"
+  },
+  {
+    "no": 1595,
+    "ko": "하얀색",
+    "en": "white color"
+  },
+  {
+    "no": 1596,
+    "ko": "하얗다",
+    "en": "white"
+  },
+  {
+    "no": 1597,
+    "ko": "하지만",
+    "en": "but, however"
+  },
+  {
+    "no": 1598,
+    "ko": "학",
+    "en": "crane"
+  },
+  {
+    "no": 1599,
+    "ko": "학교",
+    "en": "school"
+  },
+  {
+    "no": 1600,
+    "ko": "학기",
+    "en": "semester"
+  },
+  {
+    "no": 1601,
+    "ko": "학년",
+    "en": "grade, school year"
+  },
+  {
+    "no": 1602,
+    "ko": "학생",
+    "en": "student"
+  },
+  {
+    "no": 1603,
+    "ko": "학생증",
+    "en": "student ID card"
+  },
+  {
+    "no": 1604,
+    "ko": "학원",
+    "en": "academy, school"
+  },
+  {
+    "no": 1605,
+    "ko": "한",
+    "en": "one, one of the ~"
+  },
+  {
+    "no": 1606,
+    "ko": "한강",
+    "en": "Han River, Hangang"
+  },
+  {
+    "no": 1607,
+    "ko": "한국",
+    "en": "Korea"
+  },
+  {
+    "no": 1608,
+    "ko": "한국드라마",
+    "en": "Korean drama"
+  },
+  {
+    "no": 1609,
+    "ko": "한국말",
+    "en": "Korean language"
+  },
+  {
+    "no": 1610,
+    "ko": "한국사람",
+    "en": "Korean people"
+  },
+  {
+    "no": 1611,
+    "ko": "한국어",
+    "en": "Korean language"
+  },
+  {
+    "no": 1612,
+    "ko": "한국요리",
+    "en": "Korean cuisine"
+  },
+  {
+    "no": 1614,
+    "ko": "한번",
+    "en": "once"
+  },
+  {
+    "no": 1615,
+    "ko": "한복",
+    "en": "Hanbok, Korean traditional clothes"
+  },
+  {
+    "no": 1616,
+    "ko": "한식",
+    "en": "Korean cuisine"
+  },
+  {
+    "no": 1617,
+    "ko": "한자",
+    "en": "Chinese character"
+  },
+  {
+    "no": 1618,
+    "ko": "할머니",
+    "en": "grandmother"
+  },
+  {
+    "no": 1619,
+    "ko": "할아버지",
+    "en": "grandfather"
+  },
+  {
+    "no": 1620,
+    "ko": "할인",
+    "en": "sale, discount"
+  },
+  {
+    "no": 1621,
+    "ko": "함께",
+    "en": "together"
+  },
+  {
+    "no": 1622,
+    "ko": "합격",
+    "en": "pass"
+  },
+  {
+    "no": 1623,
+    "ko": "항상",
+    "en": "always"
+  },
+  {
+    "no": 1624,
+    "ko": "해",
+    "en": "year, sun"
+  },
+  {
+    "no": 1625,
+    "ko": "해외",
+    "en": "overseas"
+  },
+  {
+    "no": 1626,
+    "ko": "해외여행",
+    "en": "overseas trip"
+  },
+  {
+    "no": 1627,
+    "ko": "핸드폰",
+    "en": "cell phone, mobile phone"
+  },
+  {
+    "no": 1628,
+    "ko": "햄버거",
+    "en": "hamburger"
+  },
+  {
+    "no": 1629,
+    "ko": "햇빛",
+    "en": "sunshine, sunlight"
+  },
+  {
+    "no": 1630,
+    "ko": "행복",
+    "en": "happiness"
+  },
+  {
+    "no": 1631,
+    "ko": "행복하다",
+    "en": "happy"
+  },
+  {
+    "no": 1632,
+    "ko": "행사",
+    "en": "event"
+  },
+  {
+    "no": 1633,
+    "ko": "허리",
+    "en": "waist, hip"
+  },
+  {
+    "no": 1634,
+    "ko": "현금",
+    "en": "cash"
+  },
+  {
+    "no": 1635,
+    "ko": "현재",
+    "en": "now, current"
+  },
+  {
+    "no": 1636,
+    "ko": "형",
+    "en": "brother (as seen from the younger brother)"
+  },
+  {
+    "no": 1637,
+    "ko": "형님",
+    "en": "big brother (honorific form)"
+  },
+  {
+    "no": 1638,
+    "ko": "형제",
+    "en": "sibling"
+  },
+  {
+    "no": 1639,
+    "ko": "호",
+    "en": "No. ~"
+  },
+  {
+    "no": 1640,
+    "ko": "호랑이",
+    "en": "tiger"
+  },
+  {
+    "no": 1641,
+    "ko": "호주",
+    "en": "Australia"
+  },
+  {
+    "no": 1642,
+    "ko": "호텔",
+    "en": "hotel"
+  },
+  {
+    "no": 1643,
+    "ko": "혼자",
+    "en": "alone"
+  },
+  {
+    "no": 1644,
+    "ko": "홈페이지",
+    "en": "home page"
+  },
+  {
+    "no": 1645,
+    "ko": "홍차",
+    "en": "black tea"
+  },
+  {
+    "no": 1646,
+    "ko": "화",
+    "en": "anger"
+  },
+  {
+    "no": 1647,
+    "ko": "화가",
+    "en": "artist, painter"
+  },
+  {
+    "no": 1648,
+    "ko": "화나다",
+    "en": "angry"
+  },
+  {
+    "no": 1649,
+    "ko": "화내다",
+    "en": "get angry"
+  },
+  {
+    "no": 1650,
+    "ko": "화요일",
+    "en": "Tuesday"
+  },
+  {
+    "no": 1651,
+    "ko": "화장실",
+    "en": "restroom, toilet, lavatory"
+  },
+  {
+    "no": 1652,
+    "ko": "화장품",
+    "en": "cosmetics"
+  },
+  {
+    "no": 1653,
+    "ko": "화장하다",
+    "en": "makeup"
+  },
+  {
+    "no": 1654,
+    "ko": "확인하다",
+    "en": "confirm, check"
+  },
+  {
+    "no": 1655,
+    "ko": "환영하다",
+    "en": "welcome"
+  },
+  {
+    "no": 1656,
+    "ko": "환자",
+    "en": "patient"
+  },
+  {
+    "no": 1657,
+    "ko": "회사",
+    "en": "company"
+  },
+  {
+    "no": 1658,
+    "ko": "회사원",
+    "en": "employee"
+  },
+  {
+    "no": 1659,
+    "ko": "회색",
+    "en": "grey"
+  },
+  {
+    "no": 1660,
+    "ko": "회의",
+    "en": "conference"
+  },
+  {
+    "no": 1661,
+    "ko": "횡단보도",
+    "en": "crosswalk"
+  },
+  {
+    "no": 1662,
+    "ko": "후",
+    "en": "after"
+  },
+  {
+    "no": 1663,
+    "ko": "후배",
+    "en": "Junior"
+  },
+  {
+    "no": 1664,
+    "ko": "휴가",
+    "en": "vacation, holiday"
+  },
+  {
+    "no": 1665,
+    "ko": "휴대전화",
+    "en": "cell phone, mobile phone"
+  },
+  {
+    "no": 1666,
+    "ko": "휴일",
+    "en": "holiday"
+  },
+  {
+    "no": 1667,
+    "ko": "휴지",
+    "en": "toilet paper"
+  },
+  {
+    "no": 1668,
+    "ko": "휴지통",
+    "en": "trash can"
+  },
+  {
+    "no": 1669,
+    "ko": "흐리다",
+    "en": "cloudy"
+  },
+  {
+    "no": 1670,
+    "ko": "흰색",
+    "en": "white color"
+  },
+  {
+    "no": 1671,
+    "ko": "힘",
+    "en": "power"
+  }
+]

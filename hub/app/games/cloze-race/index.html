@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF4FF">
+  <title>jabi. — Cloze Race</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/hub.css">
+  <link rel="stylesheet" href="./cloze.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="cloze-page">
+    <p class="eyebrow" data-clz="eyebrow">Cloze Race</p>
+    <h1 data-clz="title">Fill the blank</h1>
+    <p class="lead" data-clz="lead">Complete particles &amp; endings. Tap a chip or type — soft race bar, never punished by time.</p>
+
+    <nav class="cloze-nav" aria-label="Cloze nav">
+      <a href="../" data-clz="backGames">← Games</a>
+      <a href="../../../" data-clz="backHub">Hub</a>
+    </nav>
+
+    <p class="cloze-note" data-clz="note">Pace bar is optional feel only — empty bar does not fail the question.</p>
+
+    <div class="cloze-themes" aria-label="Theme filter">
+      <span class="cloze-k" data-clz="themeFilter">Theme</span>
+      <div id="cloze-theme-chips" class="cloze-theme-chips" role="group" aria-label="Themes"></div>
+    </div>
+
+    <div class="cloze-progress" aria-live="polite">
+      <span id="cloze-progress-text">1 / 20</span>
+      <div class="cloze-progress-bar" aria-hidden="true"><div id="cloze-progress-fill"></div></div>
+    </div>
+
+    <div class="cloze-race" aria-hidden="true">
+      <div class="cloze-race-meta">
+        <span data-clz="pace">Pace</span>
+        <span id="cloze-race-label" class="cloze-race-label"></span>
+      </div>
+      <div class="cloze-race-track"><div id="cloze-race-fill"></div></div>
+    </div>
+
+    <section class="cloze-stage" aria-labelledby="cloze-prompt-label">
+      <p id="cloze-prompt-label" class="cloze-k" data-clz="fillPrompt">Fill the blank</p>
+      <p id="cloze-gloss" class="cloze-gloss muted"></p>
+      <p id="cloze-item-tags" class="cloze-item-tags" aria-hidden="true"></p>
+
+      <p id="cloze-sentence" class="cloze-sentence" lang="ko" aria-live="polite"></p>
+
+      <div id="cloze-chips" class="cloze-chips" role="group" aria-label="Choices"></div>
+
+      <label class="cloze-input-label" for="cloze-input" data-clz="yourAnswer">Or type</label>
+      <input
+        id="cloze-input"
+        class="cloze-input"
+        type="text"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        lang="ko"
+        enterkeyhint="done"
+        data-clz-placeholder="placeholder"
+        placeholder="빈칸 입력…"
+      >
+
+      <div class="cloze-actions">
+        <button type="button" class="cloze-btn cloze-btn--sun" id="cloze-check" data-clz="check">Check</button>
+        <button type="button" class="cloze-btn cloze-btn--ghost" id="cloze-skip" data-clz="skip">Skip</button>
+        <button type="button" class="cloze-btn cloze-btn--ghost" id="cloze-reveal" data-clz="reveal">Give up</button>
+      </div>
+
+      <label class="cloze-auto">
+        <input type="checkbox" id="cloze-auto-next" checked>
+        <span data-clz="autoNext">Auto-advance on correct</span>
+      </label>
+    </section>
+
+    <section id="cloze-feedback" class="cloze-feedback hidden" aria-live="polite">
+      <p id="cloze-feedback-status" class="cloze-feedback-status"></p>
+      <p class="cloze-k" data-clz="youWrote">You answered</p>
+      <p id="cloze-yours" class="cloze-diff-line"></p>
+      <p class="cloze-k" data-clz="correctIs">Full sentence</p>
+      <p id="cloze-correct" class="cloze-correct-line" lang="ko"></p>
+      <div class="cloze-actions">
+        <button type="button" class="cloze-btn cloze-btn--sun" id="cloze-next" data-clz="next">Next →</button>
+        <button type="button" class="cloze-btn cloze-btn--ghost" id="cloze-retry" data-clz="retry">Try again</button>
+      </div>
+    </section>
+
+    <section id="cloze-done" class="cloze-done hidden" aria-live="polite">
+      <h2 data-clz="doneTitle">Round complete</h2>
+      <p id="cloze-score" class="cloze-score"></p>
+      <div class="cloze-actions">
+        <button type="button" class="cloze-btn cloze-btn--sun" id="cloze-restart" data-clz="restart">Play again</button>
+        <a class="cloze-btn cloze-btn--ghost" href="../" data-clz="backGames">← Games</a>
+      </div>
+    </section>
+
+    <p id="cloze-error" class="cloze-error hidden" role="alert"></p>
+  </main>
+
+  <script src="../../../js/i18n.js"></script>
+  <script src="./cloze.js"></script>
+</body>
+</html>

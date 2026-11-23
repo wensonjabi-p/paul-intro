@@ -1,0 +1,49 @@
+{
+  "id": "e-vs-eseo",
+  "slug": "e-vs-eseo",
+  "status": "pilot",
+  "level": "A1",
+  "tags": ["grammar:particles", "location"],
+  "sourceNote": "Original jabi. FAQ-style parallel reading on 에 vs 에서. Not scraped.",
+  "question": {
+    "en": "When do I use 에 and when 에서?",
+    "ko": "에와 에서는 언제 쓰나요?"
+  },
+  "reading": {
+    "en": "Both can sit after a place noun, but they answer different jobs.\n\n에 often marks time or a destination / static location: 일곱 시에 만나요 · 학교에 가요 · 집에 있어요. Think “at/to/in” as a point on the map or clock.\n\n에서 marks the place where an action happens: 카페에서 공부해요 · 집에서 쉬어요. Think “at the place of doing.”\n\nA common mix-up: going somewhere uses 에 (학교에 가요), not 에서. Studying at school uses 에서 (학교에서 공부해요).\n\nExistence sentences like N에 있어요 lean on 에 for location. If you can replace the English idea with “do X at Y,” prefer 에서.\n\nOverlap exists with some verbs. For learners: destination/time/existence → 에; action venue → 에서. Practice in Basics Unit 2 and Unit 5.",
+    "ko": "둘 다 장소 명사 뒤에 올 수 있지만, 하는 일이 다릅니다.\n\n에는 시간이나 목적지·정적 위치를 나타낼 때가 많습니다. 일곱 시에 만나요 · 학교에 가요 · 집에 있어요. 지도나 시계의 ‘점’이라고 생각하세요.\n\n에서는 동작이 일어나는 장소입니다. 카페에서 공부해요 · 집에서 쉬어요. ‘하는 곳’입니다.\n\n자주 헷갈리는 점: 어디에 갈 때는 에(학교에 가요)이지 에서가 아닙니다. 학교에서 공부할 때는 에서입니다.\n\nN에 있어요 같은 존재·위치 문장은 에를 씁니다. 영어 느낌이 “Y에서 X를 하다”면 에서를 고르세요.\n\n겹치는 동사도 있습니다. 학습자 가이드: 목적지·시간·존재 → 에 · 동작 장소 → 에서. 기초 2과·5과에서 연습하세요."
+  },
+  "keyPoints": [
+    {
+      "en": "에 ≈ time / destination / static location.",
+      "ko": "에 ≈ 시간 · 목적지 · 정적 위치."
+    },
+    {
+      "en": "에서 ≈ place where the action happens.",
+      "ko": "에서 ≈ 동작이 일어나는 장소."
+    },
+    {
+      "en": "가다 destination → 에 (not 에서).",
+      "ko": "가다 목적지 → 에(에서 아님)."
+    }
+  ],
+  "examples": [
+    { "ko": "세 시에 만나요.", "en": "Let’s meet at three. (time 에)" },
+    { "ko": "도서관에 가요.", "en": "I go to the library. (destination 에)" },
+    { "ko": "도서관에서 읽어요.", "en": "I read at the library. (action 에서)" }
+  ],
+  "checkQuestions": [
+    {
+      "q": { "en": "Which particle fits “study at the café”?", "ko": "카페에서 공부할 때?" },
+      "a": { "en": "에서.", "ko": "에서." }
+    }
+  ],
+  "practice": {
+    "href": "../app/games/particle-snap/",
+    "label": { "en": "Play Particle Snap →", "ko": "조사 스냅 하기 →" }
+  },
+  "related": [
+    { "href": "./?id=eunneun-iga", "label": { "en": "은/는 vs 이/가", "ko": "은/는 vs 이/가" } },
+    { "href": "../app/basic/", "label": { "en": "Basics Unit 2·5 (contrast cards)", "ko": "기초 2·5과 (대조 카드)" } }
+  ]
+}

@@ -1,0 +1,687 @@
+{
+  "id": "jabi-basic-v1-03",
+  "title": {
+    "en": "jabi. Basics · Unit 3 — At a café",
+    "ko": "jabi. 기초 · 3과 — 카페에서",
+    "zh": "jabi. 基础 · 第3课 — 在咖啡馆"
+  },
+  "level": "Basic (pre-TOPIK)",
+  "theme": "카페",
+  "sourceNote": "PILOT — jabi. 원작. TOPIK I 생존(주문)·표준 주제 식음료. 세종 1 TOC에 카페 단원명 없음 — 짧은 거래 성공용으로 03 배치.",
+  "objective": {
+    "en": "Order a drink, ask price, say take-out vs for-here, pay.",
+    "ko": "음료 주문·가격·포장/매장·결제.",
+    "zh": "点饮料、问价、外带/堂食、付款。"
+  },
+  "explain": {
+    "en": "Order pattern: [drink] + (한 잔) + 주세요. Ask price with 얼마예요? Sino-Korean number + 원. 포장이요 vs 여기서 마실게요 chooses take-out vs for-here.",
+    "ko": "주문: [음료]+(한 잔)+주세요. 가격 얼마예요? 한자어 수+원. 포장 vs 여기서 마시기.",
+    "zh": "点单：[饮料]+(한 잔)+주세요。问价얼마예요？汉字数+원。外带/堂食。"
+  },
+  "format": "duolingo-basic-v1",
+  "steps": [
+    {
+      "id": "intro",
+      "title": {
+        "en": "Skill intro",
+        "ko": "스킬 소개",
+        "zh": "技能介绍"
+      },
+      "body": {
+        "en": "Short transaction win before full shopping/restaurant (TOPIK survival: order).",
+        "ko": "쇼핑·식당 전에 짧은 거래 성공(TOPIK 생존: 주문).",
+        "zh": "在购物/餐厅前先完成短交易（TOPIK生存：点单）。"
+      }
+    },
+    {
+      "id": "teach",
+      "title": {
+        "en": "Teach · 주세요 · 잔 · 원",
+        "ko": "설명 · 주세요 · 잔 · 원",
+        "zh": "讲解 · 주세요 · 잔 · 원"
+      },
+      "body": {
+        "en": "주세요 softens “please give.” Counter 잔 for cups. Price: 사천 원이에요. Card/cash can follow after the price line.",
+        "ko": "주세요=부탁. 컵은 잔. 가격 사천 원이에요. 결제 말은 가격 다음.",
+        "zh": "주세요表请求。잔=杯。价格后再说付款。"
+      }
+    },
+    {
+      "id": "dialogue",
+      "title": {
+        "en": "Dialogue",
+        "ko": "대화",
+        "zh": "对话"
+      },
+      "body": {
+        "en": "Ordering scene — read, then drill.",
+        "ko": "주문 장면 — 읽고 드릴.",
+        "zh": "点单场景——读完再练。"
+      }
+    },
+    {
+      "id": "practice",
+      "title": {
+        "en": "Practice",
+        "ko": "연습",
+        "zh": "练习"
+      },
+      "body": {
+        "en": "Complete dialogues — tips don’t reveal the answer word first.",
+        "ko": "대화 완성 — 힌트는 정답 단어를 바로 주지 않음.",
+        "zh": "完成对话——提示不先泄露答案词。"
+      }
+    },
+    {
+      "id": "checkpoint",
+      "title": {
+        "en": "Checkpoint",
+        "ko": "체크포인트",
+        "zh": "关卡"
+      },
+      "body": {
+        "en": "Order one drink + say 포장이요 or 여기서 마실게요.",
+        "ko": "음료 하나 주문 + 포장/매장 한 줄.",
+        "zh": "点一杯+说外带或堂食。"
+      }
+    }
+  ],
+  "dialogue": {
+    "title": {
+      "en": "Ordering",
+      "ko": "주문",
+      "zh": "点单"
+    },
+    "lines": [
+      {
+        "who": "직원",
+        "ko": "안녕하세요. 뭐 드릴까요?"
+      },
+      {
+        "who": "손님",
+        "ko": "아메리카노 한 잔 주세요."
+      },
+      {
+        "who": "직원",
+        "ko": "여기서 드실래요, 포장드릴까요?"
+      },
+      {
+        "who": "손님",
+        "ko": "포장이요. 얼마예요?"
+      },
+      {
+        "who": "직원",
+        "ko": "사천 원이에요."
+      }
+    ]
+  },
+  "phrases": [
+    {
+      "ko": "뭐 드릴까요?",
+      "gloss": {
+        "en": "What can I get you?",
+        "ko": "주문 받기",
+        "zh": "您需要什么"
+      }
+    },
+    {
+      "ko": "아메리카노 한 잔 주세요.",
+      "gloss": {
+        "en": "One americano, please.",
+        "ko": "주문",
+        "zh": "美式一杯"
+      }
+    },
+    {
+      "ko": "아이스 / 핫으로요.",
+      "gloss": {
+        "en": "Iced / hot.",
+        "ko": "온도",
+        "zh": "冰/热"
+      }
+    },
+    {
+      "ko": "포장이요.",
+      "gloss": {
+        "en": "To go.",
+        "ko": "포장",
+        "zh": "外带"
+      }
+    },
+    {
+      "ko": "여기서 마실게요.",
+      "gloss": {
+        "en": "For here.",
+        "ko": "매장",
+        "zh": "堂食"
+      }
+    },
+    {
+      "ko": "얼마예요?",
+      "gloss": {
+        "en": "How much?",
+        "ko": "가격",
+        "zh": "多少钱"
+      }
+    },
+    {
+      "ko": "사천 원이에요.",
+      "gloss": {
+        "en": "It's 4,000 won.",
+        "ko": "금액",
+        "zh": "四千韩元"
+      }
+    },
+    {
+      "ko": "카드로 결제할게요.",
+      "gloss": {
+        "en": "I'll pay by card.",
+        "ko": "결제",
+        "zh": "刷卡"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "basic-03-01",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Order.\n\n손님: 아메리카노 한 잔 (    ).",
+        "ko": "※ 주문.\n\n손님: 아메리카노 한 잔 (    ).",
+        "zh": "※ 点单。\n\n客人：아메리카노 한 잔 (    )。"
+      },
+      "choices": [
+        "주세요",
+        "이에요",
+        "가요",
+        "읽어요"
+      ],
+      "answer": 0,
+      "answerText": "주세요",
+      "tags": [
+        "topic:카페",
+        "grammar:주세요"
+      ],
+      "hint": {
+        "ko": "부탁 주문.",
+        "en": "Polite order.",
+        "zh": "礼貌点单。",
+        "steps": {
+          "en": [
+            "Ordering drink",
+            "주세요"
+          ],
+          "ko": [
+            "음료 주문",
+            "주세요"
+          ],
+          "zh": [
+            "点饮料",
+            "주세요"
+          ]
+        }
+      },
+      "why": {
+        "en": "Request a drink with noun + 주세요.",
+        "ko": "음료 명사+주세요.",
+        "zh": "饮料+주세요。"
+      }
+    },
+    {
+      "id": "basic-03-02",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Price.\n\n손님: (    )?\n직원: 사천 원이에요.",
+        "ko": "※ 가격.\n\n손님: (    )?\n직원: 사천 원이에요.",
+        "zh": "※ 价钱。\n\n客人：(    )?\n店员：사천 원이에요。"
+      },
+      "choices": [
+        "얼마예요",
+        "어디예요",
+        "누구예요",
+        "뭐예요 이름"
+      ],
+      "answer": 0,
+      "answerText": "얼마예요",
+      "tags": [
+        "topic:카페",
+        "vocab:가격"
+      ],
+      "hint": {
+        "ko": "가격 질문.",
+        "en": "Ask price.",
+        "zh": "问价格。",
+        "steps": {
+          "en": [
+            "Staff gives money amount",
+            "Ask how much"
+          ],
+          "ko": [
+            "직원이 금액",
+            "얼마"
+          ],
+          "zh": [
+            "店员报金额",
+            "问多少"
+          ]
+        }
+      },
+      "why": {
+        "en": "얼마예요? is the price question (이에요/예요 on 얼마).",
+        "ko": "얼마예요?=가격 물음.",
+        "zh": "얼마예요？问价。"
+      }
+    },
+    {
+      "id": "basic-03-03",
+      "type": "blank",
+      "prompt": {
+        "en": "※ To go.\n\n직원: 여기서 드실래요, 포장드릴까요?\n손님: (    ).",
+        "ko": "※ 포장.\n\n직원: 여기서 드실래요, 포장드릴까요?\n손님: (    ).",
+        "zh": "※ 外带。\n\n店员：堂食还是外带？\n客人：(    )。"
+      },
+      "choices": [
+        "포장이요",
+        "안녕하세요",
+        "공부해요",
+        "받침이요"
+      ],
+      "answer": 0,
+      "answerText": "포장이요",
+      "tags": [
+        "topic:카페"
+      ],
+      "hint": {
+        "ko": "가져가기.",
+        "en": "Take-out.",
+        "zh": "外带。",
+        "steps": {
+          "en": [
+            "Choose take-out",
+            "포장"
+          ],
+          "ko": [
+            "포장 선택",
+            "포장이요"
+          ],
+          "zh": [
+            "选外带",
+            "포장이요"
+          ]
+        }
+      },
+      "why": {
+        "en": "한 잔 = one cup counter after the drink.",
+        "ko": "한 잔=컵 수량.",
+        "zh": "한 잔=一杯。"
+      }
+    },
+    {
+      "id": "basic-03-04",
+      "type": "blank",
+      "prompt": {
+        "en": "※ For here.\n\n손님: (    ). 천천히 마실게요.",
+        "ko": "※ 매장.\n\n손님: (    ). 천천히 마실게요.",
+        "zh": "※ 堂食。\n\n客人：(    ). 我会慢慢喝。"
+      },
+      "choices": [
+        "여기서 마실게요",
+        "포장이요",
+        "도와 주세요",
+        "일곱 시예요"
+      ],
+      "answer": 0,
+      "answerText": "여기서 마실게요",
+      "tags": [
+        "topic:카페"
+      ],
+      "hint": {
+        "ko": "매장 이용.",
+        "en": "Drink here.",
+        "zh": "在店里喝。",
+        "steps": {
+          "en": [
+            "Not take-out",
+            "여기서"
+          ],
+          "ko": [
+            "포장 아님",
+            "여기서"
+          ],
+          "zh": [
+            "非外带",
+            "여기서"
+          ]
+        }
+      },
+      "why": {
+        "en": "포장이요 marks take-out.",
+        "ko": "포장이요=포장.",
+        "zh": "포장이요=外带。"
+      }
+    },
+    {
+      "id": "basic-03-05",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Counter.\n\n손님: 라떼 (    ) 주세요.",
+        "ko": "※ 잔.\n\n손님: 라떼 (    ) 주세요.",
+        "zh": "※ 量词。\n\n客人：라떼 (    ) 주세요。"
+      },
+      "choices": [
+        "한 잔",
+        "한 명",
+        "한 시",
+        "한 원"
+      ],
+      "answer": 0,
+      "answerText": "한 잔",
+      "tags": [
+        "topic:카페",
+        "vocab:잔"
+      ],
+      "hint": {
+        "ko": "음료 단위 잔.",
+        "en": "Drink counter 잔.",
+        "zh": "饮料量词잔。",
+        "steps": {
+          "en": [
+            "Ordering cups",
+            "잔"
+          ],
+          "ko": [
+            "컵 주문",
+            "잔"
+          ],
+          "zh": [
+            "点杯",
+            "잔"
+          ]
+        }
+      },
+      "why": {
+        "en": "Sino number + 원 for money amounts.",
+        "ko": "금액=한자어 수+원.",
+        "zh": "金额=汉字数+원。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "명 counts people.",
+          "ko": "명은 사람.",
+          "zh": "명数人。"
+        },
+        "2": {
+          "en": "시 is o'clock.",
+          "ko": "시는 시간.",
+          "zh": "시是钟点。"
+        },
+        "3": {
+          "en": "원 is money unit, not cup counter.",
+          "ko": "원은 돈.",
+          "zh": "원是货币。"
+        }
+      }
+    },
+    {
+      "id": "basic-03-06",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Payment.\n\n직원: 현금이세요, 카드세요?\n손님: (    ).",
+        "ko": "※ 결제.\n\n직원: 현금이세요, 카드세요?\n손님: (    ).",
+        "zh": "※ 付款。\n\n店员：现金还是卡？\n客人：(    )。"
+      },
+      "choices": [
+        "카드로 결제할게요",
+        "산이에요",
+        "받침이에요",
+        "운동해요"
+      ],
+      "answer": 0,
+      "answerText": "카드로 결제할게요",
+      "tags": [
+        "topic:카페"
+      ],
+      "hint": {
+        "ko": "카드 결제.",
+        "en": "Card payment.",
+        "zh": "刷卡。",
+        "steps": {
+          "en": [
+            "Payment choice",
+            "카드"
+          ],
+          "ko": [
+            "결제 선택",
+            "카드"
+          ],
+          "zh": [
+            "选支付",
+            "卡"
+          ]
+        }
+      },
+      "why": {
+        "en": "여기서 마실게요 = for-here (contrast 포장).",
+        "ko": "여기서 마실게요=매장(포장 대조).",
+        "zh": "堂食（对外带）。"
+      }
+    },
+    {
+      "id": "basic-03-07",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Staff line.\n\n직원: (    )?\n손님: 라떼 주세요.",
+        "ko": "※ 직원.\n\n직원: (    )?\n손님: 라떼 주세요.",
+        "zh": "※ 店员。\n\n店员：(    )?\n客人：라떼 주세요。"
+      },
+      "choices": [
+        "뭐 드릴까요",
+        "이름이 뭐예요",
+        "몇 시예요",
+        "도와 주세요"
+      ],
+      "answer": 0,
+      "answerText": "뭐 드릴까요",
+      "tags": [
+        "topic:카페"
+      ],
+      "hint": {
+        "ko": "주문 유도.",
+        "en": "Taking order.",
+        "zh": "询问点单。",
+        "steps": {
+          "en": [
+            "Cafe staff",
+            "Offer to take order"
+          ],
+          "ko": [
+            "카페 직원",
+            "주문 받기"
+          ],
+          "zh": [
+            "咖啡馆店员",
+            "接单"
+          ]
+        }
+      },
+      "why": {
+        "en": "카드로 결제할게요 — pay-by-card pattern after price.",
+        "ko": "카드 결제 패턴.",
+        "zh": "刷卡付款。"
+      }
+    },
+    {
+      "id": "basic-03-08",
+      "type": "blank",
+      "prompt": {
+        "en": "※ Money line.\n\n직원: (    ).\n손님: 네, 카드로요.",
+        "ko": "※ 금액.\n\n직원: (    ).\n손님: 네, 카드로요.",
+        "zh": "※ 金额。\n\n店员：(    ).\n客人：네, 카드로요。"
+      },
+      "choices": [
+        "사천 원이에요",
+        "사천 시예요",
+        "사천 명이에요",
+        "사천 잔만요"
+      ],
+      "answer": 0,
+      "answerText": "사천 원이에요",
+      "tags": [
+        "topic:카페",
+        "vocab:원"
+      ],
+      "hint": {
+        "ko": "원 단위.",
+        "en": "Won amount.",
+        "zh": "韩元金额。",
+        "steps": {
+          "en": [
+            "Stating price",
+            "원"
+          ],
+          "ko": [
+            "가격 말하기",
+            "원"
+          ],
+          "zh": [
+            "报价",
+            "원"
+          ]
+        }
+      },
+      "why": {
+        "en": "주세요 again softens the order line.",
+        "ko": "주문 줄도 주세요.",
+        "zh": "点单也用주세요。"
+      }
+    }
+  ],
+  "verified": false,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "research": "docs/research-basic-content-fill-ko.md",
+  "grammarCards": [
+    {
+      "id": "juseyo",
+      "title": {
+        "en": "… 주세요",
+        "ko": "… 주세요",
+        "zh": "… 주세요"
+      },
+      "body": {
+        "en": "Noun + 주세요 = polite request for that thing. Add a counter when natural: 아메리카노 한 잔 주세요.",
+        "ko": "명사+주세요=공손 부탁. 자연스러우면 수량: 아메리카노 한 잔 주세요.",
+        "zh": "名词+주세요=礼貌请求。可加数量。"
+      },
+      "examples": [
+        {
+          "ko": "아메리카노 주세요.",
+          "gloss": {
+            "en": "drink + please",
+            "ko": "음료+부탁",
+            "zh": "饮料+请"
+          }
+        },
+        {
+          "ko": "물 한 잔 주세요.",
+          "gloss": {
+            "en": "counter 잔",
+            "ko": "잔",
+            "zh": "잔"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jan-won",
+      "kind": "contrast",
+      "title": {
+        "en": "잔 (native) ↔ 원 (Sino)",
+        "ko": "잔 (고유어) ↔ 원 (한자어)",
+        "zh": "잔（固有）↔ 원（汉字）"
+      },
+      "body": {
+        "en": "세종·국어원 learner split: the counter picks the number system. Cups/people/clock-hour → native (한·두·세 + 잔). Money → Sino + 원 (사천 원). Same café turn can mix both: order with 잔, pay with 원.",
+        "ko": "세종·국어원 학습 구분: 단위가 수 체계를 고름. 잔·명·시→고유어(한·두·세+잔). 돈→한자어+원(사천 원). 같은 카페 턴에 둘 다 씀: 주문은 잔 · 계산은 원.",
+        "zh": "世宗/国语院学习分工：量词选数字体系。杯/人/点钟→固有数(한·두·세+잔)；钱→汉字数+원。同一回合可混用：点单用잔，付钱用원。"
+      },
+      "examples": [
+        {
+          "ko": "커피 두 잔 주세요.",
+          "gloss": {
+            "en": "Cups · native + 잔",
+            "ko": "잔 · 고유어",
+            "zh": "杯 · 固有+잔"
+          }
+        },
+        {
+          "ko": "사천 원이에요.",
+          "gloss": {
+            "en": "Price · Sino + 원",
+            "ko": "가격 · 한자어+원",
+            "zh": "价格 · 汉字+원"
+          }
+        },
+        {
+          "ko": "얼마예요?",
+          "gloss": {
+            "en": "Ask price → answer in 원",
+            "ko": "가격 물음 → 원으로 답",
+            "zh": "问价 → 用원答"
+          }
+        }
+      ],
+      "trap": {
+        "en": "Do not say 하나 원 / 둘 원. Prices use Sino (천 원, 사천 원). Cups use native (한 잔, 두 잔).",
+        "ko": "「하나 원」「둘 원」 금지. 가격은 한자어(천 원). 잔은 고유어(한 잔, 두 잔).",
+        "zh": "不要说하나 원/둘 원。价钱用汉字数；杯子用固有数(한 잔)。"
+      },
+      "related": [
+        {
+          "href": "../../blog/#two-number-systems",
+          "label": {
+            "en": "글모음 · two number systems →",
+            "ko": "글모음 · 숫자 두 체계 →",
+            "zh": "글모음 · 两套数字 →"
+          }
+        }
+      ]
+    },
+    {
+      "id": "olma",
+      "title": {
+        "en": "얼마예요? · 원",
+        "ko": "얼마예요? · 원",
+        "zh": "얼마예요？·원"
+      },
+      "body": {
+        "en": "얼마예요? asks the price. Answer with Sino numbers + 원 (사천 원이에요). Pair with the 잔↔원 contrast above.",
+        "ko": "얼마예요?=가격. 답은 한자어 수+원. 위 잔↔원 대조와 짝.",
+        "zh": "얼마예요？问价。答：汉字数+원。配合上方잔↔원对照。"
+      },
+      "examples": [
+        {
+          "ko": "얼마예요?",
+          "gloss": {
+            "en": "How much?",
+            "ko": "얼마?",
+            "zh": "多少钱？"
+          }
+        },
+        {
+          "ko": "사천 원이에요.",
+          "gloss": {
+            "en": "4000 won",
+            "ko": "사천 원",
+            "zh": "四千원"
+          }
+        }
+      ]
+    }
+  ]
+}

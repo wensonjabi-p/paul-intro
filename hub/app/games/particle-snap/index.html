@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF4FF">
+  <title>jabi. — Particle Snap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/hub.css">
+  <link rel="stylesheet" href="./particle.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="snap-page">
+    <p class="eyebrow" data-ps="eyebrow">Particle Snap</p>
+    <h1 data-ps="title">Pick the particle</h1>
+    <p class="lead" data-ps="lead">은/는 · 이/가 · 을/를 — tap the right one fast. Soft snap bar, never punished by time.</p>
+
+    <nav class="snap-nav" aria-label="Particle Snap nav">
+      <a href="../" data-ps="backGames">← Games</a>
+      <a href="../../../" data-ps="backHub">Hub</a>
+    </nav>
+
+    <p class="snap-note" data-ps="note">Tap a big chip to answer. Empty bar does not fail the question.</p>
+
+    <div class="snap-themes" aria-label="Theme filter">
+      <span class="snap-k" data-ps="themeFilter">Theme</span>
+      <div id="snap-theme-chips" class="snap-theme-chips" role="group" aria-label="Themes"></div>
+    </div>
+
+    <div class="snap-progress" aria-live="polite">
+      <span id="snap-progress-text">1 / 24</span>
+      <div class="snap-progress-bar" aria-hidden="true"><div id="snap-progress-fill"></div></div>
+    </div>
+
+    <div class="snap-race" aria-hidden="true">
+      <div class="snap-race-meta">
+        <span data-ps="pace">Snap</span>
+        <span id="snap-race-label" class="snap-race-label"></span>
+      </div>
+      <div class="snap-race-track"><div id="snap-race-fill"></div></div>
+    </div>
+
+    <section class="snap-stage" aria-labelledby="snap-prompt-label">
+      <p id="snap-prompt-label" class="snap-k" data-ps="pickPrompt">Which particle?</p>
+      <p id="snap-pair-badge" class="snap-pair-badge"></p>
+      <p id="snap-gloss" class="snap-gloss muted"></p>
+      <p id="snap-item-tags" class="snap-item-tags" aria-hidden="true"></p>
+
+      <p id="snap-sentence" class="snap-sentence" lang="ko" aria-live="polite"></p>
+
+      <div id="snap-chips" class="snap-chips" role="group" aria-label="Particle choices"></div>
+
+      <div class="snap-actions">
+        <button type="button" class="snap-btn snap-btn--ghost" id="snap-skip" data-ps="skip">Skip</button>
+        <button type="button" class="snap-btn snap-btn--ghost" id="snap-reveal" data-ps="reveal">Give up</button>
+      </div>
+
+      <label class="snap-auto">
+        <input type="checkbox" id="snap-auto-next" checked>
+        <span data-ps="autoNext">Auto-advance on correct</span>
+      </label>
+    </section>
+
+    <section id="snap-feedback" class="snap-feedback hidden" aria-live="polite">
+      <p id="snap-feedback-status" class="snap-feedback-status"></p>
+      <p class="snap-k" data-ps="youPicked">You picked</p>
+      <p id="snap-yours" class="snap-diff-line"></p>
+      <p class="snap-k" data-ps="correctIs">Full sentence</p>
+      <p id="snap-correct" class="snap-correct-line" lang="ko"></p>
+      <div class="snap-actions">
+        <button type="button" class="snap-btn snap-btn--sun" id="snap-next" data-ps="next">Next →</button>
+        <button type="button" class="snap-btn snap-btn--ghost" id="snap-retry" data-ps="retry">Try again</button>
+      </div>
+    </section>
+
+    <section id="snap-done" class="snap-done hidden" aria-live="polite">
+      <h2 data-ps="doneTitle">Round complete</h2>
+      <p id="snap-score" class="snap-score"></p>
+      <div class="snap-actions">
+        <button type="button" class="snap-btn snap-btn--sun" id="snap-restart" data-ps="restart">Play again</button>
+        <a class="snap-btn snap-btn--ghost" href="../" data-ps="backGames">← Games</a>
+      </div>
+    </section>
+
+    <p id="snap-error" class="snap-error hidden" role="alert"></p>
+  </main>
+
+  <script src="../../../js/i18n.js"></script>
+  <script src="./particle.js"></script>
+</body>
+</html>

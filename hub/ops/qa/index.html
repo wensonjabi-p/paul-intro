@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#050419">
+  <title>jabi. QA — content review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/hub.css">
+  <link rel="stylesheet" href="../../app/css/app.css">
+  <link rel="stylesheet" href="./qa.css">
+</head>
+<body>
+  <header class="app-header">
+    <a href="../" class="logo-link"><span>← ops</span></a>
+    <span class="qa-badge">QA · Paul</span>
+  </header>
+
+  <main class="app-main qa-main">
+    <section id="view-gate">
+      <p class="eyebrow">Content review</p>
+      <h1>문항·힌트 검수</h1>
+      <p class="lead muted">학습 앱과 같은 문항을 보고, 이상한 부분을 버튼으로 표시합니다. AI는 이 라벨로 수정안을 만들고, Paul 승인 후에만 뱅크에 반영합니다.</p>
+      <label class="field">
+        <span>Unlock code</span>
+        <input type="password" id="gate-code" placeholder="QA-PAUL" autocomplete="off" />
+      </label>
+      <button type="button" class="btn" id="btn-gate">Enter</button>
+    </section>
+
+    <section id="view-qa" class="hidden">
+      <div class="qa-toolbar">
+        <label class="field inline">
+          <span>Bank</span>
+          <select id="qa-bank"></select>
+        </label>
+        <span id="qa-progress" class="qa-progress">1 / 1</span>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum" id="qa-qnum">1 / 1</div>
+        <pre id="qa-prompt"></pre>
+        <p id="qa-meta" class="quiz-meta"></p>
+        <div class="choices" id="qa-choices"></div>
+        <p id="qa-why" class="hint-box"></p>
+        <p id="qa-script" class="hint-box hidden"></p>
+      </div>
+
+      <div class="me-card">
+        <p class="k">어디가 문제인가요? (복수)</p>
+        <div class="chip-row" id="chips-target"></div>
+        <p class="k" style="margin-top:14px">왜인가요? (복수)</p>
+        <div class="chip-row" id="chips-reason"></div>
+        <label class="field" style="margin-top:14px">
+          <span>메모 (선택)</span>
+          <textarea id="qa-note" rows="2" placeholder="짧게"></textarea>
+        </label>
+        <div class="choice-row">
+          <button type="button" class="btn" id="btn-flag">이 문항 표시 · 다음</button>
+          <button type="button" class="btn btn-ghost" id="btn-ok">문제없음 · 다음</button>
+        </div>
+        <div class="choice-row">
+          <button type="button" class="btn btn-ghost" id="btn-prev">이전</button>
+          <button type="button" class="btn btn-ghost" id="btn-export">피드백 JSON 내보내기</button>
+          <button type="button" class="btn btn-ghost" id="btn-clear">로컬 피드백 비우기</button>
+        </div>
+        <p id="qa-status" class="muted tiny"></p>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <script src="./qa.js"></script>
+</body>
+</html>

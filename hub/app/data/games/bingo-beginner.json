@@ -1,0 +1,8480 @@
+{
+  "id": "bingo-beginner",
+  "version": 71,
+  "level": "beginner-elementary",
+  "lang": "ko",
+  "mode": "bingo",
+  "sizes": [
+    3,
+    5
+  ],
+  "defaultSize": 5,
+  "freeCenter": true,
+  "source": "original-jabi",
+  "copyright": "Original beginner vocab for jabi Bingo Board, plus intermediate housing-services, money-banking, public-workplace, health-clinic, school-class, travel-lodging, weather-season, digital-comms, family-relations, hobby-culture, emotion-mood, sports-exercise, nature-environment, restaurant-cooking, clothes-shopping, music-arts, media-news, celebration-holiday, time-appointment, home-chores, body-parts, directions-location, furniture-room, fruit-market, kitchen-tableware, office-stationery, post-mail, animals-pets, vehicles-driving, city-places, pantry-ingredients, bathroom-hygiene, jobs-occupations, countries-nationality, daily-routine, size-quantity, temperature-senses, colors-shapes, accessories-belongings, electricity-appliances, building-facilities, movement-actions, requests-favors, thoughts-plans, speech-talk, change-progress, comparison-degree, cause-reason, problem-solution, opinion-judgment, habits-lifestyle, rules-permission, friends-social, personality-character, apology-politeness, success-challenge, advice-counsel, encourage-support, promise-trust, refuse-accept, complain-dissatisfaction, and warn-caution crossfill. Not scraped from Duolingo, Drops, Quizlet, Speechling, Bida/KoreaXin, or any third-party bank. Orthography follows NIKL/Sejong survival norms. No hotel/hospital/app/museum/sports/restaurant/clothing/music/media/celebration/calendar/appliance/body-product/map-app/furniture/grocery/cookware/stationery/courier/pet/car/taxi/store/bank/salon/hygiene/company/airline/embassy/realtor-brand names.",
+  "themes": [
+    "cafe",
+    "food",
+    "shopping",
+    "transport",
+    "clinic",
+    "leisure",
+    "cosmetics",
+    "housing",
+    "banking",
+    "money",
+    "workplace",
+    "school",
+    "travel",
+    "weather",
+    "digital",
+    "family",
+    "hobby",
+    "emotion",
+    "sports",
+    "nature",
+    "restaurant",
+    "clothes",
+    "music",
+    "media",
+    "celebration",
+    "basic",
+    "people",
+    "place",
+    "object",
+    "time",
+    "chores",
+    "body",
+    "direction",
+    "furniture",
+    "fruit",
+    "kitchen",
+    "stationery",
+    "mail",
+    "pets",
+    "driving",
+    "lang",
+    "services",
+    "places",
+    "pantry",
+    "bathroom",
+    "jobs",
+    "country",
+    "routine",
+    "size",
+    "senses",
+    "color",
+    "accessories",
+    "electric",
+    "building",
+    "motion",
+    "favor",
+    "think",
+    "speech",
+    "change",
+    "compare",
+    "reason",
+    "problem",
+    "opinion",
+    "habit",
+    "rules",
+    "friends",
+    "personality",
+    "apology",
+    "success",
+    "advice",
+    "encourage",
+    "promise",
+    "refuse",
+    "complain",
+    "warn"
+  ],
+  "items": [
+    {
+      "id": "bg-01",
+      "word": "물",
+      "gloss": {
+        "en": "water",
+        "ko": "마실 물",
+        "zh": "水"
+      },
+      "tags": [
+        "basic",
+        "cafe"
+      ]
+    },
+    {
+      "id": "bg-02",
+      "word": "커피",
+      "gloss": {
+        "en": "coffee",
+        "ko": "커피 음료",
+        "zh": "咖啡"
+      },
+      "tags": [
+        "cafe"
+      ]
+    },
+    {
+      "id": "bg-03",
+      "word": "차",
+      "gloss": {
+        "en": "tea",
+        "ko": "차 음료",
+        "zh": "茶"
+      },
+      "tags": [
+        "cafe"
+      ]
+    },
+    {
+      "id": "bg-04",
+      "word": "밥",
+      "gloss": {
+        "en": "rice / meal",
+        "ko": "밥·식사",
+        "zh": "饭"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "bg-05",
+      "word": "빵",
+      "gloss": {
+        "en": "bread",
+        "ko": "빵",
+        "zh": "面包"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "bg-06",
+      "word": "학생",
+      "gloss": {
+        "en": "student",
+        "ko": "학생",
+        "zh": "学生"
+      },
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "bg-07",
+      "word": "선생님",
+      "gloss": {
+        "en": "teacher",
+        "ko": "선생님",
+        "zh": "老师"
+      },
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "bg-08",
+      "word": "친구",
+      "gloss": {
+        "en": "friend",
+        "ko": "친구",
+        "zh": "朋友"
+      },
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "bg-09",
+      "word": "이름",
+      "gloss": {
+        "en": "name",
+        "ko": "이름",
+        "zh": "名字"
+      },
+      "tags": [
+        "basic"
+      ]
+    },
+    {
+      "id": "bg-10",
+      "word": "학교",
+      "gloss": {
+        "en": "school",
+        "ko": "학교",
+        "zh": "学校"
+      },
+      "tags": [
+        "place"
+      ]
+    },
+    {
+      "id": "bg-11",
+      "word": "집",
+      "gloss": {
+        "en": "home / house",
+        "ko": "집",
+        "zh": "家"
+      },
+      "tags": [
+        "place"
+      ]
+    },
+    {
+      "id": "bg-12",
+      "word": "카페",
+      "gloss": {
+        "en": "cafe",
+        "ko": "카페",
+        "zh": "咖啡店"
+      },
+      "tags": [
+        "place",
+        "cafe"
+      ]
+    },
+    {
+      "id": "bg-13",
+      "word": "가게",
+      "gloss": {
+        "en": "shop",
+        "ko": "가게",
+        "zh": "商店"
+      },
+      "tags": [
+        "place"
+      ]
+    },
+    {
+      "id": "bg-14",
+      "word": "병원",
+      "gloss": {
+        "en": "hospital",
+        "ko": "병원",
+        "zh": "医院"
+      },
+      "tags": [
+        "place"
+      ]
+    },
+    {
+      "id": "bg-15",
+      "word": "책",
+      "gloss": {
+        "en": "book",
+        "ko": "책",
+        "zh": "书"
+      },
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": "bg-16",
+      "word": "펜",
+      "gloss": {
+        "en": "pen",
+        "ko": "펜",
+        "zh": "笔"
+      },
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": "bg-17",
+      "word": "가방",
+      "gloss": {
+        "en": "bag",
+        "ko": "가방",
+        "zh": "包"
+      },
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": "bg-18",
+      "word": "버스",
+      "gloss": {
+        "en": "bus",
+        "ko": "버스",
+        "zh": "公交"
+      },
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "bg-19",
+      "word": "지하철",
+      "gloss": {
+        "en": "subway",
+        "ko": "지하철",
+        "zh": "地铁"
+      },
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "bg-20",
+      "word": "택시",
+      "gloss": {
+        "en": "taxi",
+        "ko": "택시",
+        "zh": "出租车"
+      },
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "bg-21",
+      "word": "오늘",
+      "gloss": {
+        "en": "today",
+        "ko": "오늘",
+        "zh": "今天"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-22",
+      "word": "내일",
+      "gloss": {
+        "en": "tomorrow",
+        "ko": "내일",
+        "zh": "明天"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-23",
+      "word": "어제",
+      "gloss": {
+        "en": "yesterday",
+        "ko": "어제",
+        "zh": "昨天"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-24",
+      "word": "아침",
+      "gloss": {
+        "en": "morning",
+        "ko": "아침",
+        "zh": "早上"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-25",
+      "word": "점심",
+      "gloss": {
+        "en": "lunch / noon",
+        "ko": "점심",
+        "zh": "中午"
+      },
+      "tags": [
+        "time",
+        "food"
+      ]
+    },
+    {
+      "id": "bg-26",
+      "word": "저녁",
+      "gloss": {
+        "en": "evening / dinner",
+        "ko": "저녁",
+        "zh": "晚上"
+      },
+      "tags": [
+        "time",
+        "food"
+      ]
+    },
+    {
+      "id": "bg-27",
+      "word": "엄마",
+      "gloss": {
+        "en": "mom",
+        "ko": "엄마",
+        "zh": "妈妈"
+      },
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "bg-28",
+      "word": "아빠",
+      "gloss": {
+        "en": "dad",
+        "ko": "아빠",
+        "zh": "爸爸"
+      },
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "bg-29",
+      "word": "가족",
+      "gloss": {
+        "en": "family",
+        "ko": "가족",
+        "zh": "家人"
+      },
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "bg-30",
+      "word": "돈",
+      "gloss": {
+        "en": "money",
+        "ko": "돈",
+        "zh": "钱"
+      },
+      "tags": [
+        "basic"
+      ]
+    },
+    {
+      "id": "bg-31",
+      "word": "시간",
+      "gloss": {
+        "en": "time",
+        "ko": "시간",
+        "zh": "时间"
+      },
+      "tags": [
+        "basic"
+      ]
+    },
+    {
+      "id": "bg-32",
+      "word": "날씨",
+      "gloss": {
+        "en": "weather",
+        "ko": "날씨",
+        "zh": "天气"
+      },
+      "tags": [
+        "basic"
+      ]
+    },
+    {
+      "id": "bg-33",
+      "word": "음식",
+      "gloss": {
+        "en": "food",
+        "ko": "음식",
+        "zh": "食物"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "bg-34",
+      "word": "한국어",
+      "gloss": {
+        "en": "Korean (language)",
+        "ko": "한국어",
+        "zh": "韩语"
+      },
+      "tags": [
+        "lang"
+      ]
+    },
+    {
+      "id": "bg-35",
+      "word": "영어",
+      "gloss": {
+        "en": "English",
+        "ko": "영어",
+        "zh": "英语"
+      },
+      "tags": [
+        "lang"
+      ]
+    },
+    {
+      "id": "bg-36",
+      "word": "중국어",
+      "gloss": {
+        "en": "Chinese",
+        "ko": "중국어",
+        "zh": "中文"
+      },
+      "tags": [
+        "lang"
+      ]
+    },
+    {
+      "id": "bg-37",
+      "word": "방",
+      "gloss": {
+        "en": "room",
+        "ko": "방",
+        "zh": "房间"
+      },
+      "tags": [
+        "place"
+      ]
+    },
+    {
+      "id": "bg-38",
+      "word": "문",
+      "gloss": {
+        "en": "door",
+        "ko": "문",
+        "zh": "门"
+      },
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": "bg-39",
+      "word": "창문",
+      "gloss": {
+        "en": "window",
+        "ko": "창문",
+        "zh": "窗户"
+      },
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": "bg-40",
+      "word": "의자",
+      "gloss": {
+        "en": "chair",
+        "ko": "의자",
+        "zh": "椅子"
+      },
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": "bg-41",
+      "word": "책상",
+      "gloss": {
+        "en": "desk",
+        "ko": "책상",
+        "zh": "书桌"
+      },
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": "bg-42",
+      "word": "사람",
+      "gloss": {
+        "en": "person",
+        "ko": "사람",
+        "zh": "人"
+      },
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "bg-43",
+      "word": "사과",
+      "gloss": {
+        "en": "apple",
+        "ko": "사과(과일)",
+        "zh": "苹果"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "bg-44",
+      "word": "우유",
+      "gloss": {
+        "en": "milk",
+        "ko": "우유",
+        "zh": "牛奶"
+      },
+      "tags": [
+        "food",
+        "cafe"
+      ]
+    },
+    {
+      "id": "bg-45",
+      "word": "전화",
+      "gloss": {
+        "en": "phone / call",
+        "ko": "전화",
+        "zh": "电话"
+      },
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": "bg-46",
+      "word": "사진",
+      "gloss": {
+        "en": "photo",
+        "ko": "사진",
+        "zh": "照片"
+      },
+      "tags": [
+        "object"
+      ]
+    },
+    {
+      "id": "bg-47",
+      "word": "영화",
+      "gloss": {
+        "en": "movie",
+        "ko": "영화",
+        "zh": "电影"
+      },
+      "tags": [
+        "basic"
+      ]
+    },
+    {
+      "id": "bg-48",
+      "word": "음악",
+      "gloss": {
+        "en": "music",
+        "ko": "음악",
+        "zh": "音乐"
+      },
+      "tags": [
+        "basic"
+      ]
+    },
+    {
+      "id": "bg-49",
+      "word": "주스",
+      "gloss": {
+        "en": "juice",
+        "ko": "주스",
+        "zh": "果汁"
+      },
+      "tags": [
+        "cafe",
+        "food"
+      ]
+    },
+    {
+      "id": "bg-50",
+      "word": "표",
+      "gloss": {
+        "en": "ticket",
+        "ko": "표",
+        "zh": "票"
+      },
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "bg-51",
+      "word": "정류장",
+      "gloss": {
+        "en": "bus stop",
+        "ko": "정류장",
+        "zh": "车站"
+      },
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "bg-52",
+      "word": "감기",
+      "gloss": {
+        "en": "cold",
+        "ko": "감기",
+        "zh": "感冒"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-53",
+      "word": "약",
+      "gloss": {
+        "en": "medicine",
+        "ko": "약",
+        "zh": "药"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-54",
+      "word": "과자",
+      "gloss": {
+        "en": "snack",
+        "ko": "과자",
+        "zh": "零食"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "bg-55",
+      "word": "김밥",
+      "gloss": {
+        "en": "gimbap",
+        "ko": "김밥",
+        "zh": "紫菜包饭"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "bg-56",
+      "word": "할인",
+      "gloss": {
+        "en": "discount",
+        "ko": "할인",
+        "zh": "打折"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "bg-57",
+      "word": "카드",
+      "gloss": {
+        "en": "card",
+        "ko": "카드",
+        "zh": "卡"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "bg-58",
+      "word": "산책",
+      "gloss": {
+        "en": "walk",
+        "ko": "산책",
+        "zh": "散步"
+      },
+      "tags": [
+        "leisure"
+      ]
+    },
+    {
+      "id": "bg-59",
+      "word": "취미",
+      "gloss": {
+        "en": "hobby",
+        "ko": "취미",
+        "zh": "爱好"
+      },
+      "tags": [
+        "leisure"
+      ]
+    },
+    {
+      "id": "bg-60",
+      "word": "영수증",
+      "gloss": {
+        "en": "receipt",
+        "ko": "영수증",
+        "zh": "收据"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "bg-61",
+      "word": "화장품",
+      "gloss": {
+        "en": "cosmetics",
+        "ko": "화장품",
+        "zh": "化妆品"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "bg-62",
+      "word": "로션",
+      "gloss": {
+        "en": "lotion",
+        "ko": "로션",
+        "zh": "乳液"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "bg-63",
+      "word": "크림",
+      "gloss": {
+        "en": "cream (skin)",
+        "ko": "크림",
+        "zh": "面霜"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "bg-64",
+      "word": "립스틱",
+      "gloss": {
+        "en": "lipstick",
+        "ko": "립스틱",
+        "zh": "口红"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "bg-65",
+      "word": "피부",
+      "gloss": {
+        "en": "skin",
+        "ko": "피부",
+        "zh": "皮肤"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "bg-66",
+      "word": "샴푸",
+      "gloss": {
+        "en": "shampoo",
+        "ko": "샴푸",
+        "zh": "洗发水"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "bg-67",
+      "word": "비누",
+      "gloss": {
+        "en": "soap",
+        "ko": "비누",
+        "zh": "肥皂"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "bg-68",
+      "word": "바르다",
+      "gloss": {
+        "en": "to apply (cream)",
+        "ko": "바르다",
+        "zh": "涂抹"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "bg-69",
+      "word": "관리비",
+      "gloss": {
+        "en": "maintenance fee",
+        "ko": "관리비",
+        "zh": "管理费"
+      },
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "bg-70",
+      "word": "고장",
+      "gloss": {
+        "en": "breakdown / out of order",
+        "ko": "고장",
+        "zh": "故障"
+      },
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "bg-71",
+      "word": "수리",
+      "gloss": {
+        "en": "repair",
+        "ko": "수리",
+        "zh": "修理"
+      },
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "bg-72",
+      "word": "배달",
+      "gloss": {
+        "en": "delivery",
+        "ko": "배달",
+        "zh": "配送"
+      },
+      "tags": [
+        "housing",
+        "services"
+      ]
+    },
+    {
+      "id": "bg-73",
+      "word": "문의",
+      "gloss": {
+        "en": "inquiry",
+        "ko": "문의",
+        "zh": "咨询"
+      },
+      "tags": [
+        "housing",
+        "services"
+      ]
+    },
+    {
+      "id": "bg-74",
+      "word": "불편",
+      "gloss": {
+        "en": "inconvenience",
+        "ko": "불편",
+        "zh": "不便"
+      },
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "bg-75",
+      "word": "월세",
+      "gloss": {
+        "en": "monthly rent",
+        "ko": "월세",
+        "zh": "月租"
+      },
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "bg-76",
+      "word": "이사",
+      "gloss": {
+        "en": "moving (house)",
+        "ko": "이사",
+        "zh": "搬家"
+      },
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "bg-77",
+      "word": "열쇠",
+      "gloss": {
+        "en": "key",
+        "ko": "열쇠",
+        "zh": "钥匙"
+      },
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "bg-78",
+      "word": "이웃",
+      "gloss": {
+        "en": "neighbor",
+        "ko": "이웃",
+        "zh": "邻居"
+      },
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "bg-79",
+      "word": "계좌",
+      "gloss": {
+        "en": "bank account",
+        "ko": "계좌",
+        "zh": "账户"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-80",
+      "word": "이체",
+      "gloss": {
+        "en": "transfer (bank)",
+        "ko": "이체",
+        "zh": "转账"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-81",
+      "word": "입금",
+      "gloss": {
+        "en": "deposit",
+        "ko": "입금",
+        "zh": "入账"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-82",
+      "word": "출금",
+      "gloss": {
+        "en": "withdrawal",
+        "ko": "출금",
+        "zh": "取款"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-83",
+      "word": "잔액",
+      "gloss": {
+        "en": "balance (account)",
+        "ko": "잔액",
+        "zh": "余额"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-84",
+      "word": "수수료",
+      "gloss": {
+        "en": "fee / charge",
+        "ko": "수수료",
+        "zh": "手续费"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-85",
+      "word": "현금",
+      "gloss": {
+        "en": "cash",
+        "ko": "현금",
+        "zh": "现金"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-86",
+      "word": "환전",
+      "gloss": {
+        "en": "currency exchange",
+        "ko": "환전",
+        "zh": "兑换"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-87",
+      "word": "통장",
+      "gloss": {
+        "en": "bankbook",
+        "ko": "통장",
+        "zh": "存折"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-88",
+      "word": "송금",
+      "gloss": {
+        "en": "remittance",
+        "ko": "송금",
+        "zh": "汇款"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-89",
+      "word": "한도",
+      "gloss": {
+        "en": "limit (amount)",
+        "ko": "한도",
+        "zh": "额度"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-90",
+      "word": "비밀번호",
+      "gloss": {
+        "en": "PIN / password",
+        "ko": "비밀번호",
+        "zh": "密码"
+      },
+      "tags": [
+        "banking",
+        "money"
+      ]
+    },
+    {
+      "id": "bg-91",
+      "word": "출장",
+      "gloss": {
+        "en": "business trip",
+        "ko": "출장",
+        "zh": "出差"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-92",
+      "word": "서명",
+      "gloss": {
+        "en": "signature",
+        "ko": "서명",
+        "zh": "签名"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-93",
+      "word": "서류",
+      "gloss": {
+        "en": "document / paperwork",
+        "ko": "서류",
+        "zh": "文件"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-94",
+      "word": "제출",
+      "gloss": {
+        "en": "submission",
+        "ko": "제출",
+        "zh": "提交"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-95",
+      "word": "발급",
+      "gloss": {
+        "en": "issuance",
+        "ko": "발급",
+        "zh": "发放"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-96",
+      "word": "증명서",
+      "gloss": {
+        "en": "certificate",
+        "ko": "증명서",
+        "zh": "证明书"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-97",
+      "word": "민원",
+      "gloss": {
+        "en": "civil request / complaint",
+        "ko": "민원",
+        "zh": "公务申请"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-98",
+      "word": "담당자",
+      "gloss": {
+        "en": "person in charge",
+        "ko": "담당자",
+        "zh": "负责人"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-99",
+      "word": "부서",
+      "gloss": {
+        "en": "department",
+        "ko": "부서",
+        "zh": "部门"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-100",
+      "word": "출근",
+      "gloss": {
+        "en": "going to work",
+        "ko": "출근",
+        "zh": "上班"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-101",
+      "word": "퇴근",
+      "gloss": {
+        "en": "leaving work",
+        "ko": "퇴근",
+        "zh": "下班"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-102",
+      "word": "연차",
+      "gloss": {
+        "en": "annual leave",
+        "ko": "연차",
+        "zh": "年假"
+      },
+      "tags": [
+        "workplace"
+      ]
+    },
+    {
+      "id": "bg-103",
+      "word": "증상",
+      "gloss": {
+        "en": "symptom",
+        "ko": "증상",
+        "zh": "症状"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-104",
+      "word": "진료",
+      "gloss": {
+        "en": "medical care",
+        "ko": "진료",
+        "zh": "诊疗"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-105",
+      "word": "처방",
+      "gloss": {
+        "en": "prescription",
+        "ko": "처방",
+        "zh": "处方"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-106",
+      "word": "접수",
+      "gloss": {
+        "en": "check-in",
+        "ko": "접수",
+        "zh": "挂号"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-107",
+      "word": "진찰",
+      "gloss": {
+        "en": "examination",
+        "ko": "진찰",
+        "zh": "诊察"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-108",
+      "word": "통증",
+      "gloss": {
+        "en": "pain",
+        "ko": "통증",
+        "zh": "疼痛"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-109",
+      "word": "복용",
+      "gloss": {
+        "en": "taking medicine",
+        "ko": "복용",
+        "zh": "服用"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-110",
+      "word": "회복",
+      "gloss": {
+        "en": "recovery",
+        "ko": "회복",
+        "zh": "恢复"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-111",
+      "word": "약사",
+      "gloss": {
+        "en": "pharmacist",
+        "ko": "약사",
+        "zh": "药剂师"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-112",
+      "word": "주사",
+      "gloss": {
+        "en": "injection",
+        "ko": "주사",
+        "zh": "注射"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "bg-113",
+      "word": "수업",
+      "gloss": {
+        "en": "class / lesson",
+        "ko": "수업",
+        "zh": "课"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-114",
+      "word": "숙제",
+      "gloss": {
+        "en": "homework",
+        "ko": "숙제",
+        "zh": "作业"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-115",
+      "word": "시험",
+      "gloss": {
+        "en": "exam / test",
+        "ko": "시험",
+        "zh": "考试"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-116",
+      "word": "강의",
+      "gloss": {
+        "en": "lecture",
+        "ko": "강의",
+        "zh": "讲义"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-117",
+      "word": "등록",
+      "gloss": {
+        "en": "enrollment",
+        "ko": "등록",
+        "zh": "注册"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-118",
+      "word": "학기",
+      "gloss": {
+        "en": "semester",
+        "ko": "학기",
+        "zh": "学期"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-119",
+      "word": "출석",
+      "gloss": {
+        "en": "attendance",
+        "ko": "출석",
+        "zh": "出勤"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-120",
+      "word": "성적",
+      "gloss": {
+        "en": "grades",
+        "ko": "성적",
+        "zh": "成绩"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-121",
+      "word": "교실",
+      "gloss": {
+        "en": "classroom",
+        "ko": "교실",
+        "zh": "教室"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-122",
+      "word": "교재",
+      "gloss": {
+        "en": "textbook",
+        "ko": "교재",
+        "zh": "教材"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-123",
+      "word": "과제",
+      "gloss": {
+        "en": "assignment",
+        "ko": "과제",
+        "zh": "课题"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-124",
+      "word": "수강",
+      "gloss": {
+        "en": "taking a course",
+        "ko": "수강",
+        "zh": "听课；选课"
+      },
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "bg-125",
+      "word": "숙소",
+      "gloss": {
+        "en": "lodging / place to stay",
+        "ko": "숙소",
+        "zh": "住处"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-126",
+      "word": "숙박",
+      "gloss": {
+        "en": "overnight stay",
+        "ko": "숙박",
+        "zh": "住宿"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-127",
+      "word": "여행지",
+      "gloss": {
+        "en": "travel destination",
+        "ko": "여행지",
+        "zh": "目的地"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-128",
+      "word": "여권",
+      "gloss": {
+        "en": "passport",
+        "ko": "여권",
+        "zh": "护照"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-129",
+      "word": "관광",
+      "gloss": {
+        "en": "sightseeing",
+        "ko": "관광",
+        "zh": "观光"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-130",
+      "word": "관광지",
+      "gloss": {
+        "en": "tourist spot",
+        "ko": "관광지",
+        "zh": "景点"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-131",
+      "word": "항공권",
+      "gloss": {
+        "en": "airline ticket",
+        "ko": "항공권",
+        "zh": "机票"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-132",
+      "word": "체크인",
+      "gloss": {
+        "en": "check-in",
+        "ko": "체크인",
+        "zh": "入住"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-133",
+      "word": "짐",
+      "gloss": {
+        "en": "luggage",
+        "ko": "짐",
+        "zh": "行李"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-134",
+      "word": "여관",
+      "gloss": {
+        "en": "inn / small guesthouse",
+        "ko": "여관",
+        "zh": "旅店"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-135",
+      "word": "체크아웃",
+      "gloss": {
+        "en": "check-out",
+        "ko": "체크아웃",
+        "zh": "退房"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-136",
+      "word": "안내소",
+      "gloss": {
+        "en": "information desk",
+        "ko": "안내소",
+        "zh": "问讯处"
+      },
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "bg-137",
+      "word": "계절",
+      "gloss": {
+        "en": "season",
+        "ko": "계절",
+        "zh": "季节"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-138",
+      "word": "기온",
+      "gloss": {
+        "en": "air temperature",
+        "ko": "기온",
+        "zh": "气温"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-139",
+      "word": "맑다",
+      "gloss": {
+        "en": "clear / sunny (sky)",
+        "ko": "맑다",
+        "zh": "晴；晴朗"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-140",
+      "word": "흐리다",
+      "gloss": {
+        "en": "cloudy / overcast",
+        "ko": "흐리다",
+        "zh": "阴；多云"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-141",
+      "word": "비",
+      "gloss": {
+        "en": "rain",
+        "ko": "비",
+        "zh": "雨"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-142",
+      "word": "눈",
+      "gloss": {
+        "en": "snow (weather)",
+        "ko": "눈(날씨)",
+        "zh": "雪"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-143",
+      "word": "바람",
+      "gloss": {
+        "en": "wind",
+        "ko": "바람",
+        "zh": "风"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-144",
+      "word": "안개",
+      "gloss": {
+        "en": "fog / mist",
+        "ko": "안개",
+        "zh": "雾"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-145",
+      "word": "장마",
+      "gloss": {
+        "en": "rainy season / monsoon rains",
+        "ko": "장마",
+        "zh": "梅雨；雨季"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-146",
+      "word": "태풍",
+      "gloss": {
+        "en": "typhoon",
+        "ko": "태풍",
+        "zh": "台风"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-147",
+      "word": "일기예보",
+      "gloss": {
+        "en": "weather forecast",
+        "ko": "일기예보",
+        "zh": "天气预报"
+      },
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "bg-148",
+      "word": "와이파이",
+      "gloss": {
+        "en": "Wi-Fi",
+        "ko": "와이파이",
+        "zh": "无线网；Wi-Fi"
+      },
+      "tags": [
+        "digital"
+      ]
+    },
+    {
+      "id": "bg-149",
+      "word": "충전",
+      "gloss": {
+        "en": "charging (battery)",
+        "ko": "충전",
+        "zh": "充电"
+      },
+      "tags": [
+        "digital"
+      ]
+    },
+    {
+      "id": "bg-150",
+      "word": "앱",
+      "gloss": {
+        "en": "app (application)",
+        "ko": "앱",
+        "zh": "应用；App"
+      },
+      "tags": [
+        "digital"
+      ]
+    },
+    {
+      "id": "bg-151",
+      "word": "문자",
+      "gloss": {
+        "en": "text message (SMS)",
+        "ko": "문자",
+        "zh": "短信"
+      },
+      "tags": [
+        "digital"
+      ]
+    },
+    {
+      "id": "bg-152",
+      "word": "인터넷",
+      "gloss": {
+        "en": "internet",
+        "ko": "인터넷",
+        "zh": "互联网"
+      },
+      "tags": [
+        "digital"
+      ]
+    },
+    {
+      "id": "bg-153",
+      "word": "휴대폰",
+      "gloss": {
+        "en": "mobile phone",
+        "ko": "휴대폰",
+        "zh": "手机"
+      },
+      "tags": [
+        "digital"
+      ]
+    },
+    {
+      "id": "bg-154",
+      "word": "배터리",
+      "gloss": {
+        "en": "battery",
+        "ko": "배터리",
+        "zh": "电池"
+      },
+      "tags": [
+        "digital"
+      ]
+    },
+    {
+      "id": "bg-155",
+      "word": "데이터",
+      "gloss": {
+        "en": "mobile data",
+        "ko": "데이터",
+        "zh": "流量；移动数据"
+      },
+      "tags": [
+        "digital"
+      ]
+    },
+    {
+      "id": "bg-156",
+      "word": "메시지",
+      "gloss": {
+        "en": "message",
+        "ko": "메시지",
+        "zh": "消息；信息"
+      },
+      "tags": [
+        "digital"
+      ]
+    },
+    {
+      "id": "bg-157",
+      "word": "연결",
+      "gloss": {
+        "en": "connection / linking",
+        "ko": "연결",
+        "zh": "连接"
+      },
+      "tags": [
+        "digital"
+      ]
+    },
+    {
+      "id": "bg-158",
+      "word": "부모님",
+      "gloss": {
+        "en": "parents (honorific)",
+        "ko": "부모님",
+        "zh": "父母（敬称）"
+      },
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bg-159",
+      "word": "형제",
+      "gloss": {
+        "en": "siblings / brothers",
+        "ko": "형제",
+        "zh": "兄弟姐妹"
+      },
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bg-160",
+      "word": "친척",
+      "gloss": {
+        "en": "relative(s)",
+        "ko": "친척",
+        "zh": "亲戚"
+      },
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bg-161",
+      "word": "결혼",
+      "gloss": {
+        "en": "marriage / wedding",
+        "ko": "결혼",
+        "zh": "结婚；婚礼"
+      },
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bg-162",
+      "word": "남편",
+      "gloss": {
+        "en": "husband",
+        "ko": "남편",
+        "zh": "丈夫"
+      },
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bg-163",
+      "word": "아내",
+      "gloss": {
+        "en": "wife",
+        "ko": "아내",
+        "zh": "妻子"
+      },
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bg-164",
+      "word": "아들",
+      "gloss": {
+        "en": "son",
+        "ko": "아들",
+        "zh": "儿子"
+      },
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bg-165",
+      "word": "딸",
+      "gloss": {
+        "en": "daughter",
+        "ko": "딸",
+        "zh": "女儿"
+      },
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bg-166",
+      "word": "동생",
+      "gloss": {
+        "en": "younger sibling",
+        "ko": "동생",
+        "zh": "弟弟/妹妹"
+      },
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bg-167",
+      "word": "사촌",
+      "gloss": {
+        "en": "cousin",
+        "ko": "사촌",
+        "zh": "堂/表兄弟姐妹"
+      },
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "bg-168",
+      "word": "문화",
+      "gloss": {
+        "en": "culture",
+        "ko": "문화",
+        "zh": "文化"
+      },
+      "tags": [
+        "hobby"
+      ]
+    },
+    {
+      "id": "bg-169",
+      "word": "공연",
+      "gloss": {
+        "en": "performance / show",
+        "ko": "공연",
+        "zh": "演出；表演"
+      },
+      "tags": [
+        "hobby"
+      ]
+    },
+    {
+      "id": "bg-170",
+      "word": "전시",
+      "gloss": {
+        "en": "exhibition / display",
+        "ko": "전시",
+        "zh": "展览；展示"
+      },
+      "tags": [
+        "hobby"
+      ]
+    },
+    {
+      "id": "bg-171",
+      "word": "관람",
+      "gloss": {
+        "en": "viewing / attendance",
+        "ko": "관람",
+        "zh": "参观；观赏"
+      },
+      "tags": [
+        "hobby"
+      ]
+    },
+    {
+      "id": "bg-172",
+      "word": "미술관",
+      "gloss": {
+        "en": "art museum / gallery",
+        "ko": "미술관",
+        "zh": "美术馆"
+      },
+      "tags": [
+        "hobby"
+      ]
+    },
+    {
+      "id": "bg-173",
+      "word": "박물관",
+      "gloss": {
+        "en": "museum",
+        "ko": "박물관",
+        "zh": "博物馆"
+      },
+      "tags": [
+        "hobby"
+      ]
+    },
+    {
+      "id": "bg-174",
+      "word": "축제",
+      "gloss": {
+        "en": "festival",
+        "ko": "축제",
+        "zh": "庆典；节日活动"
+      },
+      "tags": [
+        "hobby"
+      ]
+    },
+    {
+      "id": "bg-175",
+      "word": "독서",
+      "gloss": {
+        "en": "reading (activity)",
+        "ko": "독서",
+        "zh": "阅读；读书"
+      },
+      "tags": [
+        "hobby"
+      ]
+    },
+    {
+      "id": "bg-176",
+      "word": "연극",
+      "gloss": {
+        "en": "play / theater piece",
+        "ko": "연극",
+        "zh": "话剧；戏剧"
+      },
+      "tags": [
+        "hobby"
+      ]
+    },
+    {
+      "id": "bg-177",
+      "word": "관심",
+      "gloss": {
+        "en": "interest / concern",
+        "ko": "관심",
+        "zh": "关心；兴趣"
+      },
+      "tags": [
+        "hobby"
+      ]
+    },
+    {
+      "id": "bg-178",
+      "word": "감정",
+      "gloss": {
+        "en": "emotion / feeling",
+        "ko": "감정",
+        "zh": "感情；情绪"
+      },
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "bg-179",
+      "word": "기분",
+      "gloss": {
+        "en": "mood / how one feels",
+        "ko": "기분",
+        "zh": "心情；感觉"
+      },
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "bg-180",
+      "word": "기쁘다",
+      "gloss": {
+        "en": "to be glad / happy",
+        "ko": "기쁘다",
+        "zh": "高兴；欢喜"
+      },
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "bg-181",
+      "word": "슬프다",
+      "gloss": {
+        "en": "to be sad",
+        "ko": "슬프다",
+        "zh": "悲伤；难过"
+      },
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "bg-182",
+      "word": "화나다",
+      "gloss": {
+        "en": "to get angry",
+        "ko": "화나다",
+        "zh": "生气；发火"
+      },
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "bg-183",
+      "word": "걱정",
+      "gloss": {
+        "en": "worry / concern",
+        "ko": "걱정",
+        "zh": "担心；忧虑"
+      },
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "bg-184",
+      "word": "긴장",
+      "gloss": {
+        "en": "nervousness / tension",
+        "ko": "긴장",
+        "zh": "紧张"
+      },
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "bg-185",
+      "word": "부끄럽다",
+      "gloss": {
+        "en": "to be shy / embarrassed",
+        "ko": "부끄럽다",
+        "zh": "害羞；难为情"
+      },
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "bg-186",
+      "word": "외롭다",
+      "gloss": {
+        "en": "to be lonely",
+        "ko": "외롭다",
+        "zh": "寂寞；孤独"
+      },
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "bg-187",
+      "word": "행복",
+      "gloss": {
+        "en": "happiness",
+        "ko": "행복",
+        "zh": "幸福"
+      },
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "bg-188",
+      "word": "스포츠",
+      "gloss": {
+        "en": "sports",
+        "ko": "스포츠",
+        "zh": "体育；运动项目"
+      },
+      "tags": [
+        "sports"
+      ]
+    },
+    {
+      "id": "bg-189",
+      "word": "경기",
+      "gloss": {
+        "en": "match / game (competition)",
+        "ko": "경기",
+        "zh": "比赛"
+      },
+      "tags": [
+        "sports"
+      ]
+    },
+    {
+      "id": "bg-190",
+      "word": "선수",
+      "gloss": {
+        "en": "athlete / player",
+        "ko": "선수",
+        "zh": "选手；运动员"
+      },
+      "tags": [
+        "sports"
+      ]
+    },
+    {
+      "id": "bg-191",
+      "word": "연습",
+      "gloss": {
+        "en": "practice / drill",
+        "ko": "연습",
+        "zh": "练习"
+      },
+      "tags": [
+        "sports"
+      ]
+    },
+    {
+      "id": "bg-192",
+      "word": "팀",
+      "gloss": {
+        "en": "team",
+        "ko": "팀",
+        "zh": "队；团队"
+      },
+      "tags": [
+        "sports"
+      ]
+    },
+    {
+      "id": "bg-193",
+      "word": "수영",
+      "gloss": {
+        "en": "swimming",
+        "ko": "수영",
+        "zh": "游泳"
+      },
+      "tags": [
+        "sports"
+      ]
+    },
+    {
+      "id": "bg-194",
+      "word": "축구",
+      "gloss": {
+        "en": "soccer / football",
+        "ko": "축구",
+        "zh": "足球"
+      },
+      "tags": [
+        "sports"
+      ]
+    },
+    {
+      "id": "bg-195",
+      "word": "농구",
+      "gloss": {
+        "en": "basketball",
+        "ko": "농구",
+        "zh": "篮球"
+      },
+      "tags": [
+        "sports"
+      ]
+    },
+    {
+      "id": "bg-196",
+      "word": "이기다",
+      "gloss": {
+        "en": "to win",
+        "ko": "이기다",
+        "zh": "赢；获胜"
+      },
+      "tags": [
+        "sports"
+      ]
+    },
+    {
+      "id": "bg-197",
+      "word": "지다",
+      "gloss": {
+        "en": "to lose (a game)",
+        "ko": "지다",
+        "zh": "输；败"
+      },
+      "tags": [
+        "sports"
+      ]
+    },
+    {
+      "id": "bg-198",
+      "word": "자연",
+      "gloss": {
+        "en": "nature",
+        "ko": "자연",
+        "zh": "自然"
+      },
+      "tags": [
+        "nature"
+      ]
+    },
+    {
+      "id": "bg-199",
+      "word": "환경",
+      "gloss": {
+        "en": "environment",
+        "ko": "환경",
+        "zh": "环境"
+      },
+      "tags": [
+        "nature"
+      ]
+    },
+    {
+      "id": "bg-200",
+      "word": "산",
+      "gloss": {
+        "en": "mountain",
+        "ko": "산",
+        "zh": "山"
+      },
+      "tags": [
+        "nature"
+      ]
+    },
+    {
+      "id": "bg-201",
+      "word": "강",
+      "gloss": {
+        "en": "river",
+        "ko": "강",
+        "zh": "江；河"
+      },
+      "tags": [
+        "nature"
+      ]
+    },
+    {
+      "id": "bg-202",
+      "word": "바다",
+      "gloss": {
+        "en": "sea / ocean",
+        "ko": "바다",
+        "zh": "海"
+      },
+      "tags": [
+        "nature"
+      ]
+    },
+    {
+      "id": "bg-203",
+      "word": "숲",
+      "gloss": {
+        "en": "forest / woods",
+        "ko": "숲",
+        "zh": "森林；树林"
+      },
+      "tags": [
+        "nature"
+      ]
+    },
+    {
+      "id": "bg-204",
+      "word": "나무",
+      "gloss": {
+        "en": "tree",
+        "ko": "나무",
+        "zh": "树"
+      },
+      "tags": [
+        "nature"
+      ]
+    },
+    {
+      "id": "bg-205",
+      "word": "꽃",
+      "gloss": {
+        "en": "flower",
+        "ko": "꽃",
+        "zh": "花"
+      },
+      "tags": [
+        "nature"
+      ]
+    },
+    {
+      "id": "bg-206",
+      "word": "동물",
+      "gloss": {
+        "en": "animal",
+        "ko": "동물",
+        "zh": "动物"
+      },
+      "tags": [
+        "nature"
+      ]
+    },
+    {
+      "id": "bg-207",
+      "word": "공원",
+      "gloss": {
+        "en": "park",
+        "ko": "공원",
+        "zh": "公园"
+      },
+      "tags": [
+        "nature"
+      ]
+    },
+    {
+      "id": "bg-208",
+      "word": "식당",
+      "gloss": {
+        "en": "restaurant / cafeteria",
+        "ko": "식당",
+        "zh": "食堂；餐厅"
+      },
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "bg-209",
+      "word": "메뉴",
+      "gloss": {
+        "en": "menu",
+        "ko": "메뉴",
+        "zh": "菜单"
+      },
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "bg-210",
+      "word": "주문",
+      "gloss": {
+        "en": "order (food)",
+        "ko": "주문",
+        "zh": "点餐；订单"
+      },
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "bg-211",
+      "word": "요리",
+      "gloss": {
+        "en": "cooking / a dish",
+        "ko": "요리",
+        "zh": "料理；烹饪"
+      },
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "bg-212",
+      "word": "식사",
+      "gloss": {
+        "en": "meal",
+        "ko": "식사",
+        "zh": "用餐；一餐"
+      },
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "bg-213",
+      "word": "맛있다",
+      "gloss": {
+        "en": "to be delicious",
+        "ko": "맛있다",
+        "zh": "好吃；美味"
+      },
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "bg-214",
+      "word": "배고프다",
+      "gloss": {
+        "en": "to be hungry",
+        "ko": "배고프다",
+        "zh": "饿"
+      },
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "bg-215",
+      "word": "계산",
+      "gloss": {
+        "en": "bill / checkout (payment)",
+        "ko": "계산",
+        "zh": "结账；算账"
+      },
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "bg-216",
+      "word": "손님",
+      "gloss": {
+        "en": "customer / guest",
+        "ko": "손님",
+        "zh": "客人；顾客"
+      },
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "bg-217",
+      "word": "음식",
+      "gloss": {
+        "en": "food (restaurant)",
+        "ko": "음식(식당)",
+        "zh": "饭菜（餐厅）"
+      },
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "bg-218",
+      "word": "옷",
+      "gloss": {
+        "en": "clothes",
+        "ko": "옷",
+        "zh": "衣服"
+      },
+      "tags": [
+        "clothes"
+      ]
+    },
+    {
+      "id": "bg-219",
+      "word": "입다",
+      "gloss": {
+        "en": "to wear / put on (clothes)",
+        "ko": "입다",
+        "zh": "穿"
+      },
+      "tags": [
+        "clothes"
+      ]
+    },
+    {
+      "id": "bg-220",
+      "word": "벗다",
+      "gloss": {
+        "en": "to take off (clothes / shoes)",
+        "ko": "벗다",
+        "zh": "脱"
+      },
+      "tags": [
+        "clothes"
+      ]
+    },
+    {
+      "id": "bg-221",
+      "word": "바지",
+      "gloss": {
+        "en": "pants / trousers",
+        "ko": "바지",
+        "zh": "裤子"
+      },
+      "tags": [
+        "clothes"
+      ]
+    },
+    {
+      "id": "bg-222",
+      "word": "치마",
+      "gloss": {
+        "en": "skirt",
+        "ko": "치마",
+        "zh": "裙子"
+      },
+      "tags": [
+        "clothes"
+      ]
+    },
+    {
+      "id": "bg-223",
+      "word": "신발",
+      "gloss": {
+        "en": "shoes",
+        "ko": "신발",
+        "zh": "鞋"
+      },
+      "tags": [
+        "clothes"
+      ]
+    },
+    {
+      "id": "bg-224",
+      "word": "사이즈",
+      "gloss": {
+        "en": "size (clothing)",
+        "ko": "사이즈",
+        "zh": "尺码"
+      },
+      "tags": [
+        "clothes"
+      ]
+    },
+    {
+      "id": "bg-225",
+      "word": "색깔",
+      "gloss": {
+        "en": "color",
+        "ko": "색깔",
+        "zh": "颜色"
+      },
+      "tags": [
+        "clothes"
+      ]
+    },
+    {
+      "id": "bg-226",
+      "word": "맞다",
+      "gloss": {
+        "en": "to fit (size)",
+        "ko": "맞다",
+        "zh": "合身；合适"
+      },
+      "tags": [
+        "clothes"
+      ]
+    },
+    {
+      "id": "bg-227",
+      "word": "환불",
+      "gloss": {
+        "en": "refund",
+        "ko": "환불",
+        "zh": "退款"
+      },
+      "tags": [
+        "clothes"
+      ]
+    },
+    {
+      "id": "bg-228",
+      "word": "예술",
+      "gloss": {
+        "en": "art / the arts",
+        "ko": "예술",
+        "zh": "艺术"
+      },
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "id": "bg-229",
+      "word": "악기",
+      "gloss": {
+        "en": "musical instrument",
+        "ko": "악기",
+        "zh": "乐器"
+      },
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "id": "bg-230",
+      "word": "연주",
+      "gloss": {
+        "en": "performance (instrumental) / playing",
+        "ko": "연주",
+        "zh": "演奏"
+      },
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "id": "bg-231",
+      "word": "감상",
+      "gloss": {
+        "en": "appreciation / enjoyment (of art/music)",
+        "ko": "감상",
+        "zh": "欣赏；鉴赏"
+      },
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "id": "bg-232",
+      "word": "노래",
+      "gloss": {
+        "en": "song",
+        "ko": "노래",
+        "zh": "歌；歌曲"
+      },
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "id": "bg-233",
+      "word": "가수",
+      "gloss": {
+        "en": "singer",
+        "ko": "가수",
+        "zh": "歌手"
+      },
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "id": "bg-234",
+      "word": "부르다",
+      "gloss": {
+        "en": "to sing (a song) / to call",
+        "ko": "부르다",
+        "zh": "唱；叫"
+      },
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "id": "bg-235",
+      "word": "그림",
+      "gloss": {
+        "en": "picture / drawing / painting",
+        "ko": "그림",
+        "zh": "画；图画"
+      },
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "id": "bg-236",
+      "word": "그리다",
+      "gloss": {
+        "en": "to draw / paint",
+        "ko": "그리다",
+        "zh": "画"
+      },
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "id": "bg-237",
+      "word": "춤",
+      "gloss": {
+        "en": "dance",
+        "ko": "춤",
+        "zh": "舞蹈；跳舞"
+      },
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "id": "bg-238",
+      "word": "뉴스",
+      "gloss": {
+        "en": "news",
+        "ko": "뉴스",
+        "zh": "新闻"
+      },
+      "tags": [
+        "media"
+      ]
+    },
+    {
+      "id": "bg-239",
+      "word": "신문",
+      "gloss": {
+        "en": "newspaper",
+        "ko": "신문",
+        "zh": "报纸"
+      },
+      "tags": [
+        "media"
+      ]
+    },
+    {
+      "id": "bg-240",
+      "word": "방송",
+      "gloss": {
+        "en": "broadcast / broadcasting",
+        "ko": "방송",
+        "zh": "广播；播出"
+      },
+      "tags": [
+        "media"
+      ]
+    },
+    {
+      "id": "bg-241",
+      "word": "기자",
+      "gloss": {
+        "en": "reporter / journalist",
+        "ko": "기자",
+        "zh": "记者"
+      },
+      "tags": [
+        "media"
+      ]
+    },
+    {
+      "id": "bg-242",
+      "word": "보도",
+      "gloss": {
+        "en": "news report / coverage",
+        "ko": "보도",
+        "zh": "报道"
+      },
+      "tags": [
+        "media"
+      ]
+    },
+    {
+      "id": "bg-243",
+      "word": "텔레비전",
+      "gloss": {
+        "en": "television",
+        "ko": "텔레비전",
+        "zh": "电视"
+      },
+      "tags": [
+        "media"
+      ]
+    },
+    {
+      "id": "bg-244",
+      "word": "라디오",
+      "gloss": {
+        "en": "radio",
+        "ko": "라디오",
+        "zh": "收音机；广播"
+      },
+      "tags": [
+        "media"
+      ]
+    },
+    {
+      "id": "bg-245",
+      "word": "프로그램",
+      "gloss": {
+        "en": "program (TV/radio show)",
+        "ko": "프로그램",
+        "zh": "节目"
+      },
+      "tags": [
+        "media"
+      ]
+    },
+    {
+      "id": "bg-246",
+      "word": "시청",
+      "gloss": {
+        "en": "watching (a broadcast) / viewership",
+        "ko": "시청",
+        "zh": "收看；收视"
+      },
+      "tags": [
+        "media"
+      ]
+    },
+    {
+      "id": "bg-247",
+      "word": "기사",
+      "gloss": {
+        "en": "news article",
+        "ko": "기사(글)",
+        "zh": "新闻稿；报道文章"
+      },
+      "tags": [
+        "media"
+      ]
+    },
+    {
+      "id": "bg-248",
+      "word": "생일",
+      "gloss": {
+        "en": "birthday",
+        "ko": "생일",
+        "zh": "生日"
+      },
+      "tags": [
+        "celebration"
+      ]
+    },
+    {
+      "id": "bg-249",
+      "word": "축하",
+      "gloss": {
+        "en": "congratulation / celebration",
+        "ko": "축하",
+        "zh": "祝贺；庆祝"
+      },
+      "tags": [
+        "celebration"
+      ]
+    },
+    {
+      "id": "bg-250",
+      "word": "선물",
+      "gloss": {
+        "en": "gift / present",
+        "ko": "선물",
+        "zh": "礼物"
+      },
+      "tags": [
+        "celebration"
+      ]
+    },
+    {
+      "id": "bg-251",
+      "word": "명절",
+      "gloss": {
+        "en": "traditional holiday / festival day",
+        "ko": "명절",
+        "zh": "传统节日"
+      },
+      "tags": [
+        "celebration"
+      ]
+    },
+    {
+      "id": "bg-252",
+      "word": "초대",
+      "gloss": {
+        "en": "invitation",
+        "ko": "초대",
+        "zh": "邀请"
+      },
+      "tags": [
+        "celebration"
+      ]
+    },
+    {
+      "id": "bg-253",
+      "word": "파티",
+      "gloss": {
+        "en": "party",
+        "ko": "파티",
+        "zh": "派对"
+      },
+      "tags": [
+        "celebration"
+      ]
+    },
+    {
+      "id": "bg-254",
+      "word": "케이크",
+      "gloss": {
+        "en": "cake",
+        "ko": "케이크",
+        "zh": "蛋糕"
+      },
+      "tags": [
+        "celebration"
+      ]
+    },
+    {
+      "id": "bg-255",
+      "word": "휴가",
+      "gloss": {
+        "en": "vacation / leave from work",
+        "ko": "휴가",
+        "zh": "休假"
+      },
+      "tags": [
+        "celebration"
+      ]
+    },
+    {
+      "id": "bg-256",
+      "word": "모임",
+      "gloss": {
+        "en": "gathering / get-together",
+        "ko": "모임",
+        "zh": "聚会；集会"
+      },
+      "tags": [
+        "celebration"
+      ]
+    },
+    {
+      "id": "bg-257",
+      "word": "건배",
+      "gloss": {
+        "en": "toast (cheers)",
+        "ko": "건배",
+        "zh": "干杯"
+      },
+      "tags": [
+        "celebration"
+      ]
+    },
+    {
+      "id": "bg-258",
+      "word": "시계",
+      "gloss": {
+        "en": "clock / watch",
+        "ko": "시계",
+        "zh": "钟；表"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-259",
+      "word": "약속",
+      "gloss": {
+        "en": "appointment / promise",
+        "ko": "약속",
+        "zh": "约定；约会"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-260",
+      "word": "만나다",
+      "gloss": {
+        "en": "to meet",
+        "ko": "만나다",
+        "zh": "见面；遇见"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-261",
+      "word": "기다리다",
+      "gloss": {
+        "en": "to wait",
+        "ko": "기다리다",
+        "zh": "等待"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-262",
+      "word": "일찍",
+      "gloss": {
+        "en": "early",
+        "ko": "일찍",
+        "zh": "早"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-263",
+      "word": "분",
+      "gloss": {
+        "en": "minute (telling time)",
+        "ko": "분(시간)",
+        "zh": "分（钟）"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-264",
+      "word": "시",
+      "gloss": {
+        "en": "o'clock / hour (telling time)",
+        "ko": "시(시각)",
+        "zh": "点（钟）"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-265",
+      "word": "요일",
+      "gloss": {
+        "en": "day of the week",
+        "ko": "요일",
+        "zh": "星期；曜日"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-266",
+      "word": "주말",
+      "gloss": {
+        "en": "weekend",
+        "ko": "주말",
+        "zh": "周末"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-267",
+      "word": "오전",
+      "gloss": {
+        "en": "morning (a.m.)",
+        "ko": "오전",
+        "zh": "上午"
+      },
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "bg-268",
+      "word": "청소",
+      "gloss": {
+        "en": "cleaning",
+        "ko": "청소",
+        "zh": "打扫"
+      },
+      "tags": [
+        "chores"
+      ]
+    },
+    {
+      "id": "bg-269",
+      "word": "빨래",
+      "gloss": {
+        "en": "laundry",
+        "ko": "빨래",
+        "zh": "要洗的衣服"
+      },
+      "tags": [
+        "chores"
+      ]
+    },
+    {
+      "id": "bg-270",
+      "word": "설거지",
+      "gloss": {
+        "en": "dishwashing",
+        "ko": "설거지",
+        "zh": "洗碗"
+      },
+      "tags": [
+        "chores"
+      ]
+    },
+    {
+      "id": "bg-271",
+      "word": "부엌",
+      "gloss": {
+        "en": "kitchen",
+        "ko": "부엌",
+        "zh": "厨房"
+      },
+      "tags": [
+        "chores"
+      ]
+    },
+    {
+      "id": "bg-272",
+      "word": "냉장고",
+      "gloss": {
+        "en": "refrigerator",
+        "ko": "냉장고",
+        "zh": "冰箱"
+      },
+      "tags": [
+        "chores"
+      ]
+    },
+    {
+      "id": "bg-273",
+      "word": "닦다",
+      "gloss": {
+        "en": "to wipe / polish",
+        "ko": "닦다",
+        "zh": "擦"
+      },
+      "tags": [
+        "chores"
+      ]
+    },
+    {
+      "id": "bg-274",
+      "word": "씻다",
+      "gloss": {
+        "en": "to wash",
+        "ko": "씻다",
+        "zh": "洗"
+      },
+      "tags": [
+        "chores"
+      ]
+    },
+    {
+      "id": "bg-275",
+      "word": "정리하다",
+      "gloss": {
+        "en": "to tidy / organize",
+        "ko": "정리하다",
+        "zh": "整理"
+      },
+      "tags": [
+        "chores"
+      ]
+    },
+    {
+      "id": "bg-276",
+      "word": "수건",
+      "gloss": {
+        "en": "towel",
+        "ko": "수건",
+        "zh": "毛巾"
+      },
+      "tags": [
+        "chores"
+      ]
+    },
+    {
+      "id": "bg-277",
+      "word": "침대",
+      "gloss": {
+        "en": "bed",
+        "ko": "침대",
+        "zh": "床"
+      },
+      "tags": [
+        "chores"
+      ]
+    },
+    {
+      "id": "bg-278",
+      "word": "머리",
+      "gloss": {
+        "en": "head / hair",
+        "ko": "머리",
+        "zh": "头；头发"
+      },
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "bg-279",
+      "word": "손",
+      "gloss": {
+        "en": "hand",
+        "ko": "손",
+        "zh": "手"
+      },
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "bg-280",
+      "word": "발",
+      "gloss": {
+        "en": "foot",
+        "ko": "발",
+        "zh": "脚"
+      },
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "bg-281",
+      "word": "얼굴",
+      "gloss": {
+        "en": "face",
+        "ko": "얼굴",
+        "zh": "脸"
+      },
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "bg-282",
+      "word": "몸",
+      "gloss": {
+        "en": "body",
+        "ko": "몸",
+        "zh": "身体"
+      },
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "bg-283",
+      "word": "팔",
+      "gloss": {
+        "en": "arm",
+        "ko": "팔",
+        "zh": "胳膊"
+      },
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "bg-284",
+      "word": "다리",
+      "gloss": {
+        "en": "leg",
+        "ko": "다리",
+        "zh": "腿"
+      },
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "bg-285",
+      "word": "목",
+      "gloss": {
+        "en": "neck / throat",
+        "ko": "목",
+        "zh": "脖子；嗓子"
+      },
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "bg-286",
+      "word": "귀",
+      "gloss": {
+        "en": "ear",
+        "ko": "귀",
+        "zh": "耳朵"
+      },
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "bg-287",
+      "word": "코",
+      "gloss": {
+        "en": "nose",
+        "ko": "코",
+        "zh": "鼻子"
+      },
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "bg-288",
+      "word": "앞",
+      "gloss": {
+        "en": "front / ahead",
+        "ko": "앞",
+        "zh": "前面"
+      },
+      "tags": [
+        "direction"
+      ]
+    },
+    {
+      "id": "bg-289",
+      "word": "뒤",
+      "gloss": {
+        "en": "back / behind",
+        "ko": "뒤",
+        "zh": "后面"
+      },
+      "tags": [
+        "direction"
+      ]
+    },
+    {
+      "id": "bg-290",
+      "word": "옆",
+      "gloss": {
+        "en": "side / next to",
+        "ko": "옆",
+        "zh": "旁边"
+      },
+      "tags": [
+        "direction"
+      ]
+    },
+    {
+      "id": "bg-291",
+      "word": "위",
+      "gloss": {
+        "en": "above / on top",
+        "ko": "위",
+        "zh": "上面"
+      },
+      "tags": [
+        "direction"
+      ]
+    },
+    {
+      "id": "bg-292",
+      "word": "아래",
+      "gloss": {
+        "en": "below / under",
+        "ko": "아래",
+        "zh": "下面"
+      },
+      "tags": [
+        "direction"
+      ]
+    },
+    {
+      "id": "bg-293",
+      "word": "왼쪽",
+      "gloss": {
+        "en": "left side",
+        "ko": "왼쪽",
+        "zh": "左边"
+      },
+      "tags": [
+        "direction"
+      ]
+    },
+    {
+      "id": "bg-294",
+      "word": "오른쪽",
+      "gloss": {
+        "en": "right side",
+        "ko": "오른쪽",
+        "zh": "右边"
+      },
+      "tags": [
+        "direction"
+      ]
+    },
+    {
+      "id": "bg-295",
+      "word": "근처",
+      "gloss": {
+        "en": "nearby / vicinity",
+        "ko": "근처",
+        "zh": "附近"
+      },
+      "tags": [
+        "direction"
+      ]
+    },
+    {
+      "id": "bg-296",
+      "word": "사이",
+      "gloss": {
+        "en": "between / among",
+        "ko": "사이",
+        "zh": "之间"
+      },
+      "tags": [
+        "direction"
+      ]
+    },
+    {
+      "id": "bg-297",
+      "word": "건너편",
+      "gloss": {
+        "en": "the other side / across",
+        "ko": "건너편",
+        "zh": "对面"
+      },
+      "tags": [
+        "direction"
+      ]
+    },
+    {
+      "id": "bg-298",
+      "word": "가구",
+      "gloss": {
+        "en": "furniture",
+        "ko": "가구",
+        "zh": "家具"
+      },
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "bg-299",
+      "word": "소파",
+      "gloss": {
+        "en": "sofa",
+        "ko": "소파",
+        "zh": "沙发"
+      },
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "bg-300",
+      "word": "옷장",
+      "gloss": {
+        "en": "wardrobe / closet",
+        "ko": "옷장",
+        "zh": "衣柜"
+      },
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "bg-301",
+      "word": "거울",
+      "gloss": {
+        "en": "mirror",
+        "ko": "거울",
+        "zh": "镜子"
+      },
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "bg-302",
+      "word": "책장",
+      "gloss": {
+        "en": "bookshelf",
+        "ko": "책장",
+        "zh": "书架"
+      },
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "bg-303",
+      "word": "식탁",
+      "gloss": {
+        "en": "dining table",
+        "ko": "식탁",
+        "zh": "餐桌"
+      },
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "bg-304",
+      "word": "거실",
+      "gloss": {
+        "en": "living room",
+        "ko": "거실",
+        "zh": "客厅"
+      },
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "bg-305",
+      "word": "책상",
+      "gloss": {
+        "en": "desk",
+        "ko": "책상",
+        "zh": "书桌"
+      },
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "bg-306",
+      "word": "의자",
+      "gloss": {
+        "en": "chair",
+        "ko": "의자",
+        "zh": "椅子"
+      },
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "bg-307",
+      "word": "창문",
+      "gloss": {
+        "en": "window",
+        "ko": "창문",
+        "zh": "窗户"
+      },
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "bg-308",
+      "word": "과일",
+      "gloss": {
+        "en": "fruit",
+        "ko": "과일",
+        "zh": "水果"
+      },
+      "tags": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "bg-309",
+      "word": "채소",
+      "gloss": {
+        "en": "vegetable",
+        "ko": "채소",
+        "zh": "蔬菜"
+      },
+      "tags": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "bg-310",
+      "word": "시장",
+      "gloss": {
+        "en": "market",
+        "ko": "시장",
+        "zh": "市场"
+      },
+      "tags": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "bg-311",
+      "word": "바나나",
+      "gloss": {
+        "en": "banana",
+        "ko": "바나나",
+        "zh": "香蕉"
+      },
+      "tags": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "bg-312",
+      "word": "포도",
+      "gloss": {
+        "en": "grape",
+        "ko": "포도",
+        "zh": "葡萄"
+      },
+      "tags": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "bg-313",
+      "word": "수박",
+      "gloss": {
+        "en": "watermelon",
+        "ko": "수박",
+        "zh": "西瓜"
+      },
+      "tags": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "bg-314",
+      "word": "딸기",
+      "gloss": {
+        "en": "strawberry",
+        "ko": "딸기",
+        "zh": "草莓"
+      },
+      "tags": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "bg-315",
+      "word": "오렌지",
+      "gloss": {
+        "en": "orange",
+        "ko": "오렌지",
+        "zh": "橙子"
+      },
+      "tags": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "bg-316",
+      "word": "토마토",
+      "gloss": {
+        "en": "tomato",
+        "ko": "토마토",
+        "zh": "番茄"
+      },
+      "tags": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "bg-317",
+      "word": "봉지",
+      "gloss": {
+        "en": "bag (plastic/paper)",
+        "ko": "봉지",
+        "zh": "袋子"
+      },
+      "tags": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "bg-318",
+      "word": "그릇",
+      "gloss": {
+        "en": "bowl / dish",
+        "ko": "그릇",
+        "zh": "碗/食器"
+      },
+      "tags": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "bg-319",
+      "word": "접시",
+      "gloss": {
+        "en": "plate",
+        "ko": "접시",
+        "zh": "盘子"
+      },
+      "tags": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "bg-320",
+      "word": "컵",
+      "gloss": {
+        "en": "cup",
+        "ko": "컵",
+        "zh": "杯子"
+      },
+      "tags": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "bg-321",
+      "word": "숟가락",
+      "gloss": {
+        "en": "spoon",
+        "ko": "숟가락",
+        "zh": "勺子"
+      },
+      "tags": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "bg-322",
+      "word": "젓가락",
+      "gloss": {
+        "en": "chopsticks",
+        "ko": "젓가락",
+        "zh": "筷子"
+      },
+      "tags": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "bg-323",
+      "word": "포크",
+      "gloss": {
+        "en": "fork",
+        "ko": "포크",
+        "zh": "叉子"
+      },
+      "tags": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "bg-324",
+      "word": "칼",
+      "gloss": {
+        "en": "knife",
+        "ko": "칼",
+        "zh": "刀"
+      },
+      "tags": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "bg-325",
+      "word": "냄비",
+      "gloss": {
+        "en": "pot",
+        "ko": "냄비",
+        "zh": "锅"
+      },
+      "tags": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "bg-326",
+      "word": "주전자",
+      "gloss": {
+        "en": "kettle",
+        "ko": "주전자",
+        "zh": "水壶"
+      },
+      "tags": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "bg-327",
+      "word": "도마",
+      "gloss": {
+        "en": "cutting board",
+        "ko": "도마",
+        "zh": "砧板"
+      },
+      "tags": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "bg-328",
+      "word": "펜",
+      "gloss": {
+        "en": "pen",
+        "ko": "펜",
+        "zh": "笔"
+      },
+      "tags": [
+        "stationery"
+      ]
+    },
+    {
+      "id": "bg-329",
+      "word": "연필",
+      "gloss": {
+        "en": "pencil",
+        "ko": "연필",
+        "zh": "铅笔"
+      },
+      "tags": [
+        "stationery"
+      ]
+    },
+    {
+      "id": "bg-330",
+      "word": "볼펜",
+      "gloss": {
+        "en": "ballpoint pen",
+        "ko": "볼펜",
+        "zh": "圆珠笔"
+      },
+      "tags": [
+        "stationery"
+      ]
+    },
+    {
+      "id": "bg-331",
+      "word": "지우개",
+      "gloss": {
+        "en": "eraser",
+        "ko": "지우개",
+        "zh": "橡皮"
+      },
+      "tags": [
+        "stationery"
+      ]
+    },
+    {
+      "id": "bg-332",
+      "word": "공책",
+      "gloss": {
+        "en": "exercise notebook",
+        "ko": "공책",
+        "zh": "练习本"
+      },
+      "tags": [
+        "stationery"
+      ]
+    },
+    {
+      "id": "bg-333",
+      "word": "종이",
+      "gloss": {
+        "en": "paper",
+        "ko": "종이",
+        "zh": "纸"
+      },
+      "tags": [
+        "stationery"
+      ]
+    },
+    {
+      "id": "bg-334",
+      "word": "가위",
+      "gloss": {
+        "en": "scissors",
+        "ko": "가위",
+        "zh": "剪刀"
+      },
+      "tags": [
+        "stationery"
+      ]
+    },
+    {
+      "id": "bg-335",
+      "word": "풀",
+      "gloss": {
+        "en": "glue",
+        "ko": "풀",
+        "zh": "胶水"
+      },
+      "tags": [
+        "stationery"
+      ]
+    },
+    {
+      "id": "bg-336",
+      "word": "책",
+      "gloss": {
+        "en": "book",
+        "ko": "책",
+        "zh": "书"
+      },
+      "tags": [
+        "stationery"
+      ]
+    },
+    {
+      "id": "bg-337",
+      "word": "노트",
+      "gloss": {
+        "en": "notebook / notes",
+        "ko": "노트",
+        "zh": "笔记本"
+      },
+      "tags": [
+        "stationery"
+      ]
+    },
+    {
+      "id": "bg-338",
+      "word": "편지",
+      "gloss": {
+        "en": "letter (mail)",
+        "ko": "편지",
+        "zh": "信"
+      },
+      "tags": [
+        "mail"
+      ]
+    },
+    {
+      "id": "bg-339",
+      "word": "소포",
+      "gloss": {
+        "en": "parcel / package",
+        "ko": "소포",
+        "zh": "包裹"
+      },
+      "tags": [
+        "mail"
+      ]
+    },
+    {
+      "id": "bg-340",
+      "word": "우표",
+      "gloss": {
+        "en": "postage stamp",
+        "ko": "우표",
+        "zh": "邮票"
+      },
+      "tags": [
+        "mail"
+      ]
+    },
+    {
+      "id": "bg-341",
+      "word": "우체국",
+      "gloss": {
+        "en": "post office",
+        "ko": "우체국",
+        "zh": "邮局"
+      },
+      "tags": [
+        "mail"
+      ]
+    },
+    {
+      "id": "bg-342",
+      "word": "보내다",
+      "gloss": {
+        "en": "to send",
+        "ko": "보내다",
+        "zh": "寄；送"
+      },
+      "tags": [
+        "mail"
+      ]
+    },
+    {
+      "id": "bg-343",
+      "word": "받다",
+      "gloss": {
+        "en": "to receive",
+        "ko": "받다",
+        "zh": "收到"
+      },
+      "tags": [
+        "mail"
+      ]
+    },
+    {
+      "id": "bg-344",
+      "word": "주소",
+      "gloss": {
+        "en": "address",
+        "ko": "주소",
+        "zh": "地址"
+      },
+      "tags": [
+        "mail"
+      ]
+    },
+    {
+      "id": "bg-345",
+      "word": "봉투",
+      "gloss": {
+        "en": "envelope",
+        "ko": "봉투",
+        "zh": "信封"
+      },
+      "tags": [
+        "mail"
+      ]
+    },
+    {
+      "id": "bg-346",
+      "word": "부치다",
+      "gloss": {
+        "en": "to mail / post",
+        "ko": "부치다",
+        "zh": "邮寄"
+      },
+      "tags": [
+        "mail"
+      ]
+    },
+    {
+      "id": "bg-347",
+      "word": "포장",
+      "gloss": {
+        "en": "packing / wrapping",
+        "ko": "포장",
+        "zh": "包装"
+      },
+      "tags": [
+        "mail"
+      ]
+    },
+    {
+      "id": "bg-348",
+      "word": "개",
+      "gloss": {
+        "en": "dog",
+        "ko": "개",
+        "zh": "狗"
+      },
+      "tags": [
+        "pets"
+      ]
+    },
+    {
+      "id": "bg-349",
+      "word": "고양이",
+      "gloss": {
+        "en": "cat",
+        "ko": "고양이",
+        "zh": "猫"
+      },
+      "tags": [
+        "pets"
+      ]
+    },
+    {
+      "id": "bg-350",
+      "word": "새",
+      "gloss": {
+        "en": "bird",
+        "ko": "새",
+        "zh": "鸟"
+      },
+      "tags": [
+        "pets"
+      ]
+    },
+    {
+      "id": "bg-351",
+      "word": "강아지",
+      "gloss": {
+        "en": "puppy / doggy",
+        "ko": "강아지",
+        "zh": "小狗"
+      },
+      "tags": [
+        "pets"
+      ]
+    },
+    {
+      "id": "bg-352",
+      "word": "물고기",
+      "gloss": {
+        "en": "fish (animal)",
+        "ko": "물고기",
+        "zh": "鱼"
+      },
+      "tags": [
+        "pets"
+      ]
+    },
+    {
+      "id": "bg-353",
+      "word": "토끼",
+      "gloss": {
+        "en": "rabbit",
+        "ko": "토끼",
+        "zh": "兔子"
+      },
+      "tags": [
+        "pets"
+      ]
+    },
+    {
+      "id": "bg-354",
+      "word": "닭",
+      "gloss": {
+        "en": "chicken (bird)",
+        "ko": "닭",
+        "zh": "鸡"
+      },
+      "tags": [
+        "pets"
+      ]
+    },
+    {
+      "id": "bg-355",
+      "word": "말",
+      "gloss": {
+        "en": "horse",
+        "ko": "말",
+        "zh": "马"
+      },
+      "tags": [
+        "pets"
+      ]
+    },
+    {
+      "id": "bg-356",
+      "word": "키우다",
+      "gloss": {
+        "en": "to raise / keep (an animal)",
+        "ko": "키우다",
+        "zh": "养"
+      },
+      "tags": [
+        "pets"
+      ]
+    },
+    {
+      "id": "bg-357",
+      "word": "동물원",
+      "gloss": {
+        "en": "zoo",
+        "ko": "동물원",
+        "zh": "动物园"
+      },
+      "tags": [
+        "pets"
+      ]
+    },
+    {
+      "id": "bg-358",
+      "word": "운전",
+      "gloss": {
+        "en": "driving",
+        "ko": "운전",
+        "zh": "驾驶"
+      },
+      "tags": [
+        "driving"
+      ]
+    },
+    {
+      "id": "bg-359",
+      "word": "자동차",
+      "gloss": {
+        "en": "car / automobile",
+        "ko": "자동차",
+        "zh": "汽车"
+      },
+      "tags": [
+        "driving"
+      ]
+    },
+    {
+      "id": "bg-360",
+      "word": "자전거",
+      "gloss": {
+        "en": "bicycle",
+        "ko": "자전거",
+        "zh": "自行车"
+      },
+      "tags": [
+        "driving"
+      ]
+    },
+    {
+      "id": "bg-361",
+      "word": "횡단보도",
+      "gloss": {
+        "en": "crosswalk",
+        "ko": "횡단보도",
+        "zh": "人行横道"
+      },
+      "tags": [
+        "driving"
+      ]
+    },
+    {
+      "id": "bg-362",
+      "word": "사고",
+      "gloss": {
+        "en": "accident",
+        "ko": "사고",
+        "zh": "事故"
+      },
+      "tags": [
+        "driving"
+      ]
+    },
+    {
+      "id": "bg-363",
+      "word": "위험",
+      "gloss": {
+        "en": "danger",
+        "ko": "위험",
+        "zh": "危险"
+      },
+      "tags": [
+        "driving"
+      ]
+    },
+    {
+      "id": "bg-364",
+      "word": "조심하다",
+      "gloss": {
+        "en": "to be careful",
+        "ko": "조심하다",
+        "zh": "小心"
+      },
+      "tags": [
+        "driving"
+      ]
+    },
+    {
+      "id": "bg-365",
+      "word": "경찰",
+      "gloss": {
+        "en": "police",
+        "ko": "경찰",
+        "zh": "警察"
+      },
+      "tags": [
+        "driving"
+      ]
+    },
+    {
+      "id": "bg-366",
+      "word": "도로",
+      "gloss": {
+        "en": "road",
+        "ko": "도로",
+        "zh": "道路"
+      },
+      "tags": [
+        "driving"
+      ]
+    },
+    {
+      "id": "bg-367",
+      "word": "주차장",
+      "gloss": {
+        "en": "parking lot",
+        "ko": "주차장",
+        "zh": "停车场"
+      },
+      "tags": [
+        "driving"
+      ]
+    },
+    {
+      "id": "bg-368",
+      "word": "도서관",
+      "gloss": {
+        "en": "library",
+        "ko": "도서관",
+        "zh": "图书馆"
+      },
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "bg-369",
+      "word": "슈퍼마켓",
+      "gloss": {
+        "en": "supermarket",
+        "ko": "슈퍼마켓",
+        "zh": "超市"
+      },
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "bg-370",
+      "word": "은행",
+      "gloss": {
+        "en": "bank (building)",
+        "ko": "은행(건물)",
+        "zh": "银行（建筑）"
+      },
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "bg-371",
+      "word": "백화점",
+      "gloss": {
+        "en": "department store",
+        "ko": "백화점",
+        "zh": "百货商店"
+      },
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "bg-372",
+      "word": "미용실",
+      "gloss": {
+        "en": "hair salon",
+        "ko": "미용실",
+        "zh": "美发店"
+      },
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "bg-373",
+      "word": "서점",
+      "gloss": {
+        "en": "bookstore",
+        "ko": "서점",
+        "zh": "书店"
+      },
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "bg-374",
+      "word": "영화관",
+      "gloss": {
+        "en": "movie theater",
+        "ko": "영화관",
+        "zh": "电影院"
+      },
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "bg-375",
+      "word": "수영장",
+      "gloss": {
+        "en": "swimming pool",
+        "ko": "수영장",
+        "zh": "游泳池"
+      },
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "bg-376",
+      "word": "카페",
+      "gloss": {
+        "en": "cafe (place)",
+        "ko": "카페(장소)",
+        "zh": "咖啡馆（场所）"
+      },
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "bg-377",
+      "word": "경찰서",
+      "gloss": {
+        "en": "police station",
+        "ko": "경찰서",
+        "zh": "警察局"
+      },
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "bg-378",
+      "word": "쌀",
+      "gloss": {
+        "en": "rice (uncooked)",
+        "ko": "쌀",
+        "zh": "大米"
+      },
+      "tags": [
+        "pantry"
+      ]
+    },
+    {
+      "id": "bg-379",
+      "word": "밀가루",
+      "gloss": {
+        "en": "flour",
+        "ko": "밀가루",
+        "zh": "面粉"
+      },
+      "tags": [
+        "pantry"
+      ]
+    },
+    {
+      "id": "bg-380",
+      "word": "소금",
+      "gloss": {
+        "en": "salt",
+        "ko": "소금",
+        "zh": "盐"
+      },
+      "tags": [
+        "pantry"
+      ]
+    },
+    {
+      "id": "bg-381",
+      "word": "설탕",
+      "gloss": {
+        "en": "sugar",
+        "ko": "설탕",
+        "zh": "糖"
+      },
+      "tags": [
+        "pantry"
+      ]
+    },
+    {
+      "id": "bg-382",
+      "word": "기름",
+      "gloss": {
+        "en": "oil (cooking)",
+        "ko": "기름",
+        "zh": "油"
+      },
+      "tags": [
+        "pantry"
+      ]
+    },
+    {
+      "id": "bg-383",
+      "word": "달걀",
+      "gloss": {
+        "en": "egg",
+        "ko": "달걀",
+        "zh": "鸡蛋"
+      },
+      "tags": [
+        "pantry"
+      ]
+    },
+    {
+      "id": "bg-384",
+      "word": "고기",
+      "gloss": {
+        "en": "meat",
+        "ko": "고기",
+        "zh": "肉"
+      },
+      "tags": [
+        "pantry"
+      ]
+    },
+    {
+      "id": "bg-385",
+      "word": "생선",
+      "gloss": {
+        "en": "fish (as food)",
+        "ko": "생선",
+        "zh": "鱼（食材）"
+      },
+      "tags": [
+        "pantry"
+      ]
+    },
+    {
+      "id": "bg-386",
+      "word": "빵",
+      "gloss": {
+        "en": "bread (pantry)",
+        "ko": "빵(식재료)",
+        "zh": "面包（食材）"
+      },
+      "tags": [
+        "pantry"
+      ]
+    },
+    {
+      "id": "bg-387",
+      "word": "김치",
+      "gloss": {
+        "en": "kimchi",
+        "ko": "김치",
+        "zh": "泡菜"
+      },
+      "tags": [
+        "pantry"
+      ]
+    },
+    {
+      "id": "bg-388",
+      "word": "화장실",
+      "gloss": {
+        "en": "restroom; toilet",
+        "ko": "화장실",
+        "zh": "卫生间"
+      },
+      "tags": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "bg-389",
+      "word": "샤워",
+      "gloss": {
+        "en": "shower",
+        "ko": "샤워",
+        "zh": "淋浴"
+      },
+      "tags": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "bg-390",
+      "word": "목욕",
+      "gloss": {
+        "en": "bath",
+        "ko": "목욕",
+        "zh": "洗澡"
+      },
+      "tags": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "bg-391",
+      "word": "세수",
+      "gloss": {
+        "en": "face washing",
+        "ko": "세수",
+        "zh": "洗脸"
+      },
+      "tags": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "bg-392",
+      "word": "칫솔",
+      "gloss": {
+        "en": "toothbrush",
+        "ko": "칫솔",
+        "zh": "牙刷"
+      },
+      "tags": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "bg-393",
+      "word": "치약",
+      "gloss": {
+        "en": "toothpaste",
+        "ko": "치약",
+        "zh": "牙膏"
+      },
+      "tags": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "bg-394",
+      "word": "휴지",
+      "gloss": {
+        "en": "tissue; toilet paper",
+        "ko": "휴지",
+        "zh": "纸巾"
+      },
+      "tags": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "bg-395",
+      "word": "휴지통",
+      "gloss": {
+        "en": "trash can",
+        "ko": "휴지통",
+        "zh": "垃圾桶"
+      },
+      "tags": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "bg-396",
+      "word": "면도",
+      "gloss": {
+        "en": "shaving",
+        "ko": "면도",
+        "zh": "剃须"
+      },
+      "tags": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "bg-397",
+      "word": "더럽다",
+      "gloss": {
+        "en": "dirty",
+        "ko": "더럽다",
+        "zh": "脏"
+      },
+      "tags": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "bg-398",
+      "word": "직업",
+      "gloss": {
+        "en": "occupation; job",
+        "ko": "직업",
+        "zh": "职业"
+      },
+      "tags": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "bg-399",
+      "word": "회사원",
+      "gloss": {
+        "en": "office worker",
+        "ko": "회사원",
+        "zh": "公司职员"
+      },
+      "tags": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "bg-400",
+      "word": "간호사",
+      "gloss": {
+        "en": "nurse",
+        "ko": "간호사",
+        "zh": "护士"
+      },
+      "tags": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "bg-401",
+      "word": "선생님",
+      "gloss": {
+        "en": "teacher",
+        "ko": "선생님",
+        "zh": "老师"
+      },
+      "tags": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "bg-402",
+      "word": "요리사",
+      "gloss": {
+        "en": "cook; chef",
+        "ko": "요리사",
+        "zh": "厨师"
+      },
+      "tags": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "bg-403",
+      "word": "운전사",
+      "gloss": {
+        "en": "driver (occupation)",
+        "ko": "운전사",
+        "zh": "司机"
+      },
+      "tags": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "bg-404",
+      "word": "학생",
+      "gloss": {
+        "en": "student",
+        "ko": "학생",
+        "zh": "学生"
+      },
+      "tags": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "bg-405",
+      "word": "일하다",
+      "gloss": {
+        "en": "to work",
+        "ko": "일하다",
+        "zh": "工作"
+      },
+      "tags": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "bg-406",
+      "word": "직원",
+      "gloss": {
+        "en": "staff; employee",
+        "ko": "직원",
+        "zh": "职员"
+      },
+      "tags": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "bg-407",
+      "word": "사장",
+      "gloss": {
+        "en": "boss; owner",
+        "ko": "사장",
+        "zh": "老板"
+      },
+      "tags": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "bg-408",
+      "word": "나라",
+      "gloss": {
+        "en": "country",
+        "ko": "나라",
+        "zh": "国家"
+      },
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "bg-409",
+      "word": "외국",
+      "gloss": {
+        "en": "foreign country",
+        "ko": "외국",
+        "zh": "外国"
+      },
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "bg-410",
+      "word": "외국인",
+      "gloss": {
+        "en": "foreigner",
+        "ko": "외국인",
+        "zh": "外国人"
+      },
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "bg-411",
+      "word": "국적",
+      "gloss": {
+        "en": "nationality",
+        "ko": "국적",
+        "zh": "国籍"
+      },
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "bg-412",
+      "word": "고향",
+      "gloss": {
+        "en": "hometown",
+        "ko": "고향",
+        "zh": "家乡"
+      },
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "bg-413",
+      "word": "살다",
+      "gloss": {
+        "en": "to live (reside)",
+        "ko": "살다",
+        "zh": "居住"
+      },
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "bg-414",
+      "word": "일본어",
+      "gloss": {
+        "en": "Japanese (language)",
+        "ko": "일본어",
+        "zh": "日语"
+      },
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "bg-415",
+      "word": "태어나다",
+      "gloss": {
+        "en": "to be born",
+        "ko": "태어나다",
+        "zh": "出生"
+      },
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "bg-416",
+      "word": "해외",
+      "gloss": {
+        "en": "overseas; abroad",
+        "ko": "해외",
+        "zh": "海外"
+      },
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "bg-417",
+      "word": "유학생",
+      "gloss": {
+        "en": "international student",
+        "ko": "유학생",
+        "zh": "留学生"
+      },
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "bg-418",
+      "word": "일어나다",
+      "gloss": {
+        "en": "to get up; wake up",
+        "ko": "일어나다",
+        "zh": "起床"
+      },
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "id": "bg-419",
+      "word": "자다",
+      "gloss": {
+        "en": "to sleep",
+        "ko": "자다",
+        "zh": "睡觉"
+      },
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "id": "bg-420",
+      "word": "밤",
+      "gloss": {
+        "en": "night",
+        "ko": "밤",
+        "zh": "夜晚"
+      },
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "id": "bg-421",
+      "word": "하루",
+      "gloss": {
+        "en": "a day; one day",
+        "ko": "하루",
+        "zh": "一天"
+      },
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "id": "bg-422",
+      "word": "매일",
+      "gloss": {
+        "en": "every day",
+        "ko": "매일",
+        "zh": "每天"
+      },
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "id": "bg-423",
+      "word": "지금",
+      "gloss": {
+        "en": "now",
+        "ko": "지금",
+        "zh": "现在"
+      },
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "id": "bg-424",
+      "word": "잠",
+      "gloss": {
+        "en": "sleep (noun)",
+        "ko": "잠",
+        "zh": "觉；睡眠"
+      },
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "id": "bg-425",
+      "word": "낮",
+      "gloss": {
+        "en": "daytime; midday",
+        "ko": "낮",
+        "zh": "白天"
+      },
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "id": "bg-426",
+      "word": "늦게",
+      "gloss": {
+        "en": "late (adverb)",
+        "ko": "늦게",
+        "zh": "晚地"
+      },
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "id": "bg-427",
+      "word": "바쁘다",
+      "gloss": {
+        "en": "to be busy",
+        "ko": "바쁘다",
+        "zh": "忙"
+      },
+      "tags": [
+        "routine"
+      ]
+    },
+    {
+      "id": "bg-428",
+      "word": "크다",
+      "gloss": {
+        "en": "big; large",
+        "ko": "크다",
+        "zh": "大"
+      },
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "bg-429",
+      "word": "작다",
+      "gloss": {
+        "en": "small",
+        "ko": "작다",
+        "zh": "小"
+      },
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "bg-430",
+      "word": "많다",
+      "gloss": {
+        "en": "many; much",
+        "ko": "많다",
+        "zh": "多"
+      },
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "bg-431",
+      "word": "적다",
+      "gloss": {
+        "en": "few; little",
+        "ko": "적다",
+        "zh": "少"
+      },
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "bg-432",
+      "word": "길다",
+      "gloss": {
+        "en": "long",
+        "ko": "길다",
+        "zh": "长"
+      },
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "bg-433",
+      "word": "짧다",
+      "gloss": {
+        "en": "short",
+        "ko": "짧다",
+        "zh": "短"
+      },
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "bg-434",
+      "word": "무겁다",
+      "gloss": {
+        "en": "heavy",
+        "ko": "무겁다",
+        "zh": "重"
+      },
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "bg-435",
+      "word": "가볍다",
+      "gloss": {
+        "en": "light (weight)",
+        "ko": "가볍다",
+        "zh": "轻"
+      },
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "bg-436",
+      "word": "높다",
+      "gloss": {
+        "en": "high; tall",
+        "ko": "높다",
+        "zh": "高"
+      },
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "bg-437",
+      "word": "낮다",
+      "gloss": {
+        "en": "low",
+        "ko": "낮다",
+        "zh": "低"
+      },
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "bg-438",
+      "word": "시다",
+      "gloss": {
+        "en": "sour",
+        "ko": "시다",
+        "zh": "酸"
+      },
+      "tags": [
+        "senses"
+      ]
+    },
+    {
+      "id": "bg-439",
+      "word": "싱겁다",
+      "gloss": {
+        "en": "bland; not salty enough",
+        "ko": "싱겁다",
+        "zh": "淡"
+      },
+      "tags": [
+        "senses"
+      ]
+    },
+    {
+      "id": "bg-440",
+      "word": "뜨겁다",
+      "gloss": {
+        "en": "hot (to touch/taste)",
+        "ko": "뜨겁다",
+        "zh": "烫/热"
+      },
+      "tags": [
+        "senses"
+      ]
+    },
+    {
+      "id": "bg-441",
+      "word": "차갑다",
+      "gloss": {
+        "en": "cold to the touch",
+        "ko": "차갑다",
+        "zh": "冰凉"
+      },
+      "tags": [
+        "senses"
+      ]
+    },
+    {
+      "id": "bg-442",
+      "word": "따뜻하다",
+      "gloss": {
+        "en": "warm",
+        "ko": "따뜻하다",
+        "zh": "暖和"
+      },
+      "tags": [
+        "senses"
+      ]
+    },
+    {
+      "id": "bg-443",
+      "word": "시원하다",
+      "gloss": {
+        "en": "cool; refreshing",
+        "ko": "시원하다",
+        "zh": "凉爽"
+      },
+      "tags": [
+        "senses"
+      ]
+    },
+    {
+      "id": "bg-444",
+      "word": "밝다",
+      "gloss": {
+        "en": "bright",
+        "ko": "밝다",
+        "zh": "明亮"
+      },
+      "tags": [
+        "senses"
+      ]
+    },
+    {
+      "id": "bg-445",
+      "word": "어둡다",
+      "gloss": {
+        "en": "dark",
+        "ko": "어둡다",
+        "zh": "暗"
+      },
+      "tags": [
+        "senses"
+      ]
+    },
+    {
+      "id": "bg-446",
+      "word": "조용하다",
+      "gloss": {
+        "en": "quiet",
+        "ko": "조용하다",
+        "zh": "安静"
+      },
+      "tags": [
+        "senses"
+      ]
+    },
+    {
+      "id": "bg-447",
+      "word": "시끄럽다",
+      "gloss": {
+        "en": "noisy; loud",
+        "ko": "시끄럽다",
+        "zh": "吵闹"
+      },
+      "tags": [
+        "senses"
+      ]
+    },
+    {
+      "id": "bg-448",
+      "word": "회색",
+      "gloss": {
+        "en": "gray",
+        "ko": "회색",
+        "zh": "灰色"
+      },
+      "tags": [
+        "color"
+      ]
+    },
+    {
+      "id": "bg-449",
+      "word": "분홍색",
+      "gloss": {
+        "en": "pink",
+        "ko": "분홍색",
+        "zh": "粉色"
+      },
+      "tags": [
+        "color"
+      ]
+    },
+    {
+      "id": "bg-450",
+      "word": "세모",
+      "gloss": {
+        "en": "triangle",
+        "ko": "세모",
+        "zh": "三角形"
+      },
+      "tags": [
+        "color"
+      ]
+    },
+    {
+      "id": "bg-451",
+      "word": "모양",
+      "gloss": {
+        "en": "shape; form",
+        "ko": "모양",
+        "zh": "形状"
+      },
+      "tags": [
+        "color"
+      ]
+    },
+    {
+      "id": "bg-452",
+      "word": "하얀색",
+      "gloss": {
+        "en": "white",
+        "ko": "하얀색",
+        "zh": "白色"
+      },
+      "tags": [
+        "color"
+      ]
+    },
+    {
+      "id": "bg-453",
+      "word": "검은색",
+      "gloss": {
+        "en": "black",
+        "ko": "검은색",
+        "zh": "黑色"
+      },
+      "tags": [
+        "color"
+      ]
+    },
+    {
+      "id": "bg-454",
+      "word": "둥글다",
+      "gloss": {
+        "en": "round",
+        "ko": "둥글다",
+        "zh": "圆"
+      },
+      "tags": [
+        "color"
+      ]
+    },
+    {
+      "id": "bg-455",
+      "word": "네모",
+      "gloss": {
+        "en": "square; rectangle",
+        "ko": "네모",
+        "zh": "方形"
+      },
+      "tags": [
+        "color"
+      ]
+    },
+    {
+      "id": "bg-456",
+      "word": "초록색",
+      "gloss": {
+        "en": "green",
+        "ko": "초록색",
+        "zh": "绿色"
+      },
+      "tags": [
+        "color"
+      ]
+    },
+    {
+      "id": "bg-457",
+      "word": "노란색",
+      "gloss": {
+        "en": "yellow",
+        "ko": "노란색",
+        "zh": "黄色"
+      },
+      "tags": [
+        "color"
+      ]
+    },
+    {
+      "id": "bg-458",
+      "word": "우산",
+      "gloss": {
+        "en": "umbrella",
+        "ko": "우산",
+        "zh": "伞"
+      },
+      "tags": [
+        "accessories"
+      ]
+    },
+    {
+      "id": "bg-459",
+      "word": "가방",
+      "gloss": {
+        "en": "bag (belongings)",
+        "ko": "가방(소지품)",
+        "zh": "包（随身）"
+      },
+      "tags": [
+        "accessories"
+      ]
+    },
+    {
+      "id": "bg-460",
+      "word": "모자",
+      "gloss": {
+        "en": "hat; cap",
+        "ko": "모자",
+        "zh": "帽子"
+      },
+      "tags": [
+        "accessories"
+      ]
+    },
+    {
+      "id": "bg-461",
+      "word": "양말",
+      "gloss": {
+        "en": "socks",
+        "ko": "양말",
+        "zh": "袜子"
+      },
+      "tags": [
+        "accessories"
+      ]
+    },
+    {
+      "id": "bg-462",
+      "word": "장갑",
+      "gloss": {
+        "en": "gloves",
+        "ko": "장갑",
+        "zh": "手套"
+      },
+      "tags": [
+        "accessories"
+      ]
+    },
+    {
+      "id": "bg-463",
+      "word": "안경",
+      "gloss": {
+        "en": "glasses; eyeglasses",
+        "ko": "안경",
+        "zh": "眼镜"
+      },
+      "tags": [
+        "accessories"
+      ]
+    },
+    {
+      "id": "bg-464",
+      "word": "지갑",
+      "gloss": {
+        "en": "wallet; purse",
+        "ko": "지갑",
+        "zh": "钱包"
+      },
+      "tags": [
+        "accessories"
+      ]
+    },
+    {
+      "id": "bg-465",
+      "word": "벨트",
+      "gloss": {
+        "en": "belt",
+        "ko": "벨트",
+        "zh": "皮带"
+      },
+      "tags": [
+        "accessories"
+      ]
+    },
+    {
+      "id": "bg-466",
+      "word": "목도리",
+      "gloss": {
+        "en": "scarf; muffler",
+        "ko": "목도리",
+        "zh": "围巾"
+      },
+      "tags": [
+        "accessories"
+      ]
+    },
+    {
+      "id": "bg-467",
+      "word": "반지",
+      "gloss": {
+        "en": "ring (jewelry)",
+        "ko": "반지",
+        "zh": "戒指"
+      },
+      "tags": [
+        "accessories"
+      ]
+    },
+    {
+      "id": "bg-468",
+      "word": "전기",
+      "gloss": {
+        "en": "electricity",
+        "ko": "전기",
+        "zh": "电；电力"
+      },
+      "tags": [
+        "electric"
+      ]
+    },
+    {
+      "id": "bg-469",
+      "word": "에어컨",
+      "gloss": {
+        "en": "air conditioner",
+        "ko": "에어컨",
+        "zh": "空调"
+      },
+      "tags": [
+        "electric"
+      ]
+    },
+    {
+      "id": "bg-470",
+      "word": "선풍기",
+      "gloss": {
+        "en": "electric fan",
+        "ko": "선풍기",
+        "zh": "电风扇"
+      },
+      "tags": [
+        "electric"
+      ]
+    },
+    {
+      "id": "bg-471",
+      "word": "불",
+      "gloss": {
+        "en": "light; fire",
+        "ko": "불(전등)",
+        "zh": "灯；火"
+      },
+      "tags": [
+        "electric"
+      ]
+    },
+    {
+      "id": "bg-472",
+      "word": "엘리베이터",
+      "gloss": {
+        "en": "elevator; lift",
+        "ko": "엘리베이터",
+        "zh": "电梯"
+      },
+      "tags": [
+        "electric"
+      ]
+    },
+    {
+      "id": "bg-473",
+      "word": "계단",
+      "gloss": {
+        "en": "stairs; staircase",
+        "ko": "계단",
+        "zh": "楼梯"
+      },
+      "tags": [
+        "electric"
+      ]
+    },
+    {
+      "id": "bg-474",
+      "word": "수도",
+      "gloss": {
+        "en": "water supply; tap water",
+        "ko": "수도",
+        "zh": "自来水"
+      },
+      "tags": [
+        "electric"
+      ]
+    },
+    {
+      "id": "bg-475",
+      "word": "가스",
+      "gloss": {
+        "en": "gas (fuel / utility)",
+        "ko": "가스",
+        "zh": "燃气；煤气"
+      },
+      "tags": [
+        "electric"
+      ]
+    },
+    {
+      "id": "bg-476",
+      "word": "전자레인지",
+      "gloss": {
+        "en": "microwave oven",
+        "ko": "전자레인지",
+        "zh": "微波炉"
+      },
+      "tags": [
+        "electric"
+      ]
+    },
+    {
+      "id": "bg-477",
+      "word": "다리미",
+      "gloss": {
+        "en": "iron (for clothes)",
+        "ko": "다리미",
+        "zh": "熨斗"
+      },
+      "tags": [
+        "electric"
+      ]
+    },
+    {
+      "id": "bg-478",
+      "word": "복도",
+      "gloss": {
+        "en": "hallway; corridor",
+        "ko": "복도",
+        "zh": "走廊"
+      },
+      "tags": [
+        "building"
+      ]
+    },
+    {
+      "id": "bg-479",
+      "word": "층",
+      "gloss": {
+        "en": "floor; story",
+        "ko": "층",
+        "zh": "层"
+      },
+      "tags": [
+        "building"
+      ]
+    },
+    {
+      "id": "bg-480",
+      "word": "입구",
+      "gloss": {
+        "en": "entrance",
+        "ko": "입구",
+        "zh": "入口"
+      },
+      "tags": [
+        "building"
+      ]
+    },
+    {
+      "id": "bg-481",
+      "word": "현관",
+      "gloss": {
+        "en": "front entrance; foyer",
+        "ko": "현관",
+        "zh": "玄关；门厅"
+      },
+      "tags": [
+        "building"
+      ]
+    },
+    {
+      "id": "bg-482",
+      "word": "지하",
+      "gloss": {
+        "en": "basement; underground",
+        "ko": "지하",
+        "zh": "地下"
+      },
+      "tags": [
+        "building"
+      ]
+    },
+    {
+      "id": "bg-483",
+      "word": "옥상",
+      "gloss": {
+        "en": "rooftop; roof",
+        "ko": "옥상",
+        "zh": "屋顶；天台"
+      },
+      "tags": [
+        "building"
+      ]
+    },
+    {
+      "id": "bg-484",
+      "word": "호실",
+      "gloss": {
+        "en": "room number; unit",
+        "ko": "호실",
+        "zh": "房间号；室"
+      },
+      "tags": [
+        "building"
+      ]
+    },
+    {
+      "id": "bg-485",
+      "word": "초인종",
+      "gloss": {
+        "en": "doorbell",
+        "ko": "초인종",
+        "zh": "门铃"
+      },
+      "tags": [
+        "building"
+      ]
+    },
+    {
+      "id": "bg-486",
+      "word": "로비",
+      "gloss": {
+        "en": "lobby",
+        "ko": "로비",
+        "zh": "大厅；大堂"
+      },
+      "tags": [
+        "building"
+      ]
+    },
+    {
+      "id": "bg-487",
+      "word": "건물",
+      "gloss": {
+        "en": "building",
+        "ko": "건물",
+        "zh": "建筑物；楼"
+      },
+      "tags": [
+        "building"
+      ]
+    },
+    {
+      "id": "bg-488",
+      "word": "들다",
+      "gloss": {
+        "en": "to lift; hold; carry",
+        "ko": "들다",
+        "zh": "拿；提"
+      },
+      "tags": [
+        "motion"
+      ]
+    },
+    {
+      "id": "bg-489",
+      "word": "건너다",
+      "gloss": {
+        "en": "to cross",
+        "ko": "건너다",
+        "zh": "过；穿过"
+      },
+      "tags": [
+        "motion"
+      ]
+    },
+    {
+      "id": "bg-490",
+      "word": "걷다",
+      "gloss": {
+        "en": "to walk",
+        "ko": "걷다",
+        "zh": "走"
+      },
+      "tags": [
+        "motion"
+      ]
+    },
+    {
+      "id": "bg-491",
+      "word": "뛰다",
+      "gloss": {
+        "en": "to run; jump",
+        "ko": "뛰다",
+        "zh": "跑；跳"
+      },
+      "tags": [
+        "motion"
+      ]
+    },
+    {
+      "id": "bg-492",
+      "word": "서다",
+      "gloss": {
+        "en": "to stand",
+        "ko": "서다",
+        "zh": "站"
+      },
+      "tags": [
+        "motion"
+      ]
+    },
+    {
+      "id": "bg-493",
+      "word": "앉다",
+      "gloss": {
+        "en": "to sit",
+        "ko": "앉다",
+        "zh": "坐"
+      },
+      "tags": [
+        "motion"
+      ]
+    },
+    {
+      "id": "bg-494",
+      "word": "눕다",
+      "gloss": {
+        "en": "to lie down",
+        "ko": "눕다",
+        "zh": "躺"
+      },
+      "tags": [
+        "motion"
+      ]
+    },
+    {
+      "id": "bg-495",
+      "word": "오르다",
+      "gloss": {
+        "en": "to go up; climb",
+        "ko": "오르다",
+        "zh": "上；爬"
+      },
+      "tags": [
+        "motion"
+      ]
+    },
+    {
+      "id": "bg-496",
+      "word": "놓다",
+      "gloss": {
+        "en": "to put; place",
+        "ko": "놓다",
+        "zh": "放"
+      },
+      "tags": [
+        "motion"
+      ]
+    },
+    {
+      "id": "bg-497",
+      "word": "잡다",
+      "gloss": {
+        "en": "to hold; grab",
+        "ko": "잡다",
+        "zh": "抓；握住"
+      },
+      "tags": [
+        "motion"
+      ]
+    },
+    {
+      "id": "bg-498",
+      "word": "찾다",
+      "gloss": {
+        "en": "to look for; find",
+        "ko": "찾다",
+        "zh": "找；寻找"
+      },
+      "tags": [
+        "favor"
+      ]
+    },
+    {
+      "id": "bg-499",
+      "word": "만들다",
+      "gloss": {
+        "en": "to make; create",
+        "ko": "만들다",
+        "zh": "做；制作"
+      },
+      "tags": [
+        "favor"
+      ]
+    },
+    {
+      "id": "bg-500",
+      "word": "부탁하다",
+      "gloss": {
+        "en": "to ask a favor; request",
+        "ko": "부탁하다",
+        "zh": "拜托；请求"
+      },
+      "tags": [
+        "favor"
+      ]
+    },
+    {
+      "id": "bg-501",
+      "word": "도와주다",
+      "gloss": {
+        "en": "to help",
+        "ko": "도와주다",
+        "zh": "帮忙；帮助"
+      },
+      "tags": [
+        "favor"
+      ]
+    },
+    {
+      "id": "bg-502",
+      "word": "빌리다",
+      "gloss": {
+        "en": "to borrow",
+        "ko": "빌리다",
+        "zh": "借（入）"
+      },
+      "tags": [
+        "favor"
+      ]
+    },
+    {
+      "id": "bg-503",
+      "word": "괜찮다",
+      "gloss": {
+        "en": "to be okay; fine",
+        "ko": "괜찮다",
+        "zh": "没关系；可以"
+      },
+      "tags": [
+        "favor"
+      ]
+    },
+    {
+      "id": "bg-504",
+      "word": "고맙다",
+      "gloss": {
+        "en": "to be thankful",
+        "ko": "고맙다",
+        "zh": "谢谢；感激"
+      },
+      "tags": [
+        "favor"
+      ]
+    },
+    {
+      "id": "bg-505",
+      "word": "필요하다",
+      "gloss": {
+        "en": "to need; be necessary",
+        "ko": "필요하다",
+        "zh": "需要"
+      },
+      "tags": [
+        "favor"
+      ]
+    },
+    {
+      "id": "bg-506",
+      "word": "사용하다",
+      "gloss": {
+        "en": "to use",
+        "ko": "사용하다",
+        "zh": "使用"
+      },
+      "tags": [
+        "favor"
+      ]
+    },
+    {
+      "id": "bg-507",
+      "word": "바꾸다",
+      "gloss": {
+        "en": "to change; exchange",
+        "ko": "바꾸다",
+        "zh": "换；改变"
+      },
+      "tags": [
+        "favor"
+      ]
+    },
+    {
+      "id": "bg-508",
+      "word": "배우다",
+      "gloss": {
+        "en": "to learn",
+        "ko": "배우다",
+        "zh": "学习"
+      },
+      "tags": [
+        "think"
+      ]
+    },
+    {
+      "id": "bg-509",
+      "word": "가르치다",
+      "gloss": {
+        "en": "to teach",
+        "ko": "가르치다",
+        "zh": "教"
+      },
+      "tags": [
+        "think"
+      ]
+    },
+    {
+      "id": "bg-510",
+      "word": "생각하다",
+      "gloss": {
+        "en": "to think",
+        "ko": "생각하다",
+        "zh": "想；思考"
+      },
+      "tags": [
+        "think"
+      ]
+    },
+    {
+      "id": "bg-511",
+      "word": "알다",
+      "gloss": {
+        "en": "to know",
+        "ko": "알다",
+        "zh": "知道"
+      },
+      "tags": [
+        "think"
+      ]
+    },
+    {
+      "id": "bg-512",
+      "word": "모르다",
+      "gloss": {
+        "en": "to not know",
+        "ko": "모르다",
+        "zh": "不知道"
+      },
+      "tags": [
+        "think"
+      ]
+    },
+    {
+      "id": "bg-513",
+      "word": "기억하다",
+      "gloss": {
+        "en": "to remember",
+        "ko": "기억하다",
+        "zh": "记得；记住"
+      },
+      "tags": [
+        "think"
+      ]
+    },
+    {
+      "id": "bg-514",
+      "word": "잊다",
+      "gloss": {
+        "en": "to forget",
+        "ko": "잊다",
+        "zh": "忘记"
+      },
+      "tags": [
+        "think"
+      ]
+    },
+    {
+      "id": "bg-515",
+      "word": "이해하다",
+      "gloss": {
+        "en": "to understand",
+        "ko": "이해하다",
+        "zh": "理解；明白"
+      },
+      "tags": [
+        "think"
+      ]
+    },
+    {
+      "id": "bg-516",
+      "word": "결정하다",
+      "gloss": {
+        "en": "to decide",
+        "ko": "결정하다",
+        "zh": "决定"
+      },
+      "tags": [
+        "think"
+      ]
+    },
+    {
+      "id": "bg-517",
+      "word": "고르다",
+      "gloss": {
+        "en": "to choose; to pick",
+        "ko": "고르다",
+        "zh": "挑选；选择"
+      },
+      "tags": [
+        "think"
+      ]
+    },
+    {
+      "id": "bg-518",
+      "word": "전화하다",
+      "gloss": {
+        "en": "to phone; to call",
+        "ko": "전화하다",
+        "zh": "打电话"
+      },
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "id": "bg-519",
+      "word": "대화",
+      "gloss": {
+        "en": "conversation; dialogue",
+        "ko": "대화",
+        "zh": "对话；交谈"
+      },
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "id": "bg-520",
+      "word": "말하다",
+      "gloss": {
+        "en": "to speak; to say",
+        "ko": "말하다",
+        "zh": "说；说话"
+      },
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "id": "bg-521",
+      "word": "이야기하다",
+      "gloss": {
+        "en": "to talk; to chat",
+        "ko": "이야기하다",
+        "zh": "聊天；谈话"
+      },
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "id": "bg-522",
+      "word": "듣다",
+      "gloss": {
+        "en": "to listen; to hear",
+        "ko": "듣다",
+        "zh": "听"
+      },
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "id": "bg-523",
+      "word": "읽다",
+      "gloss": {
+        "en": "to read",
+        "ko": "읽다",
+        "zh": "读；看（文字）"
+      },
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "id": "bg-524",
+      "word": "대답하다",
+      "gloss": {
+        "en": "to answer; to reply",
+        "ko": "대답하다",
+        "zh": "回答"
+      },
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "id": "bg-525",
+      "word": "소개하다",
+      "gloss": {
+        "en": "to introduce",
+        "ko": "소개하다",
+        "zh": "介绍"
+      },
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "id": "bg-526",
+      "word": "알리다",
+      "gloss": {
+        "en": "to inform; to let know",
+        "ko": "알리다",
+        "zh": "告知；通知"
+      },
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "id": "bg-527",
+      "word": "연락하다",
+      "gloss": {
+        "en": "to contact; to get in touch",
+        "ko": "연락하다",
+        "zh": "联系"
+      },
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "id": "bg-528",
+      "word": "생기다",
+      "gloss": {
+        "en": "to come about; to appear",
+        "ko": "생기다",
+        "zh": "产生；出现"
+      },
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "bg-529",
+      "word": "나타나다",
+      "gloss": {
+        "en": "to appear; to show up",
+        "ko": "나타나다",
+        "zh": "出现"
+      },
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "bg-530",
+      "word": "시작하다",
+      "gloss": {
+        "en": "to start; to begin",
+        "ko": "시작하다",
+        "zh": "开始"
+      },
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "bg-531",
+      "word": "끝나다",
+      "gloss": {
+        "en": "to end; to be finished",
+        "ko": "끝나다",
+        "zh": "结束；完了"
+      },
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "bg-532",
+      "word": "계속하다",
+      "gloss": {
+        "en": "to continue",
+        "ko": "계속하다",
+        "zh": "继续"
+      },
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "bg-533",
+      "word": "멈추다",
+      "gloss": {
+        "en": "to stop",
+        "ko": "멈추다",
+        "zh": "停下；停止"
+      },
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "bg-534",
+      "word": "변하다",
+      "gloss": {
+        "en": "to change (state)",
+        "ko": "변하다",
+        "zh": "变化；改变"
+      },
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "bg-535",
+      "word": "바뀌다",
+      "gloss": {
+        "en": "to be changed; to switch",
+        "ko": "바뀌다",
+        "zh": "被换；改变"
+      },
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "bg-536",
+      "word": "지나다",
+      "gloss": {
+        "en": "to pass; to go by",
+        "ko": "지나다",
+        "zh": "过去；经过"
+      },
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "bg-537",
+      "word": "남다",
+      "gloss": {
+        "en": "to remain; to be left",
+        "ko": "남다",
+        "zh": "剩下；留下"
+      },
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "bg-538",
+      "word": "만큼",
+      "gloss": {
+        "en": "as much as; to the extent",
+        "ko": "만큼",
+        "zh": "那么多；像…一样"
+      },
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "id": "bg-539",
+      "word": "반대",
+      "gloss": {
+        "en": "opposite; the reverse",
+        "ko": "반대",
+        "zh": "相反；对面"
+      },
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "id": "bg-540",
+      "word": "같다",
+      "gloss": {
+        "en": "to be the same; equal",
+        "ko": "같다",
+        "zh": "一样；相同"
+      },
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "id": "bg-541",
+      "word": "다르다",
+      "gloss": {
+        "en": "to be different",
+        "ko": "다르다",
+        "zh": "不同"
+      },
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "id": "bg-542",
+      "word": "비슷하다",
+      "gloss": {
+        "en": "to be similar",
+        "ko": "비슷하다",
+        "zh": "相似；差不多"
+      },
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "id": "bg-543",
+      "word": "비교하다",
+      "gloss": {
+        "en": "to compare",
+        "ko": "비교하다",
+        "zh": "比较"
+      },
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "id": "bg-544",
+      "word": "더",
+      "gloss": {
+        "en": "more",
+        "ko": "더",
+        "zh": "更"
+      },
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "id": "bg-545",
+      "word": "가장",
+      "gloss": {
+        "en": "most; the most",
+        "ko": "가장",
+        "zh": "最"
+      },
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "id": "bg-546",
+      "word": "훨씬",
+      "gloss": {
+        "en": "much more; far",
+        "ko": "훨씬",
+        "zh": "得多；远更"
+      },
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "id": "bg-547",
+      "word": "차이",
+      "gloss": {
+        "en": "difference",
+        "ko": "차이",
+        "zh": "差别；差异"
+      },
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "id": "bg-548",
+      "word": "그래서",
+      "gloss": {
+        "en": "so; therefore",
+        "ko": "그래서",
+        "zh": "所以"
+      },
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "bg-549",
+      "word": "왜냐하면",
+      "gloss": {
+        "en": "because",
+        "ko": "왜냐하면",
+        "zh": "因为"
+      },
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "bg-550",
+      "word": "이유",
+      "gloss": {
+        "en": "reason",
+        "ko": "이유",
+        "zh": "理由；原因"
+      },
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "bg-551",
+      "word": "원인",
+      "gloss": {
+        "en": "cause",
+        "ko": "원인",
+        "zh": "原因"
+      },
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "bg-552",
+      "word": "결과",
+      "gloss": {
+        "en": "result; outcome",
+        "ko": "결과",
+        "zh": "结果"
+      },
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "bg-553",
+      "word": "목적",
+      "gloss": {
+        "en": "purpose; aim",
+        "ko": "목적",
+        "zh": "目的"
+      },
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "bg-554",
+      "word": "방법",
+      "gloss": {
+        "en": "method; way",
+        "ko": "방법",
+        "zh": "方法"
+      },
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "bg-555",
+      "word": "과정",
+      "gloss": {
+        "en": "process; course",
+        "ko": "과정",
+        "zh": "过程"
+      },
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "bg-556",
+      "word": "순서",
+      "gloss": {
+        "en": "order; sequence",
+        "ko": "순서",
+        "zh": "顺序"
+      },
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "bg-557",
+      "word": "목표",
+      "gloss": {
+        "en": "goal; target",
+        "ko": "목표",
+        "zh": "目标"
+      },
+      "tags": [
+        "reason"
+      ]
+    },
+    {
+      "id": "bg-558",
+      "word": "힘들다",
+      "gloss": {
+        "en": "to be hard; tough",
+        "ko": "힘들다",
+        "zh": "辛苦；难"
+      },
+      "tags": [
+        "problem"
+      ]
+    },
+    {
+      "id": "bg-559",
+      "word": "쉽다",
+      "gloss": {
+        "en": "to be easy",
+        "ko": "쉽다",
+        "zh": "容易"
+      },
+      "tags": [
+        "problem"
+      ]
+    },
+    {
+      "id": "bg-560",
+      "word": "문제",
+      "gloss": {
+        "en": "problem; issue",
+        "ko": "문제",
+        "zh": "问题"
+      },
+      "tags": [
+        "problem"
+      ]
+    },
+    {
+      "id": "bg-561",
+      "word": "해결하다",
+      "gloss": {
+        "en": "to solve; to resolve",
+        "ko": "해결하다",
+        "zh": "解决"
+      },
+      "tags": [
+        "problem"
+      ]
+    },
+    {
+      "id": "bg-562",
+      "word": "고치다",
+      "gloss": {
+        "en": "to fix; to repair",
+        "ko": "고치다",
+        "zh": "修理；改正"
+      },
+      "tags": [
+        "problem"
+      ]
+    },
+    {
+      "id": "bg-563",
+      "word": "실수",
+      "gloss": {
+        "en": "mistake",
+        "ko": "실수",
+        "zh": "失误；错误"
+      },
+      "tags": [
+        "problem"
+      ]
+    },
+    {
+      "id": "bg-564",
+      "word": "어려움",
+      "gloss": {
+        "en": "difficulty; hardship",
+        "ko": "어려움",
+        "zh": "困难"
+      },
+      "tags": [
+        "problem"
+      ]
+    },
+    {
+      "id": "bg-565",
+      "word": "도움",
+      "gloss": {
+        "en": "help; assistance",
+        "ko": "도움",
+        "zh": "帮助"
+      },
+      "tags": [
+        "problem"
+      ]
+    },
+    {
+      "id": "bg-566",
+      "word": "경험",
+      "gloss": {
+        "en": "experience",
+        "ko": "경험",
+        "zh": "经验；经历"
+      },
+      "tags": [
+        "problem"
+      ]
+    },
+    {
+      "id": "bg-567",
+      "word": "선택하다",
+      "gloss": {
+        "en": "to choose; to select",
+        "ko": "선택하다",
+        "zh": "选择"
+      },
+      "tags": [
+        "problem"
+      ]
+    },
+    {
+      "id": "bg-568",
+      "word": "확실하다",
+      "gloss": {
+        "en": "to be certain; sure",
+        "ko": "확실하다",
+        "zh": "确实；肯定"
+      },
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "bg-569",
+      "word": "분명하다",
+      "gloss": {
+        "en": "to be clear; obvious",
+        "ko": "분명하다",
+        "zh": "分明；清楚"
+      },
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "bg-570",
+      "word": "의견",
+      "gloss": {
+        "en": "opinion",
+        "ko": "의견",
+        "zh": "意见"
+      },
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "bg-571",
+      "word": "동의하다",
+      "gloss": {
+        "en": "to agree",
+        "ko": "동의하다",
+        "zh": "同意"
+      },
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "bg-572",
+      "word": "중요하다",
+      "gloss": {
+        "en": "to be important",
+        "ko": "중요하다",
+        "zh": "重要"
+      },
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "bg-573",
+      "word": "추천하다",
+      "gloss": {
+        "en": "to recommend",
+        "ko": "추천하다",
+        "zh": "推荐"
+      },
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "bg-574",
+      "word": "평가",
+      "gloss": {
+        "en": "evaluation; assessment",
+        "ko": "평가",
+        "zh": "评价"
+      },
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "bg-575",
+      "word": "흥미롭다",
+      "gloss": {
+        "en": "to be interesting",
+        "ko": "흥미롭다",
+        "zh": "有趣"
+      },
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "bg-576",
+      "word": "틀리다",
+      "gloss": {
+        "en": "to be wrong; incorrect",
+        "ko": "틀리다",
+        "zh": "错；不对"
+      },
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "bg-577",
+      "word": "판단하다",
+      "gloss": {
+        "en": "to judge; to decide",
+        "ko": "판단하다",
+        "zh": "判断"
+      },
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "bg-578",
+      "word": "부지런하다",
+      "gloss": {
+        "en": "to be diligent; hardworking",
+        "ko": "부지런하다",
+        "zh": "勤快；勤奋"
+      },
+      "tags": [
+        "habit"
+      ]
+    },
+    {
+      "id": "bg-579",
+      "word": "게으르다",
+      "gloss": {
+        "en": "to be lazy",
+        "ko": "게으르다",
+        "zh": "懒"
+      },
+      "tags": [
+        "habit"
+      ]
+    },
+    {
+      "id": "bg-580",
+      "word": "습관",
+      "gloss": {
+        "en": "habit",
+        "ko": "습관",
+        "zh": "习惯"
+      },
+      "tags": [
+        "habit"
+      ]
+    },
+    {
+      "id": "bg-581",
+      "word": "노력하다",
+      "gloss": {
+        "en": "to make an effort",
+        "ko": "노력하다",
+        "zh": "努力"
+      },
+      "tags": [
+        "habit"
+      ]
+    },
+    {
+      "id": "bg-582",
+      "word": "익숙하다",
+      "gloss": {
+        "en": "to be familiar; used to",
+        "ko": "익숙하다",
+        "zh": "熟悉；习惯"
+      },
+      "tags": [
+        "habit"
+      ]
+    },
+    {
+      "id": "bg-583",
+      "word": "낯설다",
+      "gloss": {
+        "en": "to be unfamiliar; strange",
+        "ko": "낯설다",
+        "zh": "陌生"
+      },
+      "tags": [
+        "habit"
+      ]
+    },
+    {
+      "id": "bg-584",
+      "word": "적응하다",
+      "gloss": {
+        "en": "to adapt; adjust",
+        "ko": "적응하다",
+        "zh": "适应"
+      },
+      "tags": [
+        "habit"
+      ]
+    },
+    {
+      "id": "bg-585",
+      "word": "휴식",
+      "gloss": {
+        "en": "rest; break",
+        "ko": "휴식",
+        "zh": "休息"
+      },
+      "tags": [
+        "habit"
+      ]
+    },
+    {
+      "id": "bg-586",
+      "word": "방학",
+      "gloss": {
+        "en": "school vacation",
+        "ko": "방학",
+        "zh": "假期（学校）"
+      },
+      "tags": [
+        "habit"
+      ]
+    },
+    {
+      "id": "bg-587",
+      "word": "생활",
+      "gloss": {
+        "en": "life; living; lifestyle",
+        "ko": "생활",
+        "zh": "生活"
+      },
+      "tags": [
+        "habit"
+      ]
+    },
+    {
+      "id": "bg-588",
+      "word": "예의",
+      "gloss": {
+        "en": "manners; etiquette",
+        "ko": "예의",
+        "zh": "礼貌；礼节"
+      },
+      "tags": [
+        "rules"
+      ]
+    },
+    {
+      "id": "bg-589",
+      "word": "질서",
+      "gloss": {
+        "en": "order; public order",
+        "ko": "질서",
+        "zh": "秩序"
+      },
+      "tags": [
+        "rules"
+      ]
+    },
+    {
+      "id": "bg-590",
+      "word": "규칙",
+      "gloss": {
+        "en": "rule",
+        "ko": "규칙",
+        "zh": "规则"
+      },
+      "tags": [
+        "rules"
+      ]
+    },
+    {
+      "id": "bg-591",
+      "word": "지키다",
+      "gloss": {
+        "en": "to keep; observe (a rule)",
+        "ko": "지키다",
+        "zh": "遵守；守住"
+      },
+      "tags": [
+        "rules"
+      ]
+    },
+    {
+      "id": "bg-592",
+      "word": "어기다",
+      "gloss": {
+        "en": "to break (a rule/promise)",
+        "ko": "어기다",
+        "zh": "违反；违背"
+      },
+      "tags": [
+        "rules"
+      ]
+    },
+    {
+      "id": "bg-593",
+      "word": "허락하다",
+      "gloss": {
+        "en": "to permit; allow",
+        "ko": "허락하다",
+        "zh": "允许；许可"
+      },
+      "tags": [
+        "rules"
+      ]
+    },
+    {
+      "id": "bg-594",
+      "word": "금지하다",
+      "gloss": {
+        "en": "to prohibit; forbid",
+        "ko": "금지하다",
+        "zh": "禁止"
+      },
+      "tags": [
+        "rules"
+      ]
+    },
+    {
+      "id": "bg-595",
+      "word": "자유",
+      "gloss": {
+        "en": "freedom",
+        "ko": "자유",
+        "zh": "自由"
+      },
+      "tags": [
+        "rules"
+      ]
+    },
+    {
+      "id": "bg-596",
+      "word": "의무",
+      "gloss": {
+        "en": "duty; obligation",
+        "ko": "의무",
+        "zh": "义务"
+      },
+      "tags": [
+        "rules"
+      ]
+    },
+    {
+      "id": "bg-597",
+      "word": "법",
+      "gloss": {
+        "en": "law",
+        "ko": "법",
+        "zh": "法律"
+      },
+      "tags": [
+        "rules"
+      ]
+    },
+    {
+      "id": "bg-598",
+      "word": "반갑다",
+      "gloss": {
+        "en": "to be glad (to meet)",
+        "ko": "반갑다",
+        "zh": "高兴；幸会"
+      },
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "bg-599",
+      "word": "가깝다",
+      "gloss": {
+        "en": "to be close; near",
+        "ko": "가깝다",
+        "zh": "近；亲近"
+      },
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "bg-600",
+      "word": "친하다",
+      "gloss": {
+        "en": "to be close; friendly",
+        "ko": "친하다",
+        "zh": "亲近；熟"
+      },
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "bg-601",
+      "word": "함께",
+      "gloss": {
+        "en": "together",
+        "ko": "함께",
+        "zh": "一起"
+      },
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "bg-602",
+      "word": "혼자",
+      "gloss": {
+        "en": "alone; by oneself",
+        "ko": "혼자",
+        "zh": "独自；一个人"
+      },
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "bg-603",
+      "word": "모이다",
+      "gloss": {
+        "en": "to gather; meet up",
+        "ko": "모이다",
+        "zh": "聚集；聚会"
+      },
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "bg-604",
+      "word": "동아리",
+      "gloss": {
+        "en": "club; circle (school)",
+        "ko": "동아리",
+        "zh": "社团"
+      },
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "bg-605",
+      "word": "나누다",
+      "gloss": {
+        "en": "to share; divide",
+        "ko": "나누다",
+        "zh": "分享；分"
+      },
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "bg-606",
+      "word": "놀다",
+      "gloss": {
+        "en": "to play; hang out",
+        "ko": "놀다",
+        "zh": "玩；玩耍"
+      },
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "bg-607",
+      "word": "방문",
+      "gloss": {
+        "en": "visit",
+        "ko": "방문",
+        "zh": "访问；拜访"
+      },
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "bg-608",
+      "word": "소심하다",
+      "gloss": {
+        "en": "to be timid; shy",
+        "ko": "소심하다",
+        "zh": "胆小；拘谨"
+      },
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "bg-609",
+      "word": "용감하다",
+      "gloss": {
+        "en": "to be brave; courageous",
+        "ko": "용감하다",
+        "zh": "勇敢"
+      },
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "bg-610",
+      "word": "성격",
+      "gloss": {
+        "en": "personality; character",
+        "ko": "성격",
+        "zh": "性格"
+      },
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "bg-611",
+      "word": "친절하다",
+      "gloss": {
+        "en": "to be kind; friendly",
+        "ko": "친절하다",
+        "zh": "亲切；友善"
+      },
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "bg-612",
+      "word": "성실하다",
+      "gloss": {
+        "en": "to be sincere; conscientious",
+        "ko": "성실하다",
+        "zh": "诚实；认真"
+      },
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "bg-613",
+      "word": "활발하다",
+      "gloss": {
+        "en": "to be lively; active",
+        "ko": "활발하다",
+        "zh": "活泼；活跃"
+      },
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "bg-614",
+      "word": "솔직하다",
+      "gloss": {
+        "en": "to be frank; honest",
+        "ko": "솔직하다",
+        "zh": "坦率；诚实"
+      },
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "bg-615",
+      "word": "자신감",
+      "gloss": {
+        "en": "confidence; self-assurance",
+        "ko": "자신감",
+        "zh": "自信"
+      },
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "bg-616",
+      "word": "다정하다",
+      "gloss": {
+        "en": "to be warm; affectionate",
+        "ko": "다정하다",
+        "zh": "温柔；亲切"
+      },
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "bg-617",
+      "word": "꼼꼼하다",
+      "gloss": {
+        "en": "to be meticulous; thorough",
+        "ko": "꼼꼼하다",
+        "zh": "细致；周到"
+      },
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "bg-618",
+      "word": "인사하다",
+      "gloss": {
+        "en": "to greet; say hello",
+        "ko": "인사하다",
+        "zh": "打招呼；问候"
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "bg-619",
+      "word": "불편하다",
+      "gloss": {
+        "en": "to be inconvenient; uncomfortable",
+        "ko": "불편하다",
+        "zh": "不方便；不舒服"
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "bg-620",
+      "word": "미안하다",
+      "gloss": {
+        "en": "to be sorry; feel bad",
+        "ko": "미안하다",
+        "zh": "抱歉；对不起"
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "bg-621",
+      "word": "죄송하다",
+      "gloss": {
+        "en": "to be sorry (formal)",
+        "ko": "죄송하다",
+        "zh": "抱歉（正式）"
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "bg-622",
+      "word": "사과하다",
+      "gloss": {
+        "en": "to apologize",
+        "ko": "사과하다",
+        "zh": "道歉"
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "bg-623",
+      "word": "용서하다",
+      "gloss": {
+        "en": "to forgive",
+        "ko": "용서하다",
+        "zh": "原谅"
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "bg-624",
+      "word": "실례하다",
+      "gloss": {
+        "en": "to excuse oneself; be rude",
+        "ko": "실례하다",
+        "zh": "失礼；借过"
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "bg-625",
+      "word": "감사하다",
+      "gloss": {
+        "en": "to thank; be grateful",
+        "ko": "감사하다",
+        "zh": "感谢"
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "bg-626",
+      "word": "덕분",
+      "gloss": {
+        "en": "thanks to; owing to",
+        "ko": "덕분",
+        "zh": "多亏；托福"
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "bg-627",
+      "word": "수고하다",
+      "gloss": {
+        "en": "to work hard; put in effort (polite)",
+        "ko": "수고하다",
+        "zh": "辛苦；劳烦"
+      },
+      "tags": [
+        "apology"
+      ]
+    },
+    {
+      "id": "bg-628",
+      "word": "자랑하다",
+      "gloss": {
+        "en": "to be proud of; boast",
+        "ko": "자랑하다",
+        "zh": "自豪；炫耀"
+      },
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "bg-629",
+      "word": "성과",
+      "gloss": {
+        "en": "result; achievement (outcome)",
+        "ko": "성과",
+        "zh": "成果；业绩"
+      },
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "bg-630",
+      "word": "성취",
+      "gloss": {
+        "en": "achievement; accomplishment",
+        "ko": "성취",
+        "zh": "成就"
+      },
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "bg-631",
+      "word": "바라다",
+      "gloss": {
+        "en": "to wish; hope for",
+        "ko": "바라다",
+        "zh": "希望；盼望"
+      },
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "bg-632",
+      "word": "성공하다",
+      "gloss": {
+        "en": "to succeed",
+        "ko": "성공하다",
+        "zh": "成功"
+      },
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "bg-633",
+      "word": "실패하다",
+      "gloss": {
+        "en": "to fail",
+        "ko": "실패하다",
+        "zh": "失败"
+      },
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "bg-634",
+      "word": "기회",
+      "gloss": {
+        "en": "opportunity; chance",
+        "ko": "기회",
+        "zh": "机会"
+      },
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "bg-635",
+      "word": "도전하다",
+      "gloss": {
+        "en": "to challenge; take on",
+        "ko": "도전하다",
+        "zh": "挑战；尝试"
+      },
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "bg-636",
+      "word": "합격하다",
+      "gloss": {
+        "en": "to pass (a test)",
+        "ko": "합격하다",
+        "zh": "合格；通过"
+      },
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "bg-637",
+      "word": "불합격",
+      "gloss": {
+        "en": "failure to pass; rejection",
+        "ko": "불합격",
+        "zh": "不合格"
+      },
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "bg-638",
+      "word": "답변",
+      "gloss": {
+        "en": "reply; answer (noun)",
+        "ko": "답변",
+        "zh": "答复；回答"
+      },
+      "tags": [
+        "advice"
+      ]
+    },
+    {
+      "id": "bg-639",
+      "word": "안내하다",
+      "gloss": {
+        "en": "to guide; show the way; brief",
+        "ko": "안내하다",
+        "zh": "引导；介绍；指引"
+      },
+      "tags": [
+        "advice"
+      ]
+    },
+    {
+      "id": "bg-640",
+      "word": "조언하다",
+      "gloss": {
+        "en": "to advise",
+        "ko": "조언하다",
+        "zh": "建议；劝告"
+      },
+      "tags": [
+        "advice"
+      ]
+    },
+    {
+      "id": "bg-641",
+      "word": "제안하다",
+      "gloss": {
+        "en": "to propose; suggest",
+        "ko": "제안하다",
+        "zh": "提议；建议"
+      },
+      "tags": [
+        "advice"
+      ]
+    },
+    {
+      "id": "bg-642",
+      "word": "상담하다",
+      "gloss": {
+        "en": "to consult; get counseling",
+        "ko": "상담하다",
+        "zh": "咨询；商谈"
+      },
+      "tags": [
+        "advice"
+      ]
+    },
+    {
+      "id": "bg-643",
+      "word": "문의하다",
+      "gloss": {
+        "en": "to inquire; ask about",
+        "ko": "문의하다",
+        "zh": "询问；咨询"
+      },
+      "tags": [
+        "advice"
+      ]
+    },
+    {
+      "id": "bg-644",
+      "word": "권하다",
+      "gloss": {
+        "en": "to urge; recommend (doing)",
+        "ko": "권하다",
+        "zh": "劝；劝说"
+      },
+      "tags": [
+        "advice"
+      ]
+    },
+    {
+      "id": "bg-645",
+      "word": "충고하다",
+      "gloss": {
+        "en": "to admonish; give counsel",
+        "ko": "충고하다",
+        "zh": "忠告；劝诫"
+      },
+      "tags": [
+        "advice"
+      ]
+    },
+    {
+      "id": "bg-646",
+      "word": "정보",
+      "gloss": {
+        "en": "information",
+        "ko": "정보",
+        "zh": "信息；情报"
+      },
+      "tags": [
+        "advice"
+      ]
+    },
+    {
+      "id": "bg-647",
+      "word": "알려주다",
+      "gloss": {
+        "en": "to let know; inform (someone)",
+        "ko": "알려주다",
+        "zh": "告诉；告知"
+      },
+      "tags": [
+        "advice"
+      ]
+    },
+    {
+      "id": "bg-648",
+      "word": "응원",
+      "gloss": {
+        "en": "cheering; backing (noun)",
+        "ko": "응원",
+        "zh": "加油；声援"
+      },
+      "tags": [
+        "encourage"
+      ]
+    },
+    {
+      "id": "bg-649",
+      "word": "지지",
+      "gloss": {
+        "en": "support (noun)",
+        "ko": "지지",
+        "zh": "支持"
+      },
+      "tags": [
+        "encourage"
+      ]
+    },
+    {
+      "id": "bg-650",
+      "word": "응원하다",
+      "gloss": {
+        "en": "to cheer; root for; back",
+        "ko": "응원하다",
+        "zh": "加油；声援"
+      },
+      "tags": [
+        "encourage"
+      ]
+    },
+    {
+      "id": "bg-651",
+      "word": "지지하다",
+      "gloss": {
+        "en": "to support; stand by",
+        "ko": "지지하다",
+        "zh": "支持"
+      },
+      "tags": [
+        "encourage"
+      ]
+    },
+    {
+      "id": "bg-652",
+      "word": "격려하다",
+      "gloss": {
+        "en": "to encourage",
+        "ko": "격려하다",
+        "zh": "鼓励"
+      },
+      "tags": [
+        "encourage"
+      ]
+    },
+    {
+      "id": "bg-653",
+      "word": "위로하다",
+      "gloss": {
+        "en": "to comfort; console",
+        "ko": "위로하다",
+        "zh": "安慰"
+      },
+      "tags": [
+        "encourage"
+      ]
+    },
+    {
+      "id": "bg-654",
+      "word": "의지하다",
+      "gloss": {
+        "en": "to rely on; depend on",
+        "ko": "의지하다",
+        "zh": "依靠；依赖"
+      },
+      "tags": [
+        "encourage"
+      ]
+    },
+    {
+      "id": "bg-655",
+      "word": "배려하다",
+      "gloss": {
+        "en": "to be considerate; show care",
+        "ko": "배려하다",
+        "zh": "体贴；关照"
+      },
+      "tags": [
+        "encourage"
+      ]
+    },
+    {
+      "id": "bg-656",
+      "word": "든든하다",
+      "gloss": {
+        "en": "to feel secure; reliable; reassuring",
+        "ko": "든든하다",
+        "zh": "踏实；可靠"
+      },
+      "tags": [
+        "encourage"
+      ]
+    },
+    {
+      "id": "bg-657",
+      "word": "안심하다",
+      "gloss": {
+        "en": "to feel relieved; be at ease",
+        "ko": "안심하다",
+        "zh": "放心"
+      },
+      "tags": [
+        "encourage"
+      ]
+    },
+    {
+      "id": "bg-658",
+      "word": "약속하다",
+      "gloss": {
+        "en": "to promise",
+        "ko": "약속하다",
+        "zh": "约定；承诺"
+      },
+      "tags": [
+        "promise"
+      ]
+    },
+    {
+      "id": "bg-659",
+      "word": "신뢰",
+      "gloss": {
+        "en": "trust; confidence (noun)",
+        "ko": "신뢰",
+        "zh": "信任"
+      },
+      "tags": [
+        "promise"
+      ]
+    },
+    {
+      "id": "bg-660",
+      "word": "정직하다",
+      "gloss": {
+        "en": "to be honest",
+        "ko": "정직하다",
+        "zh": "诚实"
+      },
+      "tags": [
+        "promise"
+      ]
+    },
+    {
+      "id": "bg-661",
+      "word": "신뢰하다",
+      "gloss": {
+        "en": "to trust; have confidence in",
+        "ko": "신뢰하다",
+        "zh": "信任"
+      },
+      "tags": [
+        "promise"
+      ]
+    },
+    {
+      "id": "bg-662",
+      "word": "확신하다",
+      "gloss": {
+        "en": "to be sure; be convinced",
+        "ko": "확신하다",
+        "zh": "确信"
+      },
+      "tags": [
+        "promise"
+      ]
+    },
+    {
+      "id": "bg-663",
+      "word": "의심하다",
+      "gloss": {
+        "en": "to doubt; suspect",
+        "ko": "의심하다",
+        "zh": "怀疑"
+      },
+      "tags": [
+        "promise"
+      ]
+    },
+    {
+      "id": "bg-664",
+      "word": "속이다",
+      "gloss": {
+        "en": "to deceive; trick",
+        "ko": "속이다",
+        "zh": "欺骗"
+      },
+      "tags": [
+        "promise"
+      ]
+    },
+    {
+      "id": "bg-665",
+      "word": "보장하다",
+      "gloss": {
+        "en": "to guarantee; assure",
+        "ko": "보장하다",
+        "zh": "保障；保证"
+      },
+      "tags": [
+        "promise"
+      ]
+    },
+    {
+      "id": "bg-666",
+      "word": "증명하다",
+      "gloss": {
+        "en": "to prove; demonstrate",
+        "ko": "증명하다",
+        "zh": "证明"
+      },
+      "tags": [
+        "promise"
+      ]
+    },
+    {
+      "id": "bg-667",
+      "word": "의심",
+      "gloss": {
+        "en": "doubt; suspicion (noun)",
+        "ko": "의심",
+        "zh": "怀疑"
+      },
+      "tags": [
+        "promise"
+      ]
+    },
+    {
+      "id": "bg-668",
+      "word": "거절하다",
+      "gloss": {
+        "en": "to refuse; decline",
+        "ko": "거절하다",
+        "zh": "拒绝"
+      },
+      "tags": [
+        "refuse"
+      ]
+    },
+    {
+      "id": "bg-669",
+      "word": "수락하다",
+      "gloss": {
+        "en": "to accept (an offer)",
+        "ko": "수락하다",
+        "zh": "接受；应允"
+      },
+      "tags": [
+        "refuse"
+      ]
+    },
+    {
+      "id": "bg-670",
+      "word": "응하다",
+      "gloss": {
+        "en": "to respond; comply",
+        "ko": "응하다",
+        "zh": "答应；响应"
+      },
+      "tags": [
+        "refuse"
+      ]
+    },
+    {
+      "id": "bg-671",
+      "word": "승인하다",
+      "gloss": {
+        "en": "to approve; authorize",
+        "ko": "승인하다",
+        "zh": "批准；核准"
+      },
+      "tags": [
+        "refuse"
+      ]
+    },
+    {
+      "id": "bg-672",
+      "word": "받아들이다",
+      "gloss": {
+        "en": "to accept; take in",
+        "ko": "받아들이다",
+        "zh": "接受；接纳"
+      },
+      "tags": [
+        "refuse"
+      ]
+    },
+    {
+      "id": "bg-673",
+      "word": "사양하다",
+      "gloss": {
+        "en": "to decline politely",
+        "ko": "사양하다",
+        "zh": "婉拒；推辞"
+      },
+      "tags": [
+        "refuse"
+      ]
+    },
+    {
+      "id": "bg-674",
+      "word": "승낙하다",
+      "gloss": {
+        "en": "to consent; grant",
+        "ko": "승낙하다",
+        "zh": "允诺；答应"
+      },
+      "tags": [
+        "refuse"
+      ]
+    },
+    {
+      "id": "bg-675",
+      "word": "거부하다",
+      "gloss": {
+        "en": "to reject; refuse firmly",
+        "ko": "거부하다",
+        "zh": "拒斥；拒绝"
+      },
+      "tags": [
+        "refuse"
+      ]
+    },
+    {
+      "id": "bg-676",
+      "word": "거절",
+      "gloss": {
+        "en": "refusal (noun)",
+        "ko": "거절",
+        "zh": "拒绝"
+      },
+      "tags": [
+        "refuse"
+      ]
+    },
+    {
+      "id": "bg-677",
+      "word": "수락",
+      "gloss": {
+        "en": "acceptance (noun)",
+        "ko": "수락",
+        "zh": "接受；应允"
+      },
+      "tags": [
+        "refuse"
+      ]
+    },
+    {
+      "id": "bg-678",
+      "word": "항의",
+      "gloss": {
+        "en": "protest; objection (noun)",
+        "ko": "항의",
+        "zh": "抗议"
+      },
+      "tags": [
+        "complain"
+      ]
+    },
+    {
+      "id": "bg-679",
+      "word": "신고하다",
+      "gloss": {
+        "en": "to report (a problem)",
+        "ko": "신고하다",
+        "zh": "举报；申报"
+      },
+      "tags": [
+        "complain"
+      ]
+    },
+    {
+      "id": "bg-680",
+      "word": "불만",
+      "gloss": {
+        "en": "dissatisfaction; complaint",
+        "ko": "불만",
+        "zh": "不满"
+      },
+      "tags": [
+        "complain"
+      ]
+    },
+    {
+      "id": "bg-681",
+      "word": "따지다",
+      "gloss": {
+        "en": "to argue over; quibble",
+        "ko": "따지다",
+        "zh": "计较；追究"
+      },
+      "tags": [
+        "complain"
+      ]
+    },
+    {
+      "id": "bg-682",
+      "word": "불평하다",
+      "gloss": {
+        "en": "to complain",
+        "ko": "불평하다",
+        "zh": "抱怨"
+      },
+      "tags": [
+        "complain"
+      ]
+    },
+    {
+      "id": "bg-683",
+      "word": "항의하다",
+      "gloss": {
+        "en": "to protest; object",
+        "ko": "항의하다",
+        "zh": "抗议"
+      },
+      "tags": [
+        "complain"
+      ]
+    },
+    {
+      "id": "bg-684",
+      "word": "제기하다",
+      "gloss": {
+        "en": "to raise (an issue)",
+        "ko": "제기하다",
+        "zh": "提出"
+      },
+      "tags": [
+        "complain"
+      ]
+    },
+    {
+      "id": "bg-685",
+      "word": "하소연하다",
+      "gloss": {
+        "en": "to vent; complain to someone",
+        "ko": "하소연하다",
+        "zh": "诉苦；诉说"
+      },
+      "tags": [
+        "complain"
+      ]
+    },
+    {
+      "id": "bg-686",
+      "word": "불만스럽다",
+      "gloss": {
+        "en": "to be unsatisfactory; displeased",
+        "ko": "불만스럽다",
+        "zh": "不满"
+      },
+      "tags": [
+        "complain"
+      ]
+    },
+    {
+      "id": "bg-687",
+      "word": "불평",
+      "gloss": {
+        "en": "complaint; grumbling (noun)",
+        "ko": "불평",
+        "zh": "抱怨"
+      },
+      "tags": [
+        "complain"
+      ]
+    },
+    {
+      "id": "bg-688",
+      "word": "경고하다",
+      "gloss": {
+        "en": "to warn",
+        "ko": "경고하다",
+        "zh": "警告"
+      },
+      "tags": [
+        "warn"
+      ]
+    },
+    {
+      "id": "bg-689",
+      "word": "주의하다",
+      "gloss": {
+        "en": "to pay attention; heed caution",
+        "ko": "주의하다",
+        "zh": "注意；当心"
+      },
+      "tags": [
+        "warn"
+      ]
+    },
+    {
+      "id": "bg-690",
+      "word": "위험하다",
+      "gloss": {
+        "en": "to be dangerous",
+        "ko": "위험하다",
+        "zh": "危险"
+      },
+      "tags": [
+        "warn"
+      ]
+    },
+    {
+      "id": "bg-691",
+      "word": "피하다",
+      "gloss": {
+        "en": "to avoid",
+        "ko": "피하다",
+        "zh": "避开；避免"
+      },
+      "tags": [
+        "warn"
+      ]
+    },
+    {
+      "id": "bg-692",
+      "word": "예방하다",
+      "gloss": {
+        "en": "to prevent",
+        "ko": "예방하다",
+        "zh": "预防"
+      },
+      "tags": [
+        "warn"
+      ]
+    },
+    {
+      "id": "bg-693",
+      "word": "대처하다",
+      "gloss": {
+        "en": "to cope; deal with",
+        "ko": "대처하다",
+        "zh": "应对；处理"
+      },
+      "tags": [
+        "warn"
+      ]
+    },
+    {
+      "id": "bg-694",
+      "word": "경고",
+      "gloss": {
+        "en": "warning (noun)",
+        "ko": "경고",
+        "zh": "警告"
+      },
+      "tags": [
+        "warn"
+      ]
+    },
+    {
+      "id": "bg-695",
+      "word": "주의",
+      "gloss": {
+        "en": "caution; attention (noun)",
+        "ko": "주의",
+        "zh": "注意"
+      },
+      "tags": [
+        "warn"
+      ]
+    },
+    {
+      "id": "bg-696",
+      "word": "안전",
+      "gloss": {
+        "en": "safety (noun)",
+        "ko": "안전",
+        "zh": "安全"
+      },
+      "tags": [
+        "warn"
+      ]
+    },
+    {
+      "id": "bg-697",
+      "word": "주의사항",
+      "gloss": {
+        "en": "precautions; notices",
+        "ko": "주의사항",
+        "zh": "注意事项"
+      },
+      "tags": [
+        "warn"
+      ]
+    }
+  ],
+  "note": "+10 warn-caution (bg-688–697, 2026-07-27): Prefer 경고하다·주의하다·위험하다·피하다 · 예방하다·대처하다·경고·주의·안전·주의사항. Skip 긴급·비상 → cloze Done. Distinct from rules 안전하다·금지하다 · driving 위험·조심하다 · problem · complain · refuse · health. NIKL/Sejong · no brand names. Suggest particle/dictation. Prior complain bg-678–687 · refuse · promise · encourage · advice · success · apology · personality · friends · rules · habit · opinion · problem · reason · compare · change · speech · think · favor · motion · building · electric · accessories · color · senses · size · routine · countries · jobs · bathroom · pantry · places · driving · pets · mail · stationery · kitchen · fruit · furniture · directions · body · chores · time · celebration · media · music · clothes · restaurant · nature · sports · emotion · hobby · family · digital · weather · travel · school · clinic · workplace · banking/housing/beginner kept."
+}

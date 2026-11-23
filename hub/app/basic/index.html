@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>jabi. — Basics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/hub.css">
+  <link rel="stylesheet" href="../css/partner-sector.css?v=20260727a">
+  <link rel="stylesheet" href="./basic.css?v=20260727f">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="basic-page">
+    <p class="eyebrow" data-i18n="basicEyebrow">Basics skill path</p>
+    <h1 id="basic-title">Basics (pre-TOPIK)</h1>
+    <p class="lead" id="basic-lead">Theme-based dialogue drills — research-backed units 01–06.</p>
+    <p class="basic-meta" id="basic-meta"></p>
+    <p class="path-xp" id="basic-xp" aria-live="polite"></p>
+
+    <section id="basic-growth" class="ps-growth hidden" aria-label="Partner growth" hidden>
+      <div class="ps-partner">
+        <div class="ps-partner-glyph-wrap">
+          <div class="ps-partner-glyph" id="basic-partner-glyph">·</div>
+          <span class="ps-partner-pill" id="basic-partner-pill">STAGE 1</span>
+        </div>
+        <div class="ps-partner-meta">
+          <div class="ps-partner-name" id="basic-partner-name">—</div>
+          <div class="ps-partner-stage" id="basic-partner-stage"></div>
+        </div>
+      </div>
+      <div class="ps-xp" aria-label="XP">
+        <div class="ps-xp-top">
+          <span class="k">XP</span>
+          <span id="basic-partner-xp-label">0</span>
+        </div>
+        <div class="ps-xp-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="basic-partner-xp-bar">
+          <div class="ps-xp-fill" id="basic-partner-xp-fill"></div>
+        </div>
+        <p class="ps-xp-hint" id="basic-partner-xp-hint"></p>
+      </div>
+      <div class="ps-stage-chips" id="basic-partner-chips" aria-label="Stages"></div>
+    </section>
+
+    <section id="basic-partner-pick" class="ps-partner-pick hidden" hidden aria-modal="true" role="dialog" aria-labelledby="basic-partner-pick-title">
+      <p class="eyebrow" id="basic-partner-pick-eyebrow">Partner</p>
+      <h2 id="basic-partner-pick-title">Choose your jamo</h2>
+      <p class="lead" id="basic-partner-pick-lead">One partner for Basics. ㅈ is jabi. (guide) — not a partner.</p>
+      <div class="ps-jamo-grid" id="basic-jamo-grid"></div>
+    </section>
+
+    <nav class="basic-nav" aria-label="Basics nav">
+      <a href="../../" data-i18n="basicBackHub">← Hub</a>
+      <a href="../hangul/" data-i18n="basicBackHangul">Hangul →</a>
+      <a href="../topik2/" data-i18n="basicBackTopik2">TOPIK II →</a>
+      <a href="../" data-i18n="basicBackTopik">TOPIK I app →</a>
+    </nav>
+
+    <section id="basic-player" class="basic-player hidden" hidden>
+      <div class="basic-player-head">
+        <h2 id="basic-player-title">Basics pilot</h2>
+        <button type="button" id="basic-player-close" class="basic-player-close">Close</button>
+      </div>
+      <p id="basic-player-meta" class="basic-player-meta"></p>
+      <p id="basic-player-hint" class="basic-player-hint">Choose the best reply to complete the dialogue.</p>
+      <pre id="basic-player-prompt" class="basic-player-prompt"></pre>
+      <div id="basic-player-choices" class="basic-choices" role="group" aria-label="Choices"></div>
+      <div class="basic-player-actions">
+        <button type="button" id="basic-player-next" class="basic-practice-btn basic-practice-btn--ghost" hidden>Next item →</button>
+      </div>
+      <div id="basic-player-feedback" class="basic-feedback" hidden></div>
+    </section>
+
+    <p id="basic-error" class="basic-error hidden" role="alert"></p>
+    <ul class="basic-list" id="basic-list"></ul>
+  </main>
+
+  <script src="../../js/i18n.js"></script>
+  <script src="../js/path-progress.js?v=20260727a"></script>
+  <script src="../js/partner-sector.js?v=20260727a"></script>
+  <script src="./basic.js?v=20260727f"></script>
+</body>
+</html>

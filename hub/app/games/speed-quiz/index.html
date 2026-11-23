@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF4FF">
+  <title>jabi. — Speed Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/hub.css">
+  <link rel="stylesheet" href="./speed.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="sq-page">
+    <p class="eyebrow" data-sq="eyebrow">Speed Quiz</p>
+    <h1 data-sq="title">Tap fast</h1>
+    <p class="lead" data-sq="lead">Short MCQ round — soft pace bar, never punished by time. Kahoot-style, jabi bank.</p>
+
+    <nav class="sq-nav" aria-label="Speed Quiz nav">
+      <a href="../" data-sq="backGames">← Games</a>
+      <a href="../../../" data-sq="backHub">Hub</a>
+    </nav>
+
+    <p class="sq-note" data-sq="note">Pace bar is feel only — empty bar does not fail the question.</p>
+
+    <div class="sq-themes" aria-label="Theme filter">
+      <span class="sq-k" data-sq="themeFilter">Theme</span>
+      <div id="sq-theme-chips" class="sq-theme-chips" role="group" aria-label="Themes"></div>
+    </div>
+
+    <div class="sq-progress" aria-live="polite">
+      <span id="sq-progress-text">1 / 20</span>
+      <div class="sq-progress-bar" aria-hidden="true"><div id="sq-progress-fill"></div></div>
+    </div>
+
+    <div class="sq-race" aria-hidden="true">
+      <div class="sq-race-meta">
+        <span data-sq="pace">Pace</span>
+        <span id="sq-race-label" class="sq-race-label"></span>
+      </div>
+      <div class="sq-race-track"><div id="sq-race-fill"></div></div>
+    </div>
+
+    <section class="sq-stage" aria-labelledby="sq-prompt-label">
+      <p id="sq-prompt-label" class="sq-k" data-sq="pickPrompt">Choose one</p>
+      <p id="sq-prompt" class="sq-prompt" aria-live="polite"></p>
+      <p id="sq-item-tags" class="sq-item-tags" aria-hidden="true"></p>
+
+      <div id="sq-choices" class="sq-choices" role="group" aria-label="Answer choices"></div>
+
+      <div class="sq-actions">
+        <button type="button" class="sq-btn sq-btn--ghost" id="sq-skip" data-sq="skip">Skip</button>
+        <button type="button" class="sq-btn sq-btn--ghost" id="sq-reveal" data-sq="reveal">Give up</button>
+      </div>
+
+      <label class="sq-auto">
+        <input type="checkbox" id="sq-auto-next" checked>
+        <span data-sq="autoNext">Auto-advance on correct</span>
+      </label>
+    </section>
+
+    <section id="sq-feedback" class="sq-feedback hidden" aria-live="polite">
+      <p id="sq-feedback-status" class="sq-feedback-status"></p>
+      <p class="sq-k" data-sq="youPicked">You picked</p>
+      <p id="sq-yours" class="sq-diff-line"></p>
+      <p class="sq-k" data-sq="correctIs">Correct</p>
+      <p id="sq-correct" class="sq-correct-line"></p>
+      <p id="sq-explain" class="sq-explain muted"></p>
+      <div class="sq-actions">
+        <button type="button" class="sq-btn sq-btn--sun" id="sq-next" data-sq="next">Next →</button>
+        <button type="button" class="sq-btn sq-btn--ghost" id="sq-retry" data-sq="retry">Try again</button>
+      </div>
+    </section>
+
+    <section id="sq-done" class="sq-done hidden" aria-live="polite">
+      <h2 data-sq="doneTitle">Round complete</h2>
+      <p id="sq-score" class="sq-score"></p>
+      <div class="sq-actions">
+        <button type="button" class="sq-btn sq-btn--sun" id="sq-restart" data-sq="restart">Play again</button>
+        <a class="sq-btn sq-btn--ghost" href="../" data-sq="backGames">← Games</a>
+      </div>
+    </section>
+
+    <p id="sq-error" class="sq-error hidden" role="alert"></p>
+  </main>
+
+  <script src="../../../js/i18n.js"></script>
+  <script src="./speed.js"></script>
+</body>
+</html>

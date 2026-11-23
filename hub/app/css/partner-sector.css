@@ -1,0 +1,209 @@
+/* SpecPartner — hangul / basic partner pick + growth (shared) */
+.ps-growth {
+  margin: 0 0 18px;
+}
+
+.ps-partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 22px 16px 16px;
+  border-radius: 24px;
+  background: radial-gradient(120% 100% at 50% 0%, #16233b 0%, #0f1b2e 62%);
+  box-shadow: 0 12px 28px rgba(15, 27, 46, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-partner-glyph-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.ps-partner-glyph {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  font-weight: 900;
+  background: linear-gradient(155deg, #1b2c48 0%, #0f1b2e 100%);
+  color: var(--accent, #ff8a14);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 5px rgba(255, 138, 20, 0.14),
+    0 10px 22px rgba(0, 0, 0, 0.3) inset;
+}
+
+.ps-partner-art {
+  width: 55%;
+  height: 55%;
+  object-fit: contain;
+}
+
+.ps-partner-pill {
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  font-family: var(--font-mono, "Space Mono", monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent, #ff8a14);
+  color: #17110a;
+  border: 2px solid #0f1b2e;
+  white-space: nowrap;
+}
+
+.ps-partner-name {
+  font-weight: 800;
+  font-size: 15px;
+  color: #fff;
+}
+
+.ps-partner-stage {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ps-xp {
+  margin-bottom: 10px;
+}
+
+.ps-xp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ps-xp-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--line, #d8dde6) 80%, transparent);
+  overflow: hidden;
+}
+
+.ps-xp-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent, #ff8a14), var(--xp, #ffd54a));
+  transition: width 0.35s ease;
+}
+
+.ps-xp-hint {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.ps-stage-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ps-stage-chip {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line, #d8dde6);
+  color: var(--muted);
+  background: var(--bg-soft, #fff);
+}
+
+.ps-stage-chip.is-done {
+  border-color: color-mix(in srgb, var(--accent-2, #12c5b0) 50%, transparent);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--accent-2, #12c5b0) 18%, #fff);
+}
+
+.ps-stage-chip.is-current {
+  border-color: var(--accent, #ff8a14);
+  color: #17110a;
+  background: color-mix(in srgb, var(--accent, #ff8a14) 28%, #fff);
+}
+
+.ps-stage-chip.is-locked {
+  opacity: 0.45;
+}
+
+.ps-partner-pick {
+  margin: 0 0 20px;
+  padding: 18px 16px 20px;
+  border-radius: 18px;
+  border: 1px solid var(--line, #d8dde6);
+  background: color-mix(in srgb, var(--bg-soft, #fff) 92%, var(--accent, #ff8a14));
+}
+
+.ps-partner-pick .eyebrow {
+  margin-bottom: 4px;
+}
+
+.ps-partner-pick h2 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+}
+
+.ps-partner-pick .lead {
+  margin: 0 0 14px;
+  font-size: 14px;
+}
+
+.ps-jamo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.ps-jamo-card {
+  appearance: none;
+  border: 1.5px solid var(--line, #d8dde6);
+  background: var(--bg-soft, #fff);
+  border-radius: 12px;
+  padding: 12px 6px;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.ps-jamo-card:hover,
+.ps-jamo-card:focus-visible {
+  border-color: var(--accent, #ff8a14);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.ps-jamo-glyph {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ps-jamo-glyph img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+@media (max-width: 420px) {
+  .ps-jamo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

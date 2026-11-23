@@ -1,0 +1,136 @@
+/* Games index — Sunstage Play cards */
+.hidden {
+  display: none !important;
+}
+
+.games-page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.5rem 5vw 4rem;
+}
+
+.games-page .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 8px;
+}
+
+.games-page h1 {
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 40px);
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.games-page .lead {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+  max-width: 36em;
+}
+
+.games-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+}
+
+.games-nav a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.games-nav a:hover {
+  text-decoration: underline;
+}
+
+.games-error {
+  color: var(--heart, #ff5c6c);
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.games-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 18px;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-soft);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  min-height: 140px;
+}
+
+.game-card.is-live {
+  border-top: 3px solid var(--accent);
+}
+
+.game-card.is-live:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 36, 51, 0.06);
+}
+
+.game-card.is-soon {
+  opacity: 0.72;
+  cursor: default;
+  border-top: 3px solid var(--path, #7ec8ff);
+}
+
+.game-card-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.game-card.is-soon .game-card-label {
+  color: var(--faint);
+}
+
+.game-card h2 {
+  font-family: Nunito, system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--ink);
+}
+
+.game-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.45;
+  flex: 1;
+}
+
+.game-card-cta {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--accent-2, #12c5b0);
+  margin-top: 4px;
+}
+
+.game-card.is-soon .game-card-cta {
+  color: var(--faint);
+}

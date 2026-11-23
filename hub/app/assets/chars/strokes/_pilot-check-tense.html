@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>tense jamo check</title>
+<script src="../../../js/vendor/hanzi-writer.min.js"></script>
+<style>
+  body { background: #1a1a1a; color: #eee; font-family: system-ui; padding: 24px; }
+  .row { display: flex; gap: 16px; }
+  .cell { background: #0a0a0a; border-radius: 12px; padding: 8px; text-align: center; }
+  .target { width: 140px; height: 140px; background: #111; border: 1px solid #333; }
+</style>
+</head>
+<body>
+  <h1>tense (경음) check</h1>
+  <div class="row" id="grid"></div>
+<script>
+  fetch('./jamo-strokes-tense.json').then(r => r.json()).then(function(JAMO) {
+    var grid = document.getElementById('grid');
+    Object.keys(JAMO).forEach(function(name) {
+      var cell = document.createElement('div');
+      cell.className = 'cell';
+      var div = document.createElement('div');
+      div.className = 'target';
+      div.id = 'w-' + name;
+      cell.appendChild(div);
+      var label = document.createElement('div');
+      label.textContent = name;
+      cell.appendChild(label);
+      grid.appendChild(cell);
+      var writer = HanziWriter.create(div, name, {
+        width: 140, height: 140, padding: 8,
+        showOutline: true, showCharacter: false,
+        charDataLoader: function(c, onLoad) { onLoad(JAMO[name]); }
+      });
+      writer.animateCharacter();
+    });
+  });
+</script>
+</body>
+</html>

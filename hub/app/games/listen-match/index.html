@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF4FF">
+  <title>jabi. — Listen Match</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/hub.css">
+  <link rel="stylesheet" href="./match.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="lm-page">
+    <p class="eyebrow" data-lm="eyebrow">Listen Match</p>
+    <h1 data-lm="title">Hear &amp; match</h1>
+    <p class="lead" data-lm="lead">Play the audio, then tap the matching Korean phrase. Soft practice — no harsh fails.</p>
+
+    <nav class="lm-nav" aria-label="Listen Match nav">
+      <a href="../" data-lm="backGames">← Games</a>
+      <a href="../../../" data-lm="backHub">Hub</a>
+    </nav>
+
+    <p class="lm-note" data-lm="note">Audio: device TTS (ko-KR). Wrong taps just nudge — skip or reveal anytime. Quality varies by browser.</p>
+
+    <div class="lm-themes" aria-label="Theme filter">
+      <span class="lm-k" data-lm="themeFilter">Theme</span>
+      <div id="lm-theme-chips" class="lm-theme-chips" role="group" aria-label="Themes"></div>
+    </div>
+
+    <div class="lm-progress" aria-live="polite">
+      <span id="lm-progress-text">1 / 20</span>
+      <div class="lm-progress-bar" aria-hidden="true"><div id="lm-progress-fill"></div></div>
+    </div>
+
+    <section class="lm-stage" aria-labelledby="lm-listen-label">
+      <p id="lm-listen-label" class="lm-k" data-lm="listenPrompt">Listen, then pick</p>
+      <p id="lm-gloss" class="lm-gloss muted" aria-live="polite"></p>
+      <p id="lm-item-tags" class="lm-item-tags" aria-hidden="true"></p>
+
+      <div class="lm-actions lm-actions--listen">
+        <button type="button" class="lm-btn lm-btn--sun" id="lm-play" data-lm="play">▶ Listen</button>
+        <button type="button" class="lm-btn lm-btn--ghost" id="lm-slow" data-lm="slow">Slow</button>
+        <button type="button" class="lm-btn lm-btn--ghost" id="lm-stop" data-lm="stop">Stop</button>
+      </div>
+
+      <p class="lm-hint" data-lm="tapHint">Tap the phrase you heard →</p>
+
+      <div id="lm-choices" class="lm-choices" role="group" aria-label="Answer choices"></div>
+
+      <div class="lm-actions">
+        <button type="button" class="lm-btn lm-btn--ghost" id="lm-skip" data-lm="skip">Skip</button>
+        <button type="button" class="lm-btn lm-btn--ghost" id="lm-reveal" data-lm="reveal">Give up</button>
+      </div>
+
+      <label class="lm-auto">
+        <input type="checkbox" id="lm-auto-next" checked>
+        <span data-lm="autoNext">Auto-advance on correct</span>
+      </label>
+    </section>
+
+    <section id="lm-feedback" class="lm-feedback hidden" aria-live="polite">
+      <p id="lm-feedback-status" class="lm-feedback-status"></p>
+      <p class="lm-k" data-lm="youPicked">You picked</p>
+      <p id="lm-yours" class="lm-diff-line"></p>
+      <p class="lm-k" data-lm="correctIs">Correct</p>
+      <p id="lm-correct" class="lm-correct-line"></p>
+      <p id="lm-explain" class="lm-explain muted"></p>
+      <div class="lm-actions">
+        <button type="button" class="lm-btn lm-btn--sun" id="lm-next" data-lm="next">Next →</button>
+        <button type="button" class="lm-btn lm-btn--ghost" id="lm-retry" data-lm="retry">Try again</button>
+      </div>
+    </section>
+
+    <section id="lm-done" class="lm-done hidden" aria-live="polite">
+      <h2 data-lm="doneTitle">Round complete</h2>
+      <p id="lm-score" class="lm-score"></p>
+      <div class="lm-actions">
+        <button type="button" class="lm-btn lm-btn--sun" id="lm-restart" data-lm="restart">Play again</button>
+        <a class="lm-btn lm-btn--ghost" href="../" data-lm="backGames">← Games</a>
+      </div>
+    </section>
+
+    <p id="lm-error" class="lm-error hidden" role="alert"></p>
+  </main>
+
+  <script src="../../../js/i18n.js"></script>
+  <script src="./match.js"></script>
+</body>
+</html>

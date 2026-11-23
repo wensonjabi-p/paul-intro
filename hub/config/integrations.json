@@ -1,0 +1,44 @@
+{
+  "updated": "2026-07-25",
+  "paulNotionPage": "https://app.notion.com/p/Paul-PM-3a76d7c83f4480738ff0d07bfb6cadd8",
+  "mcp": {
+    "notion": {
+      "status": "connected_desktop",
+      "connectedAt": "2026-07-25",
+      "note": "Cloud Agent runs may still need separate OAuth at cursor.com/agents MCP",
+      "url": "https://mcp.notion.com/mcp",
+      "plugin": "notion-workspace",
+      "requiredFor": ["pm_map", "inbox", "decisions", "content_queue_optional"]
+    },
+    "canva": {
+      "status": "connected_desktop",
+      "connectedAt": "2026-07-25",
+      "url": "https://mcp.canva.com/mcp",
+      "plugin": "canva",
+      "requiredFor": ["brand_kit", "thumbnails", "social"]
+    },
+    "google": {
+      "status": "connected_desktop",
+      "connectedAt": "2026-07-25",
+      "mcpServerName": "google-drive",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "requiredFor": ["content_sheet", "longform_docs"]
+    }
+  },
+  "whenAuthenticated": {
+    "notion": [
+      "Keep PM hub and docs/PROGRESS.md in sync after each milestone",
+      "Mirror docs/notion-sync-block.md on major status changes",
+      "Create Ecosystem Map database synced to hub/config/ops-links.json (Phase 0 exit)",
+      "Respect paulOk: no code for items until Paul OK in Notion or chat"
+    ],
+    "canva": [
+      "Read brand folder; align colors with hub/config/brand.json theme",
+      "Do not publish designs without Paul review"
+    ],
+    "google": [
+      "If contentQueueSheet URL in ops-links.json: document in Notion",
+      "Future: optional Apps Script webhook"
+    ]
+  }
+}

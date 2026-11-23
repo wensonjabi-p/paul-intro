@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF4FF">
+  <title>jabi. — TOPIK I</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/hub.css">
+  <link rel="stylesheet" href="./css/app.css?v=20260727b">
+</head>
+<body>
+  <header class="app-header">
+    <a href="../" class="logo-link">
+      <img src="./icons/jabi-mark.svg" alt="" class="logo-mark" width="28" height="28">
+      <span data-i18n="logo">jabi.</span>
+    </a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <!-- Onboarding: basics → goal → mode → partner (D4) -->
+    <section id="view-onboarding" class="hidden">
+      <p class="ob-progress" id="ob-progress">1 / 4</p>
+
+      <div class="ob-step" data-ob-step="1">
+        <div class="onboarding-header">
+          <p class="eyebrow" data-ui="obBasicsEyebrow">About you</p>
+          <h1 data-ui="obBasicsTitle">Basic info</h1>
+          <p class="lead" data-ui="obBasicsLead">Used to personalize learning analysis. You can change this later.</p>
+        </div>
+        <label class="field">
+          <span data-ui="obNativeLang">Native language</span>
+          <select id="ob-native-lang">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="ja">日本語</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <label class="field">
+          <span data-ui="obRegion">Where you take TOPIK</span>
+          <select id="ob-region">
+            <option value="cn">China (NEEA)</option>
+            <option value="kr">Korea</option>
+            <option value="other">Other / undecided</option>
+          </select>
+        </label>
+        <label class="field">
+          <span data-ui="obPrior">Prior Korean study</span>
+          <select id="ob-prior">
+            <option value="none">Just starting</option>
+            <option value="lt6">&lt; 6 months</option>
+            <option value="6to24">6 months – 2 years</option>
+            <option value="gt24">2+ years</option>
+          </select>
+        </label>
+        <label class="field">
+          <span data-ui="obAmount">Target study amount</span>
+          <select id="ob-amount">
+            <option value="light">Light</option>
+            <option value="steady" selected>Steady</option>
+            <option value="intense">Intense</option>
+          </select>
+        </label>
+        <label class="field">
+          <span data-ui="obDaily">Daily study time</span>
+          <select id="ob-daily">
+            <option value="15">~15 min</option>
+            <option value="30" selected>~30 min</option>
+            <option value="60">~60 min</option>
+            <option value="90">90+ min</option>
+          </select>
+        </label>
+        <button type="button" class="btn" id="ob-next-1" data-ui="obNext">Continue</button>
+      </div>
+
+      <div class="ob-step hidden" data-ob-step="2">
+        <div class="onboarding-header">
+          <p class="eyebrow" data-ui="obGoalEyebrow">Goal</p>
+          <h1 data-ui="obGoalTitle">Do you have an exam date?</h1>
+          <p class="lead" data-ui="obGoalLead">If not, we aim to finish the course first (final mock ≥80%).</p>
+        </div>
+        <div class="choice-row">
+          <button type="button" class="btn" id="ob-goal-yes" data-ui="obGoalYes">Yes — set a month</button>
+          <button type="button" class="btn btn-ghost" id="ob-goal-no" data-ui="obGoalNo">Not yet — course first</button>
+        </div>
+        <label class="field hidden" id="ob-month-wrap">
+          <span data-ui="obGoalMonth">Target month</span>
+          <input type="month" id="ob-goal-month" />
+        </label>
+        <button type="button" class="btn hidden" id="ob-next-2" data-ui="obNext">Continue</button>
+        <button type="button" class="btn btn-ghost" id="ob-back-2" data-ui="obBack">Back</button>
+      </div>
+
+      <div class="ob-step hidden" data-ob-step="3">
+        <div class="onboarding-header">
+          <p class="eyebrow" data-ui="obModeEyebrow">Mode</p>
+          <h1 data-ui="obModeTitle">Pick your path</h1>
+          <p class="lead" id="ob-mode-rec" data-ui="obModeLead">Suggested from your basics & goal — you can change anytime.</p>
+        </div>
+        <div class="mode-grid">
+          <button type="button" class="mode-card" data-mode="catch">
+            <div class="mode-icon">🎯</div>
+            <div class="mode-body">
+              <h2 data-i18n="modeCatchTitle">Catch Mode</h2>
+              <p data-i18n="modeCatchSub">Grab TOPIK tight. Weak spots first.</p>
+            </div>
+          </button>
+          <button type="button" class="mode-card" data-mode="mercy">
+            <div class="mode-icon">🌟</div>
+            <div class="mode-body">
+              <h2 data-i18n="modeMercyTitle">Mercy Mode</h2>
+              <p data-i18n="modeMercySub">No rush. jabi. waits for you.</p>
+            </div>
+          </button>
+          <button type="button" class="mode-card" data-mode="guide">
+            <div class="mode-icon">🧭</div>
+            <div class="mode-body">
+              <h2 data-i18n="modeGuideTitle">Guide Mode</h2>
+              <p data-i18n="modeGuideSub">Balanced path. jabi. leads.</p>
+            </div>
+          </button>
+        </div>
+        <button type="button" class="btn btn-ghost" id="ob-back-3" data-ui="obBack">Back</button>
+      </div>
+
+      <div class="ob-step hidden" data-ob-step="4">
+        <div class="onboarding-header">
+          <p class="eyebrow" data-ui="obPartnerEyebrow">Partner</p>
+          <h1 data-ui="obPartnerTitle">Choose your jamo</h1>
+          <p class="lead" data-ui="obPartnerLead">One partner per course. ㅈ is jabi. (guide) — not a partner.</p>
+        </div>
+        <div class="jamo-grid" id="ob-jamo-grid"></div>
+        <button type="button" class="btn btn-ghost" id="ob-back-4" data-ui="obBack">Back</button>
+      </div>
+    </section>
+
+    <!-- Home -->
+    <section id="view-home" class="hidden">
+      <div class="greeting" id="home-greeting"></div>
+      <div class="home-partner" id="home-partner">
+        <span class="partner-confetti c1" aria-hidden="true"></span>
+        <span class="partner-confetti c2" aria-hidden="true"></span>
+        <span class="partner-confetti c3" aria-hidden="true"></span>
+        <span class="partner-confetti c4" aria-hidden="true"></span>
+        <span class="partner-spark s1" aria-hidden="true">⚡</span>
+        <span class="partner-spark s2" aria-hidden="true">⚡</span>
+        <div class="partner-glyph-wrap">
+          <div class="partner-glyph" id="partner-glyph">ㄱ</div>
+          <span class="partner-stage-pill" id="partner-stage-pill">STAGE 1</span>
+        </div>
+        <div class="partner-meta">
+          <div class="partner-name" id="partner-name">—</div>
+          <div class="partner-stage" id="partner-stage">Stage 1 · baby</div>
+        </div>
+      </div>
+      <div class="xp-panel" aria-label="XP">
+        <div class="xp-panel-top">
+          <span class="k" data-ui="xp">XP</span>
+          <span class="xp-panel-val" id="xp-bar-label">0</span>
+        </div>
+        <div class="xp-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="xp-bar">
+          <div class="xp-bar-fill" id="xp-bar-fill"></div>
+        </div>
+        <p class="xp-bar-hint muted tiny" id="xp-bar-hint"></p>
+      </div>
+      <div class="stage-chips" id="stage-chips" aria-label="Stages"></div>
+      <p id="home-coach" class="srs-due-banner hidden" aria-live="polite"></p>
+      <div class="stats stats-compact">
+        <div class="stat"><div class="k" data-ui="streak">Streak</div><div class="v" id="stat-streak">0</div></div>
+        <div class="stat"><div class="k" data-ui="srsDueToday">Due today</div><div class="v" id="stat-srs-due">0</div></div>
+      </div>
+      <p id="srs-due-banner" class="srs-due-banner hidden" aria-live="polite"></p>
+      <p class="k" data-ui="todayMission" style="margin:18px 0 8px">Today’s mission</p>
+      <button type="button" class="btn" id="btn-home-mission"></button>
+      <button type="button" class="btn hidden" id="btn-home-srs-review"></button>
+    </section>
+
+    <!-- Practice (mocks + SRS entry) -->
+    <section id="view-practice" class="hidden">
+      <h2 class="view-title" data-ui="startMock">Practice</h2>
+      <p class="lead muted" data-ui="practiceLead">Reading & listening practice. Final mock when ready.</p>
+      <p class="muted tiny practice-hub-note" data-ui="practiceHubNote">Hangul · Basics · TOPIK II live on the Hub learning path.</p>
+      <p class="muted tiny practice-hub-note"><a href="./games/" data-ui="practiceGamesLink">Games → Dictation</a></p>
+
+      <p class="k" data-ui="practiceReading">Reading</p>
+      <div id="mock-list" class="mock-list"></div>
+
+      <p class="k" style="margin-top:20px" data-ui="practiceListening">Listening</p>
+      <p class="muted tiny" data-ui="practiceListenNote">MVP: on-device voice or script. Original bank — not official audio.</p>
+      <div id="listen-list" class="mock-list"></div>
+
+      <p class="k" style="margin-top:20px" data-ui="practiceFinal">Final mock</p>
+      <div id="final-mock-box" class="me-card final-mock-box">
+        <p id="final-mock-status" class="muted"></p>
+        <button type="button" class="btn" id="btn-final-mock" data-ui="finalMockCta">Open final mock</button>
+      </div>
+
+      <button type="button" class="btn btn-ghost" id="btn-srs" data-ui="reviewSrs">Review weak spots</button>
+    </section>
+
+    <!-- Me (analysis + settings) -->
+    <section id="view-me" class="hidden">
+      <h2 class="view-title" data-ui="meTitle">Me</h2>
+
+      <div class="me-card me-hof-card" id="me-hof-card">
+        <p class="k" data-ui="hofTitle">Hall of Fame</p>
+        <p class="muted tiny" data-ui="hofLead">Partners you’ve grown across tracks.</p>
+        <div id="me-hof-max" class="hof-row hof-row--max" hidden></div>
+        <div id="me-hof-grid" class="hof-grid" aria-live="polite"></div>
+      </div>
+
+      <div class="me-card" id="me-analysis-card">
+        <p class="k" data-ui="meAnalysisTitle">Your analysis</p>
+        <p class="muted me-rec" data-ui="meRecNote">Recommendation only — not a guarantee. TOPIK I is /200.</p>
+
+        <div class="ready-head">
+          <span class="k" data-ui="meReadyLabel">Estimated readiness</span>
+          <strong id="me-ready-pct">—</strong>
+        </div>
+        <p id="me-ready-note" class="muted ready-note"></p>
+
+        <div class="range-chart" aria-hidden="true">
+          <div class="range-track">
+            <div class="range-fill" id="me-range-fill"></div>
+            <div class="range-marker" id="me-range-you" title="You"></div>
+          </div>
+          <div class="range-labels">
+            <span>0</span>
+            <span class="mark-pass">80</span>
+            <span class="mark-l2">140</span>
+            <span class="mark-goal">160</span>
+            <span>200</span>
+          </div>
+        </div>
+        <p class="muted tiny" data-ui="meRangeLegend">0–79 fail · 80–139 level 1 · 140–200 level 2 · app goal ~160 (80%)</p>
+
+        <p class="k" style="margin-top:18px" data-ui="meTrendTitle">Error-correction trend</p>
+        <div class="trend-bars" id="me-trend-bars"></div>
+        <p id="me-trend-empty" class="muted tiny hidden" data-ui="meTrendEmpty">Take a few practice mocks to see your trend.</p>
+
+        <div class="sw-grid">
+          <div>
+            <p class="k" data-ui="meStrengths">Strengths</p>
+            <ul class="sw-list" id="me-strengths"></ul>
+          </div>
+          <div>
+            <p class="k" data-ui="meWeaknesses">Weak spots</p>
+            <ul class="sw-list" id="me-weaknesses"></ul>
+          </div>
+        </div>
+        <p class="muted tiny" style="margin-top:10px">
+          <a href="../teach/" data-ui="meTeachHandoff">Share AI report with a coach →</a>
+        </p>
+        <p class="muted tiny" data-ui="meCharNote">Character stage is separate from this chart.</p>
+        <div id="me-coach" class="me-coach"></div>
+      </div>
+
+      <div class="me-card" id="me-settings-card">
+        <p class="k" data-ui="meSettingsTitle">Settings</p>
+        <p class="muted tiny" data-ui="meSettingsLead">Change basics anytime. Full onboarding reset stays separate below.</p>
+        <p id="me-profile-summary" class="muted"></p>
+
+        <label class="field">
+          <span data-ui="obNativeLang">Native language</span>
+          <select id="me-set-native-lang">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="ja">日本語</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <label class="field">
+          <span data-ui="obRegion">Where you take TOPIK</span>
+          <select id="me-set-region">
+            <option value="cn">China (NEEA)</option>
+            <option value="kr">Korea</option>
+            <option value="other">Other / undecided</option>
+          </select>
+        </label>
+        <label class="field">
+          <span data-ui="obAmount">Target study amount</span>
+          <select id="me-set-amount">
+            <option value="light">Light</option>
+            <option value="steady">Steady</option>
+            <option value="intense">Intense</option>
+          </select>
+        </label>
+        <label class="field">
+          <span data-ui="obDaily">Daily study time</span>
+          <select id="me-set-daily">
+            <option value="15">~15 min</option>
+            <option value="30">~30 min</option>
+            <option value="60">~60 min</option>
+            <option value="90">90+ min</option>
+          </select>
+        </label>
+
+        <p class="k" style="margin-top:8px" data-ui="mePartnerSettingsTitle">Track partners</p>
+        <p class="muted tiny" data-ui="mePartnerSettingsLead">Re-pick per track — XP stays.</p>
+        <div id="me-partner-settings" class="me-partner-settings"></div>
+
+        <button type="button" class="btn btn-ghost" id="btn-mode" data-ui="changeMode">Change mode</button>
+        <button type="button" class="btn btn-ghost me-danger-btn" id="btn-redo-onboarding" data-ui="redoOnboarding">Redo onboarding</button>
+      </div>
+    </section>
+
+    <div id="me-partner-picker" class="me-partner-picker hidden" hidden role="dialog" aria-modal="true" aria-labelledby="me-partner-picker-title">
+      <div class="me-partner-picker-sheet">
+        <p class="k" id="me-partner-picker-title">Choose partner</p>
+        <p class="muted tiny" data-ui="obPartnerLead">One partner per course. ㅈ is jabi. (guide) — not a partner.</p>
+        <div class="jamo-grid" id="me-partner-picker-grid"></div>
+        <button type="button" class="btn btn-ghost" id="me-partner-picker-cancel" data-ui="obBack">Back</button>
+      </div>
+    </div>
+
+    <!-- Quiz -->
+    <section id="view-quiz" class="hidden">
+      <div class="quiz-card">
+        <div class="quiz-top-row">
+          <div class="qnum" id="qnum">1 / 10</div>
+          <button type="button" class="btn-quiz-exit" id="btn-quiz-exit" data-ui="back" aria-label="Save and exit">← jabi.</button>
+        </div>
+        <div class="review-tag hidden" id="review-tag"></div>
+        <div class="q-stem" id="q-stem"></div>
+        <div id="listen-tools" class="listen-tools hidden">
+          <button type="button" class="btn btn-ghost" id="btn-listen-play" data-ui="listenPlay">Play</button>
+          <button type="button" class="btn btn-ghost" id="btn-listen-script" data-ui="listenScript">Show script</button>
+          <p id="listen-script" class="hint-box hidden"></p>
+        </div>
+        <div class="choices" id="choices"></div>
+        <div id="hint-box" class="hint-box hidden" aria-live="polite"></div>
+        <div class="quiz-actions">
+          <button type="button" class="btn btn-ghost" id="btn-hint" data-ui="hint">Hint</button>
+          <button type="button" class="btn" id="btn-submit" data-ui="submit">Submit</button>
+        </div>
+        <p id="quiz-meta" class="quiz-meta" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section id="view-result" class="hidden">
+      <div class="quiz-card result-card">
+        <div id="result-clear" class="result-clear hidden" aria-live="polite">
+          <div class="result-clear-badge" aria-hidden="true">
+            <img class="result-clear-art" id="result-clear-art" alt="" width="34" height="34">
+          </div>
+          <span class="result-clear-text" id="result-clear-text"></span>
+        </div>
+        <p id="result-xp-line" class="result-xp-line"></p>
+        <h2 data-ui="finished">Mock complete</h2>
+        <p><span data-ui="score">Score</span>: <strong id="result-score"></strong></p>
+        <p id="result-tags" style="margin-top:12px;color:var(--muted);font-size:14px"></p>
+        <div id="result-learner" class="result-learner"></div>
+        <ul id="result-srs-schedule" class="srs-schedule hidden"></ul>
+        <div id="result-actions" class="result-actions">
+          <button type="button" class="btn" id="btn-result-mission" data-ui="nextMissionCta">Next mission</button>
+          <button type="button" class="btn hidden" id="btn-result-review"></button>
+          <button type="button" class="btn btn-ghost" id="btn-home" data-ui="back">← jabi.</button>
+          <button type="button" class="btn btn-ghost" id="btn-result-srs" data-ui="reviewSrs">Review weak spots</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SRS -->
+    <section id="view-srs" class="hidden">
+      <div class="quiz-card">
+        <h2 data-ui="srsTitle">Weak-spot tags</h2>
+        <p class="srs-explainer" data-ui="srsExplainer">Tags from wrong answers. “Due today” = scheduled review.</p>
+        <p id="srs-due-summary" class="srs-due-summary"></p>
+        <ul class="srs-list" id="srs-items"></ul>
+        <button type="button" class="btn hidden" id="btn-start-srs-review" data-ui="startSrsReview">Start today’s review (up to 3)</button>
+        <button type="button" class="btn hidden" id="btn-practice-srs" data-ui="practiceSrs">Practice weak spots now</button>
+        <button type="button" class="btn btn-ghost" id="btn-demo-srs" data-ui="demoSrs">Load demo weak spots (3)</button>
+        <button type="button" class="btn btn-ghost" id="btn-home2" data-ui="back">← jabi.</button>
+      </div>
+    </section>
+  </main>
+
+  <nav id="tab-bar" class="tab-bar hidden" aria-label="Main">
+    <button type="button" class="tab-btn active" data-tab="home" data-ui="tabHome">Home</button>
+    <button type="button" class="tab-btn" data-tab="practice" data-ui="tabPractice">Practice</button>
+    <button type="button" class="tab-btn" data-tab="me" data-ui="tabMe">Me</button>
+  </nav>
+
+  <div id="resume-gate" class="resume-gate hidden" role="dialog" aria-modal="true" aria-labelledby="resume-title">
+    <div class="resume-card">
+      <p class="eyebrow" data-ui="resumeTitle" id="resume-title">Welcome back</p>
+      <h1 data-ui="resumeLead">You left a practice in progress.</h1>
+      <p id="resume-meta" class="resume-meta"></p>
+      <div class="resume-actions">
+        <button type="button" class="btn" id="btn-resume-continue" data-ui="resumeContinue">Continue where I left off</button>
+        <button type="button" class="btn btn-ghost" id="btn-resume-home" data-ui="resumeHome">Go to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+
+  <script src="../js/i18n.js"></script>
+  <script src="./js/app.js?v=20260727b"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+{
+  "id": "jabi-topik2-write-54-v0",
+  "title": {
+    "en": "jabi. TOPIK II · Writing Q54 (pilot)",
+    "ko": "jabi. TOPIK II · 쓰기 54번 (파일럿)",
+    "zh": "jabi. TOPIK II · 写作第54题（试点）"
+  },
+  "level": "TOPIK II Writing · Q54",
+  "kind": "write-54",
+  "verified": false,
+  "verifiedAt": "2026-07-27",
+  "source": "jabi-original",
+  "sourceNote": "Research fill — original opinion essay prompts (~600–700 Hangul chars). Heaviest writing weight per research doc. Trait weights 66/15/19 (Heo 2024) — formative only; no Lemon / AI grading. Early tips must not leak a full model essay.",
+  "research": [
+    "docs/research-topik2-content-fill-ko.md",
+    "docs/research-english-aes-for-jabi-ko.md",
+    "docs/research-topik2-writing-scoring-papers-ko.md",
+    "docs/research-topik2-writing-grading-ko.md",
+    "docs/topik2-writing-axis-mapping-ko.md"
+  ],
+  "scoring": {
+    "mode": "trait-heuristic",
+    "scale": "0-100",
+    "note": "Q54 traits 66/15/19 from Heo 2024 essay rubric → jabi 3-axis (docs/spec-topik2-write54-trait-reweight-ko.md). Formative continuum only.",
+    "traits": {
+      "content": {
+        "weight": 0.66,
+        "label": {
+          "en": "Content",
+          "ko": "내용",
+          "zh": "内容"
+        }
+      },
+      "organization": {
+        "weight": 0.15,
+        "label": {
+          "en": "Organization / flow",
+          "ko": "조직·흐름",
+          "zh": "结构·连贯"
+        }
+      },
+      "language": {
+        "weight": 0.19,
+        "label": {
+          "en": "Language",
+          "ko": "언어",
+          "zh": "语言"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "t2-w54-01",
+      "type": "write-essay",
+      "minChars": 520,
+      "maxChars": 780,
+      "prompt": {
+        "ko": "※ 다음 주제로 자신의 의견을 600~700자 내외로 쓰십시오. (원작 연습용 · 공식 기출 아님)\n\n주제: 원격 근무(재택근무)가 늘어나는 현상에 대해 어떻게 생각합니까?\n\n아래 내용을 모두 포함하십시오.\n1. 원격 근무의 장점\n2. 원격 근무의 단점 또는 우려\n3. 본인의 종합 의견(어떤 조건이면 좋은지 등)\n\n격식체 문어로 쓰십시오. 담화 표지(예를 들어, 그러나, 따라서 등)를 활용하면 좋습니다.",
+        "en": "Write ~600–700 Hangul characters on this topic. (Original practice — not official TOPIK.)\n\nTopic: What do you think about the rise of remote / work-from-home?\n\nInclude all of:\n1. Advantages of remote work\n2. Disadvantages or concerns\n3. Your overall view (e.g. under what conditions it works)\n\nUse formal written Korean. Discourse markers (예를 들어, 그러나, 따라서…) help.",
+        "zh": "就下列主题写约600–700字（韩文字符）。（原作练习，非官方真题）\n\n主题：如何看待远程/居家办公增多？\n\n须全部包含：\n1. 远程办公的优点\n2. 缺点或担忧\n3. 你的综合意见（在何种条件下更好等）\n\n使用书面敬体。善用衔接词（예를 들어、그러나、따라서等）更好。"
+      },
+      "checklist": [
+        {
+          "id": "pros",
+          "en": "Covers advantages of remote work",
+          "ko": "원격 근무 장점을 다룸",
+          "zh": "写到远程办公优点"
+        },
+        {
+          "id": "cons",
+          "en": "Covers disadvantages / concerns",
+          "ko": "단점·우려를 다룸",
+          "zh": "写到缺点/担忧"
+        },
+        {
+          "id": "stance",
+          "en": "Gives a clear overall opinion",
+          "ko": "종합 의견을 분명히 밝힘",
+          "zh": "给出明确综合意见"
+        },
+        {
+          "id": "structure",
+          "en": "Uses discourse markers / multi-paragraph flow",
+          "ko": "담화 표지·문단 흐름이 보임",
+          "zh": "可见衔接词/多段结构"
+        },
+        {
+          "id": "register",
+          "en": "Keeps formal written register (-습니다 / -다)",
+          "ko": "격식체 문어 유지(-습니다/-다)",
+          "zh": "保持书面敬体（-습니다/-다）"
+        }
+      ],
+      "softKeywords": [
+        "장점",
+        "단점",
+        "그러나",
+        "따라서",
+        "원격",
+        "재택",
+        "근무"
+      ],
+      "discourseMarkers": [
+        "그러나",
+        "하지만",
+        "따라서",
+        "그러므로",
+        "예를 들어",
+        "또한",
+        "한편",
+        "즉"
+      ],
+      "modelOutline": {
+        "en": "Outline only: intro → pros (commute/focus) → cons (isolation/meetings) → conditional conclusion. Full essay not in early tip.",
+        "ko": "개요만: 도입 → 장점(출퇴근·집중) → 단점(고립·회의) → 조건부 결론. 전문은 조기 팁에 없음.",
+        "zh": "仅提纲：引入→优点（通勤/专注）→缺点（孤立/会议）→有条件结论。全文不在早期提示中给出。"
+      },
+      "feedback": {
+        "ok": {
+          "en": "OK — length, axes, and register look present. Not an official score.",
+          "ko": "통과 — 분량·축·문어가 보입니다. 공식 점수 아님.",
+          "zh": "通过 — 篇幅、要点与语体可见。非官方分数。"
+        },
+        "stub": {
+          "en": "Coach: hit ~600–700 chars; cover pros, cons, and stance; keep formal markers. Outline reveal is optional — no full model dump.",
+          "ko": "코치: 약 600–700자 · 장점·단점·종합 · 격식체·담화 표지. 개요 보기는 선택 — 전문 유출 없음.",
+          "zh": "教练：约600–700字；覆盖优缺点与立场；保持敬体与衔接。提纲可选 — 不倾倒全文范例。"
+        }
+      },
+      "why": {
+        "en": "Q54 is weighted heaviest — content axes + structure + language use matter most.",
+        "ko": "54번은 배점 최대 — 내용 축·구조·언어 사용이 핵심.",
+        "zh": "第54题权重最大 — 内容轴、结构、语言使用最关键。"
+      }
+    },
+    {
+      "id": "t2-w54-02",
+      "type": "write-essay",
+      "minChars": 520,
+      "maxChars": 780,
+      "prompt": {
+        "ko": "※ 다음 주제로 자신의 의견을 600~700자 내외로 쓰십시오. (원작 연습용)\n\n주제: 학교에서 AI 번역·생성 도구를 학생에게 허용해야 할까요?\n\n아래 내용을 모두 포함하십시오.\n1. 허용할 때의 이점\n2. 금지하거나 제한할 때의 이유\n3. 본인이 생각하는 균형 잡힌 규칙(예: 언제 허용/금지)\n\n격식체 문어로 쓰십시오.",
+        "en": "Write ~600–700 Hangul characters. (Original practice.)\n\nTopic: Should schools allow students to use AI translation / generation tools?\n\nInclude all of:\n1. Benefits of allowing them\n2. Reasons to ban or limit them\n3. Your balanced rule (when allow / when not)\n\nFormal written Korean.",
+        "zh": "写约600–700字（韩文字符）。（原作练习）\n\n主题：学校是否应允许学生使用AI翻译/生成工具？\n\n须全部包含：\n1. 允许的好处\n2. 禁止或限制的理由\n3. 你认为的平衡规则（何时允许/禁止）\n\n书面敬体。"
+      },
+      "checklist": [
+        {
+          "id": "allow",
+          "en": "Discusses benefits of allowing AI tools",
+          "ko": "허용 시 이점을 논함",
+          "zh": "讨论允许AI工具的好处"
+        },
+        {
+          "id": "limit",
+          "en": "Discusses reasons to limit or ban",
+          "ko": "제한·금지 이유를 논함",
+          "zh": "讨论限制/禁止的理由"
+        },
+        {
+          "id": "rule",
+          "en": "Proposes a balanced rule / conditions",
+          "ko": "균형 잡힌 규칙·조건을 제안",
+          "zh": "提出平衡规则/条件"
+        },
+        {
+          "id": "structure",
+          "en": "Uses discourse markers / multi-paragraph flow",
+          "ko": "담화 표지·문단 흐름이 보임",
+          "zh": "可见衔接词/多段结构"
+        },
+        {
+          "id": "register",
+          "en": "Keeps formal written register (-습니다 / -다)",
+          "ko": "격식체 문어 유지(-습니다/-다)",
+          "zh": "保持书面敬体（-습니다/-다）"
+        }
+      ],
+      "softKeywords": [
+        "AI",
+        "번역",
+        "허용",
+        "금지",
+        "학생",
+        "학교",
+        "그러나",
+        "따라서"
+      ],
+      "discourseMarkers": [
+        "그러나",
+        "하지만",
+        "따라서",
+        "그러므로",
+        "예를 들어",
+        "또한",
+        "반면",
+        "즉"
+      ],
+      "modelOutline": {
+        "en": "Outline only: learning aid vs integrity risk → allow for draft/vocab with disclosure → ban on graded exams. No full model essay in early tip.",
+        "ko": "개요만: 학습 보조 vs 부정행위 위험 → 초안·어휘는 공개 전제 허용 → 채점 시험은 금지. 전문은 조기 팁에 없음.",
+        "zh": "仅提纲：助学 vs 诚信风险 → 草稿/词汇可在披露前提下允许 → 计分考试禁止。全文不在早期提示中给出。"
+      },
+      "feedback": {
+        "ok": {
+          "en": "OK — both sides and a rule appear present. Not an official score.",
+          "ko": "통과 — 양측 논점과 규칙이 보입니다. 공식 점수 아님.",
+          "zh": "通过 — 可见双方论点与规则。非官方分数。"
+        },
+        "stub": {
+          "en": "Coach: argue both sides, then state a clear conditional rule; keep formal length. Outline on demand only.",
+          "ko": "코치: 양측을 다루고 조건부 규칙을 분명히 · 격식체·분량. 개요는 요청 시에만.",
+          "zh": "教练：双方论证后给出有条件规则；保持敬体与篇幅。提纲仅按需。"
+        }
+      },
+      "why": {
+        "en": "Policy essays score better with balanced axes before a firm recommendation.",
+        "ko": "정책형 논술은 균형 축 뒤에 분명한 제안이 유리.",
+        "zh": "政策论述宜先平衡再给出明确建议。"
+      }
+    },
+    {
+      "id": "t2-w54-03",
+      "type": "write-essay",
+      "minChars": 520,
+      "maxChars": 780,
+      "prompt": {
+        "ko": "※ 다음 주제로 자신의 의견을 600~700자 내외로 쓰십시오. (원작 연습용 · 공식 기출 아님)\n\n주제: 도시에서 자동차 이용을 줄이고 대중교통·자전거를 늘려야 할까요?\n\n아래 내용을 모두 포함하십시오.\n1. 자동차를 줄일 때의 장점\n2. 현실적인 어려움이나 반론\n3. 본인이 생각하는 균형 있는 방향\n\n격식체 문어로 쓰십시오. 담화 표지를 활용하면 좋습니다.",
+        "en": "Write ~600–700 Hangul characters. (Original practice — not official TOPIK.)\n\nTopic: Should cities reduce car use and expand public transit / bikes?\n\nInclude all of:\n1. Benefits of reducing cars\n2. Practical difficulties or counterarguments\n3. Your balanced direction\n\nFormal written Korean. Discourse markers help.",
+        "zh": "写约600–700字（韩文字符）。（原作练习，非官方真题）\n\n主题：城市是否应减少汽车、扩大公交/自行车？\n\n须全部包含：\n1. 减少汽车的好处\n2. 现实困难或反论\n3. 你认为的平衡方向\n\n书面敬体。善用衔接词更好。"
+      },
+      "checklist": [
+        {
+          "id": "pros",
+          "en": "Covers benefits of fewer cars / more transit",
+          "ko": "자동차 감소·대중교통 확대의 장점을 다룸",
+          "zh": "写到少车/扩公交的好处"
+        },
+        {
+          "id": "cons",
+          "en": "Covers difficulties or counterarguments",
+          "ko": "어려움·반론을 다룸",
+          "zh": "写到困难或反论"
+        },
+        {
+          "id": "stance",
+          "en": "Gives a clear balanced direction",
+          "ko": "균형 있는 방향을 분명히 밝힘",
+          "zh": "给出明确平衡方向"
+        },
+        {
+          "id": "structure",
+          "en": "Uses discourse markers / multi-paragraph flow",
+          "ko": "담화 표지·문단 흐름이 보임",
+          "zh": "可见衔接词/多段结构"
+        },
+        {
+          "id": "register",
+          "en": "Keeps formal written register (-습니다 / -다)",
+          "ko": "격식체 문어 유지(-습니다/-다)",
+          "zh": "保持书面敬体（-습니다/-다）"
+        }
+      ],
+      "softKeywords": [
+        "자동차",
+        "대중교통",
+        "자전거",
+        "그러나",
+        "따라서",
+        "도시",
+        "환경"
+      ],
+      "discourseMarkers": [
+        "그러나",
+        "하지만",
+        "따라서",
+        "그러므로",
+        "예를 들어",
+        "또한",
+        "한편",
+        "즉"
+      ],
+      "modelOutline": {
+        "en": "Outline only: pollution/congestion pros → access/weather cons → phased transit + bike lanes. No full model in early tip.",
+        "ko": "개요만: 환경·체증 장점 → 접근성·날씨 어려움 → 단계적 대중교통·자전거길. 전문은 조기 팁에 없음.",
+        "zh": "仅提纲：环保/拥堵优点 → 可达性/天气困难 → 分阶段公交与自行车道。全文不在早期提示。"
+      },
+      "feedback": {
+        "ok": {
+          "en": "OK — axes and register look present. Not an official score.",
+          "ko": "통과 — 축·문어가 보입니다. 공식 점수 아님.",
+          "zh": "通过 — 可见要点与语体。非官方分数。"
+        },
+        "stub": {
+          "en": "Coach: cover pros, difficulties, and a balanced plan; keep formal markers. Outline on demand only.",
+          "ko": "코치: 장점·어려움·균형 방향 · 격식체·담화 표지. 개요는 요청 시에만.",
+          "zh": "教练：覆盖优点、困难与平衡方向；保持敬体与衔接。提纲仅按需。"
+        }
+      },
+      "why": {
+        "en": "Urban-policy essays need trade-offs before a practical recommendation.",
+        "ko": "도시 정책 논술은 이해관계 대비 뒤 현실적 제안이 유리.",
+        "zh": "城市政策论述宜先权衡再给可行建议。"
+      }
+    }
+  ]
+}

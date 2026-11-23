@@ -1,0 +1,8702 @@
+{
+  "id": "listen-match-beginner",
+  "version": 71,
+  "level": "beginner-elementary",
+  "lang": "ko",
+  "mode": "listen-match",
+  "choiceCount": 4,
+  "audio": {
+    "mode": "tts",
+    "lang": "ko-KR",
+    "note": "MVP uses Web Speech API speechSynthesis. Quality varies by OS/browser. Not recorded human audio."
+  },
+  "timer": {
+    "punish": false,
+    "note": "No fail-on-time. Soft UX only."
+  },
+  "source": "original-jabi",
+  "copyright": "Original beginner phrases for jabi Listen Match, plus intermediate housing-services, money-banking, public-workplace, health-clinic, school-class, travel-lodging, weather-season, digital-comms, family-relations, hobby-culture, emotion-mood, sports-exercise, nature-environment, restaurant-cooking, clothes-shopping, music-arts, media-news, celebration-holiday, time-appointment, home-chores, body-parts, directions-location, furniture-room, fruit-market, kitchen-tableware, office-stationery, post-mail, animals-pets, vehicles-driving, city-places, pantry-ingredients, bathroom-hygiene, jobs-occupations, countries-nationality, daily-routine, size-quantity, temperature-senses, colors-shapes, accessories-belongings, electricity-appliances, building-facilities, movement-actions, requests-favors, thoughts-plans, speech-talk, change-progress, comparison-degree, cause-reason, problem-solution, opinion-judgment, habits-lifestyle, rules-permission, friends-social, personality-character, apology-politeness, success-challenge, advice-counsel, encourage-support, promise-trust, refuse-accept, complain-dissatisfaction, and warn-caution crossfill. Not scraped from Duolingo, Speechling, Bida/KoreaXin, or any third-party bank. Orthography follows NIKL/Sejong survival 해요체 norms. No hotel/hospital/app/museum/sports/restaurant/clothing/music/media/celebration/calendar/appliance/body-product/map-app/furniture/grocery/cookware/stationery/courier/pet/car/taxi/store/bank/salon/hygiene/company/airline/embassy/realtor-brand names.",
+  "themes": [
+    "shopping",
+    "cosmetics",
+    "housing",
+    "cafe",
+    "clinic",
+    "food",
+    "transport",
+    "leisure",
+    "banking",
+    "workplace",
+    "school",
+    "travel",
+    "weather",
+    "digital",
+    "family",
+    "hobby",
+    "emotion",
+    "sports",
+    "nature",
+    "restaurant",
+    "clothes",
+    "music",
+    "media",
+    "celebration",
+    "time",
+    "chores",
+    "body",
+    "direction",
+    "furniture",
+    "fruit",
+    "kitchen",
+    "stationery",
+    "mail",
+    "pets",
+    "driving",
+    "intermediate",
+    "places",
+    "pantry",
+    "bathroom",
+    "jobs",
+    "country",
+    "routine",
+    "size",
+    "senses",
+    "color",
+    "accessories",
+    "electric",
+    "building",
+    "motion",
+    "favor",
+    "think",
+    "speech",
+    "change",
+    "compare",
+    "reason",
+    "problem",
+    "opinion",
+    "habit",
+    "rules",
+    "friends",
+    "personality",
+    "apology",
+    "success",
+    "advice",
+    "encourage",
+    "promise",
+    "refuse",
+    "complain",
+    "warn"
+  ],
+  "items": [
+    {
+      "id": "lm-01",
+      "text": "안녕하세요",
+      "gloss": {
+        "en": "Hello (polite)",
+        "ko": "인사 (존댓말)",
+        "zh": "你好（敬语）"
+      },
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "id": "lm-02",
+      "text": "안녕히 가세요",
+      "gloss": {
+        "en": "Goodbye (to someone leaving)",
+        "ko": "작별 (가는 사람)",
+        "zh": "再见（对方离开）"
+      },
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "id": "lm-03",
+      "text": "감사합니다",
+      "gloss": {
+        "en": "Thank you",
+        "ko": "고마움",
+        "zh": "谢谢"
+      },
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "id": "lm-04",
+      "text": "죄송합니다",
+      "gloss": {
+        "en": "I'm sorry / Excuse me",
+        "ko": "사과",
+        "zh": "对不起"
+      },
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "id": "lm-05",
+      "text": "이름이 뭐예요",
+      "gloss": {
+        "en": "What is your name?",
+        "ko": "이름 묻기",
+        "zh": "你叫什么名字？"
+      },
+      "tags": [
+        "basic",
+        "question"
+      ]
+    },
+    {
+      "id": "lm-06",
+      "text": "저는 학생이에요",
+      "gloss": {
+        "en": "I am a student",
+        "ko": "자기소개",
+        "zh": "我是学生"
+      },
+      "tags": [
+        "basic"
+      ]
+    },
+    {
+      "id": "lm-07",
+      "text": "만나서 반가워요",
+      "gloss": {
+        "en": "Nice to meet you",
+        "ko": "첫 만남",
+        "zh": "很高兴认识你"
+      },
+      "tags": [
+        "greeting"
+      ]
+    },
+    {
+      "id": "lm-08",
+      "text": "물 주세요",
+      "gloss": {
+        "en": "Water, please",
+        "ko": "부탁",
+        "zh": "请给我水"
+      },
+      "tags": [
+        "cafe"
+      ]
+    },
+    {
+      "id": "lm-09",
+      "text": "커피 한 잔 주세요",
+      "gloss": {
+        "en": "One coffee, please",
+        "ko": "카페 주문",
+        "zh": "请给我一杯咖啡"
+      },
+      "tags": [
+        "cafe"
+      ]
+    },
+    {
+      "id": "lm-10",
+      "text": "얼마예요",
+      "gloss": {
+        "en": "How much is it?",
+        "ko": "가격",
+        "zh": "多少钱？"
+      },
+      "tags": [
+        "shopping",
+        "question"
+      ]
+    },
+    {
+      "id": "lm-11",
+      "text": "화장실이 어디에 있어요",
+      "gloss": {
+        "en": "Where is the restroom?",
+        "ko": "길 묻기",
+        "zh": "洗手间在哪里？"
+      },
+      "tags": [
+        "directions",
+        "question"
+      ]
+    },
+    {
+      "id": "lm-12",
+      "text": "오늘 날씨가 좋아요",
+      "gloss": {
+        "en": "The weather is nice today",
+        "ko": "날씨",
+        "zh": "今天天气很好"
+      },
+      "tags": [
+        "basic"
+      ]
+    },
+    {
+      "id": "lm-13",
+      "text": "천천히 말해 주세요",
+      "gloss": {
+        "en": "Please speak slowly",
+        "ko": "요청",
+        "zh": "请说慢一点"
+      },
+      "tags": [
+        "survival"
+      ]
+    },
+    {
+      "id": "lm-14",
+      "text": "다시 한 번 말해 주세요",
+      "gloss": {
+        "en": "Please say it again",
+        "ko": "요청",
+        "zh": "请再说一遍"
+      },
+      "tags": [
+        "survival"
+      ]
+    },
+    {
+      "id": "lm-15",
+      "text": "이거 주세요",
+      "gloss": {
+        "en": "This one, please",
+        "ko": "주문·구매",
+        "zh": "请给我这个"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "lm-16",
+      "text": "맛있어요",
+      "gloss": {
+        "en": "It's delicious",
+        "ko": "음식 평가",
+        "zh": "好吃"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "lm-17",
+      "text": "어디에 가요",
+      "gloss": {
+        "en": "Where are you going?",
+        "ko": "길·목적지",
+        "zh": "你去哪里？"
+      },
+      "tags": [
+        "directions",
+        "question"
+      ]
+    },
+    {
+      "id": "lm-18",
+      "text": "친구를 만나요",
+      "gloss": {
+        "en": "I'm meeting a friend",
+        "ko": "약속",
+        "zh": "我去见朋友"
+      },
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "lm-19",
+      "text": "내일 봐요",
+      "gloss": {
+        "en": "See you tomorrow",
+        "ko": "작별",
+        "zh": "明天见"
+      },
+      "tags": [
+        "greeting",
+        "time"
+      ]
+    },
+    {
+      "id": "lm-20",
+      "text": "도와주세요",
+      "gloss": {
+        "en": "Please help me",
+        "ko": "도움 요청",
+        "zh": "请帮帮我"
+      },
+      "tags": [
+        "survival"
+      ]
+    },
+    {
+      "id": "lm-21",
+      "text": "버스 타세요",
+      "gloss": {
+        "en": "Please take the bus",
+        "ko": "교통",
+        "zh": "请坐公交"
+      },
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "lm-22",
+      "text": "감기에 걸렸어요",
+      "gloss": {
+        "en": "I caught a cold",
+        "ko": "증상",
+        "zh": "我感冒了"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "lm-23",
+      "text": "과자 하나 주세요",
+      "gloss": {
+        "en": "One snack, please",
+        "ko": "간식",
+        "zh": "请给我一包零食"
+      },
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "lm-24",
+      "text": "이거 얼마예요",
+      "gloss": {
+        "en": "How much is this?",
+        "ko": "가격",
+        "zh": "这个多少钱？"
+      },
+      "tags": [
+        "shopping",
+        "question"
+      ]
+    },
+    {
+      "id": "lm-25",
+      "text": "카드로 주세요",
+      "gloss": {
+        "en": "By card, please",
+        "ko": "결제",
+        "zh": "请刷卡"
+      },
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "lm-26",
+      "text": "같이 산책해요",
+      "gloss": {
+        "en": "Let's take a walk together",
+        "ko": "여가",
+        "zh": "一起散步吧"
+      },
+      "tags": [
+        "leisure"
+      ]
+    },
+    {
+      "id": "lm-27",
+      "text": "표 어디에 사요",
+      "gloss": {
+        "en": "Where do I buy a ticket?",
+        "ko": "교통",
+        "zh": "票在哪里买？"
+      },
+      "tags": [
+        "transport",
+        "question"
+      ]
+    },
+    {
+      "id": "lm-28",
+      "text": "약이 필요해요",
+      "gloss": {
+        "en": "I need medicine",
+        "ko": "병원",
+        "zh": "我需要药"
+      },
+      "tags": [
+        "clinic"
+      ]
+    },
+    {
+      "id": "lm-29",
+      "text": "로션 주세요",
+      "gloss": {
+        "en": "Lotion, please",
+        "ko": "화장품",
+        "zh": "请给我乳液"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "lm-30",
+      "text": "피부가 건조해요",
+      "gloss": {
+        "en": "My skin is dry",
+        "ko": "피부",
+        "zh": "皮肤很干"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "lm-31",
+      "text": "크림을 발라요",
+      "gloss": {
+        "en": "I apply cream",
+        "ko": "바르다",
+        "zh": "涂面霜"
+      },
+      "tags": [
+        "cosmetics"
+      ]
+    },
+    {
+      "id": "lm-32",
+      "text": "빨간 립스틱 있어요",
+      "gloss": {
+        "en": "Do you have red lipstick?",
+        "ko": "화장품",
+        "zh": "有红色口红吗？"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "lm-33",
+      "text": "샴푸 하나 주세요",
+      "gloss": {
+        "en": "One shampoo, please",
+        "ko": "화장품",
+        "zh": "请给我一瓶洗发水"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "lm-34",
+      "text": "손 비누 있어요",
+      "gloss": {
+        "en": "Do you have hand soap?",
+        "ko": "위생",
+        "zh": "有洗手液吗？"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "lm-35",
+      "text": "화장품 사요",
+      "gloss": {
+        "en": "I buy cosmetics",
+        "ko": "쇼핑",
+        "zh": "买化妆品"
+      },
+      "tags": [
+        "cosmetics",
+        "shopping"
+      ]
+    },
+    {
+      "id": "lm-36",
+      "text": "관리비가 올랐어요",
+      "gloss": {
+        "en": "The maintenance fee went up",
+        "ko": "관리비",
+        "zh": "管理费涨了"
+      },
+      "tags": [
+        "housing",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-37",
+      "text": "수도가 고장 났어요",
+      "gloss": {
+        "en": "The water pipe broke down",
+        "ko": "고장",
+        "zh": "水管坏了"
+      },
+      "tags": [
+        "housing",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-38",
+      "text": "수리를 부탁해요",
+      "gloss": {
+        "en": "Please repair it / I ask for a repair",
+        "ko": "수리",
+        "zh": "请帮忙修理"
+      },
+      "tags": [
+        "housing",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-39",
+      "text": "배달이 왔어요",
+      "gloss": {
+        "en": "The delivery has arrived",
+        "ko": "배달",
+        "zh": "外卖/快递到了"
+      },
+      "tags": [
+        "housing",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-40",
+      "text": "관리실에 문의해요",
+      "gloss": {
+        "en": "I inquire at the management office",
+        "ko": "문의",
+        "zh": "向管理室咨询"
+      },
+      "tags": [
+        "housing",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-41",
+      "text": "공사가 불편해요",
+      "gloss": {
+        "en": "The construction is inconvenient",
+        "ko": "불편",
+        "zh": "施工很不便"
+      },
+      "tags": [
+        "housing",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-42",
+      "text": "월세를 냈어요",
+      "gloss": {
+        "en": "I paid the monthly rent",
+        "ko": "월세",
+        "zh": "交了月租"
+      },
+      "tags": [
+        "housing",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-43",
+      "text": "다음 주에 이사해요",
+      "gloss": {
+        "en": "I'm moving next week",
+        "ko": "이사",
+        "zh": "下周搬家"
+      },
+      "tags": [
+        "housing",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-44",
+      "text": "열쇠를 받았어요",
+      "gloss": {
+        "en": "I received the key",
+        "ko": "열쇠",
+        "zh": "收到了钥匙"
+      },
+      "tags": [
+        "housing",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-45",
+      "text": "이웃이 친절해요",
+      "gloss": {
+        "en": "The neighbor is kind",
+        "ko": "이웃",
+        "zh": "邻居很亲切"
+      },
+      "tags": [
+        "housing",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-46",
+      "text": "계좌를 열어요",
+      "gloss": {
+        "en": "I open an account",
+        "ko": "계좌",
+        "zh": "开账户"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-47",
+      "text": "이체가 끝났어요",
+      "gloss": {
+        "en": "The transfer is done",
+        "ko": "이체",
+        "zh": "转账好了"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-48",
+      "text": "입금을 기다려요",
+      "gloss": {
+        "en": "I'm waiting for the deposit",
+        "ko": "입금",
+        "zh": "等入账"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-49",
+      "text": "출금할 거예요",
+      "gloss": {
+        "en": "I'm going to withdraw",
+        "ko": "출금",
+        "zh": "要取款"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-50",
+      "text": "잔액을 확인해요",
+      "gloss": {
+        "en": "I check the balance",
+        "ko": "잔액",
+        "zh": "查余额"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-51",
+      "text": "수수료가 비싸요",
+      "gloss": {
+        "en": "The fee is expensive",
+        "ko": "수수료",
+        "zh": "手续费贵"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-52",
+      "text": "현금을 찾아요",
+      "gloss": {
+        "en": "I'm looking for cash",
+        "ko": "현금",
+        "zh": "找现金"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-53",
+      "text": "환전이 필요해요",
+      "gloss": {
+        "en": "I need currency exchange",
+        "ko": "환전",
+        "zh": "需要换汇"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-54",
+      "text": "통장이 필요해요",
+      "gloss": {
+        "en": "I need a bankbook",
+        "ko": "통장",
+        "zh": "需要存折"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-55",
+      "text": "송금이 늦어요",
+      "gloss": {
+        "en": "The remittance is late",
+        "ko": "송금",
+        "zh": "汇款晚了"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-56",
+      "text": "출금 한도가 낮아요",
+      "gloss": {
+        "en": "The withdrawal limit is low",
+        "ko": "한도",
+        "zh": "取款额度低"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-57",
+      "text": "비밀번호를 입력해요",
+      "gloss": {
+        "en": "I enter the PIN / password",
+        "ko": "비밀번호",
+        "zh": "输入密码"
+      },
+      "tags": [
+        "banking",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-58",
+      "text": "다음 주에 출장이에요",
+      "gloss": {
+        "en": "I have a business trip next week",
+        "ko": "출장",
+        "zh": "下周要出差"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-59",
+      "text": "여기 서명해 주세요",
+      "gloss": {
+        "en": "Please sign here",
+        "ko": "서명",
+        "zh": "请在这里签名"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-60",
+      "text": "서류가 부족해요",
+      "gloss": {
+        "en": "The paperwork is incomplete",
+        "ko": "서류",
+        "zh": "文件不够"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-61",
+      "text": "오늘까지 제출해요",
+      "gloss": {
+        "en": "I submit it by today",
+        "ko": "제출",
+        "zh": "今天前提交"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-62",
+      "text": "발급이 끝났어요",
+      "gloss": {
+        "en": "Issuance is finished",
+        "ko": "발급",
+        "zh": "发放好了"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-63",
+      "text": "증명서를 보여 주세요",
+      "gloss": {
+        "en": "Please show the certificate",
+        "ko": "증명서",
+        "zh": "请出示证明书"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-64",
+      "text": "민원 창구가 어디예요",
+      "gloss": {
+        "en": "Where is the civil-request window?",
+        "ko": "민원",
+        "zh": "公务窗口在哪里？"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-65",
+      "text": "담당자를 찾아요",
+      "gloss": {
+        "en": "I'm looking for the person in charge",
+        "ko": "담당자",
+        "zh": "找负责人"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-66",
+      "text": "제 부서가 바뀌어요",
+      "gloss": {
+        "en": "My department is changing",
+        "ko": "부서",
+        "zh": "我的部门要换"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-67",
+      "text": "아홉 시에 출근해요",
+      "gloss": {
+        "en": "I go to work at nine",
+        "ko": "출근",
+        "zh": "九点上班"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-68",
+      "text": "여섯 시에 퇴근해요",
+      "gloss": {
+        "en": "I leave work at six",
+        "ko": "퇴근",
+        "zh": "六点下班"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-69",
+      "text": "연차를 신청해요",
+      "gloss": {
+        "en": "I apply for annual leave",
+        "ko": "연차",
+        "zh": "申请年假"
+      },
+      "tags": [
+        "workplace",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-70",
+      "text": "증상이 좀 있어요",
+      "gloss": {
+        "en": "I have some symptoms",
+        "ko": "증상",
+        "zh": "有一点症状"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-71",
+      "text": "오전에 진료받아요",
+      "gloss": {
+        "en": "I get seen in the morning",
+        "ko": "진료",
+        "zh": "上午就诊"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-72",
+      "text": "처방전을 가져가요",
+      "gloss": {
+        "en": "I take the prescription with me",
+        "ko": "처방",
+        "zh": "我带着处方走"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-73",
+      "text": "여기서 접수해요",
+      "gloss": {
+        "en": "I check in here",
+        "ko": "접수",
+        "zh": "在这里挂号"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-74",
+      "text": "진찰 좀 받을게요",
+      "gloss": {
+        "en": "I'll get examined, please",
+        "ko": "진찰",
+        "zh": "请给我诊察一下"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-75",
+      "text": "허리에 통증이 있어요",
+      "gloss": {
+        "en": "I have pain in my lower back",
+        "ko": "통증",
+        "zh": "腰痛"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-76",
+      "text": "식후에 복용해요",
+      "gloss": {
+        "en": "I take it after meals",
+        "ko": "복용",
+        "zh": "饭后服用"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-77",
+      "text": "많이 회복됐어요",
+      "gloss": {
+        "en": "I've recovered a lot",
+        "ko": "회복",
+        "zh": "恢复得很多了"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-78",
+      "text": "약사님께 여쭤봐요",
+      "gloss": {
+        "en": "I'll ask the pharmacist",
+        "ko": "약사",
+        "zh": "我问问药剂师"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-79",
+      "text": "주사를 한 대 맞아요",
+      "gloss": {
+        "en": "I get one shot",
+        "ko": "주사",
+        "zh": "打一针"
+      },
+      "tags": [
+        "clinic",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-80",
+      "text": "오늘 수업이 있어요",
+      "gloss": {
+        "en": "I have class today",
+        "ko": "수업",
+        "zh": "今天有课"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-81",
+      "text": "숙제부터 할게요",
+      "gloss": {
+        "en": "I'll start with homework",
+        "ko": "숙제",
+        "zh": "我先做作业"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-82",
+      "text": "내일 시험이에요",
+      "gloss": {
+        "en": "The exam is tomorrow",
+        "ko": "시험",
+        "zh": "明天考试"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-83",
+      "text": "강의를 들으러 가요",
+      "gloss": {
+        "en": "I'm going to attend a lecture",
+        "ko": "강의",
+        "zh": "我去听讲"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-84",
+      "text": "등록을 해야 해요",
+      "gloss": {
+        "en": "I have to enroll",
+        "ko": "등록",
+        "zh": "得去注册"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-85",
+      "text": "이번 학기예요",
+      "gloss": {
+        "en": "It's this semester",
+        "ko": "학기",
+        "zh": "是这学期"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-86",
+      "text": "출석 확인해 주세요",
+      "gloss": {
+        "en": "Please check attendance",
+        "ko": "출석",
+        "zh": "请核对出勤"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-87",
+      "text": "성적을 확인해요",
+      "gloss": {
+        "en": "I check my grades",
+        "ko": "성적",
+        "zh": "我查成绩"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-88",
+      "text": "교실에서 만나요",
+      "gloss": {
+        "en": "Let's meet in the classroom",
+        "ko": "교실",
+        "zh": "在教室见"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-89",
+      "text": "교재를 가져와요",
+      "gloss": {
+        "en": "Bring the textbook",
+        "ko": "교재",
+        "zh": "把教材带来"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-90",
+      "text": "과제를 내요",
+      "gloss": {
+        "en": "I turn in the assignment",
+        "ko": "과제",
+        "zh": "我交课题"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-91",
+      "text": "수강해요",
+      "gloss": {
+        "en": "I’m taking the course",
+        "ko": "수강",
+        "zh": "我在听课/选课"
+      },
+      "tags": [
+        "school",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-92",
+      "text": "숙소가 깨끗해요",
+      "gloss": {
+        "en": "The lodging is clean",
+        "ko": "숙소",
+        "zh": "住处很干净"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-93",
+      "text": "하룻밤 숙박해요",
+      "gloss": {
+        "en": "I stay one night",
+        "ko": "숙박",
+        "zh": "我住一晚"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-94",
+      "text": "여행지가 좋아요",
+      "gloss": {
+        "en": "The destination is nice",
+        "ko": "여행지",
+        "zh": "目的地不错"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-95",
+      "text": "여권을 찾아요",
+      "gloss": {
+        "en": "I'm looking for my passport",
+        "ko": "여권",
+        "zh": "我找护照"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-96",
+      "text": "시내 관광해요",
+      "gloss": {
+        "en": "I sightsee downtown",
+        "ko": "관광",
+        "zh": "我在市内观光"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-97",
+      "text": "관광지를 구경해요",
+      "gloss": {
+        "en": "I look around the tourist spot",
+        "ko": "관광지",
+        "zh": "我逛景点"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-98",
+      "text": "항공권이 싸요",
+      "gloss": {
+        "en": "The airline ticket is cheap",
+        "ko": "항공권",
+        "zh": "机票便宜"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-99",
+      "text": "세 시에 체크인해요",
+      "gloss": {
+        "en": "I check in at three",
+        "ko": "체크인",
+        "zh": "三点办理入住"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-100",
+      "text": "짐을 맡기세요",
+      "gloss": {
+        "en": "Please leave the luggage",
+        "ko": "짐",
+        "zh": "请寄存行李"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-101",
+      "text": "여관이 작아요",
+      "gloss": {
+        "en": "The inn is small",
+        "ko": "여관",
+        "zh": "旅店很小"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-102",
+      "text": "아침에 체크아웃해요",
+      "gloss": {
+        "en": "I check out in the morning",
+        "ko": "체크아웃",
+        "zh": "早上退房"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-103",
+      "text": "안내소가 가까워요",
+      "gloss": {
+        "en": "The information desk is nearby",
+        "ko": "안내소",
+        "zh": "问讯处很近"
+      },
+      "tags": [
+        "travel",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-104",
+      "text": "가을 계절이 시원해요",
+      "gloss": {
+        "en": "The autumn season is cool",
+        "ko": "계절",
+        "zh": "秋天凉爽"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-105",
+      "text": "낮 기온이 낮아요",
+      "gloss": {
+        "en": "The daytime temperature is low",
+        "ko": "기온",
+        "zh": "白天气温低"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-106",
+      "text": "주말이 맑아요",
+      "gloss": {
+        "en": "The weekend is clear / sunny",
+        "ko": "맑다",
+        "zh": "周末晴朗"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-107",
+      "text": "아침부터 흐려요",
+      "gloss": {
+        "en": "It's cloudy from the morning",
+        "ko": "흐리다",
+        "zh": "从早上起阴天"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-108",
+      "text": "비가 와서 우산을 가져가요",
+      "gloss": {
+        "en": "It's raining so I take an umbrella",
+        "ko": "비",
+        "zh": "下雨了所以带着伞"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-109",
+      "text": "눈이 내려요",
+      "gloss": {
+        "en": "It's snowing",
+        "ko": "눈",
+        "zh": "下雪了"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-110",
+      "text": "바람이 많이 불어요",
+      "gloss": {
+        "en": "The wind is blowing a lot",
+        "ko": "바람",
+        "zh": "风很大"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-111",
+      "text": "안개 때문에 길이 안 보여요",
+      "gloss": {
+        "en": "I can't see the road because of the fog",
+        "ko": "안개",
+        "zh": "因为雾看不见路"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-112",
+      "text": "장마철이에요",
+      "gloss": {
+        "en": "It's the rainy season",
+        "ko": "장마",
+        "zh": "是梅雨季"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-113",
+      "text": "태풍 소식을 들었어요",
+      "gloss": {
+        "en": "I heard news about the typhoon",
+        "ko": "태풍",
+        "zh": "听说了台风消息"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-114",
+      "text": "일기예보를 먼저 봐요",
+      "gloss": {
+        "en": "I check the weather forecast first",
+        "ko": "일기예보",
+        "zh": "我先看天气预报"
+      },
+      "tags": [
+        "weather",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-115",
+      "text": "와이파이가 안 돼요",
+      "gloss": {
+        "en": "The Wi-Fi isn't working",
+        "ko": "와이파이",
+        "zh": "无线网连不上"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-116",
+      "text": "충전할 곳이 있어요",
+      "gloss": {
+        "en": "There's a place to charge",
+        "ko": "충전",
+        "zh": "有充电的地方"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-117",
+      "text": "앱을 새로 깔아요",
+      "gloss": {
+        "en": "I install a new app",
+        "ko": "앱",
+        "zh": "我新装一个应用"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-118",
+      "text": "문자를 확인해요",
+      "gloss": {
+        "en": "I check the text message",
+        "ko": "문자",
+        "zh": "我查看短信"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-119",
+      "text": "인터넷이 너무 느려요",
+      "gloss": {
+        "en": "The internet is too slow",
+        "ko": "인터넷",
+        "zh": "网速太慢了"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-120",
+      "text": "휴대폰을 잃어버렸어요",
+      "gloss": {
+        "en": "I lost my mobile phone",
+        "ko": "휴대폰",
+        "zh": "我把手机丢了"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-121",
+      "text": "배터리가 없어요",
+      "gloss": {
+        "en": "There's no battery left",
+        "ko": "배터리",
+        "zh": "电池没电了"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-122",
+      "text": "데이터가 부족해요",
+      "gloss": {
+        "en": "I'm low on mobile data",
+        "ko": "데이터",
+        "zh": "流量不够了"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-123",
+      "text": "메시지를 보냈어요",
+      "gloss": {
+        "en": "I sent a message",
+        "ko": "메시지",
+        "zh": "我发了消息"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-124",
+      "text": "연결이 자주 끊겨요",
+      "gloss": {
+        "en": "The connection drops often",
+        "ko": "연결",
+        "zh": "连接经常断"
+      },
+      "tags": [
+        "digital",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-125",
+      "text": "부모님께 편지를 써요",
+      "gloss": {
+        "en": "I write a letter to my parents",
+        "ko": "부모님",
+        "zh": "我给父母写信"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-126",
+      "text": "형제하고 여행해요",
+      "gloss": {
+        "en": "I travel with my siblings",
+        "ko": "형제",
+        "zh": "我和兄弟姐妹去旅行"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-127",
+      "text": "친척이 집에 와요",
+      "gloss": {
+        "en": "Relatives come to the house",
+        "ko": "친척",
+        "zh": "亲戚来家里"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-128",
+      "text": "올해 결혼해요",
+      "gloss": {
+        "en": "I'm getting married this year",
+        "ko": "결혼",
+        "zh": "我今年结婚"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-129",
+      "text": "남편이 시장에 가요",
+      "gloss": {
+        "en": "My husband goes to the market",
+        "ko": "남편",
+        "zh": "丈夫去市场"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-130",
+      "text": "아내가 책을 사요",
+      "gloss": {
+        "en": "My wife buys a book",
+        "ko": "아내",
+        "zh": "妻子买书"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-131",
+      "text": "아들이 피아노를 쳐요",
+      "gloss": {
+        "en": "My son plays the piano",
+        "ko": "아들",
+        "zh": "儿子弹钢琴"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-132",
+      "text": "딸이 노래를 불러요",
+      "gloss": {
+        "en": "My daughter sings a song",
+        "ko": "딸",
+        "zh": "女儿唱歌"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-133",
+      "text": "동생이 숙제를 해요",
+      "gloss": {
+        "en": "My younger sibling does homework",
+        "ko": "동생",
+        "zh": "弟弟/妹妹做作业"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-134",
+      "text": "사촌과 통화해요",
+      "gloss": {
+        "en": "I talk on the phone with my cousin",
+        "ko": "사촌",
+        "zh": "我和堂/表亲通话"
+      },
+      "tags": [
+        "family",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-135",
+      "text": "문화를 배워요",
+      "gloss": {
+        "en": "I learn about culture",
+        "ko": "문화",
+        "zh": "我学文化"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-136",
+      "text": "공연이 시작해요",
+      "gloss": {
+        "en": "The performance is starting",
+        "ko": "공연",
+        "zh": "演出开始了"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-137",
+      "text": "전시가 무료예요",
+      "gloss": {
+        "en": "The exhibition is free",
+        "ko": "전시",
+        "zh": "展览免费"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-138",
+      "text": "관람을 마쳤어요",
+      "gloss": {
+        "en": "I finished viewing",
+        "ko": "관람",
+        "zh": "参观结束了"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-139",
+      "text": "미술관이 가까워요",
+      "gloss": {
+        "en": "The art museum is nearby",
+        "ko": "미술관",
+        "zh": "美术馆很近"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-140",
+      "text": "박물관에서 만나요",
+      "gloss": {
+        "en": "Let's meet at the museum",
+        "ko": "박물관",
+        "zh": "在博物馆见"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-141",
+      "text": "축제에 갈래요",
+      "gloss": {
+        "en": "I want to go to the festival",
+        "ko": "축제",
+        "zh": "我想去庆典"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-142",
+      "text": "독서가 취미예요",
+      "gloss": {
+        "en": "Reading is my hobby",
+        "ko": "독서",
+        "zh": "阅读是爱好"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-143",
+      "text": "연극이 재미있어요",
+      "gloss": {
+        "en": "The play is fun / interesting",
+        "ko": "연극",
+        "zh": "话剧很有意思"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-144",
+      "text": "역사에 관심이 있어요",
+      "gloss": {
+        "en": "I'm interested in history",
+        "ko": "관심",
+        "zh": "我对历史感兴趣"
+      },
+      "tags": [
+        "hobby",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-145",
+      "text": "감정을 말해요",
+      "gloss": {
+        "en": "I talk about feelings",
+        "ko": "감정",
+        "zh": "我说感情"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-146",
+      "text": "기분이 안 좋아요",
+      "gloss": {
+        "en": "I'm not in a good mood",
+        "ko": "기분",
+        "zh": "心情不好"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-147",
+      "text": "정말 기뻐요",
+      "gloss": {
+        "en": "I'm really glad",
+        "ko": "기쁘다",
+        "zh": "真的很高兴"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-148",
+      "text": "슬픈 노래를 들어요",
+      "gloss": {
+        "en": "I listen to a sad song",
+        "ko": "슬프다",
+        "zh": "我听悲伤的歌"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-149",
+      "text": "조금 화났어요",
+      "gloss": {
+        "en": "I got a little angry",
+        "ko": "화나다",
+        "zh": "有点生气了"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-150",
+      "text": "걱정하지 마세요",
+      "gloss": {
+        "en": "Please don't worry",
+        "ko": "걱정",
+        "zh": "请别担心"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-151",
+      "text": "긴장을 해요",
+      "gloss": {
+        "en": "I get nervous",
+        "ko": "긴장",
+        "zh": "我会紧张"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-152",
+      "text": "얼굴이 부끄러워요",
+      "gloss": {
+        "en": "My face feels embarrassed",
+        "ko": "부끄럽다",
+        "zh": "脸很害羞"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-153",
+      "text": "밤에 외로워요",
+      "gloss": {
+        "en": "I feel lonely at night",
+        "ko": "외롭다",
+        "zh": "晚上很寂寞"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-154",
+      "text": "행복해요",
+      "gloss": {
+        "en": "I'm happy",
+        "ko": "행복",
+        "zh": "我很幸福"
+      },
+      "tags": [
+        "emotion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-155",
+      "text": "스포츠를 자주 봐요",
+      "gloss": {
+        "en": "I often watch sports",
+        "ko": "스포츠",
+        "zh": "我经常看体育"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-156",
+      "text": "경기 소식을 들어요",
+      "gloss": {
+        "en": "I hear match news",
+        "ko": "경기",
+        "zh": "我听比赛消息"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-157",
+      "text": "선수를 만났어요",
+      "gloss": {
+        "en": "I met an athlete",
+        "ko": "선수",
+        "zh": "我见到了选手"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-158",
+      "text": "연습을 시작해요",
+      "gloss": {
+        "en": "I start practice",
+        "ko": "연습",
+        "zh": "我开始练习"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-159",
+      "text": "우리 팀이에요",
+      "gloss": {
+        "en": "It's our team",
+        "ko": "팀",
+        "zh": "这是我们队"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-160",
+      "text": "수영을 좋아해요",
+      "gloss": {
+        "en": "I like swimming",
+        "ko": "수영",
+        "zh": "我喜欢游泳"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-161",
+      "text": "축구를 해요",
+      "gloss": {
+        "en": "I play soccer",
+        "ko": "축구",
+        "zh": "我踢足球"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-162",
+      "text": "농구를 봐요",
+      "gloss": {
+        "en": "I watch basketball",
+        "ko": "농구",
+        "zh": "我看篮球"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-163",
+      "text": "오늘 이겼어요",
+      "gloss": {
+        "en": "We won today",
+        "ko": "이기다",
+        "zh": "今天赢了"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-164",
+      "text": "어제 졌어요",
+      "gloss": {
+        "en": "We lost yesterday",
+        "ko": "지다",
+        "zh": "昨天输了"
+      },
+      "tags": [
+        "sports",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-165",
+      "text": "자연이 참 좋아요",
+      "gloss": {
+        "en": "Nature is really nice",
+        "ko": "자연",
+        "zh": "自然真好"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-166",
+      "text": "환경을 생각해요",
+      "gloss": {
+        "en": "I think about the environment",
+        "ko": "환경",
+        "zh": "我想着环境"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-167",
+      "text": "주말에 산에 가요",
+      "gloss": {
+        "en": "I go to the mountain on weekends",
+        "ko": "산",
+        "zh": "周末我去山"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-168",
+      "text": "강이 넓어요",
+      "gloss": {
+        "en": "The river is wide",
+        "ko": "강",
+        "zh": "河很宽"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-169",
+      "text": "바다를 보고 싶어요",
+      "gloss": {
+        "en": "I want to see the sea",
+        "ko": "바다",
+        "zh": "我想看海"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-170",
+      "text": "숲이 시원해요",
+      "gloss": {
+        "en": "The forest is cool / refreshing",
+        "ko": "숲",
+        "zh": "森林很凉快"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-171",
+      "text": "큰 나무가 있어요",
+      "gloss": {
+        "en": "There is a big tree",
+        "ko": "나무",
+        "zh": "有大树"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-172",
+      "text": "꽃이 피었어요",
+      "gloss": {
+        "en": "The flowers have bloomed",
+        "ko": "꽃",
+        "zh": "花开了"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-173",
+      "text": "동물을 좋아해요",
+      "gloss": {
+        "en": "I like animals",
+        "ko": "동물",
+        "zh": "我喜欢动物"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-174",
+      "text": "공원에 가요",
+      "gloss": {
+        "en": "I go to the park",
+        "ko": "공원",
+        "zh": "我去公园"
+      },
+      "tags": [
+        "nature",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-175",
+      "text": "점심에 식당에 가요",
+      "gloss": {
+        "en": "I go to a restaurant at lunch",
+        "ko": "식당",
+        "zh": "午饭我去餐厅"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-176",
+      "text": "메뉴를 보여 주세요",
+      "gloss": {
+        "en": "Please show me the menu",
+        "ko": "메뉴",
+        "zh": "请给我看菜单"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-177",
+      "text": "주문이 조금 늦었어요",
+      "gloss": {
+        "en": "The order was a bit late",
+        "ko": "주문",
+        "zh": "点餐稍稍晚了"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-178",
+      "text": "음식이 따뜻해요",
+      "gloss": {
+        "en": "The food is warm",
+        "ko": "음식",
+        "zh": "饭菜是热的"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-179",
+      "text": "집에서 요리를 배워요",
+      "gloss": {
+        "en": "I learn cooking at home",
+        "ko": "요리",
+        "zh": "我在家学做菜"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-180",
+      "text": "저녁 식사를 같이 해요",
+      "gloss": {
+        "en": "We have dinner together",
+        "ko": "식사",
+        "zh": "我们一起吃晚饭"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-181",
+      "text": "이 국이 정말 맛있어요",
+      "gloss": {
+        "en": "This soup is really delicious",
+        "ko": "맛있다",
+        "zh": "这汤真好吃"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-182",
+      "text": "오후에 배가 고파요",
+      "gloss": {
+        "en": "I'm hungry in the afternoon",
+        "ko": "배고프다",
+        "zh": "下午我饿了"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-183",
+      "text": "계산은 카드로 할게요",
+      "gloss": {
+        "en": "I'll pay the bill by card",
+        "ko": "계산",
+        "zh": "结账我用卡"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-184",
+      "text": "손님이 많아서 기다려요",
+      "gloss": {
+        "en": "There are many customers, so we wait",
+        "ko": "손님",
+        "zh": "客人多，所以在等"
+      },
+      "tags": [
+        "restaurant",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-185",
+      "text": "새 옷을 골라요",
+      "gloss": {
+        "en": "I pick out new clothes",
+        "ko": "옷",
+        "zh": "我挑新衣服"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-186",
+      "text": "코트를 입어요",
+      "gloss": {
+        "en": "I put on a coat",
+        "ko": "입다",
+        "zh": "我穿上大衣"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-187",
+      "text": "모자를 벗어요",
+      "gloss": {
+        "en": "I take off my hat",
+        "ko": "벗다",
+        "zh": "我脱掉帽子"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-188",
+      "text": "바지를 세탁해요",
+      "gloss": {
+        "en": "I wash the pants",
+        "ko": "바지",
+        "zh": "我洗裤子"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-189",
+      "text": "치마가 길어요",
+      "gloss": {
+        "en": "The skirt is long",
+        "ko": "치마",
+        "zh": "裙子很长"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-190",
+      "text": "신발을 신어요",
+      "gloss": {
+        "en": "I put on shoes",
+        "ko": "신발",
+        "zh": "我穿上鞋"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-191",
+      "text": "사이즈를 바꿔 주세요",
+      "gloss": {
+        "en": "Please change the size",
+        "ko": "사이즈",
+        "zh": "请换一下尺码"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-192",
+      "text": "색깔을 고를게요",
+      "gloss": {
+        "en": "I'll choose a color",
+        "ko": "색깔",
+        "zh": "我来选颜色"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-193",
+      "text": "신발이 잘 맞아요",
+      "gloss": {
+        "en": "The shoes fit well",
+        "ko": "맞다",
+        "zh": "鞋子很合脚"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-194",
+      "text": "환불을 부탁해요",
+      "gloss": {
+        "en": "I'd like a refund, please",
+        "ko": "환불",
+        "zh": "请帮我退款"
+      },
+      "tags": [
+        "clothes",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-195",
+      "text": "예술이 재미있어요",
+      "gloss": {
+        "en": "Art is fun",
+        "ko": "예술",
+        "zh": "艺术很有趣"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-196",
+      "text": "악기를 고르세요",
+      "gloss": {
+        "en": "Please choose an instrument",
+        "ko": "악기",
+        "zh": "请选乐器"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-197",
+      "text": "연주가 시작해요",
+      "gloss": {
+        "en": "The performance is starting",
+        "ko": "연주",
+        "zh": "演奏开始了"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-198",
+      "text": "감상이 끝나요",
+      "gloss": {
+        "en": "The listening / viewing ends",
+        "ko": "감상",
+        "zh": "欣赏结束了"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-199",
+      "text": "새 노래를 배워요",
+      "gloss": {
+        "en": "I learn a new song",
+        "ko": "노래",
+        "zh": "我学新歌"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-200",
+      "text": "가수가 웃어요",
+      "gloss": {
+        "en": "The singer smiles",
+        "ko": "가수",
+        "zh": "歌手在笑"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-201",
+      "text": "크게 불러요",
+      "gloss": {
+        "en": "I sing loudly",
+        "ko": "부르다",
+        "zh": "我大声唱"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-202",
+      "text": "그림을 보여 주세요",
+      "gloss": {
+        "en": "Please show me the picture",
+        "ko": "그림",
+        "zh": "请把画给我看"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-203",
+      "text": "얼굴을 그려요",
+      "gloss": {
+        "en": "I draw a face",
+        "ko": "그리다",
+        "zh": "我画面孔"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-204",
+      "text": "춤이 어려워요",
+      "gloss": {
+        "en": "Dance is hard",
+        "ko": "춤",
+        "zh": "跳舞很难"
+      },
+      "tags": [
+        "music",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-205",
+      "text": "뉴스가 짧아요",
+      "gloss": {
+        "en": "The news is short",
+        "ko": "뉴스",
+        "zh": "新闻很短"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-206",
+      "text": "신문을 사요",
+      "gloss": {
+        "en": "I buy a newspaper",
+        "ko": "신문",
+        "zh": "我买报纸"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-207",
+      "text": "방송이 재미있어요",
+      "gloss": {
+        "en": "The broadcast is fun",
+        "ko": "방송",
+        "zh": "播出很有趣"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-208",
+      "text": "기자를 만나요",
+      "gloss": {
+        "en": "I meet a reporter",
+        "ko": "기자",
+        "zh": "我见记者"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-209",
+      "text": "보도가 중요해요",
+      "gloss": {
+        "en": "The report is important",
+        "ko": "보도",
+        "zh": "报道很重要"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-210",
+      "text": "텔레비전을 켜요",
+      "gloss": {
+        "en": "I turn on the television",
+        "ko": "텔레비전",
+        "zh": "我打开电视"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-211",
+      "text": "라디오를 틀어요",
+      "gloss": {
+        "en": "I turn on the radio",
+        "ko": "라디오",
+        "zh": "我打开收音机"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-212",
+      "text": "프로그램이 길어요",
+      "gloss": {
+        "en": "The program is long",
+        "ko": "프로그램",
+        "zh": "节目很长"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-213",
+      "text": "같이 시청해요",
+      "gloss": {
+        "en": "Let's watch together",
+        "ko": "시청",
+        "zh": "我们一起收看"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-214",
+      "text": "기사를 찾아요",
+      "gloss": {
+        "en": "I look up an article",
+        "ko": "기사",
+        "zh": "我找报道"
+      },
+      "tags": [
+        "media",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-215",
+      "text": "생일이 내일이에요",
+      "gloss": {
+        "en": "The birthday is tomorrow",
+        "ko": "생일",
+        "zh": "生日是明天"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-216",
+      "text": "축하 메시지를 보내요",
+      "gloss": {
+        "en": "I send a congratulation message",
+        "ko": "축하",
+        "zh": "我发祝贺消息"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-217",
+      "text": "선물이 예뻐요",
+      "gloss": {
+        "en": "The gift is pretty",
+        "ko": "선물",
+        "zh": "礼物很漂亮"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-218",
+      "text": "명절이 가까워요",
+      "gloss": {
+        "en": "The holiday is near",
+        "ko": "명절",
+        "zh": "节日临近了"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-219",
+      "text": "초대를 받아요",
+      "gloss": {
+        "en": "I receive an invitation",
+        "ko": "초대",
+        "zh": "我收到邀请"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-220",
+      "text": "파티에 가요",
+      "gloss": {
+        "en": "I go to a party",
+        "ko": "파티",
+        "zh": "我去派对"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-221",
+      "text": "케이크를 주문해요",
+      "gloss": {
+        "en": "I order a cake",
+        "ko": "케이크",
+        "zh": "我订蛋糕"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-222",
+      "text": "휴가가 길어요",
+      "gloss": {
+        "en": "The vacation is long",
+        "ko": "휴가",
+        "zh": "假期很长"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-223",
+      "text": "모임을 잡아요",
+      "gloss": {
+        "en": "I arrange a gathering",
+        "ko": "모임",
+        "zh": "我约聚会"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-224",
+      "text": "건배를 제안해요",
+      "gloss": {
+        "en": "I suggest a toast",
+        "ko": "건배",
+        "zh": "我提议干杯"
+      },
+      "tags": [
+        "celebration",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-225",
+      "text": "시계를 봐요",
+      "gloss": {
+        "en": "I look at the clock / watch",
+        "ko": "시계",
+        "zh": "我看钟表"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-226",
+      "text": "약속이 있어요",
+      "gloss": {
+        "en": "I have an appointment",
+        "ko": "약속",
+        "zh": "我有约"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-227",
+      "text": "세 시에 만나요",
+      "gloss": {
+        "en": "Let's meet at three o'clock",
+        "ko": "시·만나다",
+        "zh": "三点见"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-228",
+      "text": "잠시만 기다려요",
+      "gloss": {
+        "en": "Please wait a moment / I'll wait a moment",
+        "ko": "기다리다",
+        "zh": "稍等一下"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-229",
+      "text": "일찍 일어나요",
+      "gloss": {
+        "en": "I get up early",
+        "ko": "일찍",
+        "zh": "我早起"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-230",
+      "text": "십 분만 기다려요",
+      "gloss": {
+        "en": "I'll wait just ten minutes",
+        "ko": "분",
+        "zh": "我只等十分钟"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-231",
+      "text": "무슨 요일이에요",
+      "gloss": {
+        "en": "What day of the week is it?",
+        "ko": "요일",
+        "zh": "今天星期几？"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-232",
+      "text": "주말에 만나요",
+      "gloss": {
+        "en": "Let's meet on the weekend",
+        "ko": "주말",
+        "zh": "周末见"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-233",
+      "text": "오전에 만나요",
+      "gloss": {
+        "en": "Let's meet in the morning",
+        "ko": "오전",
+        "zh": "上午见"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-234",
+      "text": "오후가 더 편해요",
+      "gloss": {
+        "en": "The afternoon is more convenient",
+        "ko": "오후",
+        "zh": "下午更方便"
+      },
+      "tags": [
+        "time",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-235",
+      "text": "오늘 청소해요",
+      "gloss": {
+        "en": "I clean today",
+        "ko": "청소",
+        "zh": "今天我打扫"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-236",
+      "text": "빨래를 널어요",
+      "gloss": {
+        "en": "I hang the laundry",
+        "ko": "빨래",
+        "zh": "我晾衣服"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-237",
+      "text": "설거지부터 해요",
+      "gloss": {
+        "en": "I'll start with the dishes",
+        "ko": "설거지",
+        "zh": "我先洗碗"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-238",
+      "text": "부엌이 넓어요",
+      "gloss": {
+        "en": "The kitchen is spacious",
+        "ko": "부엌",
+        "zh": "厨房很大"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-239",
+      "text": "냉장고가 비었어요",
+      "gloss": {
+        "en": "The fridge is empty",
+        "ko": "냉장고",
+        "zh": "冰箱空了"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-240",
+      "text": "테이블을 닦아요",
+      "gloss": {
+        "en": "I wipe the table",
+        "ko": "닦다",
+        "zh": "我擦桌子"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-241",
+      "text": "과일을 씻어요",
+      "gloss": {
+        "en": "I wash the fruit",
+        "ko": "씻다",
+        "zh": "我洗水果"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-242",
+      "text": "옷장을 정리해요",
+      "gloss": {
+        "en": "I tidy the closet",
+        "ko": "정리하다",
+        "zh": "我整理衣柜"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-243",
+      "text": "수건을 바꿔요",
+      "gloss": {
+        "en": "I change the towel",
+        "ko": "수건",
+        "zh": "我换毛巾"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-244",
+      "text": "침대가 편해요",
+      "gloss": {
+        "en": "The bed is comfortable",
+        "ko": "침대",
+        "zh": "床很舒服"
+      },
+      "tags": [
+        "chores",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-245",
+      "text": "머리가 조금 아파요",
+      "gloss": {
+        "en": "My head hurts a little",
+        "ko": "머리",
+        "zh": "头有点疼"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-246",
+      "text": "손을 깨끗이 씻어요",
+      "gloss": {
+        "en": "I wash my hands clean",
+        "ko": "손",
+        "zh": "把手洗干净"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-247",
+      "text": "발이 너무 시려요",
+      "gloss": {
+        "en": "My feet are so cold",
+        "ko": "발",
+        "zh": "脚好冷"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-248",
+      "text": "얼굴이 빨개졌어요",
+      "gloss": {
+        "en": "My face turned red",
+        "ko": "얼굴",
+        "zh": "脸变红了"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-249",
+      "text": "몸이 무거워요",
+      "gloss": {
+        "en": "My body feels heavy",
+        "ko": "몸",
+        "zh": "身体很沉"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-250",
+      "text": "팔을 위로 올려요",
+      "gloss": {
+        "en": "I raise my arms up",
+        "ko": "팔",
+        "zh": "我抬起胳膊"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-251",
+      "text": "다리가 피곤해요",
+      "gloss": {
+        "en": "My legs are tired",
+        "ko": "다리",
+        "zh": "腿很累"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-252",
+      "text": "목이 말라요",
+      "gloss": {
+        "en": "My throat is dry",
+        "ko": "목",
+        "zh": "嗓子干"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-253",
+      "text": "귀가 간지러워요",
+      "gloss": {
+        "en": "My ear itches",
+        "ko": "귀",
+        "zh": "耳朵痒"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-254",
+      "text": "코가 막혀요",
+      "gloss": {
+        "en": "My nose is stuffed",
+        "ko": "코",
+        "zh": "鼻子不通"
+      },
+      "tags": [
+        "body",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-255",
+      "text": "정류장은 학교 앞에 있어요",
+      "gloss": {
+        "en": "The stop is in front of the school",
+        "ko": "앞",
+        "zh": "车站在学校前面"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-256",
+      "text": "가게는 병원 뒤에 있어요",
+      "gloss": {
+        "en": "The shop is behind the hospital",
+        "ko": "뒤",
+        "zh": "店在医院后面"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-257",
+      "text": "의자는 창문 옆에 있어요",
+      "gloss": {
+        "en": "The chair is next to the window",
+        "ko": "옆",
+        "zh": "椅子在窗户旁边"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-258",
+      "text": "시계가 책상 위에 있어요",
+      "gloss": {
+        "en": "The clock is on the desk",
+        "ko": "위",
+        "zh": "钟在桌子上"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-259",
+      "text": "상자가 탁자 아래에 있어요",
+      "gloss": {
+        "en": "The box is under the table",
+        "ko": "아래",
+        "zh": "箱子在桌子下面"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-260",
+      "text": "왼쪽으로 걸어가요",
+      "gloss": {
+        "en": "I walk to the left",
+        "ko": "왼쪽",
+        "zh": "往左边走"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-261",
+      "text": "오른쪽을 봐요",
+      "gloss": {
+        "en": "I look to the right",
+        "ko": "오른쪽",
+        "zh": "往右边看"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-262",
+      "text": "도서관 근처에서 기다려요",
+      "gloss": {
+        "en": "I wait near the library",
+        "ko": "근처",
+        "zh": "在图书馆附近等"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-263",
+      "text": "집과 학교 사이에 가게가 있어요",
+      "gloss": {
+        "en": "There is a shop between home and school",
+        "ko": "사이",
+        "zh": "家和学校之间有店"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-264",
+      "text": "건너편에 공원이 보여요",
+      "gloss": {
+        "en": "I can see a park across the way",
+        "ko": "건너편",
+        "zh": "对面能看到公园"
+      },
+      "tags": [
+        "direction",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-265",
+      "text": "이 방에는 가구가 많아요",
+      "gloss": {
+        "en": "This room has a lot of furniture",
+        "ko": "가구",
+        "zh": "这个房间家具很多"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-266",
+      "text": "소파에서 잠깐 쉬어요",
+      "gloss": {
+        "en": "I rest on the sofa for a bit",
+        "ko": "소파",
+        "zh": "我在沙发上休息一会儿"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-267",
+      "text": "옷을 옷장에 넣었어요",
+      "gloss": {
+        "en": "I put the clothes in the wardrobe",
+        "ko": "옷장",
+        "zh": "我把衣服放进衣柜了"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-268",
+      "text": "거울 앞에서 머리를 정리해요",
+      "gloss": {
+        "en": "I tidy my hair in front of the mirror",
+        "ko": "거울",
+        "zh": "我在镜子前整理头发"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-269",
+      "text": "새 책을 책장에 꽂았어요",
+      "gloss": {
+        "en": "I put the new book on the bookshelf",
+        "ko": "책장",
+        "zh": "我把新书插在书架上了"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-270",
+      "text": "식탁에 밥을 차려 주세요",
+      "gloss": {
+        "en": "Please set the meal on the dining table",
+        "ko": "식탁",
+        "zh": "请把饭摆到餐桌上"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-271",
+      "text": "거실은 밝고 넓어요",
+      "gloss": {
+        "en": "The living room is bright and spacious",
+        "ko": "거실",
+        "zh": "客厅又亮又宽敞"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-272",
+      "text": "책을 책상 위에 놓아 주세요",
+      "gloss": {
+        "en": "Please put the book on the desk",
+        "ko": "책상",
+        "zh": "请把书放在书桌上"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-273",
+      "text": "이 의자에 앉아도 돼요",
+      "gloss": {
+        "en": "May I sit on this chair",
+        "ko": "의자",
+        "zh": "可以坐这把椅子吗"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-274",
+      "text": "창문을 조금 열어 주세요",
+      "gloss": {
+        "en": "Please open the window a little",
+        "ko": "창문",
+        "zh": "请把窗户开一点"
+      },
+      "tags": [
+        "furniture",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-275",
+      "text": "과일이 신선해요",
+      "gloss": {
+        "en": "The fruit is fresh",
+        "ko": "과일",
+        "zh": "水果很新鲜"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-276",
+      "text": "채소도 같이 사요",
+      "gloss": {
+        "en": "I buy vegetables too",
+        "ko": "채소",
+        "zh": "蔬菜也一起买"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-277",
+      "text": "시장에서 장을 봐요",
+      "gloss": {
+        "en": "I do the shopping at the market",
+        "ko": "시장",
+        "zh": "我在市场买菜"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-278",
+      "text": "바나나 한 송이 주세요",
+      "gloss": {
+        "en": "One bunch of bananas, please",
+        "ko": "바나나",
+        "zh": "请给我一串香蕉"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-279",
+      "text": "포도가 달아요",
+      "gloss": {
+        "en": "The grapes are sweet",
+        "ko": "포도",
+        "zh": "葡萄很甜"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-280",
+      "text": "수박이 시원해요",
+      "gloss": {
+        "en": "The watermelon is refreshing",
+        "ko": "수박",
+        "zh": "西瓜很清爽"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-281",
+      "text": "딸기 한 팩 있어요",
+      "gloss": {
+        "en": "There is a pack of strawberries",
+        "ko": "딸기",
+        "zh": "有一盒草莓"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-282",
+      "text": "오렌지를 깎아 먹어요",
+      "gloss": {
+        "en": "I peel and eat an orange",
+        "ko": "오렌지",
+        "zh": "我削橙子吃"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-283",
+      "text": "토마토를 샐러드에 넣어요",
+      "gloss": {
+        "en": "I put tomatoes in the salad",
+        "ko": "토마토",
+        "zh": "我把番茄放进沙拉"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-284",
+      "text": "봉지에 담아 주세요",
+      "gloss": {
+        "en": "Please put it in a bag",
+        "ko": "봉지",
+        "zh": "请装进袋子里"
+      },
+      "tags": [
+        "fruit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-285",
+      "text": "밥 그릇을 주세요",
+      "gloss": {
+        "en": "Please give me a rice bowl",
+        "ko": "그릇",
+        "zh": "请给我饭碗"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-286",
+      "text": "접시를 꺼내 주세요",
+      "gloss": {
+        "en": "Please take out a plate",
+        "ko": "접시",
+        "zh": "请拿出盘子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-287",
+      "text": "물 컵이 어디 있어요",
+      "gloss": {
+        "en": "Where is the water cup",
+        "ko": "컵",
+        "zh": "水杯在哪里"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-288",
+      "text": "숟가락으로 국을 떠요",
+      "gloss": {
+        "en": "I scoop soup with a spoon",
+        "ko": "숟가락",
+        "zh": "我用勺子舀汤"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-289",
+      "text": "젓가락을 잘 써요",
+      "gloss": {
+        "en": "I use chopsticks well",
+        "ko": "젓가락",
+        "zh": "我筷子用得好"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-290",
+      "text": "포크를 주세요",
+      "gloss": {
+        "en": "Please give me a fork",
+        "ko": "포크",
+        "zh": "请给我叉子"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-291",
+      "text": "빵을 칼로 잘라요",
+      "gloss": {
+        "en": "I cut the bread with a knife",
+        "ko": "칼",
+        "zh": "我用刀切面包"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-292",
+      "text": "냄비에 물을 끓여요",
+      "gloss": {
+        "en": "I boil water in a pot",
+        "ko": "냄비",
+        "zh": "我在锅里烧水"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-293",
+      "text": "주전자에 차를 따라요",
+      "gloss": {
+        "en": "I pour tea from the kettle",
+        "ko": "주전자",
+        "zh": "我从水壶倒茶"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-294",
+      "text": "도마를 깨끗이 닦아요",
+      "gloss": {
+        "en": "I wipe the cutting board clean",
+        "ko": "도마",
+        "zh": "我把砧板擦干净"
+      },
+      "tags": [
+        "kitchen",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-295",
+      "text": "펜으로 이름을 쓰세요",
+      "gloss": {
+        "en": "Please write your name with a pen",
+        "ko": "펜",
+        "zh": "请用笔写名字"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-296",
+      "text": "연필로 답을 적어도 돼요",
+      "gloss": {
+        "en": "You may write the answers in pencil",
+        "ko": "연필",
+        "zh": "可以用铅笔写答案"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-297",
+      "text": "볼펜이 안 나와요",
+      "gloss": {
+        "en": "The ballpoint pen won't write",
+        "ko": "볼펜",
+        "zh": "圆珠笔写不出来"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-298",
+      "text": "지우개로 지워 주세요",
+      "gloss": {
+        "en": "Please erase it with an eraser",
+        "ko": "지우개",
+        "zh": "请用橡皮擦掉"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-299",
+      "text": "새 공책을 샀어요",
+      "gloss": {
+        "en": "I bought a new notebook",
+        "ko": "공책",
+        "zh": "我买了新练习本"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-300",
+      "text": "종이가 더 필요해요",
+      "gloss": {
+        "en": "I need more paper",
+        "ko": "종이",
+        "zh": "我还需要纸"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-301",
+      "text": "가위로 종이를 잘라요",
+      "gloss": {
+        "en": "I cut the paper with scissors",
+        "ko": "가위",
+        "zh": "我用剪刀剪纸"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-302",
+      "text": "풀로 사진을 붙여요",
+      "gloss": {
+        "en": "I stick the photo with glue",
+        "ko": "풀",
+        "zh": "我用胶水贴照片"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-303",
+      "text": "이 책을 빌려도 돼요?",
+      "gloss": {
+        "en": "May I borrow this book?",
+        "ko": "책",
+        "zh": "可以借这本书吗？"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-304",
+      "text": "노트를 가방에 넣어요",
+      "gloss": {
+        "en": "I put the notebook in my bag",
+        "ko": "노트",
+        "zh": "我把笔记本放进包里"
+      },
+      "tags": [
+        "stationery",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-305",
+      "text": "친구에게 편지를 써요",
+      "gloss": {
+        "en": "I write a letter to a friend",
+        "ko": "편지",
+        "zh": "我给朋友写信"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-306",
+      "text": "소포가 오늘 왔어요",
+      "gloss": {
+        "en": "The parcel arrived today",
+        "ko": "소포",
+        "zh": "包裹今天到了"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-307",
+      "text": "우표를 봉투에 붙여요",
+      "gloss": {
+        "en": "I stick the stamp on the envelope",
+        "ko": "우표",
+        "zh": "我把邮票贴在信封上"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-308",
+      "text": "우체국에서 소포를 보내요",
+      "gloss": {
+        "en": "I send a parcel at the post office",
+        "ko": "우체국",
+        "zh": "我在邮局寄包裹"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-309",
+      "text": "선물을 집으로 보내요",
+      "gloss": {
+        "en": "I send a gift home",
+        "ko": "보내다",
+        "zh": "我把礼物寄回家"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-310",
+      "text": "편지를 어제 받았어요",
+      "gloss": {
+        "en": "I received a letter yesterday",
+        "ko": "받다",
+        "zh": "我昨天收到了信"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-311",
+      "text": "주소를 정확히 적어 주세요",
+      "gloss": {
+        "en": "Please write the address accurately",
+        "ko": "주소",
+        "zh": "请把地址写准确"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-312",
+      "text": "봉투에 편지를 넣어요",
+      "gloss": {
+        "en": "I put the letter in the envelope",
+        "ko": "봉투",
+        "zh": "我把信放进信封"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-313",
+      "text": "서류를 우체국에 부쳐요",
+      "gloss": {
+        "en": "I mail the documents at the post office",
+        "ko": "부치다",
+        "zh": "我把文件寄到邮局"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-314",
+      "text": "선물을 예쁘게 포장해요",
+      "gloss": {
+        "en": "I wrap the gift nicely",
+        "ko": "포장",
+        "zh": "我把礼物包装得很漂亮"
+      },
+      "tags": [
+        "mail",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-315",
+      "text": "이웃집 개가 친절해요",
+      "gloss": {
+        "en": "The neighbor’s dog is friendly",
+        "ko": "개",
+        "zh": "邻居家的狗很友好"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-316",
+      "text": "고양이가 창가에 있어요",
+      "gloss": {
+        "en": "The cat is by the window",
+        "ko": "고양이",
+        "zh": "猫在窗边"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-317",
+      "text": "아침에 새가 울어요",
+      "gloss": {
+        "en": "Birds sing in the morning",
+        "ko": "새",
+        "zh": "早上鸟在叫"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-318",
+      "text": "강아지를 산책시켜요",
+      "gloss": {
+        "en": "I take the puppy for a walk",
+        "ko": "강아지",
+        "zh": "我带小狗去散步"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-319",
+      "text": "어항에 물고기가 있어요",
+      "gloss": {
+        "en": "There are fish in the tank",
+        "ko": "물고기",
+        "zh": "鱼缸里有鱼"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-320",
+      "text": "토끼를 조심히 만져요",
+      "gloss": {
+        "en": "I pet the rabbit carefully",
+        "ko": "토끼",
+        "zh": "我小心摸兔子"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-321",
+      "text": "마당에서 닭을 봐요",
+      "gloss": {
+        "en": "I see chickens in the yard",
+        "ko": "닭",
+        "zh": "我在院子里看鸡"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-322",
+      "text": "목장에서 말을 타 봐요",
+      "gloss": {
+        "en": "I try riding a horse at the ranch",
+        "ko": "말",
+        "zh": "我在牧场试着骑马"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-323",
+      "text": "집에서 고양이를 키워요",
+      "gloss": {
+        "en": "I keep a cat at home",
+        "ko": "키우다",
+        "zh": "我在家养猫"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-324",
+      "text": "주말에 동물원에 가요",
+      "gloss": {
+        "en": "I go to the zoo on the weekend",
+        "ko": "동물원",
+        "zh": "周末去动物园"
+      },
+      "tags": [
+        "pets",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-325",
+      "text": "운전을 배워요",
+      "gloss": {
+        "en": "I am learning to drive",
+        "ko": "운전",
+        "zh": "我在学开车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-326",
+      "text": "자동차를 닦아요",
+      "gloss": {
+        "en": "I wipe / clean the car",
+        "ko": "자동차",
+        "zh": "我擦车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-327",
+      "text": "자전거 헬멧을 써요",
+      "gloss": {
+        "en": "I wear a bike helmet",
+        "ko": "자전거",
+        "zh": "我戴自行车头盔"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-328",
+      "text": "택시를 앞에 세워요",
+      "gloss": {
+        "en": "I have the taxi stop in front",
+        "ko": "택시",
+        "zh": "我让出租车停在前面"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-329",
+      "text": "횡단보도를 건너요",
+      "gloss": {
+        "en": "I cross at the crosswalk",
+        "ko": "횡단보도",
+        "zh": "我走人行横道"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-330",
+      "text": "가벼운 사고가 났어요",
+      "gloss": {
+        "en": "There was a minor accident",
+        "ko": "사고",
+        "zh": "出了小事故"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-331",
+      "text": "경찰이 차를 세워요",
+      "gloss": {
+        "en": "The police stop the car",
+        "ko": "경찰",
+        "zh": "警察让车停下"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-332",
+      "text": "도로가 좁아요",
+      "gloss": {
+        "en": "The road is narrow",
+        "ko": "도로",
+        "zh": "道路很窄"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-333",
+      "text": "주차장이 꽉 찼어요",
+      "gloss": {
+        "en": "The parking lot is full",
+        "ko": "주차장",
+        "zh": "停车场满了"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-334",
+      "text": "퇴근길에 길이 막혀요",
+      "gloss": {
+        "en": "The road is jammed on the way home from work",
+        "ko": "막히다",
+        "zh": "下班路上堵车"
+      },
+      "tags": [
+        "driving",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-335",
+      "text": "도서관이 조용해요",
+      "gloss": {
+        "en": "The library is quiet",
+        "ko": "도서관",
+        "zh": "图书馆很安静"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-336",
+      "text": "슈퍼마켓이 가까워요",
+      "gloss": {
+        "en": "The supermarket is nearby",
+        "ko": "슈퍼마켓",
+        "zh": "超市很近"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-337",
+      "text": "은행 앞에서 만나요",
+      "gloss": {
+        "en": "Let's meet in front of the bank",
+        "ko": "은행",
+        "zh": "在银行前面见"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-338",
+      "text": "백화점이 커요",
+      "gloss": {
+        "en": "The department store is big",
+        "ko": "백화점",
+        "zh": "百货商店很大"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-339",
+      "text": "미용실에서 머리를 잘라요",
+      "gloss": {
+        "en": "I get my hair cut at the salon",
+        "ko": "미용실",
+        "zh": "我在美发店剪头发"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-340",
+      "text": "서점이 붐벼요",
+      "gloss": {
+        "en": "The bookstore is crowded",
+        "ko": "서점",
+        "zh": "书店很挤"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-341",
+      "text": "영화관 표를 사요",
+      "gloss": {
+        "en": "I buy a movie theater ticket",
+        "ko": "영화관",
+        "zh": "我买电影院票"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-342",
+      "text": "수영장이 시원해요",
+      "gloss": {
+        "en": "The pool is cool / refreshing",
+        "ko": "수영장",
+        "zh": "游泳池很凉快"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-343",
+      "text": "카페에서 쉬어요",
+      "gloss": {
+        "en": "I rest at a cafe",
+        "ko": "카페",
+        "zh": "我在咖啡馆休息"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-344",
+      "text": "경찰서에 길을 물어요",
+      "gloss": {
+        "en": "I ask for directions at the police station",
+        "ko": "경찰서",
+        "zh": "我在警察局问路"
+      },
+      "tags": [
+        "places",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-345",
+      "text": "쌀이 떨어졌어요",
+      "gloss": {
+        "en": "We're out of rice",
+        "ko": "쌀",
+        "zh": "大米没了"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-346",
+      "text": "밀가루가 있어요",
+      "gloss": {
+        "en": "There is flour",
+        "ko": "밀가루",
+        "zh": "有面粉"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-347",
+      "text": "소금을 넣어요",
+      "gloss": {
+        "en": "I add salt",
+        "ko": "소금",
+        "zh": "我放盐"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-348",
+      "text": "설탕이 달아요",
+      "gloss": {
+        "en": "The sugar is sweet",
+        "ko": "설탕",
+        "zh": "糖是甜的"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-349",
+      "text": "기름을 사요",
+      "gloss": {
+        "en": "I buy cooking oil",
+        "ko": "기름",
+        "zh": "我买油"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-350",
+      "text": "달걀이 신선해요",
+      "gloss": {
+        "en": "The eggs are fresh",
+        "ko": "달걀",
+        "zh": "鸡蛋很新鲜"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-351",
+      "text": "고기를 잘라요",
+      "gloss": {
+        "en": "I cut the meat",
+        "ko": "고기",
+        "zh": "我切肉"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-352",
+      "text": "생선을 구워요",
+      "gloss": {
+        "en": "I grill fish",
+        "ko": "생선",
+        "zh": "我烤鱼"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-353",
+      "text": "빵을 사요",
+      "gloss": {
+        "en": "I buy bread",
+        "ko": "빵",
+        "zh": "我买面包"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-354",
+      "text": "김치를 담가요",
+      "gloss": {
+        "en": "I make / ferment kimchi",
+        "ko": "김치",
+        "zh": "我腌泡菜"
+      },
+      "tags": [
+        "pantry",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-355",
+      "text": "화장실이 비었어요",
+      "gloss": {
+        "en": "The restroom is vacant",
+        "ko": "화장실",
+        "zh": "卫生间空着"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-356",
+      "text": "샤워를 오래 해요",
+      "gloss": {
+        "en": "I take a long shower",
+        "ko": "샤워",
+        "zh": "我洗很久淋浴"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-357",
+      "text": "목욕을 좋아해요",
+      "gloss": {
+        "en": "I like taking baths",
+        "ko": "목욕",
+        "zh": "我喜欢泡澡"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-358",
+      "text": "세수를 빨리 해요",
+      "gloss": {
+        "en": "I wash my face quickly",
+        "ko": "세수",
+        "zh": "我很快洗脸"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-359",
+      "text": "칫솔을 갈아요",
+      "gloss": {
+        "en": "I replace my toothbrush",
+        "ko": "칫솔",
+        "zh": "我换牙刷"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-360",
+      "text": "치약을 짜요",
+      "gloss": {
+        "en": "I squeeze toothpaste",
+        "ko": "치약",
+        "zh": "我挤牙膏"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-361",
+      "text": "휴지가 없어요",
+      "gloss": {
+        "en": "There is no tissue",
+        "ko": "휴지",
+        "zh": "没有纸巾"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-362",
+      "text": "휴지통을 비워요",
+      "gloss": {
+        "en": "I empty the trash can",
+        "ko": "휴지통",
+        "zh": "我倒垃圾桶"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-363",
+      "text": "면도가 필요해요",
+      "gloss": {
+        "en": "I need a shave",
+        "ko": "면도",
+        "zh": "我需要刮胡子"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-364",
+      "text": "손이 너무 더러워요",
+      "gloss": {
+        "en": "My hands are very dirty",
+        "ko": "더럽다",
+        "zh": "手太脏了"
+      },
+      "tags": [
+        "bathroom",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-365",
+      "text": "직업을 고르고 있어요",
+      "gloss": {
+        "en": "I'm choosing an occupation",
+        "ko": "직업",
+        "zh": "我在选职业"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-366",
+      "text": "친구가 회사원이에요",
+      "gloss": {
+        "en": "My friend is an office worker",
+        "ko": "회사원",
+        "zh": "朋友是公司职员"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-367",
+      "text": "간호사가 친절해요",
+      "gloss": {
+        "en": "The nurse is kind",
+        "ko": "간호사",
+        "zh": "护士很亲切"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-368",
+      "text": "선생님이 도와줘요",
+      "gloss": {
+        "en": "The teacher helps me",
+        "ko": "선생님",
+        "zh": "老师帮我"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-369",
+      "text": "요리사가 바빠요",
+      "gloss": {
+        "en": "The cook is busy",
+        "ko": "요리사",
+        "zh": "厨师很忙"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-370",
+      "text": "운전사로 일해요",
+      "gloss": {
+        "en": "I work as a driver",
+        "ko": "운전사",
+        "zh": "我做司机"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-371",
+      "text": "학생들이 많아요",
+      "gloss": {
+        "en": "There are many students",
+        "ko": "학생",
+        "zh": "学生很多"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-372",
+      "text": "주말에 일해요",
+      "gloss": {
+        "en": "I work on weekends",
+        "ko": "일하다",
+        "zh": "我周末工作"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-373",
+      "text": "직원이 안내해요",
+      "gloss": {
+        "en": "A staff member guides me",
+        "ko": "직원",
+        "zh": "职员带路"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-374",
+      "text": "사장이 나와요",
+      "gloss": {
+        "en": "The boss comes out",
+        "ko": "사장",
+        "zh": "老板出来"
+      },
+      "tags": [
+        "jobs",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-375",
+      "text": "어느 나라 사람이에요?",
+      "gloss": {
+        "en": "Which country are you from?",
+        "ko": "나라",
+        "zh": "你是哪国人？"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-376",
+      "text": "외국 친구가 있어요",
+      "gloss": {
+        "en": "I have a foreign friend",
+        "ko": "외국",
+        "zh": "我有外国朋友"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-377",
+      "text": "외국인도 와요",
+      "gloss": {
+        "en": "Foreigners come too",
+        "ko": "외국인",
+        "zh": "外国人也来"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-378",
+      "text": "국적을 물어봐요",
+      "gloss": {
+        "en": "They ask about nationality",
+        "ko": "국적",
+        "zh": "他们问国籍"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-379",
+      "text": "고향이 어디예요?",
+      "gloss": {
+        "en": "Where is your hometown?",
+        "ko": "고향",
+        "zh": "你家乡在哪里？"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-380",
+      "text": "서울에서 살아요",
+      "gloss": {
+        "en": "I live in Seoul",
+        "ko": "살다",
+        "zh": "我住在首尔"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-381",
+      "text": "일본어를 공부해요",
+      "gloss": {
+        "en": "I study Japanese",
+        "ko": "일본어",
+        "zh": "我学日语"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-382",
+      "text": "부산에서 태어났어요",
+      "gloss": {
+        "en": "I was born in Busan",
+        "ko": "태어나다",
+        "zh": "我在釜山出生"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-383",
+      "text": "해외에 가족이 있어요",
+      "gloss": {
+        "en": "I have family overseas",
+        "ko": "해외",
+        "zh": "我有家人在海外"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-384",
+      "text": "유학생이 많아요",
+      "gloss": {
+        "en": "There are many international students",
+        "ko": "유학생",
+        "zh": "留学生很多"
+      },
+      "tags": [
+        "country",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-385",
+      "text": "아침에 일어나요",
+      "gloss": {
+        "en": "I get up in the morning",
+        "ko": "일어나다",
+        "zh": "我早上起床"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-386",
+      "text": "밤에 자요",
+      "gloss": {
+        "en": "I sleep at night",
+        "ko": "자다",
+        "zh": "我晚上睡觉"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-387",
+      "text": "아침을 집에서 먹어요",
+      "gloss": {
+        "en": "I eat breakfast at home",
+        "ko": "아침",
+        "zh": "我在家吃早饭"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-388",
+      "text": "점심은 간단히 먹어요",
+      "gloss": {
+        "en": "I eat a simple lunch",
+        "ko": "점심",
+        "zh": "午饭我简单吃"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-389",
+      "text": "저녁에 친구를 만나요",
+      "gloss": {
+        "en": "I meet a friend in the evening",
+        "ko": "저녁",
+        "zh": "晚上见朋友"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-390",
+      "text": "밤에 책을 읽어요",
+      "gloss": {
+        "en": "I read a book at night",
+        "ko": "밤",
+        "zh": "晚上看书"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-391",
+      "text": "하루가 정말 바빠요",
+      "gloss": {
+        "en": "The day is really busy",
+        "ko": "하루",
+        "zh": "一天真的很忙"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-392",
+      "text": "매일 한국어를 공부해요",
+      "gloss": {
+        "en": "I study Korean every day",
+        "ko": "매일",
+        "zh": "我每天学韩语"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-393",
+      "text": "지금은 바빠요",
+      "gloss": {
+        "en": "I am busy now",
+        "ko": "지금",
+        "zh": "我现在忙"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-394",
+      "text": "오늘은 일찍 자요",
+      "gloss": {
+        "en": "I sleep early today",
+        "ko": "오늘",
+        "zh": "我今天早睡"
+      },
+      "tags": [
+        "routine",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-395",
+      "text": "모자가 커요",
+      "gloss": {
+        "en": "The hat is big",
+        "ko": "크다",
+        "zh": "帽子很大"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-396",
+      "text": "글씨가 작아요",
+      "gloss": {
+        "en": "The writing is small",
+        "ko": "작다",
+        "zh": "字很小"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-397",
+      "text": "질문이 많아요",
+      "gloss": {
+        "en": "There are many questions",
+        "ko": "많다",
+        "zh": "问题很多"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-398",
+      "text": "돈이 적어요",
+      "gloss": {
+        "en": "There is little money",
+        "ko": "적다",
+        "zh": "钱很少"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-399",
+      "text": "줄이 길어요",
+      "gloss": {
+        "en": "The line is long",
+        "ko": "길다",
+        "zh": "队伍很长"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-400",
+      "text": "답이 짧아요",
+      "gloss": {
+        "en": "The answer is short",
+        "ko": "짧다",
+        "zh": "答案很短"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-401",
+      "text": "상자가 무거워요",
+      "gloss": {
+        "en": "The box is heavy",
+        "ko": "무겁다",
+        "zh": "箱子很重"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-402",
+      "text": "종이가 가벼워요",
+      "gloss": {
+        "en": "The paper is light",
+        "ko": "가볍다",
+        "zh": "纸很轻"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-403",
+      "text": "건물이 높아요",
+      "gloss": {
+        "en": "The building is tall",
+        "ko": "높다",
+        "zh": "楼很高"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-404",
+      "text": "책상이 낮아요",
+      "gloss": {
+        "en": "The desk is low",
+        "ko": "낮다",
+        "zh": "书桌很低"
+      },
+      "tags": [
+        "size",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-405",
+      "text": "요구르트가 셔요",
+      "gloss": {
+        "en": "The yogurt is sour",
+        "ko": "시다",
+        "zh": "酸奶很酸"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-406",
+      "text": "나물이 싱거워요",
+      "gloss": {
+        "en": "The namul is bland",
+        "ko": "싱겁다",
+        "zh": "凉拌菜太淡"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-407",
+      "text": "국물이 뜨거워요",
+      "gloss": {
+        "en": "The broth is hot",
+        "ko": "뜨겁다",
+        "zh": "汤很烫"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-408",
+      "text": "물이 차가워요",
+      "gloss": {
+        "en": "The water is cold",
+        "ko": "차갑다",
+        "zh": "水很凉"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-409",
+      "text": "이불이 따뜻해요",
+      "gloss": {
+        "en": "The blanket is warm",
+        "ko": "따뜻하다",
+        "zh": "被子很暖"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-410",
+      "text": "음료가 시원해요",
+      "gloss": {
+        "en": "The drink is cool",
+        "ko": "시원하다",
+        "zh": "饮料很凉快"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-411",
+      "text": "불이 밝아요",
+      "gloss": {
+        "en": "The light is bright",
+        "ko": "밝다",
+        "zh": "灯很亮"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-412",
+      "text": "방이 어두워요",
+      "gloss": {
+        "en": "The room is dark",
+        "ko": "어둡다",
+        "zh": "房间很暗"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-413",
+      "text": "복도가 조용해요",
+      "gloss": {
+        "en": "The hallway is quiet",
+        "ko": "조용하다",
+        "zh": "走廊很安静"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-414",
+      "text": "길이 시끄러워요",
+      "gloss": {
+        "en": "The street is noisy",
+        "ko": "시끄럽다",
+        "zh": "街上很吵"
+      },
+      "tags": [
+        "senses",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-415",
+      "text": "벽지가 회색이에요",
+      "gloss": {
+        "en": "The wallpaper is gray",
+        "ko": "회색",
+        "zh": "壁纸是灰色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-416",
+      "text": "지우개가 분홍색이에요",
+      "gloss": {
+        "en": "The eraser is pink",
+        "ko": "분홍색",
+        "zh": "橡皮是粉色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-417",
+      "text": "깃발이 세모예요",
+      "gloss": {
+        "en": "The flag is a triangle",
+        "ko": "세모",
+        "zh": "旗子是三角形的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-418",
+      "text": "이 모양이 예뻐요",
+      "gloss": {
+        "en": "This shape is pretty",
+        "ko": "모양",
+        "zh": "这个形状很漂亮"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-419",
+      "text": "셔츠가 하얀색이에요",
+      "gloss": {
+        "en": "The shirt is white",
+        "ko": "하얀색",
+        "zh": "衬衫是白色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-420",
+      "text": "코트가 검은색이에요",
+      "gloss": {
+        "en": "The coat is black",
+        "ko": "검은색",
+        "zh": "大衣是黑色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-421",
+      "text": "시계가 둥글어요",
+      "gloss": {
+        "en": "The clock is round",
+        "ko": "둥글다",
+        "zh": "钟是圆的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-422",
+      "text": "액자가 네모예요",
+      "gloss": {
+        "en": "The picture frame is square",
+        "ko": "네모",
+        "zh": "相框是方形的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-423",
+      "text": "칠판이 초록색이에요",
+      "gloss": {
+        "en": "The chalkboard is green",
+        "ko": "초록색",
+        "zh": "黑板是绿色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-424",
+      "text": "레몬이 노란색이에요",
+      "gloss": {
+        "en": "The lemon is yellow",
+        "ko": "노란색",
+        "zh": "柠檬是黄色的"
+      },
+      "tags": [
+        "color",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-425",
+      "text": "우산을 펴요",
+      "gloss": {
+        "en": "I open the umbrella",
+        "ko": "우산",
+        "zh": "我撑开伞"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-426",
+      "text": "가방이 무거워요",
+      "gloss": {
+        "en": "The bag is heavy",
+        "ko": "가방",
+        "zh": "包很重"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-427",
+      "text": "모자를 써요",
+      "gloss": {
+        "en": "I put on a hat",
+        "ko": "모자",
+        "zh": "我戴帽子"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-428",
+      "text": "양말이 젖었어요",
+      "gloss": {
+        "en": "The socks got wet",
+        "ko": "양말",
+        "zh": "袜子湿了"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-429",
+      "text": "장갑을 껴요",
+      "gloss": {
+        "en": "I put on gloves",
+        "ko": "장갑",
+        "zh": "我戴手套"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-430",
+      "text": "안경을 찾아요",
+      "gloss": {
+        "en": "I look for my glasses",
+        "ko": "안경",
+        "zh": "我找眼镜"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-431",
+      "text": "지갑을 꺼내요",
+      "gloss": {
+        "en": "I take out my wallet",
+        "ko": "지갑",
+        "zh": "我拿出钱包"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-432",
+      "text": "벨트를 해요",
+      "gloss": {
+        "en": "I put on a belt",
+        "ko": "벨트",
+        "zh": "我系皮带"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-433",
+      "text": "목도리를 해요",
+      "gloss": {
+        "en": "I wear a scarf",
+        "ko": "목도리",
+        "zh": "我围围巾"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-434",
+      "text": "반지를 끼어요",
+      "gloss": {
+        "en": "I put on a ring",
+        "ko": "반지",
+        "zh": "我戴戒指"
+      },
+      "tags": [
+        "accessories",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-435",
+      "text": "전기 요금을 내요",
+      "gloss": {
+        "en": "I pay the electricity bill",
+        "ko": "전기",
+        "zh": "我交电费"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-436",
+      "text": "에어컨을 세게 틀어요",
+      "gloss": {
+        "en": "I turn the AC up strong",
+        "ko": "에어컨",
+        "zh": "我把空调开大"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-437",
+      "text": "선풍기 바람이 시원해요",
+      "gloss": {
+        "en": "The fan breeze feels cool",
+        "ko": "선풍기",
+        "zh": "电风扇的风很凉快"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-438",
+      "text": "불을 끄고 나가요",
+      "gloss": {
+        "en": "I turn off the light and leave",
+        "ko": "불·끄다",
+        "zh": "我关灯后出门"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-439",
+      "text": "엘리베이터 문이 열려요",
+      "gloss": {
+        "en": "The elevator door opens",
+        "ko": "엘리베이터",
+        "zh": "电梯门开了"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-440",
+      "text": "계단으로 내려가요",
+      "gloss": {
+        "en": "I go down by the stairs",
+        "ko": "계단",
+        "zh": "我走楼梯下去"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-441",
+      "text": "수도세가 많이 나왔어요",
+      "gloss": {
+        "en": "The water bill came out high",
+        "ko": "수도",
+        "zh": "水费出来很多"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-442",
+      "text": "가스 불을 확인해요",
+      "gloss": {
+        "en": "I check the gas flame / burner",
+        "ko": "가스",
+        "zh": "我检查煤气火"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-443",
+      "text": "전자레인지가 끝났어요",
+      "gloss": {
+        "en": "The microwave is done",
+        "ko": "전자레인지",
+        "zh": "微波炉好了"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-444",
+      "text": "다리미가 뜨거워요",
+      "gloss": {
+        "en": "The iron is hot",
+        "ko": "다리미",
+        "zh": "熨斗很烫"
+      },
+      "tags": [
+        "electric",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-445",
+      "text": "입구 앞에서 기다려요",
+      "gloss": {
+        "en": "I wait in front of the entrance",
+        "ko": "입구",
+        "zh": "我在入口前面等"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-446",
+      "text": "현관에 신발을 정리해요",
+      "gloss": {
+        "en": "I tidy the shoes at the foyer",
+        "ko": "현관",
+        "zh": "我在玄关整理鞋子"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-447",
+      "text": "지하로 내려가요",
+      "gloss": {
+        "en": "I go down to the basement",
+        "ko": "지하",
+        "zh": "我往地下下去"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-448",
+      "text": "옥상에서 바람을 쐬어요",
+      "gloss": {
+        "en": "I get some air on the rooftop",
+        "ko": "옥상",
+        "zh": "我在天台吹风"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-449",
+      "text": "이 층에 화장실이 있어요",
+      "gloss": {
+        "en": "There's a restroom on this floor",
+        "ko": "층",
+        "zh": "这一层有洗手间"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-450",
+      "text": "호실이 어디에 있어요",
+      "gloss": {
+        "en": "Where is the unit number / room?",
+        "ko": "호실",
+        "zh": "房间号在哪里"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-451",
+      "text": "초인종을 눌렀어요",
+      "gloss": {
+        "en": "I pressed the doorbell",
+        "ko": "초인종",
+        "zh": "我按了门铃"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-452",
+      "text": "로비로 나와 주세요",
+      "gloss": {
+        "en": "Please come out to the lobby",
+        "ko": "로비",
+        "zh": "请到大厅来"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-453",
+      "text": "베란다 문이 열려 있어요",
+      "gloss": {
+        "en": "The veranda door is open",
+        "ko": "베란다",
+        "zh": "阳台门开着"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-454",
+      "text": "아파트가 커요",
+      "gloss": {
+        "en": "The apartment is big",
+        "ko": "아파트",
+        "zh": "公寓很大"
+      },
+      "tags": [
+        "building",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-455",
+      "text": "상자를 양손으로 들어요",
+      "gloss": {
+        "en": "I lift the box with both hands",
+        "ko": "들다",
+        "zh": "我用双手提起箱子"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-456",
+      "text": "다리를 천천히 건너요",
+      "gloss": {
+        "en": "I cross the bridge slowly",
+        "ko": "건너다",
+        "zh": "我慢慢过桥"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-457",
+      "text": "학교까지 걸어서 가요",
+      "gloss": {
+        "en": "I walk to school",
+        "ko": "걷다",
+        "zh": "我走路去学校"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-458",
+      "text": "아이가 마당에서 뛰어요",
+      "gloss": {
+        "en": "The child runs in the yard",
+        "ko": "뛰다",
+        "zh": "孩子在院子里跑"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-459",
+      "text": "버스 정류장에 서요",
+      "gloss": {
+        "en": "I stand at the bus stop",
+        "ko": "서다",
+        "zh": "我站在公交车站"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-460",
+      "text": "바닥에 잠깐 앉아요",
+      "gloss": {
+        "en": "I sit on the floor for a bit",
+        "ko": "앉다",
+        "zh": "我在地上坐一会儿"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-461",
+      "text": "매트에 누워서 쉬어요",
+      "gloss": {
+        "en": "I lie on the mat and rest",
+        "ko": "눕다",
+        "zh": "我躺在垫子上休息"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-462",
+      "text": "비탈길을 천천히 올라요",
+      "gloss": {
+        "en": "I climb the slope slowly",
+        "ko": "오르다",
+        "zh": "我慢慢爬上坡路"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-463",
+      "text": "컵을 선반에 놓아요",
+      "gloss": {
+        "en": "I put the cup on the shelf",
+        "ko": "놓다",
+        "zh": "我把杯子放在架子上"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-464",
+      "text": "가방 끈을 꼭 잡아요",
+      "gloss": {
+        "en": "I hold the bag strap tightly",
+        "ko": "잡다",
+        "zh": "我紧紧抓住包带"
+      },
+      "tags": [
+        "motion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-465",
+      "text": "안경을 찾고 있어요",
+      "gloss": {
+        "en": "I’m looking for my glasses",
+        "ko": "찾다",
+        "zh": "我在找眼镜"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-466",
+      "text": "목록을 직접 만들어요",
+      "gloss": {
+        "en": "I make the list myself",
+        "ko": "만들다",
+        "zh": "我自己列清单"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-467",
+      "text": "이 봉투 좀 부탁해요",
+      "gloss": {
+        "en": "Could I ask you to handle this envelope?",
+        "ko": "부탁하다",
+        "zh": "这封信封拜托你了"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-468",
+      "text": "문 여는 걸 도와주세요",
+      "gloss": {
+        "en": "Please help me open the door",
+        "ko": "도와주다",
+        "zh": "请帮我开门"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-469",
+      "text": "충전기 좀 빌려도 돼요?",
+      "gloss": {
+        "en": "May I borrow a charger?",
+        "ko": "빌리다",
+        "zh": "可以借一下充电器吗？"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-470",
+      "text": "내일 와도 괜찮아요",
+      "gloss": {
+        "en": "It’s okay if you come tomorrow",
+        "ko": "괜찮다",
+        "zh": "明天来也没关系"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-471",
+      "text": "기다려 주셔서 고마워요",
+      "gloss": {
+        "en": "Thank you for waiting",
+        "ko": "고맙다",
+        "zh": "谢谢你等候"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-472",
+      "text": "비밀번호가 필요해요",
+      "gloss": {
+        "en": "I need the password",
+        "ko": "필요하다",
+        "zh": "我需要密码"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-473",
+      "text": "이 의자를 사용해도 돼요?",
+      "gloss": {
+        "en": "May I use this chair?",
+        "ko": "사용하다",
+        "zh": "可以用这把椅子吗？"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-474",
+      "text": "번호를 바꿔 주세요",
+      "gloss": {
+        "en": "Please change the number",
+        "ko": "바꾸다",
+        "zh": "请改一下号码"
+      },
+      "tags": [
+        "favor",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-475",
+      "text": "새 노래를 배워요",
+      "gloss": {
+        "en": "I am learning a new song",
+        "ko": "배우다",
+        "zh": "我在学新歌"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-476",
+      "text": "아이에게 숫자를 가르쳐요",
+      "gloss": {
+        "en": "I teach the child numbers",
+        "ko": "가르치다",
+        "zh": "我教孩子数字"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-477",
+      "text": "답을 천천히 생각해요",
+      "gloss": {
+        "en": "I think about the answer slowly",
+        "ko": "생각하다",
+        "zh": "答案我慢慢想"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-478",
+      "text": "그 가게 위치를 알아요",
+      "gloss": {
+        "en": "I know where that shop is",
+        "ko": "알다",
+        "zh": "那家店的位置我知道"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-479",
+      "text": "회의 시간을 몰라요",
+      "gloss": {
+        "en": "I do not know the meeting time",
+        "ko": "모르다",
+        "zh": "会议时间我不知道"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-480",
+      "text": "방문 날짜를 기억해요",
+      "gloss": {
+        "en": "I remember the visit date",
+        "ko": "기억하다",
+        "zh": "我记得拜访日期"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-481",
+      "text": "모자를 차에 잊었어요",
+      "gloss": {
+        "en": "I forgot my hat in the car",
+        "ko": "잊다",
+        "zh": "我把帽子忘在车上了"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-482",
+      "text": "규칙을 이해했어요",
+      "gloss": {
+        "en": "I understood the rules",
+        "ko": "이해하다",
+        "zh": "规则我听明白了"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-483",
+      "text": "자리를 먼저 결정해요",
+      "gloss": {
+        "en": "We decide the seats first",
+        "ko": "결정하다",
+        "zh": "我们先决定座位"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-484",
+      "text": "책을 같이 골라도 돼요?",
+      "gloss": {
+        "en": "May we pick a book together?",
+        "ko": "고르다",
+        "zh": "书可以一起挑吗？"
+      },
+      "tags": [
+        "think",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-485",
+      "text": "선생님께 지금 전화해요",
+      "gloss": {
+        "en": "I am calling the teacher now",
+        "ko": "전화하다",
+        "zh": "我现在给老师打电话"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-486",
+      "text": "짧은 대화가 필요해요",
+      "gloss": {
+        "en": "We need a short conversation",
+        "ko": "대화",
+        "zh": "需要简短对话"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-487",
+      "text": "의견을 분명히 말해요",
+      "gloss": {
+        "en": "I state my opinion clearly",
+        "ko": "말하다",
+        "zh": "我把意见说清楚"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-488",
+      "text": "이웃과 자주 이야기해요",
+      "gloss": {
+        "en": "I often talk with my neighbors",
+        "ko": "이야기하다",
+        "zh": "我和邻居常聊天"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-489",
+      "text": "안내 방송을 들어요",
+      "gloss": {
+        "en": "I listen to the announcement",
+        "ko": "듣다",
+        "zh": "我听广播通知"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-490",
+      "text": "안내문을 크게 읽어요",
+      "gloss": {
+        "en": "I read the notice aloud",
+        "ko": "읽다",
+        "zh": "我大声读告示"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-491",
+      "text": "인사에 웃으며 대답해요",
+      "gloss": {
+        "en": "I smile and reply to the greeting",
+        "ko": "대답하다",
+        "zh": "我对问候笑着回答"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-492",
+      "text": "새 동료를 소개해요",
+      "gloss": {
+        "en": "I introduce a new coworker",
+        "ko": "소개하다",
+        "zh": "我介绍新同事"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-493",
+      "text": "시간을 미리 알려 주세요",
+      "gloss": {
+        "en": "Please let me know the time in advance",
+        "ko": "알리다",
+        "zh": "请提前告诉时间"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-494",
+      "text": "오후에 다시 연락해요",
+      "gloss": {
+        "en": "I will contact you again in the afternoon",
+        "ko": "연락하다",
+        "zh": "下午我再联系"
+      },
+      "tags": [
+        "speech",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-495",
+      "text": "회의 전에 질문이 생겼어요",
+      "gloss": {
+        "en": "A question came up before the meeting",
+        "ko": "생기다",
+        "zh": "开会前出现了提问"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-496",
+      "text": "표지판이 앞에 나타났어요",
+      "gloss": {
+        "en": "A sign appeared in front",
+        "ko": "나타나다",
+        "zh": "前面出现了指示牌"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-497",
+      "text": "회의를 곧 시작해요",
+      "gloss": {
+        "en": "We start the meeting soon",
+        "ko": "시작하다",
+        "zh": "会议马上开始"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-498",
+      "text": "수업이 거의 끝났어요",
+      "gloss": {
+        "en": "Class is almost finished",
+        "ko": "끝나다",
+        "zh": "课差不多结束了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-499",
+      "text": "공부를 조금 더 계속해요",
+      "gloss": {
+        "en": "I continue studying a bit more",
+        "ko": "계속하다",
+        "zh": "我再继续学一会儿"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-500",
+      "text": "비가 잠깐 멈췄어요",
+      "gloss": {
+        "en": "The rain stopped for a moment",
+        "ko": "멈추다",
+        "zh": "雨停了一会儿"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-501",
+      "text": "계획이 조금 변했어요",
+      "gloss": {
+        "en": "The plan changed a little",
+        "ko": "변하다",
+        "zh": "计划稍微变了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-502",
+      "text": "교실이 다른 방으로 바뀌어요",
+      "gloss": {
+        "en": "The classroom switches to another room",
+        "ko": "바뀌다",
+        "zh": "教室换成别的房间"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-503",
+      "text": "한 달이 벌써 지났어요",
+      "gloss": {
+        "en": "A month has already passed",
+        "ko": "지나다",
+        "zh": "一个月已经过去了"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-504",
+      "text": "시간이 십 분 남았어요",
+      "gloss": {
+        "en": "Ten minutes are left",
+        "ko": "남다",
+        "zh": "还剩十分钟"
+      },
+      "tags": [
+        "change",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-505",
+      "text": "필요한 만큼만 사요",
+      "gloss": {
+        "en": "I only buy as much as I need",
+        "ko": "만큼",
+        "zh": "只买需要的量"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-506",
+      "text": "그 길이 반대쪽이에요",
+      "gloss": {
+        "en": "That road is the opposite way",
+        "ko": "반대",
+        "zh": "那条路是反方向"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-507",
+      "text": "두 색이 같아요",
+      "gloss": {
+        "en": "The two colors are the same",
+        "ko": "같다",
+        "zh": "两个颜色一样"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-508",
+      "text": "맛은 완전히 달라요",
+      "gloss": {
+        "en": "The taste is completely different",
+        "ko": "다르다",
+        "zh": "味道完全不同"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-509",
+      "text": "얼굴이 좀 비슷해요",
+      "gloss": {
+        "en": "The faces look a bit similar",
+        "ko": "비슷하다",
+        "zh": "脸有点像"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-510",
+      "text": "사이즈를 비교해 봐요",
+      "gloss": {
+        "en": "Let's compare the sizes",
+        "ko": "비교하다",
+        "zh": "来比较一下尺码"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-511",
+      "text": "물을 더 마실래요",
+      "gloss": {
+        "en": "Would you like more water",
+        "ko": "더",
+        "zh": "还想再喝点水吗"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-512",
+      "text": "오늘이 가장 바빠요",
+      "gloss": {
+        "en": "Today is the busiest",
+        "ko": "가장",
+        "zh": "今天最忙"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-513",
+      "text": "버스가 훨씬 빨라요",
+      "gloss": {
+        "en": "The bus is much faster",
+        "ko": "훨씬",
+        "zh": "公交快得多"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-514",
+      "text": "나이 차이는 없어요",
+      "gloss": {
+        "en": "There is no age difference",
+        "ko": "차이",
+        "zh": "没有年龄差别"
+      },
+      "tags": [
+        "compare",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-515",
+      "text": "그래서 집에 가요",
+      "gloss": {
+        "en": "So I go home",
+        "ko": "그래서",
+        "zh": "所以我回家"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-516",
+      "text": "왜냐하면 배가 고파요",
+      "gloss": {
+        "en": "Because I am hungry",
+        "ko": "왜냐하면",
+        "zh": "因为我饿了"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-517",
+      "text": "이유를 들었어요",
+      "gloss": {
+        "en": "I heard the reason",
+        "ko": "이유",
+        "zh": "我听了理由"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-518",
+      "text": "원인을 찾아요",
+      "gloss": {
+        "en": "I look for the cause",
+        "ko": "원인",
+        "zh": "我找原因"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-519",
+      "text": "결과가 나왔어요",
+      "gloss": {
+        "en": "The result came out",
+        "ko": "결과",
+        "zh": "结果出来了"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-520",
+      "text": "목적이 분명해요",
+      "gloss": {
+        "en": "The purpose is clear",
+        "ko": "목적",
+        "zh": "目的很明确"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-521",
+      "text": "방법이 간단해요",
+      "gloss": {
+        "en": "The method is simple",
+        "ko": "방법",
+        "zh": "方法很简单"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-522",
+      "text": "과정을 배워요",
+      "gloss": {
+        "en": "I learn the process",
+        "ko": "과정",
+        "zh": "我学习过程"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-523",
+      "text": "순서대로 앉아요",
+      "gloss": {
+        "en": "Please sit in order",
+        "ko": "순서",
+        "zh": "请按顺序坐"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-524",
+      "text": "목표를 세워요",
+      "gloss": {
+        "en": "I set a goal",
+        "ko": "목표",
+        "zh": "我定目标"
+      },
+      "tags": [
+        "reason",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-525",
+      "text": "공부가 많이 힘들어요",
+      "gloss": {
+        "en": "Studying is very hard",
+        "ko": "힘들다",
+        "zh": "学习很辛苦"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-526",
+      "text": "질문이 아주 쉬워요",
+      "gloss": {
+        "en": "The question is very easy",
+        "ko": "쉽다",
+        "zh": "问题很容易"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-527",
+      "text": "문제를 이야기해요",
+      "gloss": {
+        "en": "We talk about the problem",
+        "ko": "문제",
+        "zh": "我们谈问题"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-528",
+      "text": "같이 해결해요",
+      "gloss": {
+        "en": "We solve it together",
+        "ko": "해결하다",
+        "zh": "我们一起解决"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-529",
+      "text": "컴퓨터를 고쳐요",
+      "gloss": {
+        "en": "I fix the computer",
+        "ko": "고치다",
+        "zh": "我修电脑"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-530",
+      "text": "실수를 줄여요",
+      "gloss": {
+        "en": "I reduce mistakes",
+        "ko": "실수",
+        "zh": "我减少失误"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-531",
+      "text": "어려움을 이겨요",
+      "gloss": {
+        "en": "I overcome the difficulty",
+        "ko": "어려움",
+        "zh": "我克服困难"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-532",
+      "text": "도움을 받아요",
+      "gloss": {
+        "en": "I receive help",
+        "ko": "도움",
+        "zh": "我得到帮助"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-533",
+      "text": "경험을 나눠요",
+      "gloss": {
+        "en": "We share experience",
+        "ko": "경험",
+        "zh": "我们分享经验"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-534",
+      "text": "색을 선택해요",
+      "gloss": {
+        "en": "I choose a color",
+        "ko": "선택하다",
+        "zh": "我选择颜色"
+      },
+      "tags": [
+        "problem",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-535",
+      "text": "날짜가 확실해요",
+      "gloss": {
+        "en": "The date is certain",
+        "ko": "확실하다",
+        "zh": "日期是确定的"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-536",
+      "text": "뜻이 분명해요",
+      "gloss": {
+        "en": "The meaning is clear",
+        "ko": "분명하다",
+        "zh": "意思很清楚"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-537",
+      "text": "의견을 나눠요",
+      "gloss": {
+        "en": "We share opinions",
+        "ko": "의견",
+        "zh": "我们分享意见"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-538",
+      "text": "계획에 동의해요",
+      "gloss": {
+        "en": "I agree with the plan",
+        "ko": "동의하다",
+        "zh": "我同意这个计划"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-539",
+      "text": "시간이 중요해요",
+      "gloss": {
+        "en": "Time is important",
+        "ko": "중요하다",
+        "zh": "时间很重要"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-540",
+      "text": "영화를 추천해요",
+      "gloss": {
+        "en": "I recommend the movie",
+        "ko": "추천하다",
+        "zh": "我推荐这部电影"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-541",
+      "text": "평가를 받아요",
+      "gloss": {
+        "en": "I receive an evaluation",
+        "ko": "평가",
+        "zh": "我接受评价"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-542",
+      "text": "주제가 흥미로워요",
+      "gloss": {
+        "en": "The topic is interesting",
+        "ko": "흥미롭다",
+        "zh": "主题很有趣"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-543",
+      "text": "계산이 틀려요",
+      "gloss": {
+        "en": "The calculation is wrong",
+        "ko": "틀리다",
+        "zh": "计算错了"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-544",
+      "text": "선택을 잘 판단해요",
+      "gloss": {
+        "en": "I judge the choice carefully",
+        "ko": "판단하다",
+        "zh": "我好好判断选择"
+      },
+      "tags": [
+        "opinion",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-545",
+      "text": "학생이 부지런해요",
+      "gloss": {
+        "en": "The student is diligent",
+        "ko": "부지런하다",
+        "zh": "学生很勤快"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-546",
+      "text": "오늘은 게을러요",
+      "gloss": {
+        "en": "I am lazy today",
+        "ko": "게으르다",
+        "zh": "今天很懒"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-547",
+      "text": "읽기 습관을 키워요",
+      "gloss": {
+        "en": "I build a reading habit",
+        "ko": "습관",
+        "zh": "我培养阅读习惯"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-548",
+      "text": "매일 노력해요",
+      "gloss": {
+        "en": "I make an effort every day",
+        "ko": "노력하다",
+        "zh": "我每天努力"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-549",
+      "text": "버스가 익숙해요",
+      "gloss": {
+        "en": "I am used to the bus",
+        "ko": "익숙하다",
+        "zh": "我对公交很熟悉"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-550",
+      "text": "얼굴이 낯설어요",
+      "gloss": {
+        "en": "The face looks unfamiliar",
+        "ko": "낯설다",
+        "zh": "脸很陌生"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-551",
+      "text": "학교에 적응해요",
+      "gloss": {
+        "en": "I adapt to school",
+        "ko": "적응하다",
+        "zh": "我适应学校"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-552",
+      "text": "휴식을 취해요",
+      "gloss": {
+        "en": "I take a rest",
+        "ko": "휴식",
+        "zh": "我休息"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-553",
+      "text": "방학을 보내요",
+      "gloss": {
+        "en": "I spend the school vacation",
+        "ko": "방학",
+        "zh": "我过学校假期"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-554",
+      "text": "생활을 즐겨요",
+      "gloss": {
+        "en": "I enjoy life",
+        "ko": "생활",
+        "zh": "我享受生活"
+      },
+      "tags": [
+        "habit",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-555",
+      "text": "예의를 배워요",
+      "gloss": {
+        "en": "I learn manners",
+        "ko": "예의",
+        "zh": "我学习礼貌"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-556",
+      "text": "질서가 중요해요",
+      "gloss": {
+        "en": "Order is important",
+        "ko": "질서",
+        "zh": "秩序很重要"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-557",
+      "text": "규칙을 외워요",
+      "gloss": {
+        "en": "I memorize the rules",
+        "ko": "규칙",
+        "zh": "我背规则"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-558",
+      "text": "규칙을 지켜요",
+      "gloss": {
+        "en": "I keep the rules",
+        "ko": "지키다",
+        "zh": "我遵守规则"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-559",
+      "text": "법을 어기지 않아요",
+      "gloss": {
+        "en": "I do not break the law",
+        "ko": "어기다",
+        "zh": "我不违法"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-560",
+      "text": "입장을 허락해요",
+      "gloss": {
+        "en": "We permit entry",
+        "ko": "허락하다",
+        "zh": "我们允许入场"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-561",
+      "text": "주차를 금지해요",
+      "gloss": {
+        "en": "Parking is forbidden",
+        "ko": "금지하다",
+        "zh": "禁止停车"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-562",
+      "text": "자유가 많아요",
+      "gloss": {
+        "en": "There is a lot of freedom",
+        "ko": "자유",
+        "zh": "自由很多"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-563",
+      "text": "의무가 있어요",
+      "gloss": {
+        "en": "There is a duty",
+        "ko": "의무",
+        "zh": "有义务"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-564",
+      "text": "법을 존중해요",
+      "gloss": {
+        "en": "I respect the law",
+        "ko": "법",
+        "zh": "我尊重法律"
+      },
+      "tags": [
+        "rules",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-565",
+      "text": "다시 만나서 반가워요",
+      "gloss": {
+        "en": "Glad to see you again",
+        "ko": "반갑다",
+        "zh": "再次见面很高兴"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-566",
+      "text": "사이가 가까워요",
+      "gloss": {
+        "en": "We are close",
+        "ko": "가깝다",
+        "zh": "关系很近"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-567",
+      "text": "오래 친해요",
+      "gloss": {
+        "en": "We have been close a long time",
+        "ko": "친하다",
+        "zh": "很久就很熟"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-568",
+      "text": "함께 걸어요",
+      "gloss": {
+        "en": "We walk together",
+        "ko": "함께",
+        "zh": "一起走"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-569",
+      "text": "혼자 앉아요",
+      "gloss": {
+        "en": "I sit alone",
+        "ko": "혼자",
+        "zh": "一个人坐"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-570",
+      "text": "광장에 모여요",
+      "gloss": {
+        "en": "We gather at the square",
+        "ko": "모이다",
+        "zh": "在广场聚会"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-571",
+      "text": "독서 동아리예요",
+      "gloss": {
+        "en": "It is a reading club",
+        "ko": "동아리",
+        "zh": "是读书社团"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-572",
+      "text": "기쁨을 나눠요",
+      "gloss": {
+        "en": "We share joy",
+        "ko": "나누다",
+        "zh": "分享喜悦"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-573",
+      "text": "운동장에서 놀아요",
+      "gloss": {
+        "en": "We hang out on the playground",
+        "ko": "놀다",
+        "zh": "在操场玩"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-574",
+      "text": "친구 집 방문이에요",
+      "gloss": {
+        "en": "It is a visit to a friend’s house",
+        "ko": "방문",
+        "zh": "是朋友家拜访"
+      },
+      "tags": [
+        "friends",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-575",
+      "text": "소심해서 망설여요",
+      "gloss": {
+        "en": "I hesitate because I am shy",
+        "ko": "소심하다",
+        "zh": "太拘谨而犹豫"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-576",
+      "text": "용감하게 나서요",
+      "gloss": {
+        "en": "I step forward bravely",
+        "ko": "용감하다",
+        "zh": "勇敢地站出来"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-577",
+      "text": "성격이 달라요",
+      "gloss": {
+        "en": "Our personalities differ",
+        "ko": "성격",
+        "zh": "性格不同"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-578",
+      "text": "태도가 친절해요",
+      "gloss": {
+        "en": "The attitude is kind",
+        "ko": "친절하다",
+        "zh": "态度很亲切"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-579",
+      "text": "일을 성실히 해요",
+      "gloss": {
+        "en": "I do work conscientiously",
+        "ko": "성실하다",
+        "zh": "做事很认真"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-580",
+      "text": "모임이 활발해요",
+      "gloss": {
+        "en": "The gathering is lively",
+        "ko": "활발하다",
+        "zh": "聚会很活跃"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-581",
+      "text": "솔직히 말해요",
+      "gloss": {
+        "en": "I speak frankly",
+        "ko": "솔직하다",
+        "zh": "坦率地说"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-582",
+      "text": "자신감이 생겨요",
+      "gloss": {
+        "en": "Confidence grows",
+        "ko": "자신감",
+        "zh": "自信产生了"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-583",
+      "text": "다정하게 웃어요",
+      "gloss": {
+        "en": "I smile warmly",
+        "ko": "다정하다",
+        "zh": "温柔地笑"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-584",
+      "text": "꼼꼼히 적어요",
+      "gloss": {
+        "en": "I write it down carefully",
+        "ko": "꼼꼼하다",
+        "zh": "仔细记下"
+      },
+      "tags": [
+        "personality",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-585",
+      "text": "들어오며 인사해요",
+      "gloss": {
+        "en": "I greet as I come in",
+        "ko": "인사하다",
+        "zh": "进来时打招呼"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-586",
+      "text": "자리가 불편해요",
+      "gloss": {
+        "en": "The seat is uncomfortable",
+        "ko": "불편하다",
+        "zh": "座位不舒服"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-587",
+      "text": "답을 틀려서 미안해요",
+      "gloss": {
+        "en": "Sorry for getting the answer wrong",
+        "ko": "미안하다",
+        "zh": "答错了，抱歉"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-588",
+      "text": "문을 닫아 죄송해요",
+      "gloss": {
+        "en": "Sorry for closing the door",
+        "ko": "죄송하다",
+        "zh": "关门了，抱歉"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-589",
+      "text": "늦게 와서 사과해요",
+      "gloss": {
+        "en": "I apologize for arriving late",
+        "ko": "사과하다",
+        "zh": "来晚了，我道歉"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-590",
+      "text": "이번만 용서해요",
+      "gloss": {
+        "en": "I forgive just this once",
+        "ko": "용서하다",
+        "zh": "只原谅这一次"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-591",
+      "text": "자리를 비워 실례해요",
+      "gloss": {
+        "en": "Excuse me for leaving my seat",
+        "ko": "실례하다",
+        "zh": "离开座位，失陪"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-592",
+      "text": "시간을 내 주셔서 감사해요",
+      "gloss": {
+        "en": "Thank you for giving your time",
+        "ko": "감사하다",
+        "zh": "感谢您抽出时间"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-593",
+      "text": "도움 덕분에 끝났어요",
+      "gloss": {
+        "en": "Thanks to the help, it is finished",
+        "ko": "덕분",
+        "zh": "多亏帮助才完成"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-594",
+      "text": "아침에 수고했어요",
+      "gloss": {
+        "en": "You worked hard this morning",
+        "ko": "수고하다",
+        "zh": "早上辛苦了"
+      },
+      "tags": [
+        "apology",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-595",
+      "text": "친구에게 상을 자랑해요",
+      "gloss": {
+        "en": "I proudly show the award to a friend",
+        "ko": "자랑하다",
+        "zh": "向朋友炫耀奖项"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-596",
+      "text": "팀 성과를 발표해요",
+      "gloss": {
+        "en": "I present the team's results",
+        "ko": "성과",
+        "zh": "发表团队成果"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-597",
+      "text": "올해 성취를 나눠요",
+      "gloss": {
+        "en": "I share this year's achievements",
+        "ko": "성취",
+        "zh": "分享今年的成就"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-598",
+      "text": "좋은 결과를 바라요",
+      "gloss": {
+        "en": "I wish for a good result",
+        "ko": "바라다",
+        "zh": "盼望好结果"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-599",
+      "text": "발표에 성공해요",
+      "gloss": {
+        "en": "I succeed in the presentation",
+        "ko": "성공하다",
+        "zh": "发表成功了"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-600",
+      "text": "첫 시도에 실패해요",
+      "gloss": {
+        "en": "I fail on the first try",
+        "ko": "실패하다",
+        "zh": "第一次尝试失败了"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-601",
+      "text": "새 기회를 기다려요",
+      "gloss": {
+        "en": "I wait for a new opportunity",
+        "ko": "기회",
+        "zh": "等待新机会"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-602",
+      "text": "어려운 과제에 도전해요",
+      "gloss": {
+        "en": "I take on a difficult assignment",
+        "ko": "도전하다",
+        "zh": "挑战难课题"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-603",
+      "text": "면접에 합격해요",
+      "gloss": {
+        "en": "I pass the interview",
+        "ko": "합격하다",
+        "zh": "面试合格了"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-604",
+      "text": "불합격이 아쉬워요",
+      "gloss": {
+        "en": "Not passing is disappointing",
+        "ko": "불합격",
+        "zh": "不合格很可惜"
+      },
+      "tags": [
+        "success",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-605",
+      "text": "짧은 답변을 보내요",
+      "gloss": {
+        "en": "I send a short reply",
+        "ko": "답변",
+        "zh": "发简短答复"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-606",
+      "text": "교실 위치를 안내해요",
+      "gloss": {
+        "en": "I show the way to the classroom",
+        "ko": "안내하다",
+        "zh": "指引教室位置"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-607",
+      "text": "후배에게 공부법을 조언해요",
+      "gloss": {
+        "en": "I advise a junior on study methods",
+        "ko": "조언하다",
+        "zh": "给后辈建议学习法"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-608",
+      "text": "주말 산책을 제안해요",
+      "gloss": {
+        "en": "I suggest a weekend walk",
+        "ko": "제안하다",
+        "zh": "提议周末散步"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-609",
+      "text": "진로를 상담해요",
+      "gloss": {
+        "en": "I consult about career paths",
+        "ko": "상담하다",
+        "zh": "咨询出路"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-610",
+      "text": "할인에 대해 문의해요",
+      "gloss": {
+        "en": "I inquire about the discount",
+        "ko": "문의하다",
+        "zh": "询问折扣"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-611",
+      "text": "따뜻한 차를 권해요",
+      "gloss": {
+        "en": "I urge them to have warm tea",
+        "ko": "권하다",
+        "zh": "劝喝热茶"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-612",
+      "text": "친구에게 일찍 자라고 충고해요",
+      "gloss": {
+        "en": "I advise a friend to sleep early",
+        "ko": "충고하다",
+        "zh": "忠告朋友早睡"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-613",
+      "text": "날씨 정보를 확인해요",
+      "gloss": {
+        "en": "I check the weather information",
+        "ko": "정보",
+        "zh": "确认天气信息"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-614",
+      "text": "회의 일정을 알려 줘요",
+      "gloss": {
+        "en": "I let them know the meeting schedule",
+        "ko": "알려주다",
+        "zh": "告知会议日程"
+      },
+      "tags": [
+        "advice",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-615",
+      "text": "짧은 응원을 보내요",
+      "gloss": {
+        "en": "I send a short cheer",
+        "ko": "응원",
+        "zh": "送上简短加油"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-616",
+      "text": "따뜻한 지지를 받아요",
+      "gloss": {
+        "en": "I receive warm support",
+        "ko": "지지",
+        "zh": "得到温暖的支持"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-617",
+      "text": "친구의 발표를 응원해요",
+      "gloss": {
+        "en": "I cheer for a friend's presentation",
+        "ko": "응원하다",
+        "zh": "为朋友的发表加油"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-618",
+      "text": "내 선택을 지지해요",
+      "gloss": {
+        "en": "I stand by my choice",
+        "ko": "지지하다",
+        "zh": "支持我的选择"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-619",
+      "text": "시험 전에 동생을 격려해요",
+      "gloss": {
+        "en": "I encourage my sibling before the exam",
+        "ko": "격려하다",
+        "zh": "考试前鼓励弟弟/妹妹"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-620",
+      "text": "속상한 동생을 위로해요",
+      "gloss": {
+        "en": "I comfort an upset sibling",
+        "ko": "위로하다",
+        "zh": "安慰难过的弟弟/妹妹"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-621",
+      "text": "힘들 때 가족에게 의지해요",
+      "gloss": {
+        "en": "When things are hard, I rely on family",
+        "ko": "의지하다",
+        "zh": "困难时依靠家人"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-622",
+      "text": "옆 자리를 배려해요",
+      "gloss": {
+        "en": "I am considerate of the seat beside me",
+        "ko": "배려하다",
+        "zh": "体贴旁边座位"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-623",
+      "text": "믿음직한 동료가 든든해요",
+      "gloss": {
+        "en": "A trustworthy coworker feels reassuring",
+        "ko": "든든하다",
+        "zh": "可靠的同事让人踏实"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-624",
+      "text": "메시지를 보고 안심해요",
+      "gloss": {
+        "en": "I feel at ease after seeing the message",
+        "ko": "안심하다",
+        "zh": "看完消息后放心"
+      },
+      "tags": [
+        "encourage",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-625",
+      "text": "주말에 만나자고 약속해요",
+      "gloss": {
+        "en": "I promise to meet on the weekend",
+        "ko": "약속하다",
+        "zh": "约定周末见面"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-626",
+      "text": "팀 안의 신뢰가 커요",
+      "gloss": {
+        "en": "Trust inside the team grows",
+        "ko": "신뢰",
+        "zh": "团队里的信任变大"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-627",
+      "text": "답변은 늘 정직해요",
+      "gloss": {
+        "en": "The answer is always honest",
+        "ko": "정직하다",
+        "zh": "回答总是诚实"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-628",
+      "text": "선생님을 깊이 신뢰해요",
+      "gloss": {
+        "en": "I deeply trust the teacher",
+        "ko": "신뢰하다",
+        "zh": "深深信任老师"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-629",
+      "text": "합격할 거라고 확신해요",
+      "gloss": {
+        "en": "I'm sure I will pass",
+        "ko": "확신하다",
+        "zh": "确信会合格"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-630",
+      "text": "그 이유를 의심해요",
+      "gloss": {
+        "en": "I doubt that reason",
+        "ko": "의심하다",
+        "zh": "怀疑那个理由"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-631",
+      "text": "값을 속이지 않아요",
+      "gloss": {
+        "en": "I don't deceive about the price",
+        "ko": "속이다",
+        "zh": "不在价格上欺骗"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-632",
+      "text": "시간을 꼭 보장해요",
+      "gloss": {
+        "en": "We definitely guarantee the time",
+        "ko": "보장하다",
+        "zh": "一定保障时间"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-633",
+      "text": "말로 사실을 증명해요",
+      "gloss": {
+        "en": "I prove the facts with words",
+        "ko": "증명하다",
+        "zh": "用话证明事实"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-634",
+      "text": "잠깐 의심이 생겨요",
+      "gloss": {
+        "en": "A little doubt arises",
+        "ko": "의심",
+        "zh": "忽然起了疑心"
+      },
+      "tags": [
+        "promise",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-635",
+      "text": "추가 요청은 거절해요",
+      "gloss": {
+        "en": "I refuse the extra request",
+        "ko": "거절하다",
+        "zh": "拒绝追加请求"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-636",
+      "text": "일정을 바로 수락해요",
+      "gloss": {
+        "en": "I accept the schedule right away",
+        "ko": "수락하다",
+        "zh": "马上接受日程"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-637",
+      "text": "부탁에 바로 응해요",
+      "gloss": {
+        "en": "I respond to the favor right away",
+        "ko": "응하다",
+        "zh": "马上答应拜托"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-638",
+      "text": "신청을 빨리 승인해요",
+      "gloss": {
+        "en": "They approve the application quickly",
+        "ko": "승인하다",
+        "zh": "很快批准申请"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-639",
+      "text": "현실을 받아들여요",
+      "gloss": {
+        "en": "I accept reality",
+        "ko": "받아들이다",
+        "zh": "接受现实"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-640",
+      "text": "도움은 사양해요",
+      "gloss": {
+        "en": "I politely decline the help",
+        "ko": "사양하다",
+        "zh": "婉拒帮助"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-641",
+      "text": "출장을 승낙해요",
+      "gloss": {
+        "en": "I consent to the business trip",
+        "ko": "승낙하다",
+        "zh": "答应出差"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-642",
+      "text": "강요를 거부해요",
+      "gloss": {
+        "en": "I reject coercion",
+        "ko": "거부하다",
+        "zh": "拒斥强迫"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-643",
+      "text": "거절이 분명해요",
+      "gloss": {
+        "en": "The refusal is clear",
+        "ko": "거절",
+        "zh": "拒绝很明确"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-644",
+      "text": "수락이 늦어요",
+      "gloss": {
+        "en": "Acceptance is late",
+        "ko": "수락",
+        "zh": "接受晚了"
+      },
+      "tags": [
+        "refuse",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-645",
+      "text": "손님 항의가 쌓여요",
+      "gloss": {
+        "en": "Customer protests pile up",
+        "ko": "항의",
+        "zh": "顾客抗议在堆积"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-646",
+      "text": "고장을 바로 신고해요",
+      "gloss": {
+        "en": "I report the breakdown right away",
+        "ko": "신고하다",
+        "zh": "马上申报故障"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-647",
+      "text": "불만을 짧게 적어요",
+      "gloss": {
+        "en": "I write the complaint briefly",
+        "ko": "불만",
+        "zh": "简短写下不满"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-648",
+      "text": "계산서를 하나씩 따져요",
+      "gloss": {
+        "en": "I go over the bill item by item",
+        "ko": "따지다",
+        "zh": "一项项核对账单"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-649",
+      "text": "지각만 자꾸 불평해요",
+      "gloss": {
+        "en": "I keep complaining only about lateness",
+        "ko": "불평하다",
+        "zh": "老是抱怨迟到"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-650",
+      "text": "지연에 바로 항의해요",
+      "gloss": {
+        "en": "I protest the delay right away",
+        "ko": "항의하다",
+        "zh": "马上抗议延误"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-651",
+      "text": "의견을 먼저 제기해요",
+      "gloss": {
+        "en": "I raise the opinion first",
+        "ko": "제기하다",
+        "zh": "先提出意见"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-652",
+      "text": "동료에게 피곤을 하소연해요",
+      "gloss": {
+        "en": "I vent my tiredness to a coworker",
+        "ko": "하소연하다",
+        "zh": "向同事诉说疲劳"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-653",
+      "text": "결과가 불만스러워요",
+      "gloss": {
+        "en": "The result is unsatisfactory",
+        "ko": "불만스럽다",
+        "zh": "结果让人不满意"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-654",
+      "text": "불평을 줄이려고 해요",
+      "gloss": {
+        "en": "I try to reduce complaining",
+        "ko": "불평",
+        "zh": "想减少抱怨"
+      },
+      "tags": [
+        "complain",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-655",
+      "text": "미리 경고해 드려요",
+      "gloss": {
+        "en": "I warn you in advance",
+        "ko": "경고하다",
+        "zh": "我提前警告您"
+      },
+      "tags": [
+        "warn",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-656",
+      "text": "표지판을 잘 주의해요",
+      "gloss": {
+        "en": "I pay close attention to the signs",
+        "ko": "주의하다",
+        "zh": "我仔细注意标牌"
+      },
+      "tags": [
+        "warn",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-657",
+      "text": "공사 구간은 위험해요",
+      "gloss": {
+        "en": "The construction zone is dangerous",
+        "ko": "위험하다",
+        "zh": "施工路段很危险"
+      },
+      "tags": [
+        "warn",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-658",
+      "text": "젖은 바닥을 피해요",
+      "gloss": {
+        "en": "I avoid the wet floor",
+        "ko": "피하다",
+        "zh": "我避开湿滑的地面"
+      },
+      "tags": [
+        "warn",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-659",
+      "text": "사고를 예방하려고 해요",
+      "gloss": {
+        "en": "I try to prevent accidents",
+        "ko": "예방하다",
+        "zh": "我想预防事故"
+      },
+      "tags": [
+        "warn",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-660",
+      "text": "정전에 차분히 대처해요",
+      "gloss": {
+        "en": "I calmly cope with the blackout",
+        "ko": "대처하다",
+        "zh": "我冷静应对停电"
+      },
+      "tags": [
+        "warn",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-661",
+      "text": "경고 문구를 붙여요",
+      "gloss": {
+        "en": "I put up a warning notice",
+        "ko": "경고",
+        "zh": "我贴上警告文字"
+      },
+      "tags": [
+        "warn",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-662",
+      "text": "주의 표시를 봐요",
+      "gloss": {
+        "en": "I look at the caution signs",
+        "ko": "주의",
+        "zh": "我看注意标志"
+      },
+      "tags": [
+        "warn",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-663",
+      "text": "안전을 먼저 생각해요",
+      "gloss": {
+        "en": "I think of safety first",
+        "ko": "안전",
+        "zh": "我先考虑安全"
+      },
+      "tags": [
+        "warn",
+        "intermediate"
+      ]
+    },
+    {
+      "id": "lm-664",
+      "text": "주의사항을 외워요",
+      "gloss": {
+        "en": "I memorize the precautions",
+        "ko": "주의사항",
+        "zh": "我背注意事项"
+      },
+      "tags": [
+        "warn",
+        "intermediate"
+      ]
+    }
+  ],
+  "note": "+10 warn-caution (lm-655–664, 2026-07-27): Prefer 경고하다·주의하다·위험하다·피하다 (미리 경고해 드려요 · 표지판을 잘 주의해요 · 공사 구간은 위험해요 · 젖은 바닥을 피해요). 예방하다·대처하다·경고·주의·안전·주의사항. Skip 긴급·비상 → cloze Done. Distinct from problem/complain/refuse/rules/health · cloze/pack verbatim. NIKL/Sejong · 해요체 · no brand names. Suggest particle/dictation. Prior complain lm-645–654 · refuse · promise · encourage · advice · success · apology · personality · friends · rules · habit · opinion · problem · reason · compare · change · speech · think · favor · motion · building · electric · accessories · color · senses · size · routine · countries · jobs · bathroom · pantry · places · driving · pets · mail · stationery · kitchen · fruit · furniture · directions · body · chores · time · celebration · media · music · clothes · restaurant · nature · sports · emotion · hobby · family · digital · weather · travel · school · clinic · workplace · banking/housing/beginner kept."
+}

@@ -1,0 +1,478 @@
+/* Telephone — solo whisper/recall · Sunstage Play */
+.hidden {
+  display: none !important;
+}
+
+.tel-page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 1.25rem 5vw 4rem;
+}
+
+.tel-page .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+
+.tel-page h1 {
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(26px, 5vw, 36px);
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.tel-page .lead {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0 0 1rem;
+}
+
+.tel-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 0.75rem;
+  font-size: 14px;
+}
+
+.tel-nav a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tel-note {
+  font-size: 12px;
+  color: var(--faint);
+  margin: 0 0 1rem;
+  line-height: 1.4;
+}
+
+.tel-themes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 0 0 1rem;
+}
+
+.tel-themes .tel-k {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.tel-theme-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tel-theme-chip {
+  min-height: 34px;
+  padding: 5px 11px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.tel-theme-chip:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+.tel-theme-chip.is-on {
+  background: rgba(18, 197, 176, 0.16);
+  border-color: var(--accent-2, #12c5b0);
+}
+
+.tel-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: -0.35rem 0 0.9rem;
+  min-height: 0;
+}
+
+.tel-item-tags:empty {
+  display: none;
+}
+
+.tel-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: rgba(20, 32, 51, 0.06);
+  border: 1px solid rgba(20, 32, 51, 0.08);
+}
+
+.tel-mode {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.tel-mode-btn {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  min-height: 44px;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.tel-mode-btn:hover {
+  border-color: var(--accent-dim);
+}
+
+.tel-mode-btn.is-on {
+  background: rgba(18, 197, 176, 0.16);
+  border-color: var(--accent-2, #12c5b0);
+}
+
+.tel-k {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 6px;
+}
+
+.tel-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.tel-progress-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(20, 32, 51, 0.08);
+  overflow: hidden;
+}
+
+#tel-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-2, #12c5b0), var(--accent, #ff8a14));
+  border-radius: inherit;
+  transition: width 0.25s ease;
+}
+
+.tel-stage {
+  padding: 1.15rem 1rem;
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg-soft);
+  border-top: 3px solid var(--accent);
+  margin-bottom: 1rem;
+}
+
+.tel-gloss {
+  font-size: 13px;
+  margin: 0 0 12px;
+  min-height: 1.2em;
+  color: var(--muted);
+}
+
+.tel-seed-panel {
+  min-height: 72px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tel-seed {
+  font-family: Nunito, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-size: clamp(20px, 4.5vw, 26px);
+  color: var(--ink);
+  margin: 0;
+  word-break: keep-all;
+  line-height: 1.35;
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+.tel-seed.is-hidden {
+  opacity: 0;
+  filter: blur(6px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.tel-pass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.tel-pass.is-on {
+  opacity: 1;
+}
+
+.tel-pass-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent, #ff8a14);
+  animation: tel-bounce 0.9s ease infinite;
+}
+
+.tel-pass-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.tel-pass-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes tel-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+.tel-pass-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+.tel-corrupt {
+  font-family: Nunito, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-weight: 800;
+  font-size: clamp(18px, 4vw, 22px);
+  color: var(--ink);
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 138, 20, 0.1);
+  border: 1.5px dashed rgba(255, 138, 20, 0.45);
+  word-break: keep-all;
+  line-height: 1.35;
+}
+
+.tel-input-label {
+  display: block;
+  font-size: 12px;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+
+.tel-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  font-family: Nunito, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink);
+  resize: vertical;
+  min-height: 56px;
+  margin-bottom: 12px;
+}
+
+.tel-input:focus {
+  outline: none;
+  border-color: var(--accent-2, #12c5b0);
+  box-shadow: 0 0 0 2px rgba(18, 197, 176, 0.2);
+}
+
+.tel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--ink);
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 44px;
+  transition: transform 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.tel-btn:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+.tel-btn--sun {
+  background: var(--accent, #ff8a14);
+  border-color: transparent;
+  color: var(--on-accent, #142033);
+}
+
+.tel-btn--ghost {
+  background: transparent;
+}
+
+.tel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tel-actions--listen {
+  margin-bottom: 8px;
+}
+
+.tel-auto {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tel-feedback {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+}
+
+.tel-feedback.is-ok {
+  border-color: rgba(34, 197, 94, 0.45);
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.tel-feedback.is-soft {
+  border-color: rgba(255, 138, 20, 0.45);
+  background: rgba(255, 138, 20, 0.08);
+}
+
+.tel-feedback.is-bad {
+  border-color: rgba(255, 92, 108, 0.35);
+  background: rgba(255, 92, 108, 0.06);
+}
+
+.tel-feedback-status {
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+
+.tel-sim {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  margin: 0 0 10px;
+}
+
+.tel-diff-line,
+.tel-correct-line {
+  font-family: Nunito, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  margin: 0 0 10px;
+  word-break: keep-all;
+}
+
+.tel-diff-line .ok {
+  color: var(--ink);
+}
+
+.tel-diff-line .extra {
+  color: var(--heart, #ff5c6c);
+  text-decoration: line-through;
+}
+
+.tel-diff-line .bad {
+  color: var(--accent-2, #12c5b0);
+  background: rgba(18, 197, 176, 0.15);
+  border-radius: 2px;
+}
+
+.tel-explain {
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.tel-done {
+  margin-top: 0.5rem;
+  padding: 1.5rem 1.2rem;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #fff 0%, rgba(126, 200, 255, 0.25) 100%);
+  border: 1.5px solid var(--line);
+  text-align: center;
+}
+
+.tel-done h2 {
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 900;
+  margin: 0 0 8px;
+}
+
+.tel-score {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.tel-done .tel-actions {
+  justify-content: center;
+}
+
+.tel-error {
+  color: var(--heart, #ff5c6c);
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .tel-actions--listen .tel-btn,
+  .tel-actions .tel-btn {
+    flex: 1 1 auto;
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "no-the-in-korean",
+  "slug": "no-the-in-korean",
+  "status": "pilot",
+  "level": "A1",
+  "tags": ["grammar:articles", "contrast:en"],
+  "sourceNote": "Original jabi. parallel piece on Korean lacking English articles. Not scraped.",
+  "question": {
+    "en": "Why doesn’t Korean have “a / the”?",
+    "ko": "한국어에는 a/the가 없나요?"
+  },
+  "reading": {
+    "en": "Korean does not use articles like English a/an/the. Nouns stand alone, and context (or particles, demonstratives, numbers) does the work English articles do.\n\n「책」 can mean a book, the book, or books — depending on the situation. If you need “this/that”, use 이/그/저. If you need “one book”, say 책 한 권. If you need topic or subject role, add 은/는 or 이/가.\n\nLearners often over-translate: they hunt for a missing “the” and feel the sentence is incomplete. It is complete. Practice reading short Korean lines without inserting English articles in your head.\n\nWhen translating into English for study, choose a/the by English sense — not because Korean marked it.",
+    "ko": "한국어에는 영어 a/an/the 같은 관사가 없습니다. 명사는 그대로 두고, 맥락(또는 조사·지시어·수)이 영어 관사 역할을 합니다.\n\n「책」은 상황에 따라 a book, the book, books가 될 수 있습니다. 「이/그/저」로 this/that을, 「책 한 권」으로 하나를, 은/는·이/가로 주제·주어 역할을 표시합니다.\n\n학습자는 없는 the를 찾다가 문장이 비어 있다고 느끼기 쉽습니다. 비어 있지 않습니다. 짧은 한국어 문장을 읽을 때 머릿속에 영어 관사를 끼워 넣지 않는 연습이 도움이 됩니다.\n\n공부용으로 영어로 옮길 때는 영어 감각으로 a/the를 고르세요 — 한국어가 표시해서가 아닙니다."
+  },
+  "keyPoints": [
+    {
+      "en": "No a/the — context and particles carry the job.",
+      "ko": "a/the 없음 — 맥락·조사가 역할."
+    },
+    {
+      "en": "Use 이/그/저, numbers, and particles when you need precision.",
+      "ko": "필요할 때 이/그/저·수·조사."
+    },
+    {
+      "en": "Don’t force English articles into Korean reading.",
+      "ko": "한국어 읽기에 영어 관사 끼워 넣지 않기."
+    }
+  ],
+  "examples": [
+    { "ko": "책 있어요?", "en": "Do you have (a/any) book(s)?" },
+    { "ko": "그 책 좋아요.", "en": "That book is good." },
+    { "ko": "물 주세요.", "en": "Water, please. (no article needed)" }
+  ],
+  "checkQuestions": [
+    {
+      "q": { "en": "How do you say “that book” without “the”?", "ko": "the 없이 ‘그 책’은?" },
+      "a": { "en": "그 책 — demonstrative 그.", "ko": "그 책 — 지시어 그." }
+    }
+  ],
+  "practice": {
+    "href": "../app/",
+    "label": { "en": "Try TOPIK I reading →", "ko": "TOPIK I 읽기 연습 →" }
+  },
+  "related": [
+    { "href": "./#eunneun-iga", "label": { "en": "Related: particles", "ko": "관련: 조사" } }
+  ]
+}

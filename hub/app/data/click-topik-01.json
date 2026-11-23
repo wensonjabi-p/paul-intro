@@ -1,0 +1,245 @@
+{
+  "id": "click-topik-01",
+  "title": {
+    "en": "CLIcK TOPIK Reading · Set 1",
+    "ko": "CLIcK TOPIK 읽기 · 세트 1"
+  },
+  "level": "TOPIK I–II mix (CLIcK curated)",
+  "verified": true,
+  "verifiedAt": "2026-07-25",
+  "source": "CLIcK",
+  "sourceNote": "Subset of CLIcK benchmark TOPIK items (Kim et al., LREC-COLING 2024). https://github.com/rladmstn1714/CLIcK — cite the paper if you publish results.",
+  "licenseNote": "Research benchmark redistribution with attribution; not NIIED official papers.",
+  "questions": [
+    {
+      "id": "TK_2016_5",
+      "type": "textual",
+      "prompt": {
+        "ko": "다음은 무엇에 대한 글인지 고르십시오.\n“비타민이 가득! 하루 필요한 야채가~ 이 한병에!”",
+        "en": "[CLIcK / TOPIK-sourced] Choose the best answer.\n\n다음은 무엇에 대한 글인지 고르십시오.\n“비타민이 가득! 하루 필요한 야채가~ 이 한병에!”"
+      },
+      "choices": [
+        "주스",
+        "콜라",
+        "우유",
+        "커피"
+      ],
+      "answer": 0,
+      "answerText": "주스",
+      "tags": [
+        "source:CLIcK",
+        "kind:textual",
+        "reading:주제"
+      ],
+      "why": "CLIcK gold answer (TK_2016_5): 주스",
+      "sourceId": "TK_2016_5"
+    },
+    {
+      "id": "TK_2016_6",
+      "type": "textual",
+      "prompt": {
+        "ko": "다음은 무엇에 대한 글인지 고르십시오.\n“물놀이 용품 특별 세일! 이 기회를 놓치지 마세요!”",
+        "en": "[CLIcK / TOPIK-sourced] Choose the best answer.\n\n다음은 무엇에 대한 글인지 고르십시오.\n“물놀이 용품 특별 세일! 이 기회를 놓치지 마세요!”"
+      },
+      "choices": [
+        "학원",
+        "마트",
+        "사진관",
+        "세탁소"
+      ],
+      "answer": 1,
+      "answerText": "마트",
+      "tags": [
+        "source:CLIcK",
+        "kind:textual",
+        "reading:주제"
+      ],
+      "why": "CLIcK gold answer (TK_2016_6): 마트",
+      "sourceId": "TK_2016_6"
+    },
+    {
+      "id": "TK_2016_7",
+      "type": "textual",
+      "prompt": {
+        "ko": "다음은 무엇에 대한 글인지 고르십시오.\n“살펴봐요 숨은 불씨! 다시봐요 꺼진 불씨!”",
+        "en": "[CLIcK / TOPIK-sourced] Choose the best answer.\n\n다음은 무엇에 대한 글인지 고르십시오.\n“살펴봐요 숨은 불씨! 다시봐요 꺼진 불씨!”"
+      },
+      "choices": [
+        "전기 절약",
+        "날씨 정보",
+        "건강 관리",
+        "화재 예방"
+      ],
+      "answer": 3,
+      "answerText": "화재 예방",
+      "tags": [
+        "source:CLIcK",
+        "kind:textual",
+        "reading:주제"
+      ],
+      "why": "CLIcK gold answer (TK_2016_7): 화재 예방",
+      "sourceId": "TK_2016_7"
+    },
+    {
+      "id": "TK_2017_5",
+      "type": "textual",
+      "prompt": {
+        "ko": "다음은 무엇에 대한 글인지 고르십시오.\n“눕는 순간 잠이 솔솔~ 아침까지 편안하게”",
+        "en": "[CLIcK / TOPIK-sourced] Choose the best answer.\n\n다음은 무엇에 대한 글인지 고르십시오.\n“눕는 순간 잠이 솔솔~ 아침까지 편안하게”"
+      },
+      "choices": [
+        "수건",
+        "침대",
+        "시계",
+        "신발"
+      ],
+      "answer": 1,
+      "answerText": "침대",
+      "tags": [
+        "source:CLIcK",
+        "kind:textual",
+        "reading:주제"
+      ],
+      "why": "CLIcK gold answer (TK_2017_5): 침대",
+      "sourceId": "TK_2017_5"
+    },
+    {
+      "id": "TK_2017_6",
+      "type": "textual",
+      "prompt": {
+        "ko": "다음은 무엇에 대한 글인지 고르십시오.\n“신선한 재료! 부담 없는 가격! 가족 모임 단체 환영”",
+        "en": "[CLIcK / TOPIK-sourced] Choose the best answer.\n\n다음은 무엇에 대한 글인지 고르십시오.\n“신선한 재료! 부담 없는 가격! 가족 모임 단체 환영”"
+      },
+      "choices": [
+        "은행",
+        "식당",
+        "세탁소",
+        "편의점"
+      ],
+      "answer": 1,
+      "answerText": "식당",
+      "tags": [
+        "source:CLIcK",
+        "kind:textual",
+        "reading:주제"
+      ],
+      "why": "CLIcK gold answer (TK_2017_6): 식당",
+      "sourceId": "TK_2017_6"
+    },
+    {
+      "id": "TK_2017_7",
+      "type": "textual",
+      "prompt": {
+        "ko": "다음은 무엇에 대한 글인지 고르십시오.\n”푸른 숲 맑은 강, 다함께 지켜가요!”",
+        "en": "[CLIcK / TOPIK-sourced] Choose the best answer.\n\n다음은 무엇에 대한 글인지 고르십시오.\n”푸른 숲 맑은 강, 다함께 지켜가요!”"
+      },
+      "choices": [
+        "자연 보호",
+        "시간 절약",
+        "자리 양보",
+        "안전 관리"
+      ],
+      "answer": 0,
+      "answerText": "자연 보호",
+      "tags": [
+        "source:CLIcK",
+        "kind:textual",
+        "reading:주제"
+      ],
+      "why": "CLIcK gold answer (TK_2017_7): 자연 보호",
+      "sourceId": "TK_2017_7"
+    },
+    {
+      "id": "TK_2017_8",
+      "type": "textual",
+      "prompt": {
+        "ko": "“오후 한시까지 구매하면 그날 가져다 드립니다. 주문이 많을 때는 늦을 수 있습니다. - 행복마트”\n\n다음은 무엇에 대한 글인지 고르십시오.",
+        "en": "[CLIcK / TOPIK-sourced] Choose the best answer.\n\n“오후 한시까지 구매하면 그날 가져다 드립니다. 주문이 많을 때는 늦을 수 있습니다. - 행복마트”\n\n다음은 무엇에 대한 글인지 고르십시오."
+      },
+      "choices": [
+        "사용 설명",
+        "배달 안내",
+        "이용 순서",
+        "교환 방법"
+      ],
+      "answer": 1,
+      "answerText": "배달 안내",
+      "tags": [
+        "source:CLIcK",
+        "kind:textual",
+        "reading:주제"
+      ],
+      "why": "CLIcK gold answer (TK_2017_8): 배달 안내",
+      "sourceId": "TK_2017_8"
+    },
+    {
+      "id": "TK_2018_5",
+      "type": "textual",
+      "prompt": {
+        "ko": "다음은 무엇에 대한 글인지 고르십시오.\n“몸에 좋은 영양소가 가득~ 매일 아침 신선함을 마 셔요!”",
+        "en": "[CLIcK / TOPIK-sourced] Choose the best answer.\n\n다음은 무엇에 대한 글인지 고르십시오.\n“몸에 좋은 영양소가 가득~ 매일 아침 신선함을 마 셔요!”"
+      },
+      "choices": [
+        "과자",
+        "안경",
+        "우유",
+        "신발"
+      ],
+      "answer": 2,
+      "answerText": "우유",
+      "tags": [
+        "source:CLIcK",
+        "kind:textual",
+        "reading:주제"
+      ],
+      "why": "CLIcK gold answer (TK_2018_5): 우유",
+      "sourceId": "TK_2018_5"
+    },
+    {
+      "id": "TK_2018_6",
+      "type": "textual",
+      "prompt": {
+        "ko": "다음은 무엇에 대한 글인지 고르십시오.\n“큰 이불도 깨끗하게 세탁부터 건조까지 한 번에 해결!”",
+        "en": "[CLIcK / TOPIK-sourced] Choose the best answer.\n\n다음은 무엇에 대한 글인지 고르십시오.\n“큰 이불도 깨끗하게 세탁부터 건조까지 한 번에 해결!”"
+      },
+      "choices": [
+        "우체국",
+        "여행사",
+        "편의점",
+        "빨래방"
+      ],
+      "answer": 3,
+      "answerText": "빨래방",
+      "tags": [
+        "source:CLIcK",
+        "kind:textual",
+        "reading:주제"
+      ],
+      "why": "CLIcK gold answer (TK_2018_6): 빨래방",
+      "sourceId": "TK_2018_6"
+    },
+    {
+      "id": "TK_2018_7",
+      "type": "textual",
+      "prompt": {
+        "ko": "다음은 무엇에 대한 글인지 고르십시오.\n“등산할 때 담배와 라이터는 두고 가세요. 작은 실천이 아름다운 산을 지킵니다.”",
+        "en": "[CLIcK / TOPIK-sourced] Choose the best answer.\n\n다음은 무엇에 대한 글인지 고르십시오.\n“등산할 때 담배와 라이터는 두고 가세요. 작은 실천이 아름다운 산을 지킵니다.”"
+      },
+      "choices": [
+        "건강 관리",
+        "전기 절약",
+        "화재 예방",
+        "교통 안전"
+      ],
+      "answer": 2,
+      "answerText": "화재 예방",
+      "tags": [
+        "source:CLIcK",
+        "kind:textual",
+        "reading:주제"
+      ],
+      "why": "CLIcK gold answer (TK_2018_7): 화재 예방",
+      "sourceId": "TK_2018_7"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "ai-learner-report",
+  "title": {
+    "en": "AI learner report (handoff packet)",
+    "ko": "AI 학습 보고 (핸드오프 패킷)",
+    "zh": "AI 学习报告（交接包）"
+  },
+  "purpose": {
+    "en": "Short triage for a human coach — not a chat dump. Built from local practice tags.",
+    "ko": "사람 선생님용 짧은 트리아지 — 채팅 로그가 아님. 로컬 연습 태그에서 생성.",
+    "zh": "给真人教练的短分诊 — 不是聊天记录。来自本地练习标签。"
+  },
+  "sourceKeys": ["topik-coach-v1"],
+  "fields": [
+    {
+      "key": "generatedAt",
+      "type": "iso8601",
+      "required": true
+    },
+    {
+      "key": "readinessPct",
+      "type": "number|null",
+      "note": "From Me readiness estimate when enough attempts exist"
+    },
+    {
+      "key": "strengths",
+      "type": "tagRow[]",
+      "max": 4,
+      "from": "tagStrengthRows.strengths"
+    },
+    {
+      "key": "weaknesses",
+      "type": "tagRow[]",
+      "max": 4,
+      "from": "tagStrengthRows.weaknesses"
+    },
+    {
+      "key": "signals",
+      "type": "object",
+      "keys": ["hintHeavy", "stalledTags", "sparseness"]
+    },
+    {
+      "key": "aiAlreadyTried",
+      "type": "string[]",
+      "examples": ["SRS weak-deck", "Catch/Mercy/Guide mode", "hint ladder"]
+    },
+    {
+      "key": "suggestedFocus",
+      "type": "focusId[]",
+      "enum": ["direction", "qna", "speaking", "writing"]
+    },
+    {
+      "key": "learnerNote",
+      "type": "string",
+      "optional": true,
+      "maxChars": 280
+    }
+  ],
+  "tagRow": {
+    "strengths": { "keys": ["tag", "rate"], "note": "rate 0–1; no corrects/hints/total in handoff JSON" },
+    "weaknesses": { "keys": ["tag", "wrongs"], "note": "wrongs count only; no rate/hints in handoff JSON" }
+  },
+  "escalationHints": {
+    "en": [
+      "Repeated wrongs on the same tag (not one miss)",
+      "High hint use with low accuracy",
+      "Learner asks for direction or speaking feedback"
+    ],
+    "ko": [
+      "같은 태그 반복 오답(한 번 틀림이 아님)",
+      "힌트 많이 쓰는데 정답률 낮음",
+      "학습자가 방향·말하기 피드백을 요청"
+    ],
+    "zh": [
+      "同一标签反复错（不是一次失误）",
+      "提示多用但正确率低",
+      "学习者要求方向或口语反馈"
+    ]
+  },
+  "privacy": {
+    "en": "Report stays in-browser until the learner chooses to share (email/copy). No server upload in this pilot.",
+    "ko": "학습자가 공유(메일/복사)하기 전까지 브라우저에만. 이번 파일럿은 서버 업로드 없음.",
+    "zh": "学习者选择分享（邮件/复制）前仅在浏览器。本试运行不上传服务器。"
+  }
+}

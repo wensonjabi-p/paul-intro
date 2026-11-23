@@ -1,0 +1,1466 @@
+{
+  "id": "jabi-theme-packs-beginner",
+  "version": 3,
+  "level": "beginner",
+  "topikBand": "I",
+  "source": "original-jabi",
+  "inspiredBy": "Local TOPIK必备单词 pack thematic clusters (drinks, transit, clinic, leisure, snacks, shopping, cosmetics) — structure only. No brand names in beauty pack.",
+  "copyright": "Original jabi. theme packs and example sentences. Not a dump of KoreaXin TOPIK必备单词, 韩语必背单词2000, 疯狂记单词, or 我为韩语狂. Lemmas chosen as everyday survival words; glosses and examples written for jabi.",
+  "research": "../../docs/research-topik-bida-vocab-ko.md",
+  "packs": [
+    {
+      "id": "drinks-order",
+      "title": {
+        "en": "Drinks & ordering",
+        "ko": "음료·주문",
+        "zh": "饮料与点单"
+      },
+      "basicsAlign": [
+        "unit03-cafe",
+        "unit06-food"
+      ],
+      "grammarHooks": [
+        "주세요",
+        "얼마예요"
+      ],
+      "items": [
+        {
+          "id": "beg-dr-01",
+          "lemma": "물",
+          "pos": "n",
+          "senseId": "sns:물.1",
+          "themes": [
+            "cafe"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "water",
+            "ko": "물",
+            "zh": "水"
+          },
+          "example": {
+            "ko": "물 주세요.",
+            "en": "Water, please.",
+            "zh": "请给我水。"
+          },
+          "usageIds": [
+            "use:주세요.order"
+          ]
+        },
+        {
+          "id": "beg-dr-02",
+          "lemma": "커피",
+          "pos": "n",
+          "senseId": "sns:커피.1",
+          "themes": [
+            "cafe"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "coffee",
+            "ko": "커피",
+            "zh": "咖啡"
+          },
+          "example": {
+            "ko": "아이스 커피 한 잔 주세요.",
+            "en": "One iced coffee, please.",
+            "zh": "请给我一杯冰咖啡。"
+          },
+          "usageIds": [
+            "use:주세요.order"
+          ]
+        },
+        {
+          "id": "beg-dr-03",
+          "lemma": "차",
+          "pos": "n",
+          "senseId": "sns:차.1",
+          "themes": [
+            "cafe"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "tea",
+            "ko": "차",
+            "zh": "茶"
+          },
+          "example": {
+            "ko": "따뜻한 차 있어요?",
+            "en": "Do you have hot tea?",
+            "zh": "有热茶吗？"
+          },
+          "usageIds": [
+            "use:있어요.availability"
+          ]
+        },
+        {
+          "id": "beg-dr-04",
+          "lemma": "주스",
+          "pos": "n",
+          "senseId": "sns:주스.1",
+          "themes": [
+            "cafe"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "juice",
+            "ko": "주스",
+            "zh": "果汁"
+          },
+          "example": {
+            "ko": "오렌지 주스 얼마예요?",
+            "en": "How much is the orange juice?",
+            "zh": "橙汁多少钱？"
+          },
+          "usageIds": [
+            "use:얼마예요.price"
+          ]
+        },
+        {
+          "id": "beg-dr-05",
+          "lemma": "우유",
+          "pos": "n",
+          "senseId": "sns:우유.1",
+          "themes": [
+            "cafe"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "milk",
+            "ko": "우유",
+            "zh": "牛奶"
+          },
+          "example": {
+            "ko": "우유 조금 넣어 주세요.",
+            "en": "Please add a little milk.",
+            "zh": "请加一点牛奶。"
+          },
+          "usageIds": [
+            "use:넣어주세요.request"
+          ]
+        },
+        {
+          "id": "beg-dr-06",
+          "lemma": "잔",
+          "pos": "n",
+          "senseId": "sns:잔.1",
+          "themes": [
+            "cafe"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "cup / glass (counter)",
+            "ko": "잔(단위)",
+            "zh": "杯"
+          },
+          "example": {
+            "ko": "커피 두 잔이요.",
+            "en": "Two coffees, please.",
+            "zh": "两杯咖啡。"
+          },
+          "usageIds": [
+            "use:잔이요.order"
+          ]
+        },
+        {
+          "id": "beg-dr-07",
+          "lemma": "콜라",
+          "pos": "n",
+          "senseId": "sns:콜라.1",
+          "themes": [
+            "cafe"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "cola",
+            "ko": "콜라",
+            "zh": "可乐"
+          },
+          "example": {
+            "ko": "콜라 작은 거로 주세요.",
+            "en": "A small cola, please.",
+            "zh": "请给我小杯可乐。"
+          },
+          "usageIds": [
+            "use:주세요.order"
+          ]
+        },
+        {
+          "id": "beg-dr-08",
+          "lemma": "아이스",
+          "pos": "n",
+          "senseId": "sns:아이스.1",
+          "themes": [
+            "cafe"
+          ],
+          "levelBand": "beg",
+          "gloss": {
+            "en": "iced (drink)",
+            "ko": "아이스",
+            "zh": "冰的"
+          },
+          "example": {
+            "ko": "아이스로 하실래요?",
+            "en": "Would you like it iced?",
+            "zh": "要冰的吗？"
+          },
+          "usageIds": [
+            "use:하실래요.offer"
+          ]
+        },
+        {
+          "id": "beg-dr-09",
+          "lemma": "온수",
+          "pos": "n",
+          "senseId": "sns:온수.1",
+          "themes": [
+            "cafe"
+          ],
+          "levelBand": "beg",
+          "gloss": {
+            "en": "hot water",
+            "ko": "온수",
+            "zh": "热水"
+          },
+          "example": {
+            "ko": "온수 있어요?",
+            "en": "Do you have hot water?",
+            "zh": "有热水吗？"
+          },
+          "usageIds": [
+            "use:있어요.availability"
+          ]
+        },
+        {
+          "id": "beg-dr-10",
+          "lemma": "시키다",
+          "pos": "v",
+          "senseId": "sns:시키다.1",
+          "themes": [
+            "cafe"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to order",
+            "ko": "시키다",
+            "zh": "点（餐）"
+          },
+          "example": {
+            "ko": "뭐 시킬까요?",
+            "en": "What should we order?",
+            "zh": "点什么呢？"
+          },
+          "usageIds": [
+            "use:시킬까요.suggest"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transit-ticket",
+      "title": {
+        "en": "Transit & tickets",
+        "ko": "교통·표",
+        "zh": "交通与票"
+      },
+      "basicsAlign": [
+        "unit05-directions"
+      ],
+      "grammarHooks": [
+        "어디예요",
+        "에 타다"
+      ],
+      "items": [
+        {
+          "id": "beg-tr-01",
+          "lemma": "버스",
+          "pos": "n",
+          "senseId": "sns:버스.1",
+          "themes": [
+            "transit"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "bus",
+            "ko": "버스",
+            "zh": "公交"
+          },
+          "example": {
+            "ko": "이 버스 시청에 가요?",
+            "en": "Does this bus go to City Hall?",
+            "zh": "这班公交去市政府吗？"
+          }
+        },
+        {
+          "id": "beg-tr-02",
+          "lemma": "지하철",
+          "pos": "n",
+          "senseId": "sns:지하철.1",
+          "themes": [
+            "transit"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "subway",
+            "ko": "지하철",
+            "zh": "地铁"
+          },
+          "example": {
+            "ko": "지하철로 가요.",
+            "en": "I’ll go by subway.",
+            "zh": "我坐地铁去。"
+          }
+        },
+        {
+          "id": "beg-tr-03",
+          "lemma": "표",
+          "pos": "n",
+          "senseId": "sns:표.1",
+          "themes": [
+            "transit"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "ticket",
+            "ko": "표",
+            "zh": "票"
+          },
+          "example": {
+            "ko": "표 어디에 사요?",
+            "en": "Where do I buy a ticket?",
+            "zh": "票在哪里买？"
+          }
+        },
+        {
+          "id": "beg-tr-04",
+          "lemma": "정류장",
+          "pos": "n",
+          "senseId": "sns:정류장.1",
+          "themes": [
+            "transit"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "stop / station (bus)",
+            "ko": "정류장",
+            "zh": "车站"
+          },
+          "example": {
+            "ko": "다음 정류장에서 내려요.",
+            "en": "I get off at the next stop.",
+            "zh": "我在下一站下车。"
+          }
+        },
+        {
+          "id": "beg-tr-05",
+          "lemma": "타다",
+          "pos": "v",
+          "senseId": "sns:타다.1",
+          "themes": [
+            "transit"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to ride / get on",
+            "ko": "타다",
+            "zh": "乘坐"
+          },
+          "example": {
+            "ko": "여기서 버스를 타세요.",
+            "en": "Take the bus here.",
+            "zh": "请在这里坐公交。"
+          }
+        },
+        {
+          "id": "beg-tr-06",
+          "lemma": "내리다",
+          "pos": "v",
+          "senseId": "sns:내리다.1",
+          "themes": [
+            "transit"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to get off",
+            "ko": "내리다",
+            "zh": "下车"
+          },
+          "example": {
+            "ko": "종점에서 내려요.",
+            "en": "I get off at the last stop.",
+            "zh": "我在终点下车。"
+          }
+        },
+        {
+          "id": "beg-tr-07",
+          "lemma": "환승",
+          "pos": "n",
+          "senseId": "sns:환승.1",
+          "themes": [
+            "transit"
+          ],
+          "levelBand": "beg",
+          "gloss": {
+            "en": "transfer (transit)",
+            "ko": "환승",
+            "zh": "换乘"
+          },
+          "example": {
+            "ko": "여기서 환승하세요.",
+            "en": "Transfer here.",
+            "zh": "请在这里换乘。"
+          }
+        },
+        {
+          "id": "beg-tr-08",
+          "lemma": "출구",
+          "pos": "n",
+          "senseId": "sns:출구.1",
+          "themes": [
+            "transit"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "exit",
+            "ko": "출구",
+            "zh": "出口"
+          },
+          "example": {
+            "ko": "3번 출구로 나가세요.",
+            "en": "Go out exit 3.",
+            "zh": "请从3号出口出去。"
+          }
+        },
+        {
+          "id": "beg-tr-09",
+          "lemma": "늦다",
+          "pos": "a",
+          "senseId": "sns:늦다.1",
+          "themes": [
+            "transit"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to be late",
+            "ko": "늦다",
+            "zh": "迟到；晚"
+          },
+          "example": {
+            "ko": "버스가 늦어요.",
+            "en": "The bus is late.",
+            "zh": "公交晚了。"
+          }
+        },
+        {
+          "id": "beg-tr-10",
+          "lemma": "빠르다",
+          "pos": "a",
+          "senseId": "sns:빠르다.1",
+          "themes": [
+            "transit"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to be fast",
+            "ko": "빠르다",
+            "zh": "快"
+          },
+          "example": {
+            "ko": "지하철이 더 빨라요.",
+            "en": "The subway is faster.",
+            "zh": "地铁更快。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "clinic-basic",
+      "title": {
+        "en": "Feeling unwell",
+        "ko": "몸·병원 기초",
+        "zh": "身体不适基础"
+      },
+      "basicsAlign": [],
+      "grammarHooks": [
+        "아요/어요",
+        "이/가 아프다"
+      ],
+      "items": [
+        {
+          "id": "beg-cl-01",
+          "lemma": "병원",
+          "pos": "n",
+          "senseId": "sns:병원.1",
+          "themes": [
+            "clinic"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "hospital / clinic",
+            "ko": "병원",
+            "zh": "医院"
+          },
+          "example": {
+            "ko": "병원 어디에 있어요?",
+            "en": "Where is the hospital?",
+            "zh": "医院在哪里？"
+          }
+        },
+        {
+          "id": "beg-cl-02",
+          "lemma": "감기",
+          "pos": "n",
+          "senseId": "sns:감기.1",
+          "themes": [
+            "clinic"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "cold (illness)",
+            "ko": "감기",
+            "zh": "感冒"
+          },
+          "example": {
+            "ko": "감기에 걸린 것 같아요.",
+            "en": "I think I caught a cold.",
+            "zh": "我好像感冒了。"
+          }
+        },
+        {
+          "id": "beg-cl-03",
+          "lemma": "열",
+          "pos": "n",
+          "senseId": "sns:열.1",
+          "themes": [
+            "clinic"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "fever",
+            "ko": "열",
+            "zh": "发烧"
+          },
+          "example": {
+            "ko": "열이 조금 있어요.",
+            "en": "I have a slight fever.",
+            "zh": "我有点发烧。"
+          }
+        },
+        {
+          "id": "beg-cl-04",
+          "lemma": "아프다",
+          "pos": "a",
+          "senseId": "sns:아프다.1",
+          "themes": [
+            "clinic"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to hurt / be sick",
+            "ko": "아프다",
+            "zh": "疼；不舒服"
+          },
+          "example": {
+            "ko": "머리가 아파요.",
+            "en": "I have a headache.",
+            "zh": "我头疼。"
+          }
+        },
+        {
+          "id": "beg-cl-05",
+          "lemma": "약",
+          "pos": "n",
+          "senseId": "sns:약.1",
+          "themes": [
+            "clinic"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "medicine",
+            "ko": "약",
+            "zh": "药"
+          },
+          "example": {
+            "ko": "이 약 하루에 몇 번 먹어요?",
+            "en": "How many times a day do I take this medicine?",
+            "zh": "这药一天吃几次？"
+          }
+        },
+        {
+          "id": "beg-cl-06",
+          "lemma": "쉬다",
+          "pos": "v",
+          "senseId": "sns:쉬다.1",
+          "themes": [
+            "clinic"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to rest",
+            "ko": "쉬다",
+            "zh": "休息"
+          },
+          "example": {
+            "ko": "집에서 쉬세요.",
+            "en": "Please rest at home.",
+            "zh": "请在家休息。"
+          }
+        },
+        {
+          "id": "beg-cl-07",
+          "lemma": "배",
+          "pos": "n",
+          "senseId": "sns:배.1",
+          "themes": [
+            "clinic"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "stomach / belly",
+            "ko": "배",
+            "zh": "肚子"
+          },
+          "example": {
+            "ko": "배가 아파요.",
+            "en": "My stomach hurts.",
+            "zh": "肚子疼。"
+          }
+        },
+        {
+          "id": "beg-cl-08",
+          "lemma": "기침",
+          "pos": "n",
+          "senseId": "sns:기침.1",
+          "themes": [
+            "clinic"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "cough",
+            "ko": "기침",
+            "zh": "咳嗽"
+          },
+          "example": {
+            "ko": "기침이 나요.",
+            "en": "I have a cough.",
+            "zh": "我咳嗽。"
+          }
+        },
+        {
+          "id": "beg-cl-09",
+          "lemma": "약국",
+          "pos": "n",
+          "senseId": "sns:약국.1",
+          "themes": [
+            "clinic"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "pharmacy",
+            "ko": "약국",
+            "zh": "药店"
+          },
+          "example": {
+            "ko": "약국에서 약을 사요.",
+            "en": "I buy medicine at the pharmacy.",
+            "zh": "我在药店买药。"
+          }
+        },
+        {
+          "id": "beg-cl-10",
+          "lemma": "의사",
+          "pos": "n",
+          "senseId": "sns:의사.1",
+          "themes": [
+            "clinic"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "doctor",
+            "ko": "의사",
+            "zh": "医生"
+          },
+          "example": {
+            "ko": "의사 선생님을 만났어요.",
+            "en": "I saw the doctor.",
+            "zh": "我见了医生。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "leisure-simple",
+      "title": {
+        "en": "Simple leisure",
+        "ko": "가벼운 여가",
+        "zh": "简单休闲"
+      },
+      "basicsAlign": [
+        "unit02-daily-life"
+      ],
+      "grammarHooks": [
+        "보고 싶어요",
+        "같이"
+      ],
+      "items": [
+        {
+          "id": "beg-le-01",
+          "lemma": "영화",
+          "pos": "n",
+          "senseId": "sns:영화.1",
+          "themes": [
+            "leisure"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "movie",
+            "ko": "영화",
+            "zh": "电影"
+          },
+          "example": {
+            "ko": "오늘 영화 볼래요?",
+            "en": "Want to watch a movie today?",
+            "zh": "今天想看电影吗？"
+          }
+        },
+        {
+          "id": "beg-le-02",
+          "lemma": "극장",
+          "pos": "n",
+          "senseId": "sns:극장.1",
+          "themes": [
+            "leisure"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "theater / cinema",
+            "ko": "극장",
+            "zh": "电影院"
+          },
+          "example": {
+            "ko": "극장이 가까워요.",
+            "en": "The cinema is nearby.",
+            "zh": "电影院很近。"
+          }
+        },
+        {
+          "id": "beg-le-03",
+          "lemma": "보다",
+          "pos": "v",
+          "senseId": "sns:보다.1",
+          "themes": [
+            "leisure"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to see / watch",
+            "ko": "보다",
+            "zh": "看"
+          },
+          "example": {
+            "ko": "만화 영화를 봐요.",
+            "en": "I watch animated films.",
+            "zh": "我看动画片。"
+          }
+        },
+        {
+          "id": "beg-le-04",
+          "lemma": "음악",
+          "pos": "n",
+          "senseId": "sns:음악.1",
+          "themes": [
+            "leisure"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "music",
+            "ko": "음악",
+            "zh": "音乐"
+          },
+          "example": {
+            "ko": "조용한 음악이 좋아요.",
+            "en": "I like quiet music.",
+            "zh": "我喜欢安静的音乐。"
+          }
+        },
+        {
+          "id": "beg-le-05",
+          "lemma": "사진",
+          "pos": "n",
+          "senseId": "sns:사진.1",
+          "themes": [
+            "leisure"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "photo",
+            "ko": "사진",
+            "zh": "照片"
+          },
+          "example": {
+            "ko": "사진 찍어도 돼요?",
+            "en": "May I take a photo?",
+            "zh": "可以拍照吗？"
+          }
+        },
+        {
+          "id": "beg-le-06",
+          "lemma": "같이",
+          "pos": "adv",
+          "senseId": "sns:같이.1",
+          "themes": [
+            "leisure"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "together",
+            "ko": "같이",
+            "zh": "一起"
+          },
+          "example": {
+            "ko": "같이 가요.",
+            "en": "Let’s go together.",
+            "zh": "一起走吧。"
+          }
+        },
+        {
+          "id": "beg-le-07",
+          "lemma": "산책",
+          "pos": "n",
+          "senseId": "sns:산책.1",
+          "themes": [
+            "leisure"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "walk / stroll",
+            "ko": "산책",
+            "zh": "散步"
+          },
+          "example": {
+            "ko": "공원에서 산책해요.",
+            "en": "I take a walk in the park.",
+            "zh": "我在公园散步。"
+          }
+        },
+        {
+          "id": "beg-le-08",
+          "lemma": "운동",
+          "pos": "n",
+          "senseId": "sns:운동.1",
+          "themes": [
+            "leisure"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "exercise",
+            "ko": "운동",
+            "zh": "运动"
+          },
+          "example": {
+            "ko": "아침에 운동해요.",
+            "en": "I exercise in the morning.",
+            "zh": "我早上运动。"
+          }
+        },
+        {
+          "id": "beg-le-09",
+          "lemma": "게임",
+          "pos": "n",
+          "senseId": "sns:게임.1",
+          "themes": [
+            "leisure"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "game",
+            "ko": "게임",
+            "zh": "游戏"
+          },
+          "example": {
+            "ko": "친구랑 게임해요.",
+            "en": "I play games with a friend.",
+            "zh": "我和朋友玩游戏。"
+          }
+        },
+        {
+          "id": "beg-le-10",
+          "lemma": "취미",
+          "pos": "n",
+          "senseId": "sns:취미.1",
+          "themes": [
+            "leisure"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "hobby",
+            "ko": "취미",
+            "zh": "爱好"
+          },
+          "example": {
+            "ko": "취미가 뭐예요?",
+            "en": "What's your hobby?",
+            "zh": "你的爱好是什么？"
+          }
+        }
+      ]
+    },
+    {
+      "id": "snacks-street",
+      "title": {
+        "en": "Snacks & light bites",
+        "ko": "간식·길거리",
+        "zh": "零食与小吃"
+      },
+      "basicsAlign": [
+        "unit06-food",
+        "unit04-shopping"
+      ],
+      "grammarHooks": [
+        "주세요",
+        "먹고 싶어요"
+      ],
+      "items": [
+        {
+          "id": "beg-sn-01",
+          "lemma": "과자",
+          "pos": "n",
+          "senseId": "sns:과자.1",
+          "themes": [
+            "snack"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "snack / cookie",
+            "ko": "과자",
+            "zh": "零食；饼干"
+          },
+          "example": {
+            "ko": "과자 하나 주세요.",
+            "en": "One pack of snacks, please.",
+            "zh": "请给我一包零食。"
+          }
+        },
+        {
+          "id": "beg-sn-02",
+          "lemma": "아이스크림",
+          "pos": "n",
+          "senseId": "sns:아이스크림.1",
+          "themes": [
+            "snack"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "ice cream",
+            "ko": "아이스크림",
+            "zh": "冰淇淋"
+          },
+          "example": {
+            "ko": "아이스크림 먹을래요?",
+            "en": "Want some ice cream?",
+            "zh": "想吃冰淇淋吗？"
+          }
+        },
+        {
+          "id": "beg-sn-03",
+          "lemma": "떡",
+          "pos": "n",
+          "senseId": "sns:떡.1",
+          "themes": [
+            "snack"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "rice cake",
+            "ko": "떡",
+            "zh": "年糕"
+          },
+          "example": {
+            "ko": "떡이 달아요.",
+            "en": "The rice cake is sweet.",
+            "zh": "年糕很甜。"
+          }
+        },
+        {
+          "id": "beg-sn-04",
+          "lemma": "김밥",
+          "pos": "n",
+          "senseId": "sns:김밥.1",
+          "themes": [
+            "snack"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "gimbap",
+            "ko": "김밥",
+            "zh": "紫菜包饭"
+          },
+          "example": {
+            "ko": "김밥 두 줄 주세요.",
+            "en": "Two rolls of gimbap, please.",
+            "zh": "请给我两卷紫菜包饭。"
+          }
+        },
+        {
+          "id": "beg-sn-05",
+          "lemma": "달다",
+          "pos": "a",
+          "senseId": "sns:달다.1",
+          "themes": [
+            "snack"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to be sweet",
+            "ko": "달다",
+            "zh": "甜"
+          },
+          "example": {
+            "ko": "이 케이크가 너무 달아요.",
+            "en": "This cake is too sweet.",
+            "zh": "这蛋糕太甜了。"
+          }
+        },
+        {
+          "id": "beg-sn-06",
+          "lemma": "맵다",
+          "pos": "a",
+          "senseId": "sns:맵다.1",
+          "themes": [
+            "snack"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to be spicy",
+            "ko": "맵다",
+            "zh": "辣"
+          },
+          "example": {
+            "ko": "조금 매워요.",
+            "en": "It's a bit spicy.",
+            "zh": "有点辣。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "shopping-basics",
+      "title": {
+        "en": "Shopping basics",
+        "ko": "쇼핑 기초",
+        "zh": "购物基础"
+      },
+      "basicsAlign": [
+        "unit04-shopping"
+      ],
+      "grammarHooks": [
+        "얼마예요",
+        "이거"
+      ],
+      "items": [
+        {
+          "id": "beg-sh-01",
+          "lemma": "싸다",
+          "pos": "a",
+          "senseId": "sns:싸다.1",
+          "themes": [
+            "shopping"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to be cheap",
+            "ko": "싸다",
+            "zh": "便宜"
+          },
+          "example": {
+            "ko": "이 가방이 싸요.",
+            "en": "This bag is cheap.",
+            "zh": "这个包便宜。"
+          }
+        },
+        {
+          "id": "beg-sh-02",
+          "lemma": "비싸다",
+          "pos": "a",
+          "senseId": "sns:비싸다.1",
+          "themes": [
+            "shopping"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to be expensive",
+            "ko": "비싸다",
+            "zh": "贵"
+          },
+          "example": {
+            "ko": "조금 비싸요.",
+            "en": "It's a bit expensive.",
+            "zh": "有点贵。"
+          }
+        },
+        {
+          "id": "beg-sh-03",
+          "lemma": "할인",
+          "pos": "n",
+          "senseId": "sns:할인.1",
+          "themes": [
+            "shopping"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "discount",
+            "ko": "할인",
+            "zh": "打折"
+          },
+          "example": {
+            "ko": "오늘 할인해요?",
+            "en": "Is there a discount today?",
+            "zh": "今天打折吗？"
+          }
+        },
+        {
+          "id": "beg-sh-04",
+          "lemma": "카드",
+          "pos": "n",
+          "senseId": "sns:카드.1",
+          "themes": [
+            "shopping"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "card (payment)",
+            "ko": "카드",
+            "zh": "卡"
+          },
+          "example": {
+            "ko": "카드로 낼게요.",
+            "en": "I'll pay by card.",
+            "zh": "我用卡付。"
+          }
+        },
+        {
+          "id": "beg-sh-05",
+          "lemma": "영수증",
+          "pos": "n",
+          "senseId": "sns:영수증.1",
+          "themes": [
+            "shopping"
+          ],
+          "levelBand": "beg",
+          "gloss": {
+            "en": "receipt",
+            "ko": "영수증",
+            "zh": "收据"
+          },
+          "example": {
+            "ko": "영수증 주세요.",
+            "en": "Receipt, please.",
+            "zh": "请给我收据。"
+          }
+        },
+        {
+          "id": "beg-sh-06",
+          "lemma": "교환",
+          "pos": "n",
+          "senseId": "sns:교환.1",
+          "themes": [
+            "shopping"
+          ],
+          "levelBand": "beg",
+          "gloss": {
+            "en": "exchange",
+            "ko": "교환",
+            "zh": "换货"
+          },
+          "example": {
+            "ko": "사이즈 교환할 수 있어요?",
+            "en": "Can I exchange the size?",
+            "zh": "可以换尺码吗？"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cosmetics-basic",
+      "title": {
+        "en": "Cosmetics & skin care",
+        "ko": "화장품·피부",
+        "zh": "化妆品与护肤"
+      },
+      "basicsAlign": [
+        "unit04-shopping"
+      ],
+      "grammarHooks": [
+        "주세요",
+        "바르다"
+      ],
+      "note": "Generic product types only — no brand names.",
+      "items": [
+        {
+          "id": "beg-co-01",
+          "lemma": "화장품",
+          "pos": "n",
+          "senseId": "sns:화장품.1",
+          "themes": [
+            "cosmetics"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "cosmetics",
+            "ko": "화장품",
+            "zh": "化妆品"
+          },
+          "example": {
+            "ko": "화장품 코너가 어디에 있어요?",
+            "en": "Where is the cosmetics section?",
+            "zh": "化妆品区在哪里？"
+          }
+        },
+        {
+          "id": "beg-co-02",
+          "lemma": "로션",
+          "pos": "n",
+          "senseId": "sns:로션.1",
+          "themes": [
+            "cosmetics"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "lotion",
+            "ko": "로션",
+            "zh": "乳液"
+          },
+          "example": {
+            "ko": "로션 하나 주세요.",
+            "en": "One lotion, please.",
+            "zh": "请给我一瓶乳液。"
+          }
+        },
+        {
+          "id": "beg-co-03",
+          "lemma": "크림",
+          "pos": "n",
+          "senseId": "sns:크림.1",
+          "themes": [
+            "cosmetics"
+          ],
+          "levelBand": "beg",
+          "gloss": {
+            "en": "cream (skin)",
+            "ko": "크림",
+            "zh": "面霜"
+          },
+          "example": {
+            "ko": "이 크림은 조금 비싸요.",
+            "en": "This cream is a bit expensive.",
+            "zh": "这个面霜有点贵。"
+          }
+        },
+        {
+          "id": "beg-co-04",
+          "lemma": "립스틱",
+          "pos": "n",
+          "senseId": "sns:립스틱.1",
+          "themes": [
+            "cosmetics"
+          ],
+          "levelBand": "beg",
+          "gloss": {
+            "en": "lipstick",
+            "ko": "립스틱",
+            "zh": "口红"
+          },
+          "example": {
+            "ko": "빨간 립스틱 있어요?",
+            "en": "Do you have red lipstick?",
+            "zh": "有红色口红吗？"
+          }
+        },
+        {
+          "id": "beg-co-05",
+          "lemma": "피부",
+          "pos": "n",
+          "senseId": "sns:피부.1",
+          "themes": [
+            "cosmetics"
+          ],
+          "levelBand": "beg",
+          "gloss": {
+            "en": "skin",
+            "ko": "피부",
+            "zh": "皮肤"
+          },
+          "example": {
+            "ko": "피부가 건조해요.",
+            "en": "My skin is dry.",
+            "zh": "皮肤很干。"
+          }
+        },
+        {
+          "id": "beg-co-06",
+          "lemma": "바르다",
+          "pos": "v",
+          "senseId": "sns:바르다.1",
+          "themes": [
+            "cosmetics"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "to apply (cream/lotion)",
+            "ko": "바르다",
+            "zh": "涂抹"
+          },
+          "example": {
+            "ko": "크림을 얼굴에 바르세요.",
+            "en": "Please apply the cream to your face.",
+            "zh": "请把面霜涂在脸上。"
+          }
+        },
+        {
+          "id": "beg-co-07",
+          "lemma": "샴푸",
+          "pos": "n",
+          "senseId": "sns:샴푸.1",
+          "themes": [
+            "cosmetics"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "shampoo",
+            "ko": "샴푸",
+            "zh": "洗发水"
+          },
+          "example": {
+            "ko": "샴푸 얼마예요?",
+            "en": "How much is the shampoo?",
+            "zh": "洗发水多少钱？"
+          }
+        },
+        {
+          "id": "beg-co-08",
+          "lemma": "비누",
+          "pos": "n",
+          "senseId": "sns:비누.1",
+          "themes": [
+            "cosmetics"
+          ],
+          "levelBand": "beg",
+          "freqBand": "A",
+          "inAllowlist": true,
+          "gloss": {
+            "en": "soap",
+            "ko": "비누",
+            "zh": "肥皂"
+          },
+          "example": {
+            "ko": "손 비누 있어요?",
+            "en": "Do you have hand soap?",
+            "zh": "有洗手液吗？"
+          }
+        }
+      ]
+    }
+  ]
+}

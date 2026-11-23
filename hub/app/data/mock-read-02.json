@@ -1,0 +1,107 @@
+{
+  "id": "topik1-read-02",
+  "title": { "en": "TOPIK I Reading · Set 2", "ko": "TOPIK I 읽기 · 세트 2" },
+  "level": "TOPIK I",
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": {
+        "en": "Choose the correct particle.\n\n저는 도서관 (    ) 공부해요.",
+        "ko": "알맞은 조사를 고르세요.\n\n저는 도서관 (    ) 공부해요."
+      },
+      "choices": ["에", "에서", "을", "의"],
+      "answer": 1,
+      "tags": ["grammar:에/에서"]
+    },
+    {
+      "id": "q2",
+      "prompt": {
+        "en": "Choose the correct word for comparison.\n\n저는 커피 (    ) 차를 더 좋아해요.",
+        "ko": "비교 표현을 고르세요.\n\n저는 커피 (    ) 차를 더 좋아해요."
+      },
+      "choices": ["보다", "하고", "만", "부터"],
+      "answer": 0,
+      "tags": ["grammar:보다"]
+    },
+    {
+      "id": "q3",
+      "prompt": {
+        "en": "Which one is a means of transportation?",
+        "ko": "다음 중 교통수단은 무엇인가요?"
+      },
+      "choices": ["버스", "사과", "우산", "시계"],
+      "answer": 0,
+      "tags": ["vocab:교통"]
+    },
+    {
+      "id": "q4",
+      "prompt": {
+        "en": "What is the English meaning of '빨간색'?",
+        "ko": "'빨간색'의 영어는?"
+      },
+      "choices": ["Red", "Blue", "Yellow", "Green"],
+      "answer": 0,
+      "tags": ["vocab:색"]
+    },
+    {
+      "id": "q5",
+      "prompt": {
+        "en": "Fill in the month.\n\n제 생일은 삼 (    )이에요.",
+        "ko": "빈칸에 알맞은 것을 고르세요.\n\n제 생일은 삼 (    )이에요."
+      },
+      "choices": ["월", "일", "시", "분"],
+      "answer": 0,
+      "tags": ["grammar:날짜", "vocab:시간"]
+    },
+    {
+      "id": "q6",
+      "prompt": {
+        "en": "Choose the polite request form.\n\n문을 좀 닫아 (    )?",
+        "ko": "알맞은 요청 표현을 고르세요.\n\n문을 좀 닫아 (    )?"
+      },
+      "choices": ["주세요", "습니다", "어요", "았어요"],
+      "answer": 0,
+      "tags": ["grammar:요청"]
+    },
+    {
+      "id": "q7",
+      "prompt": {
+        "en": "Choose the correct question word.\n\n화장실이 (    ) 있어요?",
+        "ko": "알맞은 의문사를 고르세요.\n\n화장실이 (    ) 있어요?"
+      },
+      "choices": ["어디에", "무엇을", "언제", "왜"],
+      "answer": 0,
+      "tags": ["grammar:의문사", "vocab:장소"]
+    },
+    {
+      "id": "q8",
+      "prompt": {
+        "en": "What is the English meaning of '손'?",
+        "ko": "'손'은 영어로 무엇인가요?"
+      },
+      "choices": ["Hand", "Foot", "Head", "Eye"],
+      "answer": 0,
+      "tags": ["vocab:신체"]
+    },
+    {
+      "id": "q9",
+      "prompt": {
+        "en": "What do you call your father's mother?",
+        "ko": "아버지의 어머니를 무엇이라고 부르나요?"
+      },
+      "choices": ["할머니", "할아버지", "이모", "삼촌"],
+      "answer": 0,
+      "tags": ["vocab:가족"]
+    },
+    {
+      "id": "q10",
+      "prompt": {
+        "en": "Fill in the blank with present tense.\n\n저는 주말에 영화를 (    ).",
+        "ko": "현재형을 고르세요.\n\n저는 주말에 영화를 (    )."
+      },
+      "choices": ["봐요", "먹어요", "가요", "자요"],
+      "answer": 0,
+      "tags": ["grammar:현재", "vocab:취미"]
+    }
+  ]
+}

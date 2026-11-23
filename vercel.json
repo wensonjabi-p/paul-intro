@@ -1,7 +1,8 @@
 {
   "functions": {
     "api/thoughts.js": { "maxDuration": 60 },
-    "api/generate-image.js": { "maxDuration": 60 }
+    "api/generate-image.js": { "maxDuration": 60 },
+    "api/topik2-coach.js": { "maxDuration": 60 }
   },
   "headers": [
     {

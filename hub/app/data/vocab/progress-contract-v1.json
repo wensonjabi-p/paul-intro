@@ -1,0 +1,131 @@
+{
+  "id": "jabi-vocab-progress-contract",
+  "version": 1,
+  "updated": "2026-07-27",
+  "status": "phase-5-contract-only",
+  "note": "Phase 5 — progress/grading hooks as data contract only. No UI rewrite, no path-progress.js implementation, no hangul/basic key migration. Apps may wire later against this file.",
+  "frozenPathKeys": {
+    "hangul": "jabi.hangul.v1",
+    "basic": "jabi.basic.v1",
+    "policy": "Do not rename, merge, or migrate these keys into jabi.vocab.v1. Track skill/crown XP stays in path-progress.js."
+  },
+  "progress": {
+    "storageKey": "jabi.vocab.v1",
+    "purpose": "theme / sense mastery for common vocab layer — separate from hangul·basic path XP",
+    "valueShape": {
+      "version": 1,
+      "themes": {
+        "<themeKey>": {
+          "seen": "number ≥ 0",
+          "correct": "number ≥ 0",
+          "mastery": "0..1 optional float — UI may derive later"
+        }
+      },
+      "senses": {
+        "<senseId>": {
+          "seen": "number ≥ 0",
+          "correct": "number ≥ 0",
+          "mastery": "0..1 optional float — UI may derive later"
+        }
+      }
+    },
+    "example": {
+      "version": 1,
+      "themes": {
+        "habit": { "seen": 4, "correct": 3, "mastery": 0.75 }
+      },
+      "senses": {
+        "sns:습관.1": { "seen": 2, "correct": 2, "mastery": 1 }
+      }
+    },
+    "rules": [
+      "themeKey must be from theme-key-canon.json (frozen 60 + existing aliases only on legacy reads).",
+      "senseId must match pack senseId form sns:{lemma}.{n}.",
+      "Unset keys mean unseen — do not invent default mastery.",
+      "Do not write hangul/basic skill ids into this blob."
+    ]
+  },
+  "errorType": {
+    "purpose": "Reserved closed enum for grading / hint meta. Attach on attempt results later; optional on banks.",
+    "field": "errorType",
+    "closed": true,
+    "values": [
+      {
+        "id": "particle",
+        "ko": "조사",
+        "note": "은/는·이/가·을/를·에/에서 등"
+      },
+      {
+        "id": "tense",
+        "ko": "시제",
+        "note": "과거·현재·미래 / 았·었 등 시제 선택"
+      },
+      {
+        "id": "honorific",
+        "ko": "높임",
+        "note": "존대 어미·높임 어휘 (시·께서 등) — register와 구분"
+      },
+      {
+        "id": "ending",
+        "ko": "어미",
+        "note": "종결·연결 어미 형태 (시제 외)"
+      },
+      {
+        "id": "spelling",
+        "ko": "맞춤법",
+        "note": "철자·띄어쓰기"
+      },
+      {
+        "id": "collocation",
+        "ko": "연어",
+        "note": "습관이 있다 / ~아/어도 되다 등 결합 오류"
+      },
+      {
+        "id": "register",
+        "ko": "격식",
+        "note": "해요·합쇼·반말·문어 불일치"
+      },
+      {
+        "id": "wrong-sense",
+        "ko": "뜻",
+        "note": "lemma는 맞지만 sense 선택 오류"
+      }
+    ],
+    "count": 8,
+    "rules": [
+      "Closed list — do not invent new ids without Paul OK + schema bump.",
+      "Omit field when error type is unknown; do not add a catch-all other.",
+      "One primary errorType per graded attempt (secondary tags later if needed)."
+    ]
+  },
+  "generationInput": {
+    "purpose": "Contract for future example / item generators. Not implemented in apps yet.",
+    "required": ["senseId"],
+    "optional": ["usageId", "register"],
+    "defaults": {
+      "register": "해요"
+    },
+    "fields": {
+      "senseId": "sns:{lemma}.{n} — generation target sense",
+      "usageId": "use:{anchor}.{role} from usage-patterns.json when a frame is forced",
+      "register": "해요 | 합쇼 | 반말 | 문어 — default 해요"
+    },
+    "example": {
+      "senseId": "sns:습관.1",
+      "usageId": "use:습관이있다.describe",
+      "register": "해요"
+    },
+    "rules": [
+      "senseId alone is valid (free-form example around that sense).",
+      "If usageId is set, generated surface should fit that pattern.",
+      "register defaults to 해요 when omitted — match games / survival."
+    ]
+  },
+  "outOfScope": [
+    "Mass UI rewrite",
+    "path-progress.js vocab track implementation",
+    "Migrating jabi.hangul.v1 / jabi.basic.v1",
+    "Game bank rewrite",
+    "hangul.js"
+  ]
+}

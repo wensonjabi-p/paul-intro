@@ -1,0 +1,705 @@
+/* jabi. Hub — Sunstage Play (bright game refresh of Sunstage Clear) */
+:root {
+  --bg: #eaf4ff;
+  --bg-soft: #ffffff;
+  --ink: #142033;
+  --muted: #4e5d73;
+  --faint: #7a879b;
+  --accent: #ff8a14;
+  --accent-2: #12c5b0;
+  --accent-deep: #e86f00;
+  --accent-dim: rgba(255, 138, 20, 0.42);
+  --line: rgba(20, 32, 51, 0.11);
+  --success: #22c55e;
+  --on-accent: #142033;
+  --navy: #0f1b2e;
+  --navy-mid: #1b2c48;
+  --path: #7ec8ff;
+  --xp: #ffd54a;
+  --heart: #ff5c6c;
+  --font-display: "Nunito", "Pretendard", -apple-system, sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1100px 520px at 8% -12%, rgba(255, 138, 20, 0.22), transparent 58%),
+    radial-gradient(920px 460px at 96% 0%, rgba(18, 197, 176, 0.16), transparent 52%),
+    radial-gradient(700px 380px at 50% 100%, rgba(126, 200, 255, 0.18), transparent 55%),
+    var(--bg);
+  color: var(--ink);
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 5vw;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+.site-header .logo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  text-transform: none;
+  font-size: 22px;
+}
+
+.lang-toggle {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font: inherit;
+  font-size: 11px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.hero-block {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4vh 5vw 4vh;
+}
+
+.hero-block .eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.hero-block h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 52px);
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+
+.hero-block .lead {
+  color: var(--muted);
+  max-width: 560px;
+  font-size: clamp(15px, 1.5vw, 17px);
+}
+
+/* Learning path vs side doors */
+.doors-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 5vw 4vh;
+}
+
+.doors-section + .doors-section {
+  padding-top: 0;
+  padding-bottom: 8vh;
+}
+
+.doors-kicker {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 12px;
+}
+
+.doors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.doors-path {
+  gap: 16px;
+}
+
+.door {
+  display: block;
+  padding: 22px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-soft);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.door:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(26, 36, 51, 0.06);
+}
+
+.doors-path .door {
+  border-width: 1.5px;
+  min-height: 148px;
+}
+
+.doors-path .door:nth-child(1) {
+  border-top: 3px solid var(--accent-2);
+}
+.doors-path .door:nth-child(2) {
+  border-top: 3px solid #5bb8ff;
+}
+.doors-path .door:nth-child(3) {
+  border-top: 3px solid var(--accent);
+}
+.doors-path .door:nth-child(4) {
+  border-top: 3px solid #7b8cff;
+}
+
+.doors-side {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  opacity: 0.92;
+}
+
+.doors-side .door {
+  padding: 14px 16px;
+  background: transparent;
+  min-height: 0;
+}
+
+.doors-side .door h2 {
+  font-size: 16px;
+}
+
+.doors-side .door p {
+  font-size: 13px;
+}
+
+.door .label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.door h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+.door p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.badge-scaffold {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  margin-left: 6px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
+.site-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 5vw 48px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--faint);
+}
+
+.site-footer p + p {
+  margin-top: 8px;
+}
+
+.badge-soon {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+@media (max-width: 560px) {
+  .doors-path {
+    grid-template-columns: 1fr 1fr;
+  }
+  .doors-path .door {
+    min-height: 0;
+    padding: 16px 14px;
+  }
+}
+
+/* Shared track list chrome — hangul / basic / topik2 (Sunstage, list shell only) */
+.hangul-page,
+.basic-page,
+.topik2-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 12px 5vw 10vh;
+}
+
+.hangul-page .eyebrow,
+.basic-page .eyebrow,
+.topik2-page .eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.hangul-page h1,
+.basic-page h1,
+.topik2-page h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(26px, 4.5vw, 40px);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.hangul-page .lead,
+.basic-page .lead,
+.topik2-page .lead {
+  color: var(--muted);
+  margin-bottom: 22px;
+  max-width: 36em;
+}
+
+.hangul-meta,
+.basic-meta,
+.topik2-meta {
+  font-size: 12px;
+  color: var(--faint);
+  margin-bottom: 18px;
+  font-family: var(--font-mono);
+}
+
+.hangul-nav,
+.basic-nav,
+.topik2-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin: 8px 0 20px;
+  font-size: 13px;
+}
+
+.hangul-nav a,
+.basic-nav a,
+.topik2-nav a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hangul-list,
+.basic-list,
+.topik2-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Duolingo-ish skill path (nodes on a bright trail) */
+.skill-path {
+  list-style: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0 24px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.skill-path::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 18px;
+  bottom: 18px;
+  width: 6px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent), var(--path) 45%, var(--accent-2));
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.skill-path > li {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 10px 0;
+}
+
+.skill-node {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  position: relative;
+  border-radius: 50%;
+  border: 3px solid var(--ink);
+  background: var(--xp);
+  box-shadow: 0 4px 0 rgba(20, 32, 51, 0.18);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ink);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.skill-node--vowels,
+.skill-node--intro {
+  background: #fff3c4;
+}
+
+.skill-node--consonants,
+.skill-node--aspirated,
+.skill-node--tense {
+  background: #c9f5ee;
+}
+
+.skill-node--practice,
+.skill-node--dialogue {
+  background: #d9ecff;
+}
+
+.skill-node--diphthong,
+.skill-node--batchim,
+.skill-node--liaison {
+  background: #ffe0c2;
+}
+
+.skill-node--survival,
+.skill-node--write-51,
+.skill-node--write-52,
+.skill-node--write-53,
+.skill-node--write-54 {
+  background: #ffd0d6;
+}
+
+.skill-node--planned,
+.skill-node--scaffold {
+  background: var(--bg-soft);
+  color: var(--faint);
+  border-style: dashed;
+  box-shadow: none;
+}
+
+.skill-card {
+  flex: 1;
+  min-width: 0;
+}
+
+.hangul-item,
+.basic-item,
+.topik2-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  border: 1.5px solid var(--line);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 16px;
+  background: var(--bg-soft);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 2px 0 rgba(20, 32, 51, 0.06);
+}
+
+.hangul-item:hover,
+.hangul-item:focus-visible,
+.basic-item:hover,
+.basic-item:focus-visible,
+.topik2-item:hover,
+.topik2-item:focus-visible {
+  border-color: var(--accent-dim);
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(20, 32, 51, 0.08);
+}
+
+.hangul-item.is-open,
+.basic-item.is-open,
+.topik2-item.is-open {
+  border-color: var(--accent);
+  border-left-color: var(--accent);
+  background: linear-gradient(90deg, rgba(255, 138, 20, 0.1), var(--bg-soft) 42%);
+}
+
+.skill-path > li:has(.is-open) .skill-node {
+  background: var(--accent);
+  color: var(--on-accent);
+  transform: scale(1.06);
+}
+
+.skill-node.is-complete {
+  background: var(--accent-2, #12c5b0);
+  color: #fff;
+  border-color: var(--ink);
+  box-shadow: 0 4px 0 rgba(18, 197, 176, 0.35);
+}
+
+.skill-node.is-complete:not([data-crowns])::after,
+.skill-node.is-complete[data-crowns="0"]::after {
+  content: "✓";
+  position: absolute;
+  font-size: 11px;
+  font-weight: 900;
+  bottom: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--xp, #ffe566);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  display: grid;
+  place-items: center;
+  line-height: 1;
+}
+
+/* Duolingo-like crown row on completed skill nodes (1–3) */
+.skill-crowns {
+  position: absolute;
+  left: 50%;
+  top: -11px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.skill-crown {
+  width: 10px;
+  height: 8px;
+  position: relative;
+  opacity: 0.28;
+  filter: grayscale(0.4);
+}
+
+.skill-crown::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #ffe566 0%, #f0b429 100%);
+  clip-path: polygon(0% 100%, 0% 45%, 20% 70%, 50% 10%, 80% 70%, 100% 45%, 100% 100%);
+  border-radius: 0 0 1px 1px;
+  box-shadow: 0 1px 0 rgba(20, 32, 51, 0.2);
+}
+
+.skill-crown.is-on {
+  opacity: 1;
+  filter: none;
+  animation: skill-crown-pop 0.45s ease;
+}
+
+.skill-node[data-crowns="1"] .skill-crown:nth-child(1),
+.skill-node[data-crowns="2"] .skill-crown:nth-child(-n + 2),
+.skill-node[data-crowns="3"] .skill-crown {
+  opacity: 1;
+  filter: none;
+}
+
+.skill-node[data-crowns="2"],
+.skill-node[data-crowns="3"] {
+  box-shadow: 0 4px 0 rgba(240, 180, 41, 0.45);
+}
+
+.skill-node[data-crowns="3"] {
+  background: linear-gradient(160deg, #12c5b0 0%, #0aa892 55%, #f0b429 140%);
+}
+
+@keyframes skill-crown-pop {
+  0% {
+    transform: scale(0.6) translateY(3px);
+    opacity: 0.4;
+  }
+  60% {
+    transform: scale(1.15) translateY(-1px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.path-xp {
+  margin: 4px 0 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.path-xp-gain {
+  margin-left: 8px;
+  color: var(--accent);
+  font-weight: 800;
+  animation: path-xp-pop 0.55s ease;
+}
+
+@keyframes path-xp-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
+
+.hangul-badge--done,
+.basic-badge--done {
+  color: var(--accent-2, #12c5b0);
+  border-color: rgba(18, 197, 176, 0.45);
+  background: rgba(18, 197, 176, 0.12);
+}
+
+.hangul-badge--crowns,
+.basic-badge--crowns {
+  color: #9a6b00;
+  border-color: rgba(240, 180, 41, 0.55);
+  background: rgba(255, 229, 102, 0.35);
+  letter-spacing: 0.04em;
+}
+
+.hangul-badge--retry,
+.basic-badge--retry {
+  color: var(--accent, #ff8a14);
+  border-color: rgba(255, 138, 20, 0.45);
+  background: rgba(255, 138, 20, 0.12);
+}
+
+.basic-badge--practice,
+.topik2-badge--practice {
+  color: var(--navy, #1b3a5c);
+  border-color: rgba(27, 58, 92, 0.35);
+  background: rgba(27, 58, 92, 0.08);
+}
+
+.path-complete-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 2px solid var(--ink);
+  background: var(--xp, #ffe566);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(20, 32, 51, 0.16);
+}
+
+.path-complete-btn:hover,
+.path-complete-btn:focus-visible {
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.path-complete-btn:disabled,
+.path-complete-btn.is-done {
+  opacity: 0.7;
+  cursor: default;
+  background: var(--accent-2, #12c5b0);
+  color: #fff;
+  box-shadow: none;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .path-xp-gain,
+  .skill-crown.is-on {
+    animation: none;
+  }
+}
+
+.hangul-badge,
+.basic-badge,
+.topik2-badge {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: rgba(26, 36, 51, 0.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .door,
+  .hangul-item,
+  .basic-item,
+  .topik2-item {
+    transition: none;
+  }
+}

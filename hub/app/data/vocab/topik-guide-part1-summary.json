@@ -1,0 +1,9 @@
+{
+  "source_guide_part1": "https://www.topikguide.com/6000-most-common-korean-words-1/",
+  "part1_count": 1000,
+  "topik_i_1671_set_size": 1669,
+  "part1_in_topik_i": 606,
+  "part1_not_in_topik_i": 394,
+  "kept_after_hard_filter": 589,
+  "note": "Part1 is frequency list (~1000), not TOPIK-level tagged. Intersection with Tammy TOPIK I 1671 used as proxy."
+}

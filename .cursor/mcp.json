@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "notion": {
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "canva": {
+      "url": "https://mcp.canva.com/mcp"
+    },
+    "google-drive": {
+      "url": "https://drivemcp.googleapis.com/mcp/v1"
+    }
+  }
+}

@@ -1,0 +1,489 @@
+{
+  "id": "jabi-topik1-read-v1-04",
+  "title": {
+    "en": "jabi. Reading · Set 4 (purpose · content · order)",
+    "ko": "jabi. 읽기 연습 4 (목적·내용·순서)",
+    "zh": "jabi. 阅读 · 套题 4（目的·内容·顺序）"
+  },
+  "level": "TOPIK I",
+  "verified": true,
+  "verifiedAt": "2026-07-26",
+  "source": "jabi-original",
+  "sourceNote": "Research-fill #3. Official TOPIK I reading shapes only (purpose · content match · sentence order · notice · topic). Original — no official items. Hint UX: Meaning→Look early; no Match:/답: spoilers.",
+  "questions": [
+    {
+      "id": "v4-01",
+      "type": "purpose",
+      "prompt": {
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[알림]\n이번 주 토요일에 도서관에서 한국어 말하기 모임이 있습니다. 오고 싶은 분은 금요일까지 이름을 적어 주세요.\n\n이 글의 목적은 무엇입니까?",
+        "en": "※ Read and answer.\n\n[Notice]\nThere is a Korean speaking meetup at the library this Saturday. If you want to come, write your name by Friday.\n\nWhat is the purpose of this text?",
+        "zh": "※ 阅读并答题。\n\n[通知]\n本周六图书馆有韩语口语聚会。想来的人请在周五前写下名字。\n\n这篇文章的目的是什么？"
+      },
+      "choices": [
+        "모임 알리고 신청 받기",
+        "도서 반납 독촉",
+        "도서관 휴관 알림",
+        "시험 일정 안내"
+      ],
+      "answer": 0,
+      "answerText": "모임 알리고 신청 받기",
+      "tags": [
+        "reading:목적",
+        "vocab:모임"
+      ],
+      "hint": {
+        "ko": "목적: 이 글을 왜 썼나요?",
+        "en": "Purpose of a short notice — event + sign-up.",
+        "zh": "目的：为什么写这份通知？",
+        "visual": {
+          "emoji": [
+            "📢",
+            "✍️"
+          ],
+          "en": "notice · write name",
+          "ko": "알림·이름",
+          "zh": "通知·写名字"
+        },
+        "steps": {
+          "en": [
+            "Purpose: why was this notice written?",
+            "Look for event day + “write your name by…” — invite + sign-up.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "目的：为什么写这份通知？",
+            "看活动日 + “周五前写下名字” — 告知并报名。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "목적: 이 글을 왜 썼나요?",
+            "모임 날 + 이름 적기 = 알림·신청.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Notice function: announce meetup + ask signup by Friday (purpose of text).",
+        "ko": "글 목적: 모임 알림+금요일까지 신청.",
+        "zh": "通知目的：报名。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not book return reminder? No late books — speaking meetup.",
+          "zh": "为什么不是催还书？没有逾期书，是口语聚会。",
+          "ko": "왜 반납 독촉이 아니에요? 말하기 모임이에요."
+        },
+        "2": {
+          "en": "Why not closed day? Library is open for the meetup.",
+          "zh": "为什么不是闭馆？图书馆为聚会开放。",
+          "ko": "왜 휴관이 아니에요? 모임이 있어요."
+        },
+        "3": {
+          "en": "Why not exam schedule? No test date — speaking club.",
+          "zh": "为什么不是考试安排？没有考试，是口语会。",
+          "ko": "왜 시험이 아니에요? 말하기 모임이에요."
+        }
+      }
+    },
+    {
+      "id": "v4-02",
+      "type": "content",
+      "prompt": {
+        "ko": "※ 다음을 읽고 내용과 같은 것을 고르십시오.\n\n유나는 매일 버스를 타고 학교에 갑니다. 오늘은 비가 와서 우산을 가지고 갔습니다.",
+        "en": "※ Choose what matches the text.\n\nYuna takes the bus to school every day. Today it rained, so she took an umbrella.",
+        "zh": "※ 选择与内容一致的一项。\n\nYuna每天坐公交去学校。今天下雨，所以她带了伞。"
+      },
+      "choices": [
+        "오늘은 우산을 가지고 감",
+        "오늘은 걸어서 감",
+        "비가 안 옴",
+        "지하철을 탐"
+      ],
+      "answer": 0,
+      "answerText": "오늘은 우산을 가지고 감",
+      "tags": [
+        "reading:내용",
+        "vocab:우산"
+      ],
+      "hint": {
+        "ko": "내용 일치: 글과 같은 것은?",
+        "en": "Content match with a short everyday paragraph.",
+        "zh": "内容一致：哪一项与文章相符？",
+        "visual": {
+          "emoji": [
+            "🚌",
+            "☂️"
+          ],
+          "en": "bus · umbrella",
+          "ko": "버스·우산",
+          "zh": "公交·伞"
+        },
+        "steps": {
+          "en": [
+            "Content check: which choice is true in the text?",
+            "Today + rain → she brought something for rain.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "内容核对：哪一项与文章相符？",
+            "今天 + 下雨 → 带了防雨的东西。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "내용 확인: 글과 같은 것은?",
+            "오늘 + 비 → 우산.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "-아서/어서 reason: 비가 와서 … 가지고 갔습니다.",
+        "ko": "비가 와서=이유 -아서.",
+        "zh": "因为下雨所以带伞。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not walk? She takes the bus every day — walking not said.",
+          "zh": "为什么不是走路？文中是坐公交。",
+          "ko": "왜 걸어감이 아니에요? 버스를 타요."
+        },
+        "2": {
+          "en": "Why not “no rain”? The text says it rained today.",
+          "zh": "为什么不是“没下雨”？文中说今天下雨。",
+          "ko": "왜 비 안 옴이 아니에요? 비가 왔어요."
+        },
+        "3": {
+          "en": "Why not subway? Transport named is bus.",
+          "zh": "为什么不是地铁？交通工具是公交。",
+          "ko": "왜 지하철이 아니에요? 버스예요."
+        }
+      }
+    },
+    {
+      "id": "v4-03",
+      "type": "order",
+      "prompt": {
+        "ko": "※ 다음 문장을 순서대로 맞게 배열한 것을 고르십시오.\n\n(가) 그래서 택시를 탔습니다.\n(나) 오늘 아침에 버스를 놓쳤습니다.\n(다) 학교에 조금 늦게 도착했습니다.",
+        "en": "※ Choose the correct order.\n\n(가) So I took a taxi.\n(나) This morning I missed the bus.\n(다) I arrived at school a little late.",
+        "zh": "※ 选择正确顺序。\n\n(가) 所以坐了出租车。\n(나) 今天早上误了公交。\n(다) 稍微晚到了学校。"
+      },
+      "choices": [
+        "(나)-(가)-(다)",
+        "(가)-(나)-(다)",
+        "(다)-(나)-(가)",
+        "(나)-(다)-(가)"
+      ],
+      "answer": 0,
+      "answerText": "(나)-(가)-(다)",
+      "tags": [
+        "reading:순서",
+        "vocab:버스"
+      ],
+      "hint": {
+        "ko": "순서: 원인 → 결과 → 나중.",
+        "en": "Sentence order with 그래서 linking cause and result.",
+        "zh": "顺序：原因 → 结果 → 之后结果。",
+        "visual": {
+          "emoji": [
+            "🚌",
+            "🚕"
+          ],
+          "en": "bus · taxi",
+          "ko": "버스·택시",
+          "zh": "公交·出租"
+        },
+        "steps": {
+          "en": [
+            "Order: cause → result → later result.",
+            "Missed bus first, then taxi (그래서), then late arrival.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "顺序：原因 → 结果 → 之后结果。",
+            "先误公交，再坐出租（그래서），然后迟到。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "순서: 원인 → 결과 → 나중.",
+            "버스 놓침 → 그래서 택시 → 늦게 도착.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Order of events: miss bus → taxi → arrive late (sequence).",
+        "ko": "순서: 버스 놓침→택시→지각.",
+        "zh": "按因果·时间排句子顺序：理由在前，「그래서」在后。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not (가) first? 그래서 needs a reason before it.",
+          "zh": "为什么不是(가)开头？「그래서」前面要有原因。",
+          "ko": "왜 (가) 먼저가 아니에요? 「그래서」 앞에 이유가 필요해요."
+        },
+        "2": {
+          "en": "Why not late first? Arrival is the end of the story.",
+          "zh": "为什么不是先迟到？到达是结尾。",
+          "ko": "왜 (다) 먼저가 아니에요? 도착은 마지막이에요."
+        },
+        "3": {
+          "en": "Why skip taxi before arriving? 그래서 links miss→taxi, then late.",
+          "zh": "为什么先到再坐车？因果是误车→出租→迟到。",
+          "ko": "왜 택시 없이 도착이 먼저예요? (나)-(가)-(다)예요."
+        }
+      }
+    },
+    {
+      "id": "v4-04",
+      "type": "notice",
+      "prompt": {
+        "ko": "※ 다음을 읽고 물음에 답하십시오.\n\n[버스 안내]\n이 버스는 시장에 갑니다.\n마지막 정류장: 시장\n\n이 버스의 마지막 정류장은 어디입니까?",
+        "en": "※ Read and answer.\n\n[Bus info]\nThis bus goes to the market.\nLast stop: market\n\nWhere is the last stop?",
+        "zh": "※ 阅读并答题。\n\n[公交提示]\n这班车去市场。\n终点站：市场\n\n终点站在哪里？"
+      },
+      "choices": [
+        "시장",
+        "학교",
+        "병원",
+        "공항"
+      ],
+      "answer": 0,
+      "answerText": "시장",
+      "tags": [
+        "reading:글",
+        "vocab:버스"
+      ],
+      "hint": {
+        "ko": "안내문: 마지막 정류장 줄.",
+        "en": "Notice reading: last stop line (no answer leak in early steps).",
+        "zh": "告示：找终点站那一行。",
+        "visual": {
+          "emoji": [
+            "🚌",
+            "🛒"
+          ],
+          "en": "bus · market",
+          "ko": "버스·시장",
+          "zh": "公交·市场"
+        },
+        "steps": {
+          "en": [
+            "Notice: find the last stop line.",
+            "Look for 마지막 정류장 — do not guess from other places.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "告示：找终点站那一行。",
+            "看 마지막 정류장 — 不要猜其他地点。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "안내문: 마지막 정류장 줄.",
+            "「마지막 정류장」을 보세요. 다른 장소 짐작 금지.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "마지막 정류장 names the last stop: 시장.",
+        "ko": "마지막 정류장=시장.",
+        "zh": "公告终点站＝市场。不要选学校或机场。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not school? The notice names market as last stop.",
+          "zh": "为什么不是学校？告示写的是市场。",
+          "ko": "왜 학교가 아니에요? 시장이에요."
+        },
+        "2": {
+          "en": "Why not hospital? Not written on the notice.",
+          "zh": "为什么不是医院？告示没写。",
+          "ko": "왜 병원이 아니에요? 안내에 없어요."
+        },
+        "3": {
+          "en": "Why not airport? Destination line says market.",
+          "zh": "为什么不是机场？写的是市场。",
+          "ko": "왜 공항이 아니에요? 시장이에요."
+        }
+      }
+    },
+    {
+      "id": "v4-05",
+      "type": "topic",
+      "prompt": {
+        "ko": "※ 다음은 무엇에 대한 이야기입니까?\n\n저는 주말에 공원에서 산책합니다. 가끔 친구와 같이 자전거를 타기도 합니다.",
+        "en": "※ What is this about?\n\nOn weekends I walk in the park. Sometimes I also ride a bike with a friend.",
+        "zh": "※ 这段在说什么？\n\n周末我在公园散步。有时也和朋友一起骑自行车。"
+      },
+      "choices": [
+        "주말 여가",
+        "시험 공부",
+        "회사 야근",
+        "병원 진료"
+      ],
+      "answer": 0,
+      "answerText": "주말 여가",
+      "tags": [
+        "reading:주제",
+        "vocab:주말"
+      ],
+      "hint": {
+        "ko": "주제 = 글 전체.",
+        "en": "Topic of a short leisure paragraph.",
+        "zh": "主题 = 整段，不只看一个词。",
+        "visual": {
+          "emoji": [
+            "🌳",
+            "🚲"
+          ],
+          "en": "park · bike",
+          "ko": "공원·자전거",
+          "zh": "公园·自行车"
+        },
+        "steps": {
+          "en": [
+            "Topic = the whole text, not one noun only.",
+            "Weekend + park walk + bike with friend → free-time activity.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "主题 = 整段，不只看一个词。",
+            "周末 + 公园散步 + 骑车 → 休闲。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "주제 = 글 전체.",
+            "주말 + 공원 + 자전거 → 여가.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "Weekend park + bike cues = leisure topic.",
+        "ko": "주말 공원·자전거=여가.",
+        "zh": "话题＝周末在公园休闲（散步·自行车）。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not exam study? No books/tests — park and bike.",
+          "zh": "为什么不是考试学习？没有书本，是公园骑车。",
+          "ko": "왜 시험이 아니에요? 공원·자전거예요."
+        },
+        "2": {
+          "en": "Why not overtime? Workplace not mentioned.",
+          "zh": "为什么不是加班？没有公司。",
+          "ko": "왜 야근이 아니에요? 주말 공원이에요."
+        },
+        "3": {
+          "en": "Why not hospital visit? Health clinic not in the text.",
+          "zh": "为什么不是看病？没有医院。",
+          "ko": "왜 병원이 아니에요? 산책·자전거예요."
+        }
+      }
+    },
+    {
+      "id": "v4-06",
+      "type": "blank",
+      "prompt": {
+        "ko": "※ 빈칸에 들어갈 알맞은 것을 고르십시오.\n\n날씨가 추워요. 창문을 (    ) 주세요.",
+        "en": "※ Choose the best word for the blank.\n\n날씨가 추워요. 창문을 (    ) 주세요.",
+        "zh": "※ 选择填入空格的最佳词语。\n\n날씨가 추워요. 창문을 (    ) 주세요."
+      },
+      "choices": [
+        "닫아",
+        "열어",
+        "읽어",
+        "만나"
+      ],
+      "answer": 0,
+      "answerText": "닫아",
+      "tags": [
+        "grammar:요청",
+        "vocab:창문"
+      ],
+      "hint": {
+        "ko": "요청: 추워서 창문을 어떻게?",
+        "en": "Cold → close the window + 주세요 (verb first, then polite ask).",
+        "zh": "请求：因为冷，对窗户做什么。",
+        "visual": {
+          "emoji": [
+            "🪟",
+            "🧥"
+          ],
+          "en": "window · cold",
+          "ko": "창문·추위",
+          "zh": "窗户·冷"
+        },
+        "steps": {
+          "en": [
+            "Request: do something to the window because it is cold.",
+            "Cold outside → you usually shut the window, then 주세요.",
+            "Use the pattern contrast — pick the choice yourself."
+          ],
+          "zh": [
+            "请求：因为冷，对窗户做什么。",
+            "外面冷 → 通常关上窗户，再加 주세요。",
+            "只看对照句式，自己从选项里选。"
+          ],
+          "ko": [
+            "요청: 추워서 창문을 어떻게?",
+            "추움 → 창문을 닫는 동사 + 주세요.",
+            "짝/대조만 보고, 보기에서 스스로 고르세요."
+          ]
+        }
+      },
+      "why": {
+        "en": "추워요 leads to 창문을 닫아 주세요 (cause → soft request).",
+        "ko": "추워요 → 닫아 주세요.",
+        "zh": "天冷 → 请关窗（~아/어 주세요）。"
+      },
+      "distractOrder": [
+        1,
+        2,
+        3
+      ],
+      "distractWhy": {
+        "1": {
+          "en": "Why not open? Opening makes it colder when it is already cold.",
+          "zh": "为什么不是开？已经冷了再开会更冷。",
+          "ko": "왜 열어가 아니에요? 추워요."
+        },
+        "2": {
+          "en": "Why not read? 읽다 is for books, not windows.",
+          "zh": "为什么不是读？读用于书，不是窗户。",
+          "ko": "왜 읽어가 아니에요? 창문이에요."
+        },
+        "3": {
+          "en": "Why not meet? 만나다 is people, not windows.",
+          "zh": "为什么不是见？见的是人，不是窗户。",
+          "ko": "왜 만나가 아니에요? 창문이에요."
+        }
+      }
+    }
+  ]
+}

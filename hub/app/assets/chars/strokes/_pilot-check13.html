@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>13 jamo stroke check</title>
+<script src="../../../js/vendor/hanzi-writer.min.js"></script>
+<style>
+  body { background: #1a1a1a; color: #eee; font-family: system-ui; padding: 24px; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .cell { background: #0a0a0a; border-radius: 12px; padding: 8px; text-align: center; }
+  .target { width: 140px; height: 140px; background: #111; border: 1px solid #333; }
+  pre { text-align: left; font-size: 11px; background: #000; padding: 8px; max-width: 900px; overflow: auto; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+  <h1>13 jamo — render check</h1>
+  <div class="row" id="grid"></div>
+  <pre id="log">loading...</pre>
+
+<script>
+  fetch('./jamo-strokes-13.json').then(r => r.json()).then(function(JAMO) {
+    var order = ['giyeok','nieun','digeut','rieul','mieum','bieup','siot','ieung','chieut','kieuk','tieut','pieup','hieut'];
+    var grid = document.getElementById('grid');
+    var report = [];
+    order.forEach(function(name) {
+      var cell = document.createElement('div');
+      cell.className = 'cell';
+      var div = document.createElement('div');
+      div.className = 'target';
+      div.id = 'w-' + name;
+      cell.appendChild(div);
+      var label = document.createElement('div');
+      label.textContent = name;
+      cell.appendChild(label);
+      grid.appendChild(cell);
+
+      var writer = HanziWriter.create(div, name, {
+        width: 140, height: 140, padding: 8,
+        showOutline: true, showCharacter: false,
+        charDataLoader: function(c, onLoad) { onLoad(JAMO[name]); }
+      });
+      writer.animateCharacter();
+    });
+
+    setTimeout(function() {
+      order.forEach(function(name) {
+        var svg = document.querySelector('#w-' + name + ' svg');
+        var paths = svg ? svg.querySelectorAll('path') : [];
+        var uniqueBoxes = [];
+        var seen = {};
+        paths.forEach(function(p) {
+          var bb = p.getBBox();
+          var key = Math.round(bb.x)+','+Math.round(bb.y)+','+Math.round(bb.width)+','+Math.round(bb.height);
+          if (!seen[key]) { seen[key] = true; uniqueBoxes.push({x:Math.round(bb.x),y:Math.round(bb.y),w:Math.round(bb.width),h:Math.round(bb.height)}); }
+        });
+        report.push(name + ': ' + JSON.stringify(uniqueBoxes));
+      });
+      document.getElementById('log').textContent = report.join('\n');
+    }, 600);
+  });
+</script>
+</body>
+</html>

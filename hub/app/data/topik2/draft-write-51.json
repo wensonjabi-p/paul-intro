@@ -1,0 +1,219 @@
+{
+  "id": "jabi-topik2-write-51-v0",
+  "title": {
+    "en": "jabi. TOPIK II · Writing Q51 (pilot)",
+    "ko": "jabi. TOPIK II · 쓰기 51번 (파일럿)",
+    "zh": "jabi. TOPIK II · 写作第51题（试点）"
+  },
+  "level": "TOPIK II Writing · Q51",
+  "kind": "write-51",
+  "verified": false,
+  "verifiedAt": "2026-07-27",
+  "source": "jabi-original",
+  "sourceNote": "Research fill — original jabi. sentence-completion items. Official TOPIK structure only (one blank, formal written register). No official prompts or wording. Formative cloze score with partial credit (exact / near / stem / honorific) + tip; no AI / Lemon / official TOPIK points. Spacing follows NIKL auxiliary-verb norms (e.g. 해 주십시오).",
+  "research": [
+    "docs/research-topik2-content-fill-ko.md",
+    "docs/research-english-aes-for-jabi-ko.md",
+    "docs/research-topik2-writing-scoring-papers-ko.md",
+    "docs/research-topik2-writing-grading-ko.md",
+    "docs/topik2-writing-axis-mapping-ko.md"
+  ],
+  "scoring": {
+    "mode": "cloze-partial",
+    "scale": "0-100",
+    "note": "c-rater-style accepted set + fuzzy partial credit — formative only",
+    "traits": {
+      "content": {
+        "weight": 0.85,
+        "label": {
+          "en": "Content",
+          "ko": "내용",
+          "zh": "内容"
+        }
+      },
+      "organization": {
+        "weight": 0,
+        "na": true,
+        "label": {
+          "en": "Organization / flow",
+          "ko": "조직·흐름",
+          "zh": "结构·连贯"
+        }
+      },
+      "language": {
+        "weight": 0.15,
+        "label": {
+          "en": "Language",
+          "ko": "언어",
+          "zh": "语言"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "t2-w51-01",
+      "type": "write-blank",
+      "prompt": {
+        "ko": "※ 다음을 읽고 (    )에 알맞은 말을 쓰십시오.\n\n도서관에서는 큰 소리로 이야기하면 안 됩니다. 다른 사람들을 위해 조용히 (    ).",
+        "en": "Read and write the word(s) that fit the blank.\n\nYou must not speak loudly in the library. For others, please quietly (    ).",
+        "zh": "阅读后在括号内填入合适的话。\n\n在图书馆不能大声说话。为了别人，请安静地(    )。"
+      },
+      "acceptedAnswers": [
+        "해 주십시오",
+        "해 주세요",
+        "하십시오",
+        "하세요",
+        "해 주시기 바랍니다",
+        "해 주셨으면 합니다"
+      ],
+      "modelAnswer": "해 주십시오",
+      "tags": [
+        "topik2:write-51",
+        "register:formal",
+        "speech-act:request"
+      ],
+      "feedback": {
+        "ok": {
+          "en": "Good — a polite request ending fits the formal written tone.",
+          "ko": "좋아요 — 정중한 부탁 표현이 격식체 문어에 맞습니다.",
+          "zh": "很好 — 礼貌请求语尾符合书面敬体。"
+        },
+        "stub": {
+          "en": "Coach: aim for a polite request ending in formal written register. Model reveal is optional after check. Not an official score.",
+          "ko": "코치: 격식체 문어의 정중한 부탁 종결을 쓰세요. 모범은 확인 후 선택 공개. 공식 점수 아님.",
+          "zh": "教练：用书面敬体的礼貌请求语尾。范例仅在核对后可选查看。非官方分数。"
+        }
+      },
+      "why": {
+        "en": "Context asks others to keep quiet — a polite imperative / request form.",
+        "ko": "남을 위해 조용히 해 달라는 부탁 맥락이므로 정중 명령·부탁형.",
+        "zh": "语境是请别人为安静而配合，用礼貌请求/命令形。"
+      }
+    },
+    {
+      "id": "t2-w51-02",
+      "type": "write-blank",
+      "prompt": {
+        "ko": "※ 다음을 읽고 (    )에 알맞은 말을 쓰십시오.\n\n회의가 끝난 뒤에 자료를 모두 모아서 팀장에게 (    ).",
+        "en": "Read and write the word(s) that fit the blank.\n\nAfter the meeting, gather all the materials and (    ) them to the team lead.",
+        "zh": "阅读后在括号内填入合适的话。\n\n会议结束后把资料都收齐，向组长(    )。"
+      },
+      "acceptedAnswers": [
+        "제출하십시오",
+        "제출하세요",
+        "제출해 주십시오",
+        "제출해 주세요",
+        "내십시오",
+        "내세요",
+        "건네 주십시오",
+        "건네 주세요"
+      ],
+      "modelAnswer": "제출하십시오",
+      "tags": [
+        "topik2:write-51",
+        "register:formal",
+        "workplace"
+      ],
+      "feedback": {
+        "ok": {
+          "en": "Good — a formal ‘submit/hand in’ ending matches workplace writing.",
+          "ko": "좋아요 — 직장 문어에 맞는 ‘제출’류 격식 표현입니다.",
+          "zh": "很好 — 职场书面语的“提交”类敬体合适。"
+        },
+        "stub": {
+          "en": "Coach: use a formal workplace verb for handing documents in. Avoid casual speech. Not an official score.",
+          "ko": "코치: 자료를 넘기는 직장 격식체 동사를 쓰세요. 구어 피하기. 공식 점수 아님.",
+          "zh": "教练：用职场书面语表示交材料。避免口语。非官方分数。"
+        }
+      },
+      "why": {
+        "en": "Workplace instruction after a meeting → formal verb for submitting documents.",
+        "ko": "회의 후 자료 제출 지시 → 격식체 ‘제출’ 동사.",
+        "zh": "会后交材料的指示 → 正式“提交”动词。"
+      }
+    },
+    {
+      "id": "t2-w51-03",
+      "type": "write-blank",
+      "prompt": {
+        "ko": "※ 다음을 읽고 (    )에 알맞은 말을 쓰십시오.\n\n이번 주말에는 날씨가 좋을 것 같습니다. 그래서 친구들과 산에 (    ).",
+        "en": "Read and write the word(s) that fit the blank.\n\nThe weather looks good this weekend. So with friends I (    ) to the mountains.",
+        "zh": "阅读后在括号内填入合适的话。\n\n这个周末天气好像不错。所以打算和朋友去山上(    )。"
+      },
+      "acceptedAnswers": [
+        "가려고 합니다",
+        "갈 예정입니다",
+        "갈 계획입니다",
+        "가기로 했습니다",
+        "가고자 합니다",
+        "가겠습니다"
+      ],
+      "modelAnswer": "가려고 합니다",
+      "tags": [
+        "topik2:write-51",
+        "register:formal",
+        "intention"
+      ],
+      "feedback": {
+        "ok": {
+          "en": "Good — intention/plan wording in formal register fits.",
+          "ko": "좋아요 — 격식체 의도·계획 표현이 맞습니다.",
+          "zh": "很好 — 敬体意图/计划表达合适。"
+        },
+        "stub": {
+          "en": "Coach: use a formal intention/plan ending for the weekend trip. Avoid casual future talk. Not an official score.",
+          "ko": "코치: 주말 계획에 맞는 격식체 의도·예정 종결을 쓰세요. 구어 미래 표현 피하기. 공식 점수 아님.",
+          "zh": "教练：用书面敬体表达周末计划意图。避免口语将来式。非官方分数。"
+        }
+      },
+      "why": {
+        "en": "‘그래서’ + weekend plan → formal intention/future plan ending.",
+        "ko": "‘그래서’ + 주말 계획 → 격식체 의도·예정 표현.",
+        "zh": "‘그래서’ + 周末计划 → 敬体意图/预定表达。"
+      }
+    },
+    {
+      "id": "t2-w51-04",
+      "type": "write-blank",
+      "prompt": {
+        "ko": "※ 다음을 읽고 (    )에 알맞은 말을 쓰십시오.\n\n약속 시간에 조금 늦을 것 같습니다. 미리 연락을 (    ).",
+        "en": "Read and write the word(s) that fit the blank.\n\nI may be a little late for the appointment. I should (    ) in advance.",
+        "zh": "阅读后在括号内填入合适的话。\n\n约好的时间可能会稍晚一点。应提前(    )。"
+      },
+      "acceptedAnswers": [
+        "드리겠습니다",
+        "드릴게요",
+        "하겠습니다",
+        "할게요",
+        "해 드리겠습니다",
+        "해 드릴게요",
+        "남겨 드리겠습니다",
+        "남겨 드릴게요"
+      ],
+      "modelAnswer": "드리겠습니다",
+      "tags": [
+        "topik2:write-51",
+        "register:formal",
+        "speech-act:notify"
+      ],
+      "feedback": {
+        "ok": {
+          "en": "Good — a polite ‘give (a message/call)’ ending fits advance notice.",
+          "ko": "좋아요 — 미리 알리는 정중 ‘드리다’류 표현이 맞습니다.",
+          "zh": "很好 — 提前告知用礼貌的“드리다”类表达合适。"
+        },
+        "stub": {
+          "en": "Coach: complete ‘연락을 …’ with a polite formal verb for contacting someone. Not an official score.",
+          "ko": "코치: ‘연락을 …’을 정중 격식 동사로 이어 주세요. 공식 점수 아님.",
+          "zh": "教练：用礼貌敬体动词接上‘연락을 …’。非官方分数。"
+        }
+      },
+      "why": {
+        "en": "Late notice → polite verb for giving contact / a message.",
+        "ko": "늦음 알림 → 연락을 드린다는 정중 표현.",
+        "zh": "迟到告知 → 礼貌表示去联系/留言。"
+      }
+    }
+  ]
+}

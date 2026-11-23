@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>jamo stroke pilot check</title>
+<script src="../../../js/vendor/hanzi-writer.min.js"></script>
+<style>
+  body { background: #1a1a1a; color: #eee; font-family: system-ui; padding: 24px; }
+  .row { display: flex; gap: 24px; flex-wrap: wrap; }
+  .cell { background: #0a0a0a; border-radius: 12px; padding: 12px; text-align: center; }
+  .target { width: 200px; height: 200px; background: #111; border: 1px solid #333; }
+  pre { text-align: left; font-size: 11px; background: #000; padding: 8px; max-width: 400px; overflow: auto; }
+</style>
+</head>
+<body>
+  <h1>Stroke pilot — calibration + jamo test</h1>
+
+  <h2>0. Calibration (known Hanzi Writer sample: 一)</h2>
+  <div class="row">
+    <div class="cell"><div id="cal" class="target"></div><div>一 (reference)</div></div>
+  </div>
+  <pre id="cal-transform">transform: (reading...)</pre>
+
+  <h2>1. Pilot jamo</h2>
+  <div class="row">
+    <div class="cell"><div id="ji" class="target"></div><div>ㅣ</div></div>
+    <div class="cell"><div id="ieung" class="target"></div><div>ㅇ</div></div>
+    <div class="cell"><div id="giyeok" class="target"></div><div>ㄱ</div></div>
+  </div>
+
+  <h2>2. Quiz auto-trace test</h2>
+  <div class="row">
+    <div class="cell"><div id="quiz-ji" class="target"></div><div>ㅣ quiz</div></div>
+  </div>
+  <pre id="quiz-log">(waiting)</pre>
+
+<script>
+  // 0. Calibration using the known real Hanzi Writer sample for "一"
+  var REF_ONE = {
+    strokes: ["M 518 382 Q 572 385 623 389 Q 758 399 900 383 Q 928 379 935 390 Q 944 405 930 419 Q 896 452 845 475 Q 829 482 798 473 Q 723 460 480 434 Q 180 409 137 408 Q 130 408 124 408 Q 108 408 106 395 Q 105 380 127 363 Q 146 348 183 334 Q 195 330 216 338 Q 232 344 306 354 Q 400 373 518 382 Z"],
+    medians: [[[121,393],[193,372],[417,402],[827,434],[920,401]]]
+  };
+
+  var calWriter = HanziWriter.create('cal', '一', {
+    width: 200, height: 200, padding: 5,
+    showOutline: true, showCharacter: false,
+    charDataLoader: function(char, onLoad) { onLoad(REF_ONE); }
+  });
+  calWriter.animateCharacter();
+
+  setTimeout(function() {
+    var g = document.querySelector('#cal svg g');
+    document.getElementById('cal-transform').textContent =
+      'g transform: ' + (g ? g.getAttribute('transform') : 'not found') +
+      '\nsvg viewBox: ' + (document.querySelector('#cal svg') ? document.querySelector('#cal svg').getAttribute('viewBox') : 'n/a');
+  }, 300);
+
+  // ---- Pilot jamo data (authored, glyph-space coords matching the 一 sample convention) ----
+  // Convention confirmed empirically via calibration above: same coordinate space as
+  // hanzi-writer-data (origin/scale handled internally by the library's own transform).
+
+  // strokeOutline(x1,y1,x2,y2,w): simple straight capsule-ish outline path between two points.
+  function strokeOutline(x1, y1, x2, y2, w) {
+    var dx = x2 - x1, dy = y2 - y1;
+    var len = Math.sqrt(dx*dx + dy*dy) || 1;
+    var nx = -dy / len * (w / 2), ny = dx / len * (w / 2);
+    var p1x = x1 + nx, p1y = y1 + ny;
+    var p2x = x2 + nx, p2y = y2 + ny;
+    var p3x = x2 - nx, p3y = y2 - ny;
+    var p4x = x1 - nx, p4y = y1 - ny;
+    return 'M ' + p1x + ' ' + p1y + ' L ' + p2x + ' ' + p2y +
+           ' L ' + p3x + ' ' + p3y + ' L ' + p4x + ' ' + p4y + ' Z';
+  }
+
+  // ㅣ — single vertical stroke, top to bottom (matches actual jamo stroke direction: top->down)
+  var JI = {
+    strokes: [ strokeOutline(500, 780, 500, 120, 60) ],
+    medians: [ [[500,780],[500,450],[500,120]] ]
+  };
+
+  // ㅇ — single circular stroke, drawn starting at top, clockwise (common convention)
+  (function() {
+    var cx = 500, cy = 450, r = 300;
+    var pts = [];
+    var N = 24;
+    for (var i = 0; i <= N; i++) {
+      var a = -Math.PI/2 + (i / N) * Math.PI * 2; // start at top, go clockwise
+      pts.push([Math.round(cx + r * Math.cos(a)), Math.round(cy + r * Math.sin(a))]);
+    }
+    var outerR = r + 30, innerR = r - 30;
+    var outer = 'M ' + (cx) + ' ' + (cy - outerR);
+    for (var i = 1; i <= 32; i++) {
+      var a = (i / 32) * Math.PI * 2 - Math.PI/2;
+      outer += ' L ' + Math.round(cx + outerR*Math.cos(a)) + ' ' + Math.round(cy + outerR*Math.sin(a));
+    }
+    outer += ' Z';
+    var inner = 'M ' + (cx) + ' ' + (cy - innerR);
+    for (var i = 1; i <= 32; i++) {
+      var a = (i / 32) * Math.PI * 2 - Math.PI/2;
+      inner += ' L ' + Math.round(cx + innerR*Math.cos(a)) + ' ' + Math.round(cy + innerR*Math.sin(a));
+    }
+    inner += ' Z';
+    window.IEUNG = { strokes: [outer + ' ' + inner], medians: [pts] };
+  })();
+
+  // ㄱ — single bent stroke: start top-left, go right, then turn down (real handwritten giyeok order)
+  var GIYEOK = {
+    strokes: [ strokeOutline(200, 750, 200, 750, 1) ], // placeholder, replaced below with polyline outline
+    medians: [ [[220,180],[720,180],[720,190],[220,190],[220,780]] ]
+  };
+  // build a simple polyline outline (thick L-shape) for giyeok manually
+  (function() {
+    var w = 60;
+    // path: horizontal bar from (220,180) to (720,180), then vertical bar from (720,180)->(690,180)->down to (690,780)...
+    // Simpler: construct as an L-shaped polygon outline directly.
+    var d = 'M 190 150 L 750 150 L 750 210 L 250 210 L 250 780 L 190 780 Z';
+    GIYEOK.strokes = [d];
+  })();
+
+  var jiWriter = HanziWriter.create('ji', 'ji', {
+    width: 200, height: 200, padding: 10, showOutline: true, showCharacter: false,
+    charDataLoader: function(c, onLoad) { onLoad(JI); }
+  });
+  jiWriter.animateCharacter();
+
+  var ieungWriter = HanziWriter.create('ieung', 'ieung', {
+    width: 200, height: 200, padding: 10, showOutline: true, showCharacter: false,
+    charDataLoader: function(c, onLoad) { onLoad(window.IEUNG); }
+  });
+  ieungWriter.animateCharacter();
+
+  var giyeokWriter = HanziWriter.create('giyeok', 'giyeok', {
+    width: 200, height: 200, padding: 10, showOutline: true, showCharacter: false,
+    charDataLoader: function(c, onLoad) { onLoad(GIYEOK); }
+  });
+  giyeokWriter.animateCharacter();
+
+  // ---- Quiz auto-trace test: simulate a user tracing ㅣ correctly via synthetic pointer events ----
+  var quizWriter = HanziWriter.create('quiz-ji', 'ji', {
+    width: 200, height: 200, padding: 10, showOutline: true, showCharacter: false,
+    charDataLoader: function(c, onLoad) { onLoad(JI); }
+  });
+
+  var log = [];
+  function appendLog(msg) {
+    log.push(msg);
+    document.getElementById('quiz-log').textContent = log.join('\n');
+  }
+
+  setTimeout(function() {
+    quizWriter.quiz({
+      onCorrectStroke: function(d) { appendLog('correct stroke ' + d.strokeNum); },
+      onMistake: function(d) { appendLog('mistake, total=' + d.totalMistakes); },
+      onComplete: function(d) { appendLog('COMPLETE: ' + JSON.stringify({totalMistakes: d.totalMistakes})); }
+    });
+
+    // simulate drawing along the median path via synthetic pointer events on the target's svg
+    var svg = document.querySelector('#quiz-ji svg');
+    var rect = svg.getBoundingClientRect();
+    // JI median in glyph space: [500,780]->[500,120] within an assumed 1024 box mapped to 200x200 px with padding 10
+    // We don't need exact pixel mapping - HanziWriter exposes canvas-relative coords via pointer events on the svg element.
+    function dispatchPointer(type, xRatio, yRatio) {
+      var x = rect.left + xRatio * rect.width;
+      var y = rect.top + yRatio * rect.height;
+      var ev = new PointerEvent(type, { clientX: x, clientY: y, bubbles: true, pointerId: 1, isPrimary: true });
+      svg.dispatchEvent(ev);
+    }
+    // vertical line: top of svg to bottom of svg, roughly centered horizontally
+    dispatchPointer('pointerdown', 0.5, 0.12);
+    dispatchPointer('pointermove', 0.5, 0.4);
+    dispatchPointer('pointermove', 0.5, 0.65);
+    dispatchPointer('pointermove', 0.5, 0.88);
+    dispatchPointer('pointerup', 0.5, 0.88);
+
+    setTimeout(function() {
+      appendLog('--- trace dispatched, see above for callback results ---');
+    }, 200);
+  }, 500);
+</script>
+</body>
+</html>

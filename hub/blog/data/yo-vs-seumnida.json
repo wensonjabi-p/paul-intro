@@ -1,0 +1,51 @@
+{
+  "id": "yo-vs-seumnida",
+  "slug": "yo-vs-seumnida",
+  "status": "pilot",
+  "level": "A2",
+  "tags": ["grammar:honorifics", "speech-level"],
+  "sourceNote": "Original jabi. answer to a common learner FAQ pattern (요 vs 습니다). Not a scraped Reddit post.",
+  "question": {
+    "en": "When should I use -요 versus -습니다?",
+    "ko": "요와 습니다는 언제 쓰나요?"
+  },
+  "reading": {
+    "en": "Both endings are polite. Think of them as two coats for different rooms.\n\n-요 (해요체) is everyday polite speech: cafés, classmates, shop staff your age, most apps and chat. It feels warm and light.\n\n-습니다 (합쇼체) is formal polite speech: announcements, job interviews, news, speeches, and writing that must sound official. It feels upright and careful.\n\nYou rarely mix them inside one short turn. If you start with 안녕하세요, either coat can follow — but match the room. A barista will almost always answer in -요. A station announcement will stick to -습니다.\n\nBeginner tip: learn -요 first for speaking. Add -습니다 when you write emails, present, or hear public notices.",
+    "ko": "둘 다 공손한 말투입니다. 방마다 다른 코트라고 생각하면 쉽습니다.\n\n요(해요체)는 일상 공손체입니다. 카페, 같은 반 친구, 비슷한 나이의 점원, 앱·채팅에서 자주 씁니다. 가볍고 따뜻한 느낌입니다.\n\n습니다(합쇼체)는 격식 공손체입니다. 방송, 면접, 뉴스, 발표, 공식적인 글에 맞습니다. 곧고 조심스러운 느낌입니다.\n\n짧은 한 차례 말 안에서 둘을 섞는 일은 드뭅니다. 「안녕하세요」로 시작해도, 그다음 코트는 장소에 맞추세요. 바리스타는 거의 요로 답하고, 역내 안내는 습니다를 유지합니다.\n\n초급 팁: 말하기는 요부터. 이메일·발표·안내 방송을 들을 때 습니다를 더하세요."
+  },
+  "keyPoints": [
+    {
+      "en": "-요 = everyday polite; -습니다 = formal polite.",
+      "ko": "요 = 일상 공손 · 습니다 = 격식 공손."
+    },
+    {
+      "en": "Match one speech level inside a short turn.",
+      "ko": "짧은 말차례 안에서는 말투를 하나로."
+    },
+    {
+      "en": "Speak with -요 first; add -습니다 for official contexts.",
+      "ko": "말하기는 요 우선 · 공식 맥락에 습니다 추가."
+    }
+  ],
+  "examples": [
+    { "ko": "커피 주세요.", "en": "Coffee, please. (-요, café)" },
+    { "ko": "질문이 있습니다.", "en": "I have a question. (-습니다, formal)" },
+    { "ko": "오늘 날씨가 좋네요.", "en": "The weather is nice today. (-요)" }
+  ],
+  "checkQuestions": [
+    {
+      "q": { "en": "Which ending fits a café order?", "ko": "카페 주문에 맞는 어미는?" },
+      "a": { "en": "-요 (해요체).", "ko": "요(해요체)." }
+    }
+  ],
+  "practice": {
+    "href": "../app/games/speed-quiz/",
+    "label": {
+      "en": "Practice polite endings (Speed Quiz) →",
+      "ko": "공손 어미 연습 (스피드 퀴즈) →"
+    }
+  },
+  "related": [
+    { "href": "../teach/", "label": { "en": "Ask a coach (optional)", "ko": "선생님에게 묻기(선택)" } }
+  ]
+}

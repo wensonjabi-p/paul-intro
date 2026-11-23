@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF4FF">
+  <title>jabi. — Dictation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/hub.css">
+  <link rel="stylesheet" href="./dictation.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="logo" data-i18n="logo">jabi.</a>
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="ko">KO</button>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main class="dict-page">
+    <p class="eyebrow" data-dic="eyebrow">Dictation</p>
+    <h1 data-dic="title">Listen &amp; type</h1>
+    <p class="lead" data-dic="lead">Play audio, type what you hear in Korean, then check.</p>
+
+    <nav class="dict-nav" aria-label="Dictation nav">
+      <a href="../" data-dic="backGames">← Games</a>
+      <a href="../../../" data-dic="backHub">Hub</a>
+    </nav>
+
+    <p class="dict-tts-note" data-dic="ttsNote">Audio: device TTS (ko-KR). Quality varies by browser — not recorded speech.</p>
+
+    <div class="dict-themes" aria-label="Theme filter">
+      <span class="dict-k" data-dic="themeFilter">Theme</span>
+      <div id="dict-theme-chips" class="dict-theme-chips" role="group" aria-label="Themes"></div>
+    </div>
+
+    <div class="dict-progress" aria-live="polite">
+      <span id="dict-progress-text">1 / 16</span>
+      <div class="dict-progress-bar" aria-hidden="true"><div id="dict-progress-fill"></div></div>
+    </div>
+
+    <section class="dict-stage" aria-labelledby="dict-prompt-label">
+      <p id="dict-prompt-label" class="dict-k" data-dic="listenPrompt">Listen, then type</p>
+      <p id="dict-gloss" class="dict-gloss muted"></p>
+      <p id="dict-item-tags" class="dict-item-tags" aria-hidden="true"></p>
+
+      <div class="dict-audio-row">
+        <button type="button" class="dict-btn dict-btn--sun" id="dict-play" data-dic="play">▶ Play</button>
+        <button type="button" class="dict-btn dict-btn--ghost" id="dict-slow" data-dic="slow">Slow</button>
+        <button type="button" class="dict-btn dict-btn--ghost" id="dict-stop" data-dic="stop">Stop</button>
+      </div>
+
+      <label class="dict-input-label" for="dict-input" data-dic="yourAnswer">Your answer</label>
+      <textarea
+        id="dict-input"
+        class="dict-input"
+        rows="2"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        lang="ko"
+        enterkeyhint="done"
+        data-dic-placeholder="placeholder"
+        placeholder="한국어로 입력…"
+      ></textarea>
+
+      <div class="dict-actions">
+        <button type="button" class="dict-btn dict-btn--sun" id="dict-check" data-dic="check">Check</button>
+        <button type="button" class="dict-btn dict-btn--ghost" id="dict-skip" data-dic="skip">Skip</button>
+        <button type="button" class="dict-btn dict-btn--ghost" id="dict-reveal" data-dic="reveal">Give up</button>
+      </div>
+
+      <label class="dict-auto">
+        <input type="checkbox" id="dict-auto-next" checked>
+        <span data-dic="autoNext">Auto-advance on correct</span>
+      </label>
+    </section>
+
+    <section id="dict-feedback" class="dict-feedback hidden" aria-live="polite">
+      <p id="dict-feedback-status" class="dict-feedback-status"></p>
+      <p class="dict-k" data-dic="youWrote">You wrote</p>
+      <p id="dict-yours" class="dict-diff-line"></p>
+      <p class="dict-k" data-dic="correctIs">Correct</p>
+      <p id="dict-correct" class="dict-correct-line"></p>
+      <div class="dict-actions">
+        <button type="button" class="dict-btn dict-btn--sun" id="dict-next" data-dic="next">Next →</button>
+        <button type="button" class="dict-btn dict-btn--ghost" id="dict-retry" data-dic="retry">Try again</button>
+      </div>
+    </section>
+
+    <section id="dict-done" class="dict-done hidden" aria-live="polite">
+      <h2 data-dic="doneTitle">Round complete</h2>
+      <p id="dict-score" class="dict-score"></p>
+      <div class="dict-actions">
+        <button type="button" class="dict-btn dict-btn--sun" id="dict-restart" data-dic="restart">Play again</button>
+        <a class="dict-btn dict-btn--ghost" href="../" data-dic="backGames">← Games</a>
+      </div>
+    </section>
+
+    <p id="dict-error" class="dict-error hidden" role="alert"></p>
+  </main>
+
+  <script src="../../../js/i18n.js"></script>
+  <script src="./dictation.js"></script>
+</body>
+</html>
