@@ -16,9 +16,12 @@
 
    node.story  — 1인칭 스토리텔링 (이력서 나열 금지)
    node.links  — 성좌에서 이어질 관련 노드 id들
-   node.provenance — 'summary-2026-11': 2026.11 사용자가 제공한 GPT 대화 정리본(2차 요약)에서 보수적으로
-     추린 항목. 직접 X 원문이 아니며, 원문 확보 전까지 X 게시물 내용은 반영하지 않는다.
-     (기존 노드의 보강 문장도 같은 정리본에서 왔다.)
+   node.provenance — 출처 구분(공개 화면에는 표시하지 않음):
+     'summary-2026-11'       : 2026.11 사용자가 제공한 GPT 대화 정리본(2차 요약)에서 보수적으로 추린 항목.
+                               직접 X 원문이 아님. (기존 노드의 보강 문장도 같은 정리본에서 왔다.)
+     'x-wensonjabi-2026-11'  : @wensonjabi 공개 X 원문에서 사용자 본문만 옮긴 항목. 인용된 타인 글은 쓰지 않는다.
+   node.xUrls  — (선택) 반영한 X 원글 URL 배열. 노드 이야기 아래 'X 원글 ↗' 링크로 표시. https://x.com/wensonjabi/status/<id> 형식만 허용.
+   thought.xUrl — (선택) 그 생각의 X 원글 URL. 생각 카드 메타줄에 'X 원글 ↗' 링크로 표시.
    ========================================================================= */
 
 const DATA = {
@@ -43,7 +46,7 @@ const DATA = {
       links: ['multiling', 'bridge', 'vienna', 'shanghai'] },
     { id: 'multiling', label: '다국어', type: 'core', status: 'told', fresh: true,
       story: '언어를 바꾸면 성격이 바뀐다. 영어를 쓸 때 가장 자연스러운 내가 나온다 — 존댓말이 없고, 서양의 문화가 언어 안에 배어 있어서 말하다 보면 그렇게 행동하게 된다. 가장 어렸을 때 배웠고, 자유를 상징했고, 실제로 자유로운 상황에서 많이 쓴 언어라서일 것이다. 같은 이유로 일본어를 할 때는 과하게 조심스러워지고, 중국어를 할 때는 과하게 과감해진다. 그리고 한국어 — 지금 내가 가르치는 언어인데도, 구사할 때 가장 조심스러운 언어다. 모국어의 무게, 가르치는 사람의 자리, 문화적 우월성이 실린 언어를 구사하고 있는 건 아닌가 하는 조심성, 그리고 한국어를 이해하는 사람들 사이에서만 작동하는 미묘한 뉘앙스가 누군가의 감정을 다치게 할 수 있다는 걱정 때문에. 어느 언어가 가장 나다운가보다, 어떤 상황에서 어떤 언어의 영향을 더 받는가 — 그게 더 정확한 질문이다.',
-      links: ['interp', 'teaching', 'boundary', 'freedom'] },
+      links: ['interp', 'teaching', 'boundary', 'freedom', 'retrieve'] },
     { id: 'sales', label: '영업', type: 'core', status: 'seed',
       story: '소금부터 목재, 매장 집기, 자동차 부품까지 팔았다. 파는 물건은 계속 바뀌었지만 본질은 늘 같았다 — 상대가 무엇을 진짜로 원하는지 알아내는 일.',
       links: ['salt', 'timber', 'shanghai', 'trade'] },
@@ -61,13 +64,14 @@ const DATA = {
       links: ['vienna', 'trade', 'survival'] },
     { id: 'teaching', label: '교육', type: 'core', status: 'told', fresh: true,
       story: '지금은 항저우사범대에서 한국어를 가르친다. 학생들에게 늘 말한다 — 언어는 기계적인 번역이 아니라, 그 문화적 환경과 컨텍스트를 파악하면서 배워야 한다고. 외국어를 할 때 성격이 달라지는 것도 그중 하나다. 모든 사람은 외국어를 쓸 때 성격이 달라진다. 사람마다 정도의 차이가 있을 뿐. 언어를 가르친다는 건 문법이 아니라 문화로 들어가는 문을 열어주는 일이다.',
-      links: ['multiling', 'hangzhou', 'bridge', 'fun', 'mistake', 'silence', 'nativeteacher', 'koreaview', 'ai'] },
+      links: ['multiling', 'hangzhou', 'bridge', 'fun', 'mistake', 'silence', 'nativeteacher', 'koreaview', 'ai', 'npc', 'zpd', 'retrieve'] },
     { id: 'english', label: '영어', type: 'core', status: 'told', fresh: true,
       story: '영어를 쓸 때 가장 자연스러운 내가 나온다. 가장 어렸을 때 배웠고, 자유를 상징했고, 실제로 자유로운 상황에서 많이 쓴 언어다. 존댓말이 없고 서양의 문화가 언어 안에 배어 있어서, 말하다 보면 그렇게 행동하게 된다.',
       links: ['multiling', 'freedom', 'interp'] },
     { id: 'translate', label: '번역', type: 'core', status: 'told', fresh: true,
-      story: '통역과 번역을 아르바이트와 직업의 일부로 오래 했다. 전문 통역사는 아니었지만, 글과 말을 옮기는 일을 통해 두 언어 사이를 오가는 법을 배웠다. 자막도 그 연장선이었다.',
-      links: ['interp', 'subtitle', 'multiling'] },
+      story: '통역과 번역을 아르바이트와 직업의 일부로 오래 했다. 전문 통역사는 아니었지만, 글과 말을 옮기는 일을 통해 두 언어 사이를 오가는 법을 배웠다. 자막도 그 연장선이었다. 통번역을 전공하지는 않았지만 그 일을 한 적이 있고, 지금은 통번역 전공 학생들을 가르치는 입장이다.',
+      links: ['interp', 'subtitle', 'multiling', 'dolagasida'],
+      xUrls: ['https://x.com/wensonjabi/status/2124475537976700956'] },
     { id: 'mediation', label: '중재', type: 'core', status: 'told',
       story: '베이징현대 프로젝트를 관리할 때 깨달았다. 기술 문제의 절반은 사실 문화 문제였다. 한국과 중국 사이에서 중재할 수 있는 사람이 프로젝트를 살렸다.',
       links: ['pm', 'shanghai', 'interp', 'boundary'] },
@@ -115,14 +119,15 @@ const DATA = {
 
     /* ---------------- ASSOCIATIVE : 유사어·관심어 ---------------- */
     { id: 'nomad', label: '노마드', type: 'associative', status: 'seed',
-      story: '한 도시에 오래 머문 적이 없다. 서울, 비엔나, 포트모르즈비, 상하이, 도쿄, 항저우. 떠도는 건 도망이 아니라 수집이었다 — 매번 다른 방식의 삶을 주워 담았다.',
-      links: ['drift', 'stranger', 'survival'] },
+      story: '한 도시에 오래 머문 적이 없다. 서울, 비엔나, 포트모르즈비, 상하이, 도쿄, 항저우. 떠도는 건 도망이 아니라 수집이었다 — 매번 다른 방식의 삶을 주워 담았다. 해외에서 산다는 건 잡초처럼 잠시 뿌리를 내리고 살아가는 것 같다는 생각도 한다.',
+      links: ['drift', 'stranger', 'survival', 'weed'],
+      xUrls: ['https://x.com/wensonjabi/status/2123594734404817347'] },
     { id: 'boundary', label: '경계인', type: 'associative', status: 'told',
       story: '누가 고향을 물으면 나는 고향이 없는 사람이라고 답하곤 한다. 태어난 마산엔 살아본 적 없고, 그 뒤로 평생 여러 나라를 옮겨 다녔으니까. 어디서도 완전한 안이 아니었고 완전한 밖도 아니었다 — 한국인이면서 중국에서 가르치고, 세일즈맨이면서 정비공이었다. 경계에 선 사람만 볼 수 있는 것들이 있다. 나를 가장 잘 설명하는 한 단어를 고르라면, 아마 이것이다.',
       links: ['stranger', 'bridge', 'nomad', 'masan', 'blood'] },
     { id: 'stranger', label: '이방인', type: 'associative', status: 'seed',
       story: '낯선 사람으로 사는 데 익숙하다. 이방인은 아무것도 당연하게 여기지 않기 때문에 더 많이 본다. 불편함은 오래전에 나의 기본값이 됐다.',
-      links: ['boundary', 'nomad', 'pakistan'] },
+      links: ['boundary', 'nomad', 'pakistan', 'weed'] },
     { id: 'hands', label: '손끝', type: 'associative', status: 'told',
       story: '큰 회사에서 나는 늘 거대한 기계의 한 부품이었다. 무역을 하고 자동차 회사에서 프로젝트를 관리하면서도, 처음부터 끝까지 내 손으로 만들어낸 게 없다는 아쉬움이 쌓였다. 나이가 들면 무기력한 사람이 되는 건 아닐까. 그래서 손끝으로 직접 만들기 시작했다 — 머리로만 살던 사람이, 물건을, 그리고 세상을 다르게 신뢰하게 됐다.',
       links: ['bike', 'pm', 'tokyo'] },
@@ -140,7 +145,7 @@ const DATA = {
       links: ['pakistan', 'boundary', 'survival'] },
     { id: 'commonsense', label: '상식', type: 'associative', status: 'told',
       story: '내가 상식이라 부르던 것들은 대개 내가 자란 한 세계의 규칙일 뿐이었다. 파푸아뉴기니가 그 경계를 무너뜨린 뒤로, 나는 어떤 것도 당연하게 여기지 않는 사람이 됐다.',
-      links: ['png', 'stranger', 'survival', 'culture', 'lefthand'] },
+      links: ['png', 'stranger', 'survival', 'culture', 'lefthand', 'country'] },
     { id: 'islam', label: '이슬람', type: 'associative', status: 'told',
       story: '한국과, 잠깐 여행했던 유럽 몇 나라를 빼면, 파키스탄은 내가 본 가장 극단적으로 다른 삶의 형태였다. 낮이 되면 사람들이 하던 일을 모두 멈추고 기도를 올렸다. 종교가 무엇보다 앞서는 삶의 방식. 열네 살의 나는 그 앞에서 여러 감정이 뒤섞였다 — 낯섦과 함께, 세상이 내가 알던 것보다 훨씬 넓다는 어렴풋한 깨달음.',
       links: ['pakistan', 'stranger', 'adapt'] },
@@ -149,10 +154,10 @@ const DATA = {
       links: ['bike', 'nomad', 'drift', 'english'] },
     { id: 'nuance', label: '뉘앙스', type: 'associative', status: 'told', fresh: true,
       story: '한국어를 구사할 때 가장 조심스러워지는 이유 중 하나는 뉘앙스다. 한국어를 이해하는 사람들 사이에서만 작동하는 미묘한 말차이가 누군가의 감정을 다치게 할 수 있다는 걱정 — 그게 항상 따라다닌다. 그래서 눈치, 서운하다, 아쉽다 같은 말을 사전의 대응어로만 옮기지 않고 어떤 맥락에서 어떻게 쓰이는지까지 함께 보고 싶다.',
-      links: ['multiling', 'boundary', 'teaching', 'nunchi', 'hanja'] },
+      links: ['multiling', 'boundary', 'teaching', 'nunchi', 'hanja', 'dolagasida', 'missing'] },
     { id: 'culture', label: '문화', type: 'associative', status: 'told', fresh: true,
       story: '학생들에게 늘 말한다 — 언어는 기계적인 번역이 아니라 문화적 환경과 맥락을 파악하면서 배워야 한다고. 외국어를 할 때 성격이 달라지는 것도 그 문화 안에서 일어나는 일이다. 문화를 이해한다는 건, 내가 당연하게 여기던 상식이 다른 곳에서는 상식이 아닐 수 있음을 아는 일이기도 하다.',
-      links: ['teaching', 'multiling', 'bridge', 'context', 'commonsense', 'fun', 'nunchi'] },
+      links: ['teaching', 'multiling', 'bridge', 'context', 'commonsense', 'fun', 'nunchi', 'dolagasida', 'country'] },
     { id: 'trust', label: '신뢰', type: 'associative', status: 'seed',
       story: '물류에서 100개가 넘는 파트너사와 일하며 배웠다. 물류는 신뢰가 곧 인프라인 세계다. 무역도 마찬가지 — 국경 너머로 옮기는 건 물건보다 신뢰다.',
       links: ['logi', 'trade', 'sales', 'boundary'] },
@@ -164,7 +169,7 @@ const DATA = {
       links: ['vienna', 'prague', 'croatia', 'nomad', 'freedom'] },
     { id: 'context', label: '맥락', type: 'associative', status: 'told', fresh: true,
       story: '언어를 가르칠 때 나는 맥락부터 말한다. 단어 하나를 떼어놓고 번역하는 게 아니라, 그 말이 어떤 문화와 상황에서 나오는지를 함께 보여줘야 한다. 여러 언어로 쓴 글도 읽는 사람이 실제로 이해하고 쓸 수 있어야 한다는 것이 내 작업 기준이다.',
-      links: ['teaching', 'culture', 'multiling', 'interp', 'aimemory'] },
+      links: ['teaching', 'culture', 'multiling', 'interp', 'aimemory', 'retrieve'] },
     { id: 'war', label: '전쟁', type: 'associative', status: 'told', fresh: true,
       story: '같은 전쟁의 흔적이었는데 크로아티아에서는 이상함으로, 캄보디아에서는 슬픔으로 남았다. 이미 복구된 아름다움과 아직 가난한 현실 — 그 차이가 감정을 갈랐다.',
       links: ['croatia', 'cambodia', 'commonsense'] },
@@ -304,7 +309,7 @@ const DATA = {
       links: ['navy', 'jinhae', 'pakistan'] },
     { id: 'student', label: '학생', type: 'associative', status: 'told', fresh: true,
       story: '항저우사범대 학생들 앞에서 나는 문법보다 맥락을 먼저 말한다. 그들이 외국어로 말할 때 성격이 달라진다는 걸, 나도 옆에서 매일 본다.',
-      links: ['teaching', 'hangzhou', 'personality'] },
+      links: ['teaching', 'hangzhou', 'personality', 'npc', 'zpd'] },
     { id: 'colleague', label: '동료', type: 'associative', status: 'told', fresh: true,
       story: 'PNG에서 함께 일하던 동료가 아이의 말라리아 약값을 빌려달라고 찾아왔다. 나는 빌려주지 않았고, 얼마 뒤 그 아이는 세상을 떠났다.',
       links: ['malaria', 'png', 'insight'] },
@@ -337,7 +342,7 @@ const DATA = {
       links: ['nuance', 'honorific', 'caution'] },
     { id: 'relation', label: '관계', type: 'associative', status: 'told', fresh: true,
       story: '통역은 관계를 대신 말하는 일이기도 했다. 존댓말 한 마디, 협상 테이블의 한 문장 — 말이 곧 관계를 바꾼다.',
-      links: ['interp', 'honorific', 'negotiate'] },
+      links: ['interp', 'honorific', 'negotiate', 'missing'] },
     { id: 'assent', label: '동의', type: 'associative', status: 'told', fresh: true,
       story: '통역에서 가장 힘들었던 건 동의하지 않는 말을 내 입으로보내는 일이었다. 내 목소리로 나가면 내가 말한 것처럼 느껴졌다.',
       links: ['interp', 'detach', 'relation'] },
@@ -346,7 +351,7 @@ const DATA = {
       links: ['interp', 'assent', 'boundary'] },
     { id: 'worldview', label: '가치관', type: 'associative', status: 'told', fresh: true,
       story: '열네 살 파키스탄에서 가치관이 송두리째 흔들렸다. 종교가 하루의 리듬을 통째로 바꾸는 사회 — 내가 당연하다 믿던 것들이 처음으로 물음이 됐다.',
-      links: ['pakistan', 'islam', 'adapt'] },
+      links: ['pakistan', 'islam', 'adapt', 'country'] },
     { id: 'failure', label: '실패', type: 'associative', status: 'told', fresh: true,
       story: '히말라야 암염 첫 창업은 실패했다. 마진율이 아무리 높아도, 사람들이 원하지 않으면 사업이 되지 않는다.',
       links: ['startup', 'salt', 'worth'] },
@@ -412,6 +417,36 @@ const DATA = {
     { id: 'blood', label: '뼈와 피', type: 'associative', status: 'told', fresh: true, provenance: 'summary-2026-11',
       story: '나를 설명할 때 가끔 뼈, 피, 근육의 비유를 쓴다. 뼈는 한국이고, 피는 경험이며, 근육은 그 결과다. 피는 경험을 거치며 바뀌지만, 취향처럼 쉽게 바뀌는 것은 아니다. 몸이 아니라 비유의 이야기다.',
       links: ['boundary', 'masan', 'culture', 'nomad'] },
+
+    /* ---------------- 2026.11 보강: @wensonjabi X 원문(사용자 본문만, 원글 URL 출처 포함) ---------------- */
+    { id: 'weed', label: '잡초', type: 'wildcard', status: 'told', fresh: true, provenance: 'x-wensonjabi-2026-11',
+      story: '「난 어차피 어디에도 속하지 못합니다」라는 대사가 일본어 자막에서는 「根無し草」가 됐다. 해외에서 산다는 건 잡초처럼 잠시 뿌리를 내리고 살아가는 것 같아서, 이 표현이 마음에 와닿는다.',
+      links: ['nomad', 'stranger', 'subtitle', 'boundary'],
+      xUrls: ['https://x.com/wensonjabi/status/2123594734404817347'] },
+    { id: 'npc', label: 'NPC', type: 'wildcard', status: 'told', fresh: true, provenance: 'x-wensonjabi-2026-11',
+      story: '처음 강단에 섰을 때는 내가 주인공인 줄 알았다. 나의 무대에서 내가 설명하고, 질문하고, 수업을 이끌고 있다고. 지금은 안다. 나는 주인공이 아니라 NPC라는 것을. 교실이라는 게임의 주인공은 학생들이다. 어떤 학생은 퀘스트를 쉽게 깨고, 어떤 학생은 같은 곳에서 몇 번이고 실패한다. 나는 퀘스트를 주고, 힌트를 건네고, 가끔 회복 아이템을 나눠 주는 NPC다. 퀘스트를 완료하면. 주인공은 떠나고 NPC는 남는다. 그리고 다음 학기, 새로운 주인공들이 교실 문을 연다. 어서 와, 여기는 헬 난이도야.',
+      links: ['teaching', 'student'],
+      xUrls: ['https://x.com/wensonjabi/status/2124369220406567154'] },
+    { id: 'zpd', label: 'ZPD', type: 'associative', status: 'told', fresh: true, provenance: 'x-wensonjabi-2026-11',
+      story: '가장 똑똑한 선생님이 가장 좋은 선생님일까? 비고츠키의 ‘근접발달영역(ZPD)’은 혼자서는 어렵지만 누군가의 도움을 받으면 할 수 있는 영역을 말한다. 세계적인 전문가보다 나보다 조금 더 잘 아는 친구가 더 좋은 선생님이 될 수 있다는 뜻이다. 교재나 영상도 마찬가지다. 지금 보고 있는 영상이 전부 이해된다면 조금 더 어려운 것을, 70% 이상 이해된다면 그대로, 거의 이해되지 않는다면 조금 더 쉬운 것을 선택해 보기 바란다.',
+      links: ['teaching', 'student'],
+      xUrls: ['https://x.com/wensonjabi/status/2124975953092960540'] },
+    { id: 'retrieve', label: '꺼내 쓰기', type: 'associative', status: 'told', fresh: true, provenance: 'x-wensonjabi-2026-11',
+      story: '영어, 중국어, 일본어를 배우고 한국어를 가르치면서 느낀 게 있다. 외국어로 말이 막힐 때, 꼭 모르는 단어가 많아서 그런 건 아니다. 이미 아는 단어를 꺼내 쓰지 못해서 막히기도 한다. 책에서 보면 아는 단어인데, 막상 대화할 때는 떠오르지 않는다. 알아보는 것과 꺼내 쓰는 것은 다른 일이기 때문이다. 반대로 정확한 단어가 생각나지 않아도, 쉬운 말로 풀어서 전할 수 있다. ‘연장하다’를 몰라도 “하루 더 쓸 수 있어요?”라고 물으면 된다. 이때 필요한 건 새 단어 하나가 아니라, 이미 아는 말을 다르게 조합해 보는 연습이다. 그래서 배운 단어로 내 이야기를 만들어 보는 게 중요하다고 생각한다. 예문을 읽고 이해하는 데서 끝내지 않고, 사람도 바꾸고 상황도 바꿔서 직접 써 보는 것이다. 단어를 더 배우지 말자는 뜻은 아니다. 아는 단어가 늘어나면 할 수 있는 이야기도 늘어난다. 다만 외운 단어가 늘어나는 만큼, 실제로 쓸 수 있는 말도 늘고 있는지는 따로 확인해야 한다. 내가 지향하는 공부는, 아는데 쓰지 못하는 말을 쓸 수 있는 말로 바꾸는 공부다.',
+      links: ['multiling', 'english', 'japanese', 'chinese', 'teaching', 'context'],
+      xUrls: ['https://x.com/wensonjabi/status/2124814539451437420'] },
+    { id: 'dolagasida', label: '돌아가시다', type: 'wildcard', status: 'told', fresh: true, provenance: 'x-wensonjabi-2026-11',
+      story: '나는 한국어의 ‘돌아가시다’라는 표현이 참 낭만적이라고 생각한다. 영어의 pass away는 떠나는 것. 일본어의 亡くなる는 존재하지 않게 되는 것. 중국어의 去世는 이 세상을 떠나는 것. 독일어의 von uns gehen은 우리 곁을 떠나는 것. 그런데 한국어에서는 ‘돌아가시다’라고 한다. 떠나는 것과 돌아가는 것은 느낌이 사뭇 다르다. 이 세상에 태어나 한평생 웃고 울고 고생하며 살다가, 마침내 원래 있던 곳으로 돌아간다는 것. 죽어서도 돌아갈 곳이 있다는 것은 참 낭만적이지 않은가?',
+      links: ['nuance', 'culture', 'translate', 'worldview', 'romance', 'english', 'japanese', 'chinese'],
+      xUrls: ['https://x.com/wensonjabi/status/2123775635986280501'] },
+    { id: 'missing', label: '보고 싶다', type: 'associative', status: 'told', fresh: true, provenance: 'x-wensonjabi-2026-11',
+      story: '나는 ‘만나고 싶은 사람’보다 ‘보고 싶은 사람’이라는 말이 더 좋다. 비슷한 말이지만, 내게는 조금 다르게 들린다. 보고 싶다는 마음은 혼자 품을 수 있다. 하지만 실제로 만나려면 상대의 시간과 마음도 생각하게 된다. 만날 수 있을지는 몰라도, 보고 싶어 하는 건 내 마음이니까.',
+      links: ['nuance', 'relation'],
+      xUrls: ['https://x.com/wensonjabi/status/2123205679926190208'] },
+    { id: 'country', label: '나라', type: 'associative', status: 'told', fresh: true, provenance: 'x-wensonjabi-2026-11',
+      story: '나는 사람들이 어떤 나라를 칭찬할 때 반감이 생긴다. 어떤 나라를 욕할 때도 마찬가지다. 특히 도덕의 기준으로 한 나라를 이야기하는 걸 들으면 뭔가 크게 잘못됐다고 느낀다. 설령 국가를 도덕적인 잣대로 설명할 수 있다고 해도, 그것이 그 나라를 더 우수하게 만들거나 그 국민을 더 우월한 사람으로 만들어 준다고는 생각하지 않는다. 물론 극단적인 예외를 말하려는 것도 아니고, 국가가 저지르는 잘못을 옹호하려는 것도 아니다. 다만 그 잘못들은 대부분 그 안에 속한 사람들이 져야 할 책임이 되고, 욕을 먹으면 반발하게 되는 게 사람이다.',
+      links: ['worldview', 'culture', 'commonsense', 'boundary'],
+      xUrls: ['https://x.com/wensonjabi/status/2123610112937930973'] },
   ],
 
   /* 시간이 흐르는 생각들 — 특정 노드에 걸려 있음 */
@@ -464,6 +499,20 @@ const DATA = {
       tags: ['ai', 'aimemory', 'student'], daysAgo: 5 },
     { id: 'th24', text: '눈치, 서운하다, 검토/検討 같은 말은 사전의 대응어로 끝나지 않는다. 어떤 맥락에서 실제로 어떻게 쓰이는지까지 봐야 읽는 사람이 이해하고 쓸 수 있다.',
       tags: ['nuance', 'nunchi', 'hanja'], daysAgo: 6 },
+    { id: 'th25', text: '처음 강단에 섰을 때는 내가 주인공인 줄 알았다. 지금은 안다. 나는 주인공이 아니라 NPC라는 것을. 교실이라는 게임의 주인공은 학생들이다. 나는 퀘스트를 주고, 힌트를 건네고, 가끔 회복 아이템을 나눠 주는 NPC다.',
+      tags: ['npc', 'teaching', 'student'], xUrl: 'https://x.com/wensonjabi/status/2124369220406567154', daysAgo: 2 },
+    { id: 'th26', text: '가장 똑똑한 선생님이 가장 좋은 선생님일까? 비고츠키의 ‘근접발달영역(ZPD)’은 혼자서는 어렵지만 누군가의 도움을 받으면 할 수 있는 영역을 말한다. 세계적인 전문가보다 나보다 조금 더 잘 아는 친구가 더 좋은 선생님이 될 수 있다는 뜻이다.',
+      tags: ['zpd', 'teaching', 'student'], xUrl: 'https://x.com/wensonjabi/status/2124975953092960540', daysAgo: 0 },
+    { id: 'th27', text: '외국어로 말이 막힐 때, 꼭 모르는 단어가 많아서 그런 건 아니다. 이미 아는 단어를 꺼내 쓰지 못해서 막히기도 한다. 알아보는 것과 꺼내 쓰는 것은 다른 일이기 때문이다. 내가 지향하는 공부는, 아는데 쓰지 못하는 말을 쓸 수 있는 말로 바꾸는 공부다.',
+      tags: ['retrieve', 'multiling', 'teaching'], xUrl: 'https://x.com/wensonjabi/status/2124814539451437420', daysAgo: 1 },
+    { id: 'th28', text: '나는 한국어의 ‘돌아가시다’라는 표현이 참 낭만적이라고 생각한다. 떠나는 것과 돌아가는 것은 느낌이 사뭇 다르다. 죽어서도 돌아갈 곳이 있다는 것은 참 낭만적이지 않은가?',
+      tags: ['dolagasida', 'nuance', 'culture'], xUrl: 'https://x.com/wensonjabi/status/2123775635986280501', daysAgo: 4 },
+    { id: 'th29', text: '나는 ‘만나고 싶은 사람’보다 ‘보고 싶은 사람’이라는 말이 더 좋다. 보고 싶다는 마음은 혼자 품을 수 있다. 하지만 실제로 만나려면 상대의 시간과 마음도 생각하게 된다.',
+      tags: ['missing', 'nuance', 'relation'], xUrl: 'https://x.com/wensonjabi/status/2123205679926190208', daysAgo: 5 },
+    { id: 'th30', text: '나는 사람들이 어떤 나라를 칭찬할 때 반감이 생긴다. 어떤 나라를 욕할 때도 마찬가지다. 물론 극단적인 예외를 말하려는 것도 아니고, 국가가 저지르는 잘못을 옹호하려는 것도 아니다.',
+      tags: ['country', 'worldview', 'culture'], xUrl: 'https://x.com/wensonjabi/status/2123610112937930973', daysAgo: 4 },
+    { id: 'th31', text: '해외에서 산다는 건 잡초처럼 잠시 뿌리를 내리고 살아가는 것 같아서, 「根無し草」라는 표현이 마음에 와닿는다.',
+      tags: ['weed', 'nomad', 'stranger'], xUrl: 'https://x.com/wensonjabi/status/2123594734404817347', daysAgo: 4 },
   ],
 
   /* 넛지 루프 — Claude가 아직 Paul에게 묻고 싶은 것들.

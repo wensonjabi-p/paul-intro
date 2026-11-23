@@ -2,7 +2,8 @@
    - 노드 id 중복/누락 필드/자기참조/끊어진 링크
    - thoughts 태그, combos id, openQuestions 노드 참조
    - 세 언어의 노드 id·type·links, thoughts id·tags, combos id 집합이 동일한지(다국어 패리티)
-   - 들어오는 링크가 하나도 없는 'provenance' 노드(= 성좌에서 고립된 새 노드) */
+   - 들어오는 링크가 하나도 없는 'provenance' 노드(= 성좌에서 고립된 새 노드)
+   - X 원글 URL(node.xUrls / thought.xUrl): @wensonjabi status URL 형식만 허용, 세 언어 동일 */
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
@@ -16,6 +17,7 @@ function load(file, name) {
 }
 const D = { ko: load('data.js', 'DATA'), en: load('data.en.js', 'DATA_EN'), zh: load('data.zh.js', 'DATA_ZH') };
 
+const X_URL = /^https:\/\/x\.com\/wensonjabi\/status\/\d+$/;
 let problems = 0;
 const fail = msg => { problems++; console.error('FAIL', msg); };
 
@@ -35,6 +37,8 @@ for (const lang of Object.keys(D)) {
     });
   });
   d.nodes.filter(n => n.provenance && !incoming[n.id]).forEach(n => fail(`${lang} isolated new node ${n.id}`));
+  d.nodes.forEach(n => { if (n.xUrls !== undefined && (!Array.isArray(n.xUrls) || !n.xUrls.length || n.xUrls.some(u => !X_URL.test(u)))) fail(`${lang} ${n.id} invalid xUrls`); });
+  d.thoughts.forEach(t => { if (t.xUrl !== undefined && !X_URL.test(t.xUrl)) fail(`${lang} thought ${t.id} invalid xUrl`); });
   d.thoughts.forEach(t => t.tags.forEach(k => { if (!set.has(k)) fail(`${lang} thought ${t.id} unknown tag ${k}`); }));
   d.combos.forEach(c => c.ids.forEach(k => { if (!set.has(k)) fail(`${lang} combo unknown id ${k}`); }));
   (d.openQuestions || []).forEach(q => { if (!set.has(q.node)) fail(`${lang} openQuestion unknown node ${q.node}`); });
@@ -42,8 +46,8 @@ for (const lang of Object.keys(D)) {
 
 const sig = (lang, fn) => JSON.stringify(D[lang].nodes.map(fn));
 ['en', 'zh'].forEach(l => {
-  if (sig('ko', n => [n.id, n.type, n.status, (n.links || []).join()]) !== sig(l, n => [n.id, n.type, n.status, (n.links || []).join()])) fail(`ko/${l} node id/type/status/links mismatch`);
-  const th = lang => JSON.stringify(D[lang].thoughts.map(t => [t.id, t.tags.join()]));
+  if (sig('ko', n => [n.id, n.type, n.status, (n.links || []).join(), (n.xUrls || []).join()]) !== sig(l, n => [n.id, n.type, n.status, (n.links || []).join(), (n.xUrls || []).join()])) fail(`ko/${l} node id/type/status/links mismatch`);
+  const th = lang => JSON.stringify(D[lang].thoughts.map(t => [t.id, t.tags.join(), t.xUrl || '']));
   if (th('ko') !== th(l)) fail(`ko/${l} thoughts mismatch`);
   const cb = lang => JSON.stringify(D[lang].combos.map(c => [...c.ids].sort().join()));
   if (cb('ko') !== cb(l)) fail(`ko/${l} combos mismatch`);
