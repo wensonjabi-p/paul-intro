@@ -1,5 +1,5 @@
 /* 오프라인 캐시 — 인터뷰 앱과 관리자 페이지를 비행기 모드에서도 열 수 있게. */
-const CACHE = 'paul-interview-v72';
+const CACHE = 'paul-interview-v73';
 const ASSETS = [
   './interview.html',
   './interview-questions.js',
@@ -45,6 +45,15 @@ function networkFirstThenCache(request) {
 
 self.addEventListener('fetch', e => {
   const url = e.request.url;
+
+  // GA / GTM — never cache; let the browser hit the network directly (no double-count via SW).
+  if (
+    url.includes('googletagmanager.com') ||
+    url.includes('google-analytics.com') ||
+    url.includes('analytics.google.com')
+  ) {
+    return;
+  }
 
   if (url.includes('interview-questions.js')) {
     e.respondWith(networkFirstThenCache(e.request));
