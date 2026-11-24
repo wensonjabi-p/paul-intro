@@ -4,6 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paul Bhang — 생각의 파편들</title>
+<meta name="description" content="방상훈(Paul Bhang)의 생각의 파편들. 15년 · 5대륙 · 4개 언어 — 단어를 고르면 이야기가 이어집니다.">
+<link rel="canonical" href="https://www.wensonjabi.com/">
+<meta name="theme-color" content="#201f1d">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WENSONJABI">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://www.wensonjabi.com/">
+<meta property="og:title" content="Paul Bhang — 생각의 파편들">
+<meta property="og:description" content="방상훈(Paul Bhang)의 생각의 파편들. 15년 · 5대륙 · 4개 언어 — 단어를 고르면 이야기가 이어집니다.">
+<meta property="og:image" content="https://www.wensonjabi.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WENSONJABI — Paul Bhang, 방상훈 · 생각의 파편들">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@wensonjabi">
+<meta name="twitter:creator" content="@wensonjabi">
+<meta name="twitter:title" content="Paul Bhang — 생각의 파편들">
+<meta name="twitter:description" content="방상훈(Paul Bhang)의 생각의 파편들. 15년 · 5대륙 · 4개 언어 — 단어를 고르면 이야기가 이어집니다.">
+<meta name="twitter:image" content="https://www.wensonjabi.com/og-image.png">
+<meta name="twitter:image:alt" content="WENSONJABI — Paul Bhang, 방상훈 · 생각의 파편들">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&family=Noto+Sans+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -50,7 +75,28 @@
     padding: 28px 5vw; font-size: 13px; letter-spacing: 0.12em; color: var(--muted);
     max-width: 1100px; margin: 0 auto; width: 100%;
   }
-  .hero-top .brand { color: var(--ink); font-weight: 600; letter-spacing: 0.18em; }
+  .hero-top .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    color: var(--ink); font-weight: 600; letter-spacing: 0.18em;
+    min-width: 0;
+  }
+  .hero-top .brand-mark {
+    width: 28px; height: 28px; flex-shrink: 0;
+    display: block;
+  }
+  .hero-top .brand-text {
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  @media (max-width: 520px) {
+    .hero-top { padding: 20px 4vw; gap: 8px; }
+    .hero-top .brand { gap: 7px; letter-spacing: 0.1em; font-size: 12px; flex-shrink: 0; }
+    .hero-top .brand-mark { width: 24px; height: 24px; }
+    .hero-top .brand-text { max-width: none; overflow: visible; }
+    #p-places { font-size: 10px; letter-spacing: 0.08em; white-space: nowrap; }
+  }
+  @media (max-width: 400px) {
+    #p-places { display: none; }
+  }
   .lang-toggle { display: flex; gap: 4px; }
   .lang-btn {
     background: none; border: 1px solid var(--line); color: var(--muted);
@@ -522,7 +568,10 @@
 
 <section class="hero">
   <div class="hero-top">
-    <div class="brand" id="p-brand"></div>
+    <div class="brand" id="p-brand">
+      <img class="brand-mark" src="logo.svg" width="28" height="28" alt="" aria-hidden="true">
+      <span class="brand-text" id="p-brand-text"></span>
+    </div>
     <div style="display:flex; align-items:center; gap:16px;">
       <div id="p-places"></div>
       <div class="lang-toggle" id="lang-toggle">
@@ -905,7 +954,7 @@
 
   function renderStaticText() {
     const u = UI[LANG];
-    document.getElementById('p-brand').textContent = P.name.toUpperCase();
+    document.getElementById('p-brand-text').textContent = P.name.toUpperCase();
     document.getElementById('p-places').textContent = P.places;
     document.getElementById('p-tagline').textContent = P.tagline;
     document.getElementById('p-hero').innerHTML = P.hero1 + '<br><span class="dim">' + P.hero2 + '</span>';

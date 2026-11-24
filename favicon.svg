@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="WENSONJABI">
+  <!-- Favicon: dark tile + left-hand mark (thumb on RIGHT = LEFT hand) -->
+  <rect width="64" height="64" rx="12" fill="#201f1d"/>
+  <defs>
+    <linearGradient id="g" x1="12" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e2c484"/>
+      <stop offset=".5" stop-color="#c9a45c"/>
+      <stop offset="1" stop-color="#a8843f"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(1.5 0.5) scale(0.95)">
+    <path
+      fill="none"
+      stroke="url(#g)"
+      stroke-width="2.7"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="
+        M 26 58
+        L 23.5 50 L 22.5 42 L 21.5 34 L 20.5 24
+        L 21 17.5 L 24.5 16.5 L 25.5 24 L 26 33
+        L 26.5 22 L 27 13.5 L 30.5 12 L 33 13.5 L 33.5 22 L 34 32.5
+        L 34.5 18 L 35 9.5 L 38.5 8 L 41.5 9.5 L 42 18 L 42.2 32
+        L 42.8 20 L 43.5 14 L 46.5 13 L 49 14.5 L 49.5 22 L 49 33
+        L 52.5 30 L 56.5 27.5 L 58.5 29.5 L 57 33.5 L 52 38 L 49.5 41
+        L 50.5 46 L 48.5 52 L 44 55 L 38 52 L 36.5 48
+        L 33 53 L 29 57 Z
+      "/>
+    <g fill="#c9a45c">
+      <circle cx="35.5" cy="40.5" r="1.55"/>
+      <circle cx="40" cy="43" r="1.15"/>
+      <circle cx="31.5" cy="44" r="1.05"/>
+    </g>
+    <path
+      fill="none"
+      stroke="#c9a45c"
+      stroke-opacity=".55"
+      stroke-width=".85"
+      stroke-linecap="round"
+      d="M35.5 40.5 L40 43 M35.5 40.5 L31.5 44"/>
+  </g>
+</svg>
